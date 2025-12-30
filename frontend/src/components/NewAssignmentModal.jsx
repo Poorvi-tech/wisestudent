@@ -365,7 +365,7 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
                       <BookOpen className="w-5 h-5 text-white" />
-                    </div>
+                </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">Assignment Details</h3>
                       <p className="text-sm text-gray-500">Configure the basic information for your assignment</p>
@@ -444,11 +444,11 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
                         <span className="text-xs text-gray-400 font-normal">(Auto-calculated)</span>
                       </label>
                       <div className="relative">
-                        <input
-                          type="number"
-                          min="0"
-                          value={questions.reduce((total, q) => total + (q.points || 0), 0)}
-                          readOnly
+                      <input
+                        type="number"
+                        min="0"
+                        value={questions.reduce((total, q) => total + (q.points || 0), 0)}
+                        readOnly
                           className="w-full px-4 py-3 border border-slate-300 rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 font-bold text-lg"
                         />
                         <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -536,18 +536,18 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
                       {classes.map((cls, index) => {
                         const isSelected = formData.assignedTo.includes(cls._id || cls.name);
                         return (
-                          <motion.button
-                            key={cls._id || cls.name || `class-${index}`}
-                            type="button"
+                      <motion.button
+                        key={cls._id || cls.name || `class-${index}`}
+                        type="button"
                             whileHover={{ scale: 1.02, y: -2 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={() => handleClassToggle(cls._id || cls.name)}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => handleClassToggle(cls._id || cls.name)}
                             className={`relative px-5 py-4 rounded-xl border-2 font-semibold transition-all text-left overflow-hidden ${
                               isSelected
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-blue-500 shadow-lg"
                                 : "bg-white text-gray-700 border-slate-200 hover:border-blue-300 hover:shadow-md"
-                            }`}
-                          >
+                        }`}
+                      >
                             {isSelected && (
                               <motion.div
                                 initial={{ scale: 0 }}
@@ -567,22 +567,22 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
                                 <div className={`font-bold text-lg mb-1 ${isSelected ? 'text-white' : 'text-gray-900'}`}>
                                   {cls.name}
                                 </div>
-                                {cls.academicYear && (
+                          {cls.academicYear && (
                                   <div className={`text-sm ${isSelected ? 'text-white/90' : 'text-gray-600'}`}>
                                     Academic Year: {cls.academicYear}
                                   </div>
-                                )}
-                                {cls.sections && cls.sections.length > 0 && (
+                          )}
+                          {cls.sections && cls.sections.length > 0 && (
                                   <div className={`text-sm ${isSelected ? 'text-white/90' : 'text-gray-600'}`}>
-                                    Sections: {cls.sections.map(s => s.name).join(', ')}
-                                  </div>
-                                )}
-                              </div>
+                              Sections: {cls.sections.map(s => s.name).join(', ')}
                             </div>
-                          </motion.button>
+                          )}
+                              </div>
+                        </div>
+                      </motion.button>
                         );
                       })}
-                    </div>
+                  </div>
                   )}
                 </motion.div>
 

@@ -85,12 +85,18 @@ const TeacherParentChat = () => {
         console.log('Chat _id:', chatData._id);
         console.log('Chat chatId:', chatData.chatId);
       } else {
-        toast.error(response.data.message || 'Failed to load chat');
+        // Don't show toast for "no parent linked" - let the UI handle it
+        if (!response.data.message?.toLowerCase().includes('no parent linked')) {
+          toast.error(response.data.message || 'Failed to load chat');
+        }
       }
     } catch (error) {
       console.error('Error fetching chat:', error);
       const errorMessage = error.response?.data?.message || 'Failed to load chat';
-      toast.error(errorMessage);
+      // Don't show toast for "no parent linked" - let the UI handle it
+      if (!errorMessage.toLowerCase().includes('no parent linked')) {
+        toast.error(errorMessage);
+      }
     } finally {
       setLoading(false);
     }
@@ -898,10 +904,14 @@ const TeacherParentChat = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading chat...</p>
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full mx-auto mb-4"
+          />
+          <p className="text-slate-600 font-medium">Loading parent chat...</p>
         </div>
       </div>
     );
@@ -909,16 +919,39 @@ const TeacherParentChat = () => {
 
   if (!chat) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-600 mb-4">Chat not found</p>
-          <button
-            onClick={() => navigate('/school-teacher/students')}
-            className="text-indigo-600 hover:text-indigo-700"
-          >
-            Back to Students
-          </button>
-        </div>
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-md w-full bg-white rounded-xl border border-slate-200 shadow-lg p-8 text-center"
+        >
+          <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <MessageCircle className="w-8 h-8 text-amber-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">Parent Chat Unavailable</h2>
+          <p className="text-slate-600 mb-6">
+            This student doesn't have a linked parent account. To enable parent-teacher communication, 
+            please ensure the student's parent account is properly linked in the system.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate('/school-teacher/students')}
+              className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-md transition-all"
+            >
+              Back to Students
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate(`/school-teacher/student/${studentId}/progress`)}
+              className="px-6 py-2.5 bg-slate-100 text-slate-700 rounded-lg font-semibold hover:bg-slate-200 transition-all"
+            >
+              View Student Profile
+            </motion.button>
+          </div>
+        </motion.div>
       </div>
     );
   }

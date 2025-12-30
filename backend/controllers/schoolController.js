@@ -1900,6 +1900,27 @@ export const getStudentAnalyticsForTeacher = async (req, res) => {
       return res.status(403).json({ message: 'Access denied to this student' });
     }
 
+    // Fetch school name from SchoolStudent or Organization
+    let schoolName = student.institution || 'Not specified';
+    try {
+      const schoolStudent = await SchoolStudent.findOne({ userId: studentId, tenantId })
+        .populate('orgId', 'name')
+        .lean();
+      
+      if (schoolStudent?.orgId?.name) {
+        schoolName = schoolStudent.orgId.name;
+      } else if (tenantId) {
+        // Try to get from Organization using tenantId
+        const organization = await Organization.findOne({ _id: tenantId }).select('name').lean();
+        if (organization?.name) {
+          schoolName = organization.name;
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching school name:', error);
+      // Keep default value
+    }
+
     // Fetch parent information
     let parentInfo = null;
     if (student.linkedIds && student.linkedIds.parentIds && student.linkedIds.parentIds.length > 0) {
@@ -2355,7 +2376,8 @@ export const getStudentAnalyticsForTeacher = async (req, res) => {
       name: student.name,
       avatar: student.avatar || '/avatars/avatar1.png',
       email: student.email,
-      grade: student.academic?.grade || student.institution || 'Not specified',
+      grade: student.academic?.grade || 'Not specified',
+      institution: schoolName,
       age: student.dob ? Math.floor((Date.now() - new Date(student.dob)) / (365.25 * 24 * 60 * 60 * 1000)) : null,
       parentContact: parentInfo ? {
         name: parentInfo.name,
@@ -2412,8 +2434,8 @@ export const getStudentAnalyticsForTeacher = async (req, res) => {
         name: student.name,
         email: student.email,
         avatar: student.avatar || '/avatars/avatar1.png',
-        grade: student.academic?.grade || student.institution || 'Not specified',
-        institution: student.institution || 'School Name',
+        grade: student.academic?.grade || 'Not specified',
+        institution: schoolName,
         age: student.dob ? Math.floor((Date.now() - new Date(student.dob)) / (365.25 * 24 * 60 * 60 * 1000)) : null,
         level: userProgress?.level || 1,
         xp: userProgress?.xp || 0,

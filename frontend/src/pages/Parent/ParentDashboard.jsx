@@ -1206,19 +1206,27 @@ export const ChildInfoCard = ({ childCard, studentId: propStudentId }) => {
             </motion.div>
                 <div>
               <h2 className="text-3xl font-black mb-1">{childCard.name}</h2>
-              <div className="flex items-center gap-4 text-sm font-semibold opacity-90">
-                <div className="flex items-center gap-1">
-                  <School className="w-4 h-4" />
-                  <span>{childCard.grade}</span>
-                </div>
-                {childCard.age && (
+              <div className="flex flex-col gap-2 text-sm font-semibold opacity-90">
+                {childCard.grade && childCard.grade !== 'Not specified' && (
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    <span>{childCard.age} years</span>
-                    </div>
-                  )}
-                </div>
+                    <span>Grade {childCard.grade}</span>
+                  </div>
+                )}
+                {childCard.institution && childCard.institution !== 'Not specified' && (
+                  <div className="flex items-center gap-1">
+                    <School className="w-4 h-4" />
+                    <span>{childCard.institution}</span>
+                  </div>
+                )}
+                {childCard.age && (
+                  <div className="flex items-center gap-1">
+                    <Users className="w-4 h-4" />
+                    <span>{childCard.age} years old</span>
+                  </div>
+                )}
               </div>
+            </div>
           </div>
 
           {/* Parent Contact */}

@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 import api from "../../utils/api";
 import { toast } from "react-hot-toast";
-import StudentSlideoverPanel from "../../components/StudentSlideoverPanel";
+import StudentDetailModal from "../../components/StudentDetailModal";
 import NewAssignmentModal from "../../components/NewAssignmentModal";
 import InviteStudentsModal from "../../components/InviteStudentsModal";
 import StudentActionsMenu from "../../components/StudentActionsMenu";
@@ -742,8 +742,8 @@ const TeacherStudents = () => {
         </div>
       </div>
 
-      {/* Student Slideover Panel */}
-      <StudentSlideoverPanel
+      {/* Student Detail Modal */}
+      <StudentDetailModal
         student={selectedStudent}
         isOpen={showSlideoverPanel}
         onClose={() => setShowSlideoverPanel(false)}

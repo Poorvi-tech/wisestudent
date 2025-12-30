@@ -6,7 +6,7 @@ import {
   Calendar, Activity, Brain, Heart, Target, Users
 } from 'lucide-react';
 import api from '../../utils/api';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 // Import parent dashboard components (reuse them)
 import { 
@@ -65,10 +65,14 @@ const TeacherStudentProgress = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <Loader className="w-12 h-12 animate-spin text-indigo-600 mx-auto mb-4" />
-          <p className="text-gray-600">Loading student data...</p>
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full mx-auto mb-4"
+          />
+          <p className="text-slate-600 font-medium">Loading student progress data...</p>
         </div>
       </div>
     );
@@ -76,41 +80,60 @@ const TeacherStudentProgress = () => {
 
   if (!student || !analytics) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-600">Student not found</p>
-          <button
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-md w-full bg-white rounded-xl border border-slate-200 shadow-lg p-8 text-center"
+        >
+          <div className="w-16 h-16 bg-gradient-to-br from-red-100 to-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Users className="w-8 h-8 text-red-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">Student Not Found</h2>
+          <p className="text-slate-600 mb-6">
+            The student you're looking for doesn't exist or you don't have access to view their progress.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => navigate('/school-teacher/students')}
-            className="mt-4 text-indigo-600 hover:text-indigo-700"
+            className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-md transition-all"
           >
             Back to All Students
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6 md:p-8 lg:p-10">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-slate-50 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Header */}
         <div className="mb-8">
-          <button
+          <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ x: -4 }}
             onClick={() => navigate('/school-teacher/students')}
-            className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors mb-6"
+            className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 transition-colors mb-6 font-semibold"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span className="font-semibold">Back to All Students</span>
-          </button>
+            <span>Back to All Students</span>
+          </motion.button>
           
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-2"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Student Progress Report
             </h1>
-            <p className="text-gray-600 text-lg">
-              Comprehensive analytics and insights for {student.name}
+            <p className="text-slate-600 text-lg font-medium">
+              Comprehensive analytics and insights for <span className="font-bold text-slate-900">{student.name}</span>
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Student Info Card */}

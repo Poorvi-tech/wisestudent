@@ -366,17 +366,17 @@ const TeacherOverview = () => {
       }`}
     >
       <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4">
           <div className={`p-3 rounded-xl bg-gradient-to-br ${gradient} shadow-md`}>
             <Icon className="w-6 h-6 text-white" />
-          </div>
-          {trend && (
+        </div>
+        {trend && (
             <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-emerald-50 border border-emerald-200">
               <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
               <span className="text-xs font-bold text-emerald-700">{trend}</span>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
+      </div>
         <div>
           <p className="text-xs font-semibold text-slate-600 mb-1 uppercase tracking-wide">{title}</p>
           <p className="text-3xl font-bold text-slate-900 mb-1">{value}</p>
@@ -450,27 +450,27 @@ const TeacherOverview = () => {
         <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
           <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
+            <div>
                 <h1 className="text-2xl font-bold text-white mb-1">
                   Welcome back, {teacherProfile?.name?.split(" ")[0] || "Teacher"}! 👋
-                </h1>
+              </h1>
                 <p className="text-sm text-white/90">
-                  Here's what's happening with your classes today
-                </p>
-              </div>
+                Here's what's happening with your classes today
+              </p>
+            </div>
               <div className="flex items-center gap-4">
                 <div className="text-right hidden sm:block">
                   <p className="text-xs text-white/80 mb-1">
                     {new Date().toLocaleDateString("en-US", { weekday: "long" })}
                   </p>
                   <p className="text-sm font-semibold text-white">
-                    {new Date().toLocaleDateString("en-US", {
+                {new Date().toLocaleDateString("en-US", {
                       month: "short",
-                      day: "numeric",
+                  day: "numeric",
                       year: "numeric",
-                    })}
-                  </p>
-                </div>
+                })}
+              </p>
+            </div>
                 <motion.button
                   whileHover={{ scale: 1.05, rotate: 180 }}
                   whileTap={{ scale: 0.95 }}
@@ -488,8 +488,8 @@ const TeacherOverview = () => {
                 Last updated: {lastUpdated.toLocaleTimeString()}
               </div>
             )}
-          </div>
         </div>
+      </div>
 
         {/* Key Metrics */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -544,53 +544,53 @@ const TeacherOverview = () => {
                     <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
                       <BookOpen className="w-5 h-5 text-white" />
                     </div>
-                    My Classes
-                  </h2>
-                  <button
-                    onClick={() => navigate("/school-teacher/students")}
+                  My Classes
+                </h2>
+                <button
+                  onClick={() => navigate("/school-teacher/students")}
                     className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
-                  >
-                    View All <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                >
+                  View All <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
               </div>
               <div className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {(Array.isArray(classes) ? classes : []).length > 0 ? (
                     (Array.isArray(classes) ? classes : []).slice(0, 4).map((cls, idx) => {
                       if (!cls || typeof cls !== 'object') return null;
-                      return (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
+                  return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
                           whileHover={{ y: -2 }}
-                          onClick={() => navigate("/school-teacher/students")}
+                    onClick={() => navigate("/school-teacher/students")}
                           className="p-5 rounded-lg bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-2 border-indigo-200 cursor-pointer hover:border-indigo-400 hover:shadow-lg transition-all"
-                        >
+                  >
                         <div className="flex items-center justify-between mb-4">
                           <h3 className="text-lg font-bold text-slate-900">{cls.name || 'Unnamed Class'}</h3>
                           <div className="p-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-md">
-                            <Users className="w-5 h-5 text-white" />
-                          </div>
-                        </div>
+                        <Users className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
                         <div className="grid grid-cols-3 gap-3">
-                          <div className="text-center">
+                      <div className="text-center">
                             <p className="text-2xl font-bold text-blue-600">{cls.studentCount || cls.students || 0}</p>
                             <p className="text-xs text-slate-600 font-medium">Students</p>
-                          </div>
-                          <div className="text-center">
+                      </div>
+                      <div className="text-center">
                             <p className="text-2xl font-bold text-purple-600">{Array.isArray(cls.subjects) ? cls.subjects.length : (cls.subjects ? 1 : 0)}</p>
                             <p className="text-xs text-slate-600 font-medium">Subjects</p>
-                          </div>
-                          <div className="text-center">
+                      </div>
+                      <div className="text-center">
                             <p className="text-2xl font-bold text-indigo-600">{cls.academicYear || new Date().getFullYear().toString()}</p>
                             <p className="text-xs text-slate-600 font-medium">Year</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                      );
+                      </div>
+                    </div>
+                  </motion.div>
+                  );
                     })
                   ) : (
                     <div className="col-span-2 text-center py-12">
@@ -690,54 +690,54 @@ const TeacherOverview = () => {
                     <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg">
                       <BarChart3 className="w-5 h-5 text-white" />
                     </div>
-                    Class Mastery by Pillar
-                  </h2>
-                  <button
-                    onClick={() => navigate("/school-teacher/analytics")}
+                  Class Mastery by Pillar
+                </h2>
+                <button
+                  onClick={() => navigate("/school-teacher/analytics")}
                     className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
-                  >
-                    Details <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                >
+                  Details <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
               </div>
               <div className="p-6">
                 <div className="space-y-4">
                   {Object.keys(classMastery).length > 0 ? (
                     Object.entries(classMastery).slice(0, 6).map(([pillar, percentage], idx) => (
-                    <motion.div
-                      key={pillar}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.05 }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
+                  <motion.div
+                    key={pillar}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-semibold text-slate-700">{pillar}</span>
                         <span className="text-sm font-bold text-slate-900">{percentage}%</span>
-                      </div>
+                    </div>
                       <div className="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${percentage}%` }}
-                          transition={{ duration: 1, delay: idx * 0.1 }}
-                          className={`h-full rounded-full ${
-                            percentage >= 75
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${percentage}%` }}
+                        transition={{ duration: 1, delay: idx * 0.1 }}
+                        className={`h-full rounded-full ${
+                          percentage >= 75
                               ? "bg-gradient-to-r from-emerald-500 to-green-600"
-                              : percentage >= 50
-                              ? "bg-gradient-to-r from-blue-500 to-cyan-600"
-                              : "bg-gradient-to-r from-amber-500 to-orange-600"
-                          }`}
-                        />
-                      </div>
-                    </motion.div>
+                            : percentage >= 50
+                            ? "bg-gradient-to-r from-blue-500 to-cyan-600"
+                            : "bg-gradient-to-r from-amber-500 to-orange-600"
+                        }`}
+                      />
+                    </div>
+                  </motion.div>
                     ))
                   ) : (
                     <div className="text-center py-12">
                       <BarChart3 className="w-12 h-12 text-slate-300 mx-auto mb-3" />
                       <p className="text-slate-500 text-sm">No mastery data available</p>
                       <p className="text-xs text-slate-400 mt-1">Data will appear as students complete activities</p>
-                    </div>
+              </div>
                   )}
-                </div>
+                      </div>
               </div>
             </motion.div>
           </div>
@@ -757,50 +757,50 @@ const TeacherOverview = () => {
                     <div className="p-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg">
                       <AlertCircle className="w-5 h-5 text-white" />
                     </div>
-                    At Risk
-                  </h2>
-                  <button
-                    onClick={() => navigate("/school-teacher/analytics")}
+                  At Risk
+                </h2>
+                <button
+                  onClick={() => navigate("/school-teacher/analytics")}
                     className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
-                  >
+                >
                     View All <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                </button>
+              </div>
               </div>
               <div className="p-6">
-                <div className="space-y-3">
-                  {studentsAtRisk.slice(0, 5).map((student, idx) => (
-                    <motion.div
-                      key={student._id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.05 }}
+              <div className="space-y-3">
+                {studentsAtRisk.slice(0, 5).map((student, idx) => (
+                  <motion.div
+                    key={student._id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
                       whileHover={{ y: -2 }}
-                      onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
+                    onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
                       className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-red-50/50 via-pink-50/50 to-rose-50/50 border border-red-200/50 hover:border-red-400 hover:shadow-md cursor-pointer transition-all"
-                    >
-                      <img
-                        src={student.avatar || "/avatars/avatar1.png"}
-                        alt={student.name}
+                  >
+                    <img
+                      src={student.avatar || "/avatars/avatar1.png"}
+                      alt={student.name}
                         className="w-10 h-10 rounded-full border-2 border-red-400"
-                      />
+                    />
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-slate-900 text-sm truncate">{student.name}</p>
                         <p className="text-xs text-red-600 truncate">{student.reason}</p>
-                      </div>
+                    </div>
                       <div className={`px-2.5 py-1 rounded-lg text-xs font-bold ${
-                        student.riskLevel === "High" ? "bg-red-500 text-white" : "bg-amber-500 text-white"
-                      }`}>
-                        {student.riskLevel}
-                      </div>
-                    </motion.div>
-                  ))}
-                  {studentsAtRisk.length === 0 && (
-                    <div className="text-center py-8">
+                      student.riskLevel === "High" ? "bg-red-500 text-white" : "bg-amber-500 text-white"
+                    }`}>
+                      {student.riskLevel}
+                    </div>
+                  </motion.div>
+                ))}
+                {studentsAtRisk.length === 0 && (
+                  <div className="text-center py-8">
                       <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
                       <p className="text-slate-600 text-sm font-medium">All students doing well!</p>
-                    </div>
-                  )}
+                  </div>
+                )}
                 </div>
               </div>
             </motion.div>
@@ -818,52 +818,52 @@ const TeacherOverview = () => {
                     <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg">
                       <CheckCircle className="w-5 h-5 text-white" />
                     </div>
-                    Pending Tasks
-                  </h2>
-                  <button
-                    onClick={() => navigate("/school-teacher/tasks")}
+                  Pending Tasks
+                </h2>
+                <button
+                  onClick={() => navigate("/school-teacher/tasks")}
                     className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
-                  >
+                >
                     View All <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                </button>
+              </div>
               </div>
               <div className="p-6">
                 <div className="space-y-3">
-                  {pendingTasks.slice(0, 4).map((task, idx) => (
-                    <motion.div
-                      key={task._id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.05 }}
+                {pendingTasks.slice(0, 4).map((task, idx) => (
+                  <motion.div
+                    key={task._id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
                       whileHover={{ y: -2 }}
-                      onClick={() => navigate("/school-teacher/tasks")}
+                    onClick={() => navigate("/school-teacher/tasks")}
                       className="p-4 rounded-lg bg-gradient-to-r from-amber-50/50 via-orange-50/50 to-yellow-50/50 border border-amber-200/50 hover:border-amber-400 hover:shadow-md cursor-pointer transition-all"
-                    >
+                  >
                       <div className="flex items-start justify-between mb-2">
                         <p className="font-semibold text-slate-900 text-sm flex-1">{task.title}</p>
                         <span className={`px-2 py-1 rounded-lg text-xs font-bold ml-2 ${
-                          task.priority === "high" ? "bg-red-500 text-white" :
-                          task.priority === "medium" ? "bg-amber-500 text-white" :
+                        task.priority === "high" ? "bg-red-500 text-white" :
+                        task.priority === "medium" ? "bg-amber-500 text-white" :
                           "bg-emerald-500 text-white"
-                        }`}>
-                          {task.priority}
-                        </span>
-                      </div>
+                      }`}>
+                        {task.priority}
+                      </span>
+                    </div>
                       <div className="flex items-center gap-2 text-xs text-slate-600">
                         <Calendar className="w-3.5 h-3.5" />
-                        <span>{task.dueDate}</span>
-                        <span className="mx-1">•</span>
-                        <span>{task.class}</span>
-                      </div>
-                    </motion.div>
-                  ))}
-                  {pendingTasks.length === 0 && (
-                    <div className="text-center py-8">
+                      <span>{task.dueDate}</span>
+                      <span className="mx-1">•</span>
+                      <span>{task.class}</span>
+                    </div>
+                  </motion.div>
+                ))}
+                {pendingTasks.length === 0 && (
+                  <div className="text-center py-8">
                       <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
                       <p className="text-slate-600 text-sm font-medium">All caught up!</p>
-                    </div>
-                  )}
+                  </div>
+                )}
                 </div>
               </div>
             </motion.div>
@@ -879,36 +879,36 @@ const TeacherOverview = () => {
                 <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
                   <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
                     <Zap className="w-5 h-5 text-white" />
-                  </div>
-                  Quick Actions
-                </h2>
+              </div>
+              Quick Actions
+            </h2>
               </div>
               <div className="p-6">
-                <div className="space-y-3">
-                  <button
+            <div className="space-y-3">
+              <button
                     onClick={() => handleOpenInviteStudents()}
                     className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
-                  >
+              >
                     <span>Invite Students</span>
                     <UserPlus className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button
-                    onClick={() => navigate("/school-teacher/analytics")}
+              </button>
+              <button
+                onClick={() => navigate("/school-teacher/analytics")}
                     className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
-                  >
-                    <span>Analytics Dashboard</span>
+              >
+                <span>Analytics Dashboard</span>
                     <BarChart3 className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button
+              </button>
+              <button
                     onClick={() => navigate("/school-teacher/messages")}
                     className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
-                  >
+              >
                     <span>View Messages</span>
                     <MessageSquare className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
-                  </button>
+              </button>
                 </div>
-              </div>
-            </motion.div>
+            </div>
+          </motion.div>
           </div>
         </div>
       </div>

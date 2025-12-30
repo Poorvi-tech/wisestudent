@@ -115,107 +115,163 @@ const StudentSlideoverPanel = ({ student, isOpen, onClose, onUpdate }) => {
             className="fixed right-0 top-0 h-full w-full sm:w-[480px] md:w-[600px] bg-white shadow-2xl z-50 overflow-y-auto"
           >
             {/* Header */}
-            <div className="sticky top-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-6 z-10">
+            <div className="sticky top-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-6 z-10 shadow-xl">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
-                  <img
-                    src={student.avatar || '/avatars/avatar1.png'}
-                    alt={student.name}
-                    className="w-16 h-16 rounded-full border-4 border-white shadow-lg"
-                  />
+                  <div className="relative">
+                    <img
+                      src={student.avatar || '/avatars/avatar1.png'}
+                      alt={student.name}
+                      className="w-16 h-16 rounded-full border-4 border-white shadow-xl ring-4 ring-white/30"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white"></div>
+                  </div>
                   <div>
-                    <h2 className="text-2xl font-black">{student.name}</h2>
-                    <p className="text-white/90 text-sm">{student.email}</p>
+                    <h2 className="text-2xl font-black drop-shadow-lg">{student.name}</h2>
+                    <p className="text-white/90 text-sm font-medium">{student.email}</p>
                   </div>
                 </div>
-                <button
+                <Motion.button
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={onClose}
-                  className="p-2 hover:bg-white/20 rounded-lg transition-all"
+                  className="p-2 hover:bg-white/20 rounded-xl transition-all backdrop-blur-sm"
                 >
                   <X className="w-6 h-6" />
-                </button>
+                </Motion.button>
               </div>
 
               {/* Quick Stats */}
               <div className="grid grid-cols-4 gap-3">
-                <div className="bg-white/20 backdrop-blur-md rounded-lg p-3 text-center">
-                  <Zap className="w-5 h-5 mx-auto mb-1" />
-                  <p className="text-lg font-black">{student.level || 1}</p>
-                  <p className="text-xs opacity-90">Level</p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-md rounded-lg p-3 text-center">
-                  <Trophy className="w-5 h-5 mx-auto mb-1" />
-                  <p className="text-lg font-black">{student.xp || 0}</p>
-                  <p className="text-xs opacity-90">XP</p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-md rounded-lg p-3 text-center">
-                  <Coins className="w-5 h-5 mx-auto mb-1" />
-                  <p className="text-lg font-black">{student.coins || 0}</p>
-                  <p className="text-xs opacity-90">Coins</p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-md rounded-lg p-3 text-center">
-                  <Flame className="w-5 h-5 mx-auto mb-1" />
-                  <p className="text-lg font-black">{student.streak || 0}</p>
-                  <p className="text-xs opacity-90">Streak</p>
-                </div>
+                <Motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gradient-to-br from-blue-500/30 to-cyan-600/30 backdrop-blur-md rounded-xl p-3 text-center border border-white/20 shadow-lg"
+                >
+                  <Zap className="w-5 h-5 mx-auto mb-1 drop-shadow-md" />
+                  <p className="text-xl font-black drop-shadow-md">{student.level || 1}</p>
+                  <p className="text-xs opacity-90 font-semibold">Level</p>
+                </Motion.div>
+                <Motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gradient-to-br from-amber-500/30 to-orange-600/30 backdrop-blur-md rounded-xl p-3 text-center border border-white/20 shadow-lg"
+                >
+                  <Trophy className="w-5 h-5 mx-auto mb-1 drop-shadow-md" />
+                  <p className="text-xl font-black drop-shadow-md">{student.xp || 0}</p>
+                  <p className="text-xs opacity-90 font-semibold">XP</p>
+                </Motion.div>
+                <Motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gradient-to-br from-yellow-500/30 to-amber-600/30 backdrop-blur-md rounded-xl p-3 text-center border border-white/20 shadow-lg"
+                >
+                  <Coins className="w-5 h-5 mx-auto mb-1 drop-shadow-md" />
+                  <p className="text-xl font-black drop-shadow-md">{student.coins || 0}</p>
+                  <p className="text-xs opacity-90 font-semibold">Coins</p>
+                </Motion.div>
+                <Motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gradient-to-br from-red-500/30 to-pink-600/30 backdrop-blur-md rounded-xl p-3 text-center border border-white/20 shadow-lg"
+                >
+                  <Flame className="w-5 h-5 mx-auto mb-1 drop-shadow-md" />
+                  <p className="text-xl font-black drop-shadow-md">{student.streak || 0}</p>
+                  <p className="text-xs opacity-90 font-semibold">Streak</p>
+                </Motion.div>
               </div>
             </div>
 
             {/* Tabs */}
-            <div className="flex border-b border-gray-200 bg-white sticky top-[180px] z-10">
-              <button
+            <div className="flex border-b border-gray-200 bg-white sticky top-[180px] z-10 shadow-sm">
+              <Motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveTab('timeline')}
-                className={`flex-1 px-4 py-3 font-semibold transition-all ${
+                className={`flex-1 px-4 py-3 font-bold transition-all relative ${
                   activeTab === 'timeline'
-                    ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'text-indigo-600 bg-gradient-to-b from-indigo-50 to-purple-50'
+                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-50'
                 }`}
               >
                 <Activity className="w-4 h-4 inline mr-2" />
                 Timeline
-              </button>
-              <button
+                {activeTab === 'timeline' && (
+                  <Motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600"
+                  />
+                )}
+              </Motion.button>
+              <Motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveTab('notes')}
-                className={`flex-1 px-4 py-3 font-semibold transition-all ${
+                className={`flex-1 px-4 py-3 font-bold transition-all relative ${
                   activeTab === 'notes'
-                    ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'text-purple-600 bg-gradient-to-b from-purple-50 to-pink-50'
+                    : 'text-gray-600 hover:text-purple-600 hover:bg-gray-50'
                 }`}
               >
                 <FileText className="w-4 h-4 inline mr-2" />
                 Notes
-              </button>
-              <button
+                {activeTab === 'notes' && (
+                  <Motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600"
+                  />
+                )}
+              </Motion.button>
+              <Motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveTab('actions')}
-                className={`flex-1 px-4 py-3 font-semibold transition-all ${
+                className={`flex-1 px-4 py-3 font-bold transition-all relative ${
                   activeTab === 'actions'
-                    ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'text-pink-600 bg-gradient-to-b from-pink-50 to-rose-50'
+                    : 'text-gray-600 hover:text-pink-600 hover:bg-gray-50'
                 }`}
               >
                 <Send className="w-4 h-4 inline mr-2" />
                 Actions
-              </button>
+                {activeTab === 'actions' && (
+                  <Motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-pink-600 to-rose-600"
+                  />
+                )}
+              </Motion.button>
             </div>
 
             {/* Content */}
             <div className="p-6">
               {loading ? (
-                <div className="flex items-center justify-center py-12">
+                <div className="flex flex-col items-center justify-center py-16">
                   <Motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full"
+                    className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full mb-4"
                   />
+                  <p className="text-sm font-semibold text-gray-500">Loading comprehensive dashboard data</p>
                 </div>
               ) : (
                 <>
                   {activeTab === 'timeline' && (
                     <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Activity className="w-5 h-5 text-purple-600" />
-                        Recent Activity Timeline
-                      </h3>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-black text-gray-900 flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+                            <Activity className="w-5 h-5 text-white" />
+                          </div>
+                          Recent Activity Timeline
+                        </h3>
+                        {loading && (
+                          <div className="text-xs text-gray-500 flex items-center gap-2">
+                            <Motion.div
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                              className="w-4 h-4 border-2 border-indigo-500 border-t-transparent rounded-full"
+                            />
+                            Loading...
+                          </div>
+                        )}
+                      </div>
                       {studentDetails?.timeline && studentDetails.timeline.length > 0 ? (
                         studentDetails.timeline.map((item, idx) => (
                           <Motion.div
@@ -223,18 +279,18 @@ const StudentSlideoverPanel = ({ student, isOpen, onClose, onUpdate }) => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200"
+                            className="p-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-xl border-2 border-indigo-200/50 shadow-md hover:shadow-lg transition-all"
                           >
                             <div className="flex items-start gap-3">
-                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                                {item.type === 'mission' ? <Target className="w-4 h-4" /> :
-                                 item.type === 'mood' ? <Heart className="w-4 h-4" /> :
-                                 <Activity className="w-4 h-4" />}
+                              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                                {item.type === 'mission' ? <Target className="w-5 h-5" /> :
+                                 item.type === 'mood' ? <Heart className="w-5 h-5" /> :
+                                 <Activity className="w-5 h-5" />}
                               </div>
                               <div className="flex-1">
-                                <p className="font-semibold text-gray-900">{item.action}</p>
-                                <p className="text-sm text-gray-600">{item.details}</p>
-                                <p className="text-xs text-gray-500 mt-1 flex items-center gap-1">
+                                <p className="font-bold text-gray-900 mb-1">{item.action}</p>
+                                <p className="text-sm text-gray-600 mb-2">{item.details}</p>
+                                <p className="text-xs text-gray-500 flex items-center gap-1">
                                   <Clock className="w-3 h-3" />
                                   {item.time}
                                 </p>
@@ -243,117 +299,158 @@ const StudentSlideoverPanel = ({ student, isOpen, onClose, onUpdate }) => {
                           </Motion.div>
                         ))
                       ) : (
-                        <div className="text-center py-8 text-gray-400">
-                          <Activity className="w-12 h-12 mx-auto mb-2" />
-                          <p>No recent activity</p>
+                        <div className="text-center py-12 text-gray-400">
+                          <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <Activity className="w-8 h-8 text-indigo-400" />
+                          </div>
+                          <p className="font-semibold">No recent activity</p>
+                          <p className="text-xs mt-1">Activity will appear here as the student engages</p>
                         </div>
                       )}
 
                       {/* Mood Summary */}
                       {studentDetails?.recentMood && (
-                        <div className="mt-6 p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl border border-pink-200">
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <Heart className="w-5 h-5 text-pink-600" />
+                        <Motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="mt-6 p-5 bg-gradient-to-r from-pink-50 via-rose-50 to-orange-50 rounded-xl border-2 border-pink-200/50 shadow-md"
+                        >
+                          <h4 className="font-black text-gray-900 mb-3 flex items-center gap-2">
+                            <div className="p-1.5 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg">
+                              <Heart className="w-4 h-4 text-white" />
+                            </div>
                             Recent Mood
                           </h4>
-                          <div className="flex items-center gap-2">
-                            <span className="text-3xl">{studentDetails.recentMood.emoji || '😊'}</span>
+                          <div className="flex items-center gap-3">
+                            <div className="text-4xl drop-shadow-md">{studentDetails.recentMood.emoji || '😊'}</div>
                             <div className="flex-1">
-                              <p className="font-semibold text-gray-900">{studentDetails.recentMood.mood || 'Happy'}</p>
-                              <p className="text-sm text-gray-600">Score: {studentDetails.recentMood.score || 3}/5</p>
+                              <p className="font-bold text-gray-900 text-lg">{studentDetails.recentMood.mood || 'Happy'}</p>
+                              <p className="text-sm text-gray-600 font-semibold">Score: {studentDetails.recentMood.score || 3}/5</p>
                             </div>
                           </div>
-                        </div>
+                        </Motion.div>
                       )}
                     </div>
                   )}
 
                   {activeTab === 'notes' && (
                     <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-purple-600" />
-                        Teacher Notes
-                      </h3>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-black text-gray-900 flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg">
+                            <FileText className="w-5 h-5 text-white" />
+                          </div>
+                          Teacher Notes
+                        </h3>
+                      </div>
 
                       {/* Add New Note */}
-                      <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">
+                      <Motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-gradient-to-r from-purple-50 via-pink-50 to-rose-50 rounded-xl p-5 border-2 border-purple-200/50 shadow-md"
+                      >
                         <textarea
                           placeholder="Add a new note about this student..."
                           value={newNote}
                           onChange={(e) => setNewNote(e.target.value)}
-                          rows={3}
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-purple-500 outline-none resize-none"
+                          rows={4}
+                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none font-medium"
                         />
-                        <button
+                        <Motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           onClick={handleSaveNote}
-                          className="mt-3 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                          className="mt-3 px-5 py-2.5 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white rounded-xl font-bold hover:shadow-lg transition-all flex items-center gap-2 w-full justify-center"
                         >
                           <Save className="w-4 h-4" />
                           Save Note
-                        </button>
-                      </div>
+                        </Motion.button>
+                      </Motion.div>
 
                       {/* Existing Notes */}
                       <div className="space-y-3">
                         {studentDetails?.notes && studentDetails.notes.length > 0 ? (
                           studentDetails.notes.map((note, idx) => (
-                            <div
+                            <Motion.div
                               key={idx}
-                              className="p-4 bg-white rounded-xl border border-gray-200 shadow-sm"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                              className="p-4 bg-white rounded-xl border-2 border-gray-200/50 shadow-md hover:shadow-lg transition-all"
                             >
-                              <p className="text-gray-800 mb-2">{note.text}</p>
-                              <div className="flex items-center justify-between text-xs text-gray-500">
-                                <span className="flex items-center gap-1">
+                              <p className="text-gray-800 mb-3 font-medium leading-relaxed">{note.text}</p>
+                              <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-gray-100">
+                                <span className="flex items-center gap-1 font-semibold">
                                   <Calendar className="w-3 h-3" />
                                   {new Date(note.date).toLocaleDateString()}
                                 </span>
-                                <span>By: {note.teacher || 'You'}</span>
+                                <span className="font-semibold">By: {note.teacher || 'You'}</span>
                               </div>
-                            </div>
+                            </Motion.div>
                           ))
                         ) : (
-                          <div className="text-center py-8 text-gray-400">
-                            <FileText className="w-12 h-12 mx-auto mb-2" />
-                            <p>No notes yet</p>
+                          <div className="text-center py-12 text-gray-400">
+                            <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                              <FileText className="w-8 h-8 text-purple-400" />
+                            </div>
+                            <p className="font-semibold">No notes yet</p>
+                            <p className="text-xs mt-1">Add your first note above</p>
                           </div>
                         )}
                       </div>
 
                       {/* Consent Flags */}
                       {studentDetails?.consentFlags && (
-                        <div className="mt-6 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <AlertTriangle className="w-5 h-5 text-yellow-600" />
+                        <Motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="mt-6 p-5 bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 rounded-xl border-2 border-amber-200/50 shadow-md"
+                        >
+                          <h4 className="font-black text-gray-900 mb-4 flex items-center gap-2">
+                            <div className="p-1.5 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg">
+                              <AlertTriangle className="w-4 h-4 text-white" />
+                            </div>
                             Consent & Permissions
                           </h4>
-                          <div className="space-y-2">
+                          <div className="space-y-3">
                             {Object.entries(studentDetails.consentFlags).map(([key, value]) => (
-                              <div key={key} className="flex items-center justify-between">
-                                <span className="text-sm text-gray-700 capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                                <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                                  value ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                              <div key={key} className="flex items-center justify-between p-3 bg-white/60 rounded-lg border border-amber-200/50">
+                                <span className="text-sm text-gray-700 font-semibold capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
+                                <span className={`px-3 py-1.5 rounded-full text-xs font-bold shadow-sm ${
+                                  value ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white' : 'bg-gradient-to-r from-red-500 to-rose-600 text-white'
                                 }`}>
                                   {value ? 'Granted' : 'Not Granted'}
                                 </span>
                               </div>
                             ))}
                           </div>
-                        </div>
+                        </Motion.div>
                       )}
                     </div>
                   )}
 
                   {activeTab === 'actions' && (
                     <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Send className="w-5 h-5 text-purple-600" />
-                        Quick Actions
-                      </h3>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-black text-gray-900 flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg">
+                            <Send className="w-5 h-5 text-white" />
+                          </div>
+                          Quick Actions
+                        </h3>
+                      </div>
 
                       {/* Send Message */}
-                      <div className="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
-                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                          <MessageSquare className="w-5 h-5 text-blue-600" />
+                      <Motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-gradient-to-r from-blue-50 via-cyan-50 to-indigo-50 rounded-xl p-5 border-2 border-blue-200/50 shadow-md"
+                      >
+                        <h4 className="font-black text-gray-900 mb-3 flex items-center gap-2">
+                          <div className="p-1.5 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg">
+                            <MessageSquare className="w-4 h-4 text-white" />
+                          </div>
                           Notify Student
                         </h4>
                         <textarea
@@ -361,67 +458,85 @@ const StudentSlideoverPanel = ({ student, isOpen, onClose, onUpdate }) => {
                           value={messageText}
                           onChange={(e) => setMessageText(e.target.value)}
                           rows={4}
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 outline-none resize-none"
+                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none resize-none font-medium"
                         />
-                        <button
+                        <Motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           onClick={handleSendMessage}
-                          className="mt-3 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                          className="mt-3 px-5 py-2.5 bg-gradient-to-r from-blue-600 via-cyan-600 to-indigo-600 text-white rounded-xl font-bold hover:shadow-lg transition-all flex items-center gap-2 w-full justify-center"
                         >
                           <Send className="w-4 h-4" />
                           Send Notification
-                        </button>
-                      </div>
+                        </Motion.button>
+                      </Motion.div>
 
                       {/* Row: Flag + Full Profile */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Flag for Counselor */}
-                        <div className={`rounded-xl p-4 border-2 h-full ${
-                          isFlagged 
-                            ? 'bg-red-50 border-red-200' 
-                            : 'bg-gray-50 border-gray-200'
-                        }`}>
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <Flag className="w-5 h-5 text-red-600" />
+                        <Motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className={`rounded-xl p-5 border-2 h-full shadow-md ${
+                            isFlagged 
+                              ? 'bg-gradient-to-br from-red-50 to-rose-50 border-red-300' 
+                              : 'bg-gradient-to-br from-gray-50 to-slate-50 border-gray-200'
+                          }`}
+                        >
+                          <h4 className="font-black text-gray-900 mb-3 flex items-center gap-2">
+                            <div className={`p-1.5 rounded-lg ${isFlagged ? 'bg-gradient-to-br from-red-500 to-rose-600' : 'bg-gray-400'}`}>
+                              <Flag className="w-4 h-4 text-white" />
+                            </div>
                             Flag for Counselor
                           </h4>
-                          <p className="text-sm text-gray-600 mb-3">
+                          <p className="text-sm text-gray-600 mb-4 font-medium">
                             {isFlagged 
                               ? 'This student is currently flagged and will be reviewed by counselor'
                               : 'Flag this student if they need counselor attention'}
                           </p>
-                          <button
+                          <Motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             onClick={handleToggleFlag}
-                            className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                            className={`px-4 py-2.5 rounded-xl font-bold transition-all flex items-center gap-2 w-full justify-center ${
                               isFlagged
-                                ? 'bg-gray-600 text-white hover:bg-gray-700'
-                                : 'bg-gradient-to-r from-red-600 to-pink-600 text-white hover:shadow-lg'
+                                ? 'bg-gradient-to-r from-gray-600 to-slate-700 text-white hover:shadow-lg'
+                                : 'bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 text-white hover:shadow-lg'
                             }`}
                           >
                             <Flag className="w-4 h-4" />
                             {isFlagged ? 'Remove Flag' : 'Flag Student'}
-                          </button>
-                        </div>
+                          </Motion.button>
+                        </Motion.div>
 
                         {/* View Full Profile */}
-                        <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200 h-full">
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <Eye className="w-5 h-5 text-purple-600" />
+                        <Motion.div
+                          initial={{ opacity: 0, x: 10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 rounded-xl p-5 border-2 border-purple-200/50 h-full shadow-md"
+                        >
+                          <h4 className="font-black text-gray-900 mb-3 flex items-center gap-2">
+                            <div className="p-1.5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg">
+                              <Eye className="w-4 h-4 text-white" />
+                            </div>
                             Full Profile
                           </h4>
-                          <p className="text-sm text-gray-600 mb-3">
+                          <p className="text-sm text-gray-600 mb-4 font-medium">
                             View complete analytics and progress reports
                           </p>
-                          <button
+                          <Motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             onClick={() => {
                               onClose();
                               window.location.href = `/school-teacher/student/${student._id}/progress`;
                             }}
-                            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                            className="px-4 py-2.5 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white rounded-xl font-bold hover:shadow-lg transition-all flex items-center gap-2 w-full justify-center"
                           >
                             <Eye className="w-4 h-4" />
                             View Full Profile
-                          </button>
-                        </div>
+                          </Motion.button>
+                        </Motion.div>
                       </div>
                     </div>
                   )}
