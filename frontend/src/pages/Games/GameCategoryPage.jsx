@@ -110,8 +110,8 @@ const GameCategoryPage = () => {
         // Kids games: accessible to users under 18, locked for 18+
         return userAge < 18;
       case "teens":
-        // Teens games: accessible to all users
-        return true;
+        // Teens games: accessible to users under 18, locked for 18+
+        return userAge < 18;
       case "adults":
         // Adult games: only accessible to users 18 and above
         return userAge >= 18;
@@ -1362,10 +1362,10 @@ const GameCategoryPage = () => {
       if (ageGroup === "adults" && userAge < 18) {
         return `Available at age 18. You are ${userAge} years old.`;
       }
-    }
 
-    if (ageGroup === "teens" && userAge < 13) {
-      return `Available at age 13 once you complete all 20 Kids games. You are ${userAge} years old.`;
+      if (ageGroup === "teens" && userAge >= 18) {
+        return `Available for learners under 18. You are ${userAge} years old.`;
+      }
     }
 
     // Additional adult unlocking requirements can be added here

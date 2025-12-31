@@ -28,12 +28,17 @@ const StudentDetailModal = ({ student, isOpen, onClose, onUpdate }) => {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
+      // Save the current scrollbar width to prevent layout shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0';
     };
   }, [isOpen]);
 

@@ -1170,6 +1170,61 @@ export const exportUserData = async (req, res) => {
   }
 };
 
+// Check if user profile needs completion (for age-restricted content)
+export const checkProfileCompletion = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const user = await User.findById(userId).select('dateOfBirth dob gender name email').lean();
+    
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    
+    const hasDateOfBirth = !!(user.dateOfBirth || user.dob);
+    const hasGender = !!user.gender;
+    
+    // Calculate age if dateOfBirth exists
+    let userAge = null;
+    if (hasDateOfBirth) {
+      const dob = user.dateOfBirth || new Date(user.dob);
+      const today = new Date();
+      userAge = today.getFullYear() - dob.getFullYear();
+      const monthDiff = today.getMonth() - dob.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        userAge--;
+      }
+    }
+    
+    // Determine accessible modules based on age
+    let accessibleModules = {
+      kids: false,
+      teens: false,
+      adults: false
+    };
+    
+    if (userAge !== null) {
+      accessibleModules.kids = userAge < 18;
+      accessibleModules.teens = userAge < 18;
+      accessibleModules.adults = userAge >= 18;
+    }
+    
+    res.json({
+      profileComplete: hasDateOfBirth && hasGender,
+      hasDateOfBirth,
+      hasGender,
+      userAge,
+      accessibleModules,
+      requiresProfileCompletion: !hasDateOfBirth,
+      message: !hasDateOfBirth 
+        ? 'Please complete your profile with your date of birth to access age-restricted content.'
+        : 'Profile is complete.'
+    });
+  } catch (error) {
+    console.error('Error checking profile completion:', error);
+    res.status(500).json({ message: 'Failed to check profile completion' });
+  }
+};
+
 // Get admin profile stats
 export const getAdminProfileStats = async (req, res) => {
   try {

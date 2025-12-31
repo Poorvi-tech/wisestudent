@@ -3,7 +3,7 @@ import { requireAuth } from '../middlewares/requireAuth.js';
 import { 
   getUserProfile, updateUserProfile, getAllStudents, updateUserAvatar, updateUserPassword,
   getUserSettings, updateUserSettings, exportUserData, getAdminProfileStats, uploadAvatar,
-  completeGoogleUserProfile
+  completeGoogleUserProfile, checkProfileCompletion
 } from '../controllers/userController.js';
 import multer from 'multer';
 import fs from 'fs';
@@ -39,6 +39,9 @@ router.use(requireAuth);
 
 // 👤 GET /api/user/profile — Get current user profile
 router.get('/profile', getUserProfile);
+
+// ✅ GET /api/user/check-profile-completion — Check if profile needs completion for age-restricted content
+router.get('/check-profile-completion', checkProfileCompletion);
 
 // 📝 PUT /api/user/profile — Update user profile
 router.put('/profile', updateUserProfile);

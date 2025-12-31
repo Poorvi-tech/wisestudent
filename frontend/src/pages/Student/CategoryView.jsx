@@ -27,7 +27,7 @@ export default function CategoryView() {
     const [showAgeRestrictionModal, setShowAgeRestrictionModal] = useState(false);
     const [restrictedUserAge, setRestrictedUserAge] = useState(null);
     const [restrictedCategorySlug, setRestrictedCategorySlug] = useState(null);
-    const [restrictionType, setRestrictionType] = useState(null); // 'adult' or 'kids'
+    const [restrictionType, setRestrictionType] = useState(null); // 'adult', 'kids', or 'teens'
     const [showComingSoonModal, setShowComingSoonModal] = useState(false);
     const [comingSoonCardTitle, setComingSoonCardTitle] = useState(null);
     console.log("featuresCrad,", featureCards);
@@ -305,17 +305,16 @@ export default function CategoryView() {
                             
                             if (isGameCard && userAge !== null) {
                                 // Check age restrictions for game cards
-                                // Below 13: Only Kids games
-                                // 13-17: Kids and Teen games (no Adult Module)
-                                // 18+: Teen and Adult games (no Kids Module)
+                                // Below 18: Kids and Teen games (no Adult Module)
+                                // 18+: Adult games only (no Kids or Teen Module)
                                 if (card.title === "Adult Module" && userAge < 18) {
                                     isDisabled = true;
                                     disabledMessage = "Age restriction applies";
                                     lockReason = "18+";
-                                } else if (card.title === "Teen Module" && userAge < 13) {
+                                } else if (card.title === "Teen Module" && userAge >= 18) {
                                     isDisabled = true;
-                                    disabledMessage = "Age restriction applies";
-                                    lockReason = "13+";
+                                    disabledMessage = "Available for learners under 18";
+                                    lockReason = "Under 18";
                                 } else if (card.title === "Kids Module" && userAge >= 18) {
                                     isDisabled = true;
                                     disabledMessage = "Available for learners under 18";
@@ -346,6 +345,11 @@ export default function CategoryView() {
                                                 setRestrictedUserAge(userAge);
                                                 setRestrictedCategorySlug(categorySlug);
                                                 setRestrictionType('kids');
+                                                setShowAgeRestrictionModal(true);
+                                            } else if (card.title === "Teen Module" && userAge !== null && userAge >= 18) {
+                                                setRestrictedUserAge(userAge);
+                                                setRestrictedCategorySlug(categorySlug);
+                                                setRestrictionType('teens');
                                                 setShowAgeRestrictionModal(true);
                                             } else {
                                                 toast.error(disabledMessage, {
@@ -598,6 +602,30 @@ export default function CategoryView() {
                                                 and offer engaging, educational experiences designed to support your learning journey.
                                             </p>
                                         </>
+                                    ) : restrictionType === 'teens' ? (
+                                        <>
+                                            <p className="text-gray-700 text-base leading-relaxed mb-3">
+                                                Thank you for your interest in accessing our Teen Module content{categoryInfo ? ` in ${categoryInfo.label}` : ''}. 
+                                                We appreciate your enthusiasm for learning!
+                                            </p>
+                                            <p className="text-gray-700 text-base leading-relaxed mb-3">
+                                                <strong className="text-red-600">Age Requirement:</strong> This content is 
+                                                specifically designed for learners <strong>under 18 years of age</strong>. 
+                                                Our age restrictions are in place to ensure that all content is 
+                                                age-appropriate and aligns with educational standards for younger learners.
+                                            </p>
+                                            {restrictedUserAge !== null && (
+                                                <p className="text-gray-700 text-base leading-relaxed mb-3">
+                                                    Your current age is <strong className="text-red-600">{restrictedUserAge} years</strong>. 
+                                                    This content is optimized for younger learners and may not provide the appropriate 
+                                                    level of challenge or engagement for your age group.
+                                                </p>
+                                            )}
+                                            <p className="text-gray-700 text-base leading-relaxed">
+                                                We encourage you to explore our <strong>Adult Module</strong> section{categoryInfo ? ` in ${categoryInfo.label}` : ''}, which is specifically tailored to your age group 
+                                                and offers more advanced, engaging educational experiences designed to support your learning journey.
+                                            </p>
+                                        </>
                                     ) : (
                                         <>
                                             <p className="text-gray-700 text-base leading-relaxed mb-3">
@@ -639,7 +667,7 @@ export default function CategoryView() {
                                         }}
                                         className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-3 rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl"
                                     >
-                                        {restrictionType === 'adult' ? 'Explore Kids & Teen Module' : 'Explore Teen & Adult Module'}
+                                        {restrictionType === 'adult' ? 'Explore Kids & Teen Module' : restrictionType === 'teens' ? 'Explore Adult Module' : 'Explore Teen & Adult Module'}
                                     </button>
                                     <button
                                         onClick={() => setShowAgeRestrictionModal(false)}

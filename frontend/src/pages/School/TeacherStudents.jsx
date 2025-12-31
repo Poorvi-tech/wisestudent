@@ -22,12 +22,12 @@ import {
   MessageSquare,
   FileText,
   Heart,
-  Clock,
   Plus,
   UserPlus,
   MoreVertical,
   UserMinus,
   ChevronRight,
+  ChevronLeft,
   RefreshCw,
   Loader2,
 } from "lucide-react";
@@ -62,6 +62,8 @@ const TeacherStudents = () => {
   const [showAssignToGroup, setShowAssignToGroup] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
   const [studentsLoading, setStudentsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const studentsPerPage = 10;
 
   useEffect(() => {
     fetchClasses();
@@ -275,6 +277,22 @@ const TeacherStudents = () => {
     const matchesFlagged = !filterFlagged || student.flagged;
     return matchesSearch && matchesFlagged;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
+  const startIndex = (currentPage - 1) * studentsPerPage;
+  const endIndex = startIndex + studentsPerPage;
+  const paginatedStudents = filteredStudents.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, filterFlagged]);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (loading) {
     return (
@@ -515,211 +533,360 @@ const TeacherStudents = () => {
 
                 {/* Student Grid/List */}
                 {viewMode === "grid" ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                    {filteredStudents.map((student, idx) => (
-                      <Motion.div
-                        key={student._id}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.03 }}
-                        whileHover={{ y: -2 }}
-                        onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
-                        className="bg-white rounded-lg p-5 shadow-sm border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all cursor-pointer"
-                      >
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="relative">
-                            <img
-                              src={student.avatar || `/avatars/avatar${(idx % 6) + 1}.png`}
-                              alt={student.name}
-                              className="w-14 h-14 rounded-full border-2 border-indigo-300 shadow-sm object-cover"
-                              onError={(e) => {
-                                e.target.src = `/avatars/avatar${(idx % 6) + 1}.png`;
-                              }}
-                            />
-                            {student.flagged && (
-                              <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>
-                            )}
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-bold text-gray-900 text-base">
-                              {student.name}
-                            </h4>
-                            <p className="text-xs text-gray-500">{student.email}</p>
-                            <p className="text-xs text-indigo-600 font-semibold">
-                              {student.rollNumber || `ROLL${String(idx + 1).padStart(6, '0')}`}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="bg-blue-50 rounded-lg p-2 text-center">
-                            <p className="text-base font-bold text-blue-700">
-                              {student.level || 1}
-                            </p>
-                            <p className="text-xs text-blue-600">Level</p>
-                          </div>
-                          <div className="bg-indigo-50 rounded-lg p-2 text-center">
-                            <p className="text-base font-bold text-indigo-700">
-                              {student.pillarMastery ?? 0}%
-                            </p>
-                            <p className="text-xs text-indigo-600">Mastery</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-2 text-center">
-                            <p className="text-base font-bold text-green-700">
-                              {student.streak || 0}
-                            </p>
-                            <p className="text-xs text-green-600">Streak</p>
-                          </div>
-                        </div>
-                        <div className="mt-3 flex items-center justify-between">
-                          <div className="flex items-center gap-1">
-                            <span className="text-lg">{student.moodEmoji ?? '😊'}</span>
-                            <span className="text-xs text-gray-600">{student.moodScore ?? 3}/5</span>
-                          </div>
-                          <div className="flex items-center gap-1 text-xs text-gray-500">
-                            <Clock className="w-3 h-3" />
-                            <span>{student.lastActive ?? 'Never'}</span>
-                          </div>
-                        </div>
-                      </Motion.div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-visible relative">
-                    <table className="w-full">
-                      <thead className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
-                        <tr>
-                          <th className="px-4 py-3 text-left font-semibold">Roll</th>
-                          <th className="px-4 py-3 text-left font-semibold">Student</th>
-                          <th className="px-4 py-3 text-center font-semibold">Level</th>
-                          <th className="px-4 py-3 text-center font-semibold">Pillar Mastery %</th>
-                          <th className="px-4 py-3 text-center font-semibold">Profile</th>
-                          <th className="px-4 py-3 text-center font-semibold">Last Active</th>
-                          <th className="px-4 py-3 text-center font-semibold">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filteredStudents.map((student, idx) => (
-                          <Motion.tr
-                            key={student._id}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.03 }}
-                            onClick={() => handleStudentClick(student)}
-                            className="border-b border-slate-100 hover:bg-indigo-50 transition-colors cursor-pointer"
-                          >
-                            <td className="px-4 py-3">
-                              <span className="font-bold text-gray-700">
-                                {student.rollNumber || `ROLL${String(idx + 1).padStart(6, '0')}`}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3">
-                              <div className="flex items-center gap-3">
-                                <div className="relative">
-                                  <img
-                                    src={student.avatar || `/avatars/avatar${(idx % 6) + 1}.png`}
-                                    alt={student.name}
-                                    className="w-10 h-10 rounded-full border-2 border-indigo-300 object-cover"
-                                    onError={(e) => {
-                                      e.target.src = `/avatars/avatar${(idx % 6) + 1}.png`;
-                                    }}
-                                  />
-                                  {student.flagged && (
-                                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-                                  )}
-                                </div>
-                                <div>
-                                  <p className="font-semibold text-gray-900">{student.name}</p>
-                                  <p className="text-xs text-gray-500">{student.email}</p>
-                                </div>
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold">
-                                {student.level || 1}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3">
-                              <div className="flex items-center gap-2">
-                                <div className="flex-1 bg-gray-200 rounded-full h-2">
-                                  <div
-                                    className={`h-2 rounded-full ${
-                                      (student.pillarMastery || 0) >= 75
-                                        ? "bg-gradient-to-r from-green-500 to-emerald-600"
-                                        : (student.pillarMastery || 0) >= 50
-                                        ? "bg-gradient-to-r from-blue-500 to-cyan-600"
-                                        : (student.pillarMastery || 0) >= 25
-                                        ? "bg-gradient-to-r from-amber-500 to-orange-600"
-                                        : "bg-gradient-to-r from-red-500 to-pink-600"
-                                    }`}
-                                    style={{ width: `${student.pillarMastery || 0}%` }}
-                                  />
-                                </div>
-                                <span className="text-sm font-bold text-gray-700 w-10 text-right">
-                                  {student.pillarMastery || 0}%
-                                </span>
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <Motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  navigate(`/school-teacher/student/${student._id}/progress`);
+                  <>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                      {paginatedStudents.map((student, idx) => (
+                        <Motion.div
+                          key={student._id}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: idx * 0.03 }}
+                          whileHover={{ y: -2 }}
+                          onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
+                          className="bg-white rounded-lg p-5 shadow-sm border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all cursor-pointer"
+                        >
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="relative">
+                              <img
+                                src={student.avatar || `/avatars/avatar${((startIndex + idx) % 6) + 1}.png`}
+                                alt={student.name}
+                                className="w-14 h-14 rounded-full border-2 border-indigo-300 shadow-sm object-cover"
+                                onError={(e) => {
+                                  e.target.src = `/avatars/avatar${((startIndex + idx) % 6) + 1}.png`;
                                 }}
-                                className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all flex items-center gap-2 mx-auto"
-                              >
-                                <ChevronRight className="w-4 h-4" />
-                                <span className="text-sm font-semibold">View</span>
-                              </Motion.button>
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <p className="text-xs text-gray-600 flex items-center justify-center gap-1">
-                                <Clock className="w-3 h-3" />
-                                {student.lastActive || 'Never'}
+                              />
+                              {student.flagged && (
+                                <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>
+                              )}
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-gray-900 text-base">
+                                {student.name}
+                              </h4>
+                              <p className="text-xs text-gray-500">{student.email}</p>
+                              <p className="text-xs text-indigo-600 font-semibold">
+                                {student.rollNumber || `ROLL${String(startIndex + idx + 1).padStart(6, '0')}`}
                               </p>
-                            </td>
-                            <td className="px-4 py-3 relative overflow-visible">
-                              <div 
-                                className="flex items-center justify-center" 
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                }}
-                                onMouseDown={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                }}
-                              >
-                                <StudentActionsMenu
-                                  student={student}
-                                  onMessage={(s) => {
-                                    setSelectedStudent(s);
-                                    setShowSlideoverPanel(true);
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-3 gap-2">
+                            <div className="bg-blue-50 rounded-lg p-2 text-center">
+                              <p className="text-base font-bold text-blue-700">
+                                {student.level || 1}
+                              </p>
+                              <p className="text-xs text-blue-600">Level</p>
+                            </div>
+                            <div className="bg-indigo-50 rounded-lg p-2 text-center">
+                              <p className="text-base font-bold text-indigo-700">
+                                {student.pillarMastery ?? 0}%
+                              </p>
+                              <p className="text-xs text-indigo-600">Mastery</p>
+                            </div>
+                            <div className="bg-green-50 rounded-lg p-2 text-center">
+                              <p className="text-base font-bold text-green-700">
+                                {student.streak || 0}
+                              </p>
+                              <p className="text-xs text-green-600">Streak</p>
+                            </div>
+                          </div>
+                          <div className="mt-3 flex items-center justify-between">
+                            <div className="flex items-center gap-1">
+                              <span className="text-lg">{student.moodEmoji ?? '😊'}</span>
+                              <span className="text-xs text-gray-600">{student.moodScore ?? 3}/5</span>
+                            </div>
+                          </div>
+                        </Motion.div>
+                      ))}
+                    </div>
+                    
+                    {/* Pagination for Grid View */}
+                    {totalPages > 1 && (
+                      <div className="mt-6 px-6 py-4 border-t border-slate-200 bg-white rounded-xl">
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm text-slate-600">
+                            Showing <span className="font-semibold">{startIndex + 1}</span> to{' '}
+                            <span className="font-semibold">{Math.min(endIndex, filteredStudents.length)}</span> of{' '}
+                            <span className="font-semibold">{filteredStudents.length}</span> students
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handlePageChange(currentPage - 1)}
+                              disabled={currentPage === 1}
+                              className="p-2 rounded-lg border border-slate-300 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                            >
+                              <ChevronLeft className="w-4 h-4 text-slate-600" />
+                            </Motion.button>
+                            
+                            <div className="flex items-center gap-1">
+                              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                                // Show first page, last page, current page, and pages around current
+                                const showPage = 
+                                  page === 1 ||
+                                  page === totalPages ||
+                                  (page >= currentPage - 1 && page <= currentPage + 1);
+                                
+                                if (!showPage) {
+                                  // Show ellipsis
+                                  const prevPage = page === currentPage - 2;
+                                  const nextPage = page === currentPage + 2;
+                                  if (prevPage || nextPage) {
+                                    return (
+                                      <span key={page} className="px-2 text-slate-400">
+                                        ...
+                                      </span>
+                                    );
+                                  }
+                                  return null;
+                                }
+                                
+                                return (
+                                  <Motion.button
+                                    key={page}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => handlePageChange(page)}
+                                    className={`px-3 py-1 rounded-lg font-medium transition-all ${
+                                      currentPage === page
+                                        ? 'bg-indigo-600 text-white shadow-sm'
+                                        : 'text-slate-600 hover:bg-slate-100 border border-slate-200'
+                                    }`}
+                                  >
+                                    {page}
+                                  </Motion.button>
+                                );
+                              })}
+                            </div>
+                            
+                            <Motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handlePageChange(currentPage + 1)}
+                              disabled={currentPage === totalPages}
+                              className="p-2 rounded-lg border border-slate-300 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                            >
+                              <ChevronRight className="w-4 h-4 text-slate-600" />
+                            </Motion.button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden relative">
+                    <div className="overflow-x-auto">
+                      <table className="w-full table-fixed">
+                        <colgroup>
+                          <col className="w-24" />
+                          <col className="w-64" />
+                          <col className="w-20" />
+                          <col className="w-48" />
+                          <col className="w-32" />
+                          <col className="w-24" />
+                        </colgroup>
+                        <thead className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold">Roll</th>
+                            <th className="px-4 py-3 text-left font-semibold">Student</th>
+                            <th className="px-4 py-3 text-center font-semibold">Level</th>
+                            <th className="px-4 py-3 text-center font-semibold">Pillar Mastery %</th>
+                            <th className="px-4 py-3 text-center font-semibold">Profile</th>
+                            <th className="px-4 py-3 text-center font-semibold">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {paginatedStudents.map((student, idx) => (
+                            <Motion.tr
+                              key={student._id}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                              onClick={() => handleStudentClick(student)}
+                              className="border-b border-slate-100 hover:bg-indigo-50 transition-colors cursor-pointer"
+                            >
+                              <td className="px-4 py-3">
+                                <span className="font-bold text-gray-700 text-sm whitespace-nowrap">
+                                  {student.rollNumber || `ROLL${String(startIndex + idx + 1).padStart(6, '0')}`}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3">
+                                <div className="flex items-center gap-3 min-w-0">
+                                  <div className="relative flex-shrink-0">
+                                    <img
+                                      src={student.avatar || `/avatars/avatar${((startIndex + idx) % 6) + 1}.png`}
+                                      alt={student.name}
+                                      className="w-10 h-10 rounded-full border-2 border-indigo-300 object-cover"
+                                      onError={(e) => {
+                                        e.target.src = `/avatars/avatar${((startIndex + idx) % 6) + 1}.png`;
+                                      }}
+                                    />
+                                    {student.flagged && (
+                                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
+                                    )}
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <p className="font-semibold text-gray-900 text-sm truncate">{student.name}</p>
+                                    <p className="text-xs text-gray-500 truncate">{student.email}</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="px-4 py-3 text-center">
+                                <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold inline-block">
+                                  {student.level || 1}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3">
+                                <div className="flex items-center gap-2">
+                                  <div className="flex-1 bg-gray-200 rounded-full h-2 min-w-0">
+                                    <div
+                                      className={`h-2 rounded-full ${
+                                        (student.pillarMastery || 0) >= 75
+                                          ? "bg-gradient-to-r from-green-500 to-emerald-600"
+                                          : (student.pillarMastery || 0) >= 50
+                                          ? "bg-gradient-to-r from-blue-500 to-cyan-600"
+                                          : (student.pillarMastery || 0) >= 25
+                                          ? "bg-gradient-to-r from-amber-500 to-orange-600"
+                                          : "bg-gradient-to-r from-red-500 to-pink-600"
+                                      }`}
+                                      style={{ width: `${student.pillarMastery || 0}%` }}
+                                    />
+                                  </div>
+                                  <span className="text-sm font-bold text-gray-700 w-12 text-right flex-shrink-0">
+                                    {student.pillarMastery || 0}%
+                                  </span>
+                                </div>
+                              </td>
+                              <td className="px-4 py-3 text-center">
+                                <Motion.button
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigate(`/school-teacher/student/${student._id}/progress`);
                                   }}
-                                  onAddNote={(s) => {
-                                    setSelectedStudent(s);
-                                    setShowSlideoverPanel(true);
+                                  className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all flex items-center gap-1 mx-auto whitespace-nowrap"
+                                >
+                                  <ChevronRight className="w-3 h-3" />
+                                  <span className="text-xs font-semibold">View</span>
+                                </Motion.button>
+                              </td>
+                              <td className="px-4 py-3 relative">
+                                <div 
+                                  className="flex items-center justify-center w-full" 
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
                                   }}
-                                  onViewDetails={(s) => {
-                                    setSelectedStudent(s);
-                                    setShowSlideoverPanel(true);
+                                  onMouseDown={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
                                   }}
-                                  onAssignToGroup={(s) => {
-                                    setSelectedStudent(s);
-                                    setShowAssignToGroup(true);
-                                  }}
-                                  onViewFullProfile={(s) => {
-                                    navigate(`/school-teacher/student/${s._id}/progress`);
-                                  }}
-                                  onRemoveFromClass={handleRemoveStudentFromClass}
-                                />
-                              </div>
-                            </td>
-                          </Motion.tr>
-                        ))}
-                      </tbody>
-                    </table>
+                                >
+                                  <StudentActionsMenu
+                                    student={student}
+                                    onMessage={(s) => {
+                                      setSelectedStudent(s);
+                                      setShowSlideoverPanel(true);
+                                    }}
+                                    onAddNote={(s) => {
+                                      setSelectedStudent(s);
+                                      setShowSlideoverPanel(true);
+                                    }}
+                                    onViewDetails={(s) => {
+                                      setSelectedStudent(s);
+                                      setShowSlideoverPanel(true);
+                                    }}
+                                    onAssignToGroup={(s) => {
+                                      setSelectedStudent(s);
+                                      setShowAssignToGroup(true);
+                                    }}
+                                    onViewFullProfile={(s) => {
+                                      navigate(`/school-teacher/student/${s._id}/progress`);
+                                    }}
+                                    onRemoveFromClass={handleRemoveStudentFromClass}
+                                  />
+                                </div>
+                              </td>
+                            </Motion.tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                      <div className="px-6 py-4 border-t border-slate-200 bg-white rounded-b-xl">
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm text-slate-600">
+                            Showing <span className="font-semibold">{startIndex + 1}</span> to{' '}
+                            <span className="font-semibold">{Math.min(endIndex, filteredStudents.length)}</span> of{' '}
+                            <span className="font-semibold">{filteredStudents.length}</span> students
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handlePageChange(currentPage - 1)}
+                              disabled={currentPage === 1}
+                              className="p-2 rounded-lg border border-slate-300 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                            >
+                              <ChevronLeft className="w-4 h-4 text-slate-600" />
+                            </Motion.button>
+                            
+                            <div className="flex items-center gap-1">
+                              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                                // Show first page, last page, current page, and pages around current
+                                const showPage = 
+                                  page === 1 ||
+                                  page === totalPages ||
+                                  (page >= currentPage - 1 && page <= currentPage + 1);
+                                
+                                if (!showPage) {
+                                  // Show ellipsis
+                                  const prevPage = page === currentPage - 2;
+                                  const nextPage = page === currentPage + 2;
+                                  if (prevPage || nextPage) {
+                                    return (
+                                      <span key={page} className="px-2 text-slate-400">
+                                        ...
+                                      </span>
+                                    );
+                                  }
+                                  return null;
+                                }
+                                
+                                return (
+                                  <Motion.button
+                                    key={page}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => handlePageChange(page)}
+                                    className={`px-3 py-1 rounded-lg font-medium transition-all ${
+                                      currentPage === page
+                                        ? 'bg-indigo-600 text-white shadow-sm'
+                                        : 'text-slate-600 hover:bg-slate-100 border border-slate-200'
+                                    }`}
+                                  >
+                                    {page}
+                                  </Motion.button>
+                                );
+                              })}
+                            </div>
+                            
+                            <Motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handlePageChange(currentPage + 1)}
+                              disabled={currentPage === totalPages}
+                              className="p-2 rounded-lg border border-slate-300 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                            >
+                              <ChevronRight className="w-4 h-4 text-slate-600" />
+                            </Motion.button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 

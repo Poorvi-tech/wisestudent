@@ -153,11 +153,11 @@ export default function StudentDashboard() {
         
         switch (gameType) {
             case 'kids':
-                // Kids games: accessible to all users
-                return true;
+                // Kids games: accessible to users under 18, locked for 18+
+                return userAge < 18;
             case 'teens':
-                // Teens games: accessible to all users
-                return true;
+                // Teens games: accessible to users under 18, locked for 18+
+                return userAge < 18;
             case 'adults':
                 // Adult games: accessible to users 18 and above
                 return userAge >= 18;

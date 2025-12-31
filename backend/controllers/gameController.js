@@ -7,8 +7,70 @@ import UnifiedGameProgress from '../models/UnifiedGameProgress.js';
 import Wallet from '../models/Wallet.js';
 import Transaction from '../models/Transaction.js';
 import UserProgress from '../models/UserProgress.js';
+import User from '../models/User.js';
 import { ErrorResponse } from '../utils/ErrorResponse.js';
 import { canAccessGame, getUserSubscription } from '../utils/subscriptionUtils.js';
+
+// Helper function to calculate user age from dateOfBirth
+const calculateUserAge = (dateOfBirth) => {
+  if (!dateOfBirth) return null;
+  
+  const dob = typeof dateOfBirth === 'string' ? new Date(dateOfBirth) : dateOfBirth;
+  if (isNaN(dob.getTime())) return null;
+  
+  const today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  const monthDiff = today.getMonth() - dob.getMonth();
+  
+  // Adjust if birthday hasn't occurred this year yet
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+    age--;
+  }
+  
+  return age;
+};
+
+// Helper function to extract age group from game category/ID
+const extractAgeGroupFromGameId = (gameId) => {
+  if (!gameId) return null;
+  
+  const gameIdStr = gameId.toString().toLowerCase();
+  
+  // Check for kids games
+  if (gameIdStr.includes('-kids-') || gameIdStr.includes('kids')) {
+    return 'kids';
+  }
+  
+  // Check for teens games
+  if (gameIdStr.includes('-teens-') || gameIdStr.includes('-teen-') || gameIdStr.includes('teens') || gameIdStr.includes('teen')) {
+    return 'teens';
+  }
+  
+  // Check for adults games
+  if (gameIdStr.includes('-adults-') || gameIdStr.includes('adults') || gameIdStr.includes('adult')) {
+    return 'adults';
+  }
+  
+  return null;
+};
+
+// Helper function to check if user can access game based on age
+const canAccessGameByAge = (userAge, gameAgeGroup) => {
+  if (userAge === null) return false; // Can't verify age, deny access
+  
+  if (gameAgeGroup === 'kids' || gameAgeGroup === 'teens') {
+    // Kids and teens games: only accessible to users under 18
+    return userAge < 18;
+  }
+  
+  if (gameAgeGroup === 'adults') {
+    // Adult games: only accessible to users 18 and above
+    return userAge >= 18;
+  }
+  
+  // Unknown age group, allow access (for backward compatibility)
+  return true;
+};
 
 // 📥 GET /api/game/missions/:level
 export const getMissionsByLevel = async (req, res) => {
@@ -171,14 +233,43 @@ export const getGamesByType = async (req, res) => {
 // 🎮 GET /api/game/games/age/:ageGroup
 export const getGamesByAgeGroup = async (req, res) => {
   const { ageGroup } = req.params;
+  const userId = req.user?._id;
   
   try {
-    const games = await Game.find({ 
+    let games = await Game.find({ 
       $or: [
         { ageGroup },
         { ageGroup: 'all' }
       ] 
     });
+    
+    // Filter games based on user age if user is authenticated
+    if (userId) {
+      const user = await User.findById(userId).select('dateOfBirth dob').lean();
+      if (user) {
+        const userAge = calculateUserAge(user.dateOfBirth || user.dob);
+        
+        // If user doesn't have dateOfBirth, filter out all age-restricted games
+        if (userAge === null) {
+          games = games.filter(game => {
+            const gameAgeGroup = extractAgeGroupFromGameId(game.category || game._id.toString());
+            // Allow only non-age-restricted games
+            return !gameAgeGroup;
+          });
+        } else {
+          // Filter out games user cannot access based on age
+          games = games.filter(game => {
+            const gameAgeGroup = extractAgeGroupFromGameId(game.category || game._id.toString());
+            if (gameAgeGroup) {
+              return canAccessGameByAge(userAge, gameAgeGroup);
+            }
+            // If age group cannot be determined, allow access (for backward compatibility)
+            return true;
+          });
+        }
+      }
+    }
+    
     res.status(200).json(games);
   } catch (err) {
     console.error('❌ Failed to fetch games by age group:', err);
@@ -196,6 +287,44 @@ export const completeGame = async (req, res) => {
     // Change from findById to findOne with category filter
     const game = await Game.findOne({ category: gameId });
     if (!game) return res.status(404).json({ error: 'Game not found' });
+
+    // Check age restrictions
+    if (userId) {
+      const user = await User.findById(userId).select('dateOfBirth dob').lean();
+      if (user) {
+        const userAge = calculateUserAge(user.dateOfBirth || user.dob);
+        const gameAgeGroup = extractAgeGroupFromGameId(gameId);
+        
+        // If user doesn't have dateOfBirth, prompt them to complete profile
+        if (userAge === null && gameAgeGroup) {
+          return res.status(403).json({ 
+            error: 'Please complete your profile with your date of birth to access age-restricted content.',
+            locked: true,
+            ageRestricted: true,
+            requiresProfileCompletion: true,
+            message: 'We need your date of birth to ensure age-appropriate content access. Please update your profile.'
+          });
+        }
+        
+        if (gameAgeGroup && !canAccessGameByAge(userAge, gameAgeGroup)) {
+          if (gameAgeGroup === 'kids' || gameAgeGroup === 'teens') {
+            return res.status(403).json({ 
+              error: 'This content is only available for learners under 18 years of age.',
+              locked: true,
+              ageRestricted: true,
+              requiredAge: 'under 18'
+            });
+          } else if (gameAgeGroup === 'adults') {
+            return res.status(403).json({ 
+              error: 'This content is only available for users 18 years of age and above.',
+              locked: true,
+              ageRestricted: true,
+              requiredAge: '18+'
+            });
+          }
+        }
+      }
+    }
 
     // Check subscription access
     if (userId) {
@@ -820,6 +949,44 @@ export const completeUnifiedGame = async (req, res) => {
   console.log(`🎮 Received game completion request - gameId: ${gameId}, totalCoins: ${totalCoins}, coinsPerLevel: ${coinsPerLevel}, totalLevels: ${totalLevels}, isFullCompletion: ${isFullCompletion}`);
 
   try {
+    // Check age restrictions
+    if (userId) {
+      const user = await User.findById(userId).select('dateOfBirth dob').lean();
+      if (user) {
+        const userAge = calculateUserAge(user.dateOfBirth || user.dob);
+        const gameAgeGroup = extractAgeGroupFromGameId(gameId);
+        
+        // If user doesn't have dateOfBirth, prompt them to complete profile
+        if (userAge === null && gameAgeGroup) {
+          return res.status(403).json({ 
+            error: 'Please complete your profile with your date of birth to access age-restricted content.',
+            locked: true,
+            ageRestricted: true,
+            requiresProfileCompletion: true,
+            message: 'We need your date of birth to ensure age-appropriate content access. Please update your profile.'
+          });
+        }
+        
+        if (gameAgeGroup && !canAccessGameByAge(userAge, gameAgeGroup)) {
+          if (gameAgeGroup === 'kids' || gameAgeGroup === 'teens') {
+            return res.status(403).json({ 
+              error: 'This content is only available for learners under 18 years of age.',
+              locked: true,
+              ageRestricted: true,
+              requiredAge: 'under 18'
+            });
+          } else if (gameAgeGroup === 'adults') {
+            return res.status(403).json({ 
+              error: 'This content is only available for users 18 years of age and above.',
+              locked: true,
+              ageRestricted: true,
+              requiredAge: '18+'
+            });
+          }
+        }
+      }
+    }
+
     // Find or create unified game progress
     let gameProgress = await UnifiedGameProgress.findOne({ userId, gameId });
     

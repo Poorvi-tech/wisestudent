@@ -12,7 +12,9 @@ const StudentActionsMenu = ({
   onRemoveFromClass 
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -23,6 +25,24 @@ const StudentActionsMenu = ({
 
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      // Calculate menu position when opening
+      const updatePosition = () => {
+        if (buttonRef.current) {
+          const rect = buttonRef.current.getBoundingClientRect();
+          setMenuPosition({
+            top: rect.bottom + 8,
+            right: window.innerWidth - rect.right,
+          });
+        }
+      };
+      updatePosition();
+      // Update position on scroll/resize
+      window.addEventListener('scroll', updatePosition, true);
+      window.addEventListener('resize', updatePosition);
+      return () => {
+        window.removeEventListener('scroll', updatePosition, true);
+        window.removeEventListener('resize', updatePosition);
+      };
     }
 
     return () => {
@@ -70,27 +90,30 @@ const StudentActionsMenu = ({
   ];
 
   return (
-    <div className="relative" ref={menuRef}>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setIsOpen(!isOpen);
-        }}
-        onMouseDown={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-        }}
-        className={`p-2 rounded-lg transition-all cursor-pointer border ${
-          isOpen 
-            ? 'bg-slate-100 border-slate-300 shadow-sm' 
-            : 'bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300'
-        }`}
-      >
-        <MoreVertical className={`w-4 h-4 ${isOpen ? 'text-indigo-600' : 'text-slate-600'}`} />
-      </motion.button>
+    <>
+      <div className="relative inline-block" ref={menuRef}>
+        <motion.button
+          ref={buttonRef}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
+          onMouseDown={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          className={`p-2 rounded-lg transition-all cursor-pointer border flex-shrink-0 ${
+            isOpen 
+              ? 'bg-slate-100 border-slate-300 shadow-sm' 
+              : 'bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300'
+          }`}
+        >
+          <MoreVertical className={`w-4 h-4 ${isOpen ? 'text-indigo-600' : 'text-slate-600'}`} />
+        </motion.button>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -104,18 +127,17 @@ const StudentActionsMenu = ({
               className="fixed inset-0 z-[9998]"
             />
             
-            {/* Menu */}
+            {/* Menu - rendered in portal to avoid layout shifts */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: -5 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -5 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
-              className="absolute right-0 mt-2 w-56 bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden z-[9999]"
+              className="fixed bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden z-[9999]"
               style={{
-                position: 'absolute',
-                top: '100%',
-                right: '0',
-                zIndex: 9999,
+                width: '224px',
+                top: `${menuPosition.top}px`,
+                right: `${menuPosition.right}px`,
               }}
             >
               {/* Header */}
@@ -195,7 +217,7 @@ const StudentActionsMenu = ({
           </>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 };
 
