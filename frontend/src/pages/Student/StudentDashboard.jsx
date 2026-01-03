@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -120,6 +120,10 @@ export default function StudentDashboard() {
     const [achievementTimeline, setAchievementTimeline] = useState(null);
     const [dailyActions, setDailyActions] = useState(null);
     const [newAchievementIds, setNewAchievementIds] = useState(new Set());
+    
+    // Track if data has been loaded to prevent unnecessary refetches
+    const dataLoadedRef = useRef(false);
+    const lastUserIdRef = useRef(null);
     
     // Profile completion modal state
     const [showProfileModal, setShowProfileModal] = useState(false);
@@ -624,17 +628,31 @@ export default function StudentDashboard() {
     useEffect(() => {
         // Only run once on mount or when user changes
         if (user && (user.role === "student" || user.role === "school_student")) {
-            // Load critical data first (dashboard, notifications, wallet)
-            loadDashboardData();
-            refreshWallet();
+            const currentUserId = user._id;
             
-            // Defer analytics data loading until after initial render (non-critical)
-            // This improves perceived performance
-            const analyticsTimer = setTimeout(() => {
+            // Check if data already exists in state (component remounted but state preserved)
+            const hasData = dashboardData !== null || stats.xp > 0 || leaderboardData !== null;
+            
+            // Check if user changed or if data hasn't been loaded yet
+            const userChanged = lastUserIdRef.current !== currentUserId;
+            const shouldLoadData = !hasData && (!dataLoadedRef.current || userChanged);
+            
+            if (shouldLoadData) {
+                // Load critical data first (dashboard, notifications, wallet)
+                loadDashboardData();
+                refreshWallet();
+                
+                // Start loading analytics data in parallel with critical data
+                // This improves loading time while still prioritizing critical data
                 loadAnalyticsData();
-            }, 500); // Load analytics 500ms after critical data
-            
-            return () => clearTimeout(analyticsTimer);
+                
+                // Mark as loaded and update user reference
+                dataLoadedRef.current = true;
+                lastUserIdRef.current = currentUserId;
+            } else {
+                // Data already loaded for this user, just set loading to false
+                setLoading(false);
+            }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user?._id]); // Only depend on user ID to prevent infinite loops
@@ -1043,14 +1061,14 @@ export default function StudentDashboard() {
     });
 
     // Show all cards on dashboard (excluding special game categories)
-    const filteredCards = featureCards.filter((card) => 
-                !(card.title === "Kids Games" || 
-                  card.title === "Teen Games" || 
-                  card.title === "Adult Games")
-    );
-    
-    console.log("Filtered Cards:", filteredCards);
-    console.log("All Feature Cards:", featureCards);
+    // Memoize to prevent unnecessary recalculations
+    const filteredCards = React.useMemo(() => {
+        return featureCards.filter((card) => 
+            !(card.title === "Kids Games" || 
+              card.title === "Teen Games" || 
+              card.title === "Adult Games")
+        );
+    }, [featureCards]);
 
     const progressPercentage = (stats.xp / stats.nextLevelXp) * 100;
 
@@ -1065,6 +1083,92 @@ export default function StudentDashboard() {
             },
         },
     };
+
+    // Full-page skeleton loader
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="fixed inset-0 pointer-events-none">
+                    <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full opacity-20 blur-3xl animate-pulse" />
+                    <div className="absolute top-1/3 right-20 w-80 h-80 bg-gradient-to-r from-pink-200 to-rose-200 rounded-full opacity-15 blur-3xl animate-pulse delay-1000" />
+                    <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-to-r from-green-200 to-emerald-200 rounded-full opacity-20 blur-3xl animate-pulse delay-2000" />
+                </div>
+
+                <div className="relative z-10 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+                    {/* Header Skeleton */}
+                    <div className="text-center mb-8 mt-2 animate-pulse">
+                        <div className="h-16 bg-gray-300 rounded-2xl w-96 max-w-full mx-auto mb-4"></div>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                            {[1, 2, 3, 4, 5, 6].map((i) => (
+                                <div key={i} className="h-12 bg-gray-300 rounded-full w-32"></div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Player Stats Bar Skeleton */}
+                    <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 mb-8 animate-pulse">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                            <div className="flex items-center gap-4">
+                                <div className="w-20 h-20 bg-gray-300 rounded-2xl"></div>
+                                <div className="flex-1">
+                                    <div className="h-6 bg-gray-300 rounded mb-2 w-24"></div>
+                                    <div className="h-4 bg-gray-300 rounded mb-2 w-16"></div>
+                                    <div className="h-3 bg-gray-300 rounded w-full"></div>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="bg-gray-200 p-4 rounded-2xl h-20"></div>
+                                <div className="bg-gray-200 p-4 rounded-2xl h-20"></div>
+                            </div>
+                            <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
+                                {[1, 2, 3, 4].map((i) => (
+                                    <div key={i} className="w-12 h-12 bg-gray-300 rounded-xl"></div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Analytics Cards Skeleton */}
+                    <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 mb-8 animate-pulse">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="bg-gray-200 rounded-2xl h-64"></div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Feature Cards Skeleton */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                            <div key={i} className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 animate-pulse">
+                                <div className="h-8 bg-gray-300 rounded-lg mb-4 w-3/4"></div>
+                                <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                                <div className="h-4 bg-gray-200 rounded mb-4 w-5/6"></div>
+                                <div className="h-10 bg-gray-300 rounded-lg w-32"></div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Additional Sections Skeleton */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 animate-pulse">
+                            <div className="h-6 bg-gray-300 rounded mb-4 w-1/2"></div>
+                            <div className="space-y-3">
+                                {[1, 2, 3, 4].map((i) => (
+                                    <div key={i} className="h-16 bg-gray-200 rounded-xl"></div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 animate-pulse">
+                            <div className="h-6 bg-gray-300 rounded mb-4 w-1/2"></div>
+                            <div className="h-48 bg-gray-200 rounded-xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
@@ -1436,9 +1540,91 @@ export default function StudentDashboard() {
                     {loading || !pillarMastery || !emotionalScore || !engagementMinutes ? (
                         <div className="relative z-10 animate-pulse">
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                                {[1, 2, 3].map((i) => (
-                                    <div key={i} className="bg-gray-200 rounded-2xl h-64"></div>
-                                ))}
+                                {/* Pillar Mastery Skeleton */}
+                                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border-2 border-purple-200">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="h-6 w-32 bg-purple-200 rounded-lg"></div>
+                                        <div className="w-8 h-8 bg-purple-200 rounded-full"></div>
+                                    </div>
+                                    <div className="flex flex-col items-center mb-6">
+                                        <div className="w-32 h-32 bg-purple-200 rounded-full mb-2"></div>
+                                        <div className="h-4 w-24 bg-purple-200 rounded"></div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-4 w-20 bg-purple-200 rounded"></div>
+                                        {[1, 2, 3].map((i) => (
+                                            <div key={i} className="bg-white/80 rounded-xl p-3">
+                                                <div className="flex items-center justify-between mb-2">
+                                                    <div className="h-4 w-32 bg-purple-200 rounded"></div>
+                                                    <div className="h-4 w-12 bg-purple-200 rounded"></div>
+                                                </div>
+                                                <div className="h-2 w-full bg-purple-200 rounded-full"></div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Emotional Score Skeleton */}
+                                <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border-2 border-pink-200">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="h-6 w-36 bg-pink-200 rounded-lg"></div>
+                                        <div className="w-8 h-8 bg-pink-200 rounded-full"></div>
+                                    </div>
+                                    <div className="bg-white/80 rounded-2xl p-4 mb-4">
+                                        <div className="h-4 w-24 bg-pink-200 rounded mb-2"></div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="h-10 w-16 bg-pink-200 rounded"></div>
+                                            <div className="h-6 w-12 bg-pink-200 rounded"></div>
+                                        </div>
+                                        <div className="h-6 w-16 bg-pink-200 rounded mt-2 ml-auto"></div>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <div className="h-4 w-24 bg-pink-200 rounded"></div>
+                                        <div className="flex items-end justify-between gap-1 h-32 bg-white/50 rounded-xl p-3">
+                                            {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+                                                <div key={i} className="flex-1 bg-pink-200 rounded-t" style={{ height: `${20 + (i * 10)}%` }}></div>
+                                            ))}
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <div className="h-3 w-12 bg-pink-200 rounded"></div>
+                                            <div className="h-3 w-12 bg-pink-200 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Engagement Skeleton */}
+                                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-200">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="h-6 w-28 bg-green-200 rounded-lg"></div>
+                                        <div className="w-8 h-8 bg-green-200 rounded-full"></div>
+                                    </div>
+                                    <div className="bg-white/80 rounded-2xl p-4 mb-4">
+                                        <div className="h-4 w-20 bg-green-200 rounded mx-auto mb-2"></div>
+                                        <div className="flex items-baseline justify-center gap-1">
+                                            <div className="h-12 w-16 bg-green-200 rounded"></div>
+                                            <div className="h-6 w-8 bg-green-200 rounded"></div>
+                                        </div>
+                                        <div className="h-3 w-32 bg-green-200 rounded mx-auto mt-2"></div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3 mb-4">
+                                        <div className="bg-white/80 rounded-xl p-3">
+                                            <div className="h-3 w-16 bg-green-200 rounded mb-2"></div>
+                                            <div className="h-8 w-12 bg-green-200 rounded"></div>
+                                        </div>
+                                        <div className="bg-white/80 rounded-xl p-3">
+                                            <div className="h-3 w-12 bg-green-200 rounded mb-2"></div>
+                                            <div className="h-8 w-8 bg-green-200 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <div className="flex justify-between">
+                                            <div className="h-4 w-20 bg-green-200 rounded"></div>
+                                            <div className="h-4 w-12 bg-green-200 rounded"></div>
+                                        </div>
+                                        <div className="h-4 w-full bg-green-200 rounded-full"></div>
+                                        <div className="h-3 w-28 bg-green-200 rounded mx-auto"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ) : (
@@ -1777,7 +1963,24 @@ export default function StudentDashboard() {
                 </motion.div>
 
                 {/* 2. Daily Actions Strip */}
-                {dailyActions && (
+                {!dailyActions ? (
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="py-20"
+                    >
+                        <div className="grid grid-cols-2 md:grid-cols-4 sm:gap-4 gap-2 justify-center animate-pulse">
+                            {[1, 2, 3, 4].map((i) => (
+                                <div key={i} className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-2xl p-6 shadow-xl h-32">
+                                    <div className="w-8 h-8 bg-gray-200 rounded-lg mb-2"></div>
+                                    <div className="h-6 bg-gray-200 rounded mb-2 w-3/4"></div>
+                                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                ) : (
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -1906,7 +2109,36 @@ export default function StudentDashboard() {
                 )}
 
                 {/* 3. Pillar Progress Tiles - Enhanced 3D Design */}
-                {pillarMastery && pillarMastery.pillars && pillarMastery.pillars.length > 0 && (
+                {!pillarMastery || !pillarMastery.pillars || pillarMastery.pillars.length === 0 ? (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="mb-20"
+                    >
+                        <div className="text-center mb-8 animate-pulse">
+                            <div className="h-10 bg-gray-300 rounded-lg w-64 mx-auto mb-2"></div>
+                            <div className="h-5 bg-gray-200 rounded w-80 mx-auto"></div>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4 sm:gap-8 justify-center">
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+                                <div key={i} className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 animate-pulse">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                                        <div className="h-6 w-16 bg-gray-300 rounded"></div>
+                                    </div>
+                                    <div className="h-6 bg-gray-300 rounded mb-2"></div>
+                                    <div className="h-4 bg-gray-200 rounded mb-4 w-3/4"></div>
+                                    <div className="h-2 bg-gray-200 rounded-full mb-2"></div>
+                                    <div className="flex gap-2">
+                                        <div className="h-4 w-16 bg-gray-200 rounded"></div>
+                                        <div className="h-4 w-20 bg-gray-200 rounded"></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                ) : (
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -2230,7 +2462,33 @@ export default function StudentDashboard() {
                 )}
 
                 {/* 4. Activity Heatmap */}
-                {activityHeatmap && activityHeatmap.heatmapData && (
+                {!activityHeatmap || !activityHeatmap.heatmapData ? (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="mb-8 bg-gradient-to-br from-slate-50 to-gray-100 rounded-3xl p-6 shadow-xl border border-gray-200 animate-pulse"
+                    >
+                        <div className="h-8 bg-gray-300 rounded-lg w-48 mb-4"></div>
+                        <div className="space-y-2">
+                            {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+                                <div key={i} className="flex items-center gap-10">
+                                    <div className="h-4 w-12 bg-gray-300 rounded"></div>
+                                    <div className="flex gap-1 flex-1">
+                                        {Array.from({ length: 24 }).map((_, j) => (
+                                            <div key={j} className="w-8 h-8 bg-gray-300 rounded-sm"></div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="flex justify-center gap-4 mt-4">
+                            <div className="h-3 w-12 bg-gray-300 rounded"></div>
+                            <div className="h-3 w-16 bg-gray-300 rounded"></div>
+                            <div className="h-3 w-12 bg-gray-300 rounded"></div>
+                        </div>
+                    </motion.div>
+                ) : (
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -2304,16 +2562,33 @@ export default function StudentDashboard() {
                 )}
 
                 {/* 5. Mood Timeline */}
-                {moodTimeline && (
+                {!moodTimeline ? (
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="mb-8 bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50 rounded-3xl p-6 shadow-xl border-2 border-pink-200"
+                        className="mb-8 bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50 rounded-3xl p-6 shadow-xl border-2 border-pink-200 animate-pulse"
                     >
                         <div className="flex items-center justify-between mb-6">
-                            <h2 className="text-2xl font-black text-gray-800 flex items-center gap-2">
-                                <Heart className="w-7 h-7 text-pink-600" />
+                            <div className="h-8 bg-gray-300 rounded-lg w-40"></div>
+                            <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div className="text-center py-12">
+                            <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                            <div className="h-6 bg-gray-300 rounded w-48 mx-auto mb-2"></div>
+                            <div className="h-4 bg-gray-200 rounded w-64 mx-auto"></div>
+                        </div>
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="mb-8 bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50 rounded-3xl p-5 shadow-xl border-2 border-pink-200"
+                    >
+                        <div className="flex items-center justify-between mb-4">
+                            <h2 className="text-xl font-black text-gray-800 flex items-center gap-2">
+                                <Heart className="w-5 h-5 text-pink-600" />
                                 <span className="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
                                     Mood Journey
                                 </span>
@@ -2322,10 +2597,10 @@ export default function StudentDashboard() {
                                 whileHover={{ scale: 1.1, x: 5 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => navigate('/student/mood-tracker')}
-                                className="flex items-center justify-center w-10 h-10 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-600 transition-colors shadow-md hover:shadow-lg"
+                                className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-600 transition-colors shadow-md hover:shadow-lg"
                                 aria-label="Go to Mood Tracker"
                             >
-                                <ChevronRight className="w-6 h-6" />
+                                <ChevronRight className="w-5 h-5" />
                             </motion.button>
                         </div>
                         {moodTimeline.timeline && moodTimeline.timeline.length > 0 ? (() => {
@@ -2343,37 +2618,37 @@ export default function StudentDashboard() {
                             return recentMoodLogs.length > 0 ? (
                                 <div className="relative">
                                     {/* Timeline line */}
-                                    <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-300 via-rose-300 to-orange-300 rounded-full" />
+                                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-300 via-rose-300 to-orange-300 rounded-full" />
                                     
                                     {/* Timeline items */}
-                                    <div className="space-y-6">
+                                    <div className="space-y-3">
                                         {recentMoodLogs.map((entry, index) => (
                                         <motion.div
                                             key={entry.id}
                                             initial={{ x: -50, opacity: 0 }}
                                             animate={{ x: 0, opacity: 1 }}
                                             transition={{ delay: index * 0.1 }}
-                                            className="relative pl-16 group"
+                                            className="relative pl-12 group"
                                         >
                                             {/* Timeline dot */}
                                             <motion.div
-                                                whileHover={{ scale: 1.3 }}
-                                                className="absolute left-5 top-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-pink-300 z-10"
+                                                whileHover={{ scale: 1.2 }}
+                                                className="absolute left-3 top-1.5 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-pink-300 z-10"
                                             >
-                                                <span className="text-xl">{entry.emoji}</span>
+                                                <span className="text-base">{entry.emoji}</span>
                                             </motion.div>
                                             
                                             {/* Content */}
                                             <motion.div
                                                 whileHover={{ scale: 1.02, x: 5 }}
-                                                className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-md hover:shadow-lg transition-all"
+                                                className="bg-white/80 backdrop-blur-sm rounded-xl p-3 shadow-md hover:shadow-lg transition-all"
                                             >
-                                                <div className="flex items-center justify-between mb-2">
-                                                    <span className="text-sm font-bold text-gray-800">
+                                                <div className="flex items-center justify-between mb-1">
+                                                    <span className="text-xs font-bold text-gray-800">
                                                         {new Date(entry.date).toLocaleDateString('en-US', { 
                                                             month: 'short', 
                                                             day: 'numeric',
-                                                            weekday: 'long'
+                                                            weekday: 'short'
                                                         })}
                                                     </span>
                                                     <span className="text-xs text-gray-500">
@@ -2384,7 +2659,7 @@ export default function StudentDashboard() {
                                                     </span>
                                                 </div>
                                                 {entry.note && (
-                                                    <p className="text-sm text-gray-600 italic">"{entry.note}"</p>
+                                                    <p className="text-xs text-gray-600 italic">"{entry.note}"</p>
                                                 )}
                                             </motion.div>
                                         </motion.div>
@@ -2392,54 +2667,54 @@ export default function StudentDashboard() {
                                     </div>
                                 </div>
                             ) : (
-                                <div className="text-center py-12">
+                                <div className="text-center py-6">
                                     <motion.div
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         transition={{ delay: 0.2 }}
-                                        className="flex flex-col items-center gap-4"
+                                        className="flex flex-col items-center gap-3"
                                     >
-                                        <div className="w-20 h-20 rounded-full bg-pink-100 flex items-center justify-center">
-                                            <Heart className="w-10 h-10 text-pink-400" />
+                                        <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center">
+                                            <Heart className="w-8 h-8 text-pink-400" />
                                         </div>
                                         <div>
-                                            <p className="text-lg font-bold text-gray-700 mb-1">No mood logs in the last 7 days</p>
-                                            <p className="text-sm text-gray-500 mb-4">Start tracking your mood to see your recent journey</p>
+                                            <p className="text-base font-bold text-gray-700 mb-1">No mood logs in the last 7 days</p>
+                                            <p className="text-xs text-gray-500 mb-3">Start tracking your mood to see your recent journey</p>
                                             <motion.button
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
                                                 onClick={() => navigate('/student/mood-tracker')}
-                                                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                                                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
                                             >
                                                 <span>Track Your Mood</span>
-                                                <ArrowRight className="w-4 h-4" />
+                                                <ArrowRight className="w-3.5 h-3.5" />
                                             </motion.button>
                                         </div>
                                     </motion.div>
                                 </div>
                             );
                         })() : (
-                            <div className="text-center py-12">
+                            <div className="text-center py-6">
                                 <motion.div
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ delay: 0.2 }}
-                                    className="flex flex-col items-center gap-4"
+                                    className="flex flex-col items-center gap-3"
                                 >
-                                    <div className="w-20 h-20 rounded-full bg-pink-100 flex items-center justify-center">
-                                        <Heart className="w-10 h-10 text-pink-400" />
+                                    <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center">
+                                        <Heart className="w-8 h-8 text-pink-400" />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-bold text-gray-700 mb-1">No mood logs yet</p>
-                                        <p className="text-sm text-gray-500 mb-4">Start tracking your mood to see your journey here</p>
+                                        <p className="text-base font-bold text-gray-700 mb-1">No mood logs yet</p>
+                                        <p className="text-xs text-gray-500 mb-3">Start tracking your mood to see your journey here</p>
                                         <motion.button
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={() => navigate('/student/mood-tracker')}
-                                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                                            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
                                         >
                                             <span>Track Your Mood</span>
-                                            <ArrowRight className="w-4 h-4" />
+                                            <ArrowRight className="w-3.5 h-3.5" />
                                         </motion.button>
                                     </div>
                                 </motion.div>
@@ -2449,42 +2724,41 @@ export default function StudentDashboard() {
                 )}
 
                 {/* 6. AI Recommendations */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    className="mb-8"
-                >
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
-                            <Sparkles className="w-7 h-7 text-yellow-500" />
-                            <h2 className="text-2xl font-black text-gray-800">
-                                <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
-                                    Recommended For You
-                                </span>
-                            </h2>
+                {!recommendations && !recommendationsLoading ? (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
+                        className="mb-8 animate-pulse"
+                    >
+                        <div className="flex items-center justify-between mb-4">
+                            <div className="h-8 bg-gray-300 rounded-lg w-48"></div>
+                            <div className="h-8 w-8 bg-gray-300 rounded-lg"></div>
                         </div>
-                        <div className="flex items-center gap-3">
-                            {recommendationsLastUpdated && (
-                                <span className="text-xs text-gray-500 font-medium">
-                                    Updated {recommendationsLastUpdated.toLocaleTimeString()}
-                                </span>
-                            )}
-                            <motion.button
-                                whileHover={{ scale: 1.05, rotate: 180 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={refreshRecommendations}
-                                disabled={recommendationsLoading}
-                                className="p-2 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-400 text-white shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                                title="Refresh recommendations"
-                            >
-                                {recommendationsLoading ? (
-                                    <Loader className="w-4 h-4 animate-spin" />
-                                ) : (
-                                    <RefreshCw className="w-4 h-4" />
-                                )}
-                            </motion.button>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {[1, 2, 3, 4].map((i) => (
+                                <div key={i} className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-3xl p-6 shadow-2xl h-48">
+                                    <div className="h-6 bg-gray-200 rounded mb-2 w-3/4"></div>
+                                    <div className="h-4 bg-gray-200 rounded mb-4 w-1/2"></div>
+                                    <div className="h-10 bg-gray-200 rounded-lg w-32"></div>
+                                </div>
+                            ))}
                         </div>
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
+                        className="mb-8"
+                    >
+                    <div className="flex items-center gap-2 mb-3">
+                        <Sparkles className="w-5 h-5 text-yellow-500" />
+                        <h2 className="text-xl font-black text-gray-800">
+                            <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                                Recommended For You
+                            </span>
+                        </h2>
                     </div>
                     {recommendationsLoading && !recommendations && (
                         <div className="mb-4 text-center py-8">
@@ -2504,7 +2778,7 @@ export default function StudentDashboard() {
                                     </div>
                                 </div>
                             )}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <AnimatePresence mode="popLayout">
                             {recommendations.recommendations
                                 .filter(rec => {
@@ -2541,8 +2815,8 @@ export default function StudentDashboard() {
                                         animate={{ y: 0, opacity: 1, rotate: 0 }}
                                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                                         transition={{ delay: index * 0.15, type: "spring" }}
-                                        whileHover={{ y: -10, rotate: 2, scale: 1.05 }}
-                                        className={`relative overflow-hidden bg-gradient-to-br ${bgGradient} rounded-3xl p-6 shadow-2xl cursor-pointer group`}
+                                        whileHover={{ y: -5, rotate: 1, scale: 1.02 }}
+                                        className={`relative overflow-hidden bg-gradient-to-br ${bgGradient} rounded-2xl p-4 shadow-xl cursor-pointer group`}
                                     >
                                         {/* Dismiss button */}
                                         <motion.button
@@ -2552,17 +2826,17 @@ export default function StudentDashboard() {
                                                 e.stopPropagation(); // Prevent card click
                                                 handleDismissRecommendation(rec, index);
                                             }}
-                                            className="absolute top-3 right-3 z-20 p-1.5 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all opacity-0 group-hover:opacity-100"
+                                            className="absolute top-2 right-2 z-20 p-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all opacity-0 group-hover:opacity-100"
                                             title="Dismiss this recommendation"
                                         >
-                                            <X className="w-4 h-4 text-white" />
+                                            <X className="w-3 h-3 text-white" />
                                         </motion.button>
 
                                         {/* Clickable card content */}
                                         <div onClick={() => handleNavigate(rec.path, rec.title, { ...rec, position: index + 1 })}>
                                             {/* Animated background blob */}
                                             <motion.div
-                                                className="absolute -top-10 -right-10 w-32 h-32 bg-white/20 rounded-full blur-2xl"
+                                                className="absolute -top-8 -right-8 w-24 h-24 bg-white/20 rounded-full blur-2xl"
                                                 animate={{ 
                                                     scale: [1, 1.2, 1],
                                                     x: [0, 10, 0],
@@ -2572,22 +2846,22 @@ export default function StudentDashboard() {
                                             />
                                             
                                             <div className="relative z-10">
-                                                <div className="text-5xl mb-3">{rec.icon}</div>
-                                                <h3 className="text-white font-black text-xl mb-2">{rec.title}</h3>
-                                                <p className="text-white/90 text-sm mb-4">{rec.description}</p>
+                                                <div className="text-3xl mb-2">{rec.icon}</div>
+                                                <h3 className="text-white font-black text-base mb-1.5 line-clamp-2">{rec.title}</h3>
+                                                <p className="text-white/90 text-xs mb-3 line-clamp-2">{rec.description}</p>
                                                 <div className="flex items-center justify-between">
-                                                    <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white font-semibold">
+                                                    <span className="text-xs bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full text-white font-semibold">
                                                         {rec.reason}
                                                     </span>
-                                                    <span className="text-white font-bold flex items-center gap-1">
-                                                        <Zap className="w-4 h-4" />
+                                                    <span className="text-white font-bold text-sm flex items-center gap-1">
+                                                        <Zap className="w-3 h-3" />
                                                         +{rec.xpReward}
                                                     </span>
                                                 </div>
                                             </div>
                                             
                                             {/* Corner accent */}
-                                            <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-bl-full" />
+                                            <div className="absolute top-0 right-0 w-12 h-12 bg-white/10 rounded-bl-full" />
                                         </div>
                                     </motion.div>
                                 );
@@ -2597,24 +2871,24 @@ export default function StudentDashboard() {
                         </>
                         ) : (
                             !recommendationsLoading && (
-                                <div className="text-center py-12 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl border-2 border-dashed border-yellow-200">
+                                <div className="text-center py-6 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl border-2 border-dashed border-yellow-200">
                                     <motion.div
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         transition={{ delay: 0.2 }}
-                                        className="flex flex-col items-center gap-4"
+                                        className="flex flex-col items-center gap-3"
                                     >
-                                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center shadow-lg">
-                                            <Sparkles className="w-10 h-10 text-white" />
+                                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center shadow-lg">
+                                            <Sparkles className="w-8 h-8 text-white" />
                                         </div>
                                         <div>
-                                            <p className="text-lg font-bold text-gray-700 mb-1">No recommendations yet</p>
-                                            <p className="text-sm text-gray-500 mb-4">Complete activities to get personalized recommendations</p>
+                                            <p className="text-base font-bold text-gray-700 mb-1">No recommendations yet</p>
+                                            <p className="text-xs text-gray-500 mb-3">Complete activities to get personalized recommendations</p>
                                             <motion.button
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
                                                 onClick={refreshRecommendations}
-                                                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                                                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
                                             >
                                                 <RefreshCw className="w-4 h-4" />
                                                 <span>Refresh</span>
@@ -2625,48 +2899,74 @@ export default function StudentDashboard() {
                             )
                         )}
                     </motion.div>
+                )}
 
                 {/* 7. Leaderboard Snippet + 8. Achievement Timeline - Side by Side */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     {/* Leaderboard Snippet */}
-                    {leaderboardData && leaderboardData.leaderboard && (
-                                        <motion.div
+                    {!leaderboardData || !leaderboardData.leaderboard ? (
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl p-6 shadow-xl border-2 border-yellow-200 animate-pulse"
+                        >
+                            <div className="h-8 bg-gray-300 rounded-lg w-40 mb-4"></div>
+                            <div className="space-y-3">
+                                {[1, 2, 3, 4, 5].map((i) => (
+                                    <div key={i} className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl">
+                                        <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                                        <div className="flex-1">
+                                            <div className="h-5 bg-gray-300 rounded mb-2 w-32"></div>
+                                            <div className="h-4 bg-gray-200 rounded w-24"></div>
+                                        </div>
+                                        <div className="text-right">
+                                            <div className="h-6 bg-gray-300 rounded w-16 mb-1"></div>
+                                            <div className="h-4 bg-gray-200 rounded w-12"></div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-6 bg-gray-300 rounded-2xl p-4 h-24"></div>
+                        </motion.div>
+                    ) : (
+                        <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl p-6 shadow-xl border-2 border-yellow-200"
                         >
-                            <h2 className="text-2xl font-black text-gray-800 mb-4 flex items-center justify-between">
+                            <h2 className="text-xl font-black text-gray-800 mb-3 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                <Trophy className="w-7 h-7 text-yellow-600" />
+                                <Trophy className="w-5 h-5 text-yellow-600" />
                                 <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
                                     Top Players
                                 </span>
                                 </div>
                                 <button
                                     onClick={() => navigate('/student/leaderboard')}
-                                    className="p-2 hover:bg-yellow-100 rounded-full transition-colors cursor-pointer"
+                                    className="p-1.5 hover:bg-yellow-100 rounded-full transition-colors cursor-pointer"
                                     aria-label="View full leaderboard"
                                 >
-                                    <ChevronRight className="w-6 h-6 text-yellow-600" />
+                                    <ChevronRight className="w-5 h-5 text-yellow-600" />
                                 </button>
                             </h2>
-                            <div className="space-y-3">
-                                {leaderboardData.leaderboard.map((player, index) => (
+                            <div className="space-y-2">
+                                {leaderboardData.leaderboard.slice(0, 5).map((player, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ x: -30, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1 }}
                                         transition={{ delay: index * 0.1 }}
                                         whileHover={{ x: 5, scale: 1.02 }}
-                                        className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${
+                                        className={`flex items-center gap-3 p-2.5 rounded-xl transition-all ${
                                             player.isCurrentUser 
                                                 ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white shadow-lg' 
                                                 : 'bg-white/70 backdrop-blur-sm shadow-md'
                                         }`}
                                     >
                                         {/* Rank Badge */}
-                                        <div className={`w-12 h-12 rounded-full flex items-center justify-center font-black text-lg shadow-lg ${
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm shadow-lg flex-shrink-0 ${
                                             index === 0 ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white' :
                                             index === 1 ? 'bg-gradient-to-br from-gray-300 to-gray-400 text-white' :
                                             index === 2 ? 'bg-gradient-to-br from-orange-400 to-orange-600 text-white' :
@@ -2680,18 +2980,18 @@ export default function StudentDashboard() {
                                         </div>
                                         
                                         {/* Player Info */}
-                                        <div className="flex-1">
-                                            <h4 className={`font-bold ${player.isCurrentUser ? 'text-white' : 'text-gray-800'}`}>
+                                        <div className="flex-1 min-w-0">
+                                            <h4 className={`font-bold text-sm truncate ${player.isCurrentUser ? 'text-white' : 'text-gray-800'}`}>
                                                 {player.name} {player.isCurrentUser && '(You)'}
                                             </h4>
-                                            <p className={`text-xs ${player.isCurrentUser ? 'text-white/80' : 'text-gray-500'}`}>
+                                            <p className={`text-xs truncate ${player.isCurrentUser ? 'text-white/80' : 'text-gray-500'}`}>
                                                 @{player.username}
                                             </p>
                                         </div>
                                         
                                         {/* XP & Level */}
-                                        <div className="text-right">
-                                            <p className={`font-black text-lg ${player.isCurrentUser ? 'text-white' : 'text-gray-800'}`}>
+                                        <div className="text-right flex-shrink-0">
+                                            <p className={`font-black text-base ${player.isCurrentUser ? 'text-white' : 'text-gray-800'}`}>
                                                 {player.xp.toLocaleString()}
                                             </p>
                                             <p className={`text-xs ${player.isCurrentUser ? 'text-white/80' : 'text-gray-500'}`}>
@@ -2707,17 +3007,38 @@ export default function StudentDashboard() {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="mt-6 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl p-4 text-white text-center shadow-lg"
+                                className="mt-4 bg-gradient-to-r from-orange-400 to-red-400 rounded-xl p-3 text-white text-center shadow-lg"
                             >
-                                <p className="text-sm font-medium mb-1">Your Global Rank</p>
-                                <p className="text-4xl font-black">#{leaderboardData.currentUserRank}</p>
-                                <p className="text-xs mt-1 text-white/80">out of {leaderboardData.totalUsers} players</p>
+                                <p className="text-xs font-medium mb-0.5">Your Global Rank</p>
+                                <p className="text-2xl font-black">#{leaderboardData.currentUserRank}</p>
+                                <p className="text-xs mt-0.5 text-white/80">out of {leaderboardData.totalUsers} players</p>
                             </motion.div>
                         </motion.div>
                     )}
 
                     {/* Achievement Timeline */}
-                    {achievementTimeline && achievementTimeline.achievements && (
+                    {!achievementTimeline || !achievementTimeline.achievements ? (
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl p-6 shadow-xl border-2 border-blue-200 animate-pulse"
+                        >
+                            <div className="h-8 bg-gray-300 rounded-lg w-48 mb-4"></div>
+                            <div className="space-y-3">
+                                {[1, 2, 3, 4, 5].map((i) => (
+                                    <div key={i} className="flex items-center gap-4 bg-white/80 rounded-2xl p-4">
+                                        <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                                        <div className="flex-1">
+                                            <div className="h-5 bg-gray-300 rounded mb-2 w-3/4"></div>
+                                            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                                        </div>
+                                        <div className="h-6 w-16 bg-gray-300 rounded"></div>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ) : (
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
