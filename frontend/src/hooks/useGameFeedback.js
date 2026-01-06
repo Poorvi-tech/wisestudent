@@ -14,7 +14,12 @@ export const useGameFeedback = () => {
    * @param {boolean} withConfetti - Whether to show confetti
    */
   const showCorrectAnswerFeedback = (points = 1, withConfetti = true) => {
-    setFlashPoints(points);
+    const multiplier =
+      typeof window !== "undefined" && window.__flashPointsMultiplier
+        ? window.__flashPointsMultiplier
+        : 1;
+    const displayPoints = Math.round(points * multiplier);
+    setFlashPoints(displayPoints);
     if (withConfetti) {
       setShowAnswerConfetti(true);
     }

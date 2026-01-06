@@ -39,16 +39,17 @@ export const getGameDataById = (gameId) => {
   }
 
   // Parse gameId to extract category and age group
-  // Format: "category-age-number" (e.g., "finance-kids-6", "ai-teens-1")
+  // Supports IDs like "ai-kids-1" and "civic-responsibility-teens-12"
   const parts = gameId.split('-');
   if (parts.length < 3) {
     console.warn('Invalid gameId format:', gameId);
     return null;
   }
 
-  const category = parts[0]; // e.g., "finance", "ai"
-  const ageGroup = parts[1]; // e.g., "kids", "teens", "teen"
+  // Category can span multiple segments (e.g., "civic-responsibility")
+  const ageGroup = parts[parts.length - 2]; // e.g., "kids", "teens", "teen"
   const normalizedAge = ageGroup === 'teen' ? 'teens' : ageGroup; // Normalize "teen" to "teens"
+  const category = parts.slice(0, parts.length - 2).join('-'); // join the remaining parts for category
 
   // Map category names to their data functions
   const categoryMap = {
@@ -72,6 +73,10 @@ export const getGameDataById = (gameId) => {
       kids: getMoralKidsGames,
       teens: getMoralTeenGames,
     },
+    'moral-values': {
+      kids: getMoralKidsGames,
+      teens: getMoralTeenGames,
+    },
     ai: {
       kids: getAiKidsGames,
       teens: getAiTeenGames,
@@ -80,15 +85,27 @@ export const getGameDataById = (gameId) => {
       kids: getEheKidsGames,
       teens: getEheTeenGames,
     },
-    crgc: {
+    'civic-responsibility': {
       kids: getCrgcKidsGames,
       teens: getCrgcTeensGames,
     },
-    healthMale: {
+    crgc: { // backward compatibility
+      kids: getCrgcKidsGames,
+      teens: getCrgcTeensGames,
+    },
+    'health-male': {
       kids: getHealthMaleKidsGames,
       teens: getHealthMaleTeenGames,
     },
-    healthFemale: {
+    healthMale: { // backward compatibility
+      kids: getHealthMaleKidsGames,
+      teens: getHealthMaleTeenGames,
+    },
+    'health-female': {
+      kids: getHealthFemaleKidsGames,
+      teens: getHealthFemaleTeenGames,
+    },
+    healthFemale: { // backward compatibility
       kids: getHealthFemaleKidsGames,
       teens: getHealthFemaleTeenGames,
     },
@@ -100,7 +117,7 @@ export const getGameDataById = (gameId) => {
 
   // Get the appropriate data function
   const getGamesFunction = categoryMap[category]?.[normalizedAge];
-  
+
   if (!getGamesFunction) {
     console.warn(`No game data function found for category: ${category}, age: ${normalizedAge}`);
     return null;
@@ -109,10 +126,10 @@ export const getGameDataById = (gameId) => {
   try {
     // Call the function with empty completion status (we just need the game data)
     const games = getGamesFunction({});
-    
+
     // Find the game by id
     const game = games.find(g => g.id === gameId);
-    
+
     if (!game) {
       console.warn(`Game not found with id: ${gameId}`);
       return null;
@@ -133,5 +150,4 @@ export const getGameDataById = (gameId) => {
     return null;
   }
 };
-
 

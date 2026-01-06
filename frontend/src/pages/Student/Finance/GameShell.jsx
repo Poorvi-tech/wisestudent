@@ -207,6 +207,9 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
   const [allAnswersCorrect, setAllAnswersCorrect] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const questionCount = totalLevels || location.state?.totalLevels || 5; // default to 5 questions if not provided
+  const displayTotal = questionCount;
+  const isFullCompletion = true; // Game over modal always represents a full completion attempt
 
   useEffect(() => {
     const submitGameCompletion = async () => {
@@ -219,16 +222,21 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
         // Check if this is a replay attempt
         // Only treat as replay if explicitly marked as replay OR if game is fully completed AND replay is unlocked
         const isReplayAttempt = isReplay === true || (progress?.fullyCompleted === true && progress?.replayUnlocked === true);
-        
+
         // Always call the backend to save progress and let it determine coins
         // The backend will handle the logic for first completion vs replay
         // score represents coins performance (number of correct answers/coins earned)
         // maxScore is kept for backward compatibility but backend now uses totalCoins for comparison
-        const resolvedMaxScore = maxScore || totalCoins || totalLevels;
+        const resolvedMaxScore = maxScore || totalCoins || questionCount;
+        // Scale performance to coin target so limited-question games still satisfy higher coin rewards
+        const performanceTarget = totalCoins || questionCount || resolvedMaxScore || 0;
+        const performanceScore = performanceTarget > 0 && questionCount > 0
+          ? Math.min(performanceTarget, Math.round((score / questionCount) * performanceTarget))
+          : score;
         const result = await gameCompletionService.completeGame({
           gameId,
           gameType,
-          score, // This is coins performance from the game
+          score: performanceScore, // scaled performance so all-correct meets the coin target
           maxScore: resolvedMaxScore, // Kept for backward compatibility
           levelsCompleted: totalLevels,
           totalLevels,
@@ -246,17 +254,17 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
           setWasReplay(result.isReplay === true);
           // Check allAnswersCorrect from result, or calculate from coins performance vs totalCoins
           // score represents coins performance (number of correct answers/coins earned)
-          const calculatedAllCorrect = totalCoins && score >= totalCoins;
+          const calculatedAllCorrect = questionCount ? score >= questionCount : (totalCoins ? performanceScore >= performanceTarget : false);
           setAllAnswersCorrect(result.allAnswersCorrect === true || calculatedAllCorrect);
           setSubmissionComplete(true);
-          
+
           // Use fullyCompleted from result, default to true if not provided
           // IMPORTANT: If all answers are correct and it's a full completion, mark as fully completed
           // Also check if the game was already fully completed (from database)
-          const fullyCompleted = result.fullyCompleted !== undefined 
-            ? result.fullyCompleted 
+          const fullyCompleted = result.fullyCompleted !== undefined
+            ? result.fullyCompleted
             : (isFullCompletion && (result.allAnswersCorrect === true || calculatedAllCorrect));
-          
+
           console.log('✅ Game completion result:', {
             gameId,
             isReplay: result.isReplay,
@@ -269,30 +277,30 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
             score,
             totalCoins
           });
-          
+
           // ALWAYS dispatch event if:
           // 1. Game is fully completed (from result), OR
           // 2. All answers are correct and it's a full completion
           // This ensures the games page updates correctly even if coins weren't awarded
           // CRITICAL: Dispatch even if game was already completed to ensure UI sync
           const shouldDispatchEvent = fullyCompleted || (isFullCompletion && (result.allAnswersCorrect === true || calculatedAllCorrect));
-          
+
           if (shouldDispatchEvent) {
-            console.log('📢 Dispatching gameCompleted event:', { 
-              gameId, 
+            console.log('📢 Dispatching gameCompleted event:', {
+              gameId,
               fullyCompleted: true, // Always send true to ensure UI updates
               isReplay: result.isReplay === true,
               replayUnlocked: result.replayUnlocked === true,
               coinsEarned: result.coinsEarned,
               wasAlreadyCompleted: result.fullyCompleted === true && result.coinsEarned === 0
             });
-            window.dispatchEvent(new CustomEvent('gameCompleted', { 
-              detail: { 
-                gameId, 
+            window.dispatchEvent(new CustomEvent('gameCompleted', {
+              detail: {
+                gameId,
                 fullyCompleted: true, // Always send true if game should be marked as completed
                 isReplay: result.isReplay === true,
                 replayUnlocked: result.replayUnlocked === true
-              } 
+              }
             }));
             console.log('✅ gameCompleted event dispatched successfully');
           } else {
@@ -304,18 +312,18 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
               isFullCompletion
             });
           }
-          
+
           // If it was a replay, also dispatch a specific replay event
           if (result.isReplay === true) {
-            console.log('🎮 Dispatching gameReplayed event:', { 
-              gameId, 
-              replayUnlocked: result.replayUnlocked === true 
+            console.log('🎮 Dispatching gameReplayed event:', {
+              gameId,
+              replayUnlocked: result.replayUnlocked === true
             });
-            window.dispatchEvent(new CustomEvent('gameReplayed', { 
-              detail: { 
+            window.dispatchEvent(new CustomEvent('gameReplayed', {
+              detail: {
                 gameId,
                 replayUnlocked: result.replayUnlocked === true // Explicitly check for true
-              } 
+              }
             }));
           }
         }
@@ -341,7 +349,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
         <p className="text-gray-600 text-lg mb-4">
           You finished the game with{" "}
           <span className="font-bold text-gray-900">{score}</span> out of{" "}
-          <span className="font-bold text-gray-900">{totalCoins || totalLevels}</span> correct answers! ⭐
+          <span className="font-bold text-gray-900">{displayTotal}</span> correct answers! ⭐
         </p>
         {allAnswersCorrect && submissionComplete && (
           <p className="text-green-600 font-semibold mb-4">
@@ -425,7 +433,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
               onClick={async () => {
                 // Get nextGamePath from prop or location.state
                 const resolvedNextGamePath = nextGamePath || location.state?.nextGamePath;
-                
+
                 if (!resolvedNextGamePath) {
                   // No next game, just close (go back to game cards)
                   // Wait a moment to ensure game completion event has been dispatched and state updated
@@ -437,7 +445,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
                 try {
                   // Get next game ID from prop or location.state (passed from GameCategoryPage)
                   const resolvedNextGameId = nextGameId || location.state?.nextGameId || null;
-                  
+
                   console.log('🎮 Continue button - Next game info:', {
                     resolvedNextGamePath,
                     resolvedNextGameId,
@@ -445,19 +453,19 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
                     nextGameId,
                     locationState: location.state
                   });
-                  
+
                   // Wait a moment to ensure current game completion is saved
                   await new Promise(resolve => setTimeout(resolve, 500));
-                  
+
                   let nextGameProgress = null;
                   let isReplay = false;
-                  
+
                   // If we have the next game ID, check its status before navigating
                   if (resolvedNextGameId) {
                     // Check next game status
                     nextGameProgress = await gameCompletionService.getGameProgress(resolvedNextGameId);
                     console.log('🎮 Next game progress:', nextGameProgress);
-                    
+
                     // Check if next game is fully completed
                     if (nextGameProgress?.fullyCompleted) {
                       // Check if replay is unlocked
@@ -480,11 +488,11 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
                     }
                     // Game is not completed or replay is unlocked - allow navigation
                   }
-                  
+
                   // Navigate to next game
                   const returnPath = location.state?.returnPath || '/games';
                   console.log('🎮 Navigating to next game:', resolvedNextGamePath);
-                  
+
                   navigate(resolvedNextGamePath, {
                     state: {
                       returnPath: returnPath,
@@ -561,13 +569,28 @@ const GameShell = ({
   const location = useLocation();
   const [confettiKey, setConfettiKey] = useState(0);
   const prevShowConfettiRef = useRef(false);
-  
+  const questionCount = totalLevels || location.state?.totalLevels || 5; // default to 5 questions if not provided
+
   // Get totalCoins and totalXp from location.state if not provided as props
   const resolvedTotalCoins = totalCoins || location.state?.totalCoins || null;
   const resolvedTotalXp = totalXp || location.state?.totalXp || null;
   // Note: maxScore is kept for backward compatibility, but performance is now measured by coins
   // The score prop represents coins performance (number of correct answers/coins earned)
-  const resolvedMaxScore = maxScore || location.state?.maxScore || resolvedTotalCoins || totalLevels;
+  const resolvedMaxScore = maxScore || location.state?.maxScore || resolvedTotalCoins || questionCount;
+  const pointsPerCorrect =
+    resolvedTotalCoins && questionCount
+      ? Math.max(1, Math.round(resolvedTotalCoins / questionCount))
+      : 1;
+
+  // Share points-per-correct globally for flash animations
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashPointsMultiplier = pointsPerCorrect;
+      return () => {
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [pointsPerCorrect]);
 
   // Track confetti trigger to remount component
   useEffect(() => {
@@ -662,9 +685,11 @@ const GameShell = ({
         </button>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">
-            <span className="text-white font-medium">Coins: {score || 0}</span>
+            <span className="text-white font-medium">
+              Coins: {Math.min(resolvedTotalCoins ?? Number.MAX_SAFE_INTEGER, Math.round((score || 0) * pointsPerCorrect))}
+            </span>
           </div>
-          
+
         </div>
         {rightSlot || <div />}
       </div>
