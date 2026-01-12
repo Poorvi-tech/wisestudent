@@ -51,29 +51,19 @@ const AddTeacherModal = ({
 
     setLoading(true);
     try {
-      const response = await fetch(`/api/school/admin/classes/${selectedClass._id}/teachers`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          teacherIds: selectedTeachers
-        })
-      });
+      const response = await api.post(
+        `/api/school/admin/classes/${selectedClass._id}/teachers`,
+        { teacherIds: selectedTeachers }
+      );
 
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(data.message || 'Teachers added successfully!');
-        setShowAddTeacherModal(false);
-        setSelectedTeachers([]);
-        onSuccess?.();
-      } else {
-        toast.error(data.message || 'Failed to add teachers');
-      }
+      const message = response.data?.message || 'Teachers added successfully!';
+      toast.success(message);
+      setShowAddTeacherModal(false);
+      setSelectedTeachers([]);
+      onSuccess?.();
     } catch (error) {
       console.error('Error adding teachers:', error);
-      toast.error('Failed to add teachers');
+      toast.error(error.response?.data?.message || 'Failed to add teachers');
     } finally {
       setLoading(false);
     }

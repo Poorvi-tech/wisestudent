@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import Avatar from "./Avatar";
 import {
-    Bell, Wallet, ChevronDown, Settings, User, LogOut, Menu, X, Home, BarChart3, TrendingUp, Gift, MessageSquare, AlertCircle, Zap, Users, Mail, CheckCircle, FileText, Target, DollarSign, Activity, CreditCard, Presentation, Building2, Calendar, Gamepad2
+    Bell, Wallet, ChevronDown, Settings, User, LogOut, Menu, X, Home, BarChart3, TrendingUp, Gift, MessageSquare, AlertCircle, Users, Mail, CheckCircle, FileText, Target, DollarSign, Activity, CreditCard, Presentation, Building2, Calendar, Gamepad2
 } from "lucide-react";
 
 
@@ -130,7 +130,7 @@ const Navbar = () => {
         { icon: <BarChart3 className="w-5 h-5" />, label: "Executive", onClick: () => navigate("/csr/executive") },
         { icon: <Target className="w-5 h-5" />, label: "Overview", onClick: () => navigate("/csr/overview") },
         { icon: <Target className="w-5 h-5" />, label: "Campaigns", onClick: () => navigate("/csr/campaigns") },
-        { icon: <Zap className="w-5 h-5" />, label: "Wizard", onClick: () => navigate("/csr/campaign-wizard") },
+        { icon: <img src="/icons/icon.png" alt="WiseStudent logo" className="w-5 h-5 object-contain" />, label: "Wizard", onClick: () => navigate("/csr/campaign-wizard") },
         { icon: <DollarSign className="w-5 h-5" />, label: "Financial", onClick: () => navigate("/csr/financial") },
         { icon: <FileText className="w-5 h-5" />, label: "Reports", onClick: () => navigate("/csr/reports") },
         { icon: <CheckCircle className="w-5 h-5" />, label: "Approvals", onClick: () => navigate("/csr/approvals") },
@@ -274,24 +274,17 @@ const Navbar = () => {
                             whileHover={{ scale: 1.05, rotate: 2 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <motion.div
-                                className="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg"
-                                animate={{
-                                    boxShadow: [
-                                        '0 4px 20px rgba(139, 92, 246, 0.3)',
-                                        '0 4px 40px rgba(139, 92, 246, 0.5)',
-                                        '0 4px 20px rgba(139, 92, 246, 0.3)'
-                                    ]
-                                }}
-                                transition={{ duration: 3, repeat: Infinity }}
-                            >
-                                <Zap className="w-4 h-4 sm:w-6 sm:h-6" />
+                                <img
+                                    src="/icons/icon.png"
+                                    alt="WiseStudent logo"
+                                    className="w-10 h-10 sm:w-11 sm:h-11 object-contain"
+                                />
                             </motion.div>
                             <div className="ml-0 sm:ml-3">
                                 <h1 className="hidden lg:block text-lg sm:text-xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">WiseStudent</h1>
                                 <p className="hidden lg:block text-xs text-gray-600 font-semibold">{getDashboardLabel()}</p>
                             </div>
-                        </motion.div>
+                        
 
                         {/* Desktop Navigation */}
                         <nav className="hidden lg:flex items-center gap-2 xl:gap-3 flex-1 justify-center max-w-6xl overflow-x-auto scrollbar-hide">
@@ -573,7 +566,11 @@ const Navbar = () => {
                                     <div className="flex items-center justify-between p-4 border-b border-gray-200">
                                         <div className="flex items-center">
                                             <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg">
-                                                <Zap className="w-5 h-5" />
+                                                <img
+                                                    src="/icons/icon.png"
+                                                    alt="WiseStudent logo"
+                                                    className="w-5 h-5 object-contain"
+                                                />
                                             </div>
                                             <div className="ml-3">
                                                 <h2 className="text-lg font-semibold text-gray-900">WiseStudent</h2>

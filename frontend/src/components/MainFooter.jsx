@@ -7,7 +7,6 @@ import {
   Phone,
   MapPin,
   ArrowUp,
-  Zap,
 } from "lucide-react";
 
 const MainFooter = () => {
@@ -124,20 +123,13 @@ const MainFooter = () => {
             {/* Company Info & Newsletter */}
             <div className="space-y-6 lg:col-span-1">
               <div className="group">
-                <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg"
-                  animate={{
-                    boxShadow: [
-                      '0 4px 20px rgba(139, 92, 246, 0.3)',
-                      '0 4px 40px rgba(139, 92, 246, 0.5)',
-                      '0 4px 20px rgba(139, 92, 246, 0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <Zap className="w-8 h-8 text-white" />
-                </motion.div>
+                
+                  <img
+                    src="/icons/icon.png"
+                    alt="WiseStudent logo"
+                    className="w-20 h-20 object-contain mb-4"
+                  />
+
                 <h3 className="text-2xl font-black mb-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
                   WiseStudent
                 </h3>
