@@ -2977,42 +2977,60 @@ export const getClassMasteryByPillar = async (req, res) => {
     // Calculate date range based on timeRange
     const now = new Date();
     let startDate = new Date();
-    switch (timeRange) {
-      case 'week':
-        startDate.setDate(now.getDate() - 7);
-        break;
-      case 'month':
-        startDate.setMonth(now.getMonth() - 1);
-        break;
-      case 'semester':
-        startDate.setMonth(now.getMonth() - 6);
-        break;
-      case 'year':
-        startDate.setFullYear(now.getFullYear() - 1);
-        break;
-      default:
-        startDate.setDate(now.getDate() - 7);
+    if (timeRange && timeRange !== 'all') {
+      switch (timeRange) {
+        case 'week':
+          startDate.setDate(now.getDate() - 7);
+          break;
+        case 'month':
+          startDate.setMonth(now.getMonth() - 1);
+          break;
+        case 'semester':
+          startDate.setMonth(now.getMonth() - 6);
+          break;
+        case 'year':
+          startDate.setFullYear(now.getFullYear() - 1);
+          break;
+        default:
+          startDate.setDate(now.getDate() - 7);
+      }
     }
 
     // First get the classes assigned to this teacher
     let classQuery = {
-      tenantId,
       $or: [
         { 'sections.classTeacher': teacherId },
         { 'subjects.teachers': teacherId }
       ]
     };
 
+    if (!isLegacyUser && tenantId) {
+      classQuery.tenantId = tenantId;
+    } else if (isLegacyUser) {
+      classQuery.allowLegacy = true;
+    }
+
     // Filter by specific class if provided
     if (classId && classId !== 'all') {
       classQuery._id = classId;
     }
 
-    const assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
+    let assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
 
-    if (classIds.length === 0) {
+    if (classIds.length === 0 && (!classId || classId === 'all')) {
+      const fallbackQuery = { isActive: true };
+      if (!isLegacyUser && tenantId) {
+        fallbackQuery.tenantId = tenantId;
+      } else if (isLegacyUser) {
+        fallbackQuery.allowLegacy = true;
+      }
+      assignedClasses = await SchoolClass.find(fallbackQuery).select('_id').limit(10).lean();
+    }
+
+    const resolvedClassIds = (assignedClasses || []).map(cls => cls._id);
+    if (resolvedClassIds.length === 0) {
       return res.json({
         'Financial Literacy': 0,
         'Brain Health': 0,
@@ -3024,10 +3042,16 @@ export const getClassMasteryByPillar = async (req, res) => {
     }
 
     // Get students assigned to the teacher's classes
-    const schoolStudents = await SchoolStudent.find({
-      tenantId,
-      classId: { $in: classIds }
-    }).populate('userId', '_id').lean();
+    const studentQuery = {
+      classId: { $in: resolvedClassIds }
+    };
+    if (!isLegacyUser && tenantId) {
+      studentQuery.tenantId = tenantId;
+    }
+
+    const schoolStudents = await SchoolStudent.find(studentQuery)
+      .populate('userId', '_id')
+      .lean();
 
     const studentIds = schoolStudents
       .map(ss => ss.userId?._id)
@@ -3045,39 +3069,47 @@ export const getClassMasteryByPillar = async (req, res) => {
     }
 
     // Get game progress for all students within time range
-    const gameProgress = await UnifiedGameProgress.find({
-      userId: { $in: studentIds },
-      updatedAt: { $gte: startDate }
-    }).lean();
+    const progressQuery = {
+      userId: { $in: studentIds }
+    };
+    if (timeRange && timeRange !== 'all') {
+      progressQuery.$or = [
+        { updatedAt: { $gte: startDate } },
+        { lastPlayedAt: { $gte: startDate } }
+      ];
+    }
 
-    const mapGameTypeToPillar = (gameType) => {
+    const gameProgress = await UnifiedGameProgress.find(progressQuery).lean();
+
+    const mapGameTypeToPillarKey = (gameType) => {
       switch (gameType) {
         case 'finance':
         case 'financial':
-          return 'Financial Literacy';
+          return 'finance';
         case 'brain':
         case 'mental':
-          return 'Brain Health';
+          return 'brain';
         case 'uvls':
-          return 'UVLS';
+          return 'uvls';
         case 'dcos':
-          return 'Digital Citizenship & Online Safety';
+          return 'dcos';
         case 'moral':
-          return 'Moral Values';
+          return 'moral';
         case 'ai':
-          return 'AI for All';
+          return 'ai';
         case 'health-male':
-          return 'Health - Male';
+          return 'health-male';
         case 'health-female':
-          return 'Health - Female';
+          return 'health-female';
         case 'ehe':
-          return 'Entrepreneurship & Higher Education';
+          return 'ehe';
         case 'crgc':
         case 'civic-responsibility':
+          return 'crgc';
         case 'sustainability':
-          return 'Civic Responsibility & Global Citizenship';
+          return 'sustainability';
         default:
-          return 'General Education';
+          return null;
       }
     };
 
@@ -3092,39 +3124,45 @@ export const getClassMasteryByPillar = async (req, res) => {
       return 0;
     };
 
-    // Calculate mastery by pillar from actual progress data
-    const pillarNames = [
-      'Financial Literacy',
-      'Brain Health',
-      'UVLS',
-      'Digital Citizenship & Online Safety',
-      'Moral Values',
-      'AI for All',
-      'Health - Male',
-      'Health - Female',
-      'Entrepreneurship & Higher Education',
-      'Civic Responsibility & Global Citizenship',
-      'Sustainability'
+    // Calculate mastery by pillar based on total available games
+    const pillarDefinitions = [
+      { key: 'finance', name: 'Financial Literacy' },
+      { key: 'brain', name: 'Brain Health' },
+      { key: 'uvls', name: 'UVLS' },
+      { key: 'dcos', name: 'Digital Citizenship & Online Safety' },
+      { key: 'moral', name: 'Moral Values' },
+      { key: 'ai', name: 'AI for All' },
+      { key: 'health-male', name: 'Health - Male' },
+      { key: 'health-female', name: 'Health - Female' },
+      { key: 'ehe', name: 'Entrepreneurship & Higher Education' },
+      { key: 'crgc', name: 'Civic Responsibility & Global Citizenship' },
+      { key: 'sustainability', name: 'Sustainability' }
     ];
 
-    const pillarTotals = pillarNames.reduce((acc, pillar) => {
-      acc[pillar] = { total: 0, count: 0 };
+    const pillarGameCounts = await getAllPillarGameCounts(UnifiedGameProgress);
+    const studentCount = studentIds.length;
+
+    const pillarTotals = pillarDefinitions.reduce((acc, pillar) => {
+      acc[pillar.key] = { progressTotal: 0 };
       return acc;
     }, {});
 
     (gameProgress || []).forEach((game) => {
-      const pillar = mapGameTypeToPillar(game.gameType);
-      const progress = getProgressPercent(game);
-      if (!pillarTotals[pillar]) {
-        pillarTotals[pillar] = { total: 0, count: 0 };
+      const pillarKey = mapGameTypeToPillarKey(game.gameType);
+      if (!pillarKey || !pillarTotals[pillarKey]) {
+        return;
       }
-      pillarTotals[pillar].total += progress;
-      pillarTotals[pillar].count += 1;
+      const progress = getProgressPercent(game);
+      pillarTotals[pillarKey].progressTotal += progress;
     });
 
-    const classMastery = pillarNames.reduce((acc, pillar) => {
-      const data = pillarTotals[pillar];
-      acc[pillar] = data && data.count > 0 ? Math.round(data.total / data.count) : 0;
+    const classMastery = pillarDefinitions.reduce((acc, pillar) => {
+      const totalGames = pillarGameCounts[pillar.key] || 0;
+      const totalPossible = totalGames * studentCount * 100;
+      const progressTotal = pillarTotals[pillar.key]?.progressTotal || 0;
+      acc[pillar.name] = totalPossible > 0
+        ? Math.min(100, Math.round((progressTotal / totalPossible) * 1000) / 10)
+        : 0;
       return acc;
     }, {});
 

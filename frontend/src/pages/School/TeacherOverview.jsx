@@ -303,7 +303,7 @@ const TeacherOverview = () => {
           return { data: { tasks: [] } };
         }),
         api.get("/api/user/profile").catch(() => ({ data: null })),
-        api.get("/api/school/teacher/class-mastery").catch((err) => {
+        api.get("/api/school/teacher/class-mastery", { params: { timeRange: "all" } }).catch((err) => {
           console.error("Error fetching class mastery:", err);
           return { data: {} };
         }),
