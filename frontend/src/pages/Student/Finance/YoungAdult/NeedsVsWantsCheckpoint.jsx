@@ -1,0 +1,414 @@
+import React, { useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Trophy } from "lucide-react";
+import GameShell from "../GameShell";
+import useGameFeedback from "../../../../hooks/useGameFeedback";
+import { getGameDataById } from "../../../../utils/getGameData";
+
+const NEEDS_WANTS_CHECKPOINT_STAGES = [
+  {
+    id: 1,
+    prompt: "Which of these is a basic need for survival?",
+    options: [
+      {
+        id: "phone",
+        label: "Latest smartphone",
+        reflection: "While useful, smartphones are modern conveniences rather than survival necessities - basic communication can be achieved through simpler means.",
+        isCorrect: false,
+      },
+     
+      {
+        id: "streaming",
+        label: "Streaming service subscription",
+        reflection: "Entertainment services provide enjoyment but are not essential for basic survival or well-being.",
+        isCorrect: false,
+      },
+      {
+        id: "designer",
+        label: "Designer clothing",
+        reflection: "While clothing is necessary, designer brands represent wants rather than the basic need for protection from elements.",
+        isCorrect: false,
+      },
+       {
+        id: "shelter",
+        label: "Safe housing",
+        reflection: "Exactly! Shelter is a fundamental human need for protection, safety, and basic survival requirements.",
+        isCorrect: true,
+      },
+    ],
+    reward: 10,
+  },
+  {
+    id: 2,
+    prompt: "Which represents a genuine need rather than a want?",
+    options: [
+      {
+        id: "gaming",
+        label: "High-end gaming computer",
+        reflection: "Gaming equipment provides entertainment and recreation but isn't essential for basic functioning or survival.",
+        isCorrect: false,
+      },
+      {
+        id: "transportation",
+        label: "Reliable transportation to work",
+        reflection: "Perfect! Transportation to employment is essential for earning income and maintaining basic living standards.",
+        isCorrect: true,
+      },
+      {
+        id: "luxury",
+        label: "Luxury car upgrade",
+        reflection: "Vehicle upgrades represent wants for comfort or status rather than the basic need for functional transportation.",
+        isCorrect: false,
+      },
+      {
+        id: "vacation",
+        label: "International vacation",
+        reflection: "Travel provides enrichment and relaxation but isn't necessary for basic survival or daily functioning.",
+        isCorrect: false,
+      },
+    ],
+    reward: 10,
+  },
+  {
+    id: 3,
+    prompt: "Which expense category contains mostly wants?",
+    options: [
+      {
+        id: "utilities",
+        label: "Electricity and water bills",
+        reflection: "Utilities are essential services required for basic living conditions and health maintenance.",
+        isCorrect: false,
+      },
+     
+      {
+        id: "healthcare",
+        label: "Basic healthcare costs",
+        reflection: "Healthcare addresses fundamental physical and mental well-being needs rather than optional desires.",
+        isCorrect: false,
+      },
+       {
+        id: "entertainment",
+        label: "Dining out and entertainment",
+        reflection: "Exactly! These represent discretionary spending for enjoyment rather than fundamental survival requirements.",
+        isCorrect: true,
+      },
+      {
+        id: "groceries",
+        label: "Grocery shopping for meals",
+        reflection: "Food is a basic survival necessity, though the quality and type of food purchased can include both needs and wants.",
+        isCorrect: false,
+      },
+    ],
+    reward: 10,
+  },
+  {
+    id: 4,
+    prompt: "How should you prioritize when needs and wants conflict?",
+    options: [
+      {
+        id: "needs",
+        label: "Cover needs first, then wants",
+        reflection: "Perfect! This fundamental principle ensures survival and stability before allocating resources to discretionary spending.",
+        isCorrect: true,
+      },
+      {
+        id: "equal",
+        label: "Treat all expenses equally",
+        reflection: "Equal treatment often means neglecting essential needs or creating financial stress through inadequate planning.",
+        isCorrect: false,
+      },
+      
+      {
+        id: "wants",
+        label: "Satisfy wants when possible",
+        reflection: "Prioritizing wants can lead to neglected essentials and create serious consequences for health, housing, or employment.",
+        isCorrect: false,
+      },
+      {
+        id: "ignore",
+        label: "Ignore the distinction entirely",
+        reflection: "Ignoring the difference prevents effective budgeting and often leads to financial crisis when essential costs arise.",
+        isCorrect: false,
+      },
+    ],
+    reward: 10,
+  },
+  {
+    id: 5,
+    prompt: "What's the benefit of clearly distinguishing needs from wants?",
+    options: [
+      {
+        id: "restriction",
+        label: "Creates unnecessary financial restrictions",
+        reflection: "Actually, clear distinction increases freedom by ensuring essentials are covered and enabling informed discretionary choices.",
+        isCorrect: false,
+      },
+      
+      {
+        id: "stress",
+        label: "Increases spending anxiety",
+        reflection: "Clear categorization actually reduces anxiety by providing framework for confident financial decision-making.",
+        isCorrect: false,
+      },
+      {
+        id: "clarity",
+        label: "Enables conscious spending decisions",
+        reflection: "Exactly! Understanding this difference empowers intentional resource allocation and prevents regrettable financial choices.",
+        isCorrect: true,
+      },
+      {
+        id: "complexity",
+        label: "Makes budgeting overly complicated",
+        reflection: "This fundamental distinction simplifies rather than complicates budgeting by providing clear priority framework.",
+        isCorrect: false,
+      },
+    ],
+    reward: 10,
+  },
+];
+
+const totalStages = NEEDS_WANTS_CHECKPOINT_STAGES.length;
+const successThreshold = totalStages;
+
+const NeedsVsWantsCheckpoint = () => {
+  const location = useLocation();
+  const gameId = "finance-young-adult-40";
+  const gameData = getGameDataById(gameId);
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 10;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 10;
+  const totalXp = gameData?.xp || location.state?.totalXp || 20;
+  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+
+  const [currentStage, setCurrentStage] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [history, setHistory] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [selectedReflection, setSelectedReflection] = useState(null);
+  const [canProceed, setCanProceed] = useState(false);
+
+  const reflectionPrompts = useMemo(
+    () => [
+      "How can clearly distinguishing needs from wants actually increase your financial freedom and life satisfaction?",
+      "What system helps you consistently make conscious spending trade-offs that align with your values and goals?",
+    ],
+    []
+  );
+
+  const handleChoice = (option) => {
+    if (selectedOption || showResult) return;
+
+    resetFeedback();
+    const currentStageData = NEEDS_WANTS_CHECKPOINT_STAGES[currentStage];
+    const updatedHistory = [
+      ...history,
+      { stageId: currentStageData.id, isCorrect: option.isCorrect },
+    ];
+    setHistory(updatedHistory);
+    setSelectedOption(option.id);
+    setSelectedReflection(option.reflection);
+    setShowFeedback(true);
+    setCanProceed(false);
+    
+    if (option.isCorrect) {
+      setCoins(prevCoins => prevCoins + 1);
+    }
+    
+    setTimeout(() => {
+      setCanProceed(true);
+    }, 1500);
+    
+    if (currentStage === totalStages - 1) {
+      setTimeout(() => {
+        const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
+        const passed = correctCount === successThreshold;
+        setFinalScore(correctCount);
+        setCoins(passed ? totalCoins : 0);
+        setShowResult(true);
+      }, 2500);
+    }
+    
+    if (option.isCorrect) {
+      showCorrectAnswerFeedback(currentStageData.reward, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
+    }
+  };
+
+  const handleRetry = () => {
+    resetFeedback();
+    setCurrentStage(0);
+    setHistory([]);
+    setSelectedOption(null);
+    setCoins(0);
+    setFinalScore(0);
+    setShowResult(false);
+  };
+
+  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
+  const stage = NEEDS_WANTS_CHECKPOINT_STAGES[Math.min(currentStage, totalStages - 1)];
+  const hasPassed = finalScore === successThreshold;
+
+  return (
+    <GameShell
+      title="Needs vs Wants Checkpoint"
+      subtitle={subtitle}
+      score={coins}
+      coins={coins}
+      coinsPerLevel={coinsPerLevel}
+      totalCoins={totalCoins}
+      totalXp={totalXp}
+      maxScore={NEEDS_WANTS_CHECKPOINT_STAGES.length}
+      currentLevel={Math.min(currentStage + 1, NEEDS_WANTS_CHECKPOINT_STAGES.length)}
+      totalLevels={NEEDS_WANTS_CHECKPOINT_STAGES.length}
+      gameId={gameId}
+      gameType="finance"
+      showGameOver={showResult}
+      showConfetti={showResult && hasPassed}
+      shouldSubmitGameCompletion={hasPassed}
+      flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
+    >
+      <div className="space-y-5 text-white">
+        <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
+          <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
+            <span>Scenario</span>
+            <span>Classification Challenge</span>
+          </div>
+          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <div className="grid grid-cols-2 gap-4">
+            {stage.options.map((option) => {
+              const isSelected = selectedOption === option.id;
+              return (
+                <button
+                  key={option.id}
+                  onClick={() => handleChoice(option)}
+                  disabled={!!selectedOption}
+                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
+                      ? option.isCorrect
+                        ? "border-emerald-400 bg-emerald-500/20"
+                        : "border-rose-400 bg-rose-500/10"
+                      : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
+                    }`}
+                >
+                  <div className="flex justify-between items-center mb-2 text-sm text-white/70">
+                    <span>Choice {option.id.toUpperCase()}</span>
+                  </div>
+                  <p className="text-white font-semibold">{option.label}</p>
+                </button>
+              );
+            })}
+          </div>
+          {(showResult || showFeedback) && (
+            <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
+              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              {selectedReflection && (
+                <div className="max-h-24 overflow-y-auto pr-2">
+                  <p className="text-sm text-white/90">{selectedReflection}</p>
+                </div>
+              )}
+              {showFeedback && !showResult && (
+                <div className="mt-4 flex justify-center">
+                  {canProceed ? (
+                    <button
+                      onClick={() => {
+                        if (currentStage < totalStages - 1) {
+                          setCurrentStage((prev) => prev + 1);
+                          setSelectedOption(null);
+                          setSelectedReflection(null);
+                          setShowFeedback(false);
+                          setCanProceed(false);
+                        }
+                      }}
+                      className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                    >
+                      Continue
+                    </button>
+                  ) : (
+                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                  )}
+                </div>
+              )}
+              {!showResult && currentStage === totalStages - 1 && canProceed && (
+                <div className="mt-4 flex justify-center">
+                  <button
+                    onClick={() => {
+                      const updatedHistory = [
+                        ...history,
+                        { stageId: NEEDS_WANTS_CHECKPOINT_STAGES[currentStage].id, isCorrect: NEEDS_WANTS_CHECKPOINT_STAGES[currentStage].options.find(opt => opt.id === selectedOption)?.isCorrect },
+                      ];
+                      const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
+                      const passed = correctCount === successThreshold;
+                      setFinalScore(correctCount);
+                      setCoins(passed ? totalCoins : 0);
+                      setShowResult(true);
+                    }}
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                  >
+                  Finish
+                  </button>
+                </div>
+              )}
+              {showResult && (
+                <>
+                  <ul className="text-sm list-disc list-inside space-y-1">
+                    {reflectionPrompts.map((prompt) => (
+                      <li key={prompt}>{prompt}</li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-white/70">
+                    Skill unlocked: <strong>Needs-wants classification mastery</strong>
+                  </p>
+                  {!hasPassed && (
+                    <p className="text-xs text-amber-300">
+                      Answer all {totalStages} choices correctly to earn the full reward.
+                    </p>
+                  )}
+                  {!hasPassed && (
+                    <button
+                      onClick={handleRetry}
+                      className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+                    >
+                      Try Again
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+         
+        </div>
+        {showResult && (
+          <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
+            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <ul className="text-sm list-disc list-inside space-y-1">
+              {reflectionPrompts.map((prompt) => (
+                <li key={prompt}>{prompt}</li>
+              ))}
+            </ul>
+            <p className="text-sm text-white/70">
+              Skill unlocked: <strong>Needs-wants classification mastery</strong>
+            </p>
+            {!hasPassed && (
+              <p className="text-xs text-amber-300">
+                Answer all {totalStages} choices correctly to earn the full reward.
+              </p>
+            )}
+            {!hasPassed && (
+              <button
+                onClick={handleRetry}
+                className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+              >
+                Try Again
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    </GameShell>
+  );
+};
+
+export default NeedsVsWantsCheckpoint;

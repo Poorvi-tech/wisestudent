@@ -381,9 +381,7 @@ const FixedVsVariableExpenses = () => {
               )}
             </div>
           )}
-          <div className="mt-6 text-right text-sm text-white/70">
-            Coins collected: <strong>{coins}</strong>
-          </div>
+         
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
