@@ -51,137 +51,141 @@ const BiasInDataQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "If AI is only trained on city photos, will it work well in villages?",
-      emoji: "🏙️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for object detection", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! AI needs diverse data from both cities and villages to work fairly everywhere. Without rural training data, the AI might misclassify village scenes, crops, or rural infrastructure."
-    },
-    {
-      id: 2,
-      text: "If a voice AI is trained only on male voices, can it understand female voices well?",
-      emoji: "🎙️👩",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "✔️", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "❌", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with high pitch settings", 
-          emoji: "📈",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Voice AI becomes biased if it's not trained on diverse voices including different genders, ages, accents, and speaking styles. This can lead to higher error rates for underrepresented groups."
-    },
-    {
-      id: 3,
-      text: "An AI trained mostly on English text may struggle with Hindi. True or False?",
-      emoji: "🎃",
-      options: [
-        { 
-          id: 1, 
-          text: "True", 
-          emoji: "❓",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "False", 
-          emoji: "❓",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for complex sentences", 
-          emoji: "📝", 
-          isCorrect: false
-        }
-      ],
-      explanation: "True! AI trained predominantly on one language often struggles with others due to different grammatical structures, vocabularies, and cultural contexts. Multilingual training is essential for global AI applications."
-    },
-    {
-      id: 4,
-      text: "If an AI sees more light-skinned faces, will it perform equally on dark-skinned faces?",
-      emoji: "👩🏽‍🦱👨🏻‍🦰",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only in poor lighting", 
-          emoji: "💡", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Facial recognition AI trained primarily on lighter skin tones often performs poorly on darker skin due to insufficient representation in training data. This has led to significant real-world discrimination issues."
-    },
-    {
-      id: 5,
-      text: "How can we make AI fairer?",
-      emoji: "⚖️🤖",
-      options: [
-        { 
-          id: 1, 
-          text: "Use diverse data", 
-          emoji: "🌍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Use only rich-country data", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Increase processing speed", 
-          emoji: "⚡", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Use diverse data! Including varied demographics, cultures, languages, and contexts in training datasets helps reduce bias and improves AI fairness and accuracy across different populations."
-    }
-  ];
+  {
+    id: 1,
+    text: "A farming app works well in cities but gives wrong advice in villages. What is the main reason?",
+    emoji: "🌾",
+    options: [
+      
+      {
+        id: "internet-speed",
+        text: "Villages have slower internet",
+        emoji: "📶",
+        isCorrect: false
+      },
+      {
+        id: "user-error",
+        text: "Farmers enter data incorrectly",
+        emoji: "🧑‍🌾",
+        isCorrect: false
+      },
+      {
+        id: "city-data",
+        text: "The AI learns mostly from city data",
+        emoji: "🏙️",
+        isCorrect: true
+      },
+    ],
+    explanation: "When AI is trained mostly on city environments, it fails to understand rural conditions properly."
+  },
+  {
+    id: 2,
+    text: "A voice assistant struggles to understand women more than men. What caused this issue?",
+    emoji: "🎤",
+    options: [
+      {
+        id: "voice-bias",
+        text: "Training data includes fewer female voices",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "device-problem",
+        text: "Microphones work differently for women",
+        emoji: "🎧",
+        isCorrect: false
+      },
+      {
+        id: "language-choice",
+        text: "Women use more complex words",
+        emoji: "🗣️",
+        isCorrect: false
+      }
+    ],
+    explanation: "Bias appears when certain voice types are underrepresented in training data."
+  },
+  {
+    id: 3,
+    text: "A job-matching AI suggests tech jobs mostly to men. What is the most likely reason?",
+    emoji: "💼",
+    options: [
+      
+      {
+        id: "ai-opinion",
+        text: "AI prefers men for technical work",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "past-data",
+        text: "Historical data shows more men in tech roles",
+        emoji: "📂",
+        isCorrect: true
+      },
+      {
+        id: "skill-gap",
+        text: "Women lack technical skills",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI reflects patterns in past data, even if those patterns are unfair."
+  },
+  {
+    id: 4,
+    text: "A face recognition system works poorly on darker skin tones. What should be improved?",
+    emoji: "📸",
+    options: [
+      {
+        id: "data-balance",
+        text: "Include more diverse face images",
+        emoji: "🌍",
+        isCorrect: true
+      },
+      {
+        id: "camera-quality",
+        text: "Use higher resolution cameras",
+        emoji: "📷",
+        isCorrect: false
+      },
+      {
+        id: "user-training",
+        text: "Teach users to stand in better lighting",
+        emoji: "💡",
+        isCorrect: false
+      }
+    ],
+    explanation: "Fair AI needs balanced representation of all skin tones in training data."
+  },
+  {
+    id: 5,
+    text: "A translation AI gives poor results for regional languages. What is the best fix?",
+    emoji: "🌐",
+    options: [
+      
+      {
+        id: "faster-ai",
+        text: "Increase AI processing speed",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "english-focus",
+        text: "Focus only on global languages",
+        emoji: "🇬🇧",
+        isCorrect: false
+      },
+      {
+        id: "more-languages",
+        text: "Train it on local and regional language data",
+        emoji: "📚",
+        isCorrect: true
+      },
+    ],
+    explanation: "Language bias happens when AI ignores regional and minority languages."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -210,7 +214,7 @@ const BiasInDataQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

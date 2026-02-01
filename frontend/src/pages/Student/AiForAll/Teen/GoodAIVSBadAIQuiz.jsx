@@ -51,137 +51,141 @@ const GoodAIVSBadAIQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "AI used for helping hospitals = Good AI?",
-      emoji: "🏥",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only with doctor supervision", 
-          emoji: "👨‍⚕️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI used in hospitals can improve diagnostics, predict patient deterioration, optimize treatment plans, and even assist in surgeries. This is considered Good AI because it directly benefits human health and wellbeing."
-    },
-    {
-      id: 2,
-      text: "AI for generating fake news = Good AI?",
-      emoji: "📰",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for satire", 
-          emoji: "😂", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! AI that generates fake news is considered Bad AI because it spreads misinformation, manipulates public opinion, and can cause real-world harm by eroding trust in legitimate sources."
-    },
-    {
-      id: 3,
-      text: "AI for autonomous car safety features = Good AI?",
-      emoji: "🚗",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only in luxury cars", 
-          emoji: "💎", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI in autonomous vehicles that focuses on safety features like collision avoidance, pedestrian detection, and adaptive cruise control is considered Good AI because it aims to reduce accidents and save lives."
-    },
-    {
-      id: 4,
-      text: "AI for spam email filtering = Good AI?",
-      emoji: "📧",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for business emails", 
-          emoji: "💼", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI-powered spam filters are considered Good AI because they protect users from fraud, malware, and unwanted solicitations, improving digital safety and productivity."
-    },
-    {
-      id: 5,
-      text: "AI used for stealing personal data = Good AI?",
-      emoji: "💻",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with consent", 
-          emoji: "📜", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! AI used for stealing personal data is clearly Bad AI because it violates privacy rights, enables identity theft, and can be used for fraudulent purposes without the victim's knowledge or consent."
-    }
-  ];
+  {
+    id: 1,
+    text: "An AI system helps doctors detect cancer earlier from scans. How should this AI be classified?",
+    emoji: "🏥",
+    options: [
+     
+      {
+        id: "neutral",
+        text: "Just a machine with no impact",
+        emoji: "⚙️",
+        isCorrect: false
+      },
+      {
+        id: "dangerous",
+        text: "Risky because machines replace humans",
+        emoji: "⚠️",
+        isCorrect: false
+      },
+       {
+        id: "beneficial",
+        text: "Helpful AI improving human health",
+        emoji: "💚",
+        isCorrect: true
+      },
+    ],
+    explanation: "This is Good AI because it supports doctors, improves accuracy, and saves lives without replacing human decision-making."
+  },
+  {
+    id: 2,
+    text: "An AI creates realistic fake videos of people saying things they never said. What makes this AI harmful?",
+    emoji: "🎥",
+    options: [
+      {
+        id: "misuse",
+        text: "It spreads lies and manipulates people",
+        emoji: "🚨",
+        isCorrect: true
+      },
+      {
+        id: "tech",
+        text: "It uses advanced technology",
+        emoji: "🧠",
+        isCorrect: false
+      },
+      {
+        id: "speed",
+        text: "It works very fast",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ],
+    explanation: "This is Bad AI because it can deceive people, damage reputations, and influence society in harmful ways."
+  },
+  {
+    id: 3,
+    text: "An AI in cars automatically applies brakes to avoid accidents. Why is this considered responsible AI?",
+    emoji: "🚗",
+    options: [
+      
+      {
+        id: "luxury",
+        text: "It makes cars more expensive",
+        emoji: "💎",
+        isCorrect: false
+      },
+      {
+        id: "control",
+        text: "It removes the driver completely",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "safety",
+        text: "It reduces injuries and saves lives",
+        emoji: "🛑",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI focused on safety and accident prevention is Good AI because it protects people without abusing power."
+  },
+  {
+    id: 4,
+    text: "An AI tracks users secretly to sell their data to advertisers. What rule does this AI break?",
+    emoji: "🔍",
+    options: [
+      {
+        id: "privacy",
+        text: "Violates user privacy and consent",
+        emoji: "🔒",
+        isCorrect: true
+      },
+      {
+        id: "design",
+        text: "Uses poor interface design",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "speed",
+        text: "Collects data too slowly",
+        emoji: "🐢",
+        isCorrect: false
+      }
+    ],
+    explanation: "Bad AI ignores consent and privacy, which are core principles of ethical technology."
+  },
+  {
+    id: 5,
+    text: "An AI helps students learn by explaining mistakes and encouraging practice. Why is this Good AI?",
+    emoji: "📚",
+    options: [
+      
+      {
+        id: "replace",
+        text: "Replaces teachers completely",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "empower",
+        text: "Supports learning without cheating",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "shortcut",
+        text: "Gives answers without thinking",
+        emoji: "🧠",
+        isCorrect: false
+      }
+    ],
+    explanation: "Good AI empowers users to grow skills and think better, instead of doing the work for them."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -210,7 +214,7 @@ const GoodAIVSBadAIQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

@@ -23,9 +23,9 @@ const questions = [
     id: 2,
     text: "What should you do when you see an injured animal?",
     options: [
-      { id: 'a', text: " Help it", emoji: "😣", isCorrect: true },
       { id: 'b', text: " Leave it", emoji: "🚶", isCorrect: false },
       { id: 'c', text: " Take it home", emoji: "🏠", isCorrect: false },
+      { id: 'a', text: " Help it", emoji: "😣", isCorrect: true },
       { id: 'd', text: " Ignore it", emoji: "😶", isCorrect: false }
     ]
   },
@@ -43,8 +43,8 @@ const questions = [
     id: 4,
     text: "What's the best way to feed wild animals?",
     options: [
-      { id: 'a', text: " Don't feed them", emoji: "🚫", isCorrect: true },
       { id: 'b', text: " Give them treats", emoji: "🍪", isCorrect: false },
+      { id: 'a', text: " Don't feed them", emoji: "🚫", isCorrect: true },
       { id: 'c', text: " Feed daily", emoji: "🍽️", isCorrect: false },
       { id: 'd', text: " Share food", emoji: "🍎", isCorrect: false }
     ]

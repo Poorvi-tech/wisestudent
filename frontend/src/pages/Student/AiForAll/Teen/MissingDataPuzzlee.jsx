@@ -33,10 +33,10 @@ const MissingDataPuzzlee = () => {
 
   // Possible values to fill in missing data (right side) - 6 items, rearranged to split matches
   const rightItems = [
-    { id: 1, name: "10", emoji: "🔢", },
+    { id: 1, name: "10", emoji: "1️⃣0️⃣", },
     { id: 2, name: "$1000", emoji: "💰", },
-    { id: 3, name: "25°C", emoji: "🌡️", },
-    { id: 4, name: "25", emoji: "🔢", },
+    { id: 3, name: "25°C", emoji: "©️", },
+    { id: 4, name: "25", emoji: "2️⃣5️⃣", },
     { id: 5, name: "B", emoji: "📊", },
   ];
 

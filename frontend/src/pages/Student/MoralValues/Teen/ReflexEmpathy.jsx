@@ -27,62 +27,63 @@ const ReflexEmpathy = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Your classmate drops their books. What do you do? 📚",
-      correctAnswer: "Understand",
-      options: [
-        { text: "Understand", isCorrect: true, emoji: "💞" },
-        { text: "Ignore", isCorrect: false, emoji: "🚫" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 2,
-      question: "A new student sits alone. What do you do? 😔",
-      correctAnswer: "Understand",
-      options: [
-        { text: "Ignore", isCorrect: false, emoji: "🚫" },
-        { text: "Understand", isCorrect: true, emoji: "💞" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Someone is upset after losing a game. You... 😢",
-      correctAnswer: "Understand",
-      options: [
-        { text: "Laugh", isCorrect: false, emoji: "😂" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" },
-        { text: "Understand", isCorrect: true, emoji: "💞" },
-        { text: "Ignore", isCorrect: false, emoji: "🚫" }
-      ]
-    },
-    {
-      id: 4,
-      question: "A friend shares their problem, and you laugh. 😂",
-      correctAnswer: "Ignore",
-      options: [
-        { text: "Ignore", isCorrect: true, emoji: "🚫" },
-        { text: "Understand", isCorrect: false, emoji: "💞" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Your teammate makes a mistake. You shout at them. 😡",
-      correctAnswer: "Ignore",
-      options: [
-        { text: "Laugh", isCorrect: false, emoji: "😂" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" },
-        { text: "Understand", isCorrect: false, emoji: "💞" },
-        { text: "Ignore", isCorrect: true, emoji: "🚫" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Your friend looks stressed before an exam. What’s the best response? 📘",
+    correctAnswer: "Offer encouragement",
+    options: [
+      { text: "Tell them it’s easy", isCorrect: false, emoji: "😏" },
+      { text: "Change the topic", isCorrect: false, emoji: "🔄" },
+      { text: "Ignore their stress", isCorrect: false, emoji: "🙈" },
+      { text: "Offer encouragement", isCorrect: true, emoji: "🤝" },
+    ]
+  },
+  {
+    id: 2,
+    question: "A classmate is being teased online. What should you do? 💬",
+    correctAnswer: "Stand up for them",
+    options: [
+      { text: "Join the teasing", isCorrect: false, emoji: "😈" },
+      { text: "Stand up for them", isCorrect: true, emoji: "🛡️" },
+      { text: "Stay silent", isCorrect: false, emoji: "🤐" },
+      { text: "Forward the messages", isCorrect: false, emoji: "📤" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your sibling breaks something important by mistake. What’s empathetic? 🏠",
+    correctAnswer: "Stay calm and talk",
+    options: [
+      { text: "Yell at them", isCorrect: false, emoji: "😡" },
+      { text: "Blame them loudly", isCorrect: false, emoji: "📢" },
+      { text: "Stay calm and talk", isCorrect: true, emoji: "🧠" },
+      { text: "Give silent treatment", isCorrect: false, emoji: "❄️" }
+    ]
+  },
+  {
+    id: 4,
+    question: "A teammate fails during a group project. What’s the right reflex? 🧩",
+    correctAnswer: "Help fix the mistake",
+    options: [
+      { text: "Help fix the mistake", isCorrect: true, emoji: "🛠️" },
+      { text: "Complain to others", isCorrect: false, emoji: "🗣️" },
+      { text: "Blame them", isCorrect: false, emoji: "👉" },
+      { text: "Quit the group", isCorrect: false, emoji: "🚪" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Someone admits they’re feeling lonely. What should you do? 💙",
+    correctAnswer: "Listen and be there",
+    options: [
+      { text: "Change the subject", isCorrect: false, emoji: "🔄" },
+      { text: "Make a joke", isCorrect: false, emoji: "😂" },
+      { text: "Listen and be there", isCorrect: true, emoji: "👂" },
+      { text: "Say it’s not serious", isCorrect: false, emoji: "🙄" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

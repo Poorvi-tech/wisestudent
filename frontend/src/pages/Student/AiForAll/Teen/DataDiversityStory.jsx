@@ -60,7 +60,7 @@ const DataDiversityStory = () => {
         { 
           id: "diverse", 
           text: "Add diverse data", 
-          emoji: "👦", 
+          emoji: "📊", 
           
           isCorrect: true
         },
@@ -172,7 +172,7 @@ const DataDiversityStory = () => {
         { 
           id: "samples", 
           text: "Add diverse samples", 
-          emoji: "👩", 
+          emoji: "🌱", 
           isCorrect: true
         },
       ]

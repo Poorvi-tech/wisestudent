@@ -24,67 +24,68 @@ const ReflexCareerAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Scholarship",
-      emoji: "💼",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Good career concept", isCorrect: true },
-        { text: "Drop Out Too Early", isCorrect: false },
-        { text: "Avoid Learning", isCorrect: false },
-        { text: "No Planning", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Further Education",
-      emoji: "🎓",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Avoid Learning", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "No Skills Needed", isCorrect: false },
-        { text: "Stagnation", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Skill Development",
-      emoji: "🔧",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Good career concept", isCorrect: true },
-        { text: "No Skills Needed", isCorrect: false },
-        { text: "Drop Out Too Early", isCorrect: false },
-        { text: "No Planning", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Career Growth",
-      emoji: "📈",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Stagnation", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "Avoid Learning", isCorrect: false },
-        { text: "Drop Out Too Early", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Goal Setting",
-      emoji: "🎯",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "No Planning", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "Avoid Learning", isCorrect: false },
-        { text: "No Skills Needed", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Scholarship",
+    emoji: "🎒",
+    question: "A student gets a scholarship offer. What should they do?",
+    options: [
+      { text: "Ignore it completely", isCorrect: false },
+      { text: "Quit school immediately", isCorrect: false },
+      { text: "Spend time without learning", isCorrect: false },
+      { text: "Use it to continue studying", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    concept: "Further Education",
+    emoji: "🎓",
+    question: "After finishing school, what helps build a better future?",
+    options: [
+      { text: "Stopping learning forever", isCorrect: false },
+      { text: "Avoiding new subjects", isCorrect: false },
+      { text: "Learning more in college or courses", isCorrect: true },
+      { text: "Doing nothing to improve skills", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Skill Development",
+    emoji: "🔧",
+    question: "What should a child do to become good at a job someday?",
+    options: [
+      { text: "Say skills are not important", isCorrect: false },
+      { text: "Practice and learn new skills", isCorrect: true },
+      { text: "Give up when things feel hard", isCorrect: false },
+      { text: "Avoid trying new things", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    concept: "Career Growth",
+    emoji: "📈",
+    question: "How can someone grow in their career over time?",
+    options: [
+      { text: "Keep learning and improving", isCorrect: true },
+      { text: "Stay the same forever", isCorrect: false },
+      { text: "Refuse to learn anything new", isCorrect: false },
+      { text: "Stop putting in effort", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Goal Setting",
+    emoji: "🎯",
+    question: "Why is setting goals important for the future?",
+    options: [
+      { text: "It makes life more confusing", isCorrect: false },
+      { text: "It stops people from learning", isCorrect: false },
+      { text: "It removes the need to plan", isCorrect: false },
+      { text: "It helps plan what to learn and do", isCorrect: true },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

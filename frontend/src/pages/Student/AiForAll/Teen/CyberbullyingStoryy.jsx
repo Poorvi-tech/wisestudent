@@ -53,131 +53,131 @@ const CyberbullyingStoryy = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "A robot posts a mean comment about your classmate online. What should you do?",
-      options: [
+  {
+    id: 1,
+    text: "A bot posts an insulting comment about your classmate on a public post. What’s the BEST first step?",
+    options: [
+      
+      {
+        id: "like",
+        text: "Like the comment",
+        emoji: "👍",
+        isCorrect: false
+      },
+      {
+        id: "share",
+        text: "Share it with friends",
+        emoji: "📤",
+        isCorrect: false
+      },
+      {
+        id: "support",
+        text: "Support your classmate privately",
+        emoji: "🤝",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "A robot keeps sending mean messages to you in private chat. What should you do?",
+    options: [
+      {
+        id: "block",
+        text: "Block the account",
+        emoji: "🚫",
+        isCorrect: true
+      },
+      {
+        id: "reply",
+        text: "Reply angrily",
+        emoji: "😡",
+        isCorrect: false
+      },
+      {
+        id: "continue",
+        text: "Keep chatting",
+        emoji: "💬",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "In a gaming chat, a bot starts bullying another player repeatedly. What’s the most responsible action?",
+    options: [
+     
+      {
+        id: "join",
+        text: "Join the jokes",
+        emoji: "😂",
+        isCorrect: false
+      },
+       {
+        id: "reportGame",
+        text: "Report it to game moderators",
+        emoji: "🎮",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Ignore everything",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "A bot spreads fake rumors about a student in your school group chat. What should you do?",
+    options: [
+      {
+        id: "correct",
+        text: "Speak up and say it’s not true",
+        emoji: "🗣️",
+        isCorrect: true
+      },
+      {
+        id: "forward",
+        text: "Forward the rumor",
+        emoji: "📤",
+        isCorrect: false
+      },
+      {
+        id: "laugh",
+        text: "Laugh along",
+        emoji: "🤣",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "A bot targets many teens with harmful messages across a platform. What should a teen do NEXT?",
+    options: [
+      
+      {
+        id: "fight",
+        text: "Fight back online",
+        emoji: "⚔️",
+        isCorrect: false
+      },
+      {
+        id: "save",
+        text: "Save messages but do nothing",
+        emoji: "📁",
+        isCorrect: false
+      },
+      {
+        id: "tellAdult",
+        text: "Tell a trusted adult or teacher",
+        emoji: "🧑‍🏫",
+        isCorrect: true
+      },
+    ]
+  }
+];
 
-        { 
-          id: "like", 
-          text: "Like the post", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        },
-                { 
-          id: "report", 
-          text: "Report the post", 
-          emoji: "📣", 
-          isCorrect: true
-        },
-        { 
-          id: "share", 
-          text: "Ignore and share it", 
-          emoji: "📤", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "The robot spreads rumors about a friend. How should you act?",
-      options: [
-        { 
-          id: "report", 
-          text: "Report the robot", 
-          emoji: "📣", 
-          isCorrect: true
-        },
-        { 
-          id: "forward", 
-          text: "Forward the rumors", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          id: "laugh", 
-          text: "Laugh at it", 
-          emoji: "😂", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You see a robot tagging someone in hurtful messages. Your action?",
-      options: [
-        
-        { 
-          id: "join", 
-          text: "Join the bullying", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: "platform", 
-          text: "Report to platform", 
-          emoji: "📣", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Robot posts a fake negative review about your friend. What do you do?",
-      options: [
-        
-        { 
-          id: "comment", 
-          text: "Comment negatively too", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        { 
-          id: "share", 
-          text: "Share to others", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          id: "report", 
-          text: "Report the post", 
-          emoji: "📣", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Robot sends harmful messages to multiple users. How should a teen respond?",
-      options: [
-        { 
-          id: "report", 
-          text: "Report the robot", 
-          emoji: "📣", 
-          isCorrect: true
-        },
-        { 
-          id: "copy", 
-          text: "Copy the messages", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          id: "react", 
-          text: "React angrily", 
-          emoji: "😡", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

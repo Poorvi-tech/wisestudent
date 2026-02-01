@@ -24,67 +24,68 @@ const ReflexSkillCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      skill: "Creativity",
-      emoji: "💡",
-      correctAnswer: "Good skill",
-      options: [
-        { text: "Good skill", isCorrect: true },
-        { text: "Bad habit", isCorrect: false },
-        { text: "Unimportant trait", isCorrect: false },
-        { text: "Wasteful behavior", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      skill: "Teamwork",
-      emoji: "🤝",
-      correctAnswer: "Good skill",
-      options: [
-        { text: "Isolating yourself", isCorrect: false },
-        { text: "Good skill", isCorrect: true },
-        { text: "Being selfish", isCorrect: false },
-        { text: "Ignoring others", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      skill: "Problem-solving",
-      emoji: "🧩",
-      correctAnswer: "Good skill",
-      options: [
-        { text: "Giving up easily", isCorrect: false },
-        { text: "Avoiding challenges", isCorrect: false },
-        { text: "Good skill", isCorrect: true },
-        { text: "Blaming others", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      skill: "Communication",
-      emoji: "💬",
-      correctAnswer: "Good skill",
-      options: [
-        { text: "Staying silent", isCorrect: false },
-        { text: "Spreading rumors", isCorrect: false },
-        { text: "Good skill", isCorrect: true },
-        { text: "Interrupting others", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      skill: "Perseverance",
-      emoji: "💪",
-      correctAnswer: "Good skill",
-      options: [
-        { text: "Quitting when difficult", isCorrect: false },
-        { text: "Giving up easily", isCorrect: false },
-        { text: "Avoiding effort", isCorrect: false },
-        { text: "Good skill", isCorrect: true },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    skill: "Creativity",
+    emoji: "💡",
+    question: "You want to design a colorful school poster for a competition. What is the best approach?",
+    options: [
+      { text: "Think of unique ideas and try different designs", isCorrect: true },
+      { text: "Copy someone else's poster exactly", isCorrect: false },
+      { text: "Leave it blank and do nothing", isCorrect: false },
+      { text: "Use the same old template from last year", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    skill: "Teamwork",
+    emoji: "🤝",
+    question: "Your team is building a small garden in school. How should you behave?",
+    options: [
+      { text: "Do everything alone and ignore others", isCorrect: false },
+      { text: "Take all the credit and not share tasks", isCorrect: false },
+      { text: "Refuse to cooperate and do nothing", isCorrect: false },
+      { text: "Listen to everyone and help each other", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    skill: "Problem-solving",
+    emoji: "🧩",
+    question: "A toy you built at home isn’t working properly. What should you do?",
+    options: [
+      { text: "Throw it away immediately", isCorrect: false },
+      { text: "Blame others for it not working", isCorrect: false },
+      { text: "Think of ways to fix it step by step", isCorrect: true },
+      { text: "Ignore the problem and stop playing", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    skill: "Communication",
+    emoji: "💬",
+    question: "Your friend feels sad and wants to talk. What is the best way to respond?",
+    options: [
+      { text: "Interrupt and talk about yourself", isCorrect: false },
+      { text: "Listen carefully and share kind words", isCorrect: true },
+      { text: "Ignore them completely", isCorrect: false },
+      { text: "Spread rumors about their feelings", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    skill: "Perseverance",
+    emoji: "💪",
+    question: "You are learning to ride a bicycle but keep falling. What should you do?",
+    options: [
+      { text: "Keep practicing and try again patiently", isCorrect: true },
+      { text: "Give up after one try", isCorrect: false },
+      { text: "Avoid learning to ride forever", isCorrect: false },
+      { text: "Stop and complain to others", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

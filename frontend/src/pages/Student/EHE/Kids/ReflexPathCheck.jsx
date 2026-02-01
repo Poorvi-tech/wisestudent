@@ -24,67 +24,68 @@ const ReflexPathCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Study After School",
-      emoji: "🎓",
-      correctAnswer: "Good path concept",
-      options: [
-        { text: "Good path concept", isCorrect: true },
-        { text: "No Learning Forever", isCorrect: false },
-        { text: "Stop Learning Early", isCorrect: false },
-        { text: "No Future Planning", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Continuous Education",
-      emoji: "📚",
-      correctAnswer: "Good path concept",
-      options: [
-        { text: "Stop Learning Early", isCorrect: false },
-        { text: "Good path concept", isCorrect: true },
-        { text: "No Direction", isCorrect: false },
-        { text: "Avoid All Skills", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Skill Development",
-      emoji: "🔧",
-      correctAnswer: "Good path concept",
-      options: [
-        { text: "Avoid All Skills", isCorrect: false },
-        { text: "No Learning Forever", isCorrect: false },
-        { text: "Good path concept", isCorrect: true },
-        { text: "No Direction", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Career Planning",
-      emoji: "💼",
-      correctAnswer: "Good path concept",
-      options: [
-        { text: "No Future Planning", isCorrect: false },
-        { text: "No Learning Forever", isCorrect: false },
-        { text: "Stop Learning Early", isCorrect: false },
-        { text: "Good path concept", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      concept: "Set Goals",
-      emoji: "🎯",
-      correctAnswer: "Good path concept",
-      options: [
-        { text: "No Direction", isCorrect: false },
-        { text: "Good path concept", isCorrect: true },
-        { text: "No Future Planning", isCorrect: false },
-        { text: "Avoid All Skills", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Study After School",
+    emoji: "🎓",
+    question: "After finishing school, what is a smart next step?",
+    options: [
+      { text: "Stop studying forever", isCorrect: false },
+      { text: "Learn more in college or training", isCorrect: true },
+      { text: "Only play games all day", isCorrect: false },
+      { text: "Avoid learning anything new", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Continuous Education",
+    emoji: "📚",
+    question: "Why is learning even after school important?",
+    options: [
+      { text: "It helps you grow smarter over time", isCorrect: true },
+      { text: "Learning is useless after school", isCorrect: false },
+      { text: "Skills never help in life", isCorrect: false },
+      { text: "Only kids need to learn", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Skill Development",
+    emoji: "🔧",
+    question: "What should you do to become good at a future job?",
+    options: [
+      { text: "Avoid trying new things", isCorrect: false },
+      { text: "Give up when it feels hard", isCorrect: false },
+      { text: "Say skills don’t matter", isCorrect: false },
+      { text: "Practice and build useful skills", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    concept: "Career Planning",
+    emoji: "💼",
+    question: "Why is it good to think about your future career early?",
+    options: [
+      { text: "Planning is a waste of time", isCorrect: false },
+      { text: "Careers happen by luck only", isCorrect: false },
+      { text: "It helps you choose what to learn", isCorrect: true },
+      { text: "Thinking ahead is boring", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Set Goals",
+    emoji: "🎯",
+    question: "What happens when you set goals for yourself?",
+    options: [
+      { text: "Life becomes confusing", isCorrect: false },
+      { text: "You know what to work towards", isCorrect: true },
+      { text: "You stop improving", isCorrect: false },
+      { text: "Goals make learning harder", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

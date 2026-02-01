@@ -68,7 +68,7 @@ const PredictionStory = () => {
         { 
           id: "ai", 
           text: "Artificial Intelligence analyzing weather patterns", 
-          emoji: "🤖", 
+          emoji: "💡", 
           
           isCorrect: true
         },
@@ -101,7 +101,7 @@ const PredictionStory = () => {
         { 
           id: "ai", 
           text: "AI analyzing your viewing history", 
-          emoji: "🤖", 
+          emoji: "🫵", 
           isCorrect: true
         },
       ]
@@ -144,7 +144,7 @@ const PredictionStory = () => {
          { 
           id: "ai", 
           text: "Natural Language Processing AI", 
-          emoji: "🤖", 
+          emoji: "🫡", 
           isCorrect: true
         },
         { 
@@ -169,7 +169,7 @@ const PredictionStory = () => {
         { 
           id: "ai", 
           text: "AI predicting your interests", 
-          emoji: "🤖", 
+          emoji: "🤓", 
           isCorrect: true
         },
         { 

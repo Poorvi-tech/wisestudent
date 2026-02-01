@@ -119,8 +119,8 @@ const BadgeGreenTravelerKid = () => {
       item: "Carpooling",
       options: [
         { id: "a", text: "Carpool with friends", emoji: "👥", correct: true, coins: 1 },
-        { id: "b", text: "Each drive separately", emoji: "🚗", correct: false, coins: 0 },
-        { id: "c", text: "Use many cars", emoji: "🚗", correct: false, coins: 0 },
+        { id: "b", text: "Each drive separately", emoji: "🚘", correct: false, coins: 0 },
+        { id: "c", text: "Use many cars", emoji: "🚗🚗", correct: false, coins: 0 },
         { id: "d", text: "Drive alone", emoji: "🚗", correct: false, coins: 0 }
       ],
       feedback: {

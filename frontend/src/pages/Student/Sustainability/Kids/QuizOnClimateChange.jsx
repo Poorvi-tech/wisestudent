@@ -257,7 +257,7 @@ const QuizOnClimateChange = () => {
     
       nextGamePathProp="/student/sustainability/kids/reflex-climate-helper"
       nextGameIdProp="sustainability-kids-78">
-      {flashPoints}
+      
       {!showResult ? (
         <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="space-y-6">

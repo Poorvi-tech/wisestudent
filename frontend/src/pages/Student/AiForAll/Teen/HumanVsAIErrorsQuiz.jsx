@@ -51,140 +51,141 @@ const HumanVsAIErrorsQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Can humans also make mistakes like AI?",
-      emoji: "🤔",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only under pressure", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! Both humans and AI can make mistakes. Humans make errors due to fatigue, emotions, distractions, or lack of knowledge, while AI makes errors due to biased data, algorithmic limitations, or unforeseen scenarios."
-    },
-    {
-      id: 2,
-      text: "If a human types wrong data in a system, is it an error?",
-      emoji: "💻",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Only if it crashes the system", 
-          emoji: "💥", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-      ],
-      explanation: "Yes! Human data entry errors are a significant source of problems in computer systems. Typos, incorrect formatting, or wrong information can lead to system failures, incorrect calculations, or flawed decision-making."
-    },
-    {
-      id: 3,
-      text: "Humans misjudge or miscalculate sometimes. Does this resemble AI mistakes?",
-      emoji: "🧠",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only in complex situations", 
-          emoji: "🧩", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! Both humans and AI can misjudge or miscalculate. Humans might misread information, make assumptions, or apply incorrect logic. Similarly, AI can misinterpret data patterns or apply inappropriate models to new situations."
-    },
-    {
-      id: 4,
-      text: "Both humans and AI need correction to improve. True or False?",
-      emoji: "⚡",
-      options: [
-        { 
-          id: 1, 
-          text: "True", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "False", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only AI needs constant updates", 
-          emoji: "🤖", 
-          isCorrect: false
-        }
-      ],
-      explanation: "True! Both humans and AI systems improve through correction. Humans learn from feedback and experience, while AI systems are retrained with corrected data and refined algorithms to reduce future errors."
-    },
-    {
-      id: 5,
-      text: "Understanding human errors helps us design better AI. Agree?",
-      emoji: "🌟",
-      options: [
-       
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-         { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for specific domains", 
-          emoji: "🎯", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! Studying human errors helps AI designers create more robust systems. By understanding how and why humans make mistakes, developers can build AI that compensates for these weaknesses or avoids similar pitfalls."
-    }
-  ];
+  {
+    id: 1,
+    text: "A navigation app sends you to a blocked road because its map is outdated. What kind of error is this?",
+    emoji: "🗺️",
+    options: [
+      
+      {
+        id: "human-driving",
+        text: "Human driving mistake",
+        emoji: "🚗",
+        isCorrect: false
+      },
+      {
+        id: "ai-data",
+        text: "AI using outdated data",
+        emoji: "📉",
+        isCorrect: true
+      },
+      {
+        id: "no-error",
+        text: "Not an error at all",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI depends on data. If the data isn’t updated, it can make wrong decisions."
+  },
+  {
+    id: 2,
+    text: "A student enters the wrong marks into a school system, causing wrong results. What caused the problem?",
+    emoji: "📝",
+    options: [
+      {
+        id: "human-error",
+        text: "Human input mistake",
+        emoji: "🙋",
+        isCorrect: true
+      },
+      {
+        id: "ai-decision",
+        text: "AI decision failure",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "system-hack",
+        text: "System was hacked",
+        emoji: "🕵️",
+        isCorrect: false
+      }
+    ],
+    explanation: "Even the best systems fail if humans enter incorrect information."
+  },
+  {
+    id: 3,
+    text: "An AI photo app wrongly tags a stranger as your friend. Why did this happen?",
+    emoji: "📸",
+    options: [
+      
+      {
+        id: "human-choice",
+        text: "Human chose the wrong friend",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        id: "pattern-error",
+        text: "AI confused similar facial patterns",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "camera-fault",
+        text: "Camera was broken",
+        emoji: "📷",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI predicts using patterns. Similar faces can confuse the model."
+  },
+  {
+    id: 4,
+    text: "A human judge gets tired and gives an unfair decision late at night. What caused this error?",
+    emoji: "⚖️",
+    options: [
+     
+      {
+        id: "ai-bias",
+        text: "AI algorithm bias",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "lack-rules",
+        text: "No rules existed",
+        emoji: "📜",
+        isCorrect: false
+      },
+       {
+        id: "fatigue",
+        text: "Human fatigue and stress",
+        emoji: "😴",
+        isCorrect: true
+      },
+    ],
+    explanation: "Humans are affected by emotions, tiredness, and pressure — AI is not."
+  },
+  {
+    id: 5,
+    text: "An AI chatbot gives wrong advice because it was trained on incorrect examples. What lesson does this show?",
+    emoji: "📚",
+    options: [
+      {
+        id: "training-matters",
+        text: "AI quality depends on training data",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "ai-thinking",
+        text: "AI thinks like humans",
+        emoji: "🧍",
+        isCorrect: false
+      },
+      {
+        id: "users-fault",
+        text: "Users always cause AI errors",
+        emoji: "🙅",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI is only as good as the data and examples it learns from."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

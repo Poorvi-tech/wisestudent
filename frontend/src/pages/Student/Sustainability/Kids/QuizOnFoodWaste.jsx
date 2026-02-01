@@ -254,7 +254,7 @@ const QuizOnFoodWaste = () => {
     
       nextGamePathProp="/student/sustainability/kids/reflex-food-saver"
       nextGameIdProp="sustainability-kids-38">
-      {flashPoints}
+     
       {!showResult ? (
         <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="space-y-6">

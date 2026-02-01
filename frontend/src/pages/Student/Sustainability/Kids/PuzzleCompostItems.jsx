@@ -51,30 +51,31 @@ const PuzzleCompostItems = () => {
 
   // Compost Items (left side) - 5 items
   const compostItems = [
-    { id: 1, name: "Apple Core", emoji: "🍎",  },
-    { id: 2, name: "Banana Peel", emoji: "🍌",  },
-    { id: 3, name: "Newspaper", emoji: "📰",  },
-    { id: 4, name: "Coffee Grounds", emoji: "☕",  },
-    { id: 5, name: "Grass Clippings", emoji: "🌿",  }
-  ];
+  { id: 1, name: "Apple Core", emoji: "🍎" },
+  { id: 2, name: "Banana Peel", emoji: "🍌" },
+  { id: 3, name: "Old Newspaper", emoji: "📰" },
+  { id: 4, name: "Coffee Grounds", emoji: "☕" },
+  { id: 5, name: "Grass Clippings", emoji: "🌿" }
+];
 
   // Disposal Methods (right side) - 5 items
   const disposalMethods = [
-      { id: 5, name: "Compost", emoji: "🪴",  },
-      { id: 2, name: "Compost", emoji: "🍂",  },
-      { id: 4, name: "Compost", emoji: "🌱",  },
-      { id: 1, name: "Compost", emoji: "🌿",  },
-      { id: 3, name: "Recycle", emoji: "♻️",  },
-  ];
+    { id: 2, name: "Fruit Waste Compost", emoji: "🍃" },
+    { id: 5, name: "Yard Waste Compost", emoji: "🌱" },
+    { id: 4, name: "Garden Compost Pile", emoji: "🪴" },
+    { id: 3, name: "Paper Recycling Bin", emoji: "♻️" },
+    { id: 1, name: "Food Compost Bin", emoji: "🍂" },
+];
 
   // Correct matches
   const correctMatches = [
-    { itemId: 1, methodId: 1 }, // Apple Core → Compost
-    { itemId: 2, methodId: 2 }, // Banana Peel → Compost
-    { itemId: 3, methodId: 3 }, // Newspaper → Recycle
-    { itemId: 4, methodId: 4 }, // Coffee Grounds → Compost
-    { itemId: 5, methodId: 5 }  // Grass Clippings → Compost
-  ];
+  { itemId: 1, methodId: 1 }, // Apple Core → Food Compost Bin
+  { itemId: 2, methodId: 2 }, // Banana Peel → Fruit Waste Compost
+  { itemId: 3, methodId: 3 }, // Newspaper → Paper Recycling Bin
+  { itemId: 4, methodId: 4 }, // Coffee Grounds → Garden Compost Pile
+  { itemId: 5, methodId: 5 }  // Grass Clippings → Yard Waste Compost
+];
+
 
   const handleItemSelect = (item) => {
     if (gameFinished) return;

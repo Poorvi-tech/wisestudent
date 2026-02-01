@@ -87,16 +87,17 @@ const DebateConservationVsDevelopment = () => {
       id: 2,
       text: "What's the main benefit of conservation?",
       options: [
+         {
+          id: "b",
+          text: "Biodiversity preservation",
+          emoji: "🦋"
+        },
         {
           id: "a",
           text: "Economic growth",
           emoji: "💰"
         },
-        {
-          id: "b",
-          text: "Biodiversity preservation",
-          emoji: "🦋"
-        },
+       
         {
           id: "c",
           text: "Job creation",
@@ -110,11 +111,7 @@ const DebateConservationVsDevelopment = () => {
       id: 3,
       text: "What's a challenge with conservation?",
       options: [
-        {
-          id: "a",
-          text: "Economic opportunity costs",
-          emoji: "💸"
-        },
+        
         {
           id: "b",
           text: "Doesn't work",
@@ -124,7 +121,12 @@ const DebateConservationVsDevelopment = () => {
           id: "c",
           text: "No benefits",
           emoji: "🤷"
-        }
+        },
+        {
+          id: "a",
+          text: "Economic opportunity costs",
+          emoji: "💸"
+        },
       ],
       correctAnswer: "a",
       explanation: "Economic opportunity costs. Conservation may limit some economic activities."

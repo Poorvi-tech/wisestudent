@@ -24,67 +24,67 @@ const ReflexEntrepreneurBasics = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Hard Work",
-      emoji: "💪",
-      correctAnswer: "Entrepreneur concept",
-      options: [
-        { text: "Entrepreneur concept", isCorrect: true },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Copying Others", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Creative Ideas",
-      emoji: "💡",
-      correctAnswer: "Entrepreneur concept",
-      options: [
-        { text: "Copying Others", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "Entrepreneur concept", isCorrect: true },
-        { text: "Working Alone", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Learn from Failures",
-      emoji: "🔄",
-      correctAnswer: "Entrepreneur concept",
-      options: [
-        { text: "Entrepreneur concept", isCorrect: true },
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Teamwork",
-      emoji: "🤝",
-      correctAnswer: "Entrepreneur concept",
-      options: [
-        { text: "Working Alone", isCorrect: false },
-        { text: "Entrepreneur concept", isCorrect: true },
-        { text: "Copying Others", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Grow Business",
-      emoji: "📈",
-      correctAnswer: "Entrepreneur concept",
-      options: [
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Copying Others", isCorrect: false },
-        { text: "Entrepreneur concept", isCorrect: true },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Hard Work",
+    emoji: "💪",
+    question: "Riya wants to sell handmade bookmarks at school. What should she do first?",
+    options: [
+      { text: "Give up because it looks hard", isCorrect: false },
+      { text: "Wait for others to do the work", isCorrect: false },
+      { text: "Quit after one mistake", isCorrect: false },
+      { text: "Practice making bookmarks every day", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    concept: "Creative Ideas",
+    emoji: "💡",
+    question: "Arjun wants his lemonade stand to stand out. What is a good idea?",
+    options: [
+      { text: "Copy exactly what others do", isCorrect: false },
+      { text: "Ignore customers’ likes", isCorrect: false },
+      { text: "Add a new flavor or fun sign", isCorrect: true },
+      { text: "Sell without thinking", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Learn from Failures",
+    emoji: "🔄",
+    question: "Only a few people bought snacks from Meena. What should she do?",
+    options: [
+      { text: "Stop selling forever", isCorrect: false },
+      { text: "Ask what people like and improve", isCorrect: true },
+      { text: "Get angry and quit", isCorrect: false },
+      { text: "Ignore what happened", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    concept: "Teamwork",
+    emoji: "🤝",
+    question: "Two friends want to run a small art stall together. What is best?",
+    options: [
+      { text: "Share work and help each other", isCorrect: true },
+      { text: "Fight over money", isCorrect: false },
+      { text: "Do everything alone", isCorrect: false },
+      { text: "Not listen to each other", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Grow Business",
+    emoji: "📈",
+    question: "Your toy-selling stall is popular. How can you grow it?",
+    options: [
+      { text: "Stop improving because it’s enough", isCorrect: false },
+      { text: "Ignore customer feedback", isCorrect: false },
+      { text: "Quit while doing well", isCorrect: false },
+      { text: "Make more toys and listen to customers", isCorrect: true },
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -24,67 +24,67 @@ const ReflexDesignThinking = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Test Ideas",
-      emoji: "🔧",
-      correctAnswer: "Good design thinking",
-      options: [
-        { text: "Good design thinking", isCorrect: true },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Assume Needs", isCorrect: false },
-        { text: "Never Change", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Empathize with Users",
-      emoji: "🧠",
-      correctAnswer: "Good design thinking",
-      options: [
-        { text: "Assume Needs", isCorrect: false },
-        { text: "Good design thinking", isCorrect: true },
-        { text: "Skip Planning", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Prototype Solutions",
-      emoji: "✏️",
-      correctAnswer: "Good design thinking",
-      options: [
-        { text: "Skip Planning", isCorrect: false },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Good design thinking", isCorrect: true },
-        { text: "Never Change", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Iterate Designs",
-      emoji: "🔄",
-      correctAnswer: "Good design thinking",
-      options: [
-        { text: "Never Change", isCorrect: false },
-        { text: "Assume Needs", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "Good design thinking", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Define Problems",
-      emoji: "🎯",
-      correctAnswer: "Good design thinking",
-      options: [
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "Good design thinking", isCorrect: true },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Skip Planning", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Test Ideas",
+    emoji: "🔧",
+    question: "Rohan makes a paper pencil holder. What should he do before making many?",
+    options: [
+      { text: "Sell it without testing", isCorrect: false },
+      { text: "Never change the design", isCorrect: false },
+      { text: "Try using it and see if it works well", isCorrect: true },
+      { text: "Ignore problems he notices", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Empathize with Users",
+    emoji: "🧠",
+    question: "Sara is designing a school bag for younger kids. What should she do first?",
+    options: [
+      { text: "Guess what kids want", isCorrect: false },
+      { text: "Ask kids what they find difficult", isCorrect: true },
+      { text: "Copy an old bag design", isCorrect: false },
+      { text: "Ignore how others feel", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Prototype Solutions",
+    emoji: "✏️",
+    question: "Ayaan has an idea for a new lunch box. What is a smart next step?",
+    options: [
+      { text: "Draw or make a small sample first", isCorrect: true },
+      { text: "Make 100 boxes immediately", isCorrect: false },
+      { text: "Never show it to anyone", isCorrect: false },
+      { text: "Skip planning completely", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Iterate Designs",
+    emoji: "🔄",
+    question: "Friends say Neha’s game is confusing. What should Neha do?",
+    options: [
+      { text: "Get angry and stop", isCorrect: false },
+      { text: "Never change anything", isCorrect: false },
+      { text: "Ignore all feedback", isCorrect: false },
+      { text: "Improve the game using feedback", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Define Problems",
+    emoji: "🎯",
+    question: "Students find it hard to keep desks clean. What should be done first?",
+    options: [
+      { text: "Start building random solutions", isCorrect: false },
+      { text: "Ignore the mess", isCorrect: false },
+      { text: "Understand why desks get messy", isCorrect: true },
+      { text: "Blame students only", isCorrect: false }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -51,140 +51,150 @@ const FutureOfAIQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Will AI fly cars in 2050?",
-      emoji: "🚗",
-      options: [
-        { 
-          id: 1, 
-          text: "Maybe", 
-          emoji: "🤔",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Maybe! Flying cars are being developed by several companies, but regulatory, safety, and infrastructure challenges mean widespread adoption by 2050 is uncertain. The technology may exist but acceptance is key."
-    },
-    {
-      id: 2,
-      text: "Will AI teachers replace humans completely?",
-      emoji: "🤖",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Maybe", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Maybe! AI can enhance education through personalized learning and automated grading, but human teachers provide emotional support, mentorship, and creativity that technology cannot replicate. A hybrid approach is most likely."
-    },
-    {
-      id: 3,
-      text: "Could AI create its own city one day?",
-      emoji: "🤖",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: true
-        },
-      ],
-      explanation: "Maybe! AI can optimize city layouts, traffic flows, and resource distribution, but creating livable communities requires understanding human needs, culture, and values that only humans can provide. AI would likely assist rather than lead."
-    },
-    {
-      id: 4,
-      text: "Will AI become smarter than humans?",
-      emoji: "🧠⚡",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        }
-      ],
-      explanation: "Maybe! AI already surpasses humans in specific tasks like chess or image recognition, but general intelligence involves creativity, emotional understanding, and consciousness that we don't fully understand yet. The answer depends on how we define 'smarter.'"
-    },
-    {
-      id: 5,
-      text: "Can AI dream like humans in the future?",
-      emoji: "🤖",
-      options: [
-        { 
-          id: 1, 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Maybe! Dreams involve complex brain processes and possibly consciousness, which we don't fully understand. While AI might simulate dream-like states or creative processes, whether this would constitute 'dreaming' like humans is a philosophical question about consciousness itself."
-    }
-  ];
+  {
+    id: 1,
+    text: "Your city plans to use AI to manage traffic signals. What is the most realistic role AI will play?",
+    emoji: "🚦",
+    options: [
+      
+      {
+        id: 2,
+        text: "Replace roads with flying car lanes overnight",
+        emoji: "🚗",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Completely remove human traffic police everywhere",
+        emoji: "👮",
+        isCorrect: false
+      },
+      {
+        id: 1,
+        text: "Adjust traffic lights using live data to reduce jams",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ],
+    explanation:
+      "AI is already helping cities by analyzing traffic patterns and adjusting signals in real time. It supports humans rather than instantly replacing entire systems."
+  },
+
+  {
+    id: 2,
+    text: "An AI tutor is introduced in your school. What is the most likely outcome?",
+    emoji: "🏫",
+    options: [
+     
+      {
+        id: 2,
+        text: "Teachers are fired and classes become fully automated",
+        emoji: "📚",
+        isCorrect: false
+      },
+       {
+        id: 1,
+        text: "Students get personalized practice while teachers guide discussions",
+        emoji: "🧑‍🏫",
+        isCorrect: true
+      },
+      {
+        id: 3,
+        text: "Students stop interacting with classmates",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "AI works best as a learning assistant—helping with practice and feedback—while teachers focus on mentoring, creativity, and emotional support."
+  },
+
+  {
+    id: 3,
+    text: "A company uses AI to screen job applications. What is the biggest responsibility humans must ensure?",
+    emoji: "📄",
+    options: [
+      {
+        id: 1,
+        text: "Checking AI decisions for bias and fairness",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: 2,
+        text: "Letting AI hire people without any review",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Only hiring people who understand AI",
+        emoji: "💻",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "AI can help sort applications, but humans must monitor it to prevent discrimination and unfair decisions based on biased data."
+  },
+
+  {
+    id: 4,
+    text: "In the future, AI creates music and art. What will still make human creativity important?",
+    emoji: "🎵",
+    options: [
+     
+      {
+        id: 2,
+        text: "Humans working faster than computers",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "AI being unable to copy styles",
+        emoji: "📋",
+        isCorrect: false
+      },
+       {
+        id: 1,
+        text: "Human emotions, experiences, and cultural meaning",
+        emoji: "❤️",
+        isCorrect: true
+      },
+    ],
+    explanation:
+      "AI can generate content, but human creativity is deeply connected to emotions, life experiences, and social context that machines do not truly feel."
+  },
+
+  {
+    id: 5,
+    text: "As AI becomes more powerful, what skill will be most important for teens to learn?",
+    emoji: "🚀",
+    options: [
+      {
+        id: 1,
+        text: "Critical thinking and ethical decision-making",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: 2,
+        text: "Memorizing everything AI already knows",
+        emoji: "📖",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Avoiding technology completely",
+        emoji: "📵",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "In an AI-powered future, the ability to think critically, question results, and make ethical choices will matter more than memorization."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

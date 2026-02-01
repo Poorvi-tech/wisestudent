@@ -24,67 +24,68 @@ const ReflexSocialAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Fair Business",
-      emoji: "⚖️",
-      correctAnswer: "Fair business practice",
-      options: [
-        { text: "Fair business practice", isCorrect: true },
-        { text: "Cheating", isCorrect: false },
-        { text: "Breaking Promises", isCorrect: false },
-        { text: "Hidden Fees", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Honest Partnerships",
-      emoji: "🤝",
-      correctAnswer: "Fair business practice",
-      options: [
-        { text: "Breaking Promises", isCorrect: false },
-        { text: "Fair business practice", isCorrect: true },
-        { text: "Exploiting Workers", isCorrect: false },
-        { text: "Environmental Harm", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Ethical Practices",
-      emoji: "🌱",
-      correctAnswer: "Fair business practice",
-      options: [
-        { text: "Environmental Harm", isCorrect: false },
-        { text: "Fair business practice", isCorrect: true },
-        { text: "Cheating", isCorrect: false },
-        { text: "Hidden Fees", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Responsible Leadership",
-      emoji: "💼",
-      correctAnswer: "Fair business practice",
-      options: [
-        { text: "Exploiting Workers", isCorrect: false },
-        { text: "Cheating", isCorrect: false },
-        { text: "Breaking Promises", isCorrect: false },
-        { text: "Fair business practice", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      concept: "Transparent Finances",
-      emoji: "💰",
-      correctAnswer: "Fair business practice",
-      options: [
-        { text: "Fair business practice", isCorrect: true },
-        { text: "Hidden Fees", isCorrect: false },
-        { text: "Environmental Harm", isCorrect: false },
-        { text: "Exploiting Workers", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Fair Business",
+    emoji: "⚖️",
+    question: "You sell handmade bookmarks at school. A friend gives you extra money by mistake. What should you do?",
+    options: [
+      { text: "Return the extra money", isCorrect: true },
+      { text: "Keep it quietly", isCorrect: false },
+      { text: "Spend it quickly", isCorrect: false },
+      { text: "Laugh and walk away", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Honest Partnerships",
+    emoji: "🤝",
+    question: "You and a friend run a lemonade stall. Who should decide how money is used?",
+    options: [
+      { text: "Only one friend decides", isCorrect: false },
+      { text: "Both decide together", isCorrect: true },
+      { text: "Hide the money", isCorrect: false },
+      { text: "Fight about it", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Ethical Choices",
+    emoji: "🌱",
+    question: "You see trash near your small shop setup. What’s the best action?",
+    options: [
+      { text: "Ignore it completely", isCorrect: false },
+      { text: "Throw more trash", isCorrect: false },
+      { text: "Blame someone else", isCorrect: false },
+      { text: "Clean it up and use the dustbin", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    concept: "Responsible Leadership",
+    emoji: "💼",
+    question: "You are the leader of a group project. One teammate feels left out. What should you do?",
+    options: [
+      { text: "Tell them it’s not your problem", isCorrect: false },
+      { text: "Ignore their feelings", isCorrect: false },
+      { text: "Give them a role and listen", isCorrect: true },
+      { text: "Remove them from the group", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Transparency",
+    emoji: "💰",
+    question: "Your class collects money for an event. What is the right thing to do?",
+    options: [
+      { text: "Keep spending secret", isCorrect: false },
+      { text: "Tell everyone how the money is spent", isCorrect: true },
+      { text: "Use it for yourself", isCorrect: false },
+      { text: "Lose track of it", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

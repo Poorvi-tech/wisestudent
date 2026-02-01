@@ -60,7 +60,7 @@ const AIInGamesStory = () => {
         { 
           id: "ai", 
           text: "AI System", 
-          emoji: "🤖", 
+          emoji: "💻", 
           
           isCorrect: true
         },
@@ -117,7 +117,7 @@ const AIInGamesStory = () => {
         { 
           id: "decision", 
           text: "AI Decision Making", 
-          emoji: "🤖", 
+          emoji: "💭", 
           isCorrect: true
         },
         { 
@@ -135,7 +135,7 @@ const AIInGamesStory = () => {
         { 
           id: "algorithm", 
           text: "AI Algorithm", 
-          emoji: "🤖", 
+          emoji: "📔", 
           isCorrect: true
         },
         { 
@@ -172,7 +172,7 @@ const AIInGamesStory = () => {
         { 
           id: "generator", 
           text: "AI Level Generator", 
-          emoji: "🤖", 
+          emoji: "🎚️", 
           isCorrect: true
         },
       ]

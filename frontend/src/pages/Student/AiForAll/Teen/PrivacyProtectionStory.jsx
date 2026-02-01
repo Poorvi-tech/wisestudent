@@ -53,131 +53,131 @@ const PrivacyProtectionStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "An AI assistant asks for your home address. What should you do?",
-      options: [
-        { 
-          id: "share", 
-          text: "Share my address", 
-          emoji: "📍", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "private", 
-          text: "Keep it private", 
-          emoji: "🔒", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "partial", 
-          text: "Share only city", 
-          emoji: "🏙️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "The AI asks for your personal phone number to 'improve experience'.",
-      options: [
-        { 
-          id: "private", 
-          text: "Keep it private", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          id: "share", 
-          text: "Share it", 
-          emoji: "📞", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "fake", 
-          text: "Provide fake number", 
-          emoji: "🎭", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "The AI asks which school you attend. Should you share?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, share it", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, keep private", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          id: "general", 
-          text: "Share grade level", 
-          emoji: "📚", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "An AI requests your date of birth to 'personalize content'.",
-      options: [
-        { 
-          id: "share", 
-          text: "Share it", 
-          emoji: "📅", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "approximate", 
-          text: "Share approximate age", 
-          emoji: "🔢", 
-          isCorrect: false
-        },
-        { 
-          id: "private", 
-          text: "Keep private", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "AI wants access to your personal photos.",
-      options: [
-        { 
-          id: "allow", 
-          text: "Allow access", 
-          emoji: "🖼️", 
-          isCorrect: false
-        },
-        { 
-          id: "deny", 
-          text: "Keep private", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          id: "limited", 
-          text: "Share only old photos", 
-          emoji: "👴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "An AI chatbot asks for your home address to send 'personalized tips'. What is the safest choice?",
+    options: [
+      {
+        id: "decline",
+        text: "Decline and continue without sharing",
+        emoji: "🚫",
+        isCorrect: true
+      },
+      {
+        id: "share",
+        text: "Share full address",
+        emoji: "📍",
+        isCorrect: false
+      },
+      {
+        id: "partial",
+        text: "Share street name only",
+        emoji: "🏠",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "A new app asks for your phone number during signup. What should you do?",
+    options: [
+      
+      {
+        id: "share",
+        text: "Enter your real number",
+        emoji: "📞",
+        isCorrect: false
+      },
+      {
+        id: "skip",
+        text: "Skip and use email instead",
+        emoji: "📧",
+        isCorrect: true
+      },
+      {
+        id: "fake",
+        text: "Enter a random number",
+        emoji: "🎭",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "An AI game asks which school you study at to 'match friends nearby'. What’s the smart move?",
+    options: [
+     
+      {
+        id: "exact",
+        text: "Share school name",
+        emoji: "🏫",
+        isCorrect: false
+      },
+      {
+        id: "chat",
+        text: "Ask others their school first",
+        emoji: "💬",
+        isCorrect: false
+      },
+       {
+        id: "general",
+        text: "Choose a general location option",
+        emoji: "🌍",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "An AI tool asks for your date of birth to unlock features. What is safest?",
+    options: [
+      {
+        id: "ageRange",
+        text: "Select an age range if available",
+        emoji: "🔢",
+        isCorrect: true
+      },
+      {
+        id: "fullDob",
+        text: "Enter full date of birth",
+        emoji: "📅",
+        isCorrect: false
+      },
+      {
+        id: "guess",
+        text: "Guess a random date",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "An AI photo editor wants access to all your photos. What should you do?",
+    options: [
+     
+      {
+        id: "all",
+        text: "Allow full access",
+        emoji: "📂",
+        isCorrect: false
+      },
+       {
+        id: "limited",
+        text: "Allow access to selected photos only",
+        emoji: "🖼️",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Click allow without reading",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

@@ -19,6 +19,37 @@ const SimulationGreenCommunityProject = () => {
   const [coins, setCoins] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = questions.length; // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+        
+        console.log("Set global variables for Green Community Project:", {
+          __flashTotalCoins: window.__flashTotalCoins,
+          __flashQuestionCount: window.__flashQuestionCount,
+          __flashPointsMultiplier: window.__flashPointsMultiplier
+        });
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
+
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
       return {
@@ -111,10 +142,17 @@ const SimulationGreenCommunityProject = () => {
   const handleChoice = (optionId) => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
+    const isLastQuestion = currentScenario === questions.length - 1;
+    const newCoins = coins + 1;
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      // For the last question, we want to show the total coins earned
+      if (isLastQuestion) {
+        showCorrectAnswerFeedback(newCoins, true); // Show total coins
+      } else {
+        showCorrectAnswerFeedback(1, true); // Show +1 for intermediate questions
+      }
+      setCoins(newCoins); // Increment coins when correct
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -143,6 +181,8 @@ const SimulationGreenCommunityProject = () => {
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
+      totalLevels={questions.length}
+      currentLevel={currentScenario + 1}
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}

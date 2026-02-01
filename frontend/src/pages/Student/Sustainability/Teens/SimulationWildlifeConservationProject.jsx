@@ -9,14 +9,16 @@ const SimulationWildlifeConservationProject = () => {
   const location = useLocation();
   const gameData = getGameDataById("sustainability-teens-63");
   const gameId = gameData?.id || "sustainability-teens-63";
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  
+  // Use game data configuration: 3 coins per question, 15 total coins, 30 total XP
+  const coinsPerLevel = gameData?.coins ? Math.floor(gameData.coins / 5) : 3; // 15/5 = 3
+  const totalCoins = gameData?.coins || 15;
+  const totalXp = gameData?.xp || 30;
   const [currentScenario, setCurrentScenario] = useState(0);
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   // Find next game path and ID if not provided in location.state
@@ -53,6 +55,13 @@ const SimulationWildlifeConservationProject = () => {
           ...currentState,
           nextGameId: nextGameId
         }, '');
+      }
+      
+      // Clean up flash variables when game finishes
+      if (typeof window !== "undefined") {
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
       }
     }
   }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
@@ -110,13 +119,32 @@ const SimulationWildlifeConservationProject = () => {
     }
   ];
 
+  // Set global flash variables for proper point calculation
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;        // 15
+      window.__flashQuestionCount = questions.length; // 5
+      window.__flashPointsMultiplier = coinsPerLevel; // 3
+    }
+
+    return () => {
+      // Clean up on unmount
+      if (typeof window !== "undefined") {
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      }
+    };
+  }, [totalCoins, questions.length, coinsPerLevel]);
+
   const handleChoice = (optionId) => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      showCorrectAnswerFeedback(1, true); // Will show +3 (1 * 3 multiplier)
+      setCoins(prev => prev + 3); // Increment coins when correct
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -137,12 +165,13 @@ const SimulationWildlifeConservationProject = () => {
       title="Simulation: Wildlife Conservation Project"
       subtitle={`Scenario ${currentScenario + 1} of ${questions.length}`}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       gameType="sustainability"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       maxScore={questions.length}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}

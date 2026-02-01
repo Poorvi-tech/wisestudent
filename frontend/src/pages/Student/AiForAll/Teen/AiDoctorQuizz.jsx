@@ -51,137 +51,141 @@ const AiDoctorQuizz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    { 
-      id: 1, 
-      text: "AI can detect diseases from X-rays?", 
-      emoji: "🩻", 
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true 
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false 
-        },
-        { 
-          id: 3, 
-          text: "Only in research labs", 
-          emoji: "🔬", 
-          isCorrect: false 
-        }
-      ],
-      explanation: "AI can detect patterns in medical images and patient data, helping doctors diagnose diseases faster and more accurately."
-    },
-    { 
-      id: 2, 
-      text: "AI can suggest personalized medicine based on patient data?", 
-      emoji: "💊", 
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true 
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false 
-        },
-        { 
-          id: 3, 
-          text: "Only for common illnesses", 
-          emoji: "📋", 
-          isCorrect: false 
-        }
-      ],
-      explanation: "AI analyzes vast amounts of patient data to recommend personalized treatment plans, improving healthcare outcomes."
-    },
-    { 
-      id: 3, 
-      text: "AI can perform surgery independently without human supervision?", 
-      emoji: "🏥", 
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false 
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true 
-        },
-        { 
-          id: 3, 
-          text: "Only for minor procedures", 
-          emoji: "🔧", 
-          isCorrect: false 
-        }
-      ],
-      explanation: "While AI assists in surgeries, human supervision is essential. AI enhances precision but doesn't replace surgeons."
-    },
-    { 
-      id: 4, 
-      text: "AI can monitor patients' vital signs in real-time?", 
-      emoji: "🩺", 
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true 
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false 
-        },
-        { 
-          id: 3, 
-          text: "Only in ICUs", 
-          emoji: "🛏️", 
-          isCorrect: false 
-        }
-      ],
-      explanation: "AI-powered devices continuously monitor vital signs, alerting healthcare providers to any concerning changes."
-    },
-    { 
-      id: 5, 
-      text: "AI can replace doctors completely?", 
-      emoji: "👨‍⚕️", 
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false 
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true 
-        },
-        { 
-          id: 3, 
-          text: "In some specialties only", 
-          emoji: "📚", 
-          isCorrect: false 
-        }
-      ],
-      explanation: "AI enhances healthcare but cannot replace human doctors. Empathy, ethics, and complex decision-making require human expertise."
-    }
-  ];
+  {
+    id: 1,
+    text: "A hospital uses AI to scan X-rays and highlight suspicious spots for doctors. What is AI mainly doing here?",
+    emoji: "🩻",
+    options: [
+      
+      {
+        id: "final-diagnosis",
+        text: "Making the final medical decision alone",
+        emoji: "⚖️",
+        isCorrect: false
+      },
+      {
+        id: "image-storage",
+        text: "Storing X-ray images in hospital servers",
+        emoji: "💾",
+        isCorrect: false
+      },
+      {
+        id: "pattern-detection",
+        text: "Finding disease patterns in images faster than humans",
+        emoji: "🔍",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI helps by spotting patterns in X-rays, but doctors make the final diagnosis."
+  },
+  {
+    id: 2,
+    text: "An AI system reviews a patient’s age, allergies, and past reports before suggesting a treatment. What role is AI playing?",
+    emoji: "💊",
+    options: [
+      {
+        id: "personalized-support",
+        text: "Supporting doctors with personalized treatment suggestions",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "medicine-selling",
+        text: "Automatically selling medicines to patients",
+        emoji: "🛒",
+        isCorrect: false
+      },
+      {
+        id: "random-selection",
+        text: "Randomly choosing medicines from a database",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI analyzes patient data to assist doctors, not replace their judgment."
+  },
+  {
+    id: 3,
+    text: "During a surgery, a robotic system follows precise movements guided by a surgeon. What is true about the AI here?",
+    emoji: "🏥",
+    options: [
+     
+      {
+        id: "independent-surgery",
+        text: "AI performs surgery without any human involvement",
+        emoji: "🤖",
+        isCorrect: false
+      },
+       {
+        id: "assisted-precision",
+        text: "AI improves precision while humans stay in control",
+        emoji: "🎯",
+        isCorrect: true
+      },
+      {
+        id: "emergency-only",
+        text: "AI works only during emergency surgeries",
+        emoji: "🚑",
+        isCorrect: false
+      }
+    ],
+    explanation: "Surgical AI assists surgeons but never operates fully on its own."
+  },
+  {
+    id: 4,
+    text: "A wearable device tracks heart rate and alerts doctors if something looks abnormal. What makes this possible?",
+    emoji: "🩺",
+    options: [
+      
+      {
+        id: "manual-checks",
+        text: "Doctors watching the data every second manually",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "fixed-rules",
+        text: "Pre-set rules that never change",
+        emoji: "📏",
+        isCorrect: false
+      },
+      {
+        id: "continuous-monitoring",
+        text: "AI monitoring vital signs and detecting unusual changes",
+        emoji: "📈",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI continuously monitors data and alerts humans when attention is needed."
+  },
+  {
+    id: 5,
+    text: "Why can’t AI completely replace human doctors?",
+    emoji: "👨‍⚕️",
+    options: [
+      {
+        id: "human-judgment",
+        text: "Doctors provide empathy, ethics, and complex decision-making",
+        emoji: "❤️",
+        isCorrect: true
+      },
+      {
+        id: "slow-technology",
+        text: "AI systems are too slow for hospitals",
+        emoji: "🐢",
+        isCorrect: false
+      },
+      {
+        id: "no-data",
+        text: "AI has no access to medical data",
+        emoji: "📂",
+        isCorrect: false
+      }
+    ],
+    explanation: "Healthcare needs human understanding and responsibility—AI is a powerful assistant, not a replacement."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

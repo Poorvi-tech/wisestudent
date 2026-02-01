@@ -24,67 +24,67 @@ const ReflexSocialBasics = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Help + Earn",
-      emoji: "🤝",
-      correctAnswer: "Good social concept",
-      options: [
-        { text: "Good social concept", isCorrect: true },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Waste Resources", isCorrect: false },
-        { text: "Copy Old Methods", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Sustainable Solutions",
-      emoji: "🌱",
-      correctAnswer: "Good social concept",
-      options: [
-        { text: "Waste Resources", isCorrect: false },
-        { text: "Good social concept", isCorrect: true },
-        { text: "Pollute Nature", isCorrect: false },
-        { text: "Work Alone", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Innovative Ideas",
-      emoji: "💡",
-      correctAnswer: "Good social concept",
-      options: [
-        { text: "Good social concept", isCorrect: true },
-        { text: "Copy Old Methods", isCorrect: false },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Pollute Nature", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Environmental Care",
-      emoji: "🌍",
-      correctAnswer: "Good social concept",
-      options: [
-        { text: "Pollute Nature", isCorrect: false },
-        { text: "Good social concept", isCorrect: true },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Waste Resources", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Community Support",
-      emoji: "👥",
-      correctAnswer: "Good social concept",
-      options: [
-        { text: "Work Alone", isCorrect: false },
-        { text: "Good social concept", isCorrect: true },
-        { text: "Copy Old Methods", isCorrect: false },
-        { text: "Waste Resources", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Help + Earn",
+    emoji: "🤝",
+    question: "You help your neighbor water plants and they offer you some pocket money. What should you do?",
+    options: [
+      { text: "Demand more money", isCorrect: false },
+      { text: "Take money without helping", isCorrect: false },
+      { text: "Accept politely and say thank you", isCorrect: true },
+      { text: "Laugh and walk away", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Sustainable Solutions",
+    emoji: "🌱",
+    question: "Your school canteen throws away a lot of food. What is a good idea?",
+    options: [
+      { text: "Throw food on the ground", isCorrect: false },
+      { text: "Suggest donating extra food", isCorrect: true },
+      { text: "Waste more food", isCorrect: false },
+      { text: "Ignore the problem", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Innovative Ideas",
+    emoji: "💡",
+    question: "You want to raise money for a class event. What should you do?",
+    options: [
+      { text: "Sell handmade cards or crafts", isCorrect: true },
+      { text: "Copy someone else’s work", isCorrect: false },
+      { text: "Do nothing and complain", isCorrect: false },
+      { text: "Take money without asking", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    concept: "Environmental Care",
+    emoji: "🌍",
+    question: "During a picnic, you see trash on the ground. What should you do?",
+    options: [
+      { text: "Throw more trash", isCorrect: false },
+      { text: "Kick it away", isCorrect: false },
+      { text: "Leave it for others", isCorrect: false },
+      { text: "Pick it up and use a dustbin", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    concept: "Community Support",
+    emoji: "👥",
+    question: "A new student feels shy and alone in class. What can you do?",
+    options: [
+      { text: "Ignore them completely", isCorrect: false },
+      { text: "Make fun of them", isCorrect: false },
+      { text: "Invite them to play or sit together", isCorrect: true },
+      { text: "Tell others not to talk to them", isCorrect: false }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

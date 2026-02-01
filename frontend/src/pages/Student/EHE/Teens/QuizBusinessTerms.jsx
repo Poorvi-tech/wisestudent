@@ -84,13 +84,13 @@ const QuizBusinessTerms = () => {
         {
           id: "b",
           text: "Total expenses only",
-          emoji: "📤",
+          emoji: "🤑",
           isCorrect: false
         },
         {
           id: "c",
           text: "Revenue minus expenses",
-          emoji: "✅",
+          emoji: "💡",
           isCorrect: true
         }
       ]
@@ -115,7 +115,7 @@ const QuizBusinessTerms = () => {
         {
           id: "c",
           text: "Only outgoing money",
-          emoji: "📤",
+          emoji: "💵",
           isCorrect: false
         }
       ]

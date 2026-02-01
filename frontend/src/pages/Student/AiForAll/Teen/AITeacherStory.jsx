@@ -68,7 +68,7 @@ const AITeacherStory = () => {
          { 
           id: "ai", 
           text: "AI Tutor", 
-          emoji: "🤖", 
+          emoji: "🧑‍🏫", 
           
           isCorrect: true
         },
@@ -87,7 +87,7 @@ const AITeacherStory = () => {
         { 
           id: "system", 
           text: "AI System", 
-          emoji: "🤖", 
+          emoji: "💻", 
           isCorrect: true
         },
         { 
@@ -149,7 +149,7 @@ const AITeacherStory = () => {
          { 
           id: "algorithm", 
           text: "AI Algorithm", 
-          emoji: "🤖", 
+          emoji: "📔", 
           isCorrect: true
         },
       ]
@@ -174,7 +174,7 @@ const AITeacherStory = () => {
         { 
           id: "recommendation", 
           text: "AI Recommendation", 
-          emoji: "🤖", 
+          emoji: "💡", 
           isCorrect: true
         },
       ]
