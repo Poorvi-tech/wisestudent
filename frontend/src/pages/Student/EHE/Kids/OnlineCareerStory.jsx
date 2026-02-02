@@ -24,12 +24,7 @@ const OnlineCareerStory = () => {
       id: 1,
       text: "A girl posts videos and earns. What career is this?",
       options: [
-        {
-          id: "a",
-          text: "Content Creator",
-          emoji: "🎥",
-          isCorrect: true
-        },
+       
         {
           id: "b",
           text: "Teacher",
@@ -41,7 +36,13 @@ const OnlineCareerStory = () => {
           text: "Doctor",
           emoji: "⚕️",
           isCorrect: false
-        }
+        },
+         {
+          id: "a",
+          text: "Content Creator",
+          emoji: "🎥",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -97,17 +98,18 @@ const OnlineCareerStory = () => {
       id: 4,
       text: "What skills are important for content creators?",
       options: [
-        {
-          id: "a",
-          text: "Creativity, communication, tech skills",
-          emoji: "💡",
-          isCorrect: true
-        },
+        
         {
           id: "b",
           text: "Only cooking",
           emoji: "🍳",
           isCorrect: false
+        },
+        {
+          id: "a",
+          text: "Creativity, communication, tech skills",
+          emoji: "💡",
+          isCorrect: true
         },
         {
           id: "c",

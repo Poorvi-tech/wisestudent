@@ -15,7 +15,7 @@ const questions = [
     options: [
         { id: 'b', text: " Leave Lights On", emoji: "💡", isCorrect: false },
         { id: 'c', text: " Use More Power", emoji: "⚡", isCorrect: false },
-        { id: 'a', text: " Turn Off Lights", emoji: "💡", isCorrect: true },
+        { id: 'a', text: " Turn Off Lights", emoji: "📴", isCorrect: true },
       { id: 'd', text: " Waste Energy", emoji: "❌", isCorrect: false }
     ]
   },
@@ -23,7 +23,7 @@ const questions = [
     id: 2,
     text: "Which energy choice should you make?",
     options: [
-      { id: 'a', text: " Unplug Devices", emoji: "🔌", isCorrect: true },
+      { id: 'a', text: " Unplug Devices", emoji: "🏴‍☠️", isCorrect: true },
       { id: 'b', text: " Keep Plugged", emoji: "🔌", isCorrect: false },
       { id: 'c', text: " Use More Energy", emoji: "⚡", isCorrect: false },
       { id: 'd', text: " Ignore Usage", emoji: "🤷", isCorrect: false }
@@ -36,7 +36,7 @@ const questions = [
         { id: 'b', text: " Use Old Bulbs", emoji: "💡", isCorrect: false },
         { id: 'c', text: " Use More Power", emoji: "⚡", isCorrect: false },
         { id: 'd', text: " Ignore Options", emoji: "🤷", isCorrect: false },
-        { id: 'a', text: " Use LED Bulbs", emoji: "💡", isCorrect: true },
+        { id: 'a', text: " Use LED Bulbs", emoji: "♉", isCorrect: true },
     ]
   },
   {
@@ -44,7 +44,7 @@ const questions = [
     text: "Which action helps reduce energy consumption?",
     options: [
         { id: 'b', text: " Keep TV On", emoji: "📺", isCorrect: false },
-        { id: 'a', text: " Turn Off TV", emoji: "📺", isCorrect: true },
+        { id: 'a', text: " Turn Off TV", emoji: "⭕", isCorrect: true },
       { id: 'c', text: " Use More Devices", emoji: "📱", isCorrect: false },
       { id: 'd', text: " Ignore Devices", emoji: "📱", isCorrect: false }
     ]

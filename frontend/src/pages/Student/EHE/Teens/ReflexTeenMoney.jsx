@@ -24,72 +24,73 @@ const ReflexTeenMoney = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Profit",
-      emoji: "💰",
-      concept: "Good",
-      correctAnswer: "Correct financial concept",
-      options: [
-        { text: "Loss = Happy", isCorrect: false },
-        { text: "Correct financial concept", isCorrect: true },
-        { text: "Overspend = Wise", isCorrect: false },
-        { text: "Waste = Success", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Budget",
-      emoji: "📊",
-      concept: "Smart",
-      correctAnswer: "Correct financial concept",
-      options: [
-        { text: "Correct financial concept", isCorrect: true },
-        { text: "Overspend = Wise", isCorrect: false },
-        { text: "Debt = Freedom", isCorrect: false },
-        { text: "Loss = Happy", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Save",
-      emoji: "🐷",
-      concept: "Secure",
-      correctAnswer: "Correct financial concept",
-      options: [
-        { text: "Debt = Freedom", isCorrect: false },
-        { text: "Loss = Happy", isCorrect: false },
-        { text: "Waste = Success", isCorrect: false },
-        { text: "Correct financial concept", isCorrect: true },
-      ]
-    },
-    {
-      id: 4,
-      action: "Invest",
-      emoji: "📈",
-      concept: "Grow",
-      correctAnswer: "Correct financial concept",
-      options: [
-        { text: "Waste = Success", isCorrect: false },
-        { text: "Overspend = Wise", isCorrect: false },
-        { text: "Correct financial concept", isCorrect: true },
-        { text: "Loss = Happy", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Earn",
-      emoji: "💵",
-      concept: "Income",
-      correctAnswer: "Correct financial concept",
-      options: [
-        { text: "Loss = Happy", isCorrect: false },
-        { text: "Correct financial concept", isCorrect: true },
-        { text: "Overspend = Wise", isCorrect: false },
-        { text: "Debt = Freedom", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Profit",
+    emoji: "💰",
+    concept: "Business Outcome",
+    question: "Your small online store earns more than it spends. What does this mean?",
+    options: [
+      { text: "The business is running at a loss", isCorrect: false },
+      { text: "The business made a profit", isCorrect: true },
+      { text: "Money should be spent immediately", isCorrect: false },
+      { text: "The business must shut down", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Budget",
+    emoji: "📊",
+    concept: "Money Planning",
+    question: "You receive monthly pocket money and plan expenses. What is this called?",
+    options: [
+      { text: "Impulse buying", isCorrect: false },
+      { text: "Borrowing money", isCorrect: false },
+      { text: "Creating a budget", isCorrect: true },
+      { text: "Financial risk", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Save",
+    emoji: "🐷",
+    concept: "Financial Security",
+    question: "You keep some money aside for college or emergencies. Why?",
+    options: [
+      { text: "To be ready for future needs", isCorrect: true },
+      { text: "To avoid planning", isCorrect: false },
+      { text: "Because spending is bad", isCorrect: false },
+      { text: "To show off savings", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Invest",
+    emoji: "📈",
+    concept: "Growth",
+    question: "You use saved money to start a small startup or buy stocks. What are you doing?",
+    options: [
+      { text: "Wasting money", isCorrect: false },
+      { text: "Hiding money", isCorrect: false },
+      { text: "Investing to grow money", isCorrect: true },
+      { text: "Avoiding responsibility", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Earn",
+    emoji: "💵",
+    concept: "Income",
+    question: "You tutor juniors or freelance online and get paid. This money is called?",
+    options: [
+      { text: "Debt", isCorrect: false },
+      { text: "Allowance only", isCorrect: false },
+      { text: "Financial loss", isCorrect: false },
+      { text: "Earned income", isCorrect: true },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

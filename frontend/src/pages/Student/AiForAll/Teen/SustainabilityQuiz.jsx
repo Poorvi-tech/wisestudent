@@ -51,141 +51,146 @@ const SustainabilityQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Can AI save electricity by turning off lights when no one's in the room?",
-      emoji: "💡",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only in offices", 
-          emoji: "🏢", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI-powered smart lighting systems use motion sensors and occupancy detection to automatically turn off lights when rooms are empty, significantly reducing energy waste in homes, offices, and public spaces."
-    },
-    {
-      id: 2,
-      text: "Can AI predict energy demand to reduce wastage?",
-      emoji: "⚡",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only during peak hours", 
-          emoji: "⏰", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI analyzes historical usage patterns, weather data, and other factors to predict energy demand, allowing utilities to optimize generation and distribution while reducing waste from overproduction."
-    },
-    {
-      id: 3,
-      text: "Can AI help in detecting pollution levels in cities?",
-      emoji: "🏙️",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Only in developed countries", 
-          emoji: "🌍", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-      ],
-      explanation: "Yes! AI processes data from air quality sensors, satellite imagery, and weather stations to detect pollution levels in real-time, helping cities identify problem areas and take corrective actions."
-    },
-    {
-      id: 4,
-      text: "Can AI help design eco-friendly buildings?",
-      emoji: "🏠",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for new constructions", 
-          emoji: "🏗️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI helps architects design energy-efficient buildings by optimizing layouts for natural lighting, selecting sustainable materials, and simulating energy performance before construction begins."
-    },
-    {
-      id: 5,
-      text: "Can AI track water usage to prevent wastage?",
-      emoji: "💧",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only in agriculture", 
-          emoji: "🌾",
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI analyzes data from smart water meters to detect leaks, monitor consumption patterns, and identify inefficiencies, helping households, businesses, and municipalities conserve this precious resource."
-    }
-  ];
+  {
+    id: 1,
+    text: "Your school leaves fans and lights on after classes. How can AI help reduce this energy waste?",
+    emoji: "💡",
+    options: [
+      
+      {
+        id: 2,
+        text: "Ask students to manually check every room",
+        emoji: "🚶",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Increase electricity supply",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: 1,
+        text: "Automatically turn off devices using motion sensors",
+        emoji: "🤖",
+        isCorrect: true
+      },
+    ],
+    explanation:
+      "AI-powered systems use sensors to detect empty rooms and automatically switch off lights and fans, reducing unnecessary energy consumption without relying on human effort."
+  },
+  {
+    id: 2,
+    text: "A city wants to avoid power cuts during summer. What is the smartest AI-based solution?",
+    emoji: "🌆",
+    options: [
+      
+      {
+        id: 2,
+        text: "Build more power plants immediately",
+        emoji: "🏭",
+        isCorrect: false
+      },
+      {
+        id: 1,
+        text: "Predict electricity demand using past data and weather",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: 3,
+        text: "Limit electricity for everyone",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "AI can forecast energy demand by analyzing usage patterns and weather, helping cities balance supply and reduce wastage without causing blackouts."
+  },
+  {
+    id: 3,
+    text: "Air pollution levels suddenly rise in your city. How can AI help authorities respond faster?",
+    emoji: "🌫️",
+    options: [
+      {
+        id: 1,
+        text: "Analyze sensor and satellite data in real time",
+        emoji: "🛰️",
+        isCorrect: true
+      },
+      {
+        id: 2,
+        text: "Wait for citizen complaints",
+        emoji: "📞",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Shut down the entire city",
+        emoji: "🚧",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "AI combines data from pollution sensors and satellites to detect rising pollution instantly, allowing quicker action like traffic control or factory regulation."
+  },
+  {
+    id: 4,
+    text: "An apartment complex wants to reduce water bills. What AI-based method is most effective?",
+    emoji: "💧",
+    options: [
+      
+      {
+        id: 2,
+        text: "Reduce water supply for all residents",
+        emoji: "🚱",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Ignore small leaks",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: 1,
+        text: "Detect leaks and unusual water usage automatically",
+        emoji: "🔍",
+        isCorrect: true
+      },
+    ],
+    explanation:
+      "AI systems connected to smart meters can detect leaks early and monitor usage patterns, preventing water loss and saving money."
+  },
+  {
+    id: 5,
+    text: "A new eco-friendly building is being planned. Where can AI make the biggest impact?",
+    emoji: "🌿",
+    options: [
+      {
+        id: 1,
+        text: "Designing layouts that use natural light and ventilation",
+        emoji: "☀️",
+        isCorrect: true
+      },
+      {
+        id: 2,
+        text: "Using only glass for the building",
+        emoji: "🪟",
+        isCorrect: false
+      },
+      {
+        id: 3,
+        text: "Adding more air conditioners",
+        emoji: "❄️",
+        isCorrect: false
+      }
+    ],
+    explanation:
+      "AI helps architects simulate energy use and design buildings that stay cool and bright naturally, reducing electricity consumption long-term."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

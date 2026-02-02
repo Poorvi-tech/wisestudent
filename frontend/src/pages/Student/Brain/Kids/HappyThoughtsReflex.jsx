@@ -36,159 +36,58 @@ const HappyThoughtsReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is a positive thought?",
-      options: [
-        { 
-          id: "smile", 
-          text: "Smile", 
-          emoji: "😊", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "complain", 
-          text: "Complain", 
-          emoji: "😤", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "worry", 
-          text: "Worry", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "doubt", 
-          text: "Doubt", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a positive thought?",
-      options: [
-        { 
-          id: "give-up", 
-          text: "Give up", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "hope", 
-          text: "Hope", 
-          emoji: "🌟", 
-          isCorrect: true 
-        },
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "fear", 
-          text: "Fear", 
-          emoji: "😨", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a positive thought?",
-      options: [
-        { 
-          id: "anger", 
-          text: "Anger", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "sadness", 
-          text: "Sadness", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: "thanks", 
-          text: "Thanks", 
-          emoji: "🙏", 
-          isCorrect: true
-        },
-        { 
-          id: "hate", 
-          text: "Hate", 
-          emoji: "💔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which is a positive thought?",
-      options: [
-        { 
-          id: "gratitude", 
-          text: "Gratitude", 
-          emoji: "🙏", 
-          isCorrect: true
-        },
-        { 
-          id: "envy", 
-          text: "Envy", 
-          emoji: "😒", 
-          isCorrect: false
-        },
-        { 
-          id: "jealousy", 
-          text: "Jealousy", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "resentment", 
-          text: "Resentment", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is a positive thought?",
-      options: [
-        { 
-          id: "pessimism", 
-          text: "Pessimism", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "defeat", 
-          text: "Defeat", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "failure", 
-          text: "Failure", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: "optimism", 
-          text: "Optimism", 
-          emoji: "✨", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You make a mistake while drawing in class. Which thought helps you feel better quickly?",
+    options: [
+      { id: "im-bad", text: "I am bad at everything", emoji: "😞", isCorrect: false },
+      { id: "quit", text: "I should stop drawing forever", emoji: "🚫", isCorrect: false },
+      { id: "get-angry", text: "I feel angry and throw the paper", emoji: "😠", isCorrect: false },
+      { id: "try-again", text: "I can try again and improve", emoji: "✏️", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: "Your friend does not want to play today. What is the healthiest thought?",
+    options: [
+      { id: "alone", text: "No one likes me", emoji: "😢", isCorrect: false },
+      { id: "another-time", text: "We can play together another day", emoji: "📅", isCorrect: true },
+      { id: "ignore", text: "I will ignore everyone", emoji: "🙄", isCorrect: false },
+      { id: "revenge", text: "I will stop being their friend", emoji: "💢", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "You feel nervous before a school test. Which thought keeps your mind calm?",
+    options: [
+      { id: "prepared", text: "I prepared and will do my best", emoji: "📘", isCorrect: true },
+      { id: "fail", text: "I will definitely fail", emoji: "😰", isCorrect: false },
+      { id: "panic", text: "I cannot remember anything", emoji: "😵", isCorrect: false },
+      { id: "escape", text: "I want to skip the test", emoji: "🏃", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Someone wins a prize instead of you. What thought shows a happy mindset?",
+    options: [
+      { id: "jealous", text: "It is unfair to me", emoji: "😤", isCorrect: false },
+      { id: "self-blame", text: "I am useless", emoji: "💔", isCorrect: false },
+      { id: "happy-for-them", text: "I am happy for their success", emoji: "🎉", isCorrect: true },
+      { id: "angry-world", text: "The world is against me", emoji: "🌪️", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "You wake up feeling tired in the morning. Which thought starts the day positively?",
+    options: [
+      { id: "bad-day", text: "Today will be terrible", emoji: "☁️", isCorrect: false },
+      { id: "small-steps", text: "I will take the day one step at a time", emoji: "🌈", isCorrect: true },
+      { id: "complain", text: "I do not want to do anything", emoji: "😩", isCorrect: false },
+      { id: "give-up", text: "I cannot handle today", emoji: "🛑", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

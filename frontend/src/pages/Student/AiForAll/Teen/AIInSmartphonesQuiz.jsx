@@ -51,138 +51,141 @@ const AIInSmartphonesQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Does facial recognition unlock use AI?",
-      emoji: "📱",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only on iPhones", 
-          emoji: "🍎", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! Face unlock uses AI and biometric technology to recognize your unique facial features. It's computer vision AI working in real-time!"
-    },
-    {
-      id: 2,
-      text: "Does predictive text use AI?",
-      emoji: "💬",
-      options: [
-         { 
-          id: 1, 
-          text: "Only with internet", 
-          emoji: "🌐",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-       
-        { 
-          id: 3, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-      ],
-      explanation: "Predictive text uses AI to analyze your typing patterns, vocabulary, and context to suggest the next word. It learns from your usage to provide more accurate suggestions over time."
-    },
-    {
-      id: 3,
-      text: "Does voice assistant use AI?",
-      emoji: "🗣️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "🔊",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "🔇",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only when connected", 
-          emoji: "📶",
-          isCorrect: false
-        }
-      ],
-      explanation: "Voice assistants like Siri, Google Assistant, and Alexa use AI technologies including natural language processing (NLP) and machine learning to understand voice commands and provide relevant responses."
-    },
-    {
-      id: 4,
-      text: "Does photo tagging use AI?",
-      emoji: "📸",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "🏷️", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only on social media", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Photo tagging uses computer vision AI to recognize faces, objects, and scenes in images. This technology can identify people you know, pets, landmarks, and even categorize photos automatically."
-    },
-    {
-      id: 5,
-      text: "Does adaptive brightness use AI?",
-      emoji: "🔆",
-      options: [
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only on Android", 
-          emoji: "🤖", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Adaptive brightness uses AI to learn your preferences and environmental lighting conditions. It adjusts screen brightness based on sensor data and your past behavior to optimize battery life and viewing comfort."
-    }
-  ];
+  {
+    id: 1,
+    text: "Your phone unlocks instantly when it sees your face, even in different lighting. What makes this possible?",
+    emoji: "📱",
+    options: [
+      
+      {
+        id: "photo-storage",
+        text: "The phone saves a photo and checks it every time",
+        emoji: "🖼️",
+        isCorrect: false
+      },
+      {
+        id: "manual-control",
+        text: "A human remotely approves the unlock",
+        emoji: "👤",
+        isCorrect: false
+      },
+      {
+        id: "face-patterns",
+        text: "AI compares facial patterns using camera data",
+        emoji: "🧠",
+        isCorrect: true
+      },
+    ],
+    explanation: "Face unlock uses AI to recognize unique facial features, not stored photos or humans."
+  },
+  {
+    id: 2,
+    text: "While texting, your phone suggests words you often use. Why does it get better over time?",
+    emoji: "💬",
+    options: [
+      {
+        id: "learning-habits",
+        text: "AI learns from your typing habits and word choices",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "fixed-dictionary",
+        text: "It uses the same dictionary for everyone",
+        emoji: "📖",
+        isCorrect: false
+      },
+      {
+        id: "random-guess",
+        text: "Words are suggested randomly",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ],
+    explanation: "Predictive text improves because AI adapts to how YOU type."
+  },
+  {
+    id: 3,
+    text: "You ask your phone to set an alarm using your voice. What is the AI doing first?",
+    emoji: "🗣️",
+    options: [
+      
+      {
+        id: "voice-recording",
+        text: "Saving your voice as an audio file",
+        emoji: "🎙️",
+        isCorrect: false
+      },
+      {
+        id: "speech-to-text",
+        text: "Converting your speech into text and meaning",
+        emoji: "🔄",
+        isCorrect: true
+      },
+      {
+        id: "button-press",
+        text: "Waiting for you to tap the screen",
+        emoji: "👉",
+        isCorrect: false
+      }
+    ],
+    explanation: "Voice assistants use AI to understand language, not just record sound."
+  },
+  {
+    id: 4,
+    text: "Your gallery automatically groups photos into 'Pets', 'Food', and 'Friends'. How?",
+    emoji: "📸",
+    options: [
+     
+      {
+        id: "manual-tags",
+        text: "Photos are manually tagged by users",
+        emoji: "🏷️",
+        isCorrect: false
+      },
+      {
+        id: "file-names",
+        text: "The phone reads image file names",
+        emoji: "📂",
+        isCorrect: false
+      },
+       {
+        id: "image-recognition",
+        text: "AI recognizes objects and faces in photos",
+        emoji: "👁️",
+        isCorrect: true
+      },
+    ],
+    explanation: "Computer vision AI identifies what’s inside photos automatically."
+  },
+  {
+    id: 5,
+    text: "Your phone adjusts brightness differently indoors and outdoors over time. Why?",
+    emoji: "🔆",
+    options: [
+      {
+        id: "behavior-learning",
+        text: "AI learns your brightness preferences in different situations",
+        emoji: "📈",
+        isCorrect: true
+      },
+      {
+        id: "fixed-sensor",
+        text: "Brightness is fixed by the light sensor only",
+        emoji: "💡",
+        isCorrect: false
+      },
+      {
+        id: "battery-rule",
+        text: "Brightness changes only to save battery",
+        emoji: "🔋",
+        isCorrect: false
+      }
+    ],
+    explanation: "Adaptive brightness improves because AI learns from how you adjust it."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -211,7 +214,7 @@ const AIInSmartphonesQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

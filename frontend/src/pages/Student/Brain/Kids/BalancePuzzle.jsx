@@ -102,7 +102,7 @@ const BalancePuzzle = () => {
     if (newMatches.length === leftItems.length) {
       setTimeout(() => {
         setShowResult(true);
-        setScore(leftItems.length); // Ensure score matches total for GameOverModal
+        // Score is already correctly set from correct matches, no need to override
       }, 1000);
     }
 

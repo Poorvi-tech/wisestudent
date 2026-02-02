@@ -24,67 +24,68 @@ const ReflexInnovationBasics = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "New Idea",
-      emoji: "💡",
-      correctAnswer: "Innovation concept",
-      options: [
-        { text: "Innovation concept", isCorrect: true },
-        { text: "Copy Idea", isCorrect: false },
-        { text: "Break Things", isCorrect: false },
-        { text: "Repeat Mistakes", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Improve Design",
-      emoji: "🔧",
-      correctAnswer: "Innovation concept",
-      options: [
-        { text: "Break Things", isCorrect: false },
-        { text: "Innovation concept", isCorrect: true },
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Iterate Solution",
-      emoji: "🔄",
-      correctAnswer: "Innovation concept",
-      options: [
-        { text: "Innovation concept", isCorrect: true },
-        { text: "Repeat Mistakes", isCorrect: false },
-        { text: "Copy Idea", isCorrect: false },
-        { text: "Break Things", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Test Hypothesis",
-      emoji: "🔬",
-      correctAnswer: "Innovation concept",
-      options: [
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Innovation concept", isCorrect: true },
-        { text: "Copy Idea", isCorrect: false },
-        { text: "Repeat Mistakes", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Launch Product",
-      emoji: "🚀",
-      correctAnswer: "Innovation concept",
-      options: [
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "Innovation concept", isCorrect: true },
-        { text: "Break Things", isCorrect: false },
-        { text: "Repeat Mistakes", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "New Idea",
+    emoji: "💡",
+    question: "Aarav sees that classmates forget their water bottles. What is an innovative idea?",
+    options: [
+      { text: "Do nothing about it", isCorrect: false },
+      { text: "Create a reminder sticker near the school gate", isCorrect: true },
+      { text: "Copy exactly what another school does", isCorrect: false },
+      { text: "Blame students for forgetting", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Improve Design",
+    emoji: "🔧",
+    question: "Meera’s pencil box keeps breaking. What should she do to innovate?",
+    options: [
+      { text: "Change the design to make it stronger", isCorrect: true },
+      { text: "Keep using the broken box", isCorrect: false },
+      { text: "Ignore the problem", isCorrect: false },
+      { text: "Guess changes without checking", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Iterate Solution",
+    emoji: "🔄",
+    question: "Ravi made a toy car but it doesn’t move well. What is the best next step?",
+    options: [
+      { text: "Throw it away immediately", isCorrect: false },
+      { text: "Repeat the same mistake", isCorrect: false },
+      { text: "Stop trying forever", isCorrect: false },
+      { text: "Fix it and try again", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    concept: "Test Hypothesis",
+    emoji: "🔬",
+    question: "Anya thinks bigger wheels will help her toy car go faster. What should she do?",
+    options: [
+      { text: "Guess without trying", isCorrect: false },
+      { text: "Copy someone else’s toy", isCorrect: false },
+      { text: "Test the car with bigger wheels", isCorrect: true },
+      { text: "Never change anything", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Launch Product",
+    emoji: "🚀",
+    question: "Kabir makes handmade bookmarks. What is a smart way to share them?",
+    options: [
+      { text: "Sell without checking quality", isCorrect: false },
+      { text: "Show them to friends and ask for feedback", isCorrect: true },
+      { text: "Ignore what people say", isCorrect: false },
+      { text: "Stop after making one", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

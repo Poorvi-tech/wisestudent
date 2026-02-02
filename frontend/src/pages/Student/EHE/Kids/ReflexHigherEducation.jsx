@@ -24,67 +24,67 @@ const ReflexHigherEducation = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "College = Learning",
-      emoji: "📚",
-      correctAnswer: "Correct higher education concept",
-      options: [
-        { text: "College = Party Only", isCorrect: false },
-        { text: "Just Get Certificate", isCorrect: false },
-        { text: "No Need to Study", isCorrect: false },
-        { text: "Correct higher education concept", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      concept: "Earn Knowledge",
-      emoji: "🎓",
-      correctAnswer: "Correct higher education concept",
-      options: [
-        { text: "Just Get Certificate", isCorrect: false },
-        { text: "Correct higher education concept", isCorrect: true },
-        { text: "Waste Time", isCorrect: false },
-        { text: "Avoid Responsibilities", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Develop Skills",
-      emoji: "🏫",
-      correctAnswer: "Correct higher education concept",
-      options: [
-        { text: "Correct higher education concept", isCorrect: true },
-        { text: "Avoid Responsibilities", isCorrect: false },
-        { text: "College = Party Only", isCorrect: false },
-        { text: "Waste Time", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Critical Thinking",
-      emoji: "🧠",
-      correctAnswer: "Correct higher education concept",
-      options: [
-        { text: "No Need to Study", isCorrect: false },
-        { text: "College = Party Only", isCorrect: false },
-        { text: "Correct higher education concept", isCorrect: true },
-        { text: "Just Get Certificate", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Career Preparation",
-      emoji: "💼",
-      correctAnswer: "Correct higher education concept",
-      options: [
-        { text: "Correct higher education concept", isCorrect: true },
-        { text: "Waste Time", isCorrect: false },
-        { text: "No Need to Study", isCorrect: false },
-        { text: "Avoid Responsibilities", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "College = Learning",
+    emoji: "📚",
+    question: "Why do students go to college?",
+    options: [
+      { text: "Only to attend parties", isCorrect: false },
+      { text: "To learn new subjects and ideas", isCorrect: true },
+      { text: "To avoid studying forever", isCorrect: false },
+      { text: "To do nothing all day", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Earn Knowledge",
+    emoji: "🎓",
+    question: "What is the most important thing students gain from college?",
+    options: [
+      { text: "Knowledge and understanding", isCorrect: true },
+      { text: "Just a paper certificate", isCorrect: false },
+      { text: "Free time with no work", isCorrect: false },
+      { text: "Excuses to skip learning", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Develop Skills",
+    emoji: "🏫",
+    question: "How does college help students for the future?",
+    options: [
+      { text: "By teaching them to avoid responsibility", isCorrect: false },
+      { text: "By wasting time every day", isCorrect: false },
+      { text: "By stopping them from thinking", isCorrect: false },
+      { text: "By building useful skills for jobs", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    concept: "Critical Thinking",
+    emoji: "🧠",
+    question: "What thinking skill do students practice in college?",
+    options: [
+      { text: "Copying answers without thinking", isCorrect: false },
+      { text: "Ignoring different ideas", isCorrect: false },
+      { text: "Solving problems and asking questions", isCorrect: true },
+      { text: "Memorizing without understanding", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Career Preparation",
+    emoji: "💼",
+    question: "How does college help with future careers?",
+    options: [
+      { text: "It guarantees instant success without effort", isCorrect: false },
+      { text: "It prepares students for real jobs", isCorrect: true },
+      { text: "It removes the need to learn skills", isCorrect: false },
+      { text: "It avoids work and planning", isCorrect: false }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

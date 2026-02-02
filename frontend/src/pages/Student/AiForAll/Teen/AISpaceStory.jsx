@@ -53,133 +53,135 @@ const AISpaceStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "AI helps astronauts on Mars. Who ultimately controls the mission?",
-      options: [
-        
-        { 
-          id: "ai", 
-          text: "AI alone", 
-          emoji: "🤖", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "humans", 
-          text: "Humans", 
-          emoji: "👨‍🚀", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "satellites", 
-          text: "Earth satellites", 
-          emoji: "🛰️", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "AI provides navigation assistance on Mars. Who makes final decisions?",
-      options: [
-        { 
-          id: "humans", 
-          text: "Humans", 
-          emoji: "👨‍🚀", 
-          isCorrect: true
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "control", 
-          text: "Mission Control only", 
-          emoji: "🌍", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "AI monitors oxygen and water supply. Who acts on alerts?",
-      options: [
-        
-        { 
-          id: "autonomous", 
-          text: "AI autonomously", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "astronauts", 
-          text: "Astronauts", 
-          emoji: "👨‍🚀", 
-          isCorrect: true
-        },
-        { 
-          id: "base", 
-          text: "Mars base AI", 
-          emoji: "🏠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "AI detects equipment failure. Who decides the response?",
-      options: [
-        
-        { 
-          id: "system", 
-          text: "AI system", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "ground", 
-          text: "Ground team only", 
-          emoji: "🌍", 
-          isCorrect: false
-        },
-        { 
-          id: "humans", 
-          text: "Humans", 
-          emoji: "👨‍🚀", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "AI plans future Mars experiments. Who approves the plan?",
-      options: [
-        { 
-          id: "humans", 
-          text: "Humans", 
-          emoji: "👨‍🚀", 
-          isCorrect: true
-        },
-        { 
-          id: "alone", 
-          text: "AI alone", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "robots", 
-          text: "Robots", 
-          emoji: "🤖🤖", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "An AI rover finds a strange glowing rock on Mars. What should happen next?",
+    options: [
+      
+      {
+        id: "auto",
+        text: "AI immediately collects and stores the rock",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "The rover ignores it and keeps moving",
+        emoji: "🚗",
+        isCorrect: false
+      },
+      {
+        id: "collect",
+        text: "Astronauts review the data and decide whether to collect it",
+        emoji: "👨‍🚀",
+        isCorrect: true
+      },
+    ]
+  },
+
+  {
+    id: 2,
+    text: "During a space journey, AI predicts a meteor shower ahead. What is the safest action?",
+    options: [
+      {
+        id: "humanDecision",
+        text: "AI shares predictions, humans choose the safest route",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "aiControl",
+        text: "AI changes the route without telling anyone",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "continue",
+        text: "Ignore the warning and continue forward",
+        emoji: "➡️",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "AI notices an astronaut’s heartbeat is unusual in space. What should AI do?",
+    options: [
+      
+      {
+        id: "diagnose",
+        text: "AI makes a medical decision by itself",
+        emoji: "🧪",
+        isCorrect: false
+      },
+      {
+        id: "alert",
+        text: "Alert the medical team with health data",
+        emoji: "🚨",
+        isCorrect: true
+      },
+      {
+        id: "hide",
+        text: "Ignore the data to avoid panic",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 4,
+    text: "A space station’s AI suggests shutting down power to save energy. What is the best approach?",
+    options: [
+      
+      {
+        id: "shutdown",
+        text: "AI shuts down power immediately",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "reject",
+        text: "Completely ignore AI recommendations",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "review",
+        text: "Engineers review AI’s suggestion before acting",
+        emoji: "🔍",
+        isCorrect: true
+      },
+    ]
+  },
+
+  {
+    id: 5,
+    text: "AI creates a plan to build a base on Mars. What makes the plan trustworthy?",
+    options: [
+      {
+        id: "tested",
+        text: "Humans test, review, and approve the AI plan",
+        emoji: "📋",
+        isCorrect: true
+      },
+      {
+        id: "fast",
+        text: "The plan is created very quickly",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "complex",
+        text: "The plan uses very complex algorithms",
+        emoji: "🧮",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

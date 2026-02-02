@@ -33,11 +33,11 @@ const LabelErrorPuzzle = () => {
 
   // Correct labels (right side) - 6 items, rearranged to split matches
   const rightItems = [
-    { id: 1, name: "Elephant ", emoji: "🐘",  },
-    { id: 2, name: "Apple ", emoji: "🍎",  },
-    { id: 3, name: "Dog ", emoji: "🐶",  },
-    { id: 4, name: "Car ", emoji: "🚗",  },
-    { id: 5, name: "Flower ", emoji: "🌻",  }
+    { id: 1, name: "Elephant ", emoji: "",  },
+    { id: 2, name: "Apple ", emoji: "",  },
+    { id: 3, name: "Dog ", emoji: "",  },
+    { id: 4, name: "Car ", emoji: "",  },
+    { id: 5, name: "Flower ", emoji: "",  }
   ];
 
   // Correct matches (split across different positions for variety)

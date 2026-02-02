@@ -19,43 +19,36 @@ const SimulationRecyclingProgram = () => {
   const [coins, setCoins] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Find next game path and ID if not provided in location.state
-  const { nextGamePath, nextGameId } = useMemo(() => {
-    if (location.state?.nextGamePath) {
-      return {
-        nextGamePath: location.state.nextGamePath,
-        nextGameId: location.state.nextGameId || null
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = questions.length; // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+        
+        console.log("Set global variables for Recycling Program:", {
+          __flashTotalCoins: window.__flashTotalCoins,
+          __flashQuestionCount: window.__flashQuestionCount,
+          __flashPointsMultiplier: window.__flashPointsMultiplier
+        });
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
       };
     }
-    try {
-      const games = getSustainabilityTeenGames({});
-      const currentGame = games.find(g => g.id === gameId);
-      if (currentGame && currentGame.index !== undefined) {
-        const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
-        return {
-          nextGamePath: nextGame ? nextGame.path : null,
-          nextGameId: nextGame ? nextGame.id : null
-        };
-      }
-    } catch (error) {
-      console.warn("Error finding next game:", error);
-    }
-    return { nextGamePath: null, nextGameId: null };
-  }, [location.state, gameId]);
-
-  // Log when game completes and update location state with nextGameId
-  useEffect(() => {
-    if (gameFinished) {
-      console.log(`🎮 Simulation: Recycling Program game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
-      if (nextGameId && window.history && window.history.replaceState) {
-        const currentState = window.history.state || {};
-        window.history.replaceState({
-          ...currentState,
-          nextGameId: nextGameId
-        }, '');
-      }
-    }
-  }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
+  }, [totalCoins, coinsPerLevel]);
 
   const questions = [
     {
@@ -104,19 +97,73 @@ const SimulationRecyclingProgram = () => {
       options: [
         { id: "a", text: "Never", emoji: "🚫", isCorrect: false },
         { id: "b", text: "Only when full", emoji: "♻️", isCorrect: false },
+        { id: "d", text: "Once a year", emoji: "🗓️", isCorrect: false },
         { id: "c", text: "On a regular schedule", emoji: "📅", isCorrect: true },
-        { id: "d", text: "Once a year", emoji: "🗓️", isCorrect: false }
       ]
     }
   ];
 
+  // Find next game path and ID if not provided in location.state
+  const { nextGamePath, nextGameId } = useMemo(() => {
+    if (location.state?.nextGamePath) {
+      return {
+        nextGamePath: location.state.nextGamePath,
+        nextGameId: location.state.nextGameId || null
+      };
+    }
+    try {
+      const games = getSustainabilityTeenGames({});
+      const currentGame = games.find(g => g.id === gameId);
+      if (currentGame && currentGame.index !== undefined) {
+        const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
+        return {
+          nextGamePath: nextGame ? nextGame.path : null,
+          nextGameId: nextGame ? nextGame.id : null
+        };
+      }
+    } catch (error) {
+      console.warn("Error finding next game:", error);
+    }
+    return { nextGamePath: null, nextGameId: null };
+  }, [location.state, gameId]);
+
+  // Log when game completes and update location state with nextGameId
+  useEffect(() => {
+    if (gameFinished) {
+      console.log(`🎮 Simulation: Recycling Program game completed!`);
+      console.log(`Coins earned: ${coins}`);
+      console.log(`Total possible coins: ${totalCoins}`);
+      console.log(`Questions length: ${questions.length}`);
+      console.log(`Coins per level: ${coinsPerLevel}`);
+      
+      if (nextGameId && window.history && window.history.replaceState) {
+        const currentState = window.history.state || {};
+        window.history.replaceState({
+          ...currentState,
+          nextGameId: nextGameId
+        }, '');
+      }
+    }
+  }, [gameFinished, coins, gameId, nextGamePath, nextGameId, totalCoins, questions.length, coinsPerLevel]);
+
   const handleChoice = (optionId) => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
+    const isLastQuestion = currentScenario === questions.length - 1;
+    const newCoins = coins + 1;
+
+    console.log(`Question ${currentScenario + 1}: isCorrect=${isCorrect}, isLastQuestion=${isLastQuestion}, current coins=${coins}, new coins will be=${newCoins}`);
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      // For the last question, we want to show the total coins earned
+      if (isLastQuestion) {
+        console.log(`Showing final feedback with ${newCoins} coins`);
+        showCorrectAnswerFeedback(newCoins, true); // Show total coins
+      } else {
+        console.log(`Showing intermediate feedback with +1 coin`);
+        showCorrectAnswerFeedback(1, true); // Show +1 for intermediate questions
+      }
+      setCoins(newCoins); // Increment coins when correct
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -125,6 +172,7 @@ const SimulationRecyclingProgram = () => {
       if (currentScenario < questions.length - 1) {
         setCurrentScenario(prev => prev + 1);
       } else {
+        console.log(`Game finished! Final coins: ${newCoins}`);
         setGameFinished(true);
       }
     }, 1500);
@@ -145,6 +193,8 @@ const SimulationRecyclingProgram = () => {
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
+      totalLevels={questions.length}
+      currentLevel={currentScenario + 1}
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}

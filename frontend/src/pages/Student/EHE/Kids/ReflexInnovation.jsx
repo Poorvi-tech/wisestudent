@@ -24,67 +24,68 @@ const ReflexInnovation = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Solve Problems",
-      emoji: "🛠️",
-      correctAnswer: "Good for innovation",
-      options: [
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Good for innovation", isCorrect: true },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Reject All Ideas", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Think Creatively",
-      emoji: "💡",
-      correctAnswer: "Good for innovation",
-      options: [
-        { text: "Good for innovation", isCorrect: true },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Never Try New Things", isCorrect: false },
-        { text: "Stay the Same", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Improve Ideas",
-      emoji: "🔄",
-      correctAnswer: "Good for innovation",
-      options: [
-        { text: "Reject All Ideas", isCorrect: false },
-        { text: "Ignore Problems", isCorrect: false },
-        { text: "Good for innovation", isCorrect: true },
-        { text: "Stay the Same", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Experiment",
-      emoji: "🔬",
-      correctAnswer: "Good for innovation",
-      options: [
-        { text: "Never Try New Things", isCorrect: false },
-        { text: "Good for innovation", isCorrect: true },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Ignore Problems", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Innovate",
-      emoji: "🚀",
-      correctAnswer: "Good for innovation",
-      options: [
-        { text: "Stay the Same", isCorrect: false },
-        { text: "Good for innovation", isCorrect: true },
-        { text: "Reject All Ideas", isCorrect: false },
-        { text: "Ignore Problems", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Solve Problems",
+    emoji: "🛠️",
+    question: "A school playground slide is broken. What should a young inventor do?",
+    options: [
+      { text: "Ignore the broken slide", isCorrect: false },
+      { text: "Try to find a solution or fix it safely", isCorrect: true },
+      { text: "Copy someone else's broken design", isCorrect: false },
+      { text: "Stop everyone from using it forever", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Think Creatively",
+    emoji: "💡",
+    question: "A student wants to make a new backpack. What is a good approach?",
+    options: [
+      { text: "Come up with unique ideas and designs", isCorrect: true },
+      { text: "Copy the backpack of a friend", isCorrect: false },
+      { text: "Never try anything new", isCorrect: false },
+      { text: "Use the same old backpack without changes", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Improve Ideas",
+    emoji: "🔄",
+    question: "A kid invented a paper plane but it doesn’t fly far. What should they do?",
+    options: [
+      { text: "Throw it away and give up", isCorrect: false },
+      { text: "Ignore the problem", isCorrect: false },
+      { text: "Keep it the same without trying", isCorrect: false },
+      { text: "Test and change the design to make it fly better", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Experiment",
+    emoji: "🔬",
+    question: "A child wants to grow plants in different containers. What is the best way?",
+    options: [
+      { text: "Never try new experiments", isCorrect: false },
+      { text: "Copy someone else’s plant exactly", isCorrect: false },
+      { text: "Try planting in different ways and observe what works", isCorrect: true },
+      { text: "Ignore the growth results", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Innovate",
+    emoji: "🚀",
+    question: "A student wants to make a toy that moves without batteries. What should they do?",
+    options: [
+      { text: "Keep using the same battery-powered toy", isCorrect: false },
+      { text: "Think of new ways using hands, wind, or rubber bands", isCorrect: true },
+      { text: "Give up because it’s too hard", isCorrect: false },
+      { text: "Ignore the toy and stop learning", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

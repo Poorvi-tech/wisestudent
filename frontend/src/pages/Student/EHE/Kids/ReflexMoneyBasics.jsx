@@ -24,67 +24,68 @@ const ReflexMoneyBasics = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Money = Value",
-      emoji: "💰",
-      correctAnswer: "Correct concept",
-      options: [
-        { text: "Correct concept", isCorrect: true },
-        { text: "Money = Toy", isCorrect: false },
-        { text: "Money is only coins", isCorrect: false },
-        { text: "Money buys time", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Money can be digital",
-      emoji: "💳",
-      correctAnswer: "Correct concept",
-      options: [
-        { text: "Correct concept", isCorrect: true },
-        { text: "Money is only coins", isCorrect: false },
-        { text: "Banks are toy stores", isCorrect: false },
-        { text: "Money buys time", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Banks keep money safe",
-      emoji: "🏦",
-      correctAnswer: "Correct concept",
-      options: [
-        { text: "Banks are toy stores", isCorrect: false },
-        { text: "Correct concept", isCorrect: true },
-        { text: "Money disappears when saved", isCorrect: false },
-        { text: "Money = Toy", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Money buys goods",
-      emoji: "🛒",
-      correctAnswer: "Correct concept",
-      options: [
-        { text: "Money buys time", isCorrect: false },
-        { text: "Money is only coins", isCorrect: false },
-        { text: "Correct concept", isCorrect: true },
-        { text: "Money disappears when saved", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Money can grow with saving",
-      emoji: "📈",
-      correctAnswer: "Correct concept",
-      options: [
-        { text: "Money disappears when saved", isCorrect: false },
-        { text: "Correct concept", isCorrect: true },
-        { text: "Money = Toy", isCorrect: false },
-        { text: "Banks are toy stores", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Money = Value",
+    emoji: "💰",
+    question: "Riya wants to buy a toy but only has some coins. What is the right understanding about money?",
+    options: [
+      { text: "Money is just a toy", isCorrect: false },
+      { text: "Money is only coins and notes, nothing else", isCorrect: false },
+      { text: "Money is used to buy things we need or want", isCorrect: true },
+      { text: "Money can buy time to play instead of work", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Money can be digital",
+    emoji: "💳",
+    question: "Arjun wants to pay for snacks online. What is true about money?",
+    options: [
+      { text: "Money only exists as coins", isCorrect: false },
+      { text: "Money can be in bank accounts or digital wallets, not just cash", isCorrect: true },
+      { text: "Banks are like toy stores", isCorrect: false },
+      { text: "Money buys time instead of things", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Banks keep money safe",
+    emoji: "🏦",
+    question: "Neha saved her pocket money in a bank. Why is this smart?",
+    options: [
+      { text: "Banks keep money safe and help it grow", isCorrect: true },
+      { text: "Banks are toy stores", isCorrect: false },
+      { text: "Money disappears if you save it in a bank", isCorrect: false },
+      { text: "Money is only coins and notes", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    concept: "Money buys goods",
+    emoji: "🛒",
+    question: "Kabir wants to buy a notebook. What does money allow him to do?",
+    options: [
+      { text: "Money is only coins", isCorrect: false },
+      { text: "Money can buy time to play instead of goods", isCorrect: false },
+      { text: "Money disappears when saved at home", isCorrect: false },
+      { text: "Money allows him to buy things he needs or wants", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    concept: "Money can grow with saving",
+    emoji: "📈",
+    question: "Riya saves some money in her piggy bank every month. What happens?",
+    options: [
+      { text: "Money disappears if saved", isCorrect: false },
+      { text: "Money is just for toys", isCorrect: false },
+      { text: "Over time, saved money can grow or be used for bigger goals", isCorrect: true },
+      { text: "Banks are toy stores", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

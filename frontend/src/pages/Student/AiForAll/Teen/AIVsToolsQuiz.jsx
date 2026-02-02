@@ -51,137 +51,141 @@ const AIVsToolsQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Is a microwave an AI system?",
-      emoji: "🍲",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: " A microwave is a tool, not AI. AI involves systems that learn, adapt, and make intelligent decisions, unlike simple automated devices. 🤖❌"
-    },
-    {
-      id: 2,
-      text: "Is a calculator an AI system?",
-      emoji: "🧮",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: " A calculator follows fixed mathematical rules and doesn't learn or adapt, so it's not AI. AI systems can improve their performance over time. 🧮"
-    },
-    {
-      id: 3,
-      text: "Is Siri an AI system?",
-      emoji: "📱",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: " Siri uses natural language processing and machine learning to understand and respond to voice commands, making it an AI system. 🗣️"
-    },
-    {
-      id: 4,
-      text: "Is a thermostat an AI system?",
-      emoji: "🌡️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: " A basic thermostat simply follows programmed rules to control temperature. While smart thermostats may use AI, traditional ones are not AI systems. 🌡️"
-    },
-    {
-      id: 5,
-      text: "Is a self-driving car an AI system?",
-      emoji: "🚗",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: " Self-driving cars use computer vision, sensor fusion, and machine learning to navigate roads, making them complex AI systems. 🚗"
-    }
-  ];
+  {
+    id: 1,
+    text: "A microwave heats food when you press buttons. What best describes it?",
+    emoji: "🍲",
+    options: [
+      
+      {
+        id: "learning-system",
+        text: "A system that learns your food preferences",
+        emoji: "🧠",
+        isCorrect: false
+      },
+      {
+        id: "decision-maker",
+        text: "A system that decides meals on its own",
+        emoji: "🍽️",
+        isCorrect: false
+      },
+      {
+        id: "fixed-machine",
+        text: "A machine that follows fixed instructions",
+        emoji: "⚙️",
+        isCorrect: true
+      },
+    ],
+    explanation: "A microwave follows preset rules. It doesn’t learn or make decisions, so it’s a tool—not AI."
+  },
+  {
+    id: 2,
+    text: "A calculator instantly solves math problems you enter. Why is it not AI?",
+    emoji: "🧮",
+    options: [
+      {
+        id: "no-learning",
+        text: "It never learns from past calculations",
+        emoji: "📏",
+        isCorrect: true
+      },
+      {
+        id: "voice-control",
+        text: "It doesn’t accept voice commands",
+        emoji: "🎙️",
+        isCorrect: false
+      },
+      {
+        id: "slow-processing",
+        text: "It works slower than humans",
+        emoji: "🐢",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI systems learn and adapt. Calculators always follow the same math rules."
+  },
+  {
+    id: 3,
+    text: "Siri understands your voice, answers questions, and improves over time. What makes it AI?",
+    emoji: "📱",
+    options: [
+      
+      {
+        id: "internet-access",
+        text: "It is connected to the internet",
+        emoji: "🌐",
+        isCorrect: false
+      },
+      {
+        id: "language-learning",
+        text: "It understands language and learns from usage",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "touchscreen",
+        text: "It runs on a smartphone",
+        emoji: "📲",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI systems like Siri use language understanding and learning, not just internet access."
+  },
+  {
+    id: 4,
+    text: "A basic thermostat turns heating on at a fixed temperature. Why is this not AI?",
+    emoji: "🌡️",
+    options: [
+      {
+        id: "rule-based",
+        text: "It follows fixed rules without learning",
+        emoji: "📏",
+        isCorrect: true
+      },
+      {
+        id: "electric-device",
+        text: "It uses electricity",
+        emoji: "🔌",
+        isCorrect: false
+      },
+      {
+        id: "indoor-use",
+        text: "It is used inside homes",
+        emoji: "🏠",
+        isCorrect: false
+      }
+    ],
+    explanation: "Only smart thermostats that learn habits use AI. Basic ones are simple tools."
+  },
+  {
+    id: 5,
+    text: "A self-driving car detects traffic, pedestrians, and road signs. What makes it AI?",
+    emoji: "🚗",
+    options: [
+      
+      {
+        id: "engine-power",
+        text: "It has a powerful engine",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "gps-maps",
+        text: "It uses maps for navigation",
+        emoji: "🗺️",
+        isCorrect: false
+      },
+      {
+        id: "real-time-decisions",
+        text: "It makes real-time driving decisions using data",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI allows the car to see, decide, and react—going far beyond basic automation."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

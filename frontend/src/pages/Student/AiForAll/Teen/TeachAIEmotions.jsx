@@ -51,137 +51,63 @@ const TeachAIEmotions = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "What emotion does this emoji represent?",
-      emoji: "😀",
-      options: [
-        { 
-          id: 1, 
-          text: "Happy", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Sad", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Angry", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Happy! This emoji shows a big grin, which represents joy and happiness. Teaching AI to recognize facial expressions helps create more empathetic virtual assistants and improves human-computer interaction."
-    },
-    {
-      id: 2,
-      text: "What emotion does this emoji represent?",
-      emoji: "😢",
-      options: [
-        { 
-          id: 1, 
-          text: "Happy", 
-          emoji: "😄", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Sad", 
-          emoji: "😔", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Surprised", 
-          emoji: "😲", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Sad. This emoji shows tears, which represent sadness or crying. AI emotion recognition can help mental health applications detect when someone might need support or intervention."
-    },
-    {
-      id: 3,
-      text: "What emotion does this emoji represent?",
-      emoji: "😠",
-      options: [
-        { 
-          id: 1, 
-          text: "Happy", 
-          emoji: "😃", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Sad", 
-          emoji: "😞",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Angry", 
-          emoji: "😡", 
-          isCorrect: true
-        }
-      ],
-      explanation: "Angry. This emoji shows a scowl with furrowed brows, representing anger or frustration. AI systems that can detect anger can help de-escalate situations in customer service or provide appropriate responses."
-    },
-    {
-      id: 4,
-      text: "What emotion does this emoji represent?",
-      emoji: "😲",
-      options: [
-        { 
-          id: 1, 
-          text: "Bored", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Surprised", 
-          emoji: "😮", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Disgusted", 
-          emoji: "🤢", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Surprised. This emoji shows wide eyes and an open mouth, representing shock or amazement. AI that recognizes surprise can adjust its responses to provide more information when users seem confused."
-    },
-    {
-      id: 5,
-      text: "Why is teaching emotions to AI important?",
-      emoji: "🤖",
-      options: [
-        { 
-          id: 1, 
-          text: "Makes AI more human-like", 
-          emoji: "🤝", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Helps AI respond appropriately", 
-          emoji: "💬", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Makes AI faster", 
-          emoji: "⚡", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Helps AI respond appropriately! Emotional intelligence allows AI to tailor its responses based on the user's emotional state. This creates more natural, helpful interactions in virtual assistants, therapy bots, and educational tools."
-    }
-  ];
+  {
+    id: 1,
+    text: "A user types: 'I failed my exam and feel terrible.' Which emotion should the AI detect?",
+    emoji: "📉",
+    options: [
+      { id: 2, text: "Anger", emoji: "😠", isCorrect: false },
+      { id: 1, text: "Sadness", emoji: "😔", isCorrect: true },
+      { id: 3, text: "Excitement", emoji: "🤩", isCorrect: false }
+    ],
+    explanation: "The message expresses disappointment and emotional pain. Teaching AI to detect sadness helps it respond with comfort and support."
+  },
+  {
+    id: 2,
+    text: "A teen messages an AI: 'OMG I got selected for the finals!!!' What emotion is this?",
+    emoji: "🎉",
+    options: [
+      { id: 2, text: "Happiness", emoji: "😁", isCorrect: true },
+      { id: 1, text: "Fear", emoji: "😨", isCorrect: false },
+      { id: 3, text: "Confusion", emoji: "😕", isCorrect: false }
+    ],
+    explanation: "The excitement and enthusiasm clearly show happiness. AI can celebrate with the user to build positive interaction."
+  },
+  {
+    id: 3,
+    text: "A user keeps typing in ALL CAPS and says: 'THIS IS SO UNFAIR!'", 
+    emoji: "🔥",
+    options: [
+      { id: 2, text: "Sadness", emoji: "😢", isCorrect: false },
+      { id: 3, text: "Boredom", emoji: "😐", isCorrect: false },
+      { id: 1, text: "Anger", emoji: "😡", isCorrect: true },
+    ],
+    explanation: "ALL CAPS and strong words signal anger or frustration. AI should respond calmly to de-escalate the situation."
+  },
+  {
+    id: 4,
+    text: "A user says: 'I don’t know what to do anymore… everything feels confusing.' What emotion should AI recognize?",
+    emoji: "🌫️",
+    options: [
+      { id: 2, text: "Joy", emoji: "😊", isCorrect: false },
+      { id: 1, text: "Confusion", emoji: "😕", isCorrect: true },
+      { id: 3, text: "Pride", emoji: "😌", isCorrect: false }
+    ],
+    explanation: "Uncertainty and unclear thoughts indicate confusion. AI can help by simplifying information or guiding step-by-step."
+  },
+  {
+    id: 5,
+    text: "An AI tutor notices a student stopped replying after saying 'I’m scared I’ll fail.' What emotion is involved?",
+    emoji: "📚",
+    options: [
+      { id: 1, text: "Fear", emoji: "😨", isCorrect: true },
+      { id: 2, text: "Excitement", emoji: "🤩", isCorrect: false },
+      { id: 3, text: "Anger", emoji: "😠", isCorrect: false }
+    ],
+    explanation: "Worry about failure shows fear. Emotion-aware AI can encourage and motivate instead of pressuring the student."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;

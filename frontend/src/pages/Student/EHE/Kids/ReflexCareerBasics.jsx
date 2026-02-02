@@ -24,67 +24,68 @@ const ReflexCareerBasics = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      concept: "Green Jobs",
-      emoji: "🌱",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Good career concept", isCorrect: true },
-        { text: "Jobs That Harm Earth", isCorrect: false },
-        { text: "Wasteful Jobs", isCorrect: false },
-        { text: "Deforestation Jobs", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      concept: "Recycling Careers",
-      emoji: "♻️",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Wasteful Jobs", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "Coal Mining", isCorrect: false },
-        { text: "Polluting Industries", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      concept: "Solar Energy Jobs",
-      emoji: "🌞",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Good career concept", isCorrect: true },
-        { text: "Coal Mining", isCorrect: false },
-        { text: "Jobs That Harm Earth", isCorrect: false },
-        { text: "Deforestation Jobs", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      concept: "Wind Energy Careers",
-      emoji: "💨",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Polluting Industries", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "Jobs That Harm Earth", isCorrect: false },
-        { text: "Wasteful Jobs", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      concept: "Forest Conservation",
-      emoji: "🌳",
-      correctAnswer: "Good career concept",
-      options: [
-        { text: "Deforestation Jobs", isCorrect: false },
-        { text: "Good career concept", isCorrect: true },
-        { text: "Coal Mining", isCorrect: false },
-        { text: "Wasteful Jobs", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    concept: "Green Jobs",
+    emoji: "🌱",
+    question: "You want a job that helps the Earth. Which one should you choose?",
+    options: [
+      { text: "Cutting trees without replanting", isCorrect: false },
+      { text: "Planting trees and taking care of parks", isCorrect: true },
+      { text: "Throwing waste into rivers", isCorrect: false },
+      { text: "Burning plastic for fun", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    concept: "Recycling Careers",
+    emoji: "♻️",
+    question: "Your city wants less waste. Which job helps the most?",
+    options: [
+      { text: "Sorting waste for recycling", isCorrect: true },
+      { text: "Throwing trash anywhere", isCorrect: false },
+      { text: "Making more plastic waste", isCorrect: false },
+      { text: "Ignoring garbage problems", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    concept: "Solar Energy Jobs",
+    emoji: "🌞",
+    question: "People want clean electricity. What job is best?",
+    options: [
+      { text: "Burning coal for power", isCorrect: false },
+      { text: "Installing solar panels on rooftops", isCorrect: true },
+      { text: "Wasting electricity all day", isCorrect: false },
+      { text: "Cutting forests for fuel", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    concept: "Wind Energy Careers",
+    emoji: "💨",
+    question: "A windy place needs clean power. What should workers do?",
+    options: [
+      { text: "Pollute the air with smoke", isCorrect: false },
+      { text: "Break machines for fun", isCorrect: false },
+      { text: "Build and maintain windmills", isCorrect: true },
+      { text: "Waste natural resources", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    concept: "Forest Conservation",
+    emoji: "🌳",
+    question: "Forests are getting smaller. Which career helps save them?",
+    options: [
+      { text: "Cut trees without permission", isCorrect: false },
+      { text: "Start forest fires", isCorrect: false },
+      { text: "Throw garbage in forests", isCorrect: false },
+      { text: "Protect forests and wildlife", isCorrect: true },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

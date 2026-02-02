@@ -10,14 +10,38 @@ const SimulationEnergyAudit = () => {
   const gameData = getGameDataById("sustainability-teens-43");
   const gameId = gameData?.id || "sustainability-teens-43";
   // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  const coinsPerLevel = 2;
+  const totalCoins = 10;
+  const totalXp = 20;
   const [currentScenario, setCurrentScenario] = useState(0);
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track actual correct answers
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+
+  // Override global variables to ensure correct calculation
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Set the correct values for this game
+      window.__flashTotalCoins = totalCoins;        // 10
+      window.__flashQuestionCount = 5;              // questions.length
+      window.__flashPointsMultiplier = coinsPerLevel; // 2
+      
+      console.log("Set global variables:", {
+        __flashTotalCoins: window.__flashTotalCoins,
+        __flashQuestionCount: window.__flashQuestionCount,
+        __flashPointsMultiplier: window.__flashPointsMultiplier
+      });
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
 
   // Find next game path and ID if not provided in location.state
   const { nextGamePath, nextGameId } = useMemo(() => {
@@ -46,7 +70,15 @@ const SimulationEnergyAudit = () => {
   // Log when game completes and update location state with nextGameId
   useEffect(() => {
     if (gameFinished) {
-      console.log(`🎮 Simulation: Energy Audit game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      console.log(`🎮 Simulation: Energy Audit game completed! Score: ${coins}, Correct Answers: ${correctAnswers}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      console.log("GameShell props:", { 
+        score: correctAnswers, 
+        maxScore: questions.length, 
+        totalLevels: questions.length,
+        coinsPerLevel, 
+        totalCoins,
+        questionCount: questions.length
+      });
       if (nextGameId && window.history && window.history.replaceState) {
         const currentState = window.history.state || {};
         window.history.replaceState({
@@ -55,7 +87,7 @@ const SimulationEnergyAudit = () => {
         }, '');
       }
     }
-  }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
+  }, [gameFinished, coins, correctAnswers, gameId, nextGamePath, nextGameId, coinsPerLevel, totalCoins]);
 
   const questions = [
     {
@@ -115,8 +147,10 @@ const SimulationEnergyAudit = () => {
     const isCorrect = selectedOption.isCorrect;
 
     if (isCorrect) {
+      // With our global variables set correctly, pass 1 to get 1 * 2 = 2
       showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      setCoins(prev => prev + coinsPerLevel); // Increment coins when correct
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -137,12 +171,13 @@ const SimulationEnergyAudit = () => {
       title="Simulation: Energy Audit"
       subtitle={`Scenario ${currentScenario + 1} of ${questions.length}`}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       gameType="sustainability"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       maxScore={questions.length}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}

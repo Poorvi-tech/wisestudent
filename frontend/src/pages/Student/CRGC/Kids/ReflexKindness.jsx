@@ -46,8 +46,8 @@ const ReflexKindness = () => {
       emoji: "📚",
       correctAnswer: "Help pick them up",
       options: [
-        { text: "Step on them", isCorrect: false },
         { text: "Help pick them up", isCorrect: true },
+        { text: "Step on them", isCorrect: false },
         { text: "Laugh at them", isCorrect: false },
         { text: "Walk away", isCorrect: false }
       ],
@@ -95,9 +95,9 @@ const ReflexKindness = () => {
       correctAnswer: "Give genuine compliments",
       options: [
         { text: "Gossip about others", isCorrect: false },
-        { text: "Give genuine compliments", isCorrect: true },
         { text: "Make fun of classmates", isCorrect: false },
-        { text: "Ignore good things", isCorrect: false }
+        { text: "Ignore good things", isCorrect: false },
+        { text: "Give genuine compliments", isCorrect: true },
       ],
       feedback: {
         correct: "Awesome! Giving genuine compliments builds others up and spreads positivity!",

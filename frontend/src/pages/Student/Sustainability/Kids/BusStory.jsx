@@ -104,7 +104,7 @@ const BusStory = () => {
          { 
           id: "bus", 
           text: "Take public transport", 
-          emoji: "🚌", 
+          emoji: "🚂", 
           isCorrect: true
         },
       ]
@@ -178,7 +178,7 @@ const BusStory = () => {
         { 
           id: "reduce", 
           text: "Reduces emissions", 
-          emoji: "🚌", 
+          emoji: "💚", 
           isCorrect: true
         },
 

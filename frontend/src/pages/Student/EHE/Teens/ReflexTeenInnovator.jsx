@@ -24,67 +24,68 @@ const ReflexTeenInnovator = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Creative Ideas",
-      emoji: "💡",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Copy Others", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Ignore Issues", isCorrect: false },
-        { text: "Follow the Crowd", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Solve Problems",
-      emoji: "🧩",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Ignore Issues", isCorrect: false },
-        { text: "Stick to Old Ways", isCorrect: false },
-        { text: "Copy Others", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Try New Methods",
-      emoji: "🧪",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Stick to Old Ways", isCorrect: false },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Follow the Crowd", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Think Outside Box",
-      emoji: "📦",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Follow the Crowd", isCorrect: false },
-        { text: "Ignore Issues", isCorrect: false },
-        { text: "Stick to Old Ways", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Experiment",
-      emoji: "🔬",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Ignore Issues", isCorrect: false },
-        { text: "Stick to Old Ways", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Creative Ideas",
+    emoji: "💡",
+    question: "Your school club needs funds. What’s the most innovative first step?",
+    options: [
+      { text: "Wait for someone else to suggest ideas", isCorrect: false },
+      { text: "Create a new service or product students actually need", isCorrect: true },
+      { text: "Copy last year’s plan without changes", isCorrect: false },
+      { text: "Cancel the idea completely", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Solve Problems",
+    emoji: "🧩",
+    question: "Students keep missing assignment deadlines. What should you do?",
+    options: [
+      { text: "Build a reminder or tracking solution", isCorrect: true },
+      { text: "Blame students for being careless", isCorrect: false },
+      { text: "Ignore the problem", isCorrect: false },
+      { text: "Punish everyone equally", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Try New Methods",
+    emoji: "🧪",
+    question: "Your startup idea isn’t getting users. What’s the smartest move?",
+    options: [
+      { text: "Quit immediately", isCorrect: false },
+      { text: "Keep doing the same thing forever", isCorrect: false },
+      { text: "Hide the problem from your team", isCorrect: false },
+      { text: "Test a new version and collect feedback", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Think Outside the Box",
+    emoji: "📦",
+    question: "Everyone studies the same way for exams. What makes you an innovator?",
+    options: [
+      { text: "Memorize without understanding", isCorrect: false },
+      { text: "Follow exactly what everyone else does", isCorrect: false },
+      { text: "Create your own study system or tools", isCorrect: true },
+      { text: "Avoid studying altogether", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Experiment",
+    emoji: "🔬",
+    question: "You have two business ideas but limited time. What’s best?",
+    options: [
+      { text: "Do nothing to avoid failure", isCorrect: false },
+      { text: "Test both ideas on a small scale", isCorrect: true },
+      { text: "Choose randomly without thinking", isCorrect: false },
+      { text: "Copy a famous startup exactly", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -53,132 +53,131 @@ const HumanPlusAIStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "AI analyzes patient data and suggests a treatment. Who gives the final word?",
-      options: [
-        { 
-          id: "doctor", 
-          text: "Doctor", 
-          emoji: "👨‍⚕️", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "both", 
-          text: "Both together", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "AI assists during surgery by recommending steps. Who decides the final action?",
-      options: [
-        { 
-          id: "doctor", 
-          text: "Doctor", 
-          emoji: "👨‍⚕️", 
-          isCorrect: true
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "nurse", 
-          text: "Nurse", 
-          emoji: "👩‍⚕️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "AI detects anomalies in X-rays. Who confirms the diagnosis?",
-      options: [
-       
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "machine", 
-          text: "Machine", 
-          emoji: "🖥️", 
-          isCorrect: false
-        },
-         { 
-          id: "doctor", 
-          text: "Doctor", 
-          emoji: "👨‍⚕️", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "AI suggests medication for a patient. Who approves the prescription?",
-      options: [
-        
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "doctor", 
-          text: "Doctor", 
-          emoji: "👨‍⚕️", 
-          isCorrect: true
-        },
-        { 
-          id: "pharmacist", 
-          text: "Pharmacist", 
-          emoji: "💊", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "AI monitors patient's vital signs continuously. Who interprets critical alerts?",
-      options: [
-        
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "doctor", 
-          text: "Doctor", 
-          emoji: "👨‍⚕️", 
-          isCorrect: true
-        },
-        { 
-          id: "monitor", 
-          text: "Monitor itself", 
-          emoji: "🖥️", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "An AI tool reviews a patient's reports and suggests a possible illness. What should happen next?",
+    options: [
+     
+      {
+        id: "aiFinal",
+        text: "AI makes the final medical decision",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "autoMedicine",
+        text: "Medicine is given automatically",
+        emoji: "💊",
+        isCorrect: false
+      },
+       {
+        id: "doctorConfirm",
+        text: "A doctor reviews and confirms the diagnosis",
+        emoji: "👨‍⚕️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "AI helps a teacher analyze students’ test performance. What is the BEST use of this AI result?",
+    options: [
+      
+      {
+        id: "aiGrades",
+        text: "AI alone decides student grades",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "teacherPlan",
+        text: "Teacher adjusts lessons using AI insights",
+        emoji: "📚",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Ignore the AI report completely",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A self-driving car detects an obstacle during heavy rain. Who should take control?",
+    options: [
+      {
+        id: "humanTakeover",
+        text: "Human driver takes control immediately",
+        emoji: "🚗",
+        isCorrect: true
+      },
+      {
+        id: "aiOnly",
+        text: "AI continues without human input",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "wait",
+        text: "Wait and see what happens",
+        emoji: "⏳",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "AI predicts a flood risk in a city using weather data. What is the smartest response?",
+    options: [
+      
+      {
+        id: "aiDecision",
+        text: "AI orders evacuation on its own",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "collaborate",
+        text: "Authorities and AI plan evacuation together",
+        emoji: "🤝",
+        isCorrect: true
+      },
+      {
+        id: "ignoreWarning",
+        text: "Ignore the AI prediction",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "AI suggests hiring a candidate based on resume screening. What should the company do?",
+    options: [
+      {
+        id: "humanInterview",
+        text: "HR reviews AI results and interviews the candidate",
+        emoji: "🧑‍💼",
+        isCorrect: true
+      },
+      {
+        id: "autoHire",
+        text: "Hire the candidate automatically",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "rejectAll",
+        text: "Reject all AI-selected candidates",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

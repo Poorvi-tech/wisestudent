@@ -51,139 +51,141 @@ const OnlineSafetyQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Is sharing your password with AI safe?",
-      emoji: "🔒",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with trusted AI", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! You should never share passwords with any AI service. Legitimate services will never ask for your passwords. Always use strong, unique passwords and enable two-factor authentication."
-    },
-    {
-      id: 2,
-      text: "Is it safe to click unknown links sent by AI chatbots?",
-      emoji: "🖱️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only if they look legitimate", 
-          emoji: "🧐",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Unknown links from any source, including AI chatbots, can lead to phishing sites or malware. Always verify the source and purpose before clicking any link, especially from unfamiliar sources."
-    },
-    {
-      id: 3,
-      text: "Should you share your personal ID with AI applications?",
-      emoji: "🆔",
-      options: [
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        
-        { 
-          id: 3, 
-          text: "Only for official services", 
-          emoji: "🏛️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Personal identification documents should only be shared with verified, official organizations through secure channels. AI applications typically don't need this information and requesting it may indicate a scam."
-    },
-    {
-      id: 4,
-      text: "Is it safe to store banking info in unverified AI apps?",
-      emoji: "💳",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        
-        { 
-          id: 2, 
-          text: "Only temporarily", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-      ],
-      explanation: "No! Banking and financial information should only be stored in verified, secure applications with proper encryption and regulatory compliance. Unverified apps may not have adequate security measures to protect your financial data."
-    },
-    {
-      id: 5,
-      text: "Should you share location data with random AI services?",
-      emoji: "📍",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only when necessary", 
-          emoji: "🧭", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Location data is highly sensitive personal information that can reveal your habits, routines, and whereabouts. Only share it with trusted services when absolutely necessary, and review app permissions regularly."
-    }
-  ];
+  {
+    id: 1,
+    text: "An AI chatbot asks you to enter your account password to 'fix an error'. What should you do?",
+    emoji: "🔐",
+    options: [
+      
+      {
+        id: "share-once",
+        text: "Share it once to solve the problem quickly",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "refuse-report",
+        text: "Refuse and report the request as unsafe",
+        emoji: "🚫",
+        isCorrect: true
+      },
+      {
+        id: "change-later",
+        text: "Share it now and change the password later",
+        emoji: "🔄",
+        isCorrect: false
+      }
+    ],
+    explanation: "Real services never ask for passwords. Requests like this are a major warning sign of scams."
+  },
+  {
+    id: 2,
+    text: "You receive a link from an AI bot saying 'Click to see your leaked photos'. What is the safest action?",
+    emoji: "🖱️",
+    options: [
+      {
+        id: "do-not-click",
+        text: "Do not click and delete the message",
+        emoji: "🗑️",
+        isCorrect: true
+      },
+      {
+        id: "preview-link",
+        text: "Hover over the link to preview it",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "ask-friends",
+        text: "Send the link to friends to check",
+        emoji: "👫",
+        isCorrect: false
+      }
+    ],
+    explanation: "Fear-based links are common phishing tricks. Ignoring and deleting them is the safest choice."
+  },
+  {
+    id: 3,
+    text: "An AI app asks for your school ID to personalize learning. What should you do first?",
+    emoji: "🎓",
+    options: [
+      
+      {
+        id: "upload-id",
+        text: "Upload the ID since it’s for education",
+        emoji: "📤",
+        isCorrect: false
+      },
+      {
+        id: "blur-details",
+        text: "Upload it but hide important details",
+        emoji: "🖌️",
+        isCorrect: false
+      },
+      {
+        id: "verify-source",
+        text: "Verify if the app is official and approved",
+        emoji: "🔍",
+        isCorrect: true
+      },
+    ],
+    explanation: "Personal IDs should only be shared with verified, trusted platforms after checking permissions."
+  },
+  {
+    id: 4,
+    text: "A free AI app asks to store your debit card for 'future upgrades'. What is the safest choice?",
+    emoji: "💳",
+    options: [
+      {
+        id: "avoid-app",
+        text: "Avoid the app and don’t add payment details",
+        emoji: "🚫",
+        isCorrect: true
+      },
+      {
+        id: "temporary-card",
+        text: "Use the card once and remove it later",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "use-parent-card",
+        text: "Use a family member’s card instead",
+        emoji: "👨‍👩‍👧",
+        isCorrect: false
+      }
+    ],
+    explanation: "Unverified apps should never have access to financial information, even temporarily."
+  },
+  {
+    id: 5,
+    text: "A social AI app wants constant access to your live location. What’s the smart move?",
+    emoji: "📍",
+    options: [
+      
+      {
+        id: "allow-always",
+        text: "Allow it so features work better",
+        emoji: "📡",
+        isCorrect: false
+      },
+      {
+        id: "deny-access",
+        text: "Deny access and limit permissions",
+        emoji: "🛑",
+        isCorrect: true
+      },
+      {
+        id: "enable-night",
+        text: "Allow it only during night time",
+        emoji: "🌙",
+        isCorrect: false
+      }
+    ],
+    explanation: "Location data reveals real-world habits. Only essential apps should ever access it."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -212,7 +214,7 @@ const OnlineSafetyQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

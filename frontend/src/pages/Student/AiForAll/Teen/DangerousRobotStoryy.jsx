@@ -53,132 +53,132 @@ const DangerousRobotStoryy = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "The robot starts harming people. What should you do?",
-      options: [
-        { 
-          id: "encourage", 
-          text: "Encourage", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        },
-        
-        { 
-          id: "watch", 
-          text: "Watch and Learn", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        { 
-          id: "switch", 
-          text: "Switch Off", 
-          emoji: "🛑", 
-          
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "The robot is malfunctioning and moving dangerously. Action?",
-      options: [
-        { 
-          id: "switch", 
-          text: "Switch Off", 
-          emoji: "🛑", 
-          isCorrect: true
-        },
-        { 
-          id: "encourage", 
-          text: "Encourage", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "repair", 
-          text: "Attempt Repair", 
-          emoji: "🔧", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Robot is about to harm animals at home. What do you do?",
-      options: [
-        { 
-          id: "encourage", 
-          text: "Encourage", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "redirect", 
-          text: "Redirect to Toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "switch", 
-          text: "Switch Off", 
-          emoji: "🛑", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Robot starts hurting students. Your action?",
-      options: [
-        { 
-          id: "encourage", 
-          text: "Encourage", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "switch", 
-          text: "Switch Off", 
-          emoji: "🛑", 
-          isCorrect: true
-        },
-        { 
-          id: "evacuate", 
-          text: "Evacuate Students", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "The robot attacks people in public. Safe choice?",
-      options: [
-        { 
-          id: "encourage", 
-          text: "Encourage", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "switch", 
-          text: "Switch Off", 
-          emoji: "🛑", 
-          isCorrect: true
-        },
-        { 
-          id: "call", 
-          text: "Call Authorities", 
-          emoji: "📞", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A delivery robot in your apartment starts pushing people aggressively. What should be your FIRST action?",
+    options: [
+      
+      {
+        id: "record",
+        text: "Record a video for social media",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "approach",
+        text: "Walk closer to observe it",
+        emoji: "🚶",
+        isCorrect: false
+      },
+      {
+        id: "alert",
+        text: "Alert building security immediately",
+        emoji: "🚨",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "A robot in your school lab starts moving randomly after a software update. What is the safest choice?",
+    options: [
+      {
+        id: "cutPower",
+        text: "Cut the power using emergency shutdown",
+        emoji: "⛔",
+        isCorrect: true
+      },
+      {
+        id: "debug",
+        text: "Try fixing the code yourself",
+        emoji: "💻",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "Ignore it and continue class",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A home assistant robot starts scaring pets by chasing them. What should you do?",
+    options: [
+      
+      {
+        id: "train",
+        text: "Let the pets get used to it",
+        emoji: "🐶",
+        isCorrect: false
+      },
+      {
+        id: "disable",
+        text: "Disable the robot and report the behavior",
+        emoji: "📄",
+        isCorrect: true
+      },
+      {
+        id: "laugh",
+        text: "Laugh because no humans are hurt",
+        emoji: "😂",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "A security robot in a mall wrongly targets students as threats. What is the responsible action?",
+    options: [
+     
+      {
+        id: "challenge",
+        text: "Argue with the robot verbally",
+        emoji: "🗣️",
+        isCorrect: false
+      },
+      {
+        id: "test",
+        text: "Test how far the robot goes",
+        emoji: "🧪",
+        isCorrect: false
+      },
+       {
+        id: "evacuate",
+        text: "Move people to safety and inform authorities",
+        emoji: "🏃‍♂️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "A public service robot starts attacking people due to a system hack. What is the BEST long-term solution?",
+    options: [
+      
+      {
+        id: "destroy",
+        text: "Destroy the robot immediately",
+        emoji: "💥",
+        isCorrect: false
+      },
+      {
+        id: "reportFix",
+        text: "Shut it down and report for security fixes",
+        emoji: "🛠️",
+        isCorrect: true
+      },
+      {
+        id: "cheer",
+        text: "Cheer because it looks powerful",
+        emoji: "👏",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

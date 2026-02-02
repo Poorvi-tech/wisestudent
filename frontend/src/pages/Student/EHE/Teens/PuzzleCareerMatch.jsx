@@ -19,9 +19,9 @@ const PuzzleCareerMatch = () => {
 
   // Careers (left side) - 5 items
   const careers = [
-    { id: 1, name: "Scientist", emoji: "🔬",  },
+    { id: 1, name: "Scientist", emoji: "👨‍🔬",  },
     { id: 2, name: "Chef", emoji: "👨‍🍳",  },
-    { id: 3, name: "Pilot", emoji: "✈️",  },
+    { id: 3, name: "Pilot", emoji: "🧑‍✈️",  },
     { id: 4, name: "Teacher", emoji: "👩‍🏫",  },
     { id: 5, name: "Doctor", emoji: "👨‍⚕️",  }
   ];

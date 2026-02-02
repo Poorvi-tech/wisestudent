@@ -124,7 +124,7 @@ const ClassroomStory2 = () => {
         {
           id: "b",
           text: "Encourage everyone to explore subjects based on their interests",
-          emoji: "🔬🎨",
+          emoji: "🔬",
           isCorrect: true
         },
         {

@@ -24,67 +24,68 @@ const ReflexTeenSkills = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Leadership",
-      emoji: "👑",
-      correctAnswer: "Positive skill",
-      options: [
-        { text: "Bullying", isCorrect: false },
-        { text: "Cheating", isCorrect: false },
-        { text: "Positive skill", isCorrect: true },
-        { text: "Giving Up", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Teamwork",
-      emoji: "🤝",
-      correctAnswer: "Positive skill",
-      options: [
-        { text: "Lying", isCorrect: false },
-        { text: "Bullying", isCorrect: false },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Positive skill", isCorrect: true },
-      ]
-    },
-    {
-      id: 3,
-      action: "Communication",
-      emoji: "💬",
-      correctAnswer: "Positive skill",
-      options: [
-        { text: "Lying", isCorrect: false },
-        { text: "Positive skill", isCorrect: true },
-        { text: "Cheating", isCorrect: false },
-        { text: "Bullying", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Problem-Solving",
-      emoji: "🧩",
-      correctAnswer: "Positive skill",
-      options: [
-        { text: "Positive skill", isCorrect: true },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Cheating", isCorrect: false },
-        { text: "Lying", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Creativity",
-      emoji: "🎨",
-      correctAnswer: "Positive skill",
-      options: [
-        { text: "Bullying", isCorrect: false },
-        { text: "Cheating", isCorrect: false },
-        { text: "Giving Up", isCorrect: false },
-        { text: "Positive skill", isCorrect: true },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Leadership",
+    emoji: "👑",
+    question: "Your team is confused about a project deadline. What should you do?",
+    options: [
+      { text: "Blame everyone for being careless", isCorrect: false },
+      { text: "Ignore the confusion", isCorrect: false },
+      { text: "Clearly explain tasks and motivate the team", isCorrect: true },
+      { text: "Quit the project", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Teamwork",
+    emoji: "🤝",
+    question: "A teammate is struggling with their part of the work. What’s best?",
+    options: [
+      { text: "Let them fail on their own", isCorrect: false },
+      { text: "Help them and divide work fairly", isCorrect: true },
+      { text: "Complain to the teacher immediately", isCorrect: false },
+      { text: "Do everything yourself angrily", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Communication",
+    emoji: "💬",
+    question: "You disagree with your teammate’s idea. What should you do?",
+    options: [
+      { text: "Explain your opinion calmly and clearly", isCorrect: true },
+      { text: "Stay silent even if it causes problems", isCorrect: false },
+      { text: "Shout to prove you are right", isCorrect: false },
+      { text: "Talk behind their back", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Problem-Solving",
+    emoji: "🧩",
+    question: "Your plan fails during a competition. What’s the smartest move?",
+    options: [
+      { text: "Panic and stop trying", isCorrect: false },
+      { text: "Blame luck", isCorrect: false },
+      { text: "Copy another team instantly", isCorrect: false },
+      { text: "Analyze the issue and try an alternative solution", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Creativity",
+    emoji: "🎨",
+    question: "Everyone presents the same idea in class. What sets you apart?",
+    options: [
+      { text: "Repeat what everyone else says", isCorrect: false },
+      { text: "Avoid presenting", isCorrect: false },
+      { text: "Add a fresh idea or new perspective", isCorrect: true },
+      { text: "Mock other ideas", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

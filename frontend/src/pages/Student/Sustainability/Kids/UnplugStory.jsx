@@ -60,130 +60,136 @@ const UnplugStory = () => {
   }, [location.state, gameId]);
 
   const questions = [
-    {
-      id: 1,
-      text: "You finish charging. Do you unplug or leave it plugged?",
-      options: [
-        
-        { 
-          id: "leave", 
-          text: "Leave it plugged", 
-          emoji: "🔌", 
-          isCorrect: false
-        },
-        { 
-          id: "unplug", 
-          text: "Unplug it", 
-          emoji: "🔌", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What happens to electronics when not in use?",
-      options: [
-        { 
-          id: "save", 
-          text: "Unplug to save energy", 
-          emoji: "⚡", 
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Leave plugged to waste", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore energy", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How can you save energy at home?",
-      options: [
-       
-        { 
-          id: "leave", 
-          text: "Leave everything plugged", 
-          emoji: "🔌", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Don't worry about it", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-         { 
-          id: "unplug", 
-          text: "Unplug devices when not in use", 
-          emoji: "🔌", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What should you do with chargers when not needed?",
-      options: [
-        
-        { 
-          id: "leave", 
-          text: "Leave them plugged", 
-          emoji: "🔌", 
-          isCorrect: false
-        },
-        { 
-          id: "unplug", 
-          text: "Unplug them", 
-          emoji: "🔌", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore them", 
-          emoji: "😶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is unplugging important?",
-      options: [
-        { 
-          id: "save", 
-          text: "Saves energy and money", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Wastes resources", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "harm", 
-          text: "Harms environment", 
-          emoji: "🌍", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your tablet is fully charged and you want to play outside. What should you do?",
+    emoji: "⚽",
+    options: [
+      
+      {
+        id: "keep-charging",
+        text: "Keep it charging all day",
+        emoji: "🔌",
+        isCorrect: false
+      },
+      {
+        id: "sleep-near-plug",
+        text: "Sleep next to the charger",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "unplug-and-play",
+        text: "Unplug it and go play",
+        emoji: "🌞",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Before going to school, you see the TV is off but still plugged in. What’s best?",
+    emoji: "📺",
+    options: [
+      {
+        id: "switch-off-plug",
+        text: "Switch off and unplug it",
+        emoji: "🔌",
+        isCorrect: true
+      },
+      {
+        id: "leave-it",
+        text: "Leave it as it is",
+        emoji: "🤷",
+        isCorrect: false
+      },
+      {
+        id: "turn-volume-down",
+        text: "Turn the volume down",
+        emoji: "🔉",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "At night, your room light is on but you are sleeping. What should happen?",
+    emoji: "🌙",
+    options: [
+      
+      {
+        id: "leave-light-on",
+        text: "Leave it on till morning",
+        emoji: "💡",
+        isCorrect: false
+      },
+      {
+        id: "turn-off-light",
+        text: "Turn off the light",
+        emoji: "🌑",
+        isCorrect: true
+      },
+      {
+        id: "cover-eyes",
+        text: "Cover eyes with pillow",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Your phone charger is plugged in but no phone is connected. What should you do?",
+    emoji: "📵",
+    options: [
+      {
+        id: "remove-charger",
+        text: "Remove the charger from socket",
+        emoji: "🔋",
+        isCorrect: true
+      },
+      {
+        id: "keep-for-later",
+        text: "Keep it plugged for later",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "play-with-wire",
+        text: "Play with the wire",
+        emoji: "🧸",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Why is unplugging devices a good habit?",
+    emoji: "🌱",
+    options: [
+      
+      {
+        id: "makes-devices-faster",
+        text: "It makes devices faster",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "changes-color",
+        text: "It changes device color",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "save-earth",
+        text: "It saves electricity and helps Earth",
+        emoji: "🌍",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

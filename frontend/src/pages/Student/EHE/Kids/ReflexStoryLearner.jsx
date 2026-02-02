@@ -24,67 +24,68 @@ const ReflexStoryLearner = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Learn From Failures",
-      emoji: "📚",
-      correctAnswer: "Good learning behavior",
-      options: [
-        { text: "Quit Quickly", isCorrect: false },
-        { text: "Repeat Mistakes", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Good learning behavior", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Try New Approaches",
-      emoji: "🔄",
-      correctAnswer: "Good learning behavior",
-      options: [
-        { text: "Repeat Mistakes", isCorrect: false },
-        { text: "Good learning behavior", isCorrect: true },
-        { text: "Ignore Results", isCorrect: false },
-        { text: "Work Alone Always", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Ask Questions",
-      emoji: "💡",
-      correctAnswer: "Good learning behavior",
-      options: [
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Good learning behavior", isCorrect: true },
-        { text: "Quit Quickly", isCorrect: false },
-        { text: "Ignore Results", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Seek Mentorship",
-      emoji: "👥",
-      correctAnswer: "Good learning behavior",
-      options: [
-        { text: "Good learning behavior", isCorrect: true },
-        { text: "Work Alone Always", isCorrect: false },
-        { text: "Repeat Mistakes", isCorrect: false },
-        { text: "Quit Quickly", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Track Progress",
-      emoji: "📈",
-      correctAnswer: "Good learning behavior",
-      options: [
-        { text: "Ignore Results", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Good learning behavior", isCorrect: true },
-        { text: "Repeat Mistakes", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Learn From Failures",
+    emoji: "📚",
+    question: "You tried to build a paper bridge, but it broke. What should you do next?",
+    options: [
+      { text: "See what went wrong and try again", isCorrect: true },
+      { text: "Throw it away and quit", isCorrect: false },
+      { text: "Blame others for it", isCorrect: false },
+      { text: "Never try building again", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Try New Approaches",
+    emoji: "🔄",
+    question: "Your homework method didn’t work well. What is a smart choice?",
+    options: [
+      { text: "Do the same mistake again", isCorrect: false },
+      { text: "Ignore the homework", isCorrect: false },
+      { text: "Give up completely", isCorrect: false },
+      { text: "Try a new way to solve it", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    action: "Ask Questions",
+    emoji: "💡",
+    question: "You don’t understand a lesson in class. What should you do?",
+    options: [
+      { text: "Stay silent forever", isCorrect: false },
+      { text: "Pretend you understand", isCorrect: false },
+      { text: "Ask the teacher or a friend", isCorrect: true },
+      { text: "Stop paying attention", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Seek Mentorship",
+    emoji: "👥",
+    question: "You want to learn drawing better. Who can help you most?",
+    options: [
+      { text: "No one, learn nothing", isCorrect: false },
+      { text: "A teacher or skilled person", isCorrect: true },
+      { text: "Someone who never practices", isCorrect: false },
+      { text: "Just guess without learning", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Track Progress",
+    emoji: "📈",
+    question: "Why is checking your progress important?",
+    options: [
+      { text: "It shows how much you improved", isCorrect: true },
+      { text: "It makes learning boring", isCorrect: false },
+      { text: "It wastes time", isCorrect: false },
+      { text: "It stops you from learning", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -56,10 +56,7 @@ const BadgeEqualityKid = () => {
       title: "Equal Access to Education",
       question: "Everyone should have equal access to education regardless of gender.",
       options: [
-        { 
-          text: "True", 
-          isCorrect: true
-        },
+        
         { 
           text: "False", 
           isCorrect: false
@@ -71,7 +68,11 @@ const BadgeEqualityKid = () => {
         { 
           text: "Only girls should be educated", 
           isCorrect: false
-        }
+        },
+        { 
+          text: "True", 
+          isCorrect: true
+        },
       ],
       feedback: {
         correct: "Yes! Education is a fundamental right for all children, regardless of gender.",
@@ -114,10 +115,7 @@ const BadgeEqualityKid = () => {
           text: "Agree with your friend", 
           isCorrect: false
         },
-        { 
-          text: "Explain that anyone can be good at math with practice", 
-          isCorrect: true
-        },
+        
         { 
           text: "Stay quiet to avoid conflict", 
           isCorrect: false
@@ -125,7 +123,11 @@ const BadgeEqualityKid = () => {
         { 
           text: "Make fun of your friend", 
           isCorrect: false
-        }
+        },
+        { 
+          text: "Explain that anyone can be good at math with practice", 
+          isCorrect: true
+        },
       ],
       feedback: {
         correct: "Mathematical ability isn't determined by gender - everyone can excel with effort!",
@@ -141,13 +143,14 @@ const BadgeEqualityKid = () => {
           text: "It makes some people feel superior", 
           isCorrect: false
         },
-        { 
-          text: "It creates a fair and inclusive environment for everyone", 
-          isCorrect: true
-        },
+        
         { 
           text: "It helps ignore others' differences", 
           isCorrect: false
+        },
+        { 
+          text: "It creates a fair and inclusive environment for everyone", 
+          isCorrect: true
         },
         { 
           text: "It's only important sometimes", 

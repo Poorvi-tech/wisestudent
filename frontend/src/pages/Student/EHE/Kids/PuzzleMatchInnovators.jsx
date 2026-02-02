@@ -19,11 +19,11 @@ const PuzzleMatchInnovators = () => {
 
   // Innovators (left side) - 5 items
   const innovators = [
-    { id: 1, name: "Edison", emoji: "💡" },
-    { id: 2, name: "Wright Brothers", emoji: "✈️" },
-    { id: 3, name: "Jobs", emoji: "📱" },
-    { id: 4, name: "Tesla", emoji: "⚡" },
-    { id: 5, name: "Curie", emoji: "⚛️" }
+    { id: 1, name: "Edison", emoji: "👴" },
+    { id: 2, name: "Wright Brothers", emoji: "🧑‍🤝‍🧑" },
+    { id: 3, name: "Jobs", emoji: "👨" },
+    { id: 4, name: "Tesla", emoji: "👩‍🦰" },
+    { id: 5, name: "Curie", emoji: "🧔‍♀️" }
   ];
 
   // Inventions (right side) - 5 items
@@ -31,7 +31,7 @@ const PuzzleMatchInnovators = () => {
     { id: 5, name: "Radium", emoji: "🔬" },
     { id: 3, name: "iPhone", emoji: "📲" },
     { id: 2, name: "Plane", emoji: "🛩️" },
-    { id: 1, name: "Bulb", emoji: "🔦" },
+    { id: 1, name: "Bulb", emoji: "💡" },
     { id: 4, name: "AC Motor", emoji: "⚙️" },
   ];
 

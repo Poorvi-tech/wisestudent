@@ -20,7 +20,7 @@ const PuzzleMatchStories = () => {
   // Stories (left side) - 5 items
   const stories = [
     { id: 1, name: "Girl Sells Crafts", emoji: "🎨" },
-    { id: 2, name: "Boy Runs App", emoji: "💻" },
+    { id: 2, name: "Boy Runs App", emoji: "📱" },
     { id: 3, name: "Teen Sells Cakes", emoji: "🎂" },
     { id: 4, name: "Kid Repairs Toys", emoji: "🔧" },
     { id: 5, name: "Student Teaches Peers", emoji: "📚" }

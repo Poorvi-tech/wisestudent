@@ -51,137 +51,141 @@ const AIInMoviesQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Does Netflix use AI to suggest films?",
-      emoji: "🎬",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for new releases", 
-          emoji: "🆕", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! Netflix uses AI recommendation algorithms to analyze your viewing history, ratings, and behavior to suggest personalized films and shows you might enjoy."
-    },
-    {
-      id: 2,
-      text: "AI is used to enhance movie special effects?",
-      emoji: "💥",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only in big-budget films", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI is extensively used in movie special effects for tasks like de-aging actors, creating realistic environments, enhancing CGI, and even resurrecting deceased actors digitally."
-    },
-    {
-      id: 3,
-      text: "AI can fully replace movie directors?",
-      emoji: "🎥",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for simple scenes", 
-          emoji: "📽️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! While AI can assist with technical aspects of filmmaking, directing requires human creativity, emotional intelligence, storytelling skills, and artistic vision that AI cannot replicate."
-    },
-    {
-      id: 4,
-      text: "AI helps in editing and color grading films?",
-      emoji: "🎨",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for indie films", 
-          emoji: "🎭", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI assists editors with tasks like automatic color correction, scene detection, and even suggesting cuts based on pacing analysis. It speeds up the post-production process significantly."
-    },
-    {
-      id: 5,
-      text: "AI writes movie scripts entirely on its own?",
-      emoji: "📝",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for simple plots", 
-          emoji: "📚",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! While AI can generate basic plot outlines or dialogue suggestions, creating compelling scripts requires human creativity, emotional understanding, cultural awareness, and storytelling expertise."
-    }
-  ];
+  {
+    id: 1,
+    text: "You notice Netflix keeps recommending movies similar to ones you watched last week. What is AI doing here?",
+    emoji: "🍿",
+    options: [
+      
+      {
+        id: "random-picks",
+        text: "Choosing random movies each day",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      {
+        id: "editor-choice",
+        text: "Manually selected by movie editors",
+        emoji: "🧑‍💼",
+        isCorrect: false
+      },
+      {
+        id: "analyze-history",
+        text: "Analyzing your watch history and preferences",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI studies what you watch, skip, or finish to recommend similar content."
+  },
+  {
+    id: 2,
+    text: "A movie shows a young version of an actor from 20 years ago. How did AI help?",
+    emoji: "👦",
+    options: [
+      
+      {
+        id: "makeup-only",
+        text: "Using only makeup and costumes",
+        emoji: "💄",
+        isCorrect: false
+      },
+      {
+        id: "de-aging",
+        text: "Digitally de-aging the actor using AI",
+        emoji: "✨",
+        isCorrect: true
+      },
+      {
+        id: "twin-actor",
+        text: "Replacing with a look-alike actor",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI can modify facial features frame-by-frame to make actors appear younger."
+  },
+  {
+    id: 3,
+    text: "During editing, a tool suggests which scenes feel too slow. What is AI doing?",
+    emoji: "⏱️",
+    options: [
+      {
+        id: "pacing-analysis",
+        text: "Analyzing pacing and viewer attention",
+        emoji: "📈",
+        isCorrect: true
+      },
+      {
+        id: "writing-script",
+        text: "Rewriting the movie script",
+        emoji: "📝",
+        isCorrect: false
+      },
+      {
+        id: "adding-effects",
+        text: "Adding explosions automatically",
+        emoji: "💥",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI helps editors by studying scene length, movement, and engagement."
+  },
+  {
+    id: 4,
+    text: "A director uses AI during pre-production. What task can AI realistically help with?",
+    emoji: "🎥",
+    options: [
+      {
+        id: "scene-planning",
+        text: "Suggesting shot layouts and camera angles",
+        emoji: "📐",
+        isCorrect: true
+      },
+      {
+        id: "emotion-acting",
+        text: "Acting emotional scenes itself",
+        emoji: "😢",
+        isCorrect: false
+      },
+      {
+        id: "final-decisions",
+        text: "Making creative story decisions",
+        emoji: "🧠",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI supports planning but cannot replace human creativity and emotion."
+  },
+  {
+    id: 5,
+    text: "An AI tool helps write movie scripts. What is its realistic role?",
+    emoji: "📖",
+    options: [
+      
+      {
+        id: "full-story",
+        text: "Creating deep emotional stories alone",
+        emoji: "🎭",
+        isCorrect: false
+      },
+      {
+        id: "director-role",
+        text: "Directing actors on set",
+        emoji: "🎬",
+        isCorrect: false
+      },
+      {
+        id: "idea-support",
+        text: "Suggesting ideas and dialogue drafts",
+        emoji: "💡",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI assists writers but human creativity drives storytelling."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -210,7 +214,7 @@ const AIInMoviesQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

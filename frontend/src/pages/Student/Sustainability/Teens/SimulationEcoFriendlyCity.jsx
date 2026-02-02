@@ -17,45 +17,12 @@ const SimulationEcoFriendlyCity = () => {
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0);
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
-
-  // Find next game path and ID if not provided in location.state
-  const { nextGamePath, nextGameId } = useMemo(() => {
-    if (location.state?.nextGamePath) {
-      return {
-        nextGamePath: location.state.nextGamePath,
-        nextGameId: location.state.nextGameId || null
-      };
-    }
-    try {
-      const games = getSustainabilityTeenGames({});
-      const currentGame = games.find(g => g.id === gameId);
-      if (currentGame && currentGame.index !== undefined) {
-        const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
-        return {
-          nextGamePath: nextGame ? nextGame.path : null,
-          nextGameId: nextGame ? nextGame.id : null
-        };
-      }
-    } catch (error) {
-      console.warn("Error finding next game:", error);
-    }
-    return { nextGamePath: null, nextGameId: null };
-  }, [location.state, gameId]);
-
-  // Log when game completes and update location state with nextGameId
+  
+  // Debug: Log initial state
   useEffect(() => {
-    if (gameFinished) {
-      console.log(`🎮 Simulation: Eco-Friendly City game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
-      if (nextGameId && window.history && window.history.replaceState) {
-        const currentState = window.history.state || {};
-        window.history.replaceState({
-          ...currentState,
-          nextGameId: nextGameId
-        }, '');
-      }
-    }
-  }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
+    console.log("Initial coins state:", coins);
+  }, []);
+  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
     {
@@ -110,13 +77,90 @@ const SimulationEcoFriendlyCity = () => {
     }
   ];
 
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = questions.length; // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+        
+        console.log("Set global variables for Eco-Friendly City:", {
+          __flashTotalCoins: window.__flashTotalCoins,
+          __flashQuestionCount: window.__flashQuestionCount,
+          __flashPointsMultiplier: window.__flashPointsMultiplier
+        });
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
+
+  // Find next game path and ID if not provided in location.state
+  const { nextGamePath, nextGameId } = useMemo(() => {
+    if (location.state?.nextGamePath) {
+      return {
+        nextGamePath: location.state.nextGamePath,
+        nextGameId: location.state.nextGameId || null
+      };
+    }
+    try {
+      const games = getSustainabilityTeenGames({});
+      const currentGame = games.find(g => g.id === gameId);
+      if (currentGame && currentGame.index !== undefined) {
+        const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
+        return {
+          nextGamePath: nextGame ? nextGame.path : null,
+          nextGameId: nextGame ? nextGame.id : null
+        };
+      }
+    } catch (error) {
+      console.warn("Error finding next game:", error);
+    }
+    return { nextGamePath: null, nextGameId: null };
+  }, [location.state, gameId]);
+
+  // Log when game completes and update location state with nextGameId
+  useEffect(() => {
+    if (gameFinished) {
+      console.log(`🎮 Simulation: Eco-Friendly City game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      if (nextGameId && window.history && window.history.replaceState) {
+        const currentState = window.history.state || {};
+        window.history.replaceState({
+          ...currentState,
+          nextGameId: nextGameId
+        }, '');
+      }
+    }
+  }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
+
   const handleChoice = (optionId) => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
+    const isLastQuestion = currentScenario === questions.length - 1;
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      // For the last question, we want to show the total coins earned
+      if (isLastQuestion) {
+        showCorrectAnswerFeedback(coins + 1, true); // Show total coins
+      } else {
+        showCorrectAnswerFeedback(1, true); // Show +1 for intermediate questions
+      }
+      const newCoins = coins + 1;
+      console.log(`Correct answer! Previous coins: ${coins}, New coins: ${newCoins}`);
+      setCoins(newCoins); // Increment coins when correct
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -139,6 +183,8 @@ const SimulationEcoFriendlyCity = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      currentLevel={currentScenario + 1}
+      totalLevels={questions.length}
       gameType="sustainability"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -146,11 +192,8 @@ const SimulationEcoFriendlyCity = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePath={nextGamePath}
-      nextGameId={nextGameId}
-    
-      nextGamePathProp="/student/sustainability/teens/reflex-green-habits"
-      nextGameIdProp="sustainability-teens-9">
+      nextGamePath={nextGamePath || "/student/sustainability/teens/reflex-green-habits"}
+      nextGameId={nextGameId || "sustainability-teens-9"}>
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

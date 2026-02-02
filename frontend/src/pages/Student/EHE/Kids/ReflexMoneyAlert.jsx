@@ -24,67 +24,68 @@ const ReflexMoneyAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Save in Bank",
-      emoji: "🏦",
-      correctAnswer: "Smart action",
-      options: [
-        { text: "Smart action", isCorrect: true },
-        { text: "Throw Away Money", isCorrect: false },
-        { text: "Lose Your Money", isCorrect: false },
-        { text: "Buy Everything", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Count Your Money",
-      emoji: "💰",
-      correctAnswer: "Smart action",
-      options: [
-        { text: "Lose Your Money", isCorrect: false },
-        { text: "Smart action", isCorrect: true },
-        { text: "Spend Randomly", isCorrect: false },
-        { text: "Ignore Growth", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Compare Prices",
-      emoji: "🛒",
-      correctAnswer: "Smart action",
-      options: [
-        { text: "Smart action", isCorrect: true },
-        { text: "Buy Everything", isCorrect: false },
-        { text: "Throw Away Money", isCorrect: false },
-        { text: "Spend Randomly", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Make a Budget",
-      emoji: "📋",
-      correctAnswer: "Smart action",
-      options: [
-        { text: "Spend Randomly", isCorrect: false },
-        { text: "Lose Your Money", isCorrect: false },
-        { text: "Smart action", isCorrect: true },
-        { text: "Ignore Growth", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Earn Interest",
-      emoji: "📈",
-      correctAnswer: "Smart action",
-      options: [
-        { text: "Ignore Growth", isCorrect: false },
-        { text: "Throw Away Money", isCorrect: false },
-        { text: "Buy Everything", isCorrect: false },
-        { text: "Smart action", isCorrect: true },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Save in Bank",
+    emoji: "🏦",
+    question: "Riya gets ₹200 as birthday money. What is the smartest choice?",
+    options: [
+      { text: "Put some money in a bank or piggy bank", isCorrect: true },
+      { text: "Spend all the money on toys in one day", isCorrect: false },
+      { text: "Lose the money by keeping it carelessly", isCorrect: false },
+      { text: "Tear the money for fun", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Count Your Money",
+    emoji: "💰",
+    question: "Arjun earns pocket money weekly. Why should he count his money?",
+    options: [
+      { text: "To spend it randomly without thinking", isCorrect: false },
+      { text: "To forget where the money went", isCorrect: false },
+      { text: "To ignore his savings", isCorrect: false },
+      { text: "To know how much he has saved", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    action: "Compare Prices",
+    emoji: "🛒",
+    question: "Two shops sell the same notebook at different prices. What should Neha do?",
+    options: [
+      { text: "Buy the first one she sees", isCorrect: false },
+      { text: "Buy many notebooks without need", isCorrect: false },
+      { text: "Buy the notebook from the cheaper shop", isCorrect: true },
+      { text: "Waste money without checking price", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Make a Budget",
+    emoji: "📋",
+    question: "Kabir wants snacks and a comic but has limited money. What should he do?",
+    options: [
+      { text: "Spend all money on snacks only", isCorrect: false },
+      { text: "Plan how much to spend on each item", isCorrect: true },
+      { text: "Forget what he needs and buy randomly", isCorrect: false },
+      { text: "Lose track of his money", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Earn Interest",
+    emoji: "📈",
+    question: "Why do people keep money in a savings account?",
+    options: [
+      { text: "The money slowly grows over time", isCorrect: true },
+      { text: "The money disappears", isCorrect: false },
+      { text: "To spend without control", isCorrect: false },
+      { text: "Because money cannot be kept at home", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,43 +7,50 @@ import { getAiTeenGames } from "../../../../pages/Games/GameCategories/AiForAll/
 
 const GlobalFairnessQuiz = () => {
   const location = useLocation();
-  
+
   // Get game data from game category folder (source of truth)
   const gameId = "ai-teen-94";
   const gameData = getGameDataById(gameId);
-  
+
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  
+
   // Find next game path and ID if not provided in location.state
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
       return {
         nextGamePath: location.state.nextGamePath,
-        nextGameId: location.state.nextGameId || null
+        nextGameId: location.state.nextGameId || null,
       };
     }
-    
+
     try {
       const games = getAiTeenGames({});
-      const currentGame = games.find(g => g.id === gameId);
+      const currentGame = games.find((g) => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
-        const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
+        const nextGame = games.find(
+          (g) => g.index === currentGame.index + 1 && g.isSpecial && g.path
+        );
         return {
           nextGamePath: nextGame ? nextGame.path : null,
-          nextGameId: nextGame ? nextGame.id : null
+          nextGameId: nextGame ? nextGame.id : null,
         };
       }
     } catch (error) {
       console.warn("Error finding next game:", error);
     }
-    
+
     return { nextGamePath: null, nextGameId: null };
   }, [location.state, gameId]);
-  
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
@@ -53,167 +60,177 @@ const GlobalFairnessQuiz = () => {
   const questions = [
     {
       id: 1,
-      text: "Should boys and girls have equal digital rights?",
-      emoji: "🌐",
+      text: "A school gives tablets only to boys because they think boys use technology more. What is the fairest action?",
+      emoji: "📱",
       options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
+        
+        {
+          id: "b",
+          text: "Give tablets only to boys",
+          emoji: "🚫",
+          isCorrect: false,
         },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
+        {
+          id: "c",
+          text: "Give tablets only to top scorers",
+          emoji: "🏆",
+          isCorrect: false,
         },
-        { 
-          id: 3, 
-          text: "Only in developed countries", 
-          emoji: "🏙️", 
-          isCorrect: false
-        }
+        {
+          id: "a",
+          text: "Give tablets to all students equally",
+          emoji: "⚖️",
+          isCorrect: true,
+        },
       ],
-      explanation: "Yes! Digital rights should be equal regardless of gender. Everyone deserves equal access to information, education, and opportunities in the digital world. Gender-based restrictions limit human potential and violate basic human rights."
+      explanation:
+        "Fairness means giving equal access to resources regardless of gender. Everyone deserves the same learning tools.",
     },
     {
       id: 2,
-      text: "Should everyone have access to the internet?",
-      emoji: "💻",
+      text: "A village has internet access only in one area. What is the most fair solution?",
+      emoji: "🌍",
       options: [
-        
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
+        {
+          id: "a",
+          text: "Expand internet access to all areas",
+          emoji: "📡",
+          isCorrect: true,
         },
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
+        {
+          id: "b",
+          text: "Keep access limited to one area",
+          emoji: "🚧",
+          isCorrect: false,
         },
-        { 
-          id: 3, 
-          text: "Only those who can afford it", 
-          emoji: "💰", 
-          isCorrect: false
-        }
+        {
+          id: "c",
+          text: "Allow access only to adults",
+          emoji: "👨‍👩‍👧",
+          isCorrect: false,
+        },
       ],
-      explanation: "Yes! Internet access is becoming a fundamental necessity for education, healthcare, employment, and civic participation. The digital divide exacerbates existing inequalities, making universal access essential for social justice and economic development."
+      explanation:
+        "Equal internet access helps everyone learn, work, and stay connected, no matter where they live.",
     },
     {
       id: 3,
-      text: "Should girls get same coding opportunities as boys?",
-      emoji: "👩‍💻",
+      text: "An online coding club allows boys to lead projects but asks girls to observe. What promotes fairness?",
+      emoji: "💻",
       options: [
-        
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
+       
+        {
+          id: "b",
+          text: "Keep leadership only for boys",
+          emoji: "❌",
+          isCorrect: false,
         },
-        { 
-          id: 3, 
-          text: "Only if they show interest", 
-          emoji: "🤔", 
-          isCorrect: false
+        {
+          id: "c",
+          text: "Rotate leaders only among senior students",
+          emoji: "🔄",
+          isCorrect: false,
         },
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
+         {
+          id: "a",
+          text: "Allow all members to lead projects",
+          emoji: "🤝",
+          isCorrect: true,
         },
       ],
-      explanation: "Yes! Girls should have the same coding opportunities as boys. Encouraging diverse perspectives in technology leads to more innovative solutions and helps address gender imbalances in STEM fields. Early exposure and encouragement are key."
+      explanation:
+        "Fair leadership opportunities help everyone build confidence and skills, regardless of gender.",
     },
     {
       id: 4,
-      text: "Should boys and girls get equal AI learning access?",
+      text: "An AI app recommends courses mostly to students from rich backgrounds. What is the fairest improvement?",
       emoji: "🤖",
       options: [
-        
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
+       
+        {
+          id: "b",
+          text: "Keep recommendations limited",
+          emoji: "🚫",
+          isCorrect: false,
         },
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
+         {
+          id: "a",
+          text: "Train the AI to recommend courses to all backgrounds",
+          emoji: "📊",
+          isCorrect: true,
         },
-        { 
-          id: 3, 
-          text: "Only in advanced courses", 
-          emoji: "🎓", 
-          isCorrect: false
-        }
+        {
+          id: "c",
+          text: "Remove the app completely",
+          emoji: "🗑️",
+          isCorrect: false,
+        },
       ],
-      explanation: "Yes! Both boys and girls should have equal access to AI education. As AI becomes more prevalent in society, understanding how it works is crucial for all citizens to make informed decisions and participate in the digital economy."
+      explanation:
+        "Fair AI systems should support everyone equally and avoid bias based on wealth or background.",
     },
     {
       id: 5,
-      text: "Should everyone be treated equally online without bias?",
+      text: "A social media platform ignores reports from younger users. What supports global fairness?",
       emoji: "⚖️",
       options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
+        {
+          id: "a",
+          text: "Treat reports from all users seriously",
+          emoji: "🛡️",
+          isCorrect: true,
         },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
+        {
+          id: "b",
+          text: "Respond only to adult users",
+          emoji: "🙅",
+          isCorrect: false,
         },
-        { 
-          id: 3, 
-          text: "Only in professional contexts", 
-          emoji: "💼", 
-          isCorrect: false
-        }
+        {
+          id: "c",
+          text: "Allow reports only from verified accounts",
+          emoji: "🔒",
+          isCorrect: false,
+        },
       ],
-      explanation: "Yes! Everyone should be treated equally online without bias based on gender, race, religion, or other characteristics. Creating inclusive digital spaces promotes positive interactions and prevents discrimination that can have real-world consequences."
-    }
+      explanation:
+        "Fair online spaces protect everyone equally and ensure all voices are heard.",
+    },
   ];
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
-    
+
     setAnswered(true);
     setSelectedOption(optionId);
     resetFeedback();
-    
+
     const currentQuestionData = questions[currentQuestion];
-    const selectedOptionData = currentQuestionData.options.find(opt => opt.id === optionId);
+    const selectedOptionData = currentQuestionData.options.find(
+      (opt) => opt.id === optionId
+    );
     const isCorrect = selectedOptionData?.isCorrect || false;
-    
+
     if (isCorrect) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
-    
-    setTimeout(() => {
-      if (currentQuestion < questions.length - 1) {
-        setCurrentQuestion(prev => prev + 1);
-        setSelectedOption(null);
-        setAnswered(false);
-        resetFeedback();
-      } else {
-        setLevelCompleted(true);
-      }
-    }, isCorrect ? 8000 : 8000);
+
+    setTimeout(
+      () => {
+        if (currentQuestion < questions.length - 1) {
+          setCurrentQuestion((prev) => prev + 1);
+          setSelectedOption(null);
+          setAnswered(false);
+          resetFeedback();
+        } else {
+          setLevelCompleted(true);
+        }
+      },
+      isCorrect ? 5000 : 5000
+    );
   };
 
   const currentQuestionData = questions[currentQuestion];
@@ -222,7 +239,11 @@ const GlobalFairnessQuiz = () => {
   return (
     <GameShell
       title="Global Fairness Quiz"
-      subtitle={levelCompleted ? "Quiz Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      subtitle={
+        levelCompleted
+          ? "Quiz Complete!"
+          : `Question ${currentQuestion + 1} of ${questions.length}`
+      }
       score={finalScore}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -246,22 +267,29 @@ const GlobalFairnessQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {finalScore}/{questions.length}</span>
+                <span className="text-white/80">
+                  Question {currentQuestion + 1}/{questions.length}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  Score: {finalScore}/{questions.length}
+                </span>
               </div>
-              
-              <div className="text-6xl mb-4 text-center">{currentQuestionData.emoji}</div>
-              
+
+              <div className="text-6xl mb-4 text-center">
+                {currentQuestionData.emoji}
+              </div>
+
               <p className="text-white text-lg md:text-xl mb-6 text-center">
                 {currentQuestionData.text}
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {currentQuestionData.options.map(option => {
+                {currentQuestionData.options.map((option) => {
                   const isSelected = selectedOption === option.id;
                   const showCorrect = answered && option.isCorrect;
-                  const showIncorrect = answered && isSelected && !option.isCorrect;
-                  
+                  const showIncorrect =
+                    answered && isSelected && !option.isCorrect;
+
                   return (
                     <button
                       key={option.id}
@@ -278,19 +306,27 @@ const GlobalFairnessQuiz = () => {
                       } ${answered ? "cursor-not-allowed" : ""}`}
                     >
                       <div className="text-2xl mb-2">{option.emoji}</div>
-                      <h4 className="font-bold text-base mb-2">{option.text}</h4>
-                      <p className="text-white/90 text-sm">{option.description}</p>
+                      <h4 className="font-bold text-base mb-2">
+                        {option.text}
+                      </h4>
+                      <p className="text-white/90 text-sm">
+                        {option.description}
+                      </p>
                     </button>
                   );
                 })}
               </div>
-              
+
               {answered && (
-                <div className={`rounded-lg p-4 mt-6 ${
-                  currentQuestionData.options.find(opt => opt.id === selectedOption)?.isCorrect
-                    ? "bg-green-500/20"
-                    : "bg-red-500/20"
-                }`}>
+                <div
+                  className={`rounded-lg p-4 mt-6 ${
+                    currentQuestionData.options.find(
+                      (opt) => opt.id === selectedOption
+                    )?.isCorrect
+                      ? "bg-green-500/20"
+                      : "bg-red-500/20"
+                  }`}
+                >
                   <p className="text-white text-center">
                     {currentQuestionData.explanation}
                   </p>

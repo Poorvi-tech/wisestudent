@@ -92,12 +92,7 @@ const SimulationTeenChoices = () => {
           emoji: "🏃",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Continue participating and ignore the negativity",
-          emoji: "🎉",
-          isCorrect: true
-        },
+       
         {
           id: "c",
           text: "Challenge the stereotypes by educating others",
@@ -109,7 +104,13 @@ const SimulationTeenChoices = () => {
           text: "Join a different team to avoid conflict",
           emoji: "🔄",
           isCorrect: false
-        }
+        },
+         {
+          id: "b",
+          text: "Continue participating and ignore the negativity",
+          emoji: "🎉",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -117,18 +118,19 @@ const SimulationTeenChoices = () => {
       title: "Academic Interests",
       description: "A girl excels in physics but is told, 'Science is for boys.' How should she respond?",
       options: [
+         {
+          id: "b",
+          text: "Continue studying physics and seek supportive mentors",
+          emoji: "🔬",
+          isCorrect: true
+        },
         {
           id: "a",
           text: "Switch to a 'more appropriate' subject for girls",
           emoji: "📚",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Continue studying physics and seek supportive mentors",
-          emoji: "🔬",
-          isCorrect: true
-        },
+       
         {
           id: "c",
           text: "Prove her abilities by competing in science fairs",

@@ -24,13 +24,7 @@ const FaceUnlockSimulation = () => {
       id: 1,
       text: "What is the primary purpose of facial recognition technology in smartphones?",
       options: [
-        { 
-          id: "security", 
-          text: "Enhance device security", 
-          emoji: "🔒", 
-         
-          isCorrect: true
-        },
+        
         { 
           id: "convenience", 
           text: "Improve convenience", 
@@ -48,7 +42,14 @@ const FaceUnlockSimulation = () => {
           text: "Target advertising", 
           emoji: "📢", 
           isCorrect: false
-        }
+        },
+        { 
+          id: "security", 
+          text: "Enhance device security", 
+          emoji: "🔒", 
+         
+          isCorrect: true
+        },
       ]
     },
     {
@@ -91,17 +92,18 @@ const FaceUnlockSimulation = () => {
           emoji: "🔋", 
           isCorrect: false
         },
-        { 
-          id: "biometric", 
-          text: "Biometric data storage", 
-          emoji: "🗄️", 
-          isCorrect: true
-        },
+        
         { 
           id: "speed", 
           text: "Processing speed", 
           emoji: "⏱️", 
           isCorrect: false
+        },
+        { 
+          id: "biometric", 
+          text: "Biometric data storage", 
+          emoji: "🗄️", 
+          isCorrect: true
         },
         { 
           id: "accuracy", 

@@ -51,137 +51,141 @@ const AIInBankingQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "ATM fraud detection uses AI?",
-      emoji: "🏧",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for large amounts", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI analyzes transaction patterns, user behavior, and other data points to detect potentially fraudulent activities in real-time. This helps protect consumers and financial institutions from unauthorized transactions."
-    },
-    {
-      id: 2,
-      text: "AI can analyze loan applications faster than humans?",
-      emoji: "💳",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for small loans", 
-          emoji: "📉", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI can quickly process loan applications by analyzing credit scores, income data, spending patterns, and other financial indicators. This speeds up approval times while maintaining accuracy in risk assessment."
-    },
-    {
-      id: 3,
-      text: "AI helps in predicting stock market perfectly?",
-      emoji: "📈",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with insider information", 
-          emoji: "🕵️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! While AI can analyze market trends and make predictions, perfect stock market prediction is impossible due to countless unpredictable factors like geopolitical events, natural disasters, and human psychology. AI provides insights but not certainty."
-    },
-    {
-      id: 4,
-      text: "AI chatbots assist customers with account details?",
-      emoji: "💬",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only during business hours", 
-          emoji: "🕐", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI chatbots provide instant customer support for account inquiries, transaction history, and basic banking services. They're available 24/7 and can handle multiple customers simultaneously, improving service efficiency."
-    },
-    {
-      id: 5,
-      text: "AI replaces human bankers completely?",
-      emoji: "🏦",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for simple tasks", 
-          emoji: "🧮",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! While AI handles routine tasks like data processing and basic customer service, human bankers provide essential services requiring empathy, complex problem-solving, and relationship-building. AI augments rather than replaces human expertise."
-    }
-  ];
+  {
+    id: 1,
+    text: "You withdraw money from an ATM in a new city, and the transaction is blocked. Why might AI stop it?",
+    emoji: "🏧",
+    options: [
+      {
+        id: "unusual-location",
+        text: "The location and timing look unusual compared to past use",
+        emoji: "📍",
+        isCorrect: true
+      },
+      {
+        id: "atm-broken",
+        text: "The ATM machine is always faulty",
+        emoji: "⚙️",
+        isCorrect: false
+      },
+      {
+        id: "daily-limit",
+        text: "AI blocks all withdrawals after one use",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI watches spending patterns. A sudden change in location or behavior can trigger fraud protection."
+  },
+  {
+    id: 2,
+    text: "A bank approves a loan very quickly using AI. What is AI mainly checking?",
+    emoji: "💳",
+    options: [
+      
+      {
+        id: "social-media",
+        text: "Your social media followers",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "financial-patterns",
+        text: "Income, spending habits, and repayment history",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "luck-based",
+        text: "Random chance to be fair to everyone",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI reviews financial data patterns to assess risk faster than manual review."
+  },
+  {
+    id: 3,
+    text: "An AI app claims it can guarantee stock market profits. What should you think?",
+    emoji: "📈",
+    options: [
+      
+      {
+        id: "trust-ai",
+        text: "Trust it because AI is always accurate",
+        emoji: "🤖",
+        isCorrect: false
+      },
+      {
+        id: "invest-all",
+        text: "Invest all savings to maximize profit",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "be-skeptical",
+        text: "Be skeptical—no system can predict markets perfectly",
+        emoji: "⚠️",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI can analyze trends, but markets are unpredictable due to real-world events."
+  },
+  {
+    id: 4,
+    text: "You chat with a bank chatbot late at night. What task is it best suited for?",
+    emoji: "💬",
+    options: [
+      
+      {
+        id: "legal-disputes",
+        text: "Handling legal complaints",
+        emoji: "⚖️",
+        isCorrect: false
+      },
+      {
+        id: "basic-help",
+        text: "Checking balance or recent transactions",
+        emoji: "📄",
+        isCorrect: true
+      },
+      {
+        id: "emergency-decisions",
+        text: "Approving major financial exceptions",
+        emoji: "🚨",
+        isCorrect: false
+      }
+    ],
+    explanation: "Bank chatbots handle routine questions; complex issues still need humans."
+  },
+  {
+    id: 5,
+    text: "Why do banks still keep human bankers even with AI systems?",
+    emoji: "🏦",
+    options: [
+      {
+        id: "human-judgment",
+        text: "Humans handle empathy, trust, and complex decisions",
+        emoji: "🤝",
+        isCorrect: true
+      },
+      {
+        id: "ai-is-expensive",
+        text: "AI is too expensive to use fully",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "ai-is-illegal",
+        text: "AI is not allowed in banks",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI supports banking, but human judgment is essential for trust and complex cases."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -210,7 +214,7 @@ const AIInBankingQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

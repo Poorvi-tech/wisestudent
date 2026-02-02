@@ -60,11 +60,11 @@ const PuzzleEnergyChoices = () => {
 
   // Energy Types (right side) - 5 items
   const energyTypes = [
-      { id: 2, name: "Clean", emoji: "💨",  },
-      { id: 5, name: "Fossil", emoji: "🛢️",  },
-      { id: 1, name: "Solar", emoji: "☀️",  },
+      { id: 2, name: "Clean", emoji: "🧹",  },
+      { id: 5, name: "Fossil", emoji: "🫠",  },
+      { id: 1, name: "Solar", emoji: "✌️",  },
     { id: 3, name: "Dirty", emoji: "🏭",  },
-    { id: 4, name: "Hydro", emoji: "💧",  },
+    { id: 4, name: "Hydro", emoji: "🌊",  },
   ];
 
   // Correct matches

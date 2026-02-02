@@ -51,139 +51,141 @@ const CybersecurityAIQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Can AI detect hackers in real-time?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "🛡️",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "🔒",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only with human oversight", 
-          emoji: "🧑‍💻", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI cybersecurity systems can detect hackers in real-time by analyzing network traffic patterns, identifying anomalies, and recognizing known attack signatures faster than human analysts."
-    },
-    {
-      id: 2,
-      text: "Can AI identify phishing attempts automatically?",
-      emoji: "📧",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "📧", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "🔍",
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only in business emails", 
-          emoji: "🏢",
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI analyzes email content, sender addresses, links, and attachments to identify phishing attempts by comparing them against known threat databases and detecting suspicious patterns."
-    },
-    {
-      id: 3,
-      text: "Can AI predict potential cyberattacks?",
-      emoji: "⚠️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "🔮", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "⚠️",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only with perfect data", 
-          emoji: "📊", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI can predict potential cyberattacks by analyzing historical data, identifying emerging threat patterns, monitoring dark web activity, and assessing system vulnerabilities before attacks occur."
-    },
-    {
-      id: 4,
-      text: "Can AI block malware before it infects systems?",
-      emoji: "💻",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "🛡️", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "🦠",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only signature-based malware", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI-powered security systems can block malware by analyzing file behaviors, detecting suspicious code patterns, and preventing execution before infection occurs, even for previously unknown malware variants."
-    },
-    {
-      id: 5,
-      text: "Can AI alert users about suspicious login attempts?",
-      emoji: "🔔",
-      options: [
-        
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👤", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Only for admin accounts", 
-          emoji: "👑", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Yes", 
-          emoji: "🔔",
-          isCorrect: true
-        },
-      ],
-      explanation: "Yes! AI monitors login patterns, detects unusual access times/geolocations, identifies brute force attempts, and alerts users about suspicious authentication activities to prevent unauthorized access."
-    }
-  ];
+  {
+    id: 1,
+    text: "Your gaming account suddenly logs in from another country at midnight. How can AI help here?",
+    emoji: "🎮",
+    options: [
+      
+      {
+        id: "password-change",
+        text: "Automatically change your username",
+        emoji: "🔤",
+        isCorrect: false
+      },
+      {
+        id: "block-internet",
+        text: "Turn off the internet for everyone",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "pattern-detection",
+        text: "Detect unusual login location and time",
+        emoji: "📍",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI compares login behavior and flags unusual activity like new locations or odd times."
+  },
+  {
+    id: 2,
+    text: "You receive an email saying you won a free phone and must click a link. What AI feature protects you?",
+    emoji: "📧",
+    options: [
+      {
+        id: "link-analysis",
+        text: "Analyze links and sender behavior",
+        emoji: "🔍",
+        isCorrect: true
+      },
+      {
+        id: "auto-reply",
+        text: "Reply asking if the offer is real",
+        emoji: "💬",
+        isCorrect: false
+      },
+      {
+        id: "delete-all",
+        text: "Delete your entire inbox",
+        emoji: "🗑️",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI detects phishing by checking suspicious links, language patterns, and sender history."
+  },
+  {
+    id: 3,
+    text: "A school website slows down suddenly due to heavy traffic. How can AI assist?",
+    emoji: "🏫",
+    options: [
+      
+      {
+        id: "upgrade-website",
+        text: "Redesign the website layout",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "attack-prediction",
+        text: "Identify a possible DDoS attack pattern",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "notify-students",
+        text: "Send apology emails to students",
+        emoji: "📨",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI monitors traffic spikes and recognizes attack-like behavior early."
+  },
+  {
+    id: 4,
+    text: "You download a file that behaves strangely after opening. What does AI do first?",
+    emoji: "📁",
+    options: [
+      {
+        id: "behavior-check",
+        text: "Analyze file behavior before damage",
+        emoji: "🧪",
+        isCorrect: true
+      },
+      {
+        id: "delete-files",
+        text: "Delete all files on the device",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "restart-system",
+        text: "Restart the computer immediately",
+        emoji: "🔄",
+        isCorrect: false
+      }
+    ],
+    explanation: "AI-based security watches how a file behaves, not just its name."
+  },
+  {
+    id: 5,
+    text: "Someone tries many passwords on your social media account quickly. How does AI respond?",
+    emoji: "🔐",
+    options: [
+      
+      {
+        id: "allow-attempts",
+        text: "Allow unlimited login attempts",
+        emoji: "🔓",
+        isCorrect: false
+      },
+      {
+        id: "change-username",
+        text: "Change profile name automatically",
+        emoji: "👤",
+        isCorrect: false
+      },
+      {
+        id: "lock-alert",
+        text: "Lock account and alert the user",
+        emoji: "🚨",
+        isCorrect: true
+      },
+    ],
+    explanation: "AI detects brute-force attacks and reacts fast to protect accounts."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -212,7 +214,7 @@ const CybersecurityAIQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];
