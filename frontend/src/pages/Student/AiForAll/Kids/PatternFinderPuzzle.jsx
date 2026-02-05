@@ -213,7 +213,7 @@ const PatternFinderPuzzle = () => {
                   </div>
                 )}
                 <div className="mt-3 md:mt-4 text-white/80 text-xs md:text-sm">
-                  <p>Coins: {coins}</p>
+                  <p>Score: {coins}</p>
                   <p>Matched: {matches.length}/{leftItems.length}</p>
                 </div>
               </div>

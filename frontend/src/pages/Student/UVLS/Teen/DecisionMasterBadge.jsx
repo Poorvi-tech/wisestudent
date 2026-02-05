@@ -64,7 +64,7 @@ const DecisionMasterBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Research career outcomes, talk to professionals, and consider your interests", 
+          text: "Research career outcomes", 
           emoji: "🔍", 
           isCorrect: true
         },
@@ -97,7 +97,7 @@ const DecisionMasterBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Compare prices, check reliability ratings, test drive, and verify maintenance records", 
+          text: "Compare prices, check reliability ratings", 
           emoji: "📊", 
           isCorrect: true
         },
@@ -120,7 +120,7 @@ const DecisionMasterBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Compare pay, work conditions, experience gained, and alignment with career goals", 
+          text: "Compare pay, work conditions", 
           emoji: "💰", 
           isCorrect: true
         },
@@ -158,7 +158,7 @@ const DecisionMasterBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Research success rates, read reviews, check credentials, and assess alignment with goals", 
+          text: "Research success rates, read reviews", 
           emoji: "📚", 
           isCorrect: true
         },
@@ -170,7 +170,7 @@ const DecisionMasterBadge = () => {
       question: "You're making a decision about your health or fitness. What's the evidence-based approach?",
       options: [
         { 
-          text: "Consult medical professionals, review scientific studies, and consider personal health data", 
+          text: "Consult medical professionals", 
           emoji: "🏥", 
           isCorrect: true
         },

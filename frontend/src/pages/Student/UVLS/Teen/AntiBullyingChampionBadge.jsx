@@ -74,7 +74,7 @@ const AntiBullyingChampionBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Report to trusted adults, support the victim, and follow up to ensure safety", 
+          text: "Report to trusted adults, support the victim", 
           emoji: "🛡️", 
           isCorrect: true
         },
@@ -86,7 +86,7 @@ const AntiBullyingChampionBadge = () => {
       question: "You want to create ongoing awareness about bullying prevention. What's the best approach?",
       options: [
         { 
-          text: "Organize regular workshops, peer presentations, and awareness activities throughout the year", 
+          text: "Organize regular workshops", 
           emoji: "📢", 
           isCorrect: true
         },
@@ -124,7 +124,7 @@ const AntiBullyingChampionBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Check in regularly, offer ongoing support, and help them build resilience", 
+          text: "Check in regularly", 
           emoji: "💙", 
           isCorrect: true
         },
@@ -180,7 +180,7 @@ const AntiBullyingChampionBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Start peer support groups, organize regular meetings, and create safe spaces for discussion", 
+          text: "Start peer support groups", 
           emoji: "🤝", 
           isCorrect: true
         },

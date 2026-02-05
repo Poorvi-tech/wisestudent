@@ -122,7 +122,7 @@ const DebateRobotsTakeJobs = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 md:mb-6">
                 <span className="text-white/80 text-sm md:text-base">Debate {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-sm md:text-base">Coins: {coins}</span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">Score: {coins}</span>
               </div>
               
               <div className="text-center mb-6">

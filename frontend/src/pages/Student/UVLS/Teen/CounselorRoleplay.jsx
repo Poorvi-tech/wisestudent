@@ -54,7 +54,7 @@ const CounselorRoleplay = () => {
       options: [
         { 
           id: "a", 
-          text: "Describe clearly what happened and provide details about when and where it occurred", 
+          text: "Describe clearly what happened", 
           emoji: "🗣️",
           isCorrect: true
         },
@@ -84,7 +84,7 @@ const CounselorRoleplay = () => {
         },
         { 
           id: "a", 
-          text: "Express your feelings honestly so they can understand and help", 
+          text: "Express your feelings honestly", 
           emoji: "😟",
           isCorrect: true
         },
@@ -138,7 +138,7 @@ const CounselorRoleplay = () => {
         },
         { 
           id: "a", 
-          text: "Ask questions to understand the plan and discuss any concerns", 
+          text: "Ask questions to understand the plan", 
           emoji: "💬",
           isCorrect: true
         }

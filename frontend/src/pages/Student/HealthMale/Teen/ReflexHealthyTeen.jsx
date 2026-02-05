@@ -287,7 +287,7 @@ const ReflexHealthyTeen = () => {
                 <span className="text-white">Time:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Coins:</span> {coins}
+                <span className="font-bold">Score:</span> {coins}
               </div>
             </div>
 

@@ -102,7 +102,7 @@ const TriggerQuiz = () => {
       options: [
         { 
           id: "a", 
-          text: "Too many tasks, deadlines, or responsibilities at once", 
+          text: "Too many tasks, deadlines", 
           emoji: "📅",
           isCorrect: true
         },
@@ -138,7 +138,7 @@ const TriggerQuiz = () => {
         },
         { 
           id: "a", 
-          text: "Heavy workload, difficult assignments, or academic pressure", 
+          text: "Heavy workload", 
           emoji: "📖",
           isCorrect: true
         }

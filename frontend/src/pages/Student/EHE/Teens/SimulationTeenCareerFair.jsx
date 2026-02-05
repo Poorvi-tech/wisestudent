@@ -222,7 +222,7 @@ const SimulationTeenCareerFair = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">
             <span className="text-white/80">Step {currentStep + 1}/{scenarios.length}</span>
-            <span className="text-yellow-400 font-bold">Coins: {choices.filter(c => c.isCorrect).length}</span>
+            <span className="text-yellow-400 font-bold">Score: {choices.filter(c => c.isCorrect).length}</span>
           </div>
 
           <div className="text-center mb-6">

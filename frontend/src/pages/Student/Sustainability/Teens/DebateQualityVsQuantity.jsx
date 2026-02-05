@@ -179,7 +179,7 @@ const DebateQualityVsQuantity = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-white/80 text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-sm md:text-base">Coins: {coins}</span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">Score: {coins}</span>
               </div>
               
               <div className="text-6xl mb-4 text-center">⚖️</div>

@@ -189,7 +189,7 @@ const PuzzleOfFairness1 = () => {
                   Match
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Coins: {coins}</p>
+                  <p>Score: {coins}</p>
                   <p>Matched: {matches.length}/{leftItems.length}</p>
                 </div>
               </div>
