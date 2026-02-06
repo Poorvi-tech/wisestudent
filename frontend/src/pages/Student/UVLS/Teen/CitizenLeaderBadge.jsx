@@ -62,7 +62,7 @@ const CitizenLeaderBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Organize a planning meeting, recruit volunteers, and coordinate with local authorities", 
+          text: "Organize a planning meeting and coordinate with local authorities", 
           emoji: "🗑️", 
           isCorrect: true
         },
@@ -122,7 +122,7 @@ const CitizenLeaderBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Gather student input, create a proposal, and present to school administration", 
+          text: "Gather student input", 
           emoji: "🏫", 
           isCorrect: true
         },
@@ -145,7 +145,7 @@ const CitizenLeaderBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Form a planning committee, delegate tasks, and coordinate logistics", 
+          text: "Form a planning committee", 
           emoji: "🎉", 
           isCorrect: true
         },
@@ -183,7 +183,7 @@ const CitizenLeaderBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Form a planning committee, delegate tasks, and coordinate logistics", 
+          text: "delegate tasks, and coordinate logistics", 
           emoji: "🎉", 
           isCorrect: true
         },

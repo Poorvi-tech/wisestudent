@@ -253,7 +253,7 @@ const AICreativitySimulation = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 md:mb-6">
                 <span className="text-white/80 text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-sm md:text-base">Coins: {coins}</span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">Score: {coins}</span>
               </div>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-4 md:mb-6 text-center">Understanding AI & Human Creativity</h3>
               <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 rounded-xl md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6">

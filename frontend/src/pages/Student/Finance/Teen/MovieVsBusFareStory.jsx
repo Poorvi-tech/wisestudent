@@ -67,7 +67,7 @@ const MovieVsBusFareStory = () => {
         { 
           id: "bus", 
           text: "Add to bus fare savings", 
-          emoji: "🚌", 
+          emoji: "🛡️", 
           isCorrect: true 
         },
         { 
@@ -97,7 +97,7 @@ const MovieVsBusFareStory = () => {
         { 
           id: "bus", 
           text: "Weekly bus pass", 
-          emoji: "🚌", 
+          emoji: "�️", 
           isCorrect: true 
         }
       ]
@@ -109,7 +109,7 @@ const MovieVsBusFareStory = () => {
         { 
           id: "bus", 
           text: "Bus ticket", 
-          emoji: "🚌", 
+          emoji: "🎟️", 
           isCorrect: true 
         },
         { 
@@ -139,7 +139,7 @@ const MovieVsBusFareStory = () => {
         { 
           id: "bus", 
           text: "Monthly bus pass", 
-          emoji: "🚌", 
+          emoji: "Ⓜ️", 
           isCorrect: true 
         },
         { 

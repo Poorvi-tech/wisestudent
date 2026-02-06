@@ -67,7 +67,7 @@ const ConflictSolverBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Listen to both sides, find common ground, and suggest a compromise", 
+          text: "Listen to both sides, find common ground", 
           emoji: "🤝", 
           isCorrect: true
         },
@@ -100,7 +100,7 @@ const ConflictSolverBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Help them express their views calmly and find a solution together", 
+          text: "Help them express their views calmly", 
           emoji: "💬", 
           isCorrect: true
         },

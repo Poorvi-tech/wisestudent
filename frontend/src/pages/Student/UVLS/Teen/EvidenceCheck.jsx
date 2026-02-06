@@ -54,7 +54,7 @@ const EvidenceCheck = () => {
       options: [
         { 
           id: "a", 
-          text: "Peer-reviewed scientific studies and government health sites", 
+          text: "Peer-reviewed scientific studies", 
           emoji: "🔬",
           isCorrect: true
         },
@@ -150,7 +150,7 @@ const EvidenceCheck = () => {
       options: [
         { 
           id: "a", 
-          text: "Health organization studies and scientific papers", 
+          text: "Health organization studies", 
           emoji: "☕",
           isCorrect: true
         },

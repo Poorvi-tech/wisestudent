@@ -37,7 +37,6 @@ import ExamStoryy from './ExamStoryy';
 import StayCoolPoster from './StayCoolPoster';
 import CalmnessJournal from './CalmnessJournal';
 import Sports from './Sports';
-import QuickCalmReflex from './QuickCalmReflex';
 import ReflexQuickCalm from './ReflexQuickCalm';
 import CalmKidBadge from './CalmKidBadge';
 import ToyBrokenStory from './ToyBrokenStory';
@@ -147,9 +146,7 @@ const kidBrainGames = {
   'poster-stay-cool': StayCoolPoster,
   'journal-of-calmness': CalmnessJournal,
   'sports': Sports,
-  'quick-calm-reflex': QuickCalmReflex,
   'reflex-quick-calm': ReflexQuickCalm,
-  'calm-kid-badge': CalmKidBadge,
   'badge-calm-kid': CalmKidBadge,
 
   // Fifth set of 10 games (emotions focused)

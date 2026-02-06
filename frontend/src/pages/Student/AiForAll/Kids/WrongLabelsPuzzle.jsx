@@ -228,7 +228,7 @@ const WrongLabelsPuzzle = () => {
                 )}
                 
                 <div className="mt-4 p-3 bg-yellow-500/20 rounded-lg">
-                  <p className="text-yellow-300 text-sm md:text-base font-bold">Coins: {coins}/{leftItems.length}</p>
+                  <p className="text-yellow-300 text-sm md:text-base font-bold">Score: {coins}/{leftItems.length}</p>
                   <p className="text-white/80 text-xs mt-1">Matched: {matches.length}/{leftItems.length}</p>
                 </div>
               </div>

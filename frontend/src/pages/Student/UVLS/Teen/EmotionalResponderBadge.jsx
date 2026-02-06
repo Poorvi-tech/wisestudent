@@ -58,7 +58,7 @@ const EmotionalResponderBadge = () => {
       question: "You're feeling overwhelmed by stress. How do you use deep breathing to regulate your emotions?",
       options: [
         { 
-          text: "Practice 4-7-8 breathing: inhale 4s, hold 7s, exhale 8s", 
+          text: "Practice 4-7-8 breathing", 
           emoji: "🧘", 
           isCorrect: true
         },
@@ -96,7 +96,7 @@ const EmotionalResponderBadge = () => {
           isCorrect: false
         },
          { 
-          text: "Go for a walk, do yoga, or exercise to release endorphins", 
+          text: "Go for a walk, do yoga", 
           emoji: "🏃", 
           isCorrect: true
         },
