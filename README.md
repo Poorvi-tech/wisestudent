@@ -464,18 +464,6 @@ cp .env.example .env
 npm run dev
 ```
 
-#### **AI/ML Service Configuration**
-```bash
-cd AIML
-pip install -r requirements.txt
-
-# Configure environment variables
-cp .env.example .env
-# Edit .env with your configuration
-
-# Start development server
-python app.py
-```
 
 </details>
 
@@ -515,9 +503,6 @@ STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-
-# AI/ML Service
-AIML_SERVICE_URL=http://localhost:5001
 
 # CORS Configuration
 CLIENT_URL=http://localhost:3000
@@ -635,7 +620,6 @@ wise-student/
 │   ├── services/                 # Business logic services (25+ services)
 │   │   ├── emailService.js       # Email functionality
 │   │   ├── otpService.js         # OTP generation
-│   │   ├── aimlService.js        # AI/ML integration
 │   │   ├── notificationService.js # Push notifications
 │   │   ├── pdfReportGenerator.js # PDF report generation
 │   │   ├── smartInsightsService.js # AI insights
@@ -730,13 +714,6 @@ wise-student/
 │   │   └── index.css              # Global styles
 │   ├── index.html                # HTML entry point
 │   └── package.json              # Frontend dependencies
-│
-└── AIML/                         # Python AI/ML Service
-    ├── datasets/                 # Training datasets
-    ├── app.py                    # Flask API server
-    ├── Gemini.py                 # Google Gemini integration
-    ├── finance_calculator.py     # Financial calculations
-    ├── math_solver.py            # Math problem solver
     └── requirements.txt          # Python dependencies
 ```
 
@@ -800,10 +777,6 @@ npm install
 # Frontend
 cd ../frontend
 npm install
-
-# AI/ML Service (Optional)
-cd ../AIML
-pip install -r requirements.txt
 ```
 
 ### **3. Environment Setup**
@@ -811,7 +784,6 @@ pip install -r requirements.txt
 # Copy environment files
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
-cp AIML/.env.example AIML/.env
 
 # Configure your environment variables
 ```
@@ -833,10 +805,6 @@ npm run dev
 # Terminal 2 - Frontend
 cd frontend
 npm run dev
-
-# Terminal 3 - AI/ML Service (Optional)
-cd AIML
-python app.py
 ```
 
 ### **6. Access the Application**

@@ -40,8 +40,6 @@ const Chatbot = () => {
     const [unreadCount, setUnreadCount] = useState(0);
     const [achievements, setAchievements] = useState([]);
     const [averageMood, setAverageMood] = useState("neutral");
-    const [aimlAvailable, setAimlAvailable] = useState(true);
-    const [serviceStatus, setServiceStatus] = useState("");
     const messagesEndRef = useRef(null);
 
     const socket = useSocket();
@@ -98,11 +96,6 @@ const Chatbot = () => {
                 }
             });
 
-            socket.socket.on("student:chat:service-status", (status) => {
-                setAimlAvailable(status.aimlAvailable);
-                setServiceStatus(status.message);
-            });
-
             socket.socket.on("student:chat:message", (msg) => {
                 setMessages((prev) => [...prev, msg]);
                 setIsTyping(false);
@@ -128,7 +121,6 @@ const Chatbot = () => {
             return () => {
                 socket.socket.off("student:chat:history");
                 socket.socket.off("student:chat:message");
-                socket.socket.off("student:chat:service-status");
                 socket.socket.off("student:chat:error");
             };
         }
@@ -167,7 +159,7 @@ const Chatbot = () => {
         setIsTyping(true);
 
         try {
-            // Send message to AIML-powered chat
+            // Send message to chat
             socket.socket.emit("student:chat:send", {
                 studentId: user._id,
                 message: input.trim(), // Using 'message' parameter as expected by backend
@@ -184,7 +176,7 @@ const Chatbot = () => {
         }
     };
 
-    // Emit quick action category to backend with AIML integration
+    // Emit quick action category to backend
     const handleQuickAction = (action) => {
         setLoading(true);
         setIsTyping(true);
@@ -285,23 +277,10 @@ const Chatbot = () => {
                                     <div>
                                         <h2 className="font-bold text-lg flex items-center gap-2">
                                             AI Companion
-                                            {aimlAvailable ? (
-                                                <span className="text-xs bg-green-400/20 text-green-700 px-2 py-1 rounded-full flex items-center gap-1">
-                                                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                                    Advanced AI
-                                                </span>
-                                            ) : (
-                                                <span className="text-xs bg-yellow-400/20 text-yellow-700 px-2 py-1 rounded-full">
-                                                    Basic Mode
-                                                </span>
-                                            )}
                                         </h2>
                                         <div className="text-xs text-indigo-200 flex items-center gap-1">
                                             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                                             Online • Level {getLevel()}
-                                            {serviceStatus && (
-                                                <span className="ml-2 text-indigo-100 hidden sm:inline">• {serviceStatus}</span>
-                                            )}
                                         </div>
                                     </div>
                                 </div>
