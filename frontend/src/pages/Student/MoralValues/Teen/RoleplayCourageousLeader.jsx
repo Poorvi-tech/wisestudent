@@ -187,7 +187,7 @@ const RoleplayCourageousLeader = () => {
         setShowFeedback(false);
         resetFeedback();
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const handleTryAgain = () => {

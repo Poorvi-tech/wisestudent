@@ -27,62 +27,63 @@ const ReflexStandUp = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You see your friend being blamed for something they didn't do. 😔",
-      correctAnswer: "Stand for Truth",
-      options: [
-        { text: "Stand for Truth", isCorrect: true, emoji: "✊" },
-        { text: "Stay Silent", isCorrect: false, emoji: "🤐" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You forgot your homework but your teacher thinks someone else did it. 📚",
-      correctAnswer: "Stand for Truth",
-      options: [
-        { text: "Stay Silent", isCorrect: false, emoji: "🤐" },
-        { text: "Stand for Truth", isCorrect: true, emoji: "✊" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You saw someone cheat on a test but the teacher didn't notice. 📝",
-      correctAnswer: "Stand for Truth",
-      options: [
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" },
-        { text: "Stand for Truth", isCorrect: true, emoji: "✊" },
-        { text: "Stay Silent", isCorrect: false, emoji: "🤐" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Your group is laughing at a classmate's mistake. 😂",
-      correctAnswer: "Stand for Truth",
-      options: [
-        { text: "Stand for Truth", isCorrect: true, emoji: "✊" },
-        { text: "Stay Silent", isCorrect: false, emoji: "🤐" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You broke a class decoration but no one saw you. 🏫",
-      correctAnswer: "Stand for Truth",
-      options: [
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Walk Away", isCorrect: false, emoji: "🚶" },
-        { text: "Stay Silent", isCorrect: false, emoji: "🤐" },
-        { text: "Stand for Truth", isCorrect: true, emoji: "✊" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "A student is being bullied online in your class group chat. 💬",
+    correctAnswer: "Support the Victim",
+    options: [
+      { text: "Support the Victim", isCorrect: true, emoji: "🛡️" },
+      { text: "Join the Jokes", isCorrect: false, emoji: "😂" },
+      { text: "Mute the Chat", isCorrect: false, emoji: "🔕" },
+      { text: "Leave the Group", isCorrect: false, emoji: "🚪" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Your close friend spreads a false rumor about someone. 🤥",
+    correctAnswer: "Correct Them Privately",
+    options: [
+      { text: "Laugh Along", isCorrect: false, emoji: "🤣" },
+      { text: "Correct Them Privately", isCorrect: true, emoji: "🤝" },
+      { text: "Share the Rumor", isCorrect: false, emoji: "📢" },
+      { text: "Pretend Not to Hear", isCorrect: false, emoji: "🎧" }
+    ]
+  },
+  {
+    id: 3,
+    question: "A teacher wrongly accuses a classmate of cheating. 📝",
+    correctAnswer: "Speak Up Respectfully",
+    options: [
+      { text: "Speak Up Respectfully", isCorrect: true, emoji: "🗣️" },
+      { text: "Stay Quiet", isCorrect: false, emoji: "🤐" },
+      { text: "Mock the Situation", isCorrect: false, emoji: "😏" },
+      { text: "Change Seats", isCorrect: false, emoji: "💺" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Your friends pressure you to make fun of someone’s accent. 🗣️",
+    correctAnswer: "Refuse and Set Boundaries",
+    options: [
+      { text: "Copy the Accent", isCorrect: false, emoji: "🎭" },
+      { text: "Smile Uncomfortably", isCorrect: false, emoji: "😬" },
+      { text: "Walk Off Quietly", isCorrect: false, emoji: "🚶" },
+      { text: "Refuse and Set Boundaries", isCorrect: true, emoji: "🚫" },
+    ]
+  },
+  {
+    id: 5,
+    question: "You accidentally damage school property and no one notices. 🏫",
+    correctAnswer: "Take Responsibility",
+    options: [
+      { text: "Blame Someone Else", isCorrect: false, emoji: "👉" },
+      { text: "Hide the Damage", isCorrect: false, emoji: "🫥" },
+      { text: "Take Responsibility", isCorrect: true, emoji: "✅" },
+      { text: "Leave Immediately", isCorrect: false, emoji: "🏃" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

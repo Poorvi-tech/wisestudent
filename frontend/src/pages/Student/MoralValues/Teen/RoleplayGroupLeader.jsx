@@ -189,7 +189,7 @@ const RoleplayGroupLeader = () => {
         setShowFeedback(false);
         resetFeedback();
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 300);
   };
 
   const handleTryAgain = () => {

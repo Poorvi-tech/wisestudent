@@ -26,45 +26,45 @@ const DebateTeamVsIndividual = () => {
       id: 1,
       scenario: "Which is better — working alone or in a team?",
       positions: [
-        { id: "team", text: "FOR: Working in a team", emoji: "🤝", points: ["Share ideas", "Support each other", "Achieve more"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Both have benefits", emoji: "⚖️", points: ["Team for big tasks", "Alone for focus", "Choose wisely"], isCorrect: false },
-        { id: "alone", text: "AGAINST: Working alone", emoji: "🧍‍♂️", points: ["More control", "No conflicts", "Faster decisions"], isCorrect: false }
+        { id: "team", text: "Working in a team", emoji: "🤝", points: ["Share ideas", "Support each other", "Achieve more"], isCorrect: true },
+        { id: "balanced", text: "Both have benefits", emoji: "⚖️", points: ["Team for big tasks", "Alone for focus", "Choose wisely"], isCorrect: false },
+        { id: "alone", text: "Working alone", emoji: "🧍‍♂️", points: ["More control", "No conflicts", "Faster decisions"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Do teams achieve more than individuals?",
       positions: [
-        { id: "balanced", text: "BALANCED: Depends on the task", emoji: "⚖️", points: ["Some tasks need teams", "Some need individuals", "Context matters"], isCorrect: false },
-        { id: "more", text: "FOR: Teams achieve more together", emoji: "🏆", points: ["Combine strengths", "Bigger results", "Shared success"], isCorrect: true },
-        { id: "less", text: "AGAINST: Individuals work faster", emoji: "⚡", points: ["No delays", "Quick decisions", "More efficient"], isCorrect: false }
+        { id: "balanced", text: "Depends on the task", emoji: "⚖️", points: ["Some tasks need teams", "Some need individuals", "Context matters"], isCorrect: false },
+        { id: "more", text: "Teams achieve more together", emoji: "🏆", points: ["Combine strengths", "Bigger results", "Shared success"], isCorrect: true },
+        { id: "less", text: "Individuals work faster", emoji: "⚡", points: ["No delays", "Quick decisions", "More efficient"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Does teamwork improve creativity?",
       positions: [
-        { id: "conflict", text: "AGAINST: Teams create conflicts", emoji: "😠", points: ["Too many opinions", "Slows down", "Creates tension"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Can help or hinder", emoji: "⚖️", points: ["Depends on team", "Can inspire", "Can conflict"], isCorrect: false },
-        { id: "creativity", text: "FOR: Different ideas spark creativity", emoji: "💡", points: ["Diverse perspectives", "New solutions", "Innovation"], isCorrect: true }
+        { id: "conflict", text: "Teams create conflicts", emoji: "😠", points: ["Too many opinions", "Slows down", "Creates tension"], isCorrect: false },
+        { id: "balanced", text: "Can help or hinder", emoji: "⚖️", points: ["Depends on team", "Can inspire", "Can conflict"], isCorrect: false },
+        { id: "creativity", text: "Different ideas spark creativity", emoji: "💡", points: ["Diverse perspectives", "New solutions", "Innovation"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Is working alone more challenging?",
       positions: [
-        { id: "challenging", text: "FOR: Alone is more challenging", emoji: "😓", points: ["No support", "All responsibility", "Harder work"], isCorrect: true },
-        { id: "easier", text: "AGAINST: Alone is easier", emoji: "😌", points: ["No conflicts", "Simple decisions", "Less stress"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both have challenges", emoji: "⚖️", points: ["Different challenges", "Team has conflicts", "Alone has pressure"], isCorrect: false }
+        { id: "challenging", text: "Alone is more challenging", emoji: "😓", points: ["No support", "All responsibility", "Harder work"], isCorrect: true },
+        { id: "easier", text: "Alone is easier", emoji: "😌", points: ["No conflicts", "Simple decisions", "Less stress"], isCorrect: false },
+        { id: "balanced", text: "Both have challenges", emoji: "⚖️", points: ["Different challenges", "Team has conflicts", "Alone has pressure"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Does being part of a team teach responsibility?",
       positions: [
-        { id: "balanced", text: "BALANCED: Both teach responsibility", emoji: "⚖️", points: ["Team: shared", "Alone: personal", "Both valuable"], isCorrect: false },
-        { id: "responsibility", text: "FOR: Team teaches shared responsibility", emoji: "📋", points: ["Accountable to others", "Reliable member", "Team commitment"], isCorrect: true },
-        { id: "less", text: "AGAINST: Alone teaches more responsibility", emoji: "🎯", points: ["All on you", "Full accountability", "Personal growth"], isCorrect: false }
+        { id: "balanced", text: "Both teach responsibility", emoji: "⚖️", points: ["Team: shared", "Alone: personal", "Both valuable"], isCorrect: false },
+        { id: "responsibility", text: "Team teaches shared responsibility", emoji: "📋", points: ["Accountable to others", "Reliable member", "Team commitment"], isCorrect: true },
+        { id: "less", text: "Alone teaches more responsibility", emoji: "🎯", points: ["All on you", "Full accountability", "Personal growth"], isCorrect: false }
       ]
     }
   ];

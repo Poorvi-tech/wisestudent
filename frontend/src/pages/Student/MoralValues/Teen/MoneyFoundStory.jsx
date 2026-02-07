@@ -30,6 +30,12 @@ const MoneyFoundStory = () => {
       text: "You find some money on the school road. What do you do?",
       options: [
         { 
+          id: "teacher", 
+          text: "Give it to your teacher", 
+          emoji: "👩‍🏫", 
+          isCorrect: true
+        },
+        { 
           id: "pick", 
           text: "Pick it and keep it secretly", 
           emoji: "😏", 
@@ -42,12 +48,7 @@ const MoneyFoundStory = () => {
           emoji: "🚶", 
           isCorrect: false
         },
-        { 
-          id: "teacher", 
-          text: "Give it to your teacher", 
-          emoji: "👩‍🏫", 
-          isCorrect: true
-        }
+        
       ]
     },
     {
@@ -85,17 +86,18 @@ const MoneyFoundStory = () => {
           isCorrect: false
         },
         { 
+          id: "return", 
+          text: "Pick and return it immediately", 
+          emoji: "🤝", 
+          isCorrect: true
+        },
+        { 
           id: "ignore2", 
           text: "Ignore it", 
           emoji: "😶", 
           isCorrect: false
         },
-        { 
-          id: "return", 
-          text: "Pick and return it immediately", 
-          emoji: "🤝", 
-          isCorrect: true
-        }
+        
       ]
     },
     {

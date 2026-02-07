@@ -27,62 +27,63 @@ const ReflexGratitude = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Thank you 🙏",
-      correctAnswer: "Grateful",
-      options: [
-        { text: "Grateful", isCorrect: true, emoji: "💚" },
-        { text: "Rude", isCorrect: false, emoji: "💔" },
-        { text: "Neutral", isCorrect: false, emoji: "😐" },
-        { text: "Casual", isCorrect: false, emoji: "👋" }
-      ]
-    },
-    {
-      id: 2,
-      question: "😠",
-      correctAnswer: "Rude",
-      options: [
-        { text: "Grateful", isCorrect: false, emoji: "💚" },
-        { text: "Rude", isCorrect: true, emoji: "💔" },
-        { text: "Neutral", isCorrect: false, emoji: "😐" },
-        { text: "Casual", isCorrect: false, emoji: "👋" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Thanks a lot 💖",
-      correctAnswer: "Grateful",
-      options: [
-        { text: "Neutral", isCorrect: false, emoji: "😐" },
-        { text: "Casual", isCorrect: false, emoji: "👋" },
-        { text: "Grateful", isCorrect: true, emoji: "💚" },
-        { text: "Rude", isCorrect: false, emoji: "💔" }
-      ]
-    },
-    {
-      id: 4,
-      question: "👎",
-      correctAnswer: "Rude",
-      options: [
-        { text: "Rude", isCorrect: true, emoji: "💔" },
-        { text: "Grateful", isCorrect: false, emoji: "💚" },
-        { text: "Neutral", isCorrect: false, emoji: "😐" },
-        { text: "Casual", isCorrect: false, emoji: "👋" }
-      ]
-    },
-    {
-      id: 5,
-      question: "I appreciate it ✨",
-      correctAnswer: "Grateful",
-      options: [
-        { text: "Neutral", isCorrect: false, emoji: "😐" },
-        { text: "Casual", isCorrect: false, emoji: "👋" },
-        { text: "Rude", isCorrect: false, emoji: "💔" },
-        { text: "Grateful", isCorrect: true, emoji: "💚" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Your friend helps you complete a project at the last moment. What is the best response?",
+    correctAnswer: "Grateful",
+    options: [
+      { text: "Grateful", isCorrect: true, emoji: "💚" },
+      { text: "Rude", isCorrect: false, emoji: "💔" },
+      { text: "Neutral", isCorrect: false, emoji: "😐" },
+      { text: "Casual", isCorrect: false, emoji: "👋" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Someone gives you notes before an exam and you walk away without saying anything. This behavior is:",
+    correctAnswer: "Rude",
+    options: [
+      { text: "Grateful", isCorrect: false, emoji: "💚" },
+      { text: "Rude", isCorrect: true, emoji: "💔" },
+      { text: "Neutral", isCorrect: false, emoji: "😐" },
+      { text: "Casual", isCorrect: false, emoji: "👋" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You say, “Thanks a lot, I really appreciate your help!” How does this attitude show?",
+    correctAnswer: "Grateful",
+    options: [
+      { text: "Neutral", isCorrect: false, emoji: "😐" },
+      { text: "Casual", isCorrect: false, emoji: "👋" },
+      { text: "Grateful", isCorrect: true, emoji: "💚" },
+      { text: "Rude", isCorrect: false, emoji: "💔" }
+    ]
+  },
+  {
+    id: 4,
+    question: "A classmate helps you, and you respond with an angry face or thumbs down. This reaction is:",
+    correctAnswer: "Rude",
+    options: [
+      { text: "Rude", isCorrect: true, emoji: "💔" },
+      { text: "Grateful", isCorrect: false, emoji: "💚" },
+      { text: "Neutral", isCorrect: false, emoji: "😐" },
+      { text: "Casual", isCorrect: false, emoji: "👋" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Your teacher gives you extra time to submit an assignment. You say, “I appreciate it.” This shows:",
+    correctAnswer: "Grateful",
+    options: [
+      { text: "Neutral", isCorrect: false, emoji: "😐" },
+      { text: "Casual", isCorrect: false, emoji: "👋" },
+      { text: "Rude", isCorrect: false, emoji: "💔" },
+      { text: "Grateful", isCorrect: true, emoji: "💚" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -30,13 +30,13 @@ const AIEthicsQuiz = () => {
       options: [
         { 
           id: "yes", 
-          text: "Yes - AI must follow rules", 
+          text: "AI must follow rules", 
           emoji: "✓", 
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No - AI can ignore rules", 
+          text: "AI can ignore rules", 
           emoji: "✗", 
           isCorrect: false
         },
@@ -60,13 +60,13 @@ const AIEthicsQuiz = () => {
         },
         { 
           id: "yes", 
-          text: "Yes, privacy is important", 
+          text: "privacy is important", 
           emoji: "🛡️", 
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No, it can share data freely", 
+          text: "it can share data freely", 
           emoji: "📤", 
           isCorrect: false
         }
@@ -84,13 +84,13 @@ const AIEthicsQuiz = () => {
         },
         { 
           id: "no", 
-          text: "No, it can do anything", 
+          text: "it can do anything", 
           emoji: "🤷", 
           isCorrect: false
         },
         { 
           id: "yes", 
-          text: "Yes, prevent harm", 
+          text: "prevent harm", 
           emoji: "🚫", 
           isCorrect: true
         }
@@ -102,13 +102,13 @@ const AIEthicsQuiz = () => {
       options: [
         { 
           id: "yes", 
-          text: "Yes, explain decisions", 
+          text: "explain decisions", 
           emoji: "🔍", 
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No, secrecy is fine", 
+          text: "secrecy is fine", 
           emoji: "🤐", 
           isCorrect: false
         },
@@ -132,13 +132,13 @@ const AIEthicsQuiz = () => {
         },
         { 
           id: "yes", 
-          text: "Yes, fairness matters", 
+          text: "fairness matters", 
           emoji: "🤝", 
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No, bias is acceptable", 
+          text: "bias is acceptable", 
           emoji: "😐", 
           isCorrect: false
         }

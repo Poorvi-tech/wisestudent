@@ -26,45 +26,45 @@ const DebateFearVsCourage = () => {
       id: 1,
       scenario: "Is courage the absence of fear?",
       positions: [
-        { id: "despite", text: "FOR: Courage means acting despite fear", emoji: "🦁", points: ["Face fears", "Take action", "Show bravery"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Courage and fear coexist", emoji: "⚖️", points: ["Both are normal", "Balance emotions", "Use wisely"], isCorrect: false },
-        { id: "noFear", text: "AGAINST: Courageous people feel no fear", emoji: "😌", points: ["No fear", "Always brave", "Never scared"], isCorrect: false }
+        { id: "despite", text: "Courage means acting despite fear", emoji: "🦁", points: ["Face fears", "Take action", "Show bravery"], isCorrect: true },
+        { id: "balanced", text: "Courage and fear coexist", emoji: "⚖️", points: ["Both are normal", "Balance emotions", "Use wisely"], isCorrect: false },
+        { id: "noFear", text: "Courageous people feel no fear", emoji: "😌", points: ["No fear", "Always brave", "Never scared"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Can fear make us stronger?",
       positions: [
-        { id: "balanced", text: "BALANCED: Fear can teach or weaken", emoji: "⚖️", points: ["Depends on response", "Can help or hurt", "Use wisely"], isCorrect: false },
-        { id: "resilience", text: "FOR: It teaches resilience and awareness", emoji: "💪", points: ["Builds strength", "Teaches lessons", "Increases awareness"], isCorrect: true },
-        { id: "weakens", text: "AGAINST: Fear only weakens us", emoji: "😨", points: ["Makes us weak", "Holds back", "Negative only"], isCorrect: false }
+        { id: "balanced", text: "Fear can teach or weaken", emoji: "⚖️", points: ["Depends on response", "Can help or hurt", "Use wisely"], isCorrect: false },
+        { id: "resilience", text: "It teaches resilience and awareness", emoji: "💪", points: ["Builds strength", "Teaches lessons", "Increases awareness"], isCorrect: true },
+        { id: "weakens", text: "Fear only weakens us", emoji: "😨", points: ["Makes us weak", "Holds back", "Negative only"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Is it brave to admit your fear?",
       positions: [
-        { id: "hide", text: "AGAINST: Brave people hide fear", emoji: "🤐", points: ["Never show fear", "Stay strong", "Hide weakness"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Depends on the situation", emoji: "⚖️", points: ["Context matters", "Choose wisely", "Be strategic"], isCorrect: false },
-        { id: "honesty", text: "FOR: Honesty is real bravery", emoji: "❤️", points: ["Shows courage", "Builds trust", "True strength"], isCorrect: true }
+        { id: "hide", text: "Brave people hide fear", emoji: "🤐", points: ["Never show fear", "Stay strong", "Hide weakness"], isCorrect: false },
+        { id: "balanced", text: "Depends on the situation", emoji: "⚖️", points: ["Context matters", "Choose wisely", "Be strategic"], isCorrect: false },
+        { id: "honesty", text: "Honesty is real bravery", emoji: "❤️", points: ["Shows courage", "Builds trust", "True strength"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Do courageous people take reckless risks?",
       positions: [
-        { id: "wisdom", text: "FOR: Courage includes wisdom and safety", emoji: "🧠", points: ["Think first", "Be smart", "Stay safe"], isCorrect: true },
-        { id: "reckless", text: "AGAINST: Courage means taking any risk", emoji: "🔥", points: ["No fear", "Take risks", "Be bold"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Balance courage and caution", emoji: "⚖️", points: ["Be brave", "Stay safe", "Find balance"], isCorrect: false }
+        { id: "wisdom", text: "Courage includes wisdom and safety", emoji: "🧠", points: ["Think first", "Be smart", "Stay safe"], isCorrect: true },
+        { id: "reckless", text: "Courage means taking any risk", emoji: "🔥", points: ["No fear", "Take risks", "Be bold"], isCorrect: false },
+        { id: "balanced", text: "Balance courage and caution", emoji: "⚖️", points: ["Be brave", "Stay safe", "Find balance"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Can fear guide us to do the right thing?",
       positions: [
-        { id: "balanced", text: "BALANCED: Fear can warn or block", emoji: "⚖️", points: ["Can help", "Can hinder", "Use judgment"], isCorrect: false },
-        { id: "blocks", text: "AGAINST: Fear blocks right choices", emoji: "🚫", points: ["Prevents action", "Holds back", "Negative only"], isCorrect: false },
-        { id: "guide", text: "FOR: Fear can warn and guide wisely", emoji: "🧭", points: ["Warns of danger", "Helps decisions", "Protects us"], isCorrect: true }
+        { id: "balanced", text: "Fear can warn or block", emoji: "⚖️", points: ["Can help", "Can hinder", "Use judgment"], isCorrect: false },
+        { id: "blocks", text: "Fear blocks right choices", emoji: "🚫", points: ["Prevents action", "Holds back", "Negative only"], isCorrect: false },
+        { id: "guide", text: "Fear can warn and guide wisely", emoji: "🧭", points: ["Warns of danger", "Helps decisions", "Protects us"], isCorrect: true }
       ]
     }
   ];

@@ -26,45 +26,45 @@ const DebateObeyOrQuestion = () => {
       id: 1,
       scenario: "Does respecting elders mean blind obedience?",
       positions: [
-        { id: "respect", text: "FOR: Respect with polite questioning", emoji: "🤝", points: ["Respect and question", "Polite disagreement", "Build understanding"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: It depends on the situation", emoji: "⚖️", points: ["Consider context", "Weigh importance", "Choose wisely"], isCorrect: false },
-        { id: "obey", text: "AGAINST: Never question elders", emoji: "🙇", points: ["Always obey", "No questions", "Complete respect"], isCorrect: false }
+        { id: "respect", text: "Respect with polite questioning", emoji: "🤝", points: ["Respect and question", "Polite disagreement", "Build understanding"], isCorrect: true },
+        { id: "balanced", text: "It depends on the situation", emoji: "⚖️", points: ["Consider context", "Weigh importance", "Choose wisely"], isCorrect: false },
+        { id: "obey", text: "Never question elders", emoji: "🙇", points: ["Always obey", "No questions", "Complete respect"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Should students always follow rules, even if unfair?",
       positions: [
-        { id: "balanced", text: "BALANCED: Question respectfully", emoji: "⚖️", points: ["Address concerns", "Seek understanding", "Find solutions"], isCorrect: false },
-        { id: "question", text: "FOR: Question unfair rules respectfully", emoji: "🗣️", points: ["Stand for justice", "Respectful dialogue", "Seek fairness"], isCorrect: true },
-        { id: "follow", text: "AGAINST: Rules are rules", emoji: "📜", points: ["Always follow", "No exceptions", "Just obey"], isCorrect: false }
+        { id: "balanced", text: "Question respectfully", emoji: "⚖️", points: ["Address concerns", "Seek understanding", "Find solutions"], isCorrect: false },
+        { id: "question", text: "Question unfair rules respectfully", emoji: "🗣️", points: ["Stand for justice", "Respectful dialogue", "Seek fairness"], isCorrect: true },
+        { id: "follow", text: "Rules are rules", emoji: "📜", points: ["Always follow", "No exceptions", "Just obey"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Is it wrong to question teachers in class?",
       positions: [
-        { id: "wrong", text: "AGAINST: Questioning shows disrespect", emoji: "🚫", points: ["Stay quiet", "Accept everything", "Don't challenge"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Ask at appropriate times", emoji: "⚖️", points: ["Choose timing", "Be respectful", "Seek clarity"], isCorrect: false },
-        { id: "help", text: "FOR: It helps learning", emoji: "💡", points: ["Deepens understanding", "Clarifies concepts", "Active learning"], isCorrect: true }
+        { id: "wrong", text: "Questioning shows disrespect", emoji: "🚫", points: ["Stay quiet", "Accept everything", "Don't challenge"], isCorrect: false },
+        { id: "balanced", text: "Ask at appropriate times", emoji: "⚖️", points: ["Choose timing", "Be respectful", "Seek clarity"], isCorrect: false },
+        { id: "help", text: "It helps learning", emoji: "💡", points: ["Deepens understanding", "Clarifies concepts", "Active learning"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Should we obey every instruction from authority?",
       positions: [
-        { id: "fair", text: "FOR: Follow what's fair and just", emoji: "⚖️", points: ["Use judgment", "Stand for justice", "Do what's right"], isCorrect: true },
-        { id: "always", text: "AGAINST: Authority is always right", emoji: "👮‍♂️", points: ["Blind obedience", "No questions", "Just follow"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Evaluate each situation", emoji: "⚖️", points: ["Consider context", "Think critically", "Decide wisely"], isCorrect: false }
+        { id: "fair", text: "Follow what's fair and just", emoji: "⚖️", points: ["Use judgment", "Stand for justice", "Do what's right"], isCorrect: true },
+        { id: "always", text: "Authority is always right", emoji: "👮‍♂️", points: ["Blind obedience", "No questions", "Just follow"], isCorrect: false },
+        { id: "balanced", text: "Evaluate each situation", emoji: "⚖️", points: ["Consider context", "Think critically", "Decide wisely"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Is it disrespectful to express disagreement?",
       positions: [
-        { id: "balanced", text: "BALANCED: Depends on how you express it", emoji: "⚖️", points: ["Tone matters", "Be respectful", "Choose words"], isCorrect: false },
-        { id: "rude", text: "AGAINST: Disagreement is rude", emoji: "🙊", points: ["Stay silent", "Avoid conflict", "Never disagree"], isCorrect: false },
-        { id: "build", text: "FOR: Respectful disagreement builds understanding", emoji: "🕊️", points: ["Open dialogue", "Mutual respect", "Growth"], isCorrect: true }
+        { id: "balanced", text: "Depends on how you express it", emoji: "⚖️", points: ["Tone matters", "Be respectful", "Choose words"], isCorrect: false },
+        { id: "rude", text: "Disagreement is rude", emoji: "🙊", points: ["Stay silent", "Avoid conflict", "Never disagree"], isCorrect: false },
+        { id: "build", text: "Respectful disagreement builds understanding", emoji: "🕊️", points: ["Open dialogue", "Mutual respect", "Growth"], isCorrect: true }
       ]
     }
   ];

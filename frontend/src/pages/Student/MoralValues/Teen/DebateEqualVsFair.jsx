@@ -26,45 +26,45 @@ const DebateEqualVsFair = () => {
       id: 1,
       scenario: "Is treating everyone the same always fair?",
       positions: [
-        { id: "need", text: "FOR: Fairness can mean giving based on need", emoji: "🎯", points: ["Consider needs", "True fairness", "Help those who need"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Sometimes equal, sometimes need-based", emoji: "⚖️", points: ["Depends on situation", "Balance both", "Use judgment"], isCorrect: false },
-        { id: "equal", text: "AGAINST: Equal means fair", emoji: "⚖️", points: ["Same for everyone", "No exceptions", "Equal treatment"], isCorrect: false }
+        { id: "need", text: "Fairness can mean giving based on need", emoji: "🎯", points: ["Consider needs", "True fairness", "Help those who need"], isCorrect: true },
+        { id: "balanced", text: "Sometimes equal, sometimes need-based", emoji: "⚖️", points: ["Depends on situation", "Balance both", "Use judgment"], isCorrect: false },
+        { id: "equal", text: "Equal means fair", emoji: "⚖️", points: ["Same for everyone", "No exceptions", "Equal treatment"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Should all students get the same resources, even if some need more help?",
       positions: [
-        { id: "balanced", text: "BALANCED: Base resources on needs", emoji: "⚖️", points: ["Consider needs", "Fair distribution", "Support learning"], isCorrect: false },
-        { id: "help", text: "FOR: Extra help for those who need it is fair", emoji: "💡", points: ["Support learning", "Level playing field", "True fairness"], isCorrect: true },
-        { id: "same", text: "AGAINST: Same for everyone", emoji: "📚", points: ["Equal resources", "No special treatment", "Fair share"], isCorrect: false }
+        { id: "balanced", text: "Base resources on needs", emoji: "⚖️", points: ["Consider needs", "Fair distribution", "Support learning"], isCorrect: false },
+        { id: "help", text: "Extra help for those who need it is fair", emoji: "💡", points: ["Support learning", "Level playing field", "True fairness"], isCorrect: true },
+        { id: "same", text: "Same for everyone", emoji: "📚", points: ["Equal resources", "No special treatment", "Fair share"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "If two players practice differently, should they get equal rewards?",
       positions: [
-        { id: "effort", text: "AGAINST: Reward effort and performance fairly", emoji: "🔥", points: ["Reward hard work", "Recognize effort", "Fair recognition"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Consider both effort and results", emoji: "⚖️", points: ["Balance factors", "Consider all", "Fair evaluation"], isCorrect: false },
-        { id: "performance", text: "FOR: Reward based on performance fairly", emoji: "🏅", points: ["Recognize achievement", "Fair competition", "Merit-based"], isCorrect: true }
+        { id: "effort", text: "Reward effort and performance fairly", emoji: "🔥", points: ["Reward hard work", "Recognize effort", "Fair recognition"], isCorrect: false },
+        { id: "balanced", text: "Consider both effort and results", emoji: "⚖️", points: ["Balance factors", "Consider all", "Fair evaluation"], isCorrect: false },
+        { id: "performance", text: "Reward based on performance fairly", emoji: "🏅", points: ["Recognize achievement", "Fair competition", "Merit-based"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "In a family, should all siblings get the same allowance regardless of chores?",
       positions: [
-        { id: "contribution", text: "FOR: Fair means based on contribution", emoji: "🧹", points: ["Reward work", "Fair compensation", "Encourage responsibility"], isCorrect: true },
-        { id: "equal", text: "AGAINST: Equal treatment", emoji: "💰", points: ["Same for all", "No differences", "Equal share"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Base on age and contribution", emoji: "⚖️", points: ["Consider factors", "Fair system", "Balance needs"], isCorrect: false }
+        { id: "contribution", text: "Fair means based on contribution", emoji: "🧹", points: ["Reward work", "Fair compensation", "Encourage responsibility"], isCorrect: true },
+        { id: "equal", text: "Equal treatment", emoji: "💰", points: ["Same for all", "No differences", "Equal share"], isCorrect: false },
+        { id: "balanced", text: "Base on age and contribution", emoji: "⚖️", points: ["Consider factors", "Fair system", "Balance needs"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "At school, should teachers give everyone the same grade for trying?",
       positions: [
-        { id: "balanced", text: "BALANCED: Consider effort and skill", emoji: "⚖️", points: ["Balance factors", "Fair evaluation", "Recognize both"], isCorrect: false },
-        { id: "equality", text: "AGAINST: Equality matters", emoji: "📝", points: ["Same grades", "Equal recognition", "No differences"], isCorrect: false },
-        { id: "fairness", text: "FOR: Fairness rewards effort and skill", emoji: "🏆", points: ["Recognize achievement", "Fair assessment", "Merit-based"], isCorrect: true }
+        { id: "balanced", text: "Consider effort and skill", emoji: "⚖️", points: ["Balance factors", "Fair evaluation", "Recognize both"], isCorrect: false },
+        { id: "equality", text: "Equality matters", emoji: "📝", points: ["Same grades", "Equal recognition", "No differences"], isCorrect: false },
+        { id: "fairness", text: "Fairness rewards effort and skill", emoji: "🏆", points: ["Recognize achievement", "Fair assessment", "Merit-based"], isCorrect: true }
       ]
     }
   ];

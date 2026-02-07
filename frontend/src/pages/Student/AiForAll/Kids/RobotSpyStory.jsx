@@ -58,18 +58,19 @@ const RobotSpyStory = () => {
           emoji: "😎", 
           isCorrect: false
         },
-        { 
-          id: "cover", 
-          text: "Cover your camera and stop it", 
-          emoji: "✋📷", 
-          isCorrect: true
-        },
+        
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "😐", 
           isCorrect: false
-        }
+        },
+        { 
+          id: "cover", 
+          text: "Cover your camera and stop it", 
+          emoji: "📷", 
+          isCorrect: true
+        },
       ]
     },
     {
@@ -101,17 +102,18 @@ const RobotSpyStory = () => {
       text: "You find a spy robot collecting data about your friends. Next step?",
       options: [
         { 
+          id: "inform", 
+          text: "Inform your friends & shut it down", 
+          emoji: "👥", 
+          isCorrect: true
+        },
+        { 
           id: "share", 
           text: "Share data with others", 
           emoji: "📤", 
           isCorrect: false
         },
-        { 
-          id: "inform", 
-          text: "Inform your friends & shut it down", 
-          emoji: "👥✋", 
-          isCorrect: true
-        },
+        
         { 
           id: "laugh", 
           text: "Laugh and ignore", 
@@ -130,18 +132,19 @@ const RobotSpyStory = () => {
           emoji: "✅", 
           isCorrect: false
         },
-        { 
-          id: "deny", 
-          text: "Deny or limit access", 
-          emoji: "✋", 
-          isCorrect: true
-        },
+       
         { 
           id: "share", 
           text: "Share only with friends", 
           emoji: "👥", 
           isCorrect: false
-        }
+        },
+         { 
+          id: "deny", 
+          text: "Deny or limit access", 
+          emoji: "✋", 
+          isCorrect: true
+        },
       ]
     }
   ];

@@ -31,7 +31,7 @@ const FairAIStory = () => {
         { 
           id: "make", 
           text: "Make the robot give prizes equally", 
-          emoji: "⚖️", 
+          emoji: "🟰", 
           isCorrect: true
         },
         { 
@@ -85,7 +85,7 @@ const FairAIStory = () => {
         { 
           id: "ensure", 
           text: "Ensure fair grading for all", 
-          emoji: "⚖️", 
+          emoji: "🤖", 
           isCorrect: true
         },
         { 
@@ -103,7 +103,7 @@ const FairAIStory = () => {
         { 
           id: "ai", 
           text: "Make content recommendation fair for all", 
-          emoji: "⚖️", 
+          emoji: "🤔", 
           isCorrect: true
         },
         { 
@@ -133,7 +133,7 @@ const FairAIStory = () => {
         { 
           id: "ensure", 
           text: "Ensure all music types are treated fairly", 
-          emoji: "⚖️", 
+          emoji: "🎼", 
           isCorrect: true
         },
         { 

@@ -51,146 +51,73 @@ const WrongPredictionQuizz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      title: "AI Predictions",
-      text: "Can AI always be right?",
-      emoji: "❓",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with perfect data", 
-          emoji: "📊", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Even the most advanced AI systems can make mistakes. AI predictions are based on patterns in data, and unexpected situations or incomplete data can lead to incorrect predictions."
-    },
-    {
-      id: 2,
-      title: "Weather Forecasting",
-      text: "Is it true that AI predictions never fail for weather?",
-      emoji: "🌦️",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only for long-term forecasts", 
-          emoji: "📅", 
-          description: "Too specific - Short-term forecasts can also be wrong",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Weather forecasting is a classic example of how AI can be wrong. Despite sophisticated models, chaotic atmospheric systems and measurement limitations mean forecasts become less reliable over time."
-    },
-    {
-      id: 3,
-      title: "Stock Market",
-      text: "Can AI perfectly predict stock prices?",
-      emoji: "📈",
-      options: [
-        { 
-          id: 1, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        
-        { 
-          id: 3, 
-          text: "Only with insider information", 
-          emoji: "💼", 
-          description: "Illegal and still wouldn't guarantee accuracy",
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Stock markets are influenced by countless unpredictable factors including geopolitical events, natural disasters, and human psychology. Even advanced AI cannot perfectly predict market movements."
-    },
-    {
-      id: 4,
-      title: "Self-Driving Cars",
-      text: "Do AI cars never make mistakes?",
-      emoji: "🚗",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        
-        { 
-          id: 2, 
-          text: "Only in bad weather", 
-          emoji: "🌧️", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-      ],
-      explanation: "No! While self-driving cars use advanced AI, they can still make mistakes due to sensor limitations, unusual road conditions, or unexpected scenarios that weren't in their training data."
-    },
-    {
-      id: 5,
-      title: "Medical Diagnosis",
-      text: "Can AI diagnoses always be correct?",
-      emoji: "🏥",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only with experienced doctors", 
-          emoji: "👨‍⚕️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! Medical AI is a powerful tool but not infallible. It can miss rare diseases, misinterpret symptoms, or struggle with patients who have multiple overlapping conditions."
-    }
-  ];
+  {
+    id: 1,
+    title: "AI Exam Predictor",
+    text: "An AI predicts you will score low because you missed classes, but you studied hard later. What went wrong?",
+    emoji: "🤖",
+    options: [
+      { id: 1, text: "AI ignored recent effort", emoji: "⏳", isCorrect: true },
+      { id: 2, text: "AI wanted to discourage you", emoji: "😈", isCorrect: false },
+      { id: 3, text: "AI cannot read books", emoji: "📕", isCorrect: false }
+    ],
+    explanation:
+      "AI predictions depend on past data. If recent changes aren’t included, predictions can be wrong."
+  },
+  {
+    id: 2,
+    title: "Weather Prediction",
+    text: "An AI forecast says no rain, but it suddenly pours in your city. Why?",
+    emoji: "🌧️",
+    options: [
+      { id: 2, text: "AI doesn't understand clouds", emoji: "☁️", isCorrect: false },
+      { id: 3, text: "Satellites stopped working", emoji: "🛰️", isCorrect: false },
+      { id: 1, text: "Weather systems change fast", emoji: "🌪️", isCorrect: true },
+    ],
+    explanation:
+      "Weather is chaotic. Small changes can make predictions inaccurate, even with powerful AI."
+  },
+  {
+    id: 3,
+    title: "Social Media Algorithm",
+    text: "AI predicts you like only gaming videos, but you suddenly enjoy cooking reels. Why is the prediction wrong?",
+    emoji: "📱",
+    options: [
+      { id: 2, text: "AI dislikes cooking", emoji: "🍳", isCorrect: false },
+      { id: 1, text: "Your interests changed", emoji: "🔄", isCorrect: true },
+      { id: 3, text: "Videos are randomly chosen", emoji: "🎲", isCorrect: false }
+    ],
+    explanation:
+      "AI learns from past behavior. When humans change, predictions can lag behind."
+  },
+  {
+    id: 4,
+    title: "Self-Driving Car",
+    text: "An AI car slows down suddenly because of a plastic bag on the road. What caused the mistake?",
+    emoji: "🚗",
+    options: [
+      { id: 1, text: "Object looked dangerous to sensors", emoji: "📡", isCorrect: true },
+      { id: 2, text: "Car wanted to stop", emoji: "🛑", isCorrect: false },
+      { id: 3, text: "Road rules changed", emoji: "🛣️", isCorrect: false }
+    ],
+    explanation:
+      "AI sometimes misclassifies objects because sensors can’t fully understand context."
+  },
+  {
+    id: 5,
+    title: "Health App Prediction",
+    text: "A fitness AI says you're unhealthy based only on step count. What’s missing?",
+    emoji: "🏃‍♂️",
+    options: [
+      { id: 2, text: "Your phone brand", emoji: "📱", isCorrect: false },
+      { id: 3, text: "App update version", emoji: "⬆️", isCorrect: false },
+      { id: 1, text: "Sleep, diet, and medical data", emoji: "🧠", isCorrect: true },
+    ],
+    explanation:
+      "Limited data leads to weak predictions. Good decisions need full context."
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered || levelCompleted) return;
@@ -219,7 +146,7 @@ const WrongPredictionQuizz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const currentQuestionData = questions[currentQuestion];

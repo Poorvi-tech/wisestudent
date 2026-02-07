@@ -19,62 +19,63 @@ const AIArtistGame = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const quizQuestions = [
-    {
-      text: "Can AI help you draw creative pictures from your ideas?",
-      emoji: "🎨",
-      choices: [
-        { id: 1, text: "Yes", emoji: "👍", isCorrect: true },
-        { id: 2, text: "No", emoji: "👎", isCorrect: false },
-        { id: 3, text: "Maybe", emoji: "🤔", isCorrect: false }
-      ],
-      explanation:
-        "Yes! AI can turn your words into amazing pictures, just like DALL·E or other art generators.",
-    },
-    {
-      text: "Can AI draw a flying cat if you tell it to?",
-      emoji: "🐱✨",
-      choices: [
-        { id: 1, text: "No", emoji: "👎", isCorrect: false },
-        { id: 2, text: "Yes", emoji: "👍", isCorrect: true },
-        { id: 3, text: "Only on weekends", emoji: "📅", isCorrect: false }
-      ],
-      explanation:
-        "Yes! AI can imagine and draw creative scenes from your text prompts — even flying cats!",
-    },
-    {
-      text: "Does AI use data from artists to learn how to draw?",
-      emoji: "🧠🖌️",
-      choices: [
-        { id: 1, text: "Yes", emoji: "👍", isCorrect: true },
-        { id: 2, text: "No", emoji: "👎", isCorrect: false },
-        { id: 3, text: "Only famous artists", emoji: "🌟", isCorrect: false }
-      ],
-      explanation:
-        "AI learns from many artworks and styles to understand colors, shapes, and how to draw objects.",
-    },
-    {
-      text: "Can AI draw emotions, like a happy or sad face?",
-      emoji: "😊😢",
-      choices: [
-        { id: 1, text: "No", emoji: "👎", isCorrect: false },
-        { id: 2, text: "Yes", emoji: "👍", isCorrect: true },
-        { id: 3, text: "Only basic emotions", emoji: "😐", isCorrect: false }
-      ],
-      explanation:
-        "Yes! AI can capture emotions and expressions when asked, just like an artist does.",
-    },
-    {
-      text: "Can humans and AI work together to make art?",
-      emoji: "🤝🎨",
-      choices: [
-        { id: 1, text: "Yes", emoji: "👍", isCorrect: true },
-        { id: 2, text: "No", emoji: "👎", isCorrect: false },
-        { id: 3, text: "Only professionals", emoji: "👩‍🎨", isCorrect: false }
-      ],
-      explanation:
-        "Of course! Many artists use AI tools to enhance creativity — AI helps, but you imagine!",
-    },
-  ];
+  {
+    text: "You type: 'A rainbow dragon in the sky'. What does the AI artist do?",
+    emoji: "🐉",
+    choices: [
+      { id: 1, text: "Creates a picture from your words", emoji: "🖼️", isCorrect: true },
+      { id: 2, text: "Plays music instead", emoji: "🎵", isCorrect: false },
+      { id: 3, text: "Deletes the idea", emoji: "🗑️", isCorrect: false }
+    ],
+    explanation:
+      "AI artists turn your ideas (text prompts) into pictures using imagination and patterns."
+  },
+  {
+    text: "You want a picture in cartoon style. What helps the AI understand this?",
+    emoji: "🖍️",
+    choices: [
+      { id: 2, text: "The time of day", emoji: "⏰", isCorrect: false },
+      { id: 3, text: "How loud you type", emoji: "🔊", isCorrect: false },
+      { id: 1, text: "Style words like cartoon or sketch", emoji: "✏️", isCorrect: true },
+    ],
+    explanation:
+      "AI understands styles when you describe how the picture should look."
+  },
+  {
+    text: "An AI artist learns to draw animals. What helps it learn?",
+    emoji: "🦁",
+    choices: [
+      { id: 2, text: "Going to the zoo", emoji: "🦓", isCorrect: false },
+      { id: 1, text: "Looking at many animal pictures", emoji: "📸", isCorrect: true },
+      { id: 3, text: "Watching cartoons all day", emoji: "📺", isCorrect: false }
+    ],
+    explanation:
+      "AI learns from lots of examples to understand shapes, colors, and patterns."
+  },
+  {
+    text: "Your drawing looks too dark. How can AI help fix it?",
+    emoji: "🌙",
+    choices: [
+      { id: 1, text: "Adjust brightness and colors", emoji: "🎨", isCorrect: true },
+      { id: 2, text: "Erase the whole picture", emoji: "❌", isCorrect: false },
+      { id: 3, text: "Ignore the problem", emoji: "🙈", isCorrect: false }
+    ],
+    explanation:
+      "AI tools can improve colors, lighting, and details in artwork."
+  },
+  {
+    text: "Who gives the best ideas when making AI art?",
+    emoji: "🎨",
+    choices: [
+      { id: 2, text: "AI alone with no human", emoji: "🤖", isCorrect: false },
+      { id: 3, text: "Only paint brushes", emoji: "🖌️", isCorrect: false },
+      { id: 1, text: "Human imagination with AI help", emoji: "🧠", isCorrect: true },
+    ],
+    explanation:
+      "AI is a helper — humans imagine, and AI helps bring ideas to life."
+  }
+];
+
 
   const currentQuestion = quizQuestions[currentIndex];
 

@@ -26,45 +26,45 @@ const DebateLyingForFriend = () => {
       id: 1,
       scenario: "Is lying okay to protect a friend?",
       positions: [
-        { id: "truth", text: "FOR: Truth matters even in friendship", emoji: "💎", points: ["Builds trust", "Shows integrity", "Long-term respect"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Consider the situation", emoji: "⚖️", points: ["Depends on context", "Weigh consequences", "Choose wisely"], isCorrect: false },
-        { id: "lie", text: "AGAINST: Loyalty to friends comes first", emoji: "🤝", points: ["Protect friends", "Friendship matters", "Stand together"], isCorrect: false }
+        { id: "truth", text: "Truth matters even in friendship", emoji: "💎", points: ["Builds trust", "Shows integrity", "Long-term respect"], isCorrect: true },
+        { id: "balanced", text: "Consider the situation", emoji: "⚖️", points: ["Depends on context", "Weigh consequences", "Choose wisely"], isCorrect: false },
+        { id: "lie", text: "Loyalty to friends comes first", emoji: "🤝", points: ["Protect friends", "Friendship matters", "Stand together"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Is cheating in exams ever justified?",
       positions: [
-        { id: "balanced", text: "BALANCED: Sometimes pressure is real", emoji: "⚖️", points: ["Understand pressure", "Consider circumstances", "Find alternatives"], isCorrect: false },
-        { id: "honesty", text: "FOR: Honesty matters more than grades", emoji: "🎓", points: ["Builds character", "True learning", "Self-respect"], isCorrect: true },
-        { id: "cheat", text: "AGAINST: Pressure makes it okay sometimes", emoji: "📚", points: ["High expectations", "Everyone does it", "Just this once"], isCorrect: false }
+        { id: "balanced", text: "Sometimes pressure is real", emoji: "⚖️", points: ["Understand pressure", "Consider circumstances", "Find alternatives"], isCorrect: false },
+        { id: "honesty", text: "Honesty matters more than grades", emoji: "🎓", points: ["Builds character", "True learning", "Self-respect"], isCorrect: true },
+        { id: "cheat", text: "Pressure makes it okay sometimes", emoji: "📚", points: ["High expectations", "Everyone does it", "Just this once"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Should you speak up if your friend bullies someone?",
       positions: [
-        { id: "silent", text: "AGAINST: Stay out of it", emoji: "🙊", points: ["Not your problem", "Avoid conflict", "Stay neutral"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Talk to friend privately", emoji: "⚖️", points: ["Address privately", "Help them understand", "Guide gently"], isCorrect: false },
-        { id: "speak", text: "FOR: Silence supports wrong", emoji: "🗣️", points: ["Stand for justice", "Protect victims", "Show courage"], isCorrect: true }
+        { id: "silent", text: "Stay out of it", emoji: "🙊", points: ["Not your problem", "Avoid conflict", "Stay neutral"], isCorrect: false },
+        { id: "balanced", text: "Talk to friend privately", emoji: "⚖️", points: ["Address privately", "Help them understand", "Guide gently"], isCorrect: false },
+        { id: "speak", text: "Silence supports wrong", emoji: "🗣️", points: ["Stand for justice", "Protect victims", "Show courage"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Would you return a lost wallet if no one saw you?",
       positions: [
-        { id: "return", text: "FOR: Integrity is doing right unseen", emoji: "💼", points: ["True character", "Do what's right", "Build trust"], isCorrect: true },
-        { id: "keep", text: "AGAINST: Finders keepers", emoji: "😏", points: ["No one saw", "Your luck", "Free money"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Try to find owner first", emoji: "⚖️", points: ["Make effort", "Then decide", "Be reasonable"], isCorrect: false }
+        { id: "return", text: "Integrity is doing right unseen", emoji: "💼", points: ["True character", "Do what's right", "Build trust"], isCorrect: true },
+        { id: "keep", text: "Finders keepers", emoji: "😏", points: ["No one saw", "Your luck", "Free money"], isCorrect: false },
+        { id: "balanced", text: "Try to find owner first", emoji: "⚖️", points: ["Make effort", "Then decide", "Be reasonable"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Is it okay to gossip if it's true?",
       positions: [
-        { id: "balanced", text: "BALANCED: Depends on intent", emoji: "⚖️", points: ["Context matters", "Consider impact", "Be thoughtful"], isCorrect: false },
-        { id: "gossip", text: "AGAINST: Truth isn't gossip", emoji: "🗞️", points: ["Facts are facts", "Sharing information", "Not harmful"], isCorrect: false },
-        { id: "respect", text: "FOR: It still harms others' image", emoji: "🤐", points: ["Respect privacy", "Avoid harm", "Show integrity"], isCorrect: true }
+        { id: "balanced", text: "Depends on intent", emoji: "⚖️", points: ["Context matters", "Consider impact", "Be thoughtful"], isCorrect: false },
+        { id: "gossip", text: "Truth isn't gossip", emoji: "🗞️", points: ["Facts are facts", "Sharing information", "Not harmful"], isCorrect: false },
+        { id: "respect", text: "It still harms others' image", emoji: "🤐", points: ["Respect privacy", "Avoid harm", "Show integrity"], isCorrect: true }
       ]
     }
   ];
