@@ -26,45 +26,45 @@ const DebateKindnessOrStrength = () => {
       id: 1,
       scenario: "Is kindness a sign of strength or weakness?",
       positions: [
-        { id: "strength", text: "FOR: It takes courage to stay kind", emoji: "💪", points: ["Shows inner strength", "Requires self-control", "Builds respect"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: It depends on the situation", emoji: "⚖️", points: ["Context matters", "Balance is key", "Choose wisely"], isCorrect: false },
-        { id: "weakness", text: "AGAINST: People take advantage", emoji: "😕", points: ["Makes you vulnerable", "Others exploit", "Shows weakness"], isCorrect: false }
+        { id: "strength", text: "It takes courage to stay kind", emoji: "💪", points: ["Shows inner strength", "Requires self-control", "Builds respect"], isCorrect: true },
+        { id: "balanced", text: "It depends on the situation", emoji: "⚖️", points: ["Context matters", "Balance is key", "Choose wisely"], isCorrect: false },
+        { id: "weakness", text: "People take advantage", emoji: "😕", points: ["Makes you vulnerable", "Others exploit", "Shows weakness"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Does being kind make you vulnerable?",
       positions: [
-        { id: "balanced", text: "BALANCED: Sometimes, but worth it", emoji: "⚖️", points: ["Risks exist", "Benefits too", "Be wise"], isCorrect: false },
-        { id: "inspire", text: "FOR: Kindness inspires and uplifts", emoji: "🌈", points: ["Creates positivity", "Builds connections", "Makes impact"], isCorrect: true },
-        { id: "hurt", text: "AGAINST: People might hurt you", emoji: "🥺", points: ["Too risky", "Get hurt", "Protect yourself"], isCorrect: false }
+        { id: "balanced", text: "Sometimes, but worth it", emoji: "⚖️", points: ["Risks exist", "Benefits too", "Be wise"], isCorrect: false },
+        { id: "inspire", text: "Kindness inspires and uplifts", emoji: "🌈", points: ["Creates positivity", "Builds connections", "Makes impact"], isCorrect: true },
+        { id: "hurt", text: "People might hurt you", emoji: "🥺", points: ["Too risky", "Get hurt", "Protect yourself"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Can kindness change others' behavior?",
       positions: [
-        { id: "nochange", text: "AGAINST: People don't change easily", emoji: "🙄", points: ["Waste of effort", "No impact", "People stay same"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Sometimes it helps", emoji: "⚖️", points: ["Can work", "Not always", "Try anyway"], isCorrect: false },
-        { id: "heal", text: "FOR: Kindness can heal and motivate", emoji: "💖", points: ["Creates change", "Heals wounds", "Inspires growth"], isCorrect: true }
+        { id: "nochange", text: "People don't change easily", emoji: "🙄", points: ["Waste of effort", "No impact", "People stay same"], isCorrect: false },
+        { id: "balanced", text: "Sometimes it helps", emoji: "⚖️", points: ["Can work", "Not always", "Try anyway"], isCorrect: false },
+        { id: "heal", text: "Kindness can heal and motivate", emoji: "💖", points: ["Creates change", "Heals wounds", "Inspires growth"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Is standing up for others a form of kindness?",
       positions: [
-        { id: "courage", text: "FOR: Kindness includes courage", emoji: "🦁", points: ["Protect others", "Show care", "Stand strong"], isCorrect: true },
-        { id: "conflict", text: "AGAINST: It causes conflict", emoji: "😬", points: ["Creates problems", "Avoid trouble", "Stay out"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Depends on how you do it", emoji: "⚖️", points: ["Method matters", "Be careful", "Choose approach"], isCorrect: false }
+        { id: "courage", text: "Kindness includes courage", emoji: "🦁", points: ["Protect others", "Show care", "Stand strong"], isCorrect: true },
+        { id: "conflict", text: "It causes conflict", emoji: "😬", points: ["Creates problems", "Avoid trouble", "Stay out"], isCorrect: false },
+        { id: "balanced", text: "Depends on how you do it", emoji: "⚖️", points: ["Method matters", "Be careful", "Choose approach"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Can a strong leader also be kind?",
       positions: [
-        { id: "balanced", text: "BALANCED: Balance both qualities", emoji: "⚖️", points: ["Mix of both", "Find balance", "Be flexible"], isCorrect: false },
-        { id: "soft", text: "AGAINST: Kindness makes you soft", emoji: "🧊", points: ["Weakens authority", "Lose respect", "Too gentle"], isCorrect: false },
-        { id: "true", text: "FOR: True strength includes kindness", emoji: "👑", points: ["Real leadership", "Respect and care", "Best leaders"], isCorrect: true }
+        { id: "balanced", text: "Balance both qualities", emoji: "⚖️", points: ["Mix of both", "Find balance", "Be flexible"], isCorrect: false },
+        { id: "soft", text: "Kindness makes you soft", emoji: "🧊", points: ["Weakens authority", "Lose respect", "Too gentle"], isCorrect: false },
+        { id: "true", text: "True strength includes kindness", emoji: "👑", points: ["Real leadership", "Respect and care", "Best leaders"], isCorrect: true }
       ]
     }
   ];

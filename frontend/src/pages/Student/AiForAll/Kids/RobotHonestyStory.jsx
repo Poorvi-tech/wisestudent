@@ -31,13 +31,13 @@ const RobotHonestyStory = () => {
         
         { 
           id: "not-trust", 
-          text: "No, robots can lie sometimes", 
+          text: "robots can lie sometimes", 
           emoji: "🤥", 
           isCorrect: false
         },
         { 
           id: "trust", 
-          text: "Yes, robots should always be honest", 
+          text: "robots should always be honest", 
           emoji: "🤖", 
           isCorrect: true
         },
@@ -55,13 +55,13 @@ const RobotHonestyStory = () => {
       options: [
         { 
           id: "safe", 
-          text: "Yes, robots protect privacy", 
+          text: "robots protect privacy", 
           emoji: "🔒", 
           isCorrect: true
         },
         { 
           id: "not-safe", 
-          text: "No, robots share secrets", 
+          text: "robots share secrets", 
           emoji: "📢", 
           isCorrect: false
         },
@@ -79,13 +79,13 @@ const RobotHonestyStory = () => {
       options: [
         { 
           id: "not-okay", 
-          text: "No, people should be asked first", 
+          text: "people should be asked first", 
           emoji: "✋", 
           isCorrect: true
         },
         { 
           id: "okay", 
-          text: "Yes, robots know best", 
+          text: "robots know best", 
           emoji: "🤖", 
           isCorrect: false
         },
@@ -104,7 +104,7 @@ const RobotHonestyStory = () => {
         
         { 
           id: "no-rules", 
-          text: "No, robots can break rules", 
+          text: "robots can break rules", 
           emoji: "❌", 
           isCorrect: false
         },
@@ -116,7 +116,7 @@ const RobotHonestyStory = () => {
         },
         { 
           id: "follow-rules", 
-          text: "Yes, robots should always follow rules", 
+          text: "robots should always follow rules", 
           emoji: "🤖", 
           isCorrect: true
         },

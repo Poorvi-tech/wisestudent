@@ -35,7 +35,7 @@ const BadgeJusticeHero = () => {
       options: [
         { 
           text: "Stand up for them and speak against unfair treatment", 
-          emoji: "⚖️", 
+          emoji: "🧍", 
           isCorrect: true
         },
         { 
@@ -67,7 +67,7 @@ const BadgeJusticeHero = () => {
         },
         { 
           text: "Report cheating instead of staying silent", 
-          emoji: "⚖️", 
+          emoji: "🤫", 
           isCorrect: true
         },
         { 
@@ -116,7 +116,7 @@ const BadgeJusticeHero = () => {
       options: [
         { 
           text: "Share equal turns and responsibilities", 
-          emoji: "⚖️", 
+          emoji: "🟰", 
           isCorrect: true
         },
         { 
@@ -148,7 +148,7 @@ const BadgeJusticeHero = () => {
         },
         { 
           text: "Speak the truth even when it's tough", 
-          emoji: "⚖️", 
+          emoji: "🗣️", 
           isCorrect: true
         },
         { 

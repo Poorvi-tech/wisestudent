@@ -33,7 +33,7 @@ const SmartHomeLightsGame = () => {
       options: [
         { 
           id: "ai", 
-          text: "AI sensors detected movement ", 
+          text: "sensors detected movement ", 
           emoji: "📡", 
           
           isCorrect: true
@@ -65,7 +65,7 @@ const SmartHomeLightsGame = () => {
         },
         { 
           id: "ai", 
-          text: "AI learns your comfort pattern ", 
+          text: "learns your comfort pattern ", 
           emoji: "🌡️", 
           isCorrect: true
         },
@@ -83,7 +83,7 @@ const SmartHomeLightsGame = () => {
       options: [
         { 
           id: "voice", 
-          text: "AI Voice Recognition ", 
+          text: "Voice Recognition ", 
           emoji: "🎤", 
           isCorrect: true
         },
@@ -131,7 +131,7 @@ const SmartHomeLightsGame = () => {
       options: [
         { 
           id: "facial", 
-          text: "AI Facial Recognition ", 
+          text: "Facial Recognition ", 
           emoji: "📸", 
           isCorrect: true
         },

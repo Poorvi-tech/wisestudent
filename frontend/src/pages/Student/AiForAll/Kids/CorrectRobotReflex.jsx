@@ -46,7 +46,7 @@ const CorrectRobotReflex = () => {
       correctAnswer: "Correct the robot",
       options: [
         { text: "Let it stay wrong", isCorrect: false, emoji: "😐" },
-        { text: "Correct the robot", isCorrect: true, emoji: "✅" },
+        { text: "Correct the robot", isCorrect: true, emoji: "🤖" },
         { text: "Laugh at robot", isCorrect: false, emoji: "😂" },
         { text: "Ignore completely", isCorrect: false, emoji: "🚫" }
       ]

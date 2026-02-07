@@ -26,45 +26,45 @@ const DebateRulesVsFreedom = () => {
       id: 1,
       scenario: "Do rules kill freedom or create order?",
       positions: [
-        { id: "order", text: "FOR: Rules create order", emoji: "✅", points: ["Maintain structure", "Ensure safety", "Enable freedom"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Balance rules and freedom", emoji: "⚖️", points: ["Find middle ground", "Both matter", "Be flexible"], isCorrect: false },
-        { id: "limit", text: "AGAINST: Rules limit freedom", emoji: "🚫", points: ["Too restrictive", "Less choice", "Feel trapped"], isCorrect: false }
+        { id: "order", text: "Rules create order", emoji: "✅", points: ["Maintain structure", "Ensure safety", "Enable freedom"], isCorrect: true },
+        { id: "balanced", text: "Balance rules and freedom", emoji: "⚖️", points: ["Find middle ground", "Both matter", "Be flexible"], isCorrect: false },
+        { id: "limit", text: "Rules limit freedom", emoji: "🚫", points: ["Too restrictive", "Less choice", "Feel trapped"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Are traffic rules restrictive or protective?",
       positions: [
-        { id: "balanced", text: "BALANCED: Both restrictive and protective", emoji: "⚖️", points: ["Limit some actions", "Protect everyone", "Necessary balance"], isCorrect: false },
-        { id: "protective", text: "FOR: Protective", emoji: "🛡️", points: ["Keep safe", "Prevent accidents", "Save lives"], isCorrect: true },
-        { id: "restrictive", text: "AGAINST: Restrictive", emoji: "🚷", points: ["Slow you down", "Too many limits", "Annoying"], isCorrect: false }
+        { id: "balanced", text: "Both restrictive and protective", emoji: "⚖️", points: ["Limit some actions", "Protect everyone", "Necessary balance"], isCorrect: false },
+        { id: "protective", text: "Protective", emoji: "🛡️", points: ["Keep safe", "Prevent accidents", "Save lives"], isCorrect: true },
+        { id: "restrictive", text: "Restrictive", emoji: "🚷", points: ["Slow you down", "Too many limits", "Annoying"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "School rules: boredom or guidance?",
       positions: [
-        { id: "boring", text: "AGAINST: Boring", emoji: "😴", points: ["Too strict", "No fun", "Kill creativity"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both guidance and limits", emoji: "⚖️", points: ["Help learning", "Some limits", "Find balance"], isCorrect: false },
-        { id: "guidance", text: "FOR: Guidance", emoji: "🎯", points: ["Help focus", "Create structure", "Support learning"], isCorrect: true }
+        { id: "boring", text: "Boring", emoji: "😴", points: ["Too strict", "No fun", "Kill creativity"], isCorrect: false },
+        { id: "balanced", text: "Both guidance and limits", emoji: "⚖️", points: ["Help learning", "Some limits", "Find balance"], isCorrect: false },
+        { id: "guidance", text: "Guidance", emoji: "🎯", points: ["Help focus", "Create structure", "Support learning"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Workplace rules: unnecessary or structure?",
       positions: [
-        { id: "structure", text: "FOR: Structure", emoji: "🏢", points: ["Organize work", "Ensure fairness", "Build efficiency"], isCorrect: true },
-        { id: "unnecessary", text: "AGAINST: Unnecessary", emoji: "❌", points: ["Too many rules", "Waste time", "Slow progress"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Some rules help, some don't", emoji: "⚖️", points: ["Evaluate each", "Keep useful ones", "Remove excess"], isCorrect: false }
+        { id: "structure", text: "Structure", emoji: "🏢", points: ["Organize work", "Ensure fairness", "Build efficiency"], isCorrect: true },
+        { id: "unnecessary", text: "Unnecessary", emoji: "❌", points: ["Too many rules", "Waste time", "Slow progress"], isCorrect: false },
+        { id: "balanced", text: "Some rules help, some don't", emoji: "⚖️", points: ["Evaluate each", "Keep useful ones", "Remove excess"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Rules at home: restriction or harmony?",
       positions: [
-        { id: "balanced", text: "BALANCED: Both restriction and harmony", emoji: "⚖️", points: ["Some limits", "Create peace", "Balance needed"], isCorrect: false },
-        { id: "restriction", text: "AGAINST: Restriction", emoji: "🔒", points: ["Too controlling", "No freedom", "Feel trapped"], isCorrect: false },
-        { id: "harmony", text: "FOR: Harmony", emoji: "🏡", points: ["Create peace", "Respect boundaries", "Family unity"], isCorrect: true }
+        { id: "balanced", text: "Both restriction and harmony", emoji: "⚖️", points: ["Some limits", "Create peace", "Balance needed"], isCorrect: false },
+        { id: "restriction", text: "Restriction", emoji: "🔒", points: ["Too controlling", "No freedom", "Feel trapped"], isCorrect: false },
+        { id: "harmony", text: "Harmony", emoji: "🏡", points: ["Create peace", "Respect boundaries", "Family unity"], isCorrect: true }
       ]
     }
   ];

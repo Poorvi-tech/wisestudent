@@ -26,45 +26,45 @@ const DebateRespectTeachers = () => {
       id: 1,
       scenario: "Should students argue rudely with teachers?",
       positions: [
-        { id: "respect", text: "FOR: Disagree respectfully, not rudely", emoji: "🙏", points: ["Show respect", "Polite disagreement", "Build dialogue"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: It depends on the situation", emoji: "⚖️", points: ["Consider context", "Choose approach", "Be thoughtful"], isCorrect: false },
-        { id: "rude", text: "AGAINST: Students have rights too", emoji: "💪", points: ["Stand your ground", "Express freely", "No filters"], isCorrect: false }
+        { id: "respect", text: "Disagree respectfully, not rudely", emoji: "🙏", points: ["Show respect", "Polite disagreement", "Build dialogue"], isCorrect: true },
+        { id: "balanced", text: "It depends on the situation", emoji: "⚖️", points: ["Consider context", "Choose approach", "Be thoughtful"], isCorrect: false },
+        { id: "rude", text: "Students have rights too", emoji: "💪", points: ["Stand your ground", "Express freely", "No filters"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Is it okay to interrupt a teacher while they're explaining?",
       positions: [
-        { id: "balanced", text: "BALANCED: Sometimes urgent questions need answers", emoji: "⚖️", points: ["Urgent cases", "Use judgment", "Be considerate"], isCorrect: false },
-        { id: "wait", text: "FOR: Wait and share politely later", emoji: "🤝", points: ["Show respect", "Wait your turn", "Better learning"], isCorrect: true },
-        { id: "interrupt", text: "AGAINST: If I think they're wrong", emoji: "🗣️", points: ["Correct immediately", "No waiting", "Speak up"], isCorrect: false }
+        { id: "balanced", text: "Sometimes urgent questions need answers", emoji: "⚖️", points: ["Urgent cases", "Use judgment", "Be considerate"], isCorrect: false },
+        { id: "wait", text: "Wait and share politely later", emoji: "🤝", points: ["Show respect", "Wait your turn", "Better learning"], isCorrect: true },
+        { id: "interrupt", text: "If I think they're wrong", emoji: "🗣️", points: ["Correct immediately", "No waiting", "Speak up"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Should students gossip about teachers online?",
       positions: [
-        { id: "freedom", text: "AGAINST: It's freedom of speech", emoji: "💬", points: ["Free expression", "Online privacy", "Your right"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Depends on what you say", emoji: "⚖️", points: ["Consider impact", "Be mindful", "Think first"], isCorrect: false },
-        { id: "respect", text: "FOR: It spreads disrespect", emoji: "🚫", points: ["Shows disrespect", "Harms reputation", "Unkind behavior"], isCorrect: true }
+        { id: "freedom", text: "It's freedom of speech", emoji: "💬", points: ["Free expression", "Online privacy", "Your right"], isCorrect: false },
+        { id: "balanced", text: "Depends on what you say", emoji: "⚖️", points: ["Consider impact", "Be mindful", "Think first"], isCorrect: false },
+        { id: "respect", text: "It spreads disrespect", emoji: "🚫", points: ["Shows disrespect", "Harms reputation", "Unkind behavior"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Is obeying teachers the same as respecting them?",
       positions: [
-        { id: "understand", text: "FOR: Respect means understanding, not blind obedience", emoji: "🧠", points: ["True respect", "Critical thinking", "Mutual understanding"], isCorrect: true },
-        { id: "obey", text: "AGAINST: You must always obey", emoji: "🙇", points: ["Complete obedience", "No questions", "Just follow"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both matter in different ways", emoji: "⚖️", points: ["Balance both", "Respect and follow", "Find middle"], isCorrect: false }
+        { id: "understand", text: "Respect means understanding, not blind obedience", emoji: "🧠", points: ["True respect", "Critical thinking", "Mutual understanding"], isCorrect: true },
+        { id: "obey", text: "You must always obey", emoji: "🙇", points: ["Complete obedience", "No questions", "Just follow"], isCorrect: false },
+        { id: "balanced", text: "Both matter in different ways", emoji: "⚖️", points: ["Balance both", "Respect and follow", "Find middle"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Should teachers and students treat each other equally?",
       positions: [
-        { id: "balanced", text: "BALANCED: Equal respect, different roles", emoji: "⚖️", points: ["Respect both ways", "Different roles", "Mutual dignity"], isCorrect: false },
-        { id: "dominate", text: "AGAINST: Teachers should always dominate", emoji: "👑", points: ["Authority first", "Teachers lead", "Students follow"], isCorrect: false },
-        { id: "mutual", text: "FOR: Mutual respect creates better learning", emoji: "🤗", points: ["Better learning", "Open dialogue", "Shared respect"], isCorrect: true }
+        { id: "balanced", text: "Equal respect, different roles", emoji: "⚖️", points: ["Respect both ways", "Different roles", "Mutual dignity"], isCorrect: false },
+        { id: "dominate", text: "Teachers should always dominate", emoji: "👑", points: ["Authority first", "Teachers lead", "Students follow"], isCorrect: false },
+        { id: "mutual", text: "Mutual respect creates better learning", emoji: "🤗", points: ["Better learning", "Open dialogue", "Shared respect"], isCorrect: true }
       ]
     }
   ];

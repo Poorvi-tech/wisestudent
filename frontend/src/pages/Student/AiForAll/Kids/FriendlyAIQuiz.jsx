@@ -30,14 +30,14 @@ const FriendlyAIQuiz = () => {
       options: [
         { 
           id: "yes", 
-          text: "Yes - AI should help us", 
+          text: "AI should help us", 
           emoji: "👍", 
           
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No - AI should not help", 
+          text: "AI should not help", 
           emoji: "👎", 
           
           isCorrect: false
@@ -64,14 +64,14 @@ const FriendlyAIQuiz = () => {
         },
         { 
           id: "yes", 
-          text: "Yes, it should be fair", 
+          text: "it should be fair", 
           emoji: "⚖️", 
           
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No, it can be unfair", 
+          text: "it can be unfair", 
           emoji: "🚫", 
           
           isCorrect: false
@@ -90,13 +90,13 @@ const FriendlyAIQuiz = () => {
         },
         { 
           id: "no", 
-          text: "No - Anyone can see it", 
+          text: "Anyone can see it", 
           emoji: "👀", 
           isCorrect: false
         },
         { 
           id: "yes", 
-          text: "Yes - Keep data safe", 
+          text: "Keep data safe", 
           emoji: "🛡️", 
           isCorrect: true
         }
@@ -138,13 +138,13 @@ const FriendlyAIQuiz = () => {
         },
         { 
           id: "no", 
-          text: "No - Humans should still be kind", 
+          text: "Humans should still be kind", 
           emoji: "❤️", 
           isCorrect: true
         },
         { 
           id: "yes", 
-          text: "Yes - Let AI do everything", 
+          text: "Let AI do everything", 
           emoji: "🤖", 
           isCorrect: false
         }

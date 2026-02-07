@@ -24,127 +24,53 @@ const SmartFarmingQuiz = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Does AI help farmers with crop prediction?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🌽", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Can AI detect plant diseases early?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🖼️", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🌱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Does AI help optimize water usage in farming?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "💦", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "💧", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Can AI robots harvest crops automatically?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🌾", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🤖", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Does AI provide fertilizer recommendations?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🌿", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🌱", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A farmer wants to know which crop will grow best this season. What helps AI decide?",
+    options: [
+      { id: "guessing", text: "Random guessing", emoji: "🎲", isCorrect: false },
+      { id: "weather_data", text: "Weather and soil data", emoji: "🌦️", isCorrect: true },
+      { id: "luck", text: "Good luck charm", emoji: "🍀", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Leaves of a plant turn brown. How does AI help the farmer quickly?",
+    options: [
+      { id: "camera", text: "By checking plant photos with AI", emoji: "📸", isCorrect: true },
+      { id: "waiting", text: "By waiting for plants to recover", emoji: "⏳", isCorrect: false },
+      { id: "touch", text: "By touching every leaf", emoji: "✋", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Water is limited on the farm. How does AI help save water?",
+    options: [
+      { id: "flood", text: "Watering all fields together", emoji: "🌊", isCorrect: false },
+      { id: "guess", text: "Guessing when to water", emoji: "🤔", isCorrect: false },
+      { id: "sensors", text: "Using soil moisture sensors", emoji: "💧", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "A robot is harvesting vegetables in the field. What guides it?",
+    options: [
+      { id: "ai_robot", text: "AI with cameras and maps", emoji: "🗺️", isCorrect: true },
+      { id: "magic", text: "Magic farming powers", emoji: "🪄", isCorrect: false },
+      { id: "sleep", text: "It works while sleeping", emoji: "😴", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "A farmer wants to use the right fertilizer. How does AI help?",
+    options: [
+      { id: "same", text: "Using the same fertilizer everywhere", emoji: "🚿", isCorrect: false },
+      { id: "analysis", text: "By analyzing soil and crop needs", emoji: "🧪", isCorrect: true },
+      { id: "advice", text: "Asking friends only", emoji: "🗣️", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

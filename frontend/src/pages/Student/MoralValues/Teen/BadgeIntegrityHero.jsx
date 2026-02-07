@@ -35,7 +35,7 @@ const BadgeIntegrityHero = () => {
       options: [
         { 
           text: "Refuse to lie and tell the truth", 
-          emoji: "💎", 
+          emoji: "🫸", 
           isCorrect: true
         },
         { 
@@ -67,7 +67,7 @@ const BadgeIntegrityHero = () => {
         },
         { 
           text: "Choose truth over white lies, even when it's difficult", 
-          emoji: "💎", 
+          emoji: "🗣️", 
           isCorrect: true
         },
         { 
@@ -99,7 +99,7 @@ const BadgeIntegrityHero = () => {
         },
         { 
           text: "Refuse the bribe offer immediately", 
-          emoji: "💎", 
+          emoji: "🚫", 
           isCorrect: true
         },
         { 
@@ -116,7 +116,7 @@ const BadgeIntegrityHero = () => {
       options: [
         { 
           text: "Do not cheat and answer honestly", 
-          emoji: "💎", 
+          emoji: "😑", 
           isCorrect: true
         },
         { 

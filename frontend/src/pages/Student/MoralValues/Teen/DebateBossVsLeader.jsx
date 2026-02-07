@@ -26,45 +26,45 @@ const DebateBossVsLeader = () => {
       id: 1,
       scenario: "A boss commands, a leader inspires — which is better?",
       positions: [
-        { id: "inspire", text: "FOR: Inspiring motivates lasting results", emoji: "🌟", points: ["Builds loyalty", "Creates passion", "Long-term success"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Both have their place", emoji: "⚖️", points: ["Sometimes command", "Sometimes inspire", "Balance needed"], isCorrect: false },
-        { id: "command", text: "AGAINST: Commanding shows authority", emoji: "🗣️", points: ["Clear orders", "Quick action", "Shows control"], isCorrect: false }
+        { id: "inspire", text: "Inspiring motivates lasting results", emoji: "🌟", points: ["Builds loyalty", "Creates passion", "Long-term success"], isCorrect: true },
+        { id: "balanced", text: "Both have their place", emoji: "⚖️", points: ["Sometimes command", "Sometimes inspire", "Balance needed"], isCorrect: false },
+        { id: "command", text: "Commanding shows authority", emoji: "🗣️", points: ["Clear orders", "Quick action", "Shows control"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "Should a leader take credit or share it?",
       positions: [
-        { id: "balanced", text: "BALANCED: Share major credit, take responsibility", emoji: "⚖️", points: ["Recognize team", "Take responsibility", "Balance both"], isCorrect: false },
-        { id: "share", text: "FOR: Share credit with the team", emoji: "🤝", points: ["Uplift others", "Build trust", "Team success"], isCorrect: true },
-        { id: "take", text: "AGAINST: Take full credit for control", emoji: "👑", points: ["Show authority", "Maintain control", "Your success"], isCorrect: false }
+        { id: "balanced", text: "Share major credit, take responsibility", emoji: "⚖️", points: ["Recognize team", "Take responsibility", "Balance both"], isCorrect: false },
+        { id: "share", text: "Share credit with the team", emoji: "🤝", points: ["Uplift others", "Build trust", "Team success"], isCorrect: true },
+        { id: "take", text: "Take full credit for control", emoji: "👑", points: ["Show authority", "Maintain control", "Your success"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "When mistakes happen, what should a leader do?",
       positions: [
-        { id: "blame", text: "AGAINST: Blame others quickly", emoji: "⚠️", points: ["Find fault", "Protect yourself", "Shift blame"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Address issues fairly", emoji: "⚖️", points: ["Investigate first", "Fair assessment", "Learn from it"], isCorrect: false },
-        { id: "responsibility", text: "FOR: Take responsibility and guide", emoji: "🧭", points: ["Accountable", "Fix problems", "Guide team"], isCorrect: true }
+        { id: "blame", text: "Blame others quickly", emoji: "⚠️", points: ["Find fault", "Protect yourself", "Shift blame"], isCorrect: false },
+        { id: "balanced", text: "Address issues fairly", emoji: "⚖️", points: ["Investigate first", "Fair assessment", "Learn from it"], isCorrect: false },
+        { id: "responsibility", text: "Take responsibility and guide", emoji: "🧭", points: ["Accountable", "Fix problems", "Guide team"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "A boss uses fear; a leader uses respect — agree?",
       positions: [
-        { id: "respect", text: "FOR: Respect motivates more", emoji: "💎", points: ["Builds loyalty", "Creates trust", "Long-term success"], isCorrect: true },
-        { id: "fear", text: "AGAINST: Fear keeps control", emoji: "😠", points: ["Maintains order", "Quick compliance", "Shows power"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both can work in different situations", emoji: "⚖️", points: ["Context matters", "Sometimes fear", "Sometimes respect"], isCorrect: false }
+        { id: "respect", text: "Respect motivates more", emoji: "💎", points: ["Builds loyalty", "Creates trust", "Long-term success"], isCorrect: true },
+        { id: "fear", text: "Fear keeps control", emoji: "😠", points: ["Maintains order", "Quick compliance", "Shows power"], isCorrect: false },
+        { id: "balanced", text: "Both can work in different situations", emoji: "⚖️", points: ["Context matters", "Sometimes fear", "Sometimes respect"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Is a boss the same as a leader?",
       positions: [
-        { id: "balanced", text: "BALANCED: Similar but different roles", emoji: "⚖️", points: ["Both manage", "Different styles", "Both needed"], isCorrect: false },
-        { id: "different", text: "FOR: A leader serves and empowers", emoji: "🚀", points: ["Serves team", "Empowers others", "True leadership"], isCorrect: true },
-        { id: "same", text: "AGAINST: Both manage people", emoji: "📋", points: ["Same role", "Just titles", "No difference"], isCorrect: false }
+        { id: "balanced", text: "Similar but different roles", emoji: "⚖️", points: ["Both manage", "Different styles", "Both needed"], isCorrect: false },
+        { id: "different", text: "A leader serves and empowers", emoji: "🚀", points: ["Serves team", "Empowers others", "True leadership"], isCorrect: true },
+        { id: "same", text: "Both manage people", emoji: "📋", points: ["Same role", "Just titles", "No difference"], isCorrect: false }
       ]
     }
   ];

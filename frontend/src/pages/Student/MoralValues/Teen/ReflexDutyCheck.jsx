@@ -26,63 +26,64 @@ const ReflexDutyCheck = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "You promised a friend to help them study. 📚",
-      correctAnswer: "Keep Promise",
-      options: [
-        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
-        { text: "Break Promise", isCorrect: false, emoji: "😞" },
-        { text: "Delay", isCorrect: false, emoji: "⏳" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You said you'd finish a group task on time. 📝",
-      correctAnswer: "Keep Promise",
-      options: [
-        { text: "Break Promise", isCorrect: false, emoji: "😞" },
-        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
-        { text: "Delay", isCorrect: false, emoji: "⏳" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You agreed to return a borrowed book. 📖",
-      correctAnswer: "Keep Promise",
-      options: [
-        { text: "Delay", isCorrect: false, emoji: "⏳" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
-        { text: "Break Promise", isCorrect: false, emoji: "😞" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You promised to attend a community cleanup. 🌳",
-      correctAnswer: "Keep Promise",
-      options: [
-        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
-        { text: "Break Promise", isCorrect: false, emoji: "😞" },
-        { text: "Delay", isCorrect: false, emoji: "⏳" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You said you'd call your sibling today. 📞",
-      correctAnswer: "Keep Promise",
-      options: [
-        { text: "Delay", isCorrect: false, emoji: "⏳" },
-        { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Break Promise", isCorrect: false, emoji: "😞" },
-        { text: "Keep Promise", isCorrect: true, emoji: "🫴" }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    question: "You notice litter in your classroom after school. 🧹",
+    correctAnswer: "Clean It Up",
+    options: [
+      { text: "Clean It Up", isCorrect: true, emoji: "🧹" },
+      { text: "Walk Away", isCorrect: false, emoji: "🚶" },
+      { text: "Blame Others", isCorrect: false, emoji: "👉" },
+      { text: "Ignore It", isCorrect: false, emoji: "🙄" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You forgot to complete your part of a group project. 📊",
+    correctAnswer: "Inform Team Honestly",
+    options: [
+      { text: "Make Excuses", isCorrect: false, emoji: "🤥" },
+      { text: "Inform Team Honestly", isCorrect: true, emoji: "🗣️" },
+      { text: "Stay Silent", isCorrect: false, emoji: "🤐" },
+      { text: "Blame Internet", isCorrect: false, emoji: "📶" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your parents ask you to be home by 9 PM. ⏰",
+    correctAnswer: "Follow Time Limit",
+    options: [
+      { text: "Come Late", isCorrect: false, emoji: "🌙" },
+      { text: "Ignore Rule", isCorrect: false, emoji: "🚫" },
+      { text: "Turn Off Phone", isCorrect: false, emoji: "📴" },
+      { text: "Follow Time Limit", isCorrect: true, emoji: "⏰" },
+    ]
+  },
+  {
+    id: 4,
+    question: "You borrow money from a friend for lunch. 💸",
+    correctAnswer: "Return Money",
+    options: [
+      { text: "Return Money", isCorrect: true, emoji: "🤝" },
+      { text: "Spend Elsewhere", isCorrect: false, emoji: "🛍️" },
+      { text: "Avoid Friend", isCorrect: false, emoji: "🙈" },
+      { text: "Forget About It", isCorrect: false, emoji: "😶" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You see someone struggling with heavy books. 📚",
+    correctAnswer: "Offer Help",
+    options: [
+      { text: "Laugh", isCorrect: false, emoji: "😂" },
+      { text: "Record Video", isCorrect: false, emoji: "📱" },
+      { text: "Offer Help", isCorrect: true, emoji: "🤲" },
+      { text: "Walk Faster", isCorrect: false, emoji: "🏃" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

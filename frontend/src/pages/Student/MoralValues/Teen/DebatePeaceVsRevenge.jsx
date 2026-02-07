@@ -26,45 +26,45 @@ const DebatePeaceVsRevenge = () => {
       id: 1,
       scenario: "When someone hurts you, what truly brings peace?",
       positions: [
-        { id: "forgive", text: "FOR: Forgiving them and moving on", emoji: "🕊️", points: ["Release anger", "Find peace", "Move forward"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Depends on the situation", emoji: "⚖️", points: ["Consider context", "Some forgive", "Some don't"], isCorrect: false },
-        { id: "revenge", text: "AGAINST: Getting back at them", emoji: "⚔️", points: ["Show strength", "Get even", "Feel better"], isCorrect: false }
+        { id: "forgive", text: "Forgiving them and moving on", emoji: "🕊️", points: ["Release anger", "Find peace", "Move forward"], isCorrect: true },
+        { id: "balanced", text: "Depends on the situation", emoji: "⚖️", points: ["Consider context", "Some forgive", "Some don't"], isCorrect: false },
+        { id: "revenge", text: "Getting back at them", emoji: "⚔️", points: ["Show strength", "Get even", "Feel better"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "What does revenge often lead to?",
       positions: [
-        { id: "balanced", text: "BALANCED: Can satisfy or create problems", emoji: "⚖️", points: ["Sometimes works", "Sometimes backfires", "Depends"], isCorrect: false },
-        { id: "pain", text: "FOR: More anger and pain", emoji: "💔", points: ["Continues cycle", "Creates more hurt", "No peace"], isCorrect: true },
-        { id: "satisfaction", text: "AGAINST: Inner satisfaction", emoji: "😊", points: ["Feel better", "Get justice", "Closure"], isCorrect: false }
+        { id: "balanced", text: "Can satisfy or create problems", emoji: "⚖️", points: ["Sometimes works", "Sometimes backfires", "Depends"], isCorrect: false },
+        { id: "pain", text: "More anger and pain", emoji: "💔", points: ["Continues cycle", "Creates more hurt", "No peace"], isCorrect: true },
+        { id: "satisfaction", text: "Inner satisfaction", emoji: "😊", points: ["Feel better", "Get justice", "Closure"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "What shows true strength?",
       positions: [
-        { id: "suffer", text: "AGAINST: Making the other person suffer", emoji: "😠", points: ["Show power", "Get respect", "Prove strength"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Balance strength and peace", emoji: "⚖️", points: ["Stand up", "But forgive", "Find balance"], isCorrect: false },
-        { id: "calm", text: "FOR: Letting go and staying calm", emoji: "🧘", points: ["Inner strength", "Self-control", "True power"], isCorrect: true }
+        { id: "suffer", text: "Making the other person suffer", emoji: "😠", points: ["Show power", "Get respect", "Prove strength"], isCorrect: false },
+        { id: "balanced", text: "Balance strength and peace", emoji: "⚖️", points: ["Stand up", "But forgive", "Find balance"], isCorrect: false },
+        { id: "calm", text: "Letting go and staying calm", emoji: "🧘", points: ["Inner strength", "Self-control", "True power"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "What helps build a peaceful world?",
       positions: [
-        { id: "forgiveness", text: "FOR: Forgiveness and understanding", emoji: "🤝", points: ["Breaks cycles", "Builds peace", "Creates harmony"], isCorrect: true },
-        { id: "retaliation", text: "AGAINST: Revenge and retaliation", emoji: "⚔️", points: ["Shows strength", "Maintains order", "Justice"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both have their place", emoji: "⚖️", points: ["Sometimes forgive", "Sometimes act", "Balance needed"], isCorrect: false }
+        { id: "forgiveness", text: "Forgiveness and understanding", emoji: "🤝", points: ["Breaks cycles", "Builds peace", "Creates harmony"], isCorrect: true },
+        { id: "retaliation", text: "Revenge and retaliation", emoji: "⚔️", points: ["Shows strength", "Maintains order", "Justice"], isCorrect: false },
+        { id: "balanced", text: "Both have their place", emoji: "⚖️", points: ["Sometimes forgive", "Sometimes act", "Balance needed"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "If someone apologizes sincerely, what should you do?",
       positions: [
-        { id: "balanced", text: "BALANCED: Consider the apology carefully", emoji: "⚖️", points: ["Evaluate sincerity", "Decide wisely", "Your choice"], isCorrect: false },
-        { id: "grudge", text: "AGAINST: Hold a grudge and plan revenge", emoji: "😤", points: ["Don't trust", "Stay angry", "Get even"], isCorrect: false },
-        { id: "forgive", text: "FOR: Forgive them and move forward", emoji: "💗", points: ["Accept apology", "Find closure", "Build peace"], isCorrect: true }
+        { id: "balanced", text: "Consider the apology carefully", emoji: "⚖️", points: ["Evaluate sincerity", "Decide wisely", "Your choice"], isCorrect: false },
+        { id: "grudge", text: "Hold a grudge and plan revenge", emoji: "😤", points: ["Don't trust", "Stay angry", "Get even"], isCorrect: false },
+        { id: "forgive", text: "Forgive them and move forward", emoji: "💗", points: ["Accept apology", "Find closure", "Build peace"], isCorrect: true }
       ]
     }
   ];

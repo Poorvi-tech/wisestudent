@@ -67,8 +67,8 @@ const SmartwatchHealthStory = () => {
         },
         { 
           id: "ai", 
-          text: "AI Health Monitor", 
-          emoji: "🤖", 
+          text: "Health Monitor", 
+          emoji: "❤️‍🩹", 
           // description: "AI algorithms continuously analyze heart rate patterns and can detect abnormalities in real-time",
           isCorrect: true
         },
@@ -87,8 +87,8 @@ const SmartwatchHealthStory = () => {
       options: [
         { 
           id: "analyzer", 
-          text: "AI Sleep Analyzer", 
-          emoji: "🤖", 
+          text: "Sleep Analyzer", 
+          emoji: "🛌", 
           // description: "AI analyzes sleep patterns, duration, and quality to provide personalized insights",
           isCorrect: true
         },
@@ -122,8 +122,8 @@ const SmartwatchHealthStory = () => {
         },
          { 
           id: "coach", 
-          text: "AI Fitness Coach", 
-          emoji: "🤖", 
+          text: "Fitness Coach", 
+          emoji: "🏃", 
           // description: "AI personalizes fitness goals based on user data and adjusts targets for optimal results",
           isCorrect: true
         },
@@ -157,8 +157,8 @@ const SmartwatchHealthStory = () => {
         },
         { 
           id: "tracker", 
-          text: "AI Nutrition Tracker", 
-          emoji: "🤖", 
+          text: "Nutrition Tracker", 
+          emoji: "🍎", 
           // description: "AI combines activity data, heart rate, and user profile to accurately estimate calorie expenditure",
           isCorrect: true
         },

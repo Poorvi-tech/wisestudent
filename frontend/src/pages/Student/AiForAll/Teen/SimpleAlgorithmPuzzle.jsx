@@ -25,9 +25,9 @@ const SimpleAlgorithmPuzzle = () => {
   // AI Algorithm Steps (left side) - 6 items
   const leftItems = [
     { id: 5, name: "Deployment", emoji: "🚀",  },
-    { id: 2, name: "Feature Selection", emoji: "🔍",  },
     { id: 3, name: "Model Training", emoji: "🏋️",  },
     { id: 4, name: "Testing & Validation", emoji: "🧪",  },
+    { id: 2, name: "Feature Selection", emoji: "🔍",  },
     { id: 1, name: "Data Collection", emoji: "📊",  },
   ];
 

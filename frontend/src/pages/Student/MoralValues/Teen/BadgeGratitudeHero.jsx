@@ -67,7 +67,7 @@ const BadgeGratitudeHero = () => {
         },
         { 
           text: "Express gratitude sincerely and acknowledge their kindness", 
-          emoji: "🙏", 
+          emoji: "😊", 
           isCorrect: true
         },
         { 
@@ -99,7 +99,7 @@ const BadgeGratitudeHero = () => {
         },
         { 
           text: "Help someone without expecting anything in return", 
-          emoji: "🙏", 
+          emoji: "💖", 
           isCorrect: true
         },
         { 
@@ -116,7 +116,7 @@ const BadgeGratitudeHero = () => {
       options: [
         { 
           text: "Appreciate small things others do for you", 
-          emoji: "🙏", 
+          emoji: "🌸", 
           isCorrect: true
         },
         { 
@@ -148,7 +148,7 @@ const BadgeGratitudeHero = () => {
         },
         { 
           text: "Say 'thank you' or 'please' sincerely whenever appropriate", 
-          emoji: "🙏", 
+          emoji: "🩵", 
           isCorrect: true
         },
         { 

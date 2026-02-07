@@ -33,7 +33,7 @@ const ReflexTeamFirst = () => {
       correctAnswer: "Consider the team member's idea",
       options: [
         { text: "Stick with your own idea", isCorrect: false, emoji: "🚫" },
-        { text: "Consider the team member's idea", isCorrect: true, emoji: "🤝" },
+        { text: "Consider the team member's idea", isCorrect: true, emoji: "💡" },
         { text: "Ask for input from others", isCorrect: false, emoji: "💬" },
         { text: "Defer to the most experienced member", isCorrect: false, emoji: "👨‍💼" }
       ]
@@ -57,7 +57,7 @@ const ReflexTeamFirst = () => {
         { text: "Report to the supervisor", isCorrect: false, emoji: "📋" },
         { text: "Take over their tasks", isCorrect: false, emoji: "🏃‍♂️" },
         { text: "Focus on your own work", isCorrect: false, emoji: "🔍" },
-        { text: "Offer support and resources", isCorrect: true, emoji: "🤝" },
+        { text: "Offer support and resources", isCorrect: true, emoji: "🫴" },
       ]
     },
     {
@@ -67,7 +67,7 @@ const ReflexTeamFirst = () => {
       options: [
         { text: "Take the opportunity immediately", isCorrect: false, emoji: "🏃‍♂️" },
         { text: "Ask team for advice", isCorrect: false, emoji: "❓" },
-        { text: "Consider the team impact", isCorrect: true, emoji: "🤝" },
+        { text: "Consider the team impact", isCorrect: true, emoji: "👥" },
         { text: "Decline the opportunity", isCorrect: false, emoji: "❌" }
       ]
     },
@@ -76,7 +76,7 @@ const ReflexTeamFirst = () => {
       question: "Your personal goals conflict with the team's objectives. How do you handle this?",
       correctAnswer: "Seek a compromise that benefits both",
       options: [
-        { text: "Seek a compromise that benefits both", isCorrect: true, emoji: "🤝" },
+        { text: "Seek a compromise that benefits both", isCorrect: true, emoji: "🤔" },
         { text: "Prioritize your personal goals", isCorrect: false, emoji: "🎯" },
         { text: "Abandon your personal goals", isCorrect: false, emoji: "❌" },
         { text: "Try to change team objectives", isCorrect: false, emoji: "🔄" }

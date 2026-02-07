@@ -23,128 +23,54 @@ const SmartSpeakerStory = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: 'You say "Play music." The smart speaker plays music. How did it do this?',
-      options: [
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        },
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "🪄", 
-          isCorrect: false
-        },
-        { 
-          id: "luck", 
-          text: "Random luck", 
-          emoji: "🍀", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: 'You say "Turn off the lights," and your room lights switch off automatically. How did that happen?',
-      options: [
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "🪄", 
-          isCorrect: false
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        },
-        { 
-          id: "remote", 
-          text: "Remote control", 
-          emoji: "🎮", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: 'You ask your smart assistant, "What\'s the weather today?" It answers instantly. How does it know?',
-      options: [
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "🪄", 
-          isCorrect: false
-        },
-        { 
-          id: "internet", 
-          text: "Internet connection", 
-          emoji: "🌐", 
-          isCorrect: false
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: 'You say "I need new shoes," and your phone shows shoe ads. How did it guess that?',
-      options: [
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        },
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "🪄", 
-          isCorrect: false
-        },
-        { 
-          id: "coincidence", 
-          text: "Coincidence", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: 'Your car says, "Low fuel detected. Nearest station ahead." How did it know?',
-      options: [
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "🪄", 
-          isCorrect: false
-        },
-        { 
-          id: "sensor", 
-          text: "Fuel sensor only", 
-          emoji: "⛽", 
-          isCorrect: false
-        },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    text: 'You say "Play music." The smart speaker plays your favorite song. What helped it understand you?',
+    options: [
+      { id: "magic", text: "Magic inside the speaker", emoji: "🪄", isCorrect: false },
+      { id: "guess", text: "It guessed randomly", emoji: "🎲", isCorrect: false },
+      { id: "voice_ai", text: "AI listening to your voice", emoji: "🎤", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: 'You say "Turn off the lights," and the lights go off. What made this happen?',
+    options: [
+      { id: "ai_device", text: "AI sending a signal to the lights", emoji: "💡", isCorrect: true },
+      { id: "clap", text: "The lights heard a sound", emoji: "👏", isCorrect: false },
+      { id: "magic", text: "House magic", emoji: "🪄", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: 'You ask, "What’s the weather today?" and get an answer. How does the assistant know?',
+    options: [
+      { id: "window", text: "It looked outside", emoji: "🪟", isCorrect: false },
+      { id: "internet", text: "AI checking the internet for weather", emoji: "🌐", isCorrect: true },
+      { id: "guess", text: "It guessed the weather", emoji: "🎲", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: 'You talk about shoes, and later you see shoe ads on your phone. Why?',
+    options: [
+      { id: "learning", text: "AI learned what you like", emoji: "🤖", isCorrect: true },
+      { id: "spy", text: "Someone is secretly watching you", emoji: "🕵️", isCorrect: false },
+      { id: "luck", text: "Just lucky timing", emoji: "🍀", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: 'Your car says, "Low fuel! Nearest petrol pump ahead." How did it know?',
+    options: [
+      { id: "driver", text: "The car guessed like a human", emoji: "🚗", isCorrect: false },
+      { id: "magic", text: "Car magic", emoji: "🪄", isCorrect: false },
+      { id: "sensor_ai", text: "Sensors and AI working together", emoji: "⛽", isCorrect: true },
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

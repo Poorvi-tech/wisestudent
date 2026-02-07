@@ -26,45 +26,45 @@ const DebateRightVsPopular = () => {
       id: 1,
       scenario: "Would you rather be liked or be honest?",
       positions: [
-        { id: "honest", text: "FOR: Honest - even if unpopular", emoji: "💬", points: ["Builds trust", "Shows integrity", "Long-term respect"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Be honest but kind", emoji: "⚖️", points: ["Tell truth", "Be tactful", "Balance both"], isCorrect: false },
-        { id: "liked", text: "AGAINST: Liked - to fit in", emoji: "😅", points: ["Stay popular", "Avoid conflict", "Keep friends"], isCorrect: false }
+        { id: "honest", text: "Honest - even if unpopular", emoji: "💬", points: ["Builds trust", "Shows integrity", "Long-term respect"], isCorrect: true },
+        { id: "balanced", text: "Be honest but kind", emoji: "⚖️", points: ["Tell truth", "Be tactful", "Balance both"], isCorrect: false },
+        { id: "liked", text: "Liked - to fit in", emoji: "😅", points: ["Stay popular", "Avoid conflict", "Keep friends"], isCorrect: false }
       ]
     },
     {
       id: 2,
       scenario: "If friends cheat, should you report or stay quiet?",
       positions: [
-        { id: "balanced", text: "BALANCED: Talk to them first, then decide", emoji: "⚖️", points: ["Address privately", "Give chance", "Then decide"], isCorrect: false },
-        { id: "report", text: "FOR: Report it - it's the right thing", emoji: "⚖️", points: ["Stand for justice", "Do what's right", "Show integrity"], isCorrect: true },
-        { id: "quiet", text: "AGAINST: Stay quiet to keep friends", emoji: "🤫", points: ["Protect friends", "Avoid trouble", "Stay loyal"], isCorrect: false }
+        { id: "balanced", text: "Talk to them first, then decide", emoji: "⚖️", points: ["Address privately", "Give chance", "Then decide"], isCorrect: false },
+        { id: "report", text: "Report it - it's the right thing", emoji: "⚖️", points: ["Stand for justice", "Do what's right", "Show integrity"], isCorrect: true },
+        { id: "quiet", text: "Stay quiet to keep friends", emoji: "🤫", points: ["Protect friends", "Avoid trouble", "Stay loyal"], isCorrect: false }
       ]
     },
     {
       id: 3,
       scenario: "Should you follow trends that go against your values?",
       positions: [
-        { id: "trends", text: "AGAINST: Yes - everyone's doing it", emoji: "📱", points: ["Fit in", "Stay current", "Be popular"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Some trends are okay, some aren't", emoji: "⚖️", points: ["Evaluate each", "Choose wisely", "Be selective"], isCorrect: false },
-        { id: "values", text: "FOR: Stay true to your values", emoji: "🧭", points: ["Maintain integrity", "Stand firm", "Be yourself"], isCorrect: true }
+        { id: "trends", text: "Yes - everyone's doing it", emoji: "📱", points: ["Fit in", "Stay current", "Be popular"], isCorrect: false },
+        { id: "balanced", text: "Some trends are okay, some aren't", emoji: "⚖️", points: ["Evaluate each", "Choose wisely", "Be selective"], isCorrect: false },
+        { id: "values", text: "Stay true to your values", emoji: "🧭", points: ["Maintain integrity", "Stand firm", "Be yourself"], isCorrect: true }
       ]
     },
     {
       id: 4,
       scenario: "Should you stand up for a bullied classmate even if others won't?",
       positions: [
-        { id: "stand", text: "FOR: Stand up for them", emoji: "🦸‍♂️", points: ["Show courage", "Protect others", "Do what's right"], isCorrect: true },
-        { id: "silent", text: "AGAINST: Stay silent to avoid attention", emoji: "😐", points: ["Avoid trouble", "Stay safe", "Don't get involved"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Support privately if possible", emoji: "⚖️", points: ["Help quietly", "Avoid conflict", "Be careful"], isCorrect: false }
+        { id: "stand", text: "Stand up for them", emoji: "🦸‍♂️", points: ["Show courage", "Protect others", "Do what's right"], isCorrect: true },
+        { id: "silent", text: "Stay silent to avoid attention", emoji: "😐", points: ["Avoid trouble", "Stay safe", "Don't get involved"], isCorrect: false },
+        { id: "balanced", text: "Support privately if possible", emoji: "⚖️", points: ["Help quietly", "Avoid conflict", "Be careful"], isCorrect: false }
       ]
     },
     {
       id: 5,
       scenario: "Is being right more important than being famous?",
       positions: [
-        { id: "balanced", text: "BALANCED: Both matter in different ways", emoji: "⚖️", points: ["Right matters", "Recognition helps", "Balance both"], isCorrect: false },
-        { id: "fame", text: "AGAINST: Fame matters most", emoji: "🌟", points: ["Get recognition", "Be known", "Build reputation"], isCorrect: false },
-        { id: "integrity", text: "FOR: Integrity matters more", emoji: "💎", points: ["True character", "Long-term respect", "Self-respect"], isCorrect: true }
+        { id: "balanced", text: "Both matter in different ways", emoji: "⚖️", points: ["Right matters", "Recognition helps", "Balance both"], isCorrect: false },
+        { id: "fame", text: "Fame matters most", emoji: "🌟", points: ["Get recognition", "Be known", "Build reputation"], isCorrect: false },
+        { id: "integrity", text: "Integrity matters more", emoji: "💎", points: ["True character", "Long-term respect", "Self-respect"], isCorrect: true }
       ]
     }
   ];
