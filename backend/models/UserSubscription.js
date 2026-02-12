@@ -121,9 +121,9 @@ const userSubscriptionSchema = new mongoose.Schema({
       email: String,
       context: {
         type: String,
-        enum: ['student', 'parent', 'admin', 'system'],
+        enum: ['student', 'parent', 'admin', 'school_admin', 'system'],
         default: 'student',
-      },
+      },      
     },
     paymentDate: Date,
     createdAt: {
