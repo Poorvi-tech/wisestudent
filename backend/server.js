@@ -22,6 +22,8 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import { setIoInstance } from "./utils/socketServer.js";
 import { recordResponseTime, recordApiRequest } from "./utils/apiMetricsStore.js";
+import { apiLimiter, authLimiter } from "./middlewares/rateLimiter.js";
+import healthRoutes from "./routes/healthRoutes.js";
 
 // Load environment variables
 dotenv.config();
@@ -36,6 +38,9 @@ const allowedOrigins = process.env.CLIENT_URL
   : [
       "http://localhost:5173",
       "http://localhost:3000",
+      "https://wisestudent.org",
+      "https://api.wisestudent.org",
+      "https://16.112.67.176"
     ];
 
 // Initialize app and server
@@ -80,6 +85,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Apply rate limiting (Phase 1 scalability)
+app.use('/api', apiLimiter);
+app.use('/api/auth/login', authLimiter);
+app.use('/api/auth/register', authLimiter);
+app.use('/api/auth/google', authLimiter);
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -120,9 +131,15 @@ app.use(
   })
 );
 
-// MongoDB Connection
+// MongoDB Connection (Phase 1: connection pooling)
+const mongoOptions = {
+  maxPoolSize: 10,
+  minPoolSize: 2,
+  serverSelectionTimeoutMS: 5000,
+};
+
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI, mongoOptions)
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => {
     console.error("❌ MongoDB connection error:", err.message);
@@ -303,6 +320,9 @@ io.on("connection", async (socket) => {
 
 // Serve uploads statically
 app.use('/uploads', express.static(path.resolve(__dirname, './uploads')));
+
+// Health check (Phase 1: for load balancers / monitoring)
+app.use('/', healthRoutes);
 
 // Legacy Routes (maintain backward compatibility)
   app.use("/api/auth", authRoutes);
