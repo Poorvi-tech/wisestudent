@@ -174,7 +174,7 @@ const CyberSafetyReflex = () => {
       } else {
         setGameState("finished");
       }
-    }, 5000);
+    }, 10000);
   };
 
   const finalScore = score;

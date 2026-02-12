@@ -138,7 +138,7 @@ const QuizOnInnovation = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, 5000);
+    }, 10000);
   };
 
   // Log when game completes and update location state with nextGameId

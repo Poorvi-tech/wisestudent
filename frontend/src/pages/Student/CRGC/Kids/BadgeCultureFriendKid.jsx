@@ -185,7 +185,7 @@ const BadgeCultureFriendKid = () => {
         setAnswered(false);
         setSelectedAnswer(null);
       }
-    }, 8000);
+    }, 15000);
   };
 
   const handleTryAgain = () => {

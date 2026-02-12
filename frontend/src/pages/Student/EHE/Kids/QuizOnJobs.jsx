@@ -209,7 +209,7 @@ const QuizOnJobs = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

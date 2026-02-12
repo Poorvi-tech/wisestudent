@@ -210,7 +210,7 @@ const HygieneConfidenceDebate46 = () => {
         console.log('Game finishing - final:', { coins: isCorrect ? coins + 2 : coins, correctAnswers: isCorrect ? correctAnswers + 1 : correctAnswers });
         setGameFinished(true);
       }
-    }, 5000);
+    }, 10000);
   };
 
   const handleNext = () => {

@@ -98,7 +98,7 @@ const DebateEquality = () => {
       } else {
         setGameFinished(true);
       }
-    }, 8000);
+    }, 15000);
   };
 
   const handleNext = () => {

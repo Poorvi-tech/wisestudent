@@ -203,7 +203,7 @@ const DebateIndividualVsSystemicChange = () => {
       } else {
         setGameFinished(true);
       }
-    }, 8000);
+    }, 15000);
   };
 
   const currentQuestionData = questions[currentQuestionIndex];

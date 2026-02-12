@@ -175,7 +175,7 @@ const BadgeWaterSteward = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const currentLevelData = levels[currentLevel - 1];

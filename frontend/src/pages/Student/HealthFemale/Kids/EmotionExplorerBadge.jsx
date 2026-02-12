@@ -203,7 +203,7 @@ const EmotionExplorerBadge = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 8000);
+    }, 15000);
   };
 
   const handleRetry = () => {

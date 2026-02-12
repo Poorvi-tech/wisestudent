@@ -178,7 +178,7 @@ const BadgeWildlifeFriendKid = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const finalScore = score;

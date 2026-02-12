@@ -204,7 +204,7 @@ const DebateNuclearVsRenewables = () => {
       } else {
         setGameFinished(true);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const currentQuestionData = questions[currentQuestionIndex];

@@ -187,7 +187,7 @@ const RoleplayJusticeLeader = () => {
         setShowFeedback(false);
         resetFeedback();
       }
-    }, isCorrect ? 3000 : 3000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const handleTryAgain = () => {
