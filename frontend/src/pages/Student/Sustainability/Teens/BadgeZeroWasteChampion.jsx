@@ -178,7 +178,7 @@ const BadgeZeroWasteChampion = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 5000);
+    }, 10000);
   };
 
   const finalScore = score;

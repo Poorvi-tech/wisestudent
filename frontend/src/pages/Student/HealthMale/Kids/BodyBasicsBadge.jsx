@@ -203,7 +203,7 @@ const BodyBasicsBadge = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const handleRetry = () => {

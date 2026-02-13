@@ -227,7 +227,7 @@ const EmergencyPreparednessCheckpoint = () => {
         setFinalScore(correctCount);
         setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 2500);
+      }, 5500);
     }
     
     if (option.isCorrect) {
@@ -333,22 +333,7 @@ const EmergencyPreparednessCheckpoint = () => {
               )}
               {!showResult && currentStage === totalStages - 1 && canProceed && (
                 <div className="mt-4 flex justify-center">
-                  <button
-                    onClick={() => {
-                      const updatedHistory = [
-                        ...history,
-                        { stageId: PREPAREDNESS_SCENARIOS[currentStage].id, isCorrect: PREPAREDNESS_SCENARIOS[currentStage].options.find(opt => opt.id === selectedOption)?.isCorrect },
-                      ];
-                      const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
-                      const passed = correctCount === successThreshold;
-                      setFinalScore(correctCount);
-                      setCoins(passed ? totalCoins : 0);
-                      setShowResult(true);
-                    }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
-                  >
-                  Finish
-                  </button>
+                  
                 </div>
               )}
               {showResult && (

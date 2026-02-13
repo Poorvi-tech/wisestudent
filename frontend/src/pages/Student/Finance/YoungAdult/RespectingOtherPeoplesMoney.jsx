@@ -83,7 +83,7 @@ const RESPECTING_OTHER_PEOPLES_MONEY_STAGES = [
       {
         id: "b",
         label: "Blame unexpected circumstances for all payment delays",
-        reflection: "Regularly blaming external circumstances for payment delays comes across as disrespectful of both your commitment and your friend's financial planning needs. Occasional honesty about exceptional problems demonstrates the thoughtful attitude toward lending relationships - genuine trouble situations acknowledged坦诚ly.",
+        reflection: "Regularly blaming external circumstances for payment delays comes across as disrespectful of both your commitment and your friend's financial planning needs. Occasional honesty about exceptional problems demonstrates the thoughtful attitude toward lending relationships - genuine trouble situations acknowledgedly.",
         isCorrect: false,
       },
       {
@@ -229,7 +229,7 @@ const RespectingOtherPeoplesMoney = () => {
         setFinalScore(correctCount);
         setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 2500);
+      }, 5500);
     }
     
     if (option.isCorrect) {
@@ -336,22 +336,7 @@ const RespectingOtherPeoplesMoney = () => {
               {/* Automatically advance if we're in the last stage and the timeout has passed */}
               {!showResult && currentStage === totalStages - 1 && canProceed && (
                 <div className="mt-4 flex justify-center">
-                  <button
-                    onClick={() => {
-                      const updatedHistory = [
-                        ...history,
-                        { stageId: RESPECTING_OTHER_PEOPLES_MONEY_STAGES[currentStage].id, isCorrect: RESPECTING_OTHER_PEOPLES_MONEY_STAGES[currentStage].options.find(opt => opt.id === selectedOption)?.isCorrect },
-                      ];
-                      const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
-                      const passed = correctCount === successThreshold;
-                      setFinalScore(correctCount);
-                      setCoins(passed ? totalCoins : 0);
-                      setShowResult(true);
-                    }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
-                  >
-                  Finish
-                  </button>
+                  
                 </div>
               )}
               {showResult && (

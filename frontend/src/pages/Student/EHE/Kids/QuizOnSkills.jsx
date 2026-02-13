@@ -241,7 +241,7 @@ const QuizOnSkills = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 8000 : 8000);
+    }, isCorrect ? 15000 : 15000);
   };
 
   const currentQuestionData = questions[currentQuestion];

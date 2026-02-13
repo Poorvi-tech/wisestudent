@@ -180,7 +180,7 @@ const QuizOnHarmfulThings = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 3000 : 3000);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const handleNext = () => {

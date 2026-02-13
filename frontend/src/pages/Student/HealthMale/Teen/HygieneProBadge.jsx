@@ -129,7 +129,7 @@ const HygieneProBadge = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 5000);
+    }, 10000);
   };
 
   const handleRetry = () => {

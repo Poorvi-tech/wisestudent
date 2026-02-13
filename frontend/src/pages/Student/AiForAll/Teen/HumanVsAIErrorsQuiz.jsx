@@ -214,7 +214,7 @@ const HumanVsAIErrorsQuiz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 5000 : 5000);
+    }, isCorrect ? 10000 : 10000);
   };
 
   const currentQuestionData = questions[currentQuestion];

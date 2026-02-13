@@ -146,7 +146,7 @@ const WrongPredictionQuizz = () => {
       } else {
         setLevelCompleted(true);
       }
-    }, isCorrect ? 3000 : 3000);
+    }, isCorrect ? 10000 : 10000);
   };
 
   const currentQuestionData = questions[currentQuestion];

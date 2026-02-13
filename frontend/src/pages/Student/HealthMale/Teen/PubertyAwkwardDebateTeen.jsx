@@ -133,7 +133,7 @@ const PubertyAwkwardDebateTeen = () => {
         setFinalScore(correctAnswers);
         setShowResult(true);
       }
-    }, isCorrect ? 5000 : 5000);
+    }, isCorrect ? 10000 : 10000);
   };
 
   const handleTryAgain = () => {

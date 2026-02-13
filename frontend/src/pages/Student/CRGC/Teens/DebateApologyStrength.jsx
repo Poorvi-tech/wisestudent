@@ -102,7 +102,7 @@ const DebateApologyStrength = () => {
       } else {
         setGameFinished(true);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const handleNext = () => {

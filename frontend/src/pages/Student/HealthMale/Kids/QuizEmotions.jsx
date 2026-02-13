@@ -184,7 +184,7 @@ const QuizEmotions = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 3000 : 300);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const handleNext = () => {

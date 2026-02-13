@@ -175,7 +175,7 @@ const BadgeEnergyInnovator = () => {
         setAnswered(false);
         setSelectedOptionIndex(null);
       }
-    }, 5000);
+    }, 10000);
   };
 
   const currentLevelData = levels[currentLevel - 1];

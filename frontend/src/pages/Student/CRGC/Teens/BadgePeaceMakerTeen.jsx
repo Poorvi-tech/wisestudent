@@ -186,7 +186,7 @@ const BadgePeaceMakerTeen = () => {
         setAnswered(false);
         setSelectedAnswer(null);
       }
-    }, 8000);
+    }, 10000);
   };
 
   const handleTryAgain = () => {

@@ -29,7 +29,7 @@ const SharingRightsSimulation = () => {
       options: [
         { 
           text: "Keep it private", 
-          emoji: "🔒",
+          emoji: "🤏",
           isCorrect: true
         },
         { 
@@ -97,7 +97,7 @@ const SharingRightsSimulation = () => {
         },
          { 
           text: "No, keep them private", 
-          emoji: "🔒",
+          emoji: "🤫",
           isCorrect: true
         },
       ]
@@ -108,7 +108,7 @@ const SharingRightsSimulation = () => {
       options: [
         { 
           text: "Be selective and keep private ones safe", 
-          emoji: "🔒",
+          emoji: "📛",
           isCorrect: true
         },
         { 
@@ -139,7 +139,7 @@ const SharingRightsSimulation = () => {
         },
         { 
           text: "Keep private thoughts private", 
-          emoji: "🔒",
+          emoji: "🤔",
           isCorrect: true
         },
         { 

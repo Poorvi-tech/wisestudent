@@ -207,7 +207,7 @@ const BadgeFutureJobExplorer = () => {
         setAnswered(false);
         setSelectedAnswer(null);
       }
-    }, 5000);
+    }, 10000);
   };
 
   const handleTryAgain = () => {
