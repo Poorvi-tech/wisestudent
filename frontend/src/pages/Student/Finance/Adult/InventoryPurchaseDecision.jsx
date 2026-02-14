@@ -257,7 +257,7 @@ const InventoryPurchaseDecision = () => {
     <GameShell
       title="Inventory Purchase Decision"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

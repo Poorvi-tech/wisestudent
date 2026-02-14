@@ -255,7 +255,7 @@ const RiskVsReturn = () => {
     <GameShell
       title="Risk vs Return"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -299,7 +299,11 @@ const SelfCareChampionBadgeCollector = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 mb-6"
             >
-              <Heart className="w-16 h-16 text-white" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Heart className="w-16 h-16 text-white" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Self-Care Champion Badge
@@ -383,7 +387,11 @@ const SelfCareChampionBadgeCollector = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 rounded-xl p-8 border-2 border-green-300 mb-6 text-center">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 mb-4">
-                <Heart className="w-12 h-12 text-white" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <Heart className="w-12 h-12 text-white" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
                 Self-Care Champion Badge

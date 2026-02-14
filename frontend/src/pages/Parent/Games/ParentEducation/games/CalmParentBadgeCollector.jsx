@@ -114,11 +114,11 @@ const CalmParentBadgeCollector = () => {
       const result = response.data;
 
       if (result.success) {
-        if (result.badgeEarned || result.alreadyEarned) {
+        if (result.badgeEarned === true || result.alreadyEarned === true || result.newlyEarned === true) {
           setBadgeCollected(true);
           setShowCollectionModal(false);
           
-          if (result.badgeEarned) {
+          if (result.badgeEarned || result.newlyEarned) {
             toast.success('🎉 Badge collected successfully!');
             
             // Dispatch badge earned event
@@ -291,8 +291,19 @@ const CalmParentBadgeCollector = () => {
         {badgeCollected ? (
           // Badge Already Collected
           <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-6 animate-bounce">
-              <Award className="w-16 h-16 text-white" />
+            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-6 animate-bounce overflow-hidden">
+              {gameData?.badgeImage ? (
+                <img
+                  src={gameData.badgeImage}
+                  alt={gameData?.badgeName || 'Calm Parent Badge'}
+                  className="w-32 h-32 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <Award className="w-16 h-16 text-white" />
+              )}
             </div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Calm Parent Badge
@@ -315,8 +326,19 @@ const CalmParentBadgeCollector = () => {
         ) : (
           // Badge Collection Screen
           <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-6">
-              <Sparkles className="w-16 h-16 text-white" />
+            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-6 overflow-hidden">
+              {gameData?.badgeImage ? (
+                <img
+                  src={gameData.badgeImage}
+                  alt={gameData?.badgeName || 'Calm Parent Badge'}
+                  className="w-32 h-32 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <Sparkles className="w-16 h-16 text-white" />
+              )}
             </div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Congratulations!
@@ -343,8 +365,19 @@ const CalmParentBadgeCollector = () => {
 
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-8 border-2 border-indigo-200 mb-8">
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-4">
-                <span className="text-5xl">🧘</span>
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-indigo-400 via-blue-400 to-cyan-400 mb-4 overflow-hidden">
+                {gameData?.badgeImage ? (
+                  <img
+                    src={gameData.badgeImage}
+                    alt={gameData?.badgeName || 'Calm Parent Badge'}
+                    className="w-24 h-24 object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <span className="text-5xl">🧘</span>
+                )}
               </div>
               <h3 className="text-2xl font-bold text-indigo-800 mb-2">
                 Calm Parent Badge
@@ -356,7 +389,7 @@ const CalmParentBadgeCollector = () => {
 
             {/* Collect Badge Button */}
             <button
-              onClick={handleCollectBadge}
+              onClick={() => setShowCollectionModal(true)}
               className="bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
               Collect Badge
@@ -402,4 +435,3 @@ const CalmParentBadgeCollector = () => {
 };
 
 export default CalmParentBadgeCollector;
-

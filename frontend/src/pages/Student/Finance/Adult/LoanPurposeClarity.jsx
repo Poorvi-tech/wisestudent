@@ -257,7 +257,7 @@ const LoanPurposeClarity = () => {
     <GameShell
       title="Loan Purpose Clarity"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

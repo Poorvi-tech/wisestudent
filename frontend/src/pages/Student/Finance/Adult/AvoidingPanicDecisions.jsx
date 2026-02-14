@@ -256,7 +256,7 @@ const AvoidingPanicDecisions = () => {
     <GameShell
       title="Avoiding Panic Decisions"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

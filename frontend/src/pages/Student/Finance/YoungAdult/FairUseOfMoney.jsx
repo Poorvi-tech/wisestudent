@@ -257,7 +257,7 @@ const FairUseOfMoney = () => {
     <GameShell
       title="Fair Use of Money"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

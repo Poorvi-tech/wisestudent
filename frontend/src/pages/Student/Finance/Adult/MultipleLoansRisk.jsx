@@ -257,7 +257,7 @@ const MultipleLoansRisk = () => {
     <GameShell
       title="Multiple Loans Risk"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

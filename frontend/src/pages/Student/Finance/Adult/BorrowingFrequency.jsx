@@ -258,7 +258,7 @@ const BorrowingFrequency = () => {
     <GameShell
       title="Borrowing Frequency"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

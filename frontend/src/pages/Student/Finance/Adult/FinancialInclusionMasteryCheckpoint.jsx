@@ -254,7 +254,7 @@ const FinancialInclusionMasteryCheckpoint = () => {
     <GameShell
       title="Financial Inclusion Mastery Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -255,7 +255,7 @@ const IncomeLossScenario = () => {
     <GameShell
       title="Income Loss Scenario"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

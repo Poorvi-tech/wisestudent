@@ -252,7 +252,7 @@ const NeedsVsWants = () => {
     <GameShell
       title="Needs vs Wants - Daily Choices"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

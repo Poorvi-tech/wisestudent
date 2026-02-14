@@ -258,7 +258,7 @@ const FakeJobOffer = () => {
     <GameShell
       title="Fake Job Offer"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

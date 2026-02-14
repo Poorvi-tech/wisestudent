@@ -257,7 +257,7 @@ const LoanStackingDanger = () => {
     <GameShell
       title="Loan Stacking Danger"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

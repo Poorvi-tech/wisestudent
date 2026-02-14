@@ -254,7 +254,7 @@ const GrowthBasicsCheckpoint = () => {
     <GameShell
       title="Growth Basics Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

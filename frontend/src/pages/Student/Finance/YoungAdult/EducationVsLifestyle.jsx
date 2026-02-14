@@ -255,7 +255,7 @@ const EducationVsLifestyle = () => {
     <GameShell
       title="Education vs Lifestyle"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

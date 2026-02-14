@@ -258,7 +258,7 @@ const SocialMediaInvestmentTips = () => {
     <GameShell
       title="Social Media Investment Tips"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

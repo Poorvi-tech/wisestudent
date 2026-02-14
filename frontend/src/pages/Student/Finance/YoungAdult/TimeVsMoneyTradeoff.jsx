@@ -255,7 +255,7 @@ const TimeVsMoneyTradeoff = () => {
     <GameShell
       title="Time vs Money Trade-off"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

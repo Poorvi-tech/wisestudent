@@ -311,7 +311,11 @@ const PurposefulParentBadgeCollector = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 mb-6"
             >
-              <Target className="w-16 h-16 text-white" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Target className="w-16 h-16 text-white" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Purposeful Parent Badge
@@ -394,7 +398,11 @@ const PurposefulParentBadgeCollector = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 rounded-xl p-8 border-2 border-purple-300 mb-6 text-center">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 mb-4">
-                <Target className="w-12 h-12 text-white" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <Target className="w-12 h-12 text-white" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
                 Purposeful Parent Badge

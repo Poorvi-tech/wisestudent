@@ -254,7 +254,7 @@ const HowMuchEmergencyFund = () => {
     <GameShell
       title="How Much Emergency Fund?"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

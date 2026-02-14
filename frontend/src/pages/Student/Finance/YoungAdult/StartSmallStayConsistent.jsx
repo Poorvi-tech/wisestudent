@@ -254,7 +254,7 @@ const StartSmallStayConsistent = () => {
     <GameShell
       title="Start Small, Stay Consistent"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -255,7 +255,7 @@ const EmergencyCreditUse = () => {
     <GameShell
       title="Emergency Credit Use"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -255,7 +255,7 @@ const ShortTermHappinessVsStability = () => {
     <GameShell
       title="Short-Term Happiness vs Stability"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

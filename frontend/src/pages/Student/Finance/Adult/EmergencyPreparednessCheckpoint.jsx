@@ -255,7 +255,7 @@ const EmergencyPreparednessCheckpoint = () => {
     <GameShell
       title="Emergency Preparedness Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

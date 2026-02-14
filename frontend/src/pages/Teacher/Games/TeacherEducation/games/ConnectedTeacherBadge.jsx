@@ -156,11 +156,15 @@ const ConnectedTeacherBadge = () => {
       const result = response.data;
       console.log('Result parsed:', result);
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         console.log('Badge collected successfully, updating state...');
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "Connection creates calm. Congratulations! You have earned the Connected Teacher Badge. Your commitment to building community and nurturing healthy culture through support, gratitude, encouragement, connection, and harmony is recognized. You are a Community Builder, creating calm and connection in your teaching environment. Well done!";
@@ -346,7 +350,11 @@ const ConnectedTeacherBadge = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-4 border-amber-300 mb-6"
             >
-              <Award className="w-16 h-16 text-amber-600" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Award className="w-16 h-16 text-amber-600" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Connected Teacher Badge
@@ -431,7 +439,11 @@ const ConnectedTeacherBadge = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-xl p-8 border-4 border-amber-300 mb-8">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-400 mb-4">
-                <Award className="w-12 h-12 text-white" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <Award className="w-12 h-12 text-white" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
                 Connected Teacher Badge

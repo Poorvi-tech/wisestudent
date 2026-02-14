@@ -257,7 +257,7 @@ const DailyExpenseTracking = () => {
     <GameShell
       title="Daily Expense Tracking"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

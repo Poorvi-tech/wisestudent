@@ -255,7 +255,7 @@ const CreditCardTemptation = () => {
     <GameShell
       title="Credit Card Temptation"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

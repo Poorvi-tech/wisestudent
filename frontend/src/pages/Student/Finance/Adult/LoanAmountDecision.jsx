@@ -256,7 +256,7 @@ const LoanAmountDecision = () => {
     <GameShell
       title="Loan Amount Decision"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

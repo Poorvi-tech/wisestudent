@@ -257,7 +257,7 @@ const MonthlyBudgetOrder = () => {
     <GameShell
       title="Monthly Budget Order"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

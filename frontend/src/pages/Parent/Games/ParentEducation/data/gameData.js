@@ -145,7 +145,10 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     path: '/parent/games/parent-education/parent-education-10',
-    isBadgeGame: true
+    isBadgeGame: true,
+    badgeName: "Badge: Self-Aware Parent",
+      badgeImage: "/badges/parent/Self-Aware-Parent.png",
+
   },
   {
     id: 'parent-education-11',
@@ -286,7 +289,9 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     path: '/parent/games/parent-education/parent-education-20',
-    isBadgeGame: true
+    isBadgeGame: true,
+    badgeName: "Badge: Calm Parent",
+      badgeImage: "/badges/parent/calm-parent.png",
   },
   {
     id: 'parent-education-21',
@@ -427,7 +432,9 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     path: '/parent/games/parent-education/parent-education-30',
-    isBadgeGame: true
+    isBadgeGame: true,
+    badgeName: "Badge: Self-Aware Parent",
+      badgeImage: "/badges/parent/Self-Aware-Parent.png",
   },
   {
     id: 'parent-education-31',
@@ -568,6 +575,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Present Parent",
+      badgeImage: "/badges/parent/present-parent.png",
     path: '/parent/games/parent-education/parent-education-40'
   },
   {
@@ -709,6 +718,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Mindful Parent",
+      badgeImage: "/badges/parent/mindful-parent.png",
     path: '/parent/games/parent-education/parent-education-50'
   },
   {
@@ -850,6 +861,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Resilient Parent",
+      badgeImage: "/badges/parent/resilient-parent.png",
     path: '/parent/games/parent-education/parent-education-60'
   },
   {
@@ -991,6 +1004,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Peaceful Communicator",
+      badgeImage: "/badges/parent/peaceful-communicator.png",
     path: '/parent/games/parent-education/parent-education-70'
   },
   {
@@ -1131,7 +1146,9 @@ export const parentEducationGameData = [
     category: 'parent-education',
     totalQuestions: 0,
     totalLevels: 0,
-    isBadgeGame: true,
+   isBadgeGame: true,
+    badgeName: "Badge: Connected Parent",
+      badgeImage: "/badges/parent/connected-parent.png",
     path: '/parent/games/parent-education/parent-education-80'
   },
   {
@@ -1273,6 +1290,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Purposeful Parent",
+      badgeImage: "/badges/parent/purposeful-parent.png",
     path: '/parent/games/parent-education/parent-education-90'
   },
   {
@@ -1414,6 +1433,8 @@ export const parentEducationGameData = [
     totalQuestions: 0,
     totalLevels: 0,
     isBadgeGame: true,
+    badgeName: "Badge: Self-Care Champion",
+      badgeImage: "/badges/parent/c",
     path: '/parent/games/parent-education/parent-education-100'
   },
   // More games will be added here later

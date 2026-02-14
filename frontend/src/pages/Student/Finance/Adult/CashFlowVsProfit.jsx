@@ -257,7 +257,7 @@ const CashFlowVsProfit = () => {
     <GameShell
       title="Cash Flow vs Profit"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

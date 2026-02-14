@@ -77,26 +77,7 @@ app.use('/api', (req, res, next) => {
   next();
 });
 
-// Ensure API routes always return JSON (prevent HTML responses)
-app.use('/api', (req, res, next) => {
-  // Set JSON content type for all API routes
-  res.setHeader('Content-Type', 'application/json');
-  next();
-});
-
-// Add security headers to fix Cross-Origin-Opener-Policy issues
-app.use((req, res, next) => {
-  res.header('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
-  res.header('Cross-Origin-Embedder-Policy', 'unsafe-none');
-  next();
-});
-
-// Apply rate limiting (Phase 1 scalability)
-app.use('/api', apiLimiter);
-app.use('/api/auth/login', authLimiter);
-app.use('/api/auth/register', authLimiter);
-app.use('/api/auth/google', authLimiter);
-
+// 🔑 CORS Middleware MUST come BEFORE rate limiting to handle preflight OPTIONS requests
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -136,6 +117,26 @@ app.use(
     optionsSuccessStatus: 204,
   })
 );
+
+// Ensure API routes always return JSON (prevent HTML responses)
+app.use('/api', (req, res, next) => {
+  // Set JSON content type for all API routes
+  res.setHeader('Content-Type', 'application/json');
+  next();
+});
+
+// Add security headers to fix Cross-Origin-Opener-Policy issues
+app.use((req, res, next) => {
+  res.header('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+  res.header('Cross-Origin-Embedder-Policy', 'unsafe-none');
+  next();
+});
+
+// Apply rate limiting (Phase 1 scalability) - comes AFTER CORS middleware
+app.use('/api', apiLimiter);
+app.use('/api/auth/login', authLimiter);
+app.use('/api/auth/register', authLimiter);
+app.use('/api/auth/google', authLimiter);
 
 // MongoDB Connection (Phase 1: connection pooling)
 const mongoOptions = {

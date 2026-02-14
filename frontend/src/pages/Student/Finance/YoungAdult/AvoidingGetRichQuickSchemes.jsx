@@ -254,7 +254,7 @@ const AvoidingGetRichQuickSchemes = () => {
     <GameShell
       title="Avoiding Get-Rich-Quick Schemes"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

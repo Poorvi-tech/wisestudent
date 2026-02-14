@@ -150,10 +150,14 @@ const BalancedLifeBadge = () => {
 
       const result = response.data;
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "Congratulations! You have earned the Balanced Life Badge. Your consistent practice of work-life balance shows your commitment to wellbeing. You have mastered weekend planning, saying no, tracking work-life balance, connecting with family, and digital shutdown. Your balanced approach benefits not only you but also your students and colleagues. Well done!";
@@ -234,7 +238,11 @@ const BalancedLifeBadge = () => {
                     } flex items-center justify-center shadow-lg border-4 border-white`}
                 >
                   {badgeCollected ? (
-                    <Award className="w-20 h-20 text-white" />
+                    gameData?.badgeImage ? (
+                      <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+                    ) : (
+                      <Award className="w-20 h-20 text-white" />
+                    )
                   ) : allCompleted ? (
                     <Lock className="w-20 h-20 text-white opacity-50" />
                   ) : (

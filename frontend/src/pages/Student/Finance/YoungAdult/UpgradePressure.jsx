@@ -255,7 +255,7 @@ const UpgradePressure = () => {
     <GameShell
       title="Upgrade Pressure"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

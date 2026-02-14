@@ -23,6 +23,7 @@ const CompassionateParentBadgeCollector = () => {
   const [badgeCollected, setBadgeCollected] = useState(false);
 
   const [isCollecting, setIsCollecting] = useState(false);
+  const [showCollectionModal, setShowCollectionModal] = useState(false);
 
   // Required game IDs (21, 22, 27, 28, 29) - Empathy games
   const requiredGameIds = [
@@ -115,10 +116,12 @@ const CompassionateParentBadgeCollector = () => {
       const result = response.data;
 
       if (result.success) {
-        if (result.badgeEarned || result.alreadyEarned) {
+        const badgeWasProcessed = result.badgeEarned === true || result.alreadyEarned === true || result.newlyEarned === true;
+        if (badgeWasProcessed) {
           setBadgeCollected(true);
+          setShowCollectionModal(false);
           
-          if (result.badgeEarned) {
+          if (result.badgeEarned || result.newlyEarned) {
             toast.success('🎉 Badge collected successfully!');
             
             // Dispatch badge earned event
@@ -153,9 +156,11 @@ const CompassionateParentBadgeCollector = () => {
           }
         } else {
           toast.error(result.error || 'Failed to collect badge');
+          setShowCollectionModal(false);
         }
       } else {
         toast.error(result.error || 'Failed to collect badge');
+        setShowCollectionModal(false);
       }
     } catch (error) {
       console.error('Error collecting badge:', error);
@@ -303,7 +308,11 @@ const CompassionateParentBadgeCollector = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 mb-6"
             >
-              <Heart className="w-16 h-16 text-white" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Heart className="w-16 h-16 text-white" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Compassionate Parent Badge
@@ -385,7 +394,11 @@ const CompassionateParentBadgeCollector = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 rounded-xl p-8 border-2 border-green-300 mb-6 text-center">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 mb-4">
-                <Heart className="w-12 h-12 text-white" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <Heart className="w-12 h-12 text-white" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
                 Compassionate Parent Badge
@@ -402,21 +415,11 @@ const CompassionateParentBadgeCollector = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleCollectBadge}
-              disabled={isCollecting}
-              className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              onClick={() => setShowCollectionModal(true)}
+              className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
             >
-              {isCollecting ? (
-                <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                  <span>Collecting Badge...</span>
-                </>
-              ) : (
-                <>
-                  <Award className="w-5 h-5" />
-                  <span>Collect Badge</span>
-                </>
-              )}
+              <Award className="w-5 h-5" />
+              <span>Collect Badge</span>
             </motion.button>
 
             <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
@@ -428,10 +431,44 @@ const CompassionateParentBadgeCollector = () => {
             </div>
           </div>
         )}
+        {showCollectionModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center"
+            >
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 mb-4">
+                <Award className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Collect Your Badge
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Are you ready to collect your Compassionate Parent Badge?
+              </p>
+              <div className="flex gap-4 justify-center">
+                <button
+                  onClick={() => setShowCollectionModal(false)}
+                  disabled={isCollecting}
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-3 rounded-full font-semibold transition disabled:opacity-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleCollectBadge}
+                  disabled={isCollecting}
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50"
+                >
+                  {isCollecting ? 'Collecting...' : 'Yes, Collect Badge!'}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </div>
     </ParentGameShell>
   );
 };
 
 export default CompassionateParentBadgeCollector;
-

@@ -254,7 +254,7 @@ const LearningFromPastMistakes = () => {
     <GameShell
       title="Learning from Past Mistakes"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

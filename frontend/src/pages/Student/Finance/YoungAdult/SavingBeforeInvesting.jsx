@@ -254,7 +254,7 @@ const SavingBeforeInvesting = () => {
     <GameShell
       title="Saving Before Investing"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

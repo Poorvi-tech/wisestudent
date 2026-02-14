@@ -254,7 +254,7 @@ const WhenCreditIsUseful = () => {
     <GameShell
       title="When Credit Is Useful"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -257,7 +257,7 @@ const FakePaymentScreenshot = () => {
     <GameShell
       title="Fake Payment Screenshot"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

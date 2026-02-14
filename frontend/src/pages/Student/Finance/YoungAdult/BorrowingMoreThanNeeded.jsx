@@ -254,7 +254,7 @@ const BorrowingMoreThanNeeded = () => {
     <GameShell
       title="Borrowing More Than Needed"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

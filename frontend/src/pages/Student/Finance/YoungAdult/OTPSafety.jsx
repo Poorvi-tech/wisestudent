@@ -253,7 +253,7 @@ const OTPSafety = () => {
     <GameShell
       title="OTP Safety"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

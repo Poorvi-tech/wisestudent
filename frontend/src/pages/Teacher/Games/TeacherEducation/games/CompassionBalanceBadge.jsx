@@ -150,10 +150,14 @@ const CompassionBalanceBadge = () => {
 
       const result = response.data;
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "Your care has clarity. Congratulations! You have earned the Compassion Balance Badge. Your commitment to healthy empathy and compassion balance sustains your wellbeing while serving others. You are a Compassion Balance Champion, modeling healthy empathy in school culture. Well done!";
@@ -230,9 +234,17 @@ const CompassionBalanceBadge = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: badgeCollected ? 1 : 0.8 }}
                   transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                  className="text-8xl mb-4"
+                  className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-4 border-amber-300 mb-4"
                 >
-                  {badgeCollected ? '🏆' : '🔒'}
+                  {badgeCollected ? (
+                    gameData?.badgeImage ? (
+                      <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+                    ) : (
+                      <Award className="w-16 h-16 text-amber-600" />
+                    )
+                  ) : (
+                    <Lock className="w-16 h-16 text-amber-600" />
+                  )}
                 </motion.div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">
                   Compassion Balance Badge

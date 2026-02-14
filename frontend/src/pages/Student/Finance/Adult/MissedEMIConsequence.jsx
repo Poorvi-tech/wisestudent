@@ -256,7 +256,7 @@ const MissedEMIConsequence = () => {
     <GameShell
       title="Missed EMI Consequence"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

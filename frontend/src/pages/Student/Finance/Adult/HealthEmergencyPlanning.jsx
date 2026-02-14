@@ -255,7 +255,7 @@ const HealthEmergencyPlanning = () => {
     <GameShell
       title="Health Emergency Planning"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

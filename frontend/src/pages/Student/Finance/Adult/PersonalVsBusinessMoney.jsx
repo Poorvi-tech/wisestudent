@@ -257,7 +257,7 @@ const PersonalVsBusinessMoney = () => {
     <GameShell
       title="Personal vs Business Money"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
