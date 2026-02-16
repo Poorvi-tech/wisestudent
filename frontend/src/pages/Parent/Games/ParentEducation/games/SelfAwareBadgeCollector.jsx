@@ -113,34 +113,48 @@ const SelfAwareBadgeCollector = () => {
 
       const result = response.data;
 
-      if (result.success && result.badgeEarned) {
-        setBadgeCollected(true);
-        setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
-        
-        // Dispatch badge earned event
-        window.dispatchEvent(new CustomEvent('parentBadgeEarned', {
-          detail: {
-            badgeId: 'self-aware-parent',
-            badgeName: 'Self-Aware Parent',
-            message: 'Understanding yourself brings peace.',
-            badge: result.badge
-          }
-        }));
-        try {
-          await parentGameCompletionService.completeGame({
-            gameId,
-            gameType: 'parent-education',
-            gameIndex: gameData?.gameIndex || null,
-            score: 5,
-            totalLevels: 5,
-            totalCoins: 0,
-            isReplay: false
-          });
-        } catch (error) {
-          console.error('Failed to mark badge game completed:', error);
-        }
+      if (result.success) {
+        const processed =
+          result.badgeEarned === true ||
+          result.alreadyEarned === true ||
+          result.newlyEarned === true;
 
+        if (processed) {
+          setBadgeCollected(true);
+          setShowCollectionModal(false);
+
+          if (result.badgeEarned || result.newlyEarned) {
+            toast.success('🎉 Badge collected successfully!');
+
+            window.dispatchEvent(new CustomEvent('parentBadgeEarned', {
+              detail: {
+                badgeId: 'self-aware-parent',
+                badgeName: 'Self-Aware Parent',
+                message: 'Understanding yourself brings peace.',
+                badge: result.badge
+              }
+            }));
+          } else {
+            toast.info('Badge already collected!');
+          }
+
+          try {
+            await parentGameCompletionService.completeGame({
+              gameId,
+              gameType: 'parent-education',
+              gameIndex: gameData?.gameIndex || null,
+              score: 5,
+              totalLevels: 5,
+              totalCoins: 0,
+              isReplay: false
+            });
+            await checkBadgeStatus();
+          } catch (error) {
+            console.error('Failed to mark badge game completed:', error);
+          }
+        } else {
+          toast.error(result.error || 'Failed to collect badge');
+        }
       } else {
         toast.error(result.error || 'Failed to collect badge');
       }
@@ -278,8 +292,19 @@ const SelfAwareBadgeCollector = () => {
         {badgeCollected ? (
           // Badge Already Collected
           <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-6 animate-bounce">
-              <Award className="w-16 h-16 text-white" />
+            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-6 animate-bounce overflow-hidden">
+              {gameData?.badgeImage ? (
+                <img
+                  src={gameData.badgeImage}
+                  alt={gameData?.badgeName || 'Self-Aware Parent Badge'}
+                  className="w-32 h-32 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <Award className="w-16 h-16 text-white" />
+              )}
             </div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Self-Aware Parent Badge
@@ -302,8 +327,19 @@ const SelfAwareBadgeCollector = () => {
         ) : (
           // Badge Collection Screen
           <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-6">
-              <Sparkles className="w-16 h-16 text-white" />
+            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-6 overflow-hidden">
+              {gameData?.badgeImage ? (
+                <img
+                  src={gameData.badgeImage}
+                  alt={gameData?.badgeName || 'Self-Aware Parent Badge'}
+                  className="w-32 h-32 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <Sparkles className="w-16 h-16 text-white" />
+              )}
             </div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Congratulations!
@@ -330,8 +366,19 @@ const SelfAwareBadgeCollector = () => {
 
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border-2 border-purple-200 mb-8">
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-4">
-                <span className="text-5xl">🧘</span>
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-4 overflow-hidden">
+                {gameData?.badgeImage ? (
+                  <img
+                    src={gameData.badgeImage}
+                    alt={gameData?.badgeName || 'Self-Aware Parent Badge'}
+                    className="w-24 h-24 object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <span className="text-5xl">🧘</span>
+                )}
               </div>
               <h3 className="text-2xl font-bold text-purple-800 mb-2">
                 Self-Aware Parent Badge
@@ -389,4 +436,3 @@ const SelfAwareBadgeCollector = () => {
 };
 
 export default SelfAwareBadgeCollector;
-

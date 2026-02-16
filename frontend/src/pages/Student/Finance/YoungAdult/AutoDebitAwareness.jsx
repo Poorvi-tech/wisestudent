@@ -253,7 +253,7 @@ const AutoDebitAwareness = () => {
     <GameShell
       title="Auto-Debit Awareness"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

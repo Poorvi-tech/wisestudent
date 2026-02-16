@@ -258,7 +258,7 @@ const HigherLoanHigherCost = () => {
     <GameShell
       title="Higher Loan, Higher Cost"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

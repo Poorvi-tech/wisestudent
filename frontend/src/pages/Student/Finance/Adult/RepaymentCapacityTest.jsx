@@ -257,7 +257,7 @@ const RepaymentCapacityTest = () => {
     <GameShell
       title="Repayment Capacity Test"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -253,7 +253,7 @@ const WhatIsCredit = () => {
     <GameShell
       title="What Is Credit?"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

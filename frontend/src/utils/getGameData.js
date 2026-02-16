@@ -49,7 +49,7 @@ export const getGameDataById = (gameId) => {
   }
 
   const [, category, ageGroup] = match;
-  const normalizedAge = ageGroup === "teen" ? "teens" : ageGroup.replace("adults", "adult");
+  const normalizedAge = ageGroup === "teen" ? "teens" : ageGroup;
 
   // Map category names to their data functions
   const categoryMap = {

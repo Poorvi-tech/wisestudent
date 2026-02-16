@@ -154,6 +154,9 @@ export const teacherEducationGameData = [
     category: 'teacher-education',
     totalQuestions: 5,
     totalLevels: 5,
+    isBadgeGame: true,
+      badgeName: "Badge: Self-Aware Teacher",
+      badgeImage: "/badges/teacher/self-aware-teacher.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/self-aware-teacher-badge'
   },
   {
@@ -305,6 +308,8 @@ export const teacherEducationGameData = [
     totalQuestions: 5,
     totalLevels: 5,
     isBadgeGame: true,
+    badgeName: "Badge: Calm Teacher",
+      badgeImage: "/badges/teacher/calm-teacher.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/calm-teacher-badge'
   },
   {
@@ -456,6 +461,8 @@ export const teacherEducationGameData = [
     totalQuestions: 5,
     totalLevels: 5,
     isBadgeGame: true,
+    badgeName: "Badge: Compassion Balance",
+      badgeImage: "/badges/teacher/compassion-balance.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/compassion-balance-badge'
   },
   {
@@ -607,6 +614,8 @@ export const teacherEducationGameData = [
     totalQuestions: 5,
     totalLevels: 5,
     isBadgeGame: true,
+    badgeName: "Badge: Balanced Life",
+      badgeImage: "/badges/teacher/balanced-life.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/balanced-life-badge'
   },
   {
@@ -758,6 +767,8 @@ export const teacherEducationGameData = [
     totalQuestions: 5,
     totalLevels: 5,
     isBadgeGame: true,
+    badgeName: "Badge: Mindful Mastery",
+      badgeImage: "/badges/teacher/mindful-mastery.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/mindful-mastery-badge'
   },
   {
@@ -908,6 +919,8 @@ export const teacherEducationGameData = [
     category: 'teacher-education',
     totalQuestions: 5,
     totalLevels: 5,
+    badgeName: "Badge: Resilient Educator",
+      badgeImage: "/badges/teacher/resilient-educator.png",
     path: '/school-teacher/games/mental-health-emotional-regulation/resilient-educator-badge',
     isBadgeGame: true
   },
@@ -1061,6 +1074,8 @@ export const teacherEducationGameData = [
     totalLevels: 5,
     path: '/school-teacher/games/mental-health-emotional-regulation/clear-communicator-badge',
     isBadgeGame: true,
+    badgeName: "Badge: Clear Communicator",
+      badgeImage: "/badges/teacher/clear-communicator.png",
     icon: '🎯',
     color: 'from-indigo-500 to-purple-500',
     category: 'Communication',
@@ -1255,6 +1270,8 @@ export const teacherEducationGameData = [
     color: 'from-pink-500 to-purple-500',
     category: 'Support',
     isBadgeGame: true,
+    badgeName: "Badge: Connected Teacher",
+      badgeImage: "/badges/teacher/connected-teacher.png",
     teacherTip: 'Display badge earners as peer-support ambassadors.'
   },
   {
@@ -1446,6 +1463,8 @@ export const teacherEducationGameData = [
     color: 'from-purple-500 to-pink-500',
     category: 'Support',
     isBadgeGame: true,
+    badgeName: "Badge: Purposeful Teacher",
+      badgeImage: "/badges/teacher/purposeful-teacher.png",
     teacherTip: 'Showcase Purpose Badge earners during Teacher Appreciation Week.'
   },
   {
@@ -1637,6 +1656,8 @@ export const teacherEducationGameData = [
     color: 'from-amber-500 to-yellow-500',
     category: 'Support',
     isBadgeGame: true,
+    badgeName: "Badge: Self-Care Champion",
+      badgeImage: "/badges/teacher/self-care-champion.png",
     teacherTip: 'Celebrate Self-Care Champions publicly each term to normalize rest culture.'
   },
   // More games will be added here later

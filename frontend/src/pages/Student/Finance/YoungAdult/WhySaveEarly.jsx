@@ -255,7 +255,7 @@ const WhySaveEarly = () => {
     <GameShell
       title="Why Save Early?"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -257,7 +257,7 @@ const OTPSharingTrap = () => {
     <GameShell
       title="OTP Sharing Trap"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

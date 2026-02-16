@@ -254,7 +254,7 @@ const SideIncomeTruth = () => {
     <GameShell
       title="Side Income Truth"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

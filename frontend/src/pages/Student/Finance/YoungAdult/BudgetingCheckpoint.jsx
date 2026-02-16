@@ -255,7 +255,7 @@ const BudgetingCheckpoint = () => {
     <GameShell
       title="Budgeting Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

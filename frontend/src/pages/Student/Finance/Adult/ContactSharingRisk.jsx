@@ -258,7 +258,7 @@ const ContactSharingRisk = () => {
     <GameShell
       title="Contact Sharing Risk"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

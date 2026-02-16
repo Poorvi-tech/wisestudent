@@ -258,7 +258,7 @@ const EthicalFinanceCheckpoint = () => {
     <GameShell
       title="Ethical Finance Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

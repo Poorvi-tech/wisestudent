@@ -255,7 +255,7 @@ const LongTermInvestingMindset = () => {
     <GameShell
       title="Long-Term Investing Mindset"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

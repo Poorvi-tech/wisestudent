@@ -152,10 +152,14 @@ const SelfCareChampionBadge = () => {
       setIsCollecting(true);
       const result = await teacherBadgeService.collectSelfCareChampionBadge();
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "When you rest, your light grows brighter. Congratulations! You have earned the Self-Care Champion Badge. Your commitment to maintaining consistent self-care and digital balance demonstrates sustainable teaching practices. You are a Self-Care Champion, showing others that rest and balance are essential. Well done!";
@@ -338,7 +342,11 @@ const SelfCareChampionBadge = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-4 border-amber-300 mb-6"
             >
-              <Award className="w-16 h-16 text-amber-600" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Award className="w-16 h-16 text-amber-600" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Self-Care Champion Badge
@@ -423,7 +431,11 @@ const SelfCareChampionBadge = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-xl p-8 border-4 border-amber-300 mb-8">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-400 mb-4">
-                <Award className="w-12 h-12 text-white" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <Award className="w-12 h-12 text-white" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
                 Self-Care Champion Badge

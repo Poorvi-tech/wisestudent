@@ -258,7 +258,7 @@ const SalaryIsNotPocketMoney = () => {
     <GameShell
       title="Salary Is Not Pocket Money"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

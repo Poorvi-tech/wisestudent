@@ -257,7 +257,7 @@ const PhishingMessageAlert = () => {
     <GameShell
       title="Phishing Message Alert"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

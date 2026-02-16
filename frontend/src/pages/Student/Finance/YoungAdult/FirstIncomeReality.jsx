@@ -257,7 +257,7 @@ const FirstIncomeReality = () => {
     <GameShell
       title="First Income Reality"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

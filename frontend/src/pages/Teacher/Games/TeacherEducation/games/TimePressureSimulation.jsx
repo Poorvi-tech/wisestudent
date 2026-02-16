@@ -96,14 +96,14 @@ const TimePressureSimulation = () => {
     // Scenario 3: Student Crisis
     [
       {
-        id: 'student-crisis',
-        title: 'Student Crisis',
-        description: 'Student having emotional breakdown during class',
-        urgency: 'critical',
-        importance: 'critical',
-        icon: '😰',
-        idealOrder: 1, // First priority
-        color: 'from-red-500 to-pink-500'
+        id: 'supply-order',
+        title: 'Supply Order',
+        description: 'Urgent supplies needed for tomorrow\'s activity',
+        urgency: 'medium',
+        importance: 'medium',
+        icon: '📦',
+        idealOrder: 3, // Third priority
+        color: 'from-yellow-500 to-orange-500'
       },
       {
         id: 'grade-submission',
@@ -115,29 +115,20 @@ const TimePressureSimulation = () => {
         idealOrder: 2, // Second priority
         color: 'from-blue-500 to-cyan-500'
       },
-      {
-        id: 'supply-order',
-        title: 'Supply Order',
-        description: 'Urgent supplies needed for tomorrow\'s activity',
-        urgency: 'medium',
-        importance: 'medium',
-        icon: '📦',
-        idealOrder: 3, // Third priority
-        color: 'from-yellow-500 to-orange-500'
-      }
+       {
+        id: 'student-crisis',
+        title: 'Student Crisis',
+        description: 'Student having emotional breakdown during class',
+        urgency: 'critical',
+        importance: 'critical',
+        icon: '😰',
+        idealOrder: 1, // First priority
+        color: 'from-red-500 to-pink-500'
+      },
+     
     ],
     // Scenario 4: Substitute Teacher Issues
     [
-      {
-        id: 'substitute',
-        title: 'Substitute Issues',
-        description: 'Substitute teacher reports major classroom disruptions',
-        urgency: 'high',
-        importance: 'high',
-        icon: '🏫',
-        idealOrder: 1, // First priority
-        color: 'from-orange-500 to-red-500'
-      },
       {
         id: 'conference',
         title: 'Conference Prep',
@@ -148,6 +139,17 @@ const TimePressureSimulation = () => {
         idealOrder: 2, // Second priority
         color: 'from-purple-500 to-indigo-500'
       },
+      {
+        id: 'substitute',
+        title: 'Substitute Issues',
+        description: 'Substitute teacher reports major classroom disruptions',
+        urgency: 'high',
+        importance: 'high',
+        icon: '🏫',
+        idealOrder: 1, // First priority
+        color: 'from-orange-500 to-red-500'
+      },
+      
       {
         id: 'grading',
         title: 'Grading Papers',
@@ -171,6 +173,17 @@ const TimePressureSimulation = () => {
         idealOrder: 1, // First priority
         color: 'from-red-500 to-pink-500'
       },
+      
+      {
+        id: 'budget',
+        title: 'Budget Deadline',
+        description: 'Department budget proposal due today for next year',
+        urgency: 'high',
+        importance: 'medium',
+        icon: '💰',
+        idealOrder: 3, // Third priority
+        color: 'from-yellow-500 to-amber-500'
+      },
       {
         id: 'safety-issue',
         title: 'Safety Issue',
@@ -181,16 +194,6 @@ const TimePressureSimulation = () => {
         idealOrder: 2, // Second priority
         color: 'from-orange-500 to-red-500'
       },
-      {
-        id: 'budget',
-        title: 'Budget Deadline',
-        description: 'Department budget proposal due today for next year',
-        urgency: 'high',
-        importance: 'medium',
-        icon: '💰',
-        idealOrder: 3, // Third priority
-        color: 'from-yellow-500 to-amber-500'
-      }
     ]
   ];
   

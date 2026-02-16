@@ -252,7 +252,7 @@ const FixedVsVariableExpenses = () => {
     <GameShell
       title="Fixed vs Variable Expenses"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

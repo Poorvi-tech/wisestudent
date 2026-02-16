@@ -257,7 +257,7 @@ const FraudSafetyCheckpoint = () => {
     <GameShell
       title="Fraud Safety Checkpoint"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

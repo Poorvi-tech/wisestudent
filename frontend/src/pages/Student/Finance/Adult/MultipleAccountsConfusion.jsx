@@ -253,7 +253,7 @@ const MultipleAccountsConfusion = () => {
     <GameShell
       title="Multiple Accounts Confusion"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

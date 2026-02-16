@@ -255,7 +255,7 @@ const MutualFundsBasicIdea = () => {
     <GameShell
       title="Mutual Funds – Basic Idea"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

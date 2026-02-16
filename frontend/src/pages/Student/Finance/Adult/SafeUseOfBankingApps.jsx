@@ -254,7 +254,7 @@ const SafeUseOfBankingApps = () => {
     <GameShell
       title="Safe Use of Banking Apps"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

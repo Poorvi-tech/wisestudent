@@ -258,7 +258,7 @@ const FixedVsVariableInterest = () => {
     <GameShell
       title="Fixed vs Variable Interest"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

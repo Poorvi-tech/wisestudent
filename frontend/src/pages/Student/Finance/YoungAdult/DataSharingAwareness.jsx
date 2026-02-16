@@ -257,7 +257,7 @@ const DataSharingAwareness = () => {
     <GameShell
       title="Data Sharing Awareness"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

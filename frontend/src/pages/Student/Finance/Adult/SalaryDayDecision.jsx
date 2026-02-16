@@ -253,7 +253,7 @@ const SalaryDayDecision = () => {
     <GameShell
       title="Salary Day Decision"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

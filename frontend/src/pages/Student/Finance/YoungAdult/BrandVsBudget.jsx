@@ -258,7 +258,7 @@ const BrandVsBudget = () => {
     <GameShell
       title="Brand vs Budget"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

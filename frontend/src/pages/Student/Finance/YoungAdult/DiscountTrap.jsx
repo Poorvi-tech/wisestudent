@@ -254,7 +254,7 @@ const DiscountTrap = () => {
     <GameShell
       title="Discount Trap"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

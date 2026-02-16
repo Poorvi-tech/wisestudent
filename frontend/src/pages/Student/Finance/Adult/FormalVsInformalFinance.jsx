@@ -253,7 +253,7 @@ const FormalVsInformalFinance = () => {
     <GameShell
       title="Formal vs Informal Finance"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

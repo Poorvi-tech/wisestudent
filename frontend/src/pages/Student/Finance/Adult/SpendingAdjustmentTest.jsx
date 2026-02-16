@@ -252,7 +252,7 @@ const SpendingAdjustmentTest = () => {
     <GameShell
       title="Spending Adjustment Test"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

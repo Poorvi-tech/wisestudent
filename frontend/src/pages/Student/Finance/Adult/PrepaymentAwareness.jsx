@@ -257,7 +257,7 @@ const PrepaymentAwareness = () => {
     <GameShell
       title="Prepayment Awareness"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

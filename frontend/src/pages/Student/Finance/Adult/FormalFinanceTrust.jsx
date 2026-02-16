@@ -255,7 +255,7 @@ const FormalFinanceTrust = () => {
     <GameShell
       title="Formal Finance Trust"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

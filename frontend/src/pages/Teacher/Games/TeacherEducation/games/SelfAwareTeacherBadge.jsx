@@ -151,10 +151,14 @@ const SelfAwareTeacherBadge = () => {
 
       const result = response.data;
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "Congratulations! You have earned the Self-Aware Teacher Badge. Your commitment to emotional awareness and self-reflection makes you a more effective and compassionate educator. You understand yourself, and that understanding brings peace to your classroom and your life. Well done!";
@@ -334,7 +338,11 @@ const SelfAwareTeacherBadge = () => {
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-6"
             >
-              <Award className="w-16 h-16 text-white" />
+              {gameData?.badgeImage ? (
+                <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+              ) : (
+                <Award className="w-16 h-16 text-white" />
+              )}
             </motion.div>
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Self-Aware Teacher Badge
@@ -419,7 +427,11 @@ const SelfAwareTeacherBadge = () => {
             {/* Badge Preview */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border-2 border-purple-200 mb-8">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-indigo-400 mb-4">
-                <span className="text-5xl">🧘</span>
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                ) : (
+                  <span className="text-5xl">🧘</span>
+                )}
               </div>
               <h3 className="text-2xl font-bold text-purple-800 mb-2">
                 Self-Aware Teacher Badge

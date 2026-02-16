@@ -257,7 +257,7 @@ const RespectingOtherPeoplesMoney = () => {
     <GameShell
       title="Respecting Other People's Money"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

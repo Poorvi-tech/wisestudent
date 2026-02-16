@@ -151,10 +151,14 @@ const ClearCommunicatorBadge = () => {
 
       const result = response.data;
 
-      if (result.success && (result.badgeEarned || result.newlyEarned)) {
+      if (result.success && (result.badgeEarned || result.newlyEarned || result.alreadyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
-        toast.success('🎉 Badge collected successfully!');
+        if (result.badgeEarned || result.newlyEarned) {
+          toast.success('🎉 Badge collected successfully!');
+        } else {
+          toast.info('Badge already collected!');
+        }
 
         // Play positive audio affirmation
         const affirmation = "You speak with calm clarity. Congratulations! You have earned the Clear Communicator Badge. Your consistent use of assertive, empathetic communication sustains clarity and respect in your interactions. You are a Communication Champion, modeling calm clarity in your classroom and beyond. Well done!";
@@ -342,7 +346,11 @@ const ClearCommunicatorBadge = () => {
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
                 className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-4 border-blue-300 mb-6"
               >
-                <Award className="w-16 h-16 text-blue-600" />
+                {gameData?.badgeImage ? (
+                  <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-24 h-24 rounded-full object-cover" />
+                ) : (
+                  <Award className="w-16 h-16 text-blue-600" />
+                )}
               </motion.div>
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
                 Clear Communicator Badge
@@ -427,7 +435,11 @@ const ClearCommunicatorBadge = () => {
               {/* Badge Preview */}
               <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl p-8 border-4 border-blue-300 mb-8">
                 <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 mb-4">
-                  <Award className="w-12 h-12 text-white" />
+                  {gameData?.badgeImage ? (
+                    <img src={gameData.badgeImage} alt={`${gameData?.title || 'Badge'}`} className="w-20 h-20 rounded-full object-cover" />
+                  ) : (
+                    <Award className="w-12 h-12 text-white" />
+                  )}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
                   Clear Communicator Badge

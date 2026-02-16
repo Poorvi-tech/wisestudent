@@ -255,7 +255,7 @@ const FixedDepositAwareness = () => {
     <GameShell
       title="Fixed Deposit Awareness"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

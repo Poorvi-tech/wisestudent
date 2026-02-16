@@ -257,7 +257,7 @@ const FirstMonthSpendingPlan = () => {
     <GameShell
       title="First Month Spending Plan"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

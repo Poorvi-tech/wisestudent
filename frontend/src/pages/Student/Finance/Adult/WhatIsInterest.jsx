@@ -257,7 +257,7 @@ const WhatIsInterest = () => {
     <GameShell
       title="What Is Interest?"
       subtitle={subtitle}
-      score={coins}
+      score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
