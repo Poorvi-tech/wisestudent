@@ -525,9 +525,7 @@ const ActiveListeningQuiz = () => {
                           <span className="text-white font-bold">{String.fromCharCode(65 + index)}</span>
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-bold text-lg text-gray-800 mb-2">
-                            {response.label}
-                          </h3>
+                        
                           <p className="text-gray-700 leading-relaxed">
                             "{response.text}"
                           </p>

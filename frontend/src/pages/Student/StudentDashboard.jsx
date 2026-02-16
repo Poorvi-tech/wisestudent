@@ -233,6 +233,18 @@ export default function StudentDashboard() {
         const loadBadge = async () => {
             setSponsorshipLoading(true);
             try {
+                const allowedRoles = [
+                    "school_admin",
+                    "school_teacher",
+                    "school_student",
+                    "school_parent",
+                    "school_accountant",
+                    "school_librarian",
+                ];
+                if (!user || !allowedRoles.includes(user.role) || !user.orgId) {
+                    setSponsorBadge(null);
+                    return;
+                }
                 const response = await schoolSponsorshipService.getDetails();
                 if (!mounted) return;
                 if (response?.sponsorship) {
@@ -248,7 +260,7 @@ export default function StudentDashboard() {
                     setSponsorBadge(null);
                 }
             } catch (err) {
-                console.error("Sponsor badge load error:", err);
+                setSponsorBadge(null);
             } finally {
                 if (mounted) setSponsorshipLoading(false);
             }
@@ -3424,6 +3436,5 @@ export default function StudentDashboard() {
         </div>
     );
 }
-
 
 

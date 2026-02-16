@@ -261,6 +261,7 @@ const GuidedMeditationAudio = () => {
               /* Feedback */
               <AnimatePresence>
                 <motion.div
+                  key={`feedback-${currentQuestion}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
@@ -303,7 +304,7 @@ const GuidedMeditationAudio = () => {
                 </motion.div>
 
                 {/* Next Button */}
-                <div className="flex justify-end">
+                <div key={`button-${currentQuestion}`} className="flex justify-end">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

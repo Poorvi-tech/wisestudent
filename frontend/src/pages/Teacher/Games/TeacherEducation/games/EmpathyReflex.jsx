@@ -53,8 +53,8 @@ const EmpathyReflex = () => {
       question: "A parent calls upset about their child's behavioral issues at school. What's your best response?",
       options: [
         
-        { id: 'b', text: "You're overreacting, it's just typical kid behavior", isCorrect: false, explanation: "This invalidates their emotional response and judges their reaction. It's draining because it dismisses their genuine concern." },
-        { id: 'a', text: "It's okay to feel this way, parenting can be really challenging", isCorrect: true, explanation: "This normalizes their emotions and creates a safe space for expression. It's supportive because it validates their parental struggles." },
+        { id: 'a', text: "You're overreacting, it's just typical kid behavior", isCorrect: false, explanation: "This invalidates their emotional response and judges their reaction. It's draining because it dismisses their genuine concern." },
+        { id: 'b', text: "It's okay to feel this way, parenting can be really challenging", isCorrect: true, explanation: "This normalizes their emotions and creates a safe space for expression. It's supportive because it validates their parental struggles." },
         { id: 'c', text: "You should be stronger, kids need firm discipline", isCorrect: false, explanation: "This puts pressure on them to suppress feelings and be 'stronger'. It's draining because it dismisses their emotional needs." },
         { id: 'd', text: "It could be worse, at least your child isn't failing grades", isCorrect: false, explanation: "This invalidates feelings by comparing to worse situations. It's draining because it dismisses their specific concerns." }
       ]
@@ -64,9 +64,9 @@ const EmpathyReflex = () => {
       question: "A student approaches you saying they feel isolated and alone. How do you respond?",
       options: [
         
-        { id: 'b', text: "Everyone feels lonely sometimes, you'll get used to it", isCorrect: false, explanation: "While technically true, this dismisses their unique experience and current feelings. It's draining because it minimizes their specific situation." },
-        { id: 'c', text: "Just be more outgoing and make more friends", isCorrect: false, explanation: "This puts the burden entirely on them and dismisses their feelings. It's draining because it invalidates their emotional experience." },
-        { id: 'a', text: "You're not alone in this, I'm here to support you", isCorrect: true, explanation: "This provides connection and reduces isolation. It's supportive because it offers companionship during difficult times." },
+        { id: 'a', text: "Everyone feels lonely sometimes, you'll get used to it", isCorrect: false, explanation: "While technically true, this dismisses their unique experience and current feelings. It's draining because it minimizes their specific situation." },
+        { id: 'b', text: "Just be more outgoing and make more friends", isCorrect: false, explanation: "This puts the burden entirely on them and dismisses their feelings. It's draining because it invalidates their emotional experience." },
+        { id: 'c', text: "You're not alone in this, I'm here to support you", isCorrect: true, explanation: "This provides connection and reduces isolation. It's supportive because it offers companionship during difficult times." },
         { id: 'd', text: "You're being too sensitive, school is supposed to be challenging", isCorrect: false, explanation: "This criticizes their emotional sensitivity and dismisses their feelings. It's draining because it invalidates their genuine experience." }
       ]
     },
@@ -75,10 +75,10 @@ const EmpathyReflex = () => {
       question: "A teacher tells you they're considering quitting due to burnout. What's the most helpful response?",
       options: [
         
-        { id: 'b', text: "Just stick with it, teaching is rewarding in the long run", isCorrect: false, explanation: "This dismisses their current crisis and pressures them to endure. It's draining because it invalidates their present struggle." },
-        { id: 'c', text: "You're overreacting, everyone deals with stress", isCorrect: false, explanation: "This invalidates their emotional response and judges their reaction. It's draining because it dismisses their legitimate burnout concerns." },
-        { id: 'd', text: "Move on from this negative thinking and focus on solutions", isCorrect: false, explanation: "This forces emotional suppression and doesn't allow for processing. It's draining because it dismisses their need to express and process feelings." },
-        { id: 'a', text: "How can I support you right now? Would talking to counseling help?", isCorrect: true, explanation: "This offers practical help and shows care for their needs. It's supportive because it provides concrete assistance options." },
+        { id: 'a', text: "Just stick with it, teaching is rewarding in the long run", isCorrect: false, explanation: "This dismisses their current crisis and pressures them to endure. It's draining because it invalidates their present struggle." },
+        { id: 'b', text: "You're overreacting, everyone deals with stress", isCorrect: false, explanation: "This invalidates their emotional response and judges their reaction. It's draining because it dismisses their legitimate burnout concerns." },
+        { id: 'c', text: "Move on from this negative thinking and focus on solutions", isCorrect: false, explanation: "This forces emotional suppression and doesn't allow for processing. It's draining because it dismisses their need to express and process feelings." },
+        { id: 'd', text: "How can I support you right now? Would talking to counseling help?", isCorrect: true, explanation: "This offers practical help and shows care for their needs. It's supportive because it provides concrete assistance options." },
       ]
     }
   ];

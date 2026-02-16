@@ -128,14 +128,14 @@ const BreatheToReset = () => {
   const getOrbSize = () => {
     if (breathPhase === 'inhale') {
       const progress = 1 - (timeRemaining / breathingTimings.inhale);
-      return 100 + (progress * 150); // Grows from 100px to 250px
+      return 90 + (progress * 50); // Grows from 90px to 140px
     } else if (breathPhase === 'hold') {
-      return 250; // Maintains full size
+      return 140; // Maintains smaller full size
     } else if (breathPhase === 'exhale') {
       const progress = 1 - (timeRemaining / breathingTimings.exhale);
-      return 250 - (progress * 150); // Shrinks from 250px to 100px
+      return 140 - (progress * 50); // Shrinks from 140px to 90px
     }
-    return 150; // Default/resting size
+    return 120; // Default/resting size (smaller)
   };
 
   // Get orb color based on phase
@@ -422,4 +422,3 @@ const BreatheToReset = () => {
 };
 
 export default BreatheToReset;
-

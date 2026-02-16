@@ -546,7 +546,7 @@ const EmpatheticDialogueRoleplay = () => {
                         <span className="text-white font-bold">{index + 1}</span>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-gray-800 mb-2">{response.label}</h4>
+                       
                         <p className="text-gray-700 leading-relaxed italic mb-2">
                           "{response.statement}"
                         </p>
