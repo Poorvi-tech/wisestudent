@@ -39,13 +39,13 @@ const MeaningInTheMoment = () => {
         },
 
         {
-          id: 'c',
+          id: 'b',
           text: "This is just one student out of many. It's a small moment that probably won't matter much.",
           feedback: "It's easy to underestimate small moments, but they often matter most. Finding meaning in ordinary moments helps you recognize their impact.",
           category: "Minimizing"
         },
         {
-          id: 'b',
+          id: 'c',
           text: "I'm building this student's confidence and showing them that they can learn. ",
           feedback: "Perfect! You're finding meaning in this moment. Small acts like this create large ripples—building confidence, showing patience, and modeling resilience. This moment matters! ✨",
           category: "Meaning-Focused",
@@ -87,14 +87,14 @@ const MeaningInTheMoment = () => {
       emoji: "💡",
       meaningStatements: [
         {
-          id: 'b',
+          id: 'a',
           text: "I'm teaching persistence, adaptability, and that learning takes different approaches. ",
           feedback: "Perfect! You're finding meaning in this moment. Small acts like this create large ripples—teaching persistence, modeling adaptability, and showing that challenges can be overcome. This moment matters! ✨",
           category: "Meaning-Focused",
           isBest: true
         },
         {
-          id: 'a',
+          id: 'b',
           text: "I'm just explaining the curriculum. This is standard teaching practice.",
           feedback: "True, but there's deeper meaning in persistence and adapting to students' needs. Finding purpose in ordinary moments recognizes your impact.",
           category: "Standard-Focused"
@@ -122,13 +122,13 @@ const MeaningInTheMoment = () => {
         },
 
         {
-          id: 'c',
+          id: 'b',
           text: "This is just a small conversation. There are bigger things to focus on.",
           feedback: "Small conversations often carry the most meaning. Finding purpose in ordinary moments helps you recognize that brief connections can have lasting impact.",
           category: "Minimizing"
         },
         {
-          id: 'b',
+          id: 'c',
           text: "I'm making this student feel seen, heard, and valued. My presence and attention are showing them that they matter and that they're not alone in their struggles.",
           feedback: "Excellent! You're finding meaning in this moment. Small acts like this create large ripples—making students feel valued, showing they're not alone, and building trust. This moment matters! ✨",
           category: "Meaning-Focused",
@@ -278,7 +278,7 @@ const MeaningInTheMoment = () => {
                       >
                         <div className="flex items-start gap-4">
                           <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 ${meaning.isBest
-                              ? 'bg-purple-100 text-purple-600'
+                              ? 'bg-purple-100 text-gray-600'
                               : 'bg-gray-100 text-gray-600'
                             }`}>
                             {meaning.id.toUpperCase()}

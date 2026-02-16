@@ -452,21 +452,39 @@ const Profile = () => {
         api.get("/api/game/achievements"),
         api.get("/api/progress"),
         api.get("/api/stats/student").catch(() => ({ data: {} })),
-        fetchLeaderboardSnippet().catch(() => ({ currentUserRank: null })),
+        fetchLeaderboardSnippet().catch(() => ({ currentUserRank: 0, currentUserInfo: null })),
       ]);
 
       setAchievements(Array.isArray(achievementsRes.data) ? achievementsRes.data : []);
 
       if (progressRes.data) {
+        const currentUserId = user?._id || user?.id || null;
+        let derivedRank = null;
+
+        // Prefer explicit rank fields from API
+        if (leaderboardData?.currentUserRank != null && leaderboardData?.currentUserRank > 0) {
+          derivedRank = leaderboardData.currentUserRank;
+        } else if (leaderboardData?.currentUserInfo?.rank != null && leaderboardData?.currentUserInfo?.rank > 0) {
+          derivedRank = leaderboardData.currentUserInfo.rank;
+        } else if (Array.isArray(leaderboardData?.leaderboard) && currentUserId) {
+          // Client-side fallback: if user is in top entries, compute rank from list
+          const selfEntry = leaderboardData.leaderboard.find(
+            (e) => (e?._id?.toString?.() || e?.id?.toString?.()) === currentUserId.toString()
+          );
+          if (selfEntry?.rank && selfEntry.rank > 0) {
+            derivedRank = selfEntry.rank;
+          }
+        }
+
         setStats((prev) => ({
           ...prev,
           level: progressRes.data.level || prev.level || 1,
           xp: progressRes.data.xp || prev.xp || 0,
           streak: progressRes.data.streak || prev.streak || 0,
           rank:
-            leaderboardData?.currentUserRank !== undefined && leaderboardData?.currentUserRank !== null
-              ? leaderboardData.currentUserRank
-              : statsRes.data?.rank !== undefined
+            derivedRank != null && derivedRank > 0
+              ? derivedRank
+              : (statsRes.data?.rank != null && statsRes.data?.rank > 0)
               ? statsRes.data.rank
               : prev.rank,
         }));
@@ -907,7 +925,7 @@ const Profile = () => {
             />
             <StatHighlight
               label="Global Rank"
-              value={stats.rank !== null ? stats.rank : "N/A"}
+              value={stats.rank !== null && stats.rank > 0 ? `#${stats.rank}` : "N/A"}
               icon={CheckCircle}
             />
           </div>
@@ -1256,4 +1274,3 @@ const Profile = () => {
 };
 
 export default Profile;
-

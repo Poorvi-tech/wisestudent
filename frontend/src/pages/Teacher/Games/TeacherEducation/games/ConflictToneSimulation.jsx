@@ -568,11 +568,7 @@ const ConflictToneSimulation = () => {
                             <h3 className="font-bold text-lg text-gray-800">
                               {tone.label}
                             </h3>
-                            {tone.id === 'calm-firm' && (
-                              <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
-                                Recommended
-                              </span>
-                            )}
+                            
                           </div>
                           <p className="text-sm text-gray-600 mb-3">{tone.description}</p>
                           <div className="bg-gray-50 rounded-lg p-4 mb-3">

@@ -36,7 +36,6 @@ const __dirname = dirname(__filename);
 const allowedOrigins = process.env.CLIENT_URL
   ? process.env.CLIENT_URL.split(",").map(origin => origin.trim())
   : [
-      "http://localhost:5173",
       "http://localhost:3000",
       "https://wisestudent.org",
       "https://www.wisestudent.org",
@@ -338,6 +337,7 @@ app.use('/', healthRoutes);
   app.use("/api/game", gameRoutes);
   app.use("/api/rewards", rewardsRoutes);
   app.use("/api/analytics", analyticsRoutes);
+  app.use("/api/progress", userProgressRoutes);
   app.use("/api/wallet", walletRoutes);
   app.use("/api/goodies", goodieRoutes);
   app.use("/api/student", studentRoutes);

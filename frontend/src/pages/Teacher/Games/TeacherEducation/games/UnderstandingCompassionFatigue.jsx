@@ -94,7 +94,10 @@ const UnderstandingCompassionFatigue = () => {
       story: "A student in your class experiences a family crisis. You immediately connect them with the school counselor and notify the appropriate support staff. You check in with the student regularly, offer support, and maintain your regular teaching responsibilities. You feel concerned and want to help, but you also recognize that you're part of a team supporting this student. You continue to take care of yourself and maintain your energy for all your students.",
       correctAnswer: "healthy-empathy", // This is healthy empathy
       healthyEmpathy: {
-      
+        title: "Healthy Empathy",
+        description: "This is healthy empathy! You respond with care, connect the student with appropriate resources, and maintain your role as part of a support team. You care deeply while maintaining boundaries and your own wellbeing.",
+        explanation: "Healthy empathy means responding with care while recognizing you're part of a support system. You can care deeply without taking on the entire emotional burden alone."
+      },
       compassionFatigue: {
         title: "Compassion Fatigue",
         description: "This is NOT compassion fatigue. In this scenario, you're working as part of a team, maintaining boundaries, and preserving your energy. You care without becoming overwhelmed.",
@@ -104,11 +107,7 @@ const UnderstandingCompassionFatigue = () => {
         title: "Mixed Case",
         description: "This exemplifies healthy empathy in action. Working as part of a team while maintaining personal boundaries shows excellent professional balance.",
         explanation: "Team collaboration, maintained boundaries, preserved energy, and continued presence for all students demonstrate mature healthy empathy practices."
-      },
-        title: "Healthy Empathy",
-        description: "This is healthy empathy! You respond with care, connect the student with appropriate resources, and maintain your role as part of a support team. You care deeply while maintaining boundaries and your own wellbeing.",
-        explanation: "Healthy empathy means responding with care while recognizing you're part of a support system. You can care deeply without taking on the entire emotional burden alone."
-      },
+      }
     },
     {
       id: 5,
@@ -284,6 +283,7 @@ const UnderstandingCompassionFatigue = () => {
               /* Feedback */
               <AnimatePresence>
                 <motion.div
+                  key={`feedback-${currentStory}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
@@ -338,7 +338,7 @@ const UnderstandingCompassionFatigue = () => {
                 </motion.div>
 
                 {/* Next Button */}
-                <div className="flex justify-end">
+                <div key={`button-${currentStory}`} className="flex justify-end">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

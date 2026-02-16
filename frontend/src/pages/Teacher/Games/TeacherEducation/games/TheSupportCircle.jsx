@@ -80,7 +80,7 @@ const TheSupportCircle = () => {
         },
         {
           id: 'all-of-above',
-          text: 'All of the above - a combination of noticing, listening, validating, and offering help',
+          text: 'a combination of noticing, listening, validating, and offering help',
           feedback: 'Perfect! The most effective support combines noticing, listening, validating, and offering practical help. This holistic approach addresses emotional needs while providing tangible solutions.'
         }
       ],
@@ -102,7 +102,7 @@ const TheSupportCircle = () => {
         },
         {
           id: 'all-reasons',
-          text: 'All of the above - it addresses isolation, perspective, and builds community',
+          text: 'it addresses isolation, perspective, and builds community',
           feedback: 'Perfect! Peer support does all of these things - it reduces isolation, provides perspective, and builds a caring community. This comprehensive impact makes it invaluable.'
         },
         {
@@ -120,7 +120,7 @@ const TheSupportCircle = () => {
       options: [
         {
           id: 'combine-all',
-          text: 'All of the above - combine noticing, listening, and forming support circles',
+          text: 'combine noticing, listening, and forming support circles',
           feedback: 'Perfect approach! Combining individual acts of care (noticing, listening) with structured support (circles) creates both immediate and sustainable support systems.'
         },
         {

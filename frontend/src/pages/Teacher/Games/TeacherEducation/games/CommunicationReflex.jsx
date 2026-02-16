@@ -47,17 +47,18 @@ const CommunicationReflex = () => {
       type: "positive",
       explanation: "Positive: Recognizes positive behavior and validates parent's contribution. Strengthens home-school connection."
     },
-    {
-      id: 4,
-      text: "This is all because of your poor parenting.",
-      type: "negative",
-      explanation: "Negative: Places blame on parent. Creates hostility and shuts down productive communication."
-    },
+    
     {
       id: 5,
       text: "I'd love to hear your thoughts on how we can support your child's learning goals.",
       type: "positive",
       explanation: "Positive: Invites parental input and shows collaborative approach. Values parent perspective."
+    },
+    {
+      id: 4,
+      text: "This is all because of your poor parenting.",
+      type: "negative",
+      explanation: "Negative: Places blame on parent. Creates hostility and shuts down productive communication."
     }
   ];
 
