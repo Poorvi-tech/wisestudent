@@ -73,8 +73,12 @@ const TeacherOverview = () => {
     return `${months} month${months > 1 ? "s" : ""} ago`;
   }, []);
 
-  const getClassMasteryDisplayLabel = (pillarName) =>
-    pillarName === "Brain Health" ? "Brain & Mental Health" : pillarName;
+  const getClassMasteryDisplayLabel = (pillarName) => {
+    if (pillarName === "Brain Health") return "Brain & Mental Health";
+    if (pillarName === "Entrepreneurship & Higher Education")
+      return "Entrepreneurship, Career & Higher Education";
+    return pillarName;
+  };
 
   const resolveStudentId = (student) => {
     if (!student) return null;

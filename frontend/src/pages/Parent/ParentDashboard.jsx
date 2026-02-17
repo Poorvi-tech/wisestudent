@@ -682,8 +682,12 @@ const QuickStatCard = ({ icon: Icon, label, value, suffix = '', gradient }) => {
 
 // Digital Twin Growth Card Component
 export const DigitalTwinGrowthCard = ({ digitalTwinData, skillsDistribution }) => {
-    const formatGrowthPillarLabel = (pillar) =>
-      pillar === "Brain Health" ? "Brain & Mental Health" : pillar;
+    const formatGrowthPillarLabel = (pillar) => {
+      if (pillar === "Brain Health") return "Brain & Mental Health";
+      if (pillar === "Entrepreneurship & Higher Education")
+        return "Entrepreneurship, Career & Higher Education";
+      return pillar;
+    };
     const pillarColors = {
       'Financial Literacy': '#22c55e',
       'Brain Health': '#3b82f6',
@@ -822,8 +826,12 @@ export const DigitalTwinGrowthCard = ({ digitalTwinData, skillsDistribution }) =
 
 // Skills Distribution Card Component
 export const SkillsDistributionCard = ({ skillsDistribution }) => {
-    const formatSkillsPillarLabel = (pillar) =>
-      pillar === "Brain Health" ? "Brain & Mental Health" : pillar;
+    const formatSkillsPillarLabel = (pillar) => {
+      if (pillar === "Brain Health") return "Brain & Mental Health";
+      if (pillar === "Entrepreneurship & Higher Education")
+        return "Entrepreneurship, Career & Higher Education";
+      return pillar;
+    };
 
     const pillarColors = {
       'Financial Literacy': '#22c55e',
@@ -1831,32 +1839,32 @@ export const DetailedProgressReportCard = ({ progressReport }) => {
       childGender = ''
     } = progressReport;
 
-    const pillarColors = {
-      'Financial Literacy': 'from-green-500 to-emerald-600',
-      'Brain Health': 'from-blue-500 to-cyan-600',
-      'UVLS': 'from-purple-500 to-pink-600',
-      'Digital Citizenship & Online Safety': 'from-orange-500 to-red-600',
-      'Moral Values': 'from-indigo-500 to-blue-600',
-      'AI for All': 'from-pink-500 to-rose-600',
-      'Health - Male': 'from-teal-500 to-cyan-600',
-      'Health - Female': 'from-rose-500 to-pink-600',
-      'Entrepreneurship & Higher Education': 'from-amber-500 to-orange-600',
-      'Civic Responsibility & Global Citizenship': 'from-violet-500 to-purple-600',
-      'General Education': 'from-slate-500 to-gray-600'
-    };
+      const pillarColors = {
+        'Financial Literacy': 'from-green-500 to-emerald-600',
+        'Brain Health': 'from-blue-500 to-cyan-600',
+        'UVLS': 'from-purple-500 to-pink-600',
+        'Digital Citizenship & Online Safety': 'from-orange-500 to-red-600',
+        'Moral Values': 'from-indigo-500 to-blue-600',
+        'AI for All': 'from-pink-500 to-rose-600',
+        'Health - Male': 'from-teal-500 to-cyan-600',
+        'Health - Female': 'from-rose-500 to-pink-600',
+        'Entrepreneurship & Higher Education': 'from-amber-500 to-orange-600',
+        'Civic Responsibility & Global Citizenship': 'from-violet-500 to-purple-600',
+        'Sustainability': 'from-lime-500 to-emerald-600'
+      };
 
       const pillarLabels = {
         'Financial Literacy': 'Financial Literacy',
-        'Brain Health': 'Brain Health',
+        'Brain Health': 'Brain & Mental Health',
         'UVLS': 'UVLS',
         'Digital Citizenship & Online Safety': 'Digital Citizenship & Online Safety',
         'Moral Values': 'Moral Values',
         'AI for All': 'AI for All',
         'Health - Male': 'Health - Male',
         'Health - Female': 'Health - Female',
-        'Entrepreneurship & Higher Education': 'Entrepreneurship & Higher Education',
+        'Entrepreneurship & Higher Education': 'Entrepreneurship, Career & Higher Education',
         'Civic Responsibility & Global Citizenship': 'Civic Responsibility & Global Citizenship',
-        'General Education': 'General Education'
+        'Sustainability': 'Sustainability'
       };
     const pillarList = (() => {
       const list = Object.keys(pillarColors);

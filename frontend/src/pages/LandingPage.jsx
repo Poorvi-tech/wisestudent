@@ -520,7 +520,7 @@ const LandingPage = () => {
     },
     {
       icon: <Building className="w-8 h-8" />,
-      title: "Entrepreneurship & Higher Education",
+      title: "Entrepreneurship, Career & Higher Education",
       description: "Clarity, creativity, and innovation.",
       color: "from-red-500 to-orange-500",
       details: {

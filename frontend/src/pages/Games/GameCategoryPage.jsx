@@ -15,6 +15,14 @@ import { financegGameIdsKids, getFinanceKidsGames } from "./GameCategories/Finan
 import { financegGameIdsTeen, getFinanceTeenGames } from "./GameCategories/Finance/teenGamesData";
 import { financegGameIdsYoungAdult, getFinanceYoungAdultGames } from "./GameCategories/Finance/youngAdultGamesData";
 import { financegGameIdsAdults, getFinanceAdultGames } from "./GameCategories/Finance/adultGamesData";
+import {
+  insurancePensionGameIds,
+  getInsurancePensionGames,
+} from "./GameCategories/Finance/insurancePensionGamesData";
+import {
+  businessLivelihoodFinanceGameIds,
+  getBusinessLivelihoodFinanceGames,
+} from "./GameCategories/Finance/businessLivelihoodFinanceGamesData";
 import { brainGamesKidsIds, getBrainKidsGames } from "./GameCategories/Brain/kidGamesData";
 import { brainGamesTeenIds, getBrainTeenGames } from "./GameCategories/Brain/teenGamesData";
 import { brainGamesYoungAdultIds, getBrainYoungAdultGames } from "./GameCategories/Brain/youngAdultGamesData";
@@ -83,7 +91,13 @@ const GameCategoryPage = () => {
   };
 
   // Check if user can access a specific game based on age
+  const unrestrictedModules = new Set(["insurance-pension", "business-livelihood", "business-livelihood-finance"]);
+  const normalizedAgeGroup = unrestrictedModules.has(ageGroup) ? "adults" : ageGroup;
+
   const canAccessGame = (gameAgeGroup, userAge) => {
+    if (unrestrictedModules.has(gameAgeGroup)) {
+      return true;
+    }
     if (userAge === null) return false;
 
     // For sustainability category, no age restrictions
@@ -91,16 +105,16 @@ const GameCategoryPage = () => {
       return true;
     }
 
-    if (
-      [
-        "solar-and-city",
-        "waste-and-recycle",
-        "carbon-and-climate",
-        "water-and-energy",
-      ].includes(gameAgeGroup)
-    ) {
-      return true;
-    }
+      if (
+        [
+          "solar-and-city",
+          "waste-and-recycle",
+          "carbon-and-climate",
+          "water-and-energy",
+        ].includes(gameAgeGroup)
+      ) {
+        return true;
+      }
 
     return isModuleAccessible(gameAgeGroup, userAge);
   };
@@ -130,11 +144,11 @@ const GameCategoryPage = () => {
         category === "health-male" ||
         category === "health-female" ||
         category === "sustainability") &&
-      (ageGroup === "kids" ||
-        ageGroup === "teens" ||
-        ageGroup === "teen" ||
-        ageGroup === "young-adult" ||
-        ageGroup === "adults" ||
+      (normalizedAgeGroup === "kids" ||
+        normalizedAgeGroup === "teens" ||
+        normalizedAgeGroup === "teen" ||
+        normalizedAgeGroup === "young-adult" ||
+        normalizedAgeGroup === "adults" ||
         ageGroup === "solar-and-city" ||
         ageGroup === "waste-and-recycle" ||
         ageGroup === "carbon-and-climate" ||
@@ -184,7 +198,7 @@ const GameCategoryPage = () => {
       "ai-for-all": "AI for All",
       "health-male": "Health - Male",
       "health-female": "Health - Female",
-      ehe: "Entrepreneurship & Higher Education",
+      ehe: "Entrepreneurship, Career & Higher Education",
       "civic-responsibility": "Civic Responsibility & Global Citizenship",
       sustainability: "Sustainability",
     };
@@ -202,7 +216,10 @@ const GameCategoryPage = () => {
       "waste-and-recycle": "Waste & Recycle Games",
       "carbon-and-climate": "Carbon & Climate Games",
       "water-and-energy": "Water & Energy Games",
-    };
+    "young-adult": "Young Adult Module",
+    "insurance-pension": "Insurance & Pension Module",
+    "business-livelihood-finance": "Business & Livelihood Finance Module",
+  };
 
     return titleMap[ageGroup] || ageGroup;
   };
@@ -235,6 +252,8 @@ const GameCategoryPage = () => {
           ageGroup === "teen" ||
           ageGroup === "young-adult" ||
           ageGroup === "adults" ||
+          ageGroup === "insurance-pension" ||
+          ageGroup === "business-livelihood-finance" ||
           ageGroup === "solar-and-city" ||
           ageGroup === "waste-and-recycle" ||
           ageGroup === "carbon-and-climate" ||
@@ -356,6 +375,8 @@ const GameCategoryPage = () => {
           ageGroup === "teens" ||
           ageGroup === "teen" ||
           ageGroup === "young-adult" ||
+          ageGroup === "insurance-pension" ||
+          ageGroup === "business-livelihood-finance" ||
           ageGroup === "solar-and-city" ||
           ageGroup === "waste-and-recycle" ||
           ageGroup === "carbon-and-climate" ||
@@ -540,6 +561,8 @@ const GameCategoryPage = () => {
         ageGroup === "teens" ||
         ageGroup === "teen" ||
         ageGroup === "young-adult" ||
+        ageGroup === "insurance-pension" ||
+        ageGroup === "business-livelihood-finance" ||
         ageGroup === "solar-and-city" ||
          ageGroup === "waste-and-recycle" ||
          ageGroup === "carbon-and-climate" ||
@@ -676,6 +699,12 @@ const GameCategoryPage = () => {
   } else if (category === 'financial-literacy' && ageGroup === 'adults') {
       const realAdultFinanceGames = getFinanceAdultGames(gameCompletionStatus);
       games.push(...realAdultFinanceGames);
+  } else if (category === 'financial-literacy' && ageGroup === 'insurance-pension') {
+      const insuranceGames = getInsurancePensionGames(gameCompletionStatus);
+      games.push(...insuranceGames);
+  } else if (category === 'financial-literacy' && ageGroup === 'business-livelihood-finance') {
+      const businessGames = getBusinessLivelihoodFinanceGames(gameCompletionStatus);
+      games.push(...businessGames);
   } else if (category === 'brain-health' && ageGroup === 'kids') {
       // Add our 20 real brain health games for kids
       const realBrainGames = getBrainKidsGames(gameCompletionStatus)
@@ -962,6 +991,10 @@ const GameCategoryPage = () => {
       if (ageGroup === "young-adult")
         return getFinanceYoungAdultGames(gameCompletionStatus);
       if (ageGroup === "adults") return getFinanceAdultGames(gameCompletionStatus);
+      if (ageGroup === "insurance-pension")
+        return getInsurancePensionGames(gameCompletionStatus);
+      if (ageGroup === "business-livelihood-finance")
+        return getBusinessLivelihoodFinanceGames(gameCompletionStatus);
     }
 
     if (category === "brain-health") {
@@ -1036,6 +1069,7 @@ const GameCategoryPage = () => {
     getFinanceTeenGames,
     getFinanceYoungAdultGames,
     getFinanceAdultGames,
+    getBusinessLivelihoodFinanceGames,
     getBrainKidsGames,
     getBrainTeenGames,
     getBrainYoungAdultGames,
@@ -1162,16 +1196,8 @@ const GameCategoryPage = () => {
         }
       });
 
-      // Ensure completedGames never exceeds totalGames (safety check)
-      const progressCompleted = Object.values(gameProgressData).reduce((count, progress) => {
-        if (!progress) return count;
-        const totalLvls = progress.totalLevels || 1;
-        const levelsDone = progress.levelsCompleted || 0;
-        const isFullyCompleted = progress.fullyCompleted === true || (totalLvls > 0 && levelsDone >= totalLvls);
-        return count + (isFullyCompleted ? 1 : 0);
-      }, 0);
-
-      const finalCompletedGames = Math.min(Math.max(completedGames, progressCompleted), totalGames);
+      // Keep completed count aligned with the same completion source used for coins/xp.
+      const finalCompletedGames = Math.min(completedGames, totalGames);
       
       // Additional validation: log if there's a mismatch
       if (completedGames > totalGames) {
@@ -1202,6 +1228,12 @@ const GameCategoryPage = () => {
         return gameIds[index];
     } else if (category === 'financial-literacy' && ageGroup === 'adults') {
         const gameIds = financegGameIdsAdults;
+        return gameIds[index];
+    } else if (category === 'financial-literacy' && ageGroup === 'insurance-pension') {
+        const gameIds = insurancePensionGameIds;
+        return gameIds[index];
+    } else if (category === 'financial-literacy' && ageGroup === 'business-livelihood-finance') {
+        const gameIds = businessLivelihoodFinanceGameIds;
         return gameIds[index];
     } else if (category === 'brain-health' && ageGroup === 'kids') {
         const gameIds = brainGamesKidsIds;
@@ -1361,7 +1393,8 @@ const GameCategoryPage = () => {
             ageGroup === 'teens' ||
             ageGroup === 'teen' ||
             ageGroup === 'young-adult' ||
-            ageGroup === 'adults')) {
+            ageGroup === 'adults' ||
+            ageGroup === 'business-livelihood-finance')) {
         // First game is always unlocked
         if (idx === 0) {
           unlocked = true;
@@ -1530,15 +1563,15 @@ const GameCategoryPage = () => {
     }
 
     if (!canAccessModule) {
-      if (ageGroup === "kids" && userAge >= 18) {
+      if (normalizedAgeGroup === "kids" && userAge >= 18) {
         return `Available for learners under 18. You are ${userAge} years old.`;
       }
 
-      if (ageGroup === "adults" && userAge < 18) {
+      if (normalizedAgeGroup === "adults" && userAge < 18) {
         return `Available at age 18. You are ${userAge} years old.`;
       }
 
-      if (ageGroup === "teens" && userAge >= 18) {
+      if (normalizedAgeGroup === "teens" && userAge >= 18) {
         return `Available for learners under 18. You are ${userAge} years old.`;
       }
     }
@@ -1597,7 +1630,9 @@ const GameCategoryPage = () => {
       ageGroup === "teens" ||
       ageGroup === "teen" ||
       ageGroup === "young-adult" ||
-      ageGroup === "adults")
+      ageGroup === "adults" ||
+      ageGroup === "insurance-pension" ||
+      ageGroup === "business-livelihood-finance")
     ) {
       if (!isGameUnlocked(game.index)) {
         toast.error("Complete the previous game first to unlock this game!", {
@@ -1644,7 +1679,7 @@ const GameCategoryPage = () => {
           {
             duration: 4000,
             position: "bottom-center",
-            icon: "??",
+            icon: "✅",
           }
         );
         return;
@@ -1876,7 +1911,7 @@ const GameCategoryPage = () => {
   // Get card color based on game state and index
   const getCardColor = (index, isUnlocked, isCompleted, isFullyCompleted, needsReplayUnlock, isLocked, currentlyOpenIndex) => {
     const isCurrentlyOpen = index === currentlyOpenIndex && isUnlocked && !isCompleted && !isFullyCompleted;
-    const isAdultFinance = category === 'financial-literacy' && ageGroup === 'adults';
+    const isAdultFinance = category === 'financial-literacy' && normalizedAgeGroup === 'adults';
 
     if (isLocked && !needsReplayUnlock) {
       // Locked games
@@ -2156,10 +2191,11 @@ const GameCategoryPage = () => {
                 ageGroup === 'teens' ||
                 ageGroup === 'teen' ||
                 ageGroup === 'young-adult' ||
-                ageGroup === 'adults')
+                ageGroup === 'adults' ||
+                ageGroup === 'insurance-pension' ||
+                ageGroup === 'business-livelihood-finance')
 
-                ? Object.values(gameCompletionStatus).filter((status) => status)
-                    .length
+                ? categoryStats.completedGames
                 : completedGames.size}
             </p>
           </div>
@@ -2222,7 +2258,9 @@ const GameCategoryPage = () => {
                 ageGroup === 'teens' ||
                 ageGroup === 'teen' ||
                 ageGroup === 'young-adult' ||
-                ageGroup === 'adults')
+                ageGroup === 'adults' ||
+                ageGroup === 'insurance-pension' ||
+                ageGroup === 'business-livelihood-finance')
 
                 ? isGameUnlocked(index) && !isSubscriptionLocked
                 : !isSubscriptionLocked; // For other categories, check subscription only
@@ -2242,7 +2280,9 @@ const GameCategoryPage = () => {
                 ageGroup === "teens" ||
                 ageGroup === "teen" ||
                 ageGroup === 'young-adult' ||
-                ageGroup === 'adults')
+                ageGroup === 'adults' ||
+                ageGroup === 'insurance-pension' ||
+                ageGroup === 'business-livelihood-finance')
                 ? isGameFullyCompleted(game.id)
                 : false;
             const progress = gameProgressData[game.id];
