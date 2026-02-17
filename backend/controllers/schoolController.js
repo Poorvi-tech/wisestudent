@@ -3657,8 +3657,11 @@ const buildTeacherAnalyticsPdf = (reportData, options = {}) => {
         y += rows * (cardHeight + rowGap);
       };
 
-      const formatPdfPillarLabel = (label) =>
-        label === "Brain Health" ? "Brain & Mental Health" : label;
+      const formatPdfPillarLabel = (label) => {
+        if (label === "Brain Health") return "Brain & Mental Health";
+        if (label === "Entrepreneurship & Higher Education") return "Entrepreneurship, Career & Higher Education";
+        return label;
+      };
 
       const pillarStyles = {
         'Financial Literacy': { short: 'FL', color: '#2563EB' },
@@ -4415,8 +4418,11 @@ export const exportTeacherAnalytics = async (req, res) => {
       return res.status(200).json(reportData);
     } else {
       // CSV format
-      const formatCsvPillarLabel = (label) =>
-        label === "Brain Health" ? "Brain & Mental Health" : label;
+      const formatCsvPillarLabel = (label) => {
+        if (label === "Brain Health") return "Brain & Mental Health";
+        if (label === "Entrepreneurship & Higher Education") return "Entrepreneurship, Career & Higher Education";
+        return label;
+      };
 
       const csv = `Teacher Analytics Report
 Generated: ${new Date().toLocaleString()}

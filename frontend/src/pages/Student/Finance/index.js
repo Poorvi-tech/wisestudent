@@ -2,6 +2,8 @@ import kidFinanceGames from "./Kids";
 import teenFinanceGames from "./Teen";
 import youngAdultFinanceGames from "./YoungAdult";
 import adultFinanceGames from "./Adult";
+import insurancePensionGames from "./InsurancePension";
+import businessLivelihoodFinanceGames from "./BusinessLivelihood";
 
 
 const financeGames = {
@@ -9,6 +11,8 @@ const financeGames = {
   teen: teenFinanceGames,
   "young-adult": youngAdultFinanceGames,
   adults: adultFinanceGames,
+  "insurance-pension": insurancePensionGames,
+  "business-livelihood-finance": businessLivelihoodFinanceGames,
 };
 
 export const getFinanceGame = (ageGroup, gameId) => {
@@ -17,6 +21,10 @@ export const getFinanceGame = (ageGroup, gameId) => {
     normalizedAgeGroup = "teen";
   } else if (ageGroup === "young-adult") {
     normalizedAgeGroup = "young-adult";
+  } else if (ageGroup === "insurance-pension") {
+    normalizedAgeGroup = "insurance-pension";
+  } else if (ageGroup === "business-livelihood-finance") {
+    normalizedAgeGroup = "business-livelihood-finance";
   } else {
     normalizedAgeGroup = ageGroup;
   }

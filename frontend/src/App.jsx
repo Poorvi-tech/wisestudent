@@ -503,6 +503,8 @@ const App = () => {
     location.pathname.startsWith("/student/finance/teen/") ||
     location.pathname.startsWith("/student/finance/young-adult/") ||
     location.pathname.startsWith("/student/finance/adults/") ||
+    location.pathname.startsWith("/student/finance/insurance-pension/") ||
+    location.pathname.startsWith("/student/finance/business-livelihood-finance/") ||
     location.pathname.startsWith("/student/brain/kids/") ||
     location.pathname.startsWith("/student/brain/teen/") ||
       location.pathname.startsWith("/student/brain-health/young-adult/") ||

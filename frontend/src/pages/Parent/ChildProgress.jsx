@@ -109,6 +109,13 @@ const ChildProgress = () => {
     setActivityFilter('all');
   };
 
+  const formatOverallMasteryPillarLabel = (pillar) => {
+    if (pillar === 'Brain Health') return 'Brain & Mental Health';
+    if (pillar === 'Entrepreneurship & Higher Education')
+      return 'Entrepreneurship, Career & Higher Education';
+    return pillar;
+  };
+
   useEffect(() => {
     if (childId) {
       fetchChildAnalytics();
@@ -355,7 +362,9 @@ const ChildProgress = () => {
                     transition={{ delay: idx * 0.03 }}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-sm font-semibold text-slate-700 capitalize">{pillar}</span>
+                      <span className="text-sm font-semibold text-slate-700 capitalize">
+                        {formatOverallMasteryPillarLabel(pillar)}
+                      </span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
                       <motion.div

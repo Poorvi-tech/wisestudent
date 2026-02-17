@@ -134,8 +134,12 @@ const buildParentAnalyticsPdf = (analytics, options = {}) =>
         y += rows * (cardHeight + rowGap);
       };
 
-  const formatPdfPillarLabel = (label) =>
-    label === "Brain Health" ? "Brain & Mental Health" : label;
+  const formatPdfPillarLabel = (label) => {
+    if (label === "Brain Health") return "Brain & Mental Health";
+    if (label === "Entrepreneurship & Higher Education")
+      return "Entrepreneurship, Career & Higher Education";
+    return label;
+  };
 
   const pillarStyles = {
         "Financial Literacy": { short: "FL", color: "#2563EB" },
@@ -290,7 +294,7 @@ const buildParentAnalyticsPdf = (analytics, options = {}) =>
       });
       const byPillar = skillsDistribution.byPillar || {};
       const pillarEntries = filteredPillars.map((pillar) => ({
-        label: pillar,
+        label: formatPdfPillarLabel(pillar),
         value: Number(byPillar[pillar]) || 0,
         color: (pillarStyles[pillar] && pillarStyles[pillar].color) || colors.primary,
       }));

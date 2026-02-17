@@ -50,8 +50,12 @@ const TeacherAnalytics = () => {
   const [showInviteStudents, setShowInviteStudents] = useState(false);
   const [showNewAssignment, setShowNewAssignment] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
-  const getAnalyticsPillarLabel = (pillarName) =>
-    pillarName === "Brain Health" ? "Brain & Mental Health" : pillarName;
+  const getAnalyticsPillarLabel = (pillarName) => {
+    if (pillarName === "Brain Health") return "Brain & Mental Health";
+    if (pillarName === "Entrepreneurship & Higher Education")
+      return "Entrepreneurship, Career & Higher Education";
+    return pillarName;
+  };
 
   useEffect(() => {
     fetchAnalyticsData();

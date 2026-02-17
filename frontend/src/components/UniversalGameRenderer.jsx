@@ -95,6 +95,7 @@ const gameCategories = {
 };
 
 gameCategories["brain-health"] = gameCategories.brain;
+gameCategories["financial-literacy"] = gameCategories.finance;
 
 const UniversalGameRenderer = () => {
   const {category, age, game: gameId} = useParams();
@@ -127,9 +128,9 @@ const UniversalGameRenderer = () => {
     }
 
     // Validate age group
-    if (!['kids', 'teen', 'teens', 'young-adult', 'adult', 'adults'].includes(age)) {
+    if (!['kids', 'teen', 'teens', 'young-adult', 'adult', 'adults', 'insurance-pension', 'business-livelihood-finance'].includes(age)) {
       setError(
-        `Invalid age group: ${age}. Must be 'kids', 'teen', 'teens', 'young-adult', or 'adult'`
+        `Invalid age group: ${age}. Must be 'kids', 'teen', 'teens', 'young-adult', 'adult', 'insurance-pension', or 'business-livelihood-finance'`
       );
       setLoading(false);
       return;
@@ -137,6 +138,12 @@ const UniversalGameRenderer = () => {
 
     // Get the game component function
     let GameComponent = catData.getGame(age, gameId);
+    const normalizedGameKey = gameId?.toLowerCase();
+    if (!GameComponent) {
+      GameComponent =
+        catData.games?.[age]?.[normalizedGameKey] ||
+        catData.games?.[age]?.[gameId];
+    }
     
     // Special handling for duplicate paths: if gameId is in location.state, 
     // check if the component matches the expected gameId

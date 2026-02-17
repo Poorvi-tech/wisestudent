@@ -8,6 +8,7 @@ import { getFinanceKidsGames } from "../pages/Games/GameCategories/Finance/kidGa
 import { getFinanceTeenGames } from "../pages/Games/GameCategories/Finance/teenGamesData";
 import { getFinanceYoungAdultGames } from "../pages/Games/GameCategories/Finance/youngAdultGamesData";
 import { getFinanceAdultGames } from "../pages/Games/GameCategories/Finance/adultGamesData";
+import { getBusinessLivelihoodFinanceGames } from "../pages/Games/GameCategories/Finance/businessLivelihoodFinanceGamesData";
 import { getBrainKidsGames } from "../pages/Games/GameCategories/Brain/kidGamesData";
 import { getBrainTeenGames } from "../pages/Games/GameCategories/Brain/teenGamesData";
 import { getBrainYoungAdultGames } from "../pages/Games/GameCategories/Brain/youngAdultGamesData";
@@ -42,7 +43,7 @@ export const getGameDataById = (gameId) => {
     return null;
   }
 
-  const match = gameId.match(/^(.*?)-(kids|teens|teen|young-adult|adult|adults)-(\d+)$/);
+  const match = gameId.match(/^(.*?)-(kids|teens|teen|young-adult|adult|adults|insurance-pension|business-livelihood|business-livelihood-finance)-(\d+)$/);
   if (!match) {
     console.warn('Invalid gameId format:', gameId);
     return null;
@@ -58,6 +59,7 @@ export const getGameDataById = (gameId) => {
       teens: getFinanceTeenGames,
       "young-adult": getFinanceYoungAdultGames,
       adults: getFinanceAdultGames,
+      "business-livelihood-finance": getBusinessLivelihoodFinanceGames,
     },
     brain: {
       kids: getBrainKidsGames,

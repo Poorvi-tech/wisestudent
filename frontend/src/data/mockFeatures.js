@@ -40,7 +40,8 @@ export const mockFeatures = [
     path: "/games/digital-citizenship/young-adult",
     color: "bg-fuchsia-500",
     category: "education",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 23,
@@ -50,7 +51,8 @@ export const mockFeatures = [
     path: "/games/digital-citizenship/adults",
     color: "bg-purple-500",
     category: "education",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Financial Literacy Game Cards - Moved to the beginning of finance category
   {
@@ -207,7 +209,8 @@ export const mockFeatures = [
     path: "/games/uvls/young-adult",
     color: "bg-fuchsia-500",
     category: "personal",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 20,
@@ -217,7 +220,8 @@ export const mockFeatures = [
     path: "/games/uvls/adults",
     color: "bg-purple-500",
     category: "personal",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 9,
@@ -294,7 +298,8 @@ export const mockFeatures = [
     path: "/games/moral-values/young-adult",
     color: "bg-fuchsia-500",
     category: "creativity",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 26,
@@ -304,7 +309,8 @@ export const mockFeatures = [
     path: "/games/moral-values/adults",
     color: "bg-purple-500",
     category: "creativity",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // AI for All Game Cards
   {
@@ -335,7 +341,8 @@ export const mockFeatures = [
     path: "/games/ai-for-all/young-adult",
     color: "bg-fuchsia-500",
     category: "entertainment",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 29,
@@ -345,7 +352,8 @@ export const mockFeatures = [
     path: "/games/ai-for-all/adults",
     color: "bg-purple-500",
     category: "entertainment",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Health - Male Game Cards
   {
@@ -376,7 +384,8 @@ export const mockFeatures = [
     path: "/games/health-male/young-adult",
     color: "bg-fuchsia-500",
     category: "social",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 32,
@@ -386,7 +395,8 @@ export const mockFeatures = [
     path: "/games/health-male/adults",
     color: "bg-purple-500",
     category: "social",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Health - Female Game Cards
   {
@@ -417,7 +427,8 @@ export const mockFeatures = [
     path: "/games/health-female/young-adult",
     color: "bg-fuchsia-500",
     category: "competition",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 35,
@@ -427,7 +438,8 @@ export const mockFeatures = [
     path: "/games/health-female/adults",
     color: "bg-purple-500",
     category: "competition",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Entrepreneurship & Higher Education Game Cards
   {
@@ -458,7 +470,8 @@ export const mockFeatures = [
     path: "/games/ehe/young-adult",
     color: "bg-fuchsia-500",
     category: "rewards",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 38,
@@ -468,7 +481,8 @@ export const mockFeatures = [
     path: "/games/ehe/adults",
     color: "bg-purple-500",
     category: "rewards",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Civic Responsibility & Global Citizenship Game Cards
   {
@@ -499,7 +513,8 @@ export const mockFeatures = [
     path: "/games/civic-responsibility/young-adult",
     color: "bg-fuchsia-500",
     category: "shopping",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 41,
@@ -509,7 +524,8 @@ export const mockFeatures = [
     path: "/games/civic-responsibility/adults",
     color: "bg-purple-500",
     category: "shopping",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Sustainability Game Cards - Added before main Sustainability card
   {
@@ -540,7 +556,8 @@ export const mockFeatures = [
     path: "/games/sustainability/young-adult",
     color: "bg-fuchsia-500",
     category: "sustainability",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   {
     id: 45,
@@ -550,7 +567,8 @@ export const mockFeatures = [
     path: "/games/sustainability/adults",
     color: "bg-purple-500",
     category: "sustainability",
-    xpReward: 2500
+    xpReward: 2500,
+    comingSoon: true
   },
   // Sustainability Games - Added before challenges
 ];

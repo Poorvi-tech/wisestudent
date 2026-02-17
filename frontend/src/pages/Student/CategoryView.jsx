@@ -53,6 +53,9 @@ export default function CategoryView() {
         if (category?.key === "wellness") {
             return "Brain & Mental Health";
         }
+        if (category?.key === "rewards") {
+            return "Entrepreneurship, Career & Higher Education";
+        }
         return category?.label;
     };
 
@@ -146,6 +149,41 @@ export default function CategoryView() {
                 const otherCards = filtered.filter((card) => card.title !== "Financial Quiz");
                 if (financialQuizCard) {
                     filtered = [...otherCards, financialQuizCard];
+                }
+
+                const additionalFinanceCards = [
+                    {
+                        id: "finance-business-livelihood",
+                        title: "Business & Livelihood Finance Module",
+                        description: "Explore finance fundamentals and livelihood budgeting",
+                        icon: "💼",
+                        path: "/games/financial-literacy/business-livelihood-finance",
+                        color: "bg-amber-500",
+                        category: "finance",
+                        xpReward: 750,
+                    },
+                    {
+                        id: "finance-insurance-pension",
+                        title: "Insurance & Pension Module",
+                        description: "Understand insurance and pension planning for long-term security",
+                        icon: "🛡️",
+                        path: "/games/financial-literacy/insurance-pension",
+                        color: "bg-emerald-500",
+                        category: "finance",
+                        xpReward: 250,
+                    },
+                ];
+
+                const adultModuleIndex = filtered.findIndex((card) => card.title === "Adult Module");
+                const alreadyAdded = additionalFinanceCards.every((newCard) =>
+                    filtered.some((card) => card.id === newCard.id)
+                );
+                if (!alreadyAdded) {
+                    if (adultModuleIndex >= 0) {
+                        filtered.splice(adultModuleIndex + 1, 0, ...additionalFinanceCards);
+                    } else {
+                        filtered = [...filtered, ...additionalFinanceCards];
+                    }
                 }
             }
 

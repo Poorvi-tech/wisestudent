@@ -151,7 +151,7 @@ export default function StudentDashboard() {
             uvls: "UVLS",
             dcos: "Digital Citizenship & Online Safety",
             moral: "Moral Values",
-            ehe: "Entrepreneurship & Higher Education",
+            ehe: "Entrepreneurship, Career & Higher Education",
             crgc: "Civic Responsibility & Global Citizenship",
             "civic-responsibility": "Civic Responsibility & Global Citizenship",
             "health-male": "Health - Male",
@@ -1124,7 +1124,7 @@ export default function StudentDashboard() {
         { key: "entertainment", label: "AI for All" },
         { key: "social", label: "Health - Male" },
         { key: "competition", label: "Health - Female" },
-        { key: "rewards", label: "Entrepreneurship & Higher Education" },
+        { key: "rewards", label: "Entrepreneurship, Career & Higher Education" },
         { key: "shopping", label: "Civic Responsibility & Global Citizenship" },
         { key: "sustainability", label: "Sustainability" },
     ];
@@ -1134,8 +1134,12 @@ export default function StudentDashboard() {
     const getCategoryDisplayLabel = (category) =>
         category?.key === "wellness" ? "Brain & Mental Health" : category?.label;
 
-    const getPillarDisplayLabel = (pillarName) =>
-        pillarName === "Brain Health" ? "Brain & Mental Health" : pillarName;
+    const getPillarDisplayLabel = (pillarName) => {
+        if (pillarName === "Brain Health") return "Brain & Mental Health";
+        if (pillarName === "Entrepreneurship & Higher Education")
+            return "Entrepreneurship, Career & Higher Education";
+        return pillarName;
+    };
     const categories = allCategories.filter((category) => {
         // Hide Health - Female for male users
         if (userGender === 'male' && category.label === 'Health - Female') {
@@ -1391,11 +1395,15 @@ export default function StudentDashboard() {
                                 ];
                                 const gradientColors = colorClasses[index % colorClasses.length];
                                 
-                                // Convert category key to URL-friendly slug
-                                const categorySlug = category.label.toLowerCase()
-                                    .replace(/\s+/g, '-')
-                                    .replace(/[()&]/g, '')
-                                    .replace(/--+/g, '-');
+                                // Convert category key to URL-friendly slug (override rewards)
+                                const categorySlug =
+                                    category.key === "rewards"
+                                        ? "entrepreneurship-higher-education"
+                                        : category.label
+                                              .toLowerCase()
+                                              .replace(/\s+/g, "-")
+                                              .replace(/[()&]/g, "")
+                                              .replace(/--+/g, "-");
                                 const displayLabel = getCategoryDisplayLabel(category);
 
                                 return (

@@ -665,7 +665,7 @@ const MoodTracker = () => {
             </div>
 
             <div className="relative z-10 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
-                {/* Top Bar: Back to Brain Health + Help */}
+                {/* Top Bar: Back to Brain & Mental Health + Help */}
                 <div className="flex items-center justify-between mb-4">
                     <motion.button
                         whileHover={{ scale: 1.03, x: -3 }}
@@ -673,7 +673,7 @@ const MoodTracker = () => {
                         onClick={() => {
                             logActivity({
                                 activityType: "navigation",
-                                description: "Navigated from Mood Tracker back to Brain Health",
+                                 description: "Navigated from Mood Tracker back to Brain & Mental Health",
                                 metadata: {
                                     action: "exit_mood_tracker_top",
                                     from: "/student/mood-tracker",
@@ -685,7 +685,7 @@ const MoodTracker = () => {
                         className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full shadow-md border border-gray-200 hover:shadow-lg hover:bg-gray-50 text-sm font-semibold text-gray-700"
                     >
                         <ArrowLeft className="w-4 h-4" />
-                        <span>Back to Brain Health</span>
+                        <span>Back to Brain & Mental Health</span>
                     </motion.button>
                     <div className="flex items-center gap-2">
                         <div
@@ -1535,7 +1535,7 @@ const MoodTracker = () => {
                         onClick={() => {
                             logActivity({
                                 activityType: "navigation",
-                                description: "Navigated from Mood Tracker back to Brain Health",
+                        description: "Navigated from Mood Tracker back to Brain & Mental Health",
                                 metadata: {
                                     action: "exit_mood_tracker",
                                     from: "/student/mood-tracker",
@@ -1547,7 +1547,7 @@ const MoodTracker = () => {
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-2xl shadow-lg font-semibold hover:shadow-xl transition-all"
                     >
                         <ArrowLeft className="w-5 h-5" />
-                        Back to Brain Health
+                        Back to Brain & Mental Health
                     </motion.button>
                 </div>
             </div>
