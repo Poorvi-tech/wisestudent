@@ -18,13 +18,6 @@ const WHY_RECORDS_MATTER_STAGES = [
         isCorrect: false,
       },
       {
-        id: "track-payments-losses",
-        text: "Difficulty tracking payments and losses",
-        outcome:
-          "Correct. Records prevent confusion and disputes.",
-        isCorrect: true,
-      },
-      {
         id: "more-profit",
         text: "More profit",
         outcome:
@@ -38,6 +31,13 @@ const WHY_RECORDS_MATTER_STAGES = [
           "Short-term effort savings can create bigger issues later.",
         isCorrect: false,
       },
+      {
+        id: "track-payments-losses",
+        text: "Difficulty tracking payments and losses",
+        outcome:
+          "Correct. Records prevent confusion and disputes.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -71,7 +71,7 @@ const WHY_RECORDS_MATTER_STAGES = [
         outcome:
           "Loss tracking is essential to control business health.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -105,20 +105,13 @@ const WHY_RECORDS_MATTER_STAGES = [
         outcome:
           "Sales growth needs better operations, not guesswork.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "Which habit improves record discipline?",
     options: [
-      {
-        id: "write-daily",
-        text: "Write sales, expenses, and dues every day",
-        outcome:
-          "Correct. Daily entries keep numbers accurate.",
-        isCorrect: true,
-      },
       {
         id: "monthly-guess",
         text: "Guess everything at month-end",
@@ -134,12 +127,19 @@ const WHY_RECORDS_MATTER_STAGES = [
         isCorrect: false,
       },
       {
+        id: "write-daily",
+        text: "Write sales, expenses, and dues every day",
+        outcome:
+          "Correct. Daily entries keep numbers accurate.",
+        isCorrect: true,
+      },
+      {
         id: "share-no-proof",
         text: "Take payments without receipts",
         outcome:
           "No receipts increase payment disputes.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -147,18 +147,18 @@ const WHY_RECORDS_MATTER_STAGES = [
     prompt: "What is the key takeaway from this scenario?",
     options: [
       {
-        id: "records-core",
-        text: "Records are core to tracking profit, payments, and losses",
-        outcome:
-          "Correct. Records prevent confusion and disputes.",
-        isCorrect: true,
-      },
-      {
         id: "memory-enough",
         text: "Memory is enough for business",
         outcome:
           "Memory-only systems break as transactions increase.",
         isCorrect: false,
+      },
+      {
+        id: "records-core",
+        text: "Records are core to tracking profit, payments, and losses",
+        outcome:
+          "Correct. Records prevent confusion and disputes.",
+        isCorrect: true,
       },
       {
         id: "records-late",
@@ -173,7 +173,7 @@ const WHY_RECORDS_MATTER_STAGES = [
         outcome:
           "Pending dues must be tracked to protect cash flow.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

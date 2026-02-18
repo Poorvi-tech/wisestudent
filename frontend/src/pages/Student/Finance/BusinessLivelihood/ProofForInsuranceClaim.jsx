@@ -40,12 +40,6 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
     prompt: "Why do insurers ask for invoices?",
     options: [
       {
-        id: "verify-value",
-        text: "To verify the value of goods lost",
-        outcome: "Correct. Proof helps determine compensation.",
-        isCorrect: true,
-      },
-      {
         id: "delay-claim",
         text: "To delay the claim",
         outcome: "Invoices are for verification, not delay.",
@@ -63,6 +57,12 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
         outcome: "Invoices are part of records, not a replacement for them.",
         isCorrect: false,
       },
+      {
+        id: "verify-value",
+        text: "To verify the value of goods lost",
+        outcome: "Correct. Proof helps determine compensation.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
         text: "No impact",
         outcome: "Missing invoices have real impact.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple habit to support insurance claims?",
     options: [
-      {
-        id: "store-invoices",
-        text: "Store invoices safely and digitally",
-        outcome: "Correct. Safe storage speeds claims.",
-        isCorrect: true,
-      },
       {
         id: "avoid-bills",
         text: "Avoid invoices to save time",
@@ -118,11 +112,17 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
         isCorrect: false,
       },
       {
+        id: "store-invoices",
+        text: "Store invoices safely and digitally",
+        outcome: "Correct. Safe storage speeds claims.",
+        isCorrect: true,
+      },
+      {
         id: "delay-records",
         text: "Record only after a loss",
         outcome: "Records are needed before a loss.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
         text: "Invoices are only for tax",
         outcome: "Invoices help with tax and claims.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

@@ -52,13 +52,6 @@ const WHO_NEEDS_INSURANCE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "risk-anytime",
-        text: "Risks can occur anytime, and coverage protects savings",
-        outcome:
-          "Correct. Insurance helps protect savings from unexpected costs.",
-        isCorrect: true,
-      },
-      {
         id: "guaranteed-returns",
         text: "Insurance guarantees high investment returns",
         outcome:
@@ -71,6 +64,13 @@ const WHO_NEEDS_INSURANCE_STAGES = [
         outcome:
           "Savings are still important for day-to-day and short-term needs.",
         isCorrect: false,
+      },
+      {
+        id: "risk-anytime",
+        text: "Risks can occur anytime, and coverage protects savings",
+        outcome:
+          "Correct. Insurance helps protect savings from unexpected costs.",
+        isCorrect: true,
       },
     ],
   },
@@ -113,18 +113,18 @@ const WHO_NEEDS_INSURANCE_STAGES = [
     prompt: "What is the main purpose of insurance in a financial plan?",
     options: [
       {
-        id: "daily-spending",
-        text: "To pay for daily expenses",
-        outcome:
-          "Insurance is not meant for routine daily costs.",
-        isCorrect: false,
-      },
-      {
         id: "big-shocks",
         text: "To protect against low-frequency, high-cost shocks",
         outcome:
           "Correct. Insurance transfers major risks that could derail finances.",
         isCorrect: true,
+      },
+      {
+        id: "daily-spending",
+        text: "To pay for daily expenses",
+        outcome:
+          "Insurance is not meant for routine daily costs.",
+        isCorrect: false,
       },
       {
         id: "avoid-budgeting",
@@ -154,13 +154,6 @@ const WHO_NEEDS_INSURANCE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "lower-cost",
-        text: "Premiums are often lower and coverage is easier to secure",
-        outcome:
-          "Correct. Starting early can lock in better rates and fewer exclusions.",
-        isCorrect: true,
-      },
-      {
         id: "cancel-savings",
         text: "It lets you cancel your savings plan",
         outcome:
@@ -173,6 +166,13 @@ const WHO_NEEDS_INSURANCE_STAGES = [
         outcome:
           "Insurance is protection, not a profit guarantee.",
         isCorrect: false,
+      },
+      {
+        id: "lower-cost",
+        text: "Premiums are often lower and coverage is easier to secure",
+        outcome:
+          "Correct. Starting early can lock in better rates and fewer exclusions.",
+        isCorrect: true,
       },
     ],
   },

@@ -45,13 +45,6 @@ const MIXING_PERSONAL_BUSINESS_MONEY_STAGES = [
     prompt: "What is the best first step to avoid mixing money?",
     options: [
       {
-        id: "separate-records",
-        text: "Keep separate business and personal records",
-        outcome:
-          "Correct. Separate records improve clarity and control.",
-        isCorrect: true,
-      },
-      {
         id: "guess-balance",
         text: "Estimate balance by memory",
         outcome:
@@ -66,25 +59,25 @@ const MIXING_PERSONAL_BUSINESS_MONEY_STAGES = [
         isCorrect: false,
       },
       {
+        id: "separate-records",
+        text: "Keep separate business and personal records",
+        outcome:
+          "Correct. Separate records improve clarity and control.",
+        isCorrect: true,
+      },
+      {
         id: "ignore-expenses",
         text: "Ignore small expenses",
         outcome:
           "Small expenses add up and affect profit.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "Why does separation help in business decisions?",
     options: [
-      {
-        id: "clear-profit",
-        text: "It shows real business profit clearly",
-        outcome:
-          "Correct. Clear numbers support better decisions.",
-        isCorrect: true,
-      },
       {
         id: "no-record-need",
         text: "It removes the need for records",
@@ -106,6 +99,13 @@ const MIXING_PERSONAL_BUSINESS_MONEY_STAGES = [
           "Budgeting is still essential.",
         isCorrect: false,
       },
+      {
+        id: "clear-profit",
+        text: "It shows real business profit clearly",
+        outcome:
+          "Correct. Clear numbers support better decisions.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -147,13 +147,6 @@ const MIXING_PERSONAL_BUSINESS_MONEY_STAGES = [
     prompt: "What is the key takeaway for business money management?",
     options: [
       {
-        id: "separate-funds",
-        text: "Keep personal and business money separate",
-        outcome:
-          "Correct. Separation keeps performance visible and decisions stronger.",
-        isCorrect: true,
-      },
-      {
         id: "mix-safe",
         text: "Mixing is safe if business is small",
         outcome:
@@ -174,6 +167,13 @@ const MIXING_PERSONAL_BUSINESS_MONEY_STAGES = [
           "Cash flow tracking is critical for survival.",
         isCorrect: false,
       },
+      {
+        id: "separate-funds",
+        text: "Keep personal and business money separate",
+        outcome:
+          "Correct. Separation keeps performance visible and decisions stronger.",
+        isCorrect: true,
+      }
     ],
   },
 ];

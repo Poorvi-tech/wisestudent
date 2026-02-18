@@ -40,12 +40,6 @@ const INVOICE_REFUSAL_STAGES = [
     prompt: "Why do customers value getting a bill?",
     options: [
       {
-        id: "proof-purchase",
-        text: "It proves the purchase and price",
-        outcome: "Correct. A bill is proof of what was sold and paid.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-payment",
         text: "It helps avoid paying",
         outcome: "Bills are for proof, not avoiding payment.",
@@ -58,11 +52,17 @@ const INVOICE_REFUSAL_STAGES = [
         isCorrect: false,
       },
       {
+        id: "proof-purchase",
+        text: "It proves the purchase and price",
+        outcome: "Correct. A bill is proof of what was sold and paid.",
+        isCorrect: true,
+      },
+      {
         id: "skip-tax",
         text: "It skips taxes",
         outcome: "Bills help comply with taxes rather than avoid them.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const INVOICE_REFUSAL_STAGES = [
     prompt: "What is a risk for a business that refuses to issue bills?",
     options: [
       {
-        id: "better-credibility",
-        text: "Better credibility",
-        outcome: "Credibility usually improves when bills are provided.",
-        isCorrect: false,
-      },
-      {
         id: "disputes",
         text: "More disputes and weak records",
         outcome: "Correct. Without bills, disputes are harder to resolve.",
         isCorrect: true,
+      },
+      {
+        id: "better-credibility",
+        text: "Better credibility",
+        outcome: "Credibility usually improves when bills are provided.",
+        isCorrect: false,
       },
       {
         id: "faster-service",
@@ -92,19 +92,13 @@ const INVOICE_REFUSAL_STAGES = [
         text: "Lower costs automatically",
         outcome: "Costs depend on operations, not billing alone.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to start issuing bills?",
     options: [
-      {
-        id: "simple-receipts",
-        text: "Use a simple receipt book or digital bill",
-        outcome: "Correct. Even basic receipts create proof.",
-        isCorrect: true,
-      },
       {
         id: "avoid-records",
         text: "Avoid records and trust memory",
@@ -123,6 +117,12 @@ const INVOICE_REFUSAL_STAGES = [
         outcome: "Bills should be standard practice, not a penalty.",
         isCorrect: false,
       },
+      {
+        id: "simple-receipts",
+        text: "Use a simple receipt book or digital bill",
+        outcome: "Correct. Even basic receipts create proof.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const INVOICE_REFUSAL_STAGES = [
         text: "Only large businesses need invoices",
         outcome: "Any business can use basic receipts.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

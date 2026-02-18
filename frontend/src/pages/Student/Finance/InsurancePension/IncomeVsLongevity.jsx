@@ -79,13 +79,6 @@ const INCOME_VS_LONGEVITY_STAGES = [
     prompt: "What is a good backup plan if pension details are unclear?",
     options: [
       {
-        id: "build-savings",
-        text: "Build personal savings alongside retirement benefits",
-        outcome:
-          "Correct. Savings reduce uncertainty and risk.",
-        isCorrect: true,
-      },
-      {
         id: "spend-now",
         text: "Spend now and hope later",
         outcome:
@@ -106,19 +99,19 @@ const INCOME_VS_LONGEVITY_STAGES = [
           "Benefits should be verified and included in planning.",
         isCorrect: false,
       },
+      {
+        id: "build-savings",
+        text: "Build personal savings alongside retirement benefits",
+        outcome:
+          "Correct. Savings reduce uncertainty and risk.",
+        isCorrect: true,
+      },
     ],
   },
   {
     id: 4,
     prompt: "Which action reduces longevity risk the most?",
     options: [
-      {
-        id: "confirm-plan",
-        text: "Confirm employer benefits and save independently",
-        outcome:
-          "Correct. Combining both reduces uncertainty.",
-        isCorrect: true,
-      },
       {
         id: "assume",
         text: "Assume benefits will cover everything",
@@ -132,6 +125,13 @@ const INCOME_VS_LONGEVITY_STAGES = [
         outcome:
           "Borrowing later can create long-term stress.",
         isCorrect: false,
+      },
+      {
+        id: "confirm-plan",
+        text: "Confirm employer benefits and save independently",
+        outcome:
+          "Correct. Combining both reduces uncertainty.",
+        isCorrect: true,
       },
       {
         id: "no-plan",

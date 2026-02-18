@@ -11,16 +11,16 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
       "Multiple scenarios appear about records, payments, loans, and growth. Best long-term approach?",
     options: [
       {
-        id: "stay-informal",
-        text: "Stay informal always",
-        outcome: "Informal practices often limit growth and stability.",
-        isCorrect: false,
-      },
-      {
         id: "build-discipline",
         text: "Build gradual financial discipline and documentation",
         outcome: "Correct. Strong systems create stable livelihoods.",
         isCorrect: true,
+      },
+      {
+        id: "stay-informal",
+        text: "Stay informal always",
+        outcome: "Informal practices often limit growth and stability.",
+        isCorrect: false,
       },
       {
         id: "depend-luck",
@@ -33,19 +33,13 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
         text: "Ignore systems",
         outcome: "Ignoring systems increases risk.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why does documentation matter for long-term success?",
     options: [
-      {
-        id: "proof-trust",
-        text: "It provides proof and builds trust",
-        outcome: "Correct. Proof supports financing and partnerships.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "It helps avoid customers",
@@ -64,18 +58,18 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
         outcome: "Documentation helps but does not guarantee growth.",
         isCorrect: false,
       },
+      {
+        id: "proof-trust",
+        text: "It provides proof and builds trust",
+        outcome: "Correct. Proof supports financing and partnerships.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 3,
     prompt: "How does financial discipline help stability?",
     options: [
-      {
-        id: "prevent-problems",
-        text: "It prevents slow financial problems",
-        outcome: "Correct. Regular checks catch issues early.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -89,11 +83,17 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "prevent-problems",
+        text: "It prevents slow financial problems",
+        outcome: "Correct. Regular checks catch issues early.",
+        isCorrect: true,
+      },
+      {
         id: "no-risk",
         text: "No risk",
         outcome: "Discipline reduces risk but does not remove it.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -101,16 +101,16 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
     prompt: "What is a practical habit for readiness?",
     options: [
       {
-        id: "monthly-review",
-        text: "Review income, expenses, stock, and loans monthly",
-        outcome: "Correct. Reviews keep the business on track.",
-        isCorrect: true,
-      },
-      {
         id: "memory-only",
         text: "Keep everything in memory",
         outcome: "Memory is unreliable for planning.",
         isCorrect: false,
+      },
+      {
+        id: "monthly-review",
+        text: "Review income, expenses, stock, and loans monthly",
+        outcome: "Correct. Reviews keep the business on track.",
+        isCorrect: true,
       },
       {
         id: "delay-records",
@@ -123,19 +123,13 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
         text: "Ignore small expenses",
         outcome: "Small expenses add up over time.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business readiness checkpoint?",
     options: [
-      {
-        id: "strong-systems",
-        text: "Strong systems create stable livelihoods",
-        outcome: "Correct. Discipline and documentation support growth.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Systems are optional",
@@ -149,11 +143,17 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "strong-systems",
+        text: "Strong systems create stable livelihoods",
+        outcome: "Correct. Discipline and documentation support growth.",
+        isCorrect: true,
+      },
+      {
         id: "luck-only",
         text: "Luck is the main factor",
         outcome: "Systems reduce dependence on luck.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

@@ -16,23 +16,23 @@ const RECORD_DURING_INSPECTION_STAGES = [
         isCorrect: false,
       },
       {
-        id: "written-digital",
-        text: "Written or digital records",
-        outcome: "Correct. Records reduce stress during checks.",
-        isCorrect: true,
-      },
-      {
         id: "friend-support",
         text: "Friend support",
         outcome: "Support helps, but records are what matter.",
         isCorrect: false,
       },
       {
+        id: "written-digital",
+        text: "Written or digital records",
+        outcome: "Correct. Records reduce stress during checks.",
+        isCorrect: true,
+      },
+      {
         id: "guessing",
         text: "Guessing",
         outcome: "Guessing increases risk and confusion.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -62,7 +62,7 @@ const RECORD_DURING_INSPECTION_STAGES = [
         text: "They increase sales automatically",
         outcome: "Records do not automatically raise sales.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const RECORD_DURING_INSPECTION_STAGES = [
     prompt: "What risk increases without proper records?",
     options: [
       {
-        id: "stress-penalties",
-        text: "Stress, delays, and possible penalties",
-        outcome: "Correct. Missing proof can create trouble.",
-        isCorrect: true,
-      },
-      {
         id: "more-profit",
         text: "More profit automatically",
         outcome: "Missing records do not increase profit.",
         isCorrect: false,
+      },
+      {
+        id: "stress-penalties",
+        text: "Stress, delays, and possible penalties",
+        outcome: "Correct. Missing proof can create trouble.",
+        isCorrect: true,
       },
       {
         id: "faster-growth",
@@ -92,19 +92,13 @@ const RECORD_DURING_INSPECTION_STAGES = [
         text: "No risk",
         outcome: "There is real risk without records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple habit to stay ready for inspections?",
     options: [
-      {
-        id: "store-records",
-        text: "Store records neatly and update regularly",
-        outcome: "Correct. Organization keeps checks smooth.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Keep everything in memory",
@@ -123,6 +117,12 @@ const RECORD_DURING_INSPECTION_STAGES = [
         outcome: "Bills are important for proof.",
         isCorrect: false,
       },
+      {
+        id: "store-records",
+        text: "Store records neatly and update regularly",
+        outcome: "Correct. Organization keeps checks smooth.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const RECORD_DURING_INSPECTION_STAGES = [
     prompt: "What is the key takeaway about records during inspection?",
     options: [
       {
-        id: "reduce-stress",
-        text: "Records reduce stress during checks",
-        outcome: "Correct. Proof makes compliance easier.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Records are optional",
         outcome: "Records are essential for compliance.",
         isCorrect: false,
+      },
+      {
+        id: "reduce-stress",
+        text: "Records reduce stress during checks",
+        outcome: "Correct. Proof makes compliance easier.",
+        isCorrect: true,
       },
       {
         id: "no-impact",
@@ -152,7 +152,7 @@ const RECORD_DURING_INSPECTION_STAGES = [
         text: "Only large businesses need records",
         outcome: "Small businesses benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

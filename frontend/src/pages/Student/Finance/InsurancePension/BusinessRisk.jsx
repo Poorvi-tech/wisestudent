@@ -51,13 +51,6 @@ const BUSINESS_RISK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "protects-cashflow",
-        text: "It protects cash flow during major losses",
-        outcome:
-          "Correct. Coverage helps keep the business running.",
-        isCorrect: true,
-      },
-      {
         id: "guarantee-profit",
         text: "It guarantees profit every month",
         outcome:
@@ -70,6 +63,13 @@ const BUSINESS_RISK_STAGES = [
         outcome:
           "Planning is still needed even with insurance.",
         isCorrect: false,
+      },
+      {
+        id: "protects-cashflow",
+        text: "It protects cash flow during major losses",
+        outcome:
+          "Correct. Coverage helps keep the business running.",
+        isCorrect: true,
       },
     ],
   },
@@ -153,18 +153,18 @@ const BUSINESS_RISK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "reduces-shock",
-        text: "It reduces the income shock after loss",
-        outcome:
-          "Correct. It helps stabilize income after major events.",
-        isCorrect: true,
-      },
-      {
         id: "free-money",
         text: "It provides free money anytime",
         outcome:
           "Payouts depend on covered events and terms.",
         isCorrect: false,
+      },
+      {
+        id: "reduces-shock",
+        text: "It reduces the income shock after loss",
+        outcome:
+          "Correct. It helps stabilize income after major events.",
+        isCorrect: true,
       },
       {
         id: "no-budget",

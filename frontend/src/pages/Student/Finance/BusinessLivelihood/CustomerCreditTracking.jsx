@@ -16,23 +16,23 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
         isCorrect: false,
       },
       {
-        id: "recovery-clarity",
-        text: "Recovery and clarity",
-        outcome: "Correct. Credit tracking protects cash flow.",
-        isCorrect: true,
-      },
-      {
         id: "decoration",
         text: "Decoration",
         outcome: "Records are for proof, not decoration.",
         isCorrect: false,
       },
       {
+        id: "recovery-clarity",
+        text: "Recovery and clarity",
+        outcome: "Correct. Credit tracking protects cash flow.",
+        isCorrect: true,
+      },
+      {
         id: "tax-only",
         text: "Tax only",
         outcome: "Credit tracking is mainly for cash flow control.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
     prompt: "Why does credit tracking help a shop?",
     options: [
       {
-        id: "know-dues",
-        text: "It shows who owes what and when",
-        outcome: "Correct. Clear records reduce disputes.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "It helps avoid customers",
         outcome: "Tracking is about clarity, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "know-dues",
+        text: "It shows who owes what and when",
+        outcome: "Correct. Clear records reduce disputes.",
+        isCorrect: true,
       },
       {
         id: "guarantee-profit",
@@ -62,7 +62,7 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
         text: "It removes the need for invoices",
         outcome: "Invoices and credit records work together.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
         text: "No risk",
         outcome: "There is real risk without tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to track customer credit?",
     options: [
-      {
-        id: "credit-ledger",
-        text: "Maintain a credit ledger with names and amounts",
-        outcome: "Correct. A simple ledger keeps clarity.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Keep everything in memory",
@@ -123,6 +117,12 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
         outcome: "Yearly checks are too late.",
         isCorrect: false,
       },
+      {
+        id: "credit-ledger",
+        text: "Maintain a credit ledger with names and amounts",
+        outcome: "Correct. A simple ledger keeps clarity.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
         text: "Only big shops need it",
         outcome: "Small shops benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

@@ -11,16 +11,16 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
       "A business keeps records, separates money, issues bills. What does this show?",
     options: [
       {
-        id: "complication",
-        text: "Complication",
-        outcome: "These habits actually simplify decision-making.",
-        isCorrect: false,
-      },
-      {
         id: "strong-foundation",
         text: "Strong foundation for growth and finance access",
         outcome: "Correct. Good practices enable business stability.",
         isCorrect: true,
+      },
+      {
+        id: "complication",
+        text: "Complication",
+        outcome: "These habits actually simplify decision-making.",
+        isCorrect: false,
       },
       {
         id: "unnecessary-effort",
@@ -33,19 +33,13 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
         text: "No impact",
         outcome: "Records and separation create real impact.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do good records help a business grow?",
     options: [
-      {
-        id: "clear-performance",
-        text: "They show clear performance and cash flow",
-        outcome: "Correct. Clear data supports better decisions.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "They help avoid customers",
@@ -59,11 +53,17 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "clear-performance",
+        text: "They show clear performance and cash flow",
+        outcome: "Correct. Clear data supports better decisions.",
+        isCorrect: true,
+      },
+      {
         id: "guarantee-growth",
         text: "They guarantee growth",
         outcome: "Records help, but growth depends on many factors.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -71,16 +71,16 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
     prompt: "How does separating money help business health?",
     options: [
       {
-        id: "true-profit",
-        text: "It shows true profit and prevents confusion",
-        outcome: "Correct. Separation keeps performance visible.",
-        isCorrect: true,
-      },
-      {
         id: "less-control",
         text: "It reduces control",
         outcome: "Separation improves control, not reduces it.",
         isCorrect: false,
+      },
+      {
+        id: "true-profit",
+        text: "It shows true profit and prevents confusion",
+        outcome: "Correct. Separation keeps performance visible.",
+        isCorrect: true,
       },
       {
         id: "higher-rent",
@@ -93,19 +93,13 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
         text: "It increases taxes",
         outcome: "Taxes depend on income, not separation.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple habit that reflects business health?",
     options: [
-      {
-        id: "issue-bills",
-        text: "Issue bills and keep daily records",
-        outcome: "Correct. Consistent records show discipline.",
-        isCorrect: true,
-      },
       {
         id: "ignore-expenses",
         text: "Ignore small expenses",
@@ -124,6 +118,12 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
         outcome: "Year-end records miss daily insights.",
         isCorrect: false,
       },
+      {
+        id: "issue-bills",
+        text: "Issue bills and keep daily records",
+        outcome: "Correct. Consistent records show discipline.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -131,16 +131,16 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
     prompt: "What is the key takeaway about business health checkpoint?",
     options: [
       {
-        id: "good-practices",
-        text: "Good practices enable business stability",
-        outcome: "Correct. Strong habits keep a business resilient.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Good practices are optional",
         outcome: "Good practices are essential for stability.",
         isCorrect: false,
+      },
+      {
+        id: "good-practices",
+        text: "Good practices enable business stability",
+        outcome: "Correct. Strong habits keep a business resilient.",
+        isCorrect: true,
       },
       {
         id: "no-impact",
@@ -153,7 +153,7 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
         text: "Only large businesses need good practices",
         outcome: "Small businesses benefit even more from discipline.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

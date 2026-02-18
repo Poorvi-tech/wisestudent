@@ -16,35 +16,29 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
         isCorrect: false,
       },
       {
-        id: "loss-unknown",
-        text: "Loss or theft may go unnoticed",
-        outcome: "Correct. Inventory tracking prevents hidden losses.",
-        isCorrect: true,
-      },
-      {
         id: "customers-increase",
         text: "Customers increase",
         outcome: "Customer growth depends on service, not tracking alone.",
         isCorrect: false,
       },
       {
+        id: "loss-unknown",
+        text: "Loss or theft may go unnoticed",
+        outcome: "Correct. Inventory tracking prevents hidden losses.",
+        isCorrect: true,
+      },
+      {
         id: "tax-reduces",
         text: "Tax reduces",
         outcome: "Taxes do not reduce because of missing records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is tracking inventory important?",
     options: [
-      {
-        id: "know-stock",
-        text: "It shows what is sold and what is left",
-        outcome: "Correct. This prevents shortages and losses.",
-        isCorrect: true,
-      },
       {
         id: "avoid-sales",
         text: "It avoids sales",
@@ -63,6 +57,12 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
         outcome: "Small shops benefit the most from control.",
         isCorrect: false,
       },
+      {
+        id: "know-stock",
+        text: "It shows what is sold and what is left",
+        outcome: "Correct. This prevents shortages and losses.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
     prompt: "Which is an example of a tracking problem?",
     options: [
       {
-        id: "missing-items",
-        text: "Items missing but no record to explain",
-        outcome: "Correct. Without records, losses remain hidden.",
-        isCorrect: true,
-      },
-      {
         id: "daily-counts",
         text: "Daily stock counts recorded",
         outcome: "Recording counts is good tracking.",
         isCorrect: false,
+      },
+      {
+        id: "missing-items",
+        text: "Items missing but no record to explain",
+        outcome: "Correct. Without records, losses remain hidden.",
+        isCorrect: true,
       },
       {
         id: "supplier-bills",
@@ -92,7 +92,7 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
         text: "Using simple labels",
         outcome: "Labels can support tracking, not cause problems.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
     prompt: "What is the key takeaway about tracking stock?",
     options: [
       {
-        id: "protect-health",
-        text: "Inventory tracking protects business health",
-        outcome: "Correct. Tracking keeps losses visible and manageable.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Tracking is optional for small shops",
         outcome: "Small shops need tracking to prevent leakages.",
         isCorrect: false,
+      },
+      {
+        id: "protect-health",
+        text: "Inventory tracking protects business health",
+        outcome: "Correct. Tracking keeps losses visible and manageable.",
+        isCorrect: true,
       },
       {
         id: "profits-auto",
@@ -152,7 +152,7 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
         text: "No need to track if sales are high",
         outcome: "High sales still require control of stock.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

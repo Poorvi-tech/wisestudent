@@ -17,18 +17,18 @@ const LIFESTYLE_VS_FUTURE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "balance",
-        text: "Balance present and future",
-        outcome:
-          "Correct. Planning prevents future dependence.",
-        isCorrect: true,
-      },
-      {
         id: "borrow-later",
         text: "Borrow later",
         outcome:
           "Borrowing later can create debt and stress.",
         isCorrect: false,
+      },
+      {
+        id: "balance",
+        text: "Balance present and future",
+        outcome:
+          "Correct. Planning prevents future dependence.",
+        isCorrect: true,
       },
       {
         id: "depend-family",
@@ -146,13 +146,6 @@ const LIFESTYLE_VS_FUTURE_STAGES = [
     prompt: "What is the key takeaway about lifestyle vs future?",
     options: [
       {
-        id: "balance",
-        text: "Balance present enjoyment with future planning",
-        outcome:
-          "Correct. Balance prevents future dependence.",
-        isCorrect: true,
-      },
-      {
         id: "spend-now",
         text: "Spend everything now",
         outcome:
@@ -172,6 +165,13 @@ const LIFESTYLE_VS_FUTURE_STAGES = [
         outcome:
           "Ignoring the future can cause dependency.",
         isCorrect: false,
+      },
+      {
+        id: "balance",
+        text: "Balance present enjoyment with future planning",
+        outcome:
+          "Correct. Balance prevents future dependence.",
+        isCorrect: true,
       },
     ],
   },

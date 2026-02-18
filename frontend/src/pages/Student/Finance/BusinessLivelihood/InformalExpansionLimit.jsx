@@ -10,16 +10,16 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
     prompt: "A vendor wants to supply to a big company. What is usually required?",
     options: [
       {
-        id: "good-product",
-        text: "Only good product",
-        outcome: "Quality matters, but documentation is still required.",
-        isCorrect: false,
-      },
-      {
         id: "records-invoices",
         text: "Business records and invoices",
         outcome: "Correct. Larger clients need formal documentation.",
         isCorrect: true,
+      },
+      {
+        id: "good-product",
+        text: "Only good product",
+        outcome: "Quality matters, but documentation is still required.",
+        isCorrect: false,
       },
       {
         id: "family-reference",
@@ -32,19 +32,13 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
         text: "Low price",
         outcome: "Price helps, but formal records are still required.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do large companies ask for invoices?",
     options: [
-      {
-        id: "compliance",
-        text: "To meet compliance and audit needs",
-        outcome: "Correct. Formal records support compliance.",
-        isCorrect: true,
-      },
       {
         id: "avoid-suppliers",
         text: "To avoid suppliers",
@@ -63,18 +57,18 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
         outcome: "Invoices are records, not a replacement for them.",
         isCorrect: false,
       },
+      {
+        id: "compliance",
+        text: "To meet compliance and audit needs",
+        outcome: "Correct. Formal records support compliance.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a common barrier for informal vendors?",
     options: [
-      {
-        id: "lack-proof",
-        text: "Lack of proof and documentation",
-        outcome: "Correct. Missing proof limits partnerships.",
-        isCorrect: true,
-      },
       {
         id: "too-many-customers",
         text: "Too many customers",
@@ -88,11 +82,17 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "lack-proof",
+        text: "Lack of proof and documentation",
+        outcome: "Correct. Missing proof limits partnerships.",
+        isCorrect: true,
+      },
+      {
         id: "no-competition",
         text: "No competition",
         outcome: "Competition is unrelated to documentation.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
     prompt: "What is a simple step to become eligible for large clients?",
     options: [
       {
-        id: "issue-bills",
-        text: "Start issuing bills and keeping records",
-        outcome: "Correct. Basic documentation is the first step.",
-        isCorrect: true,
-      },
-      {
         id: "cash-only",
         text: "Only accept cash and skip receipts",
         outcome: "Cash-only reduces proof and eligibility.",
         isCorrect: false,
+      },
+      {
+        id: "issue-bills",
+        text: "Start issuing bills and keeping records",
+        outcome: "Correct. Basic documentation is the first step.",
+        isCorrect: true,
       },
       {
         id: "delay-forever",
@@ -122,19 +122,13 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
         text: "Keep everything verbal",
         outcome: "Verbal deals lack proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about informal expansion limits?",
     options: [
-      {
-        id: "formal-needed",
-        text: "Larger clients need formal documentation",
-        outcome: "Correct. Records enable bigger partnerships.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Documentation is optional",
@@ -148,11 +142,17 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "formal-needed",
+        text: "Larger clients need formal documentation",
+        outcome: "Correct. Records enable bigger partnerships.",
+        isCorrect: true,
+      },
+      {
         id: "no-impact",
         text: "Records make no impact",
         outcome: "Records directly affect eligibility.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

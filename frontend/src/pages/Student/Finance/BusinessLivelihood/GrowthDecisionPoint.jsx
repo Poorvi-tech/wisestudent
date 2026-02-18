@@ -17,12 +17,6 @@ const GROWTH_DECISION_POINT_STAGES = [
         isCorrect: false,
       },
       {
-        id: "build-formal",
-        text: "Build formal records gradually",
-        outcome: "Correct. Formal habits enable scale.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-docs",
         text: "Ignore documentation",
         outcome: "Ignoring documentation limits financing and growth.",
@@ -34,6 +28,12 @@ const GROWTH_DECISION_POINT_STAGES = [
         outcome: "Reducing customers does not support expansion.",
         isCorrect: false,
       },
+      {
+        id: "build-formal",
+        text: "Build formal records gradually",
+        outcome: "Correct. Formal habits enable scale.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -63,7 +63,7 @@ const GROWTH_DECISION_POINT_STAGES = [
         text: "They guarantee growth",
         outcome: "Records help but do not guarantee growth.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -71,16 +71,16 @@ const GROWTH_DECISION_POINT_STAGES = [
     prompt: "How do formal habits help with financing?",
     options: [
       {
-        id: "income-proof",
-        text: "They provide income proof for lenders",
-        outcome: "Correct. Proof builds lender confidence.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-banks",
         text: "They help avoid banks",
         outcome: "Records support working with banks.",
         isCorrect: false,
+      },
+      {
+        id: "income-proof",
+        text: "They provide income proof for lenders",
+        outcome: "Correct. Proof builds lender confidence.",
+        isCorrect: true,
       },
       {
         id: "remove-docs",
@@ -93,19 +93,13 @@ const GROWTH_DECISION_POINT_STAGES = [
         text: "They increase interest automatically",
         outcome: "Interest depends on risk and terms.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple first step to move from informal to structured?",
     options: [
-      {
-        id: "daily-records",
-        text: "Maintain daily sales and expense records",
-        outcome: "Correct. Consistent logs build structure.",
-        isCorrect: true,
-      },
       {
         id: "ignore-expenses",
         text: "Ignore small expenses",
@@ -119,11 +113,17 @@ const GROWTH_DECISION_POINT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "daily-records",
+        text: "Maintain daily sales and expense records",
+        outcome: "Correct. Consistent logs build structure.",
+        isCorrect: true,
+      },
+      {
         id: "cash-only",
         text: "Use cash only and skip receipts",
         outcome: "Cash-only reduces proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -131,16 +131,16 @@ const GROWTH_DECISION_POINT_STAGES = [
     prompt: "What is the key takeaway about the growth decision point?",
     options: [
       {
-        id: "formal-habits",
-        text: "Formal habits enable scale",
-        outcome: "Correct. Structure supports long-term expansion.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Formal records are optional",
         outcome: "Formal records are essential for scaling.",
         isCorrect: false,
+      },
+      {
+        id: "formal-habits",
+        text: "Formal habits enable scale",
+        outcome: "Correct. Structure supports long-term expansion.",
+        isCorrect: true,
       },
       {
         id: "no-impact",
@@ -153,7 +153,7 @@ const GROWTH_DECISION_POINT_STAGES = [
         text: "Reducing customers helps growth",
         outcome: "Growth needs more customers, not fewer.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

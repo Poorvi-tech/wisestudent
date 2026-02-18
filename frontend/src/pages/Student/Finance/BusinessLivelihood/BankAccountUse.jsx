@@ -40,12 +40,6 @@ const BANK_ACCOUNT_USE_STAGES = [
     prompt: "Why does a bank account help a business?",
     options: [
       {
-        id: "build-history",
-        text: "It builds a transaction history",
-        outcome: "Correct. History supports loans and credibility.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "It avoids customers",
         outcome: "Banking is about records, not avoiding customers.",
@@ -63,18 +57,18 @@ const BANK_ACCOUNT_USE_STAGES = [
         outcome: "Profit depends on sales and costs.",
         isCorrect: false,
       },
+      {
+        id: "build-history",
+        text: "It builds a transaction history",
+        outcome: "Correct. History supports loans and credibility.",
+        isCorrect: true,
+      },
     ],
   },
   {
     id: 3,
     prompt: "What is a risk of keeping only cash?",
     options: [
-      {
-        id: "loss-theft",
-        text: "Higher risk of loss or theft",
-        outcome: "Correct. Cash has higher risk and less proof.",
-        isCorrect: true,
-      },
       {
         id: "more-credit",
         text: "More credit availability",
@@ -86,6 +80,12 @@ const BANK_ACCOUNT_USE_STAGES = [
         text: "Faster loan approvals",
         outcome: "Loans often require bank statements.",
         isCorrect: false,
+      },
+      {
+        id: "loss-theft",
+        text: "Higher risk of loss or theft",
+        outcome: "Correct. Cash has higher risk and less proof.",
+        isCorrect: true,
       },
       {
         id: "easy-taxes",
@@ -100,16 +100,16 @@ const BANK_ACCOUNT_USE_STAGES = [
     prompt: "What is a simple first step to build a bank trail?",
     options: [
       {
-        id: "open-account",
-        text: "Open a business bank account and use it for sales",
-        outcome: "Correct. Regular deposits build a trail.",
-        isCorrect: true,
-      },
-      {
         id: "keep-cash",
         text: "Keep all money at home",
         outcome: "Home cash provides no formal trail.",
         isCorrect: false,
+      },
+      {
+        id: "open-account",
+        text: "Open a business bank account and use it for sales",
+        outcome: "Correct. Regular deposits build a trail.",
+        isCorrect: true,
       },
       {
         id: "delay",

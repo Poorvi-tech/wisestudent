@@ -18,18 +18,18 @@ const INSURANCE_DECISION_CHECK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "coverage-claims",
-        text: "Coverage and claim rules",
-        outcome:
-          "Correct. Protection value matters more than sales pitch.",
-        isCorrect: true,
-      },
-      {
         id: "brochure-color",
         text: "Colour of brochure",
         outcome:
           "Design doesn’t change how the policy protects you.",
         isCorrect: false,
+      },
+      {
+        id: "coverage-claims",
+        text: "Coverage and claim rules",
+        outcome:
+          "Correct. Protection value matters more than sales pitch.",
+        isCorrect: true,
       },
       {
         id: "discount-only",
@@ -79,13 +79,6 @@ const INSURANCE_DECISION_CHECK_STAGES = [
     prompt: "Why do claim rules matter in an insurance decision?",
     options: [
       {
-        id: "faster-approval",
-        text: "They decide when and how claims are paid",
-        outcome:
-          "Correct. Claim rules affect whether you get paid.",
-        isCorrect: true,
-      },
-      {
         id: "no-effect",
         text: "They have no real effect",
         outcome:
@@ -105,6 +98,13 @@ const INSURANCE_DECISION_CHECK_STAGES = [
         outcome:
           "Insurance reduces financial risk, not all risk.",
         isCorrect: false,
+      },
+      {
+        id: "faster-approval",
+        text: "They decide when and how claims are paid",
+        outcome:
+          "Correct. Claim rules affect whether you get paid.",
+        isCorrect: true,
       },
     ],
   },

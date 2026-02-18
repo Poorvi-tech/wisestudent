@@ -16,12 +16,6 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "financial-history",
-        text: "Easy financial history for loans or growth",
-        outcome: "Correct. Transaction history supports expansion.",
-        isCorrect: true,
-      },
-      {
         id: "less-work",
         text: "Less work",
         outcome: "Digital payments can help but still need discipline.",
@@ -33,6 +27,12 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
         outcome: "Income depends on sales, not payment type.",
         isCorrect: false,
       },
+      {
+        id: "financial-history",
+        text: "Easy financial history for loans or growth",
+        outcome: "Correct. Transaction history supports expansion.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
     prompt: "Why does a digital trail help with loans?",
     options: [
       {
-        id: "repayment-proof",
-        text: "It shows consistent cash flow for repayment",
-        outcome: "Correct. Lenders need proof of stability.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-bank",
         text: "It helps avoid banks",
         outcome: "Digital trails help when working with banks.",
         isCorrect: false,
+      },
+      {
+        id: "repayment-proof",
+        text: "It shows consistent cash flow for repayment",
+        outcome: "Correct. Lenders need proof of stability.",
+        isCorrect: true,
       },
       {
         id: "skip-records",
@@ -62,19 +62,13 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
         text: "It guarantees approval",
         outcome: "Proof helps but does not guarantee approval.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is another benefit of digital-only payments?",
     options: [
-      {
-        id: "less-cash-risk",
-        text: "Lower risk of cash loss or theft",
-        outcome: "Correct. Less cash handling reduces risk.",
-        isCorrect: true,
-      },
       {
         id: "no-customers",
         text: "Fewer customers",
@@ -88,11 +82,17 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "less-cash-risk",
+        text: "Lower risk of cash loss or theft",
+        outcome: "Correct. Less cash handling reduces risk.",
+        isCorrect: true,
+      },
+      {
         id: "no-proof",
         text: "No proof of payment",
         outcome: "Digital transactions create proof automatically.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
     prompt: "What is the key takeaway about digital trail advantage?",
     options: [
       {
-        id: "history-growth",
-        text: "Transaction history supports expansion",
-        outcome: "Correct. Digital trails build credibility.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Digital trails are optional",
         outcome: "A clear trail is valuable for growth.",
@@ -148,11 +142,17 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "history-growth",
+        text: "Transaction history supports expansion",
+        outcome: "Correct. Digital trails build credibility.",
+        isCorrect: true,
+      },
+      {
         id: "lower-profit",
         text: "Digital trails lower profit",
         outcome: "Profit depends on sales and costs, not trails.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

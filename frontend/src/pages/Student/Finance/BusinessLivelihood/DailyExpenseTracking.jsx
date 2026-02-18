@@ -16,23 +16,23 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
         isCorrect: false,
       },
       {
-        id: "unknown-losses",
-        text: "Unknown losses and leakages",
-        outcome: "Correct. Tracking prevents silent losses.",
-        isCorrect: true,
-      },
-      {
         id: "less-tax",
         text: "Less tax",
         outcome: "Taxes depend on records, not ignoring spending.",
         isCorrect: false,
       },
       {
+        id: "unknown-losses",
+        text: "Unknown losses and leakages",
+        outcome: "Correct. Tracking prevents silent losses.",
+        isCorrect: true,
+      },
+      {
         id: "faster-growth",
         text: "Faster growth",
         outcome: "Growth needs visibility into costs and profits.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -62,7 +62,7 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
         text: "It replaces sales",
         outcome: "Tracking does not replace selling.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
     prompt: "Which is an example of a leakage without tracking?",
     options: [
       {
-        id: "small-snacks",
-        text: "Small daily cash uses that are forgotten",
-        outcome: "Correct. Small leaks add up if ignored.",
-        isCorrect: true,
-      },
-      {
         id: "recorded-fees",
         text: "Recorded supplier payments",
         outcome: "Recorded payments are not leakages.",
         isCorrect: false,
+      },
+      {
+        id: "small-snacks",
+        text: "Small daily cash uses that are forgotten",
+        outcome: "Correct. Small leaks add up if ignored.",
+        isCorrect: true,
       },
       {
         id: "billed-sales",
@@ -92,19 +92,13 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
         text: "Planned monthly budget",
         outcome: "Planning reduces leakages.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to start tracking expenses?",
     options: [
-      {
-        id: "small-notebook",
-        text: "Write daily expenses in a small notebook",
-        outcome: "Correct. Simple records create clarity.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Keep everything in memory",
@@ -123,6 +117,12 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
         outcome: "Yearly tracking misses daily issues.",
         isCorrect: false,
       },
+      {
+        id: "small-notebook",
+        text: "Write daily expenses in a small notebook",
+        outcome: "Correct. Simple records create clarity.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
     prompt: "What is the key takeaway about daily expense tracking?",
     options: [
       {
-        id: "stop-leaks",
-        text: "Tracking prevents silent losses",
-        outcome: "Correct. Consistent tracking protects profits.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Tracking is optional for small vendors",
         outcome: "Small vendors benefit the most from clarity.",
         isCorrect: false,
+      },
+      {
+        id: "stop-leaks",
+        text: "Tracking prevents silent losses",
+        outcome: "Correct. Consistent tracking protects profits.",
+        isCorrect: true,
       },
       {
         id: "no-need",
@@ -152,7 +152,7 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
         text: "Tracking is only for taxes",
         outcome: "It helps with taxes and daily decisions.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

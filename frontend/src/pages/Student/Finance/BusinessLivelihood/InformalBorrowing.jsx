@@ -10,16 +10,16 @@ const INFORMAL_BORROWING_STAGES = [
     prompt: "A shop owner borrows from a local lender without record. What risk exists?",
     options: [
       {
-        id: "no-risk",
-        text: "No risk",
-        outcome: "Borrowing without records can create disputes.",
-        isCorrect: false,
-      },
-      {
         id: "disputes-proof",
         text: "Disputes and unclear repayment proof",
         outcome: "Correct. Written records prevent conflicts.",
         isCorrect: true,
+      },
+      {
+        id: "no-risk",
+        text: "No risk",
+        outcome: "Borrowing without records can create disputes.",
+        isCorrect: false,
       },
       {
         id: "free-money",
@@ -32,19 +32,13 @@ const INFORMAL_BORROWING_STAGES = [
         text: "Guaranteed growth",
         outcome: "Loans can help, but growth is never guaranteed.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is a written loan record important?",
     options: [
-      {
-        id: "clear-terms",
-        text: "It shows amount, interest, and repayment terms",
-        outcome: "Correct. Clear terms reduce misunderstandings.",
-        isCorrect: true,
-      },
       {
         id: "avoid-repay",
         text: "It helps avoid repayment",
@@ -58,11 +52,17 @@ const INFORMAL_BORROWING_STAGES = [
         isCorrect: false,
       },
       {
+        id: "clear-terms",
+        text: "It shows amount, interest, and repayment terms",
+        outcome: "Correct. Clear terms reduce misunderstandings.",
+        isCorrect: true,
+      },
+      {
         id: "replace-trust",
         text: "It replaces trust completely",
         outcome: "Trust matters, but records protect both sides.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -76,12 +76,6 @@ const INFORMAL_BORROWING_STAGES = [
         isCorrect: false,
       },
       {
-        id: "changing-terms",
-        text: "Terms can change or be disputed later",
-        outcome: "Correct. Without records, disputes are common.",
-        isCorrect: true,
-      },
-      {
         id: "lower-risk",
         text: "Lower risk than formal loans",
         outcome: "Informal loans can be riskier due to unclear terms.",
@@ -93,6 +87,12 @@ const INFORMAL_BORROWING_STAGES = [
         outcome: "Approval may be easy, but terms can be unclear.",
         isCorrect: false,
       },
+      {
+        id: "changing-terms",
+        text: "Terms can change or be disputed later",
+        outcome: "Correct. Without records, disputes are common.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const INFORMAL_BORROWING_STAGES = [
     prompt: "What is a safe step when borrowing from a local lender?",
     options: [
       {
-        id: "written-agreement",
-        text: "Write down the amount and repayment schedule",
-        outcome: "Correct. Even a simple written agreement helps.",
-        isCorrect: true,
-      },
-      {
         id: "verbal-only",
         text: "Keep it verbal only",
         outcome: "Verbal promises can be misunderstood.",
         isCorrect: false,
+      },
+      {
+        id: "written-agreement",
+        text: "Write down the amount and repayment schedule",
+        outcome: "Correct. Even a simple written agreement helps.",
+        isCorrect: true,
       },
       {
         id: "no-witness",
@@ -122,19 +122,13 @@ const INFORMAL_BORROWING_STAGES = [
         text: "Delay repayment and hope",
         outcome: "Delays create conflicts and penalties.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about informal borrowing?",
     options: [
-      {
-        id: "written-proofs",
-        text: "Written records prevent disputes",
-        outcome: "Correct. Documentation protects both borrower and lender.",
-        isCorrect: true,
-      },
       {
         id: "records-unneeded",
         text: "Records are unnecessary for small loans",
@@ -153,6 +147,12 @@ const INFORMAL_BORROWING_STAGES = [
         outcome: "Trust plus records is safer.",
         isCorrect: false,
       },
+      {
+        id: "written-proofs",
+        text: "Written records prevent disputes",
+        outcome: "Correct. Documentation protects both borrower and lender.",
+        isCorrect: true,
+      }
     ],
   },
 ];

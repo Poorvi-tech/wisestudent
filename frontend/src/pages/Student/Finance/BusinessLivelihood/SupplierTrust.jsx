@@ -16,12 +16,6 @@ const SUPPLIER_TRUST_STAGES = [
         isCorrect: false,
       },
       {
-        id: "reliability",
-        text: "Reliability and payment tracking",
-        outcome: "Correct. Professional systems build partnerships.",
-        isCorrect: true,
-      },
-      {
         id: "friendship",
         text: "Friendship",
         outcome: "Trust is stronger with clear records.",
@@ -33,18 +27,18 @@ const SUPPLIER_TRUST_STAGES = [
         outcome: "Reliable records matter more than luck.",
         isCorrect: false,
       },
+      {
+        id: "reliability",
+        text: "Reliability and payment tracking",
+        outcome: "Correct. Professional systems build partnerships.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 2,
     prompt: "How do records help supplier relationships?",
     options: [
-      {
-        id: "clear-payments",
-        text: "They show clear payment history",
-        outcome: "Correct. Clear history reduces disputes.",
-        isCorrect: true,
-      },
       {
         id: "avoid-suppliers",
         text: "They help avoid suppliers",
@@ -58,11 +52,17 @@ const SUPPLIER_TRUST_STAGES = [
         isCorrect: false,
       },
       {
+        id: "clear-payments",
+        text: "They show clear payment history",
+        outcome: "Correct. Clear history reduces disputes.",
+        isCorrect: true,
+      },
+      {
         id: "increase-prices",
         text: "They increase prices",
         outcome: "Prices depend on terms, not record-keeping alone.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,7 +92,7 @@ const SUPPLIER_TRUST_STAGES = [
         text: "No impact",
         outcome: "There is real impact without records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const SUPPLIER_TRUST_STAGES = [
     prompt: "What is a simple habit that builds supplier trust?",
     options: [
       {
-        id: "save-receipts",
-        text: "Save invoices and payment receipts",
-        outcome: "Correct. Proof protects both sides.",
-        isCorrect: true,
-      },
-      {
         id: "verbal-only",
         text: "Keep everything verbal",
         outcome: "Verbal agreements are hard to prove.",
         isCorrect: false,
+      },
+      {
+        id: "save-receipts",
+        text: "Save invoices and payment receipts",
+        outcome: "Correct. Proof protects both sides.",
+        isCorrect: true,
       },
       {
         id: "delay-payments",
@@ -122,7 +122,7 @@ const SUPPLIER_TRUST_STAGES = [
         text: "Ignore supplier bills",
         outcome: "Ignoring bills leads to disputes.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const SUPPLIER_TRUST_STAGES = [
         text: "Records make no impact",
         outcome: "Records improve reliability and clarity.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

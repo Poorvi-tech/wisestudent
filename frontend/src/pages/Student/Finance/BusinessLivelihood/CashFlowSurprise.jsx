@@ -41,12 +41,6 @@ const CASH_FLOW_SURPRISE_STAGES = [
     prompt: "Why can good sales still create cash shortages?",
     options: [
       {
-        id: "timing-gap",
-        text: "Cash timing gaps between income and expenses",
-        outcome: "Correct. Timing issues cause shortages.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "Avoiding customers",
         outcome: "Customers are the source of income, not the problem.",
@@ -59,23 +53,23 @@ const CASH_FLOW_SURPRISE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "timing-gap",
+        text: "Cash timing gaps between income and expenses",
+        outcome: "Correct. Timing issues cause shortages.",
+        isCorrect: true,
+      },
+      {
         id: "lower-rent",
         text: "Lower rent fixes everything",
         outcome: "Lower rent helps but tracking is still needed.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a sign of poor cash flow tracking?",
     options: [
-      {
-        id: "surprise-bills",
-        text: "Surprise shortages when bills are due",
-        outcome: "Correct. Cash flow planning prevents surprises.",
-        isCorrect: true,
-      },
       {
         id: "steady-balance",
         text: "Steady cash balance always",
@@ -94,6 +88,12 @@ const CASH_FLOW_SURPRISE_STAGES = [
         outcome: "Every business has expenses.",
         isCorrect: false,
       },
+      {
+        id: "surprise-bills",
+        text: "Surprise shortages when bills are due",
+        outcome: "Correct. Cash flow planning prevents surprises.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -131,12 +131,6 @@ const CASH_FLOW_SURPRISE_STAGES = [
     prompt: "What is the key takeaway about cash flow surprise?",
     options: [
       {
-        id: "track-flow",
-        text: "Profit and cash flow are different",
-        outcome: "Correct. Tracking cash flow keeps bills covered.",
-        isCorrect: true,
-      },
-      {
         id: "sales-only",
         text: "Good sales always mean enough cash",
         outcome: "Sales can be good while cash is tight.",
@@ -154,6 +148,12 @@ const CASH_FLOW_SURPRISE_STAGES = [
         outcome: "Rent changes help, but tracking is still needed.",
         isCorrect: false,
       },
+      {
+        id: "track-flow",
+        text: "Profit and cash flow are different",
+        outcome: "Correct. Tracking cash flow keeps bills covered.",
+        isCorrect: true,
+      }
     ],
   },
 ];

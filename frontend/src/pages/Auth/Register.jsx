@@ -1148,12 +1148,6 @@ const Register = () => {
                                             position: 'relative'
                                         }}
                                     />
-                                    {/* iOS date picker placeholder - only show when empty */}
-                                    {!dob && (
-                                        <div className="absolute inset-y-0 left-10 sm:left-12 right-3 sm:right-4 flex items-center pointer-events-none text-gray-400 text-base z-0">
-                                            <span className="truncate">Date of Birth</span>
-                                        </div>
-                                    )}
                                 </motion.div>
                             </div>
 

@@ -112,13 +112,6 @@ const EARLY_SAVING_ADVANTAGE_STAGES = [
     prompt: "If you start saving late, what usually needs to happen?",
     options: [
       {
-        id: "save-more",
-        text: "Save more each month to catch up",
-        outcome:
-          "Correct. Less time often means higher monthly savings.",
-        isCorrect: true,
-      },
-      {
         id: "save-less",
         text: "Save less each month",
         outcome:
@@ -133,6 +126,13 @@ const EARLY_SAVING_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "save-more",
+        text: "Save more each month to catch up",
+        outcome:
+          "Correct. Less time often means higher monthly savings.",
+        isCorrect: true,
+      },
+      {
         id: "skip-plan",
         text: "Skip retirement planning",
         outcome:
@@ -145,13 +145,6 @@ const EARLY_SAVING_ADVANTAGE_STAGES = [
     id: 5,
     prompt: "What is the main takeaway about early saving?",
     options: [
-      {
-        id: "time-helps",
-        text: "Time helps savings grow",
-        outcome:
-          "Correct. Starting early gives savings more time to build.",
-        isCorrect: true,
-      },
       {
         id: "luck-matters",
         text: "Luck matters most",
@@ -172,6 +165,13 @@ const EARLY_SAVING_ADVANTAGE_STAGES = [
         outcome:
           "Planning improves outcomes.",
         isCorrect: false,
+      },
+      {
+        id: "time-helps",
+        text: "Time helps savings grow",
+        outcome:
+          "Correct. Starting early gives savings more time to build.",
+        isCorrect: true,
       },
     ],
   },

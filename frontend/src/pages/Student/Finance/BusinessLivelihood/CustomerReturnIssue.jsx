@@ -16,23 +16,23 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "verify-purchase",
-        text: "Hard to verify purchase",
-        outcome: "Correct. Bills protect both sides in disputes.",
-        isCorrect: true,
-      },
-      {
         id: "more-profit",
         text: "More profit",
         outcome: "Missing bills do not create profit.",
         isCorrect: false,
       },
       {
+        id: "verify-purchase",
+        text: "Hard to verify purchase",
+        outcome: "Correct. Bills protect both sides in disputes.",
+        isCorrect: true,
+      },
+      {
         id: "faster-refund",
         text: "Faster refund",
         outcome: "Refunds are harder without proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
     prompt: "Why is a bill important for returns?",
     options: [
       {
-        id: "proof-date",
-        text: "It proves purchase date and item details",
-        outcome: "Correct. Proof avoids confusion in returns.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "It helps avoid customers",
         outcome: "Bills build trust, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "proof-date",
+        text: "It proves purchase date and item details",
+        outcome: "Correct. Proof avoids confusion in returns.",
+        isCorrect: true,
       },
       {
         id: "increase-price",
@@ -62,19 +62,13 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
         text: "It replaces good service",
         outcome: "Service still matters alongside proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What risk increases when no bill is provided?",
     options: [
-      {
-        id: "disputes",
-        text: "Disputes about whether the item was purchased",
-        outcome: "Correct. Missing bills lead to disputes.",
-        isCorrect: true,
-      },
       {
         id: "higher-loyalty",
         text: "Higher loyalty automatically",
@@ -93,6 +87,12 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
         outcome: "Costs do not reduce because of missing bills.",
         isCorrect: false,
       },
+      {
+        id: "disputes",
+        text: "Disputes about whether the item was purchased",
+        outcome: "Correct. Missing bills lead to disputes.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
     prompt: "What is the key takeaway about customer return issues?",
     options: [
       {
-        id: "bills-protect",
-        text: "Bills protect both sides in disputes",
-        outcome: "Correct. Proof makes returns fair and clear.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Bills are optional",
         outcome: "Bills are important for trust and proof.",
@@ -153,6 +147,12 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
         outcome: "Transparency matters for repeat business.",
         isCorrect: false,
       },
+      {
+        id: "bills-protect",
+        text: "Bills protect both sides in disputes",
+        outcome: "Correct. Proof makes returns fair and clear.",
+        isCorrect: true,
+      }
     ],
   },
 ];

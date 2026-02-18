@@ -18,13 +18,6 @@ const SUDDEN_HOSPITAL_BILL_STAGES = [
         isCorrect: false,
       },
       {
-        id: "reduce-risk",
-        text: "Reduce financial risk",
-        outcome:
-          "Correct. Insurance protects against large unexpected costs like hospital bills.",
-        isCorrect: true,
-      },
-      {
         id: "replace-savings",
         text: "Replace savings completely",
         outcome:
@@ -37,6 +30,13 @@ const SUDDEN_HOSPITAL_BILL_STAGES = [
         outcome:
           "No policy removes all costs. Insurance reduces the financial shock from major events.",
         isCorrect: false,
+      },
+      {
+        id: "reduce-risk",
+        text: "Reduce financial risk",
+        outcome:
+          "Correct. Insurance protects against large unexpected costs like hospital bills.",
+        isCorrect: true,
       },
     ],
   },

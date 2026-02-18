@@ -40,12 +40,6 @@ const PERSONAL_WITHDRAWAL_STAGES = [
     prompt: "Why should owners separate personal and business money?",
     options: [
       {
-        id: "clear-profit",
-        text: "To see real business profit",
-        outcome: "Correct. Clear separation shows true performance.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "To avoid customers",
         outcome: "Separation is about records, not customers.",
@@ -63,18 +57,18 @@ const PERSONAL_WITHDRAWAL_STAGES = [
         outcome: "Rent is unrelated to separation.",
         isCorrect: false,
       },
+      {
+        id: "clear-profit",
+        text: "To see real business profit",
+        outcome: "Correct. Clear separation shows true performance.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a risk of random cash withdrawals?",
     options: [
-      {
-        id: "missing-bills",
-        text: "Bills and supplier payments may be missed",
-        outcome: "Correct. Untracked withdrawals can cause shortages.",
-        isCorrect: true,
-      },
       {
         id: "more-sales",
         text: "More sales automatically",
@@ -88,11 +82,17 @@ const PERSONAL_WITHDRAWAL_STAGES = [
         isCorrect: false,
       },
       {
+        id: "missing-bills",
+        text: "Bills and supplier payments may be missed",
+        outcome: "Correct. Untracked withdrawals can cause shortages.",
+        isCorrect: true,
+      },
+      {
         id: "no-risk",
         text: "No risk at all",
         outcome: "There is risk without clear tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const PERSONAL_WITHDRAWAL_STAGES = [
     prompt: "What is the key takeaway about personal withdrawals?",
     options: [
       {
-        id: "separate-clear",
-        text: "Separation keeps finances clear",
-        outcome: "Correct. Track withdrawals to protect business health.",
-        isCorrect: true,
-      },
-      {
         id: "random-ok",
         text: "Random withdrawals are fine",
         outcome: "Random withdrawals hide cash flow problems.",
@@ -148,11 +142,17 @@ const PERSONAL_WITHDRAWAL_STAGES = [
         isCorrect: false,
       },
       {
+        id: "separate-clear",
+        text: "Separation keeps finances clear",
+        outcome: "Correct. Track withdrawals to protect business health.",
+        isCorrect: true,
+      },
+      {
         id: "only-large",
         text: "Only large businesses need separation",
         outcome: "Small businesses benefit even more from separation.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

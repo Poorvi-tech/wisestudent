@@ -10,16 +10,16 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
     prompt: "Owner pays staff cash with no record. What problem may occur?",
     options: [
       {
-        id: "no-issue",
-        text: "No issue",
-        outcome: "Without records, disputes can arise later.",
-        isCorrect: false,
-      },
-      {
         id: "disputes-legal",
         text: "Salary disputes or legal issues",
         outcome: "Correct. Payment records protect both sides.",
         isCorrect: true,
+      },
+      {
+        id: "no-issue",
+        text: "No issue",
+        outcome: "Without records, disputes can arise later.",
+        isCorrect: false,
       },
       {
         id: "higher-productivity",
@@ -32,19 +32,13 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
         text: "Lower expenses",
         outcome: "Expenses may be the same, but disputes can add costs.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is payment proof important for staff wages?",
     options: [
-      {
-        id: "clear-agreement",
-        text: "It shows what was paid and when",
-        outcome: "Correct. Proof reduces misunderstandings.",
-        isCorrect: true,
-      },
       {
         id: "avoid-workers",
         text: "It helps avoid workers",
@@ -63,6 +57,12 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
         outcome: "Rent is unrelated to wage records.",
         isCorrect: false,
       },
+      {
+        id: "clear-agreement",
+        text: "It shows what was paid and when",
+        outcome: "Correct. Proof reduces misunderstandings.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
     prompt: "What is a common risk of cash wages without records?",
     options: [
       {
-        id: "duplicate-payments",
-        text: "Disputes about whether payment was made",
-        outcome: "Correct. Without proof, disputes are common.",
-        isCorrect: true,
-      },
-      {
         id: "more-savings",
         text: "More savings automatically",
         outcome: "Savings depend on profits, not missing records.",
         isCorrect: false,
+      },
+      {
+        id: "duplicate-payments",
+        text: "Disputes about whether payment was made",
+        outcome: "Correct. Without proof, disputes are common.",
+        isCorrect: true,
       },
       {
         id: "faster-growth",
@@ -92,19 +92,13 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
         text: "No risk",
         outcome: "There is real risk without records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to keep payment records?",
     options: [
-      {
-        id: "payment-register",
-        text: "Maintain a wage register or signed receipt",
-        outcome: "Correct. A simple record protects both sides.",
-        isCorrect: true,
-      },
       {
         id: "verbal-only",
         text: "Keep it verbal only",
@@ -118,11 +112,17 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "payment-register",
+        text: "Maintain a wage register or signed receipt",
+        outcome: "Correct. A simple record protects both sides.",
+        isCorrect: true,
+      },
+      {
         id: "delay-records",
         text: "Write records only once a year",
         outcome: "Yearly records miss monthly disputes.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
     prompt: "What is the key takeaway about informal worker payment?",
     options: [
       {
-        id: "records-protect",
-        text: "Payment records protect both sides",
-        outcome: "Correct. Documentation prevents disputes and legal issues.",
-        isCorrect: true,
-      },
-      {
         id: "records-optional",
         text: "Records are optional",
         outcome: "Records are essential for fairness and proof.",
         isCorrect: false,
+      },
+      {
+        id: "records-protect",
+        text: "Payment records protect both sides",
+        outcome: "Correct. Documentation prevents disputes and legal issues.",
+        isCorrect: true,
       },
       {
         id: "cash-only",
@@ -152,7 +152,7 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
         text: "No need to track wages",
         outcome: "Wage tracking protects employer and employee.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

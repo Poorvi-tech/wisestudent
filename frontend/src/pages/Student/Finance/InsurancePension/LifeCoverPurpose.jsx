@@ -112,18 +112,18 @@ const LIFE_COVER_PURPOSE_STAGES = [
     prompt: "What should determine how much life cover a family needs?",
     options: [
       {
-        id: "random-amount",
-        text: "A random number",
-        outcome:
-          "Coverage should be based on real needs and obligations.",
-        isCorrect: false,
-      },
-      {
         id: "income-and-obligations",
         text: "Income replacement needs and family obligations",
         outcome:
           "Correct. Coverage should reflect dependents, debts, and future goals.",
         isCorrect: true,
+      },
+      {
+        id: "random-amount",
+        text: "A random number",
+        outcome:
+          "Coverage should be based on real needs and obligations.",
+        isCorrect: false,
       },
       {
         id: "friend-choice",
@@ -153,13 +153,6 @@ const LIFE_COVER_PURPOSE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "financial-stability",
-        text: "Better financial stability if income is lost",
-        outcome:
-          "Correct. It helps dependents maintain stability during a crisis.",
-        isCorrect: true,
-      },
-      {
         id: "guaranteed-profit",
         text: "Guaranteed profits every year",
         outcome:
@@ -172,6 +165,13 @@ const LIFE_COVER_PURPOSE_STAGES = [
         outcome:
           "Coverage doesn't prevent emergencies; it reduces financial impact.",
         isCorrect: false,
+      },
+      {
+        id: "financial-stability",
+        text: "Better financial stability if income is lost",
+        outcome:
+          "Correct. It helps dependents maintain stability during a crisis.",
+        isCorrect: true,
       },
     ],
   },

@@ -17,18 +17,18 @@ const FAKE_INSURANCE_OFFER_STAGES = [
         isCorrect: false,
       },
       {
-        id: "verify-authenticity",
-        text: "Verify insurer authenticity",
-        outcome:
-          "Correct. Fraud often hides behind unrealistic promises.",
-        isCorrect: true,
-      },
-      {
         id: "share-otp",
         text: "Share OTP",
         outcome:
           "Never share OTPs. They can be used to steal money or data.",
         isCorrect: false,
+      },
+      {
+        id: "verify-authenticity",
+        text: "Verify insurer authenticity",
+        outcome:
+          "Correct. Fraud often hides behind unrealistic promises.",
+        isCorrect: true,
       },
       {
         id: "pay-cash",
@@ -43,13 +43,6 @@ const FAKE_INSURANCE_OFFER_STAGES = [
     id: 2,
     prompt: "Which promise is a red flag for insurance fraud?",
     options: [
-      {
-        id: "guaranteed-double",
-        text: "Guaranteed double money in a short time",
-        outcome:
-          "Correct. Unrealistic returns are a common scam signal.",
-        isCorrect: true,
-      },
       {
         id: "policy-terms",
         text: "Clear policy terms and coverage limits",
@@ -70,6 +63,13 @@ const FAKE_INSURANCE_OFFER_STAGES = [
         outcome:
           "A cooling-off period is normal and consumer-friendly.",
         isCorrect: false,
+      },
+      {
+        id: "guaranteed-double",
+        text: "Guaranteed double money in a short time",
+        outcome:
+          "Correct. Unrealistic returns are a common scam signal.",
+        isCorrect: true,
       },
     ],
   },
@@ -146,13 +146,6 @@ const FAKE_INSURANCE_OFFER_STAGES = [
     prompt: "What is a smart response to unrealistic insurance offers?",
     options: [
       {
-        id: "report-verify",
-        text: "Verify and report suspicious offers",
-        outcome:
-          "Correct. Verification protects you and others.",
-        isCorrect: true,
-      },
-      {
         id: "buy-fast",
         text: "Buy fast to lock the deal",
         outcome:
@@ -172,6 +165,13 @@ const FAKE_INSURANCE_OFFER_STAGES = [
         outcome:
           "Cash to unknown parties is a major risk.",
         isCorrect: false,
+      },
+      {
+        id: "report-verify",
+        text: "Verify and report suspicious offers",
+        outcome:
+          "Correct. Verification protects you and others.",
+        isCorrect: true,
       },
     ],
   },

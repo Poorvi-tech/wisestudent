@@ -11,16 +11,16 @@ const GST_FEAR_STAGES = [
       "A trader avoids learning GST because it sounds complicated. What is wiser?",
     options: [
       {
-        id: "ignore",
-        text: "Ignore it completely",
-        outcome: "Ignoring GST can lead to penalties and confusion.",
-        isCorrect: false,
-      },
-      {
         id: "learn-basics",
         text: "Learn basics relevant to business",
         outcome: "Correct. Basic awareness prevents future trouble.",
         isCorrect: true,
+      },
+      {
+        id: "ignore",
+        text: "Ignore it completely",
+        outcome: "Ignoring GST can lead to penalties and confusion.",
+        isCorrect: false,
       },
       {
         id: "close-shop",
@@ -33,19 +33,13 @@ const GST_FEAR_STAGES = [
         text: "Stop selling",
         outcome: "Stopping sales is not a solution.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is GST awareness important for a trader?",
     options: [
-      {
-        id: "avoid-penalties",
-        text: "To avoid penalties and compliance mistakes",
-        outcome: "Correct. Awareness reduces compliance risk.",
-        isCorrect: true,
-      },
       {
         id: "increase-sales",
         text: "To automatically increase sales",
@@ -59,11 +53,17 @@ const GST_FEAR_STAGES = [
         isCorrect: false,
       },
       {
+        id: "avoid-penalties",
+        text: "To avoid penalties and compliance mistakes",
+        outcome: "Correct. Awareness reduces compliance risk.",
+        isCorrect: true,
+      },
+      {
         id: "remove-tax",
         text: "To remove taxes",
         outcome: "Awareness does not remove tax obligations.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -71,16 +71,16 @@ const GST_FEAR_STAGES = [
     prompt: "What can happen if GST rules are ignored?",
     options: [
       {
-        id: "penalties",
-        text: "Penalties and missed filings",
-        outcome: "Correct. Ignoring rules leads to compliance trouble.",
-        isCorrect: true,
-      },
-      {
         id: "extra-profit",
         text: "Extra profit",
         outcome: "Ignoring GST does not increase profit.",
         isCorrect: false,
+      },
+      {
+        id: "penalties",
+        text: "Penalties and missed filings",
+        outcome: "Correct. Ignoring rules leads to compliance trouble.",
+        isCorrect: true,
       },
       {
         id: "faster-loans",
@@ -93,19 +93,13 @@ const GST_FEAR_STAGES = [
         text: "Lower rent",
         outcome: "Rent is unrelated to GST compliance.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple first step to reduce GST fear?",
     options: [
-      {
-        id: "learn-basics",
-        text: "Learn basic rules and eligibility thresholds",
-        outcome: "Correct. Basics help decide next steps.",
-        isCorrect: true,
-      },
       {
         id: "ignore-updates",
         text: "Ignore updates and notices",
@@ -124,6 +118,12 @@ const GST_FEAR_STAGES = [
         outcome: "Delays create avoidable trouble.",
         isCorrect: false,
       },
+      {
+        id: "learn-basics",
+        text: "Learn basic rules and eligibility thresholds",
+        outcome: "Correct. Basics help decide next steps.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -131,16 +131,16 @@ const GST_FEAR_STAGES = [
     prompt: "What is the key takeaway about GST fear?",
     options: [
       {
-        id: "awareness",
-        text: "Basic awareness prevents future trouble",
-        outcome: "Correct. Knowledge keeps business safer.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-safe",
         text: "Ignoring GST is safe",
         outcome: "Ignoring rules can lead to penalties.",
         isCorrect: false,
+      },
+      {
+        id: "awareness",
+        text: "Basic awareness prevents future trouble",
+        outcome: "Correct. Knowledge keeps business safer.",
+        isCorrect: true,
       },
       {
         id: "only-big",
@@ -153,7 +153,7 @@ const GST_FEAR_STAGES = [
         text: "Records are optional",
         outcome: "Records are essential for compliance.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

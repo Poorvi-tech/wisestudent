@@ -51,18 +51,18 @@ const PREMIUM_CONFUSION_STAGES = [
         isCorrect: false,
       },
       {
-        id: "risk-transfer",
-        text: "To transfer major risk to the insurer",
-        outcome:
-          "Correct. The premium funds protection against big losses.",
-        isCorrect: true,
-      },
-      {
         id: "free-care",
         text: "To make all services free",
         outcome:
           "Coverage depends on policy terms and limits.",
         isCorrect: false,
+      },
+      {
+        id: "risk-transfer",
+        text: "To transfer major risk to the insurer",
+        outcome:
+          "Correct. The premium funds protection against big losses.",
+        isCorrect: true,
       },
       {
         id: "stop-budgeting",
@@ -78,18 +78,18 @@ const PREMIUM_CONFUSION_STAGES = [
     prompt: "Why do people compare premiums to a safety net?",
     options: [
       {
-        id: "refund-every-time",
-        text: "You always get premiums back",
-        outcome:
-          "Premiums are not always refunded; the value is protection.",
-        isCorrect: false,
-      },
-      {
         id: "avoid-shock",
         text: "They help avoid huge financial shocks",
         outcome:
           "Correct. Insurance reduces the impact of big unexpected costs.",
         isCorrect: true,
+      },
+      {
+        id: "refund-every-time",
+        text: "You always get premiums back",
+        outcome:
+          "Premiums are not always refunded; the value is protection.",
+        isCorrect: false,
       },
       {
         id: "no-risk",
@@ -112,13 +112,6 @@ const PREMIUM_CONFUSION_STAGES = [
     prompt: "When can a premium feel 'wasted' but still be valuable?",
     options: [
       {
-        id: "no-claim",
-        text: "When no claim is needed",
-        outcome:
-          "Correct. Not needing a claim is good, and the coverage still protected you.",
-        isCorrect: true,
-      },
-      {
         id: "late-payment",
         text: "When you pay late",
         outcome:
@@ -138,6 +131,13 @@ const PREMIUM_CONFUSION_STAGES = [
         outcome:
           "Skipping coverage removes protection.",
         isCorrect: false,
+      },
+      {
+        id: "no-claim",
+        text: "When no claim is needed",
+        outcome:
+          "Correct. Not needing a claim is good, and the coverage still protected you.",
+        isCorrect: true,
       },
     ],
   },

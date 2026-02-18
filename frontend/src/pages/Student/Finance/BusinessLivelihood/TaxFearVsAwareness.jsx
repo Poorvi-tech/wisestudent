@@ -16,12 +16,6 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "learn-basics",
-        text: "Learn basics to stay compliant",
-        outcome: "Correct. Awareness reduces anxiety and risk.",
-        isCorrect: true,
-      },
-      {
         id: "close-shop",
         text: "Close shop",
         outcome: "Closing is unnecessary; learning basics is safer.",
@@ -33,6 +27,12 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         outcome: "Hiding income can lead to penalties and legal issues.",
         isCorrect: false,
       },
+      {
+        id: "learn-basics",
+        text: "Learn basics to stay compliant",
+        outcome: "Correct. Awareness reduces anxiety and risk.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -62,19 +62,13 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         text: "It removes tax obligations",
         outcome: "Awareness does not remove obligations.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What risk grows when tax rules are ignored?",
     options: [
-      {
-        id: "penalties",
-        text: "Penalties and compliance trouble",
-        outcome: "Correct. Ignoring rules creates avoidable risks.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -88,11 +82,17 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "penalties",
+        text: "Penalties and compliance trouble",
+        outcome: "Correct. Ignoring rules creates avoidable risks.",
+        isCorrect: true,
+      },
+      {
         id: "lower-rent",
         text: "Lower rent",
         outcome: "Rent is unrelated to tax awareness.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
     prompt: "What is a simple step to reduce tax fear?",
     options: [
       {
-        id: "learn-basics",
-        text: "Learn basic rules and thresholds relevant to business",
-        outcome: "Correct. Basics help decide next steps.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-updates",
         text: "Ignore updates and notices",
         outcome: "Ignoring updates increases risk.",
         isCorrect: false,
+      },
+      {
+        id: "learn-basics",
+        text: "Learn basic rules and thresholds relevant to business",
+        outcome: "Correct. Basics help decide next steps.",
+        isCorrect: true,
       },
       {
         id: "avoid-bills",
@@ -122,19 +122,13 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         text: "Delay learning forever",
         outcome: "Delays create avoidable trouble.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about tax fear vs awareness?",
     options: [
-      {
-        id: "awareness",
-        text: "Awareness reduces anxiety and risk",
-        outcome: "Correct. Knowledge keeps business safer.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Knowledge is optional",
@@ -148,11 +142,17 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "awareness",
+        text: "Awareness reduces anxiety and risk",
+        outcome: "Correct. Knowledge keeps business safer.",
+        isCorrect: true,
+      },
+      {
         id: "no-impact",
         text: "Awareness makes no impact",
         outcome: "Awareness reduces penalties and stress.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

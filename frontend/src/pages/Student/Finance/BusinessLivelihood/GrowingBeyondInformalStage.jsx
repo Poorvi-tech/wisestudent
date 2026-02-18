@@ -17,12 +17,6 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "lack-proof",
-        text: "Lack of proof and documentation",
-        outcome: "Correct. Growth needs formal financial visibility.",
-        isCorrect: true,
-      },
-      {
         id: "customer-loyalty",
         text: "Customer loyalty",
         outcome: "Loyalty helps growth, not stop it.",
@@ -34,6 +28,12 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         outcome: "Location matters, but records are essential for scaling.",
         isCorrect: false,
       },
+      {
+        id: "lack-proof",
+        text: "Lack of proof and documentation",
+        outcome: "Correct. Growth needs formal financial visibility.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -63,19 +63,13 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         text: "They guarantee growth",
         outcome: "Records help decisions but do not guarantee growth.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a common problem of informal records at higher scale?",
     options: [
-      {
-        id: "no-proof",
-        text: "Weak proof for loans and partnerships",
-        outcome: "Correct. Missing proof limits expansion opportunities.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -89,11 +83,17 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "no-proof",
+        text: "Weak proof for loans and partnerships",
+        outcome: "Correct. Missing proof limits expansion opportunities.",
+        isCorrect: true,
+      },
+      {
         id: "faster-scaling",
         text: "Faster scaling",
         outcome: "Scaling usually needs stronger systems.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -101,16 +101,16 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
     prompt: "What is a simple step to move beyond informal records?",
     options: [
       {
-        id: "daily-records",
-        text: "Maintain daily sales and expense records",
-        outcome: "Correct. Daily records create strong visibility.",
-        isCorrect: true,
-      },
-      {
         id: "cash-only",
         text: "Use only cash and skip receipts",
         outcome: "Cash-only without receipts reduces proof.",
         isCorrect: false,
+      },
+      {
+        id: "daily-records",
+        text: "Maintain daily sales and expense records",
+        outcome: "Correct. Daily records create strong visibility.",
+        isCorrect: true,
       },
       {
         id: "delay-forever",
@@ -123,19 +123,13 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         text: "Rely on memory",
         outcome: "Memory is unreliable as scale grows.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about growing beyond informal stage?",
     options: [
-      {
-        id: "visibility-growth",
-        text: "Growth needs formal financial visibility",
-        outcome: "Correct. Clear records enable expansion.",
-        isCorrect: true,
-      },
       {
         id: "informal-enough",
         text: "Informal practices are enough",
@@ -149,11 +143,17 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "visibility-growth",
+        text: "Growth needs formal financial visibility",
+        outcome: "Correct. Clear records enable expansion.",
+        isCorrect: true,
+      },
+      {
         id: "only-big",
         text: "Only big businesses need records",
         outcome: "Small businesses benefit early from strong records.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

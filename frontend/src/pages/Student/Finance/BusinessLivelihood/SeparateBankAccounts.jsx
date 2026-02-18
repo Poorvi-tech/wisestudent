@@ -16,35 +16,29 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "clear-tracking",
-        text: "Clear income tracking",
-        outcome: "Correct. Separation shows true business performance.",
-        isCorrect: true,
-      },
-      {
         id: "less-control",
         text: "Less control",
         outcome: "Separation improves control, not reduces it.",
         isCorrect: false,
       },
       {
+        id: "clear-tracking",
+        text: "Clear income tracking",
+        outcome: "Correct. Separation shows true business performance.",
+        isCorrect: true,
+      },
+      {
         id: "more-work",
         text: "More work",
         outcome: "It may take a small setup effort but saves time later.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why does a separate account improve decisions?",
     options: [
-      {
-        id: "see-profit",
-        text: "It shows real business profit clearly",
-        outcome: "Correct. Clean records support better decisions.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "It avoids customers",
@@ -63,6 +57,12 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
         outcome: "Growth depends on many factors, not just accounts.",
         isCorrect: false,
       },
+      {
+        id: "see-profit",
+        text: "It shows real business profit clearly",
+        outcome: "Correct. Clean records support better decisions.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -92,7 +92,7 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
         text: "No risk at all",
         outcome: "There is risk in mixed accounts.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
     prompt: "What is a simple step to keep accounts separate?",
     options: [
       {
-        id: "use-business-account",
-        text: "Use the business account for all sales and expenses",
-        outcome: "Correct. Consistent use keeps the trail clean.",
-        isCorrect: true,
-      },
-      {
         id: "withdraw-randomly",
         text: "Withdraw cash randomly without records",
         outcome: "Random withdrawals create confusion.",
         isCorrect: false,
+      },
+      {
+        id: "use-business-account",
+        text: "Use the business account for all sales and expenses",
+        outcome: "Correct. Consistent use keeps the trail clean.",
+        isCorrect: true,
       },
       {
         id: "mix-cash",
@@ -122,7 +122,7 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
         text: "Delay separation forever",
         outcome: "Delays create avoidable problems.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
         text: "Records are unnecessary",
         outcome: "Records are essential for strong finances.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

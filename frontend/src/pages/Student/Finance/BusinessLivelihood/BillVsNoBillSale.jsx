@@ -41,12 +41,6 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
     prompt: "Why do bills help build trust?",
     options: [
       {
-        id: "proof",
-        text: "They provide proof of purchase",
-        outcome: "Correct. Proof reduces disputes and builds confidence.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "They help avoid customers",
         outcome: "Bills build transparency, not avoidance.",
@@ -57,6 +51,12 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
         text: "They increase price automatically",
         outcome: "Bills do not automatically increase price.",
         isCorrect: false,
+      },
+      {
+        id: "proof",
+        text: "They provide proof of purchase",
+        outcome: "Correct. Proof reduces disputes and builds confidence.",
+        isCorrect: true,
       },
       {
         id: "skip-service",
@@ -70,12 +70,6 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
     id: 3,
     prompt: "What is a common issue in a no-bill shop?",
     options: [
-      {
-        id: "disputes",
-        text: "Disputes are harder to resolve",
-        outcome: "Correct. Without proof, disputes become harder.",
-        isCorrect: true,
-      },
       {
         id: "higher-loyalty",
         text: "Higher loyalty automatically",
@@ -93,6 +87,12 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
         text: "Lower costs automatically",
         outcome: "Costs depend on operations, not just bills.",
         isCorrect: false,
+      },
+      {
+        id: "disputes",
+        text: "Disputes are harder to resolve",
+        outcome: "Correct. Without proof, disputes become harder.",
+        isCorrect: true,
       },
     ],
   },
@@ -131,16 +131,16 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
     prompt: "What is the key takeaway about bill vs no-bill sales?",
     options: [
       {
-        id: "transparency",
-        text: "Transparency builds customer confidence",
-        outcome: "Correct. Bills strengthen trust and reputation.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Bills are optional",
         outcome: "Bills are important for long-term trust.",
         isCorrect: false,
+      },
+      {
+        id: "transparency",
+        text: "Transparency builds customer confidence",
+        outcome: "Correct. Bills strengthen trust and reputation.",
+        isCorrect: true,
       },
       {
         id: "no-impact",

@@ -79,18 +79,18 @@ const SAVINGS_ALONE_STAGES = [
     prompt: "What role does insurance play in a financial safety plan?",
     options: [
       {
-        id: "small-expense-only",
-        text: "Covers only tiny daily expenses",
-        outcome:
-          "Insurance is mainly for larger covered risks, not daily small spending.",
-        isCorrect: false,
-      },
-      {
         id: "big-risk-shield",
         text: "Shields against large unexpected costs",
         outcome:
           "Correct. Insurance transfers part of major risk to the insurer.",
         isCorrect: true,
+      },
+      {
+        id: "small-expense-only",
+        text: "Covers only tiny daily expenses",
+        outcome:
+          "Insurance is mainly for larger covered risks, not daily small spending.",
+        isCorrect: false,
       },
       {
         id: "replace-budget",
@@ -161,18 +161,18 @@ const SAVINGS_ALONE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "balanced-protection",
-        text: "Build savings and maintain insurance cover",
-        outcome:
-          "Correct. Combined planning gives both liquidity and major-risk protection.",
-        isCorrect: true,
-      },
-      {
         id: "wait-and-see",
         text: "Delay planning until a crisis comes",
         outcome:
           "Planning after a crisis is usually more expensive and less effective.",
         isCorrect: false,
+      },
+      {
+        id: "balanced-protection",
+        text: "Build savings and maintain insurance cover",
+        outcome:
+          "Correct. Combined planning gives both liquidity and major-risk protection.",
+        isCorrect: true,
       },
     ],
   },

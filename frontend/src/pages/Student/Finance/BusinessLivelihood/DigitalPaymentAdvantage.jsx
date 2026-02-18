@@ -16,35 +16,29 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "transaction-record",
-        text: "Automatic transaction record",
-        outcome: "Correct. Digital payments build financial history.",
-        isCorrect: true,
-      },
-      {
         id: "higher-tax",
         text: "Higher tax only",
         outcome: "Taxes depend on income, not just payment method.",
         isCorrect: false,
       },
       {
+        id: "transaction-record",
+        text: "Automatic transaction record",
+        outcome: "Correct. Digital payments build financial history.",
+        isCorrect: true,
+      },
+      {
         id: "more-work",
         text: "More work",
         outcome: "Digital tools often simplify tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why does a transaction record help a business?",
     options: [
-      {
-        id: "loan-proof",
-        text: "It shows proof of income for loans",
-        outcome: "Correct. Records support access to formal finance.",
-        isCorrect: true,
-      },
       {
         id: "reduce-customers",
         text: "It reduces customers",
@@ -63,6 +57,12 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
         outcome: "Profit depends on sales and costs.",
         isCorrect: false,
       },
+      {
+        id: "loan-proof",
+        text: "It shows proof of income for loans",
+        outcome: "Correct. Records support access to formal finance.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -92,7 +92,7 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
         text: "Only big shops benefit",
         outcome: "Small shops benefit as well.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
     prompt: "What is a simple way to start accepting UPI?",
     options: [
       {
-        id: "upi-qr",
-        text: "Create a UPI QR and keep transaction slips",
-        outcome: "Correct. A QR code and records are a strong start.",
-        isCorrect: true,
-      },
-      {
         id: "cash-only",
         text: "Continue cash-only and ignore UPI",
         outcome: "Ignoring UPI can limit record-building.",
         isCorrect: false,
+      },
+      {
+        id: "upi-qr",
+        text: "Create a UPI QR and keep transaction slips",
+        outcome: "Correct. A QR code and records are a strong start.",
+        isCorrect: true,
       },
       {
         id: "share-otp",
@@ -122,7 +122,7 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
         text: "Delay until business grows",
         outcome: "Early records are valuable for growth.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
         text: "Avoid digital payments always",
         outcome: "Offering digital options can build trust and history.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

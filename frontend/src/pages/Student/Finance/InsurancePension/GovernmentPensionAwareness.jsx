@@ -17,18 +17,18 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "learn-eligibility",
-        text: "Learn eligibility and process",
-        outcome:
-          "Correct. Awareness helps use available support.",
-        isCorrect: true,
-      },
-      {
         id: "pay-now",
         text: "Pay immediately",
         outcome:
           "Always verify eligibility and official process first.",
         isCorrect: false,
+      },
+      {
+        id: "learn-eligibility",
+        text: "Learn eligibility and process",
+        outcome:
+          "Correct. Awareness helps use available support.",
+        isCorrect: true,
       },
       {
         id: "depend-rumours",
@@ -44,18 +44,18 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
     prompt: "Why is checking eligibility important?",
     options: [
       {
-        id: "avoid-waste",
-        text: "It prevents wasted time and wrong applications",
-        outcome:
-          "Correct. Eligibility saves effort and confusion.",
-        isCorrect: true,
-      },
-      {
         id: "skip-docs",
         text: "It lets you skip documents",
         outcome:
           "Documents are usually required.",
         isCorrect: false,
+      },
+      {
+        id: "avoid-waste",
+        text: "It prevents wasted time and wrong applications",
+        outcome:
+          "Correct. Eligibility saves effort and confusion.",
+        isCorrect: true,
       },
       {
         id: "instant-money",
@@ -112,13 +112,6 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
     prompt: "What should you prepare for a pension application?",
     options: [
       {
-        id: "basic-docs",
-        text: "Basic identification and required documents",
-        outcome:
-          "Correct. Documentation is usually required.",
-        isCorrect: true,
-      },
-      {
         id: "no-docs",
         text: "No documents needed",
         outcome:
@@ -133,6 +126,13 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "basic-docs",
+        text: "Basic identification and required documents",
+        outcome:
+          "Correct. Documentation is usually required.",
+        isCorrect: true,
+      },
+      {
         id: "social-media",
         text: "Social media profile screenshots",
         outcome:
@@ -145,13 +145,6 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
     id: 5,
     prompt: "What is the key takeaway about pension schemes?",
     options: [
-      {
-        id: "awareness",
-        text: "Awareness helps access available support",
-        outcome:
-          "Correct. Knowing the process helps you benefit.",
-        isCorrect: true,
-      },
       {
         id: "ignore",
         text: "Ignore all schemes",
@@ -172,6 +165,13 @@ const GOVERNMENT_PENSION_AWARENESS_STAGES = [
         outcome:
           "Always verify the official process.",
         isCorrect: false,
+      },
+      {
+        id: "awareness",
+        text: "Awareness helps access available support",
+        outcome:
+          "Correct. Knowing the process helps you benefit.",
+        isCorrect: true,
       },
     ],
   },

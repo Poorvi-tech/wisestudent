@@ -16,23 +16,23 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
         isCorrect: false,
       },
       {
-        id: "plan-reserves",
-        text: "Plan reserves for slow months",
-        outcome: "Correct. Stability needs seasonal planning.",
-        isCorrect: true,
-      },
-      {
         id: "borrow-later",
         text: "Borrow later",
         outcome: "Borrowing can be costly if planning is weak.",
         isCorrect: false,
       },
       {
+        id: "plan-reserves",
+        text: "Plan reserves for slow months",
+        outcome: "Correct. Stability needs seasonal planning.",
+        isCorrect: true,
+      },
+      {
         id: "ignore-planning",
         text: "Ignore planning",
         outcome: "Ignoring planning increases risk.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -62,19 +62,13 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
         text: "To skip records",
         outcome: "Records are still important.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a risk of spending all income during peak season?",
     options: [
-      {
-        id: "cash-shortage",
-        text: "Cash shortages in off-season",
-        outcome: "Correct. Lack of reserves creates stress later.",
-        isCorrect: true,
-      },
       {
         id: "higher-loyalty",
         text: "Higher loyalty automatically",
@@ -93,6 +87,12 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
         outcome: "There is real risk without reserves.",
         isCorrect: false,
       },
+      {
+        id: "cash-shortage",
+        text: "Cash shortages in off-season",
+        outcome: "Correct. Lack of reserves creates stress later.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
     prompt: "What is a simple step for seasonal planning?",
     options: [
       {
-        id: "set-aside",
-        text: "Set aside a fixed portion of peak-season profit",
-        outcome: "Correct. Regular saving builds a buffer.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "Spend extra during peak months",
         outcome: "Extra spending reduces stability later.",
         isCorrect: false,
+      },
+      {
+        id: "set-aside",
+        text: "Set aside a fixed portion of peak-season profit",
+        outcome: "Correct. Regular saving builds a buffer.",
+        isCorrect: true,
       },
       {
         id: "ignore-offseason",
@@ -122,19 +122,13 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
         text: "Record only at year-end",
         outcome: "Year-end records miss seasonal planning needs.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about seasonal income planning?",
     options: [
-      {
-        id: "stability",
-        text: "Stability needs seasonal planning",
-        outcome: "Correct. Reserves smooth income ups and downs.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Planning is optional",
@@ -153,6 +147,12 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
         outcome: "Reserves are safer than debt.",
         isCorrect: false,
       },
+      {
+        id: "stability",
+        text: "Stability needs seasonal planning",
+        outcome: "Correct. Reserves smooth income ups and downs.",
+        isCorrect: true,
+      }
     ],
   },
 ];

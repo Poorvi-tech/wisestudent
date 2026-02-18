@@ -78,13 +78,6 @@ const POLICY_READING_STAGES = [
     prompt: "Why should you check coverage limits before buying?",
     options: [
       {
-        id: "limits-too-low",
-        text: "To ensure the limits are not too low for your risks",
-        outcome:
-          "Correct. Limits should match your potential costs.",
-        isCorrect: true,
-      },
-      {
         id: "limits-ignore",
         text: "Limits are irrelevant",
         outcome:
@@ -97,6 +90,13 @@ const POLICY_READING_STAGES = [
         outcome:
           "Limits matter for anyone who wants adequate protection.",
         isCorrect: false,
+      },
+      {
+        id: "limits-too-low",
+        text: "To ensure the limits are not too low for your risks",
+        outcome:
+          "Correct. Limits should match your potential costs.",
+        isCorrect: true,
       },
       {
         id: "limits-hidden",
@@ -146,13 +146,6 @@ const POLICY_READING_STAGES = [
     prompt: "What is the main benefit of understanding policy terms?",
     options: [
       {
-        id: "avoid-surprises",
-        text: "Avoid claim surprises later",
-        outcome:
-          "Correct. Knowing terms prevents unexpected claim denials.",
-        isCorrect: true,
-      },
-      {
         id: "guarantee-profit",
         text: "Guarantee big profits",
         outcome:
@@ -172,6 +165,13 @@ const POLICY_READING_STAGES = [
         outcome:
           "Insurance reduces financial risk, not all risk.",
         isCorrect: false,
+      },
+      {
+        id: "avoid-surprises",
+        text: "Avoid claim surprises later",
+        outcome:
+          "Correct. Knowing terms prevents unexpected claim denials.",
+        isCorrect: true,
       },
     ],
   },

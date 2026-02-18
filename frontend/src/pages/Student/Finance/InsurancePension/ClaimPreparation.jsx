@@ -18,18 +18,18 @@ const CLAIM_PREPARATION_STAGES = [
         isCorrect: false,
       },
       {
-        id: "keep-docs-ready",
-        text: "Keep documents ready",
-        outcome:
-          "Correct. Prepared documentation speeds claims.",
-        isCorrect: true,
-      },
-      {
         id: "depend-hospital",
         text: "Depend on hospital",
         outcome:
           "Hospitals help, but you still need your own documents.",
         isCorrect: false,
+      },
+      {
+        id: "keep-docs-ready",
+        text: "Keep documents ready",
+        outcome:
+          "Correct. Prepared documentation speeds claims.",
+        isCorrect: true,
       },
       {
         id: "call-agent-later",
@@ -79,18 +79,18 @@ const CLAIM_PREPARATION_STAGES = [
     prompt: "Why should you keep policy documents accessible?",
     options: [
       {
-        id: "faster-claims",
-        text: "They help you file claims faster",
-        outcome:
-          "Correct. Access to policy details speeds up the process.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-premiums",
         text: "They let you avoid premiums",
         outcome:
           "Premiums are still required to keep coverage active.",
         isCorrect: false,
+      },
+      {
+        id: "faster-claims",
+        text: "They help you file claims faster",
+        outcome:
+          "Correct. Access to policy details speeds up the process.",
+        isCorrect: true,
       },
       {
         id: "guarantee-profit",
@@ -120,13 +120,6 @@ const CLAIM_PREPARATION_STAGES = [
         isCorrect: false,
       },
       {
-        id: "delay-or-reject",
-        text: "Claims can be delayed or rejected",
-        outcome:
-          "Correct. Missing documents can slow or block the claim.",
-        isCorrect: true,
-      },
-      {
         id: "automatic-pay",
         text: "Payment happens automatically",
         outcome:
@@ -139,6 +132,13 @@ const CLAIM_PREPARATION_STAGES = [
         outcome:
           "Incomplete documents affect claim decisions.",
         isCorrect: false,
+      },
+      {
+        id: "delay-or-reject",
+        text: "Claims can be delayed or rejected",
+        outcome:
+          "Correct. Missing documents can slow or block the claim.",
+        isCorrect: true,
       },
     ],
   },

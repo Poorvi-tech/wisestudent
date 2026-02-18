@@ -44,13 +44,6 @@ const LONG_TERM_SECURITY_CHECKPOINT_STAGES = [
     prompt: "Why is balancing present and future important?",
     options: [
       {
-        id: "future-security",
-        text: "It protects both current needs and future goals",
-        outcome:
-          "Correct. Balance keeps life stable over time.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "It means spending everything now",
         outcome:
@@ -63,6 +56,13 @@ const LONG_TERM_SECURITY_CHECKPOINT_STAGES = [
         outcome:
           "Balance includes planning for the future.",
         isCorrect: false,
+      },
+      {
+        id: "future-security",
+        text: "It protects both current needs and future goals",
+        outcome:
+          "Correct. Balance keeps life stable over time.",
+        isCorrect: true,
       },
       {
         id: "guarantee-profit",
@@ -112,13 +112,6 @@ const LONG_TERM_SECURITY_CHECKPOINT_STAGES = [
     prompt: "Which habit best supports long-term security?",
     options: [
       {
-        id: "steady-saving",
-        text: "Steady saving and review of goals",
-        outcome:
-          "Correct. Regular review keeps plans on track.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "Spend everything now",
         outcome:
@@ -138,6 +131,13 @@ const LONG_TERM_SECURITY_CHECKPOINT_STAGES = [
         outcome:
           "Dependence is uncertain and risky.",
         isCorrect: false,
+      },
+      {
+        id: "steady-saving",
+        text: "Steady saving and review of goals",
+        outcome:
+          "Correct. Regular review keeps plans on track.",
+        isCorrect: true,
       },
     ],
   },
