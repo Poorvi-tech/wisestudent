@@ -16,23 +16,23 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
         isCorrect: false,
       },
       {
-        id: "accuracy-tracking",
-        text: "Accuracy and easy tracking",
-        outcome: "Correct. Digital tools simplify record discipline.",
-        isCorrect: true,
-      },
-      {
         id: "electricity-use",
         text: "Electricity use",
         outcome: "Electricity use is not the key benefit.",
         isCorrect: false,
       },
       {
+        id: "accuracy-tracking",
+        text: "Accuracy and easy tracking",
+        outcome: "Correct. Digital tools simplify record discipline.",
+        isCorrect: true,
+      },
+      {
         id: "sales-speed",
         text: "Sales speed only",
         outcome: "Tracking improves decisions, not just speed.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -62,19 +62,13 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
         text: "They increase prices automatically",
         outcome: "Apps do not change prices.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What problem can digital records help reduce?",
     options: [
-      {
-        id: "errors",
-        text: "Calculation errors and missed entries",
-        outcome: "Correct. Digital tools reduce mistakes.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -93,6 +87,12 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
         outcome: "Planning is still essential.",
         isCorrect: false,
       },
+      {
+        id: "errors",
+        text: "Calculation errors and missed entries",
+        outcome: "Correct. Digital tools reduce mistakes.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
     prompt: "What is a smart habit when using a ledger app?",
     options: [
       {
-        id: "daily-entries",
-        text: "Enter sales and expenses daily",
-        outcome: "Correct. Regular updates keep records accurate.",
-        isCorrect: true,
-      },
-      {
         id: "delay-forever",
         text: "Enter only at year-end",
         outcome: "Year-end entries miss daily insights.",
         isCorrect: false,
+      },
+      {
+        id: "daily-entries",
+        text: "Enter sales and expenses daily",
+        outcome: "Correct. Regular updates keep records accurate.",
+        isCorrect: true,
       },
       {
         id: "ignore-backup",
@@ -122,19 +122,13 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
         text: "Share password widely",
         outcome: "Sharing passwords risks data errors.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about digital accounting apps?",
     options: [
-      {
-        id: "simplify",
-        text: "Digital tools simplify record discipline",
-        outcome: "Correct. Easy tracking improves control.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Digital tools are optional for tracking",
@@ -153,6 +147,12 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
         outcome: "They primarily improve accuracy and clarity.",
         isCorrect: false,
       },
+      {
+        id: "simplify",
+        text: "Digital tools simplify record discipline",
+        outcome: "Correct. Easy tracking improves control.",
+        isCorrect: true,
+      }
     ],
   },
 ];

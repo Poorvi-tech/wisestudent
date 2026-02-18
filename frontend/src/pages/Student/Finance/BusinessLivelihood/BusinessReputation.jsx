@@ -11,16 +11,16 @@ const BUSINESS_REPUTATION_STAGES = [
       "A shop gives bills, keeps records, accepts digital payments. What does this improve?",
     options: [
       {
-        id: "decoration",
-        text: "Decoration",
-        outcome: "These habits improve trust, not decoration.",
-        isCorrect: false,
-      },
-      {
         id: "trust-credibility",
         text: "Trust and credibility",
         outcome: "Correct. Professional habits build reputation.",
         isCorrect: true,
+      },
+      {
+        id: "decoration",
+        text: "Decoration",
+        outcome: "These habits improve trust, not decoration.",
+        isCorrect: false,
       },
       {
         id: "electricity",
@@ -33,19 +33,13 @@ const BUSINESS_REPUTATION_STAGES = [
         text: "Rent",
         outcome: "Rent does not change because of billing habits.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do bills and records increase customer trust?",
     options: [
-      {
-        id: "proof",
-        text: "They provide clear proof of transactions",
-        outcome: "Correct. Proof increases confidence.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "They help avoid customers",
@@ -64,6 +58,12 @@ const BUSINESS_REPUTATION_STAGES = [
         outcome: "Good service is still required.",
         isCorrect: false,
       },
+      {
+        id: "proof",
+        text: "They provide clear proof of transactions",
+        outcome: "Correct. Proof increases confidence.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -71,16 +71,16 @@ const BUSINESS_REPUTATION_STAGES = [
     prompt: "How do digital payments help reputation?",
     options: [
       {
-        id: "modern",
-        text: "They show professionalism and transparency",
-        outcome: "Correct. Digital trails show reliability.",
-        isCorrect: true,
-      },
-      {
         id: "hide-sales",
         text: "They hide sales",
         outcome: "Digital payments create more visible records.",
         isCorrect: false,
+      },
+      {
+        id: "modern",
+        text: "They show professionalism and transparency",
+        outcome: "Correct. Digital trails show reliability.",
+        isCorrect: true,
       },
       {
         id: "reduce-quality",
@@ -93,19 +93,13 @@ const BUSINESS_REPUTATION_STAGES = [
         text: "They avoid taxes",
         outcome: "Digital records support compliance, not avoidance.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple habit that boosts reputation?",
     options: [
-      {
-        id: "issue-bills",
-        text: "Issue bills and record every sale",
-        outcome: "Correct. Consistent records build trust.",
-        isCorrect: true,
-      },
       {
         id: "cash-only",
         text: "Only take cash and avoid records",
@@ -119,11 +113,17 @@ const BUSINESS_REPUTATION_STAGES = [
         isCorrect: false,
       },
       {
+        id: "issue-bills",
+        text: "Issue bills and record every sale",
+        outcome: "Correct. Consistent records build trust.",
+        isCorrect: true,
+      },
+      {
         id: "ignore-feedback",
         text: "Ignore customer feedback",
         outcome: "Feedback helps improve reputation.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -131,16 +131,16 @@ const BUSINESS_REPUTATION_STAGES = [
     prompt: "What is the key takeaway about business reputation?",
     options: [
       {
-        id: "professional-habits",
-        text: "Professional habits build reputation",
-        outcome: "Correct. Trust grows with transparency and records.",
-        isCorrect: true,
-      },
-      {
         id: "records-optional",
         text: "Records are optional",
         outcome: "Records are essential for credibility.",
         isCorrect: false,
+      },
+      {
+        id: "professional-habits",
+        text: "Professional habits build reputation",
+        outcome: "Correct. Trust grows with transparency and records.",
+        isCorrect: true,
       },
       {
         id: "only-ads",
@@ -153,7 +153,7 @@ const BUSINESS_REPUTATION_STAGES = [
         text: "Habits do not affect reputation",
         outcome: "Customer experience and records affect trust.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

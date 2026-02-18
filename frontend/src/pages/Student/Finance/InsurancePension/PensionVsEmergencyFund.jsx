@@ -17,13 +17,6 @@ const PENSION_VS_EMERGENCY_FUND_STAGES = [
         isCorrect: false,
       },
       {
-        id: "separate-goals",
-        text: "Keep separate savings goals",
-        outcome:
-          "Correct. Different goals need separate funds.",
-        isCorrect: true,
-      },
-      {
         id: "spend-early",
         text: "Spend pension early",
         outcome:
@@ -36,6 +29,13 @@ const PENSION_VS_EMERGENCY_FUND_STAGES = [
         outcome:
           "Emergency planning is essential.",
         isCorrect: false,
+      },
+      {
+        id: "separate-goals",
+        text: "Keep separate savings goals",
+        outcome:
+          "Correct. Different goals need separate funds.",
+        isCorrect: true,
       },
     ],
   },
@@ -153,18 +153,18 @@ const PENSION_VS_EMERGENCY_FUND_STAGES = [
         isCorrect: false,
       },
       {
-        id: "separate-funds",
-        text: "Keep separate funds for different goals",
-        outcome:
-          "Correct. Separate funds protect both short- and long-term needs.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-emergency",
         text: "Ignore emergencies",
         outcome:
           "Emergency planning is essential.",
         isCorrect: false,
+      },
+      {
+        id: "separate-funds",
+        text: "Keep separate funds for different goals",
+        outcome:
+          "Correct. Separate funds protect both short- and long-term needs.",
+        isCorrect: true,
       },
       {
         id: "spend-pension",

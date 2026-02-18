@@ -16,23 +16,23 @@ const RECORD_DISCIPLINE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "complete-picture",
-        text: "Complete financial picture",
-        outcome: "Correct. Both income and expense records matter.",
-        isCorrect: true,
-      },
-      {
         id: "profit-calculation",
         text: "Profit calculation",
         outcome: "Profit depends on both income and expenses.",
         isCorrect: false,
       },
       {
+        id: "complete-picture",
+        text: "Complete financial picture",
+        outcome: "Correct. Both income and expense records matter.",
+        isCorrect: true,
+      },
+      {
         id: "sales-tracking",
         text: "Sales tracking",
         outcome: "Sales are tracked by income, but expenses are still missing.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const RECORD_DISCIPLINE_STAGES = [
     prompt: "Why are expense records important?",
     options: [
       {
-        id: "true-profit",
-        text: "They show true profit after costs",
-        outcome: "Correct. Expenses determine real profit.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "They help avoid customers",
         outcome: "Records are for clarity, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "true-profit",
+        text: "They show true profit after costs",
+        outcome: "Correct. Expenses determine real profit.",
+        isCorrect: true,
       },
       {
         id: "increase-prices",
@@ -62,19 +62,13 @@ const RECORD_DISCIPLINE_STAGES = [
         text: "They remove the need for bills",
         outcome: "Bills are still important for proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What happens when expenses are not tracked?",
     options: [
-      {
-        id: "hidden-losses",
-        text: "Hidden losses and cash leaks",
-        outcome: "Correct. Missing expense records hide leaks.",
-        isCorrect: true,
-      },
       {
         id: "higher-profit",
         text: "Higher profit automatically",
@@ -93,6 +87,12 @@ const RECORD_DISCIPLINE_STAGES = [
         outcome: "There is real risk without expense tracking.",
         isCorrect: false,
       },
+      {
+        id: "hidden-losses",
+        text: "Hidden losses and cash leaks",
+        outcome: "Correct. Missing expense records hide leaks.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const RECORD_DISCIPLINE_STAGES = [
     prompt: "What is the key takeaway about record discipline?",
     options: [
       {
-        id: "both-matter",
-        text: "Both income and expense records matter",
-        outcome: "Correct. Complete records show real performance.",
-        isCorrect: true,
-      },
-      {
         id: "income-only",
         text: "Income records are enough",
         outcome: "Income alone cannot show profit.",
@@ -153,6 +147,12 @@ const RECORD_DISCIPLINE_STAGES = [
         outcome: "Small businesses benefit even more from clarity.",
         isCorrect: false,
       },
+      {
+        id: "both-matter",
+        text: "Both income and expense records matter",
+        outcome: "Correct. Complete records show real performance.",
+        isCorrect: true,
+      }
     ],
   },
 ];

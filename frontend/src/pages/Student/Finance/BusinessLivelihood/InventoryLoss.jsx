@@ -62,19 +62,13 @@ const INVENTORY_LOSS_STAGES = [
         text: "It removes the need for records",
         outcome: "Tracking is part of keeping records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a common result of no inventory list?",
     options: [
-      {
-        id: "hidden-loss",
-        text: "Hidden losses and missing stock",
-        outcome: "Correct. Missing lists hide losses.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -88,23 +82,23 @@ const INVENTORY_LOSS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "hidden-loss",
+        text: "Hidden losses and missing stock",
+        outcome: "Correct. Missing lists hide losses.",
+        isCorrect: true,
+      },
+      {
         id: "no-risk",
         text: "No risk at all",
         outcome: "There is real risk without tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to start tracking inventory?",
     options: [
-      {
-        id: "stock-register",
-        text: "Maintain a stock register for received and sold items",
-        outcome: "Correct. A simple register works.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Keep it all in memory",
@@ -123,18 +117,18 @@ const INVENTORY_LOSS_STAGES = [
         outcome: "Yearly tracking misses daily issues.",
         isCorrect: false,
       },
+      {
+        id: "stock-register",
+        text: "Maintain a stock register for received and sold items",
+        outcome: "Correct. A simple register works.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about inventory loss?",
     options: [
-      {
-        id: "tracking-prevents",
-        text: "Tracking prevents hidden losses",
-        outcome: "Correct. Inventory control protects business health.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Tracking is optional",
@@ -148,11 +142,17 @@ const INVENTORY_LOSS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "tracking-prevents",
+        text: "Tracking prevents hidden losses",
+        outcome: "Correct. Inventory control protects business health.",
+        isCorrect: true,
+      },
+      {
         id: "only-big",
         text: "Only big shops need tracking",
         outcome: "Small shops benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

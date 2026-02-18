@@ -40,12 +40,6 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
     prompt: "Why should a business loan be used only for business needs?",
     options: [
       {
-        id: "cash-flow",
-        text: "It protects cash flow and business stability",
-        outcome: "Correct. Purpose-based use keeps cash healthy.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "It helps avoid customers",
         outcome: "Loan use is about cash control, not customers.",
@@ -58,11 +52,17 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "cash-flow",
+        text: "It protects cash flow and business stability",
+        outcome: "Correct. Purpose-based use keeps cash healthy.",
+        isCorrect: true,
+      },
+      {
         id: "increase-loans",
         text: "It guarantees more loans",
         outcome: "Good use helps reputation but does not guarantee loans.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
         text: "Lower interest rates",
         outcome: "Interest depends on lender terms, not misuse.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a smart practice when taking a business loan?",
     options: [
-      {
-        id: "plan-use",
-        text: "Plan loan use for business goals and track spending",
-        outcome: "Correct. Planning keeps the loan productive.",
-        isCorrect: true,
-      },
       {
         id: "personal-use",
         text: "Use part of it for personal needs",
@@ -123,6 +117,12 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
         outcome: "Delays can hurt credit and relationships.",
         isCorrect: false,
       },
+      {
+        id: "plan-use",
+        text: "Plan loan use for business goals and track spending",
+        outcome: "Correct. Planning keeps the loan productive.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
         text: "Only big businesses need to be careful",
         outcome: "Small businesses are even more sensitive to misuse.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

@@ -16,12 +16,6 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "overpayment",
-        text: "Overpayment or wrong stock",
-        outcome: "Correct. Checking invoices prevents mistakes.",
-        isCorrect: true,
-      },
-      {
         id: "faster-growth",
         text: "Faster growth",
         outcome: "Growth depends on accuracy and control.",
@@ -33,6 +27,12 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         outcome: "Trust improves with clear, accurate records.",
         isCorrect: false,
       },
+      {
+        id: "overpayment",
+        text: "Overpayment or wrong stock",
+        outcome: "Correct. Checking invoices prevents mistakes.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
     prompt: "Why should a trader verify invoice details?",
     options: [
       {
-        id: "match-items",
-        text: "To confirm quantity, price, and items",
-        outcome: "Correct. Verification prevents errors and overcharges.",
-        isCorrect: true,
-      },
-      {
         id: "delay-payment",
         text: "To delay payment without reason",
         outcome: "Checks should be quick, not unnecessary delays.",
         isCorrect: false,
+      },
+      {
+        id: "match-items",
+        text: "To confirm quantity, price, and items",
+        outcome: "Correct. Verification prevents errors and overcharges.",
+        isCorrect: true,
       },
       {
         id: "avoid-suppliers",
@@ -62,7 +62,7 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         text: "To skip record-keeping",
         outcome: "Verification supports record-keeping.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         text: "Lower costs automatically",
         outcome: "Costs do not reduce without accurate checks.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to check a supplier invoice?",
     options: [
-      {
-        id: "match-delivery",
-        text: "Match the invoice with delivered goods",
-        outcome: "Correct. Matching prevents wrong payments.",
-        isCorrect: true,
-      },
       {
         id: "pay-first",
         text: "Pay first and check later",
@@ -118,11 +112,17 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         isCorrect: false,
       },
       {
+        id: "match-delivery",
+        text: "Match the invoice with delivered goods",
+        outcome: "Correct. Matching prevents wrong payments.",
+        isCorrect: true,
+      },
+      {
         id: "trust-only",
         text: "Trust only, no checks needed",
         outcome: "Trust plus verification is safer.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
         text: "Ignore small differences",
         outcome: "Small differences add up over time.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

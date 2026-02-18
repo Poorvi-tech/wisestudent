@@ -16,12 +16,6 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "trust-clarity",
-        text: "Trust, clarity, and legal safety",
-        outcome: "Correct. Records protect both employer and worker.",
-        isCorrect: true,
-      },
-      {
         id: "rent-cost",
         text: "Rent cost",
         outcome: "Rent costs are unrelated to wage records.",
@@ -33,6 +27,12 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         outcome: "Sales speed depends on service, not payroll records.",
         isCorrect: false,
       },
+      {
+        id: "trust-clarity",
+        text: "Trust, clarity, and legal safety",
+        outcome: "Correct. Records protect both employer and worker.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
     prompt: "Why are payment records important for employees?",
     options: [
       {
-        id: "clear-proof",
-        text: "They show what was paid and when",
-        outcome: "Correct. Proof reduces misunderstandings.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-workers",
         text: "They help avoid workers",
         outcome: "Records are for fairness, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "clear-proof",
+        text: "They show what was paid and when",
+        outcome: "Correct. Proof reduces misunderstandings.",
+        isCorrect: true,
       },
       {
         id: "remove-salary",
@@ -62,7 +62,7 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         text: "They increase rent",
         outcome: "Rent is unrelated to wage records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         text: "No risk at all",
         outcome: "Risk can never be zero, but records reduce it.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to keep employee payment records?",
     options: [
-      {
-        id: "wage-register",
-        text: "Maintain a wage register or signed receipt",
-        outcome: "Correct. A simple register creates proof.",
-        isCorrect: true,
-      },
       {
         id: "verbal-only",
         text: "Keep it verbal only",
@@ -118,11 +112,17 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "wage-register",
+        text: "Maintain a wage register or signed receipt",
+        outcome: "Correct. A simple register creates proof.",
+        isCorrect: true,
+      },
+      {
         id: "yearly-records",
         text: "Record only once a year",
         outcome: "Yearly records miss monthly issues.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
         text: "Only large businesses need records",
         outcome: "Small businesses benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

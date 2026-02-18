@@ -17,13 +17,6 @@ const DEPENDENCE_RISK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "build-security",
-        text: "Build personal financial security",
-        outcome:
-          "Correct. Personal planning reduces future burden.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "Spend all income now",
         outcome:
@@ -36,6 +29,13 @@ const DEPENDENCE_RISK_STAGES = [
         outcome:
           "Ignoring the future can lead to hardship later.",
         isCorrect: false,
+      },
+      {
+        id: "build-security",
+        text: "Build personal financial security",
+        outcome:
+          "Correct. Personal planning reduces future burden.",
+        isCorrect: true,
       },
     ],
   },
@@ -153,13 +153,6 @@ const DEPENDENCE_RISK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "plan-self",
-        text: "Plan and build your own security",
-        outcome:
-          "Correct. Personal planning reduces future burden.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-future",
         text: "Ignore the future",
         outcome:
@@ -172,6 +165,13 @@ const DEPENDENCE_RISK_STAGES = [
         outcome:
           "Spending now can leave you exposed later.",
         isCorrect: false,
+      },
+      {
+        id: "plan-self",
+        text: "Plan and build your own security",
+        outcome:
+          "Correct. Personal planning reduces future burden.",
+        isCorrect: true,
       },
     ],
   },

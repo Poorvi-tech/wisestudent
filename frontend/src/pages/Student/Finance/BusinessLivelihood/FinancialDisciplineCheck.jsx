@@ -17,12 +17,6 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
         isCorrect: false,
       },
       {
-        id: "control-stability",
-        text: "Control and stability",
-        outcome: "Correct. Review prevents slow financial problems.",
-        isCorrect: true,
-      },
-      {
         id: "less-profit",
         text: "Less profit",
         outcome: "Reviews help protect profit, not reduce it.",
@@ -34,18 +28,18 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
         outcome: "Regular reviews have a real impact.",
         isCorrect: false,
       },
+      {
+        id: "control-stability",
+        text: "Control and stability",
+        outcome: "Correct. Review prevents slow financial problems.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is monthly review important for a business?",
     options: [
-      {
-        id: "spot-issues",
-        text: "It helps spot problems early",
-        outcome: "Correct. Early action prevents bigger losses.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "It helps avoid customers",
@@ -59,11 +53,17 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
         isCorrect: false,
       },
       {
+        id: "spot-issues",
+        text: "It helps spot problems early",
+        outcome: "Correct. Early action prevents bigger losses.",
+        isCorrect: true,
+      },
+      {
         id: "increase-tax",
         text: "It increases tax automatically",
         outcome: "Taxes depend on income, not reviews.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -71,16 +71,16 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
     prompt: "What does reviewing stock help prevent?",
     options: [
       {
-        id: "hidden-loss",
-        text: "Hidden losses and shortages",
-        outcome: "Correct. Reviews reveal gaps early.",
-        isCorrect: true,
-      },
-      {
         id: "more-profit",
         text: "More profit automatically",
         outcome: "Profit depends on actions, not just reviews.",
         isCorrect: false,
+      },
+      {
+        id: "hidden-loss",
+        text: "Hidden losses and shortages",
+        outcome: "Correct. Reviews reveal gaps early.",
+        isCorrect: true,
       },
       {
         id: "no-expenses",
@@ -93,7 +93,7 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
         text: "No risk",
         outcome: "Reviews reduce risk but do not remove it.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -131,16 +131,16 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
     prompt: "What is the key takeaway about financial discipline checks?",
     options: [
       {
-        id: "stability",
-        text: "Reviews build control and stability",
-        outcome: "Correct. Discipline prevents slow financial problems.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Reviews are optional",
         outcome: "Reviews are essential for control.",
         isCorrect: false,
+      },
+      {
+        id: "stability",
+        text: "Reviews build control and stability",
+        outcome: "Correct. Discipline prevents slow financial problems.",
+        isCorrect: true,
       },
       {
         id: "no-impact",
@@ -153,7 +153,7 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
         text: "Only big businesses need reviews",
         outcome: "Small businesses benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

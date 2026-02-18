@@ -62,19 +62,13 @@ const BUSINESS_REPUTATION_GROWTH_STAGES = [
         text: "They replace good service",
         outcome: "Service still matters alongside proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "How do clear accounts help with banks?",
     options: [
-      {
-        id: "show-cashflow",
-        text: "They show stable cash flow and repayment capacity",
-        outcome: "Correct. Records make lending safer.",
-        isCorrect: true,
-      },
       {
         id: "avoid-banks",
         text: "They help avoid banks",
@@ -88,23 +82,23 @@ const BUSINESS_REPUTATION_GROWTH_STAGES = [
         isCorrect: false,
       },
       {
+        id: "show-cashflow",
+        text: "They show stable cash flow and repayment capacity",
+        outcome: "Correct. Records make lending safer.",
+        isCorrect: true,
+      },
+      {
         id: "guarantee-approval",
         text: "They guarantee loan approval",
         outcome: "Records help but do not guarantee approval.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What habit supports long-term reputation?",
     options: [
-      {
-        id: "daily-records",
-        text: "Maintain daily sales and expense records",
-        outcome: "Correct. Consistency builds trust over time.",
-        isCorrect: true,
-      },
       {
         id: "cash-only",
         text: "Cash-only with no receipts",
@@ -123,18 +117,18 @@ const BUSINESS_REPUTATION_GROWTH_STAGES = [
         outcome: "Feedback helps improve reputation.",
         isCorrect: false,
       },
+      {
+        id: "daily-records",
+        text: "Maintain daily sales and expense records",
+        outcome: "Correct. Consistency builds trust over time.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business reputation growth?",
     options: [
-      {
-        id: "credibility-compounds",
-        text: "Credibility compounds over time",
-        outcome: "Correct. Clear records build lasting trust.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Records are optional",
@@ -148,11 +142,17 @@ const BUSINESS_REPUTATION_GROWTH_STAGES = [
         isCorrect: false,
       },
       {
+        id: "credibility-compounds",
+        text: "Credibility compounds over time",
+        outcome: "Correct. Clear records build lasting trust.",
+        isCorrect: true,
+      },
+      {
         id: "price-only",
         text: "Only price matters",
         outcome: "Trust and proof drive repeat business.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

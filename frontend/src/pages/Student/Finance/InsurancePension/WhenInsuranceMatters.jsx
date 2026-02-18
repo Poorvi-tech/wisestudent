@@ -17,13 +17,6 @@ const WHEN_INSURANCE_MATTERS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "supports-family",
-        text: "When income supports family",
-        outcome:
-          "Correct. Responsibility increases need for protection.",
-        isCorrect: true,
-      },
-      {
         id: "after-retirement",
         text: "Only after retirement",
         outcome:
@@ -36,6 +29,13 @@ const WHEN_INSURANCE_MATTERS_STAGES = [
         outcome:
           "Insurance must be in place before a risk happens.",
         isCorrect: false,
+      },
+      {
+        id: "supports-family",
+        text: "When income supports family",
+        outcome:
+          "Correct. Responsibility increases need for protection.",
+        isCorrect: true,
       },
     ],
   },
@@ -51,18 +51,18 @@ const WHEN_INSURANCE_MATTERS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "responsibilities",
-        text: "Supporting dependents or paying loans",
-        outcome:
-          "Correct. Dependents and liabilities increase risk impact.",
-        isCorrect: true,
-      },
-      {
         id: "free-care",
         text: "Free healthcare for all needs",
         outcome:
           "Costs and gaps still exist even with public care.",
         isCorrect: false,
+      },
+      {
+        id: "responsibilities",
+        text: "Supporting dependents or paying loans",
+        outcome:
+          "Correct. Dependents and liabilities increase risk impact.",
+        isCorrect: true,
       },
       {
         id: "no-risks",
@@ -146,18 +146,18 @@ const WHEN_INSURANCE_MATTERS_STAGES = [
     prompt: "What is the main takeaway about when insurance matters most?",
     options: [
       {
-        id: "after-retirement",
-        text: "Only after retirement",
-        outcome:
-          "Protection is relevant throughout working life.",
-        isCorrect: false,
-      },
-      {
         id: "when-responsible",
         text: "When responsibility and dependents increase",
         outcome:
           "Correct. Responsibility raises the need for protection.",
         isCorrect: true,
+      },
+      {
+        id: "after-retirement",
+        text: "Only after retirement",
+        outcome:
+          "Protection is relevant throughout working life.",
+        isCorrect: false,
       },
       {
         id: "only-wealthy",

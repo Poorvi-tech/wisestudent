@@ -40,12 +40,6 @@ const CASH_ONLY_BUSINESS_STAGES = [
     prompt: "Why do digital payments help a small business grow?",
     options: [
       {
-        id: "transaction-history",
-        text: "They create a transaction history",
-        outcome: "Correct. A clear history supports loans and customer trust.",
-        isCorrect: true,
-      },
-      {
         id: "remove-need-records",
         text: "They remove the need for any records",
         outcome: "Records are still needed for taxes and planning.",
@@ -63,6 +57,12 @@ const CASH_ONLY_BUSINESS_STAGES = [
         outcome: "Digital options often make it easier for customers to pay.",
         isCorrect: false,
       },
+      {
+        id: "transaction-history",
+        text: "They create a transaction history",
+        outcome: "Correct. A clear history supports loans and customer trust.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -76,23 +76,23 @@ const CASH_ONLY_BUSINESS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "loss-theft",
-        text: "Higher risk of loss or theft without proof",
-        outcome: "Correct. Lost cash is hard to recover or prove.",
-        isCorrect: true,
-      },
-      {
         id: "automatic-audits",
         text: "Automatic audits",
         outcome: "Audits are not automatic just because of cash.",
         isCorrect: false,
       },
       {
+        id: "loss-theft",
+        text: "Higher risk of loss or theft without proof",
+        outcome: "Correct. Lost cash is hard to recover or prove.",
+        isCorrect: true,
+      },
+      {
         id: "no-customers",
         text: "No customers will buy",
         outcome: "Some customers still pay cash, but many prefer digital.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const CASH_ONLY_BUSINESS_STAGES = [
     prompt: "What is the key takeaway about cash-only business?",
     options: [
       {
-        id: "mix-payments",
-        text: "Add digital payments to create proof and trust",
-        outcome: "Correct. A digital trail builds credibility.",
-        isCorrect: true,
-      },
-      {
         id: "cash-best",
         text: "Cash is always best",
         outcome: "Cash can be useful, but records matter.",
@@ -148,11 +142,17 @@ const CASH_ONLY_BUSINESS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "mix-payments",
+        text: "Add digital payments to create proof and trust",
+        outcome: "Correct. A digital trail builds credibility.",
+        isCorrect: true,
+      },
+      {
         id: "digital-only",
         text: "Stop taking cash completely",
         outcome: "Many businesses benefit from offering both options.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

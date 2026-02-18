@@ -10,16 +10,16 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
     prompt: "A trader wants business to survive long-term. Best guiding rule?",
     options: [
       {
-        id: "daily-sales",
-        text: "Focus only on daily sales",
-        outcome: "Daily sales matter, but structure ensures survival.",
-        isCorrect: false,
-      },
-      {
         id: "records-discipline",
         text: "Maintain records, proof, and financial discipline",
         outcome: "Correct. Structure ensures survival and growth.",
         isCorrect: true,
+      },
+      {
+        id: "daily-sales",
+        text: "Focus only on daily sales",
+        outcome: "Daily sales matter, but structure ensures survival.",
+        isCorrect: false,
       },
       {
         id: "ignore-planning",
@@ -32,7 +32,7 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
         text: "Borrow often",
         outcome: "Frequent borrowing without discipline increases risk.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
     prompt: "Why do records matter for long-term survival?",
     options: [
       {
-        id: "clear-performance",
-        text: "They show clear performance and cash flow",
-        outcome: "Correct. Clear data supports better decisions.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "They help avoid customers",
         outcome: "Records are about clarity, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "clear-performance",
+        text: "They show clear performance and cash flow",
+        outcome: "Correct. Clear data supports better decisions.",
+        isCorrect: true,
       },
       {
         id: "skip-bills",
@@ -62,19 +62,13 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
         text: "They guarantee growth",
         outcome: "Records help but do not guarantee growth.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "How does financial discipline help stability?",
     options: [
-      {
-        id: "prevent-leaks",
-        text: "It prevents slow leaks and surprises",
-        outcome: "Correct. Discipline reduces hidden problems.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -88,23 +82,23 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
         isCorrect: false,
       },
       {
+        id: "prevent-leaks",
+        text: "It prevents slow leaks and surprises",
+        outcome: "Correct. Discipline reduces hidden problems.",
+        isCorrect: true,
+      },
+      {
         id: "no-risk",
         text: "No risk",
         outcome: "Discipline reduces risk but does not remove it.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple habit to build long-term stability?",
     options: [
-      {
-        id: "monthly-review",
-        text: "Review income, expenses, stock, and loans monthly",
-        outcome: "Correct. Reviews keep the business on track.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Keep everything in memory",
@@ -123,18 +117,18 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
         outcome: "Small expenses add up to big losses.",
         isCorrect: false,
       },
+      {
+        id: "monthly-review",
+        text: "Review income, expenses, stock, and loans monthly",
+        outcome: "Correct. Reviews keep the business on track.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business future thinking?",
     options: [
-      {
-        id: "structure",
-        text: "Structure ensures survival and growth",
-        outcome: "Correct. Records and discipline build resilience.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Structure is optional",
@@ -148,11 +142,17 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
         isCorrect: false,
       },
       {
+        id: "structure",
+        text: "Structure ensures survival and growth",
+        outcome: "Correct. Records and discipline build resilience.",
+        isCorrect: true,
+      },
+      {
         id: "borrow-only",
         text: "Borrowing is the main solution",
         outcome: "Borrowing without structure increases risk.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

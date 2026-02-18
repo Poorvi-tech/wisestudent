@@ -16,23 +16,23 @@ const PROOF_OF_INCOME_STAGES = [
         isCorrect: false,
       },
       {
-        id: "income-proof",
-        text: "Income proof and transaction trail",
-        outcome: "Correct. Records help access formal finance.",
-        isCorrect: true,
-      },
-      {
         id: "business-idea",
         text: "Business idea",
         outcome: "Ideas matter, but proof of income is still required.",
         isCorrect: false,
       },
       {
+        id: "income-proof",
+        text: "Income proof and transaction trail",
+        outcome: "Correct. Records help access formal finance.",
+        isCorrect: true,
+      },
+      {
         id: "bank-relationship",
         text: "Bank relationship",
         outcome: "Relationships help, but documentation is essential.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const PROOF_OF_INCOME_STAGES = [
     prompt: "Why do banks ask for transaction history?",
     options: [
       {
-        id: "repayment-capacity",
-        text: "To assess repayment capacity",
-        outcome: "Correct. Banks need to see stable cash flow.",
-        isCorrect: true,
-      },
-      {
         id: "increase-interest",
         text: "To increase interest rates",
         outcome: "Rates depend on risk, not just documents.",
         isCorrect: false,
+      },
+      {
+        id: "repayment-capacity",
+        text: "To assess repayment capacity",
+        outcome: "Correct. Banks need to see stable cash flow.",
+        isCorrect: true,
       },
       {
         id: "delay-approval",
@@ -62,7 +62,7 @@ const PROOF_OF_INCOME_STAGES = [
         text: "To replace a guarantor",
         outcome: "History helps assessment but does not replace all requirements.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const PROOF_OF_INCOME_STAGES = [
         text: "Estimate profits by memory",
         outcome: "Memory-based estimates are unreliable.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to start building a transaction trail?",
     options: [
-      {
-        id: "bank-account",
-        text: "Use a business bank account for payments",
-        outcome: "Correct. Bank records create a clear trail.",
-        isCorrect: true,
-      },
       {
         id: "keep-cash",
         text: "Keep all money in cash at home",
@@ -123,6 +117,12 @@ const PROOF_OF_INCOME_STAGES = [
         outcome: "Mixing funds makes proof harder.",
         isCorrect: false,
       },
+      {
+        id: "bank-account",
+        text: "Use a business bank account for payments",
+        outcome: "Correct. Bank records create a clear trail.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const PROOF_OF_INCOME_STAGES = [
         text: "Loans are always cash-based",
         outcome: "Formal loans require documentation and trails.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

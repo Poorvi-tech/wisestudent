@@ -62,19 +62,13 @@ const INVOICE_IMPORTANCE_STAGES = [
         text: "It removes the need for records",
         outcome: "Invoices are part of proper records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "How does an invoice help the seller?",
     options: [
-      {
-        id: "proof-sale",
-        text: "It provides proof of sale and reduces disputes",
-        outcome: "Correct. Proof helps resolve misunderstandings.",
-        isCorrect: true,
-      },
       {
         id: "avoid-tax",
         text: "It avoids tax rules",
@@ -93,18 +87,18 @@ const INVOICE_IMPORTANCE_STAGES = [
         outcome: "Invoices build trust with customers.",
         isCorrect: false,
       },
+      {
+        id: "proof-sale",
+        text: "It provides proof of sale and reduces disputes",
+        outcome: "Correct. Proof helps resolve misunderstandings.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to issue invoices?",
     options: [
-      {
-        id: "receipt-book",
-        text: "Use a simple receipt book or digital bill",
-        outcome: "Correct. Even simple invoices create proof.",
-        isCorrect: true,
-      },
       {
         id: "verbal-only",
         text: "Give verbal confirmation only",
@@ -118,23 +112,23 @@ const INVOICE_IMPORTANCE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "receipt-book",
+        text: "Use a simple receipt book or digital bill",
+        outcome: "Correct. Even simple invoices create proof.",
+        isCorrect: true,
+      },
+      {
         id: "charge-extra",
         text: "Charge extra only for invoices",
         outcome: "Invoices should be standard practice.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about invoice importance?",
     options: [
-      {
-        id: "protects-both",
-        text: "Invoices protect both buyer and seller",
-        outcome: "Correct. Clear records build trust and safety.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Invoices are optional for small shops",
@@ -153,6 +147,12 @@ const INVOICE_IMPORTANCE_STAGES = [
         outcome: "Invoices are about proof, not delays.",
         isCorrect: false,
       },
+      {
+        id: "protects-both",
+        text: "Invoices protect both buyer and seller",
+        outcome: "Correct. Clear records build trust and safety.",
+        isCorrect: true,
+      }
     ],
   },
 ];

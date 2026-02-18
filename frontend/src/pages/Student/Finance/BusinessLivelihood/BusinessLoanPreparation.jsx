@@ -10,16 +10,16 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
     prompt: "A trader wants to apply for formal loan. What helps approval most?",
     options: [
       {
-        id: "verbal-promise",
-        text: "Verbal promise",
-        outcome: "Promises are not enough for formal lenders.",
-        isCorrect: false,
-      },
-      {
         id: "transaction-history",
         text: "Transaction history and records",
         outcome: "Correct. Data builds lender confidence.",
         isCorrect: true,
+      },
+      {
+        id: "verbal-promise",
+        text: "Verbal promise",
+        outcome: "Promises are not enough for formal lenders.",
+        isCorrect: false,
       },
       {
         id: "friend-reference",
@@ -32,19 +32,13 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
         text: "Shop location",
         outcome: "Location matters less than financial proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do lenders want transaction history?",
     options: [
-      {
-        id: "repayment-capacity",
-        text: "To assess repayment capacity",
-        outcome: "Correct. History shows cash flow stability.",
-        isCorrect: true,
-      },
       {
         id: "delay-approval",
         text: "To delay approval",
@@ -58,23 +52,23 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
         isCorrect: false,
       },
       {
+        id: "repayment-capacity",
+        text: "To assess repayment capacity",
+        outcome: "Correct. History shows cash flow stability.",
+        isCorrect: true,
+      },
+      {
         id: "skip-docs",
         text: "To skip documentation",
         outcome: "History is part of documentation.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What record helps a loan application the most?",
     options: [
-      {
-        id: "bank-statements",
-        text: "Bank statements and sales records",
-        outcome: "Correct. These show real business performance.",
-        isCorrect: true,
-      },
       {
         id: "verbal-claims",
         text: "Verbal claims of profit",
@@ -93,6 +87,12 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
         outcome: "Decor does not prove cash flow.",
         isCorrect: false,
       },
+      {
+        id: "bank-statements",
+        text: "Bank statements and sales records",
+        outcome: "Correct. These show real business performance.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
     prompt: "What is a simple step to prepare for a loan?",
     options: [
       {
-        id: "record-sales",
-        text: "Record sales daily and use a business account",
-        outcome: "Correct. Consistent records build proof.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-bank",
         text: "Avoid banks and keep cash only",
         outcome: "Cash-only makes proof harder.",
         isCorrect: false,
+      },
+      {
+        id: "record-sales",
+        text: "Record sales daily and use a business account",
+        outcome: "Correct. Consistent records build proof.",
+        isCorrect: true,
       },
       {
         id: "delay-records",
@@ -122,19 +122,13 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
         text: "Borrow informally instead",
         outcome: "Informal loans are risky and lack protection.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business loan preparation?",
     options: [
-      {
-        id: "data-confidence",
-        text: "Data builds lender confidence",
-        outcome: "Correct. Records unlock formal finance.",
-        isCorrect: true,
-      },
       {
         id: "records-optional",
         text: "Records are optional",
@@ -153,6 +147,12 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
         outcome: "Location is secondary to financial proof.",
         isCorrect: false,
       },
+      {
+        id: "data-confidence",
+        text: "Data builds lender confidence",
+        outcome: "Correct. Records unlock formal finance.",
+        isCorrect: true,
+      }
     ],
   },
 ];

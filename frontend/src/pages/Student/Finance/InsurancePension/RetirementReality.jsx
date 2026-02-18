@@ -10,18 +10,18 @@ const RETIREMENT_REALITY_STAGES = [
     prompt: "A retired person has no savings. What could have helped earlier?",
     options: [
       {
-        id: "luck",
-        text: "Luck",
-        outcome:
-          "Relying on luck is not a financial plan.",
-        isCorrect: false,
-      },
-      {
         id: "long-term-planning",
         text: "Long-term financial planning",
         outcome:
           "Correct. Preparation supports dignity in old age.",
         isCorrect: true,
+      },
+      {
+        id: "luck",
+        text: "Luck",
+        outcome:
+          "Relying on luck is not a financial plan.",
+        isCorrect: false,
       },
       {
         id: "more-spending",
@@ -119,13 +119,6 @@ const RETIREMENT_REALITY_STAGES = [
         isCorrect: false,
       },
       {
-        id: "financial-stress",
-        text: "Financial stress and dependence",
-        outcome:
-          "Correct. Savings reduce stress in later life.",
-        isCorrect: true,
-      },
-      {
         id: "automatic-support",
         text: "Automatic support always appears",
         outcome:
@@ -139,19 +132,19 @@ const RETIREMENT_REALITY_STAGES = [
           "Lack of savings has serious impact.",
         isCorrect: false,
       },
+      {
+        id: "financial-stress",
+        text: "Financial stress and dependence",
+        outcome:
+          "Correct. Savings reduce stress in later life.",
+        isCorrect: true,
+      },
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about retirement reality?",
     options: [
-      {
-        id: "prepare",
-        text: "Prepare early to support dignity in old age",
-        outcome:
-          "Correct. Preparation supports dignity in old age.",
-        isCorrect: true,
-      },
       {
         id: "ignore",
         text: "Ignore the future",
@@ -165,6 +158,13 @@ const RETIREMENT_REALITY_STAGES = [
         outcome:
           "Spending without saving reduces security.",
         isCorrect: false,
+      },
+      {
+        id: "prepare",
+        text: "Prepare early to support dignity in old age",
+        outcome:
+          "Correct. Preparation supports dignity in old age.",
+        isCorrect: true,
       },
       {
         id: "luck",

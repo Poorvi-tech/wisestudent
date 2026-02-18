@@ -10,18 +10,18 @@ const INFORMAL_WORKER_REALITY_STAGES = [
     prompt: "A daily wage worker has no retirement plan. Main risk?",
     options: [
       {
-        id: "no-problem",
-        text: "No problem",
-        outcome:
-          "Without a plan, later-life expenses can become difficult.",
-        isCorrect: false,
-      },
-      {
         id: "financial-stress",
         text: "Financial stress in later life",
         outcome:
           "Correct. Informal workers need extra planning.",
         isCorrect: true,
+      },
+      {
+        id: "no-problem",
+        text: "No problem",
+        outcome:
+          "Without a plan, later-life expenses can become difficult.",
+        isCorrect: false,
       },
       {
         id: "higher-income",
@@ -78,13 +78,6 @@ const INFORMAL_WORKER_REALITY_STAGES = [
     prompt: "What is a helpful step for informal workers?",
     options: [
       {
-        id: "start-small",
-        text: "Start small savings consistently",
-        outcome:
-          "Correct. Consistency builds long-term security.",
-        isCorrect: true,
-      },
-      {
         id: "skip-planning",
         text: "Skip planning until old age",
         outcome:
@@ -99,6 +92,13 @@ const INFORMAL_WORKER_REALITY_STAGES = [
         isCorrect: false,
       },
       {
+        id: "start-small",
+        text: "Start small savings consistently",
+        outcome:
+          "Correct. Consistency builds long-term security.",
+        isCorrect: true,
+      },
+      {
         id: "depend-others",
         text: "Depend fully on others",
         outcome:
@@ -111,13 +111,6 @@ const INFORMAL_WORKER_REALITY_STAGES = [
     id: 4,
     prompt: "Which habit best supports informal workers’ security?",
     options: [
-      {
-        id: "regular-saving",
-        text: "Regular saving and budget tracking",
-        outcome:
-          "Correct. Small, steady habits build stability.",
-        isCorrect: true,
-      },
       {
         id: "spend-now",
         text: "Spend all income immediately",
@@ -138,6 +131,13 @@ const INFORMAL_WORKER_REALITY_STAGES = [
         outcome:
           "Ignoring risk makes later stress more likely.",
         isCorrect: false,
+      },
+      {
+        id: "regular-saving",
+        text: "Regular saving and budget tracking",
+        outcome:
+          "Correct. Small, steady habits build stability.",
+        isCorrect: true,
       },
     ],
   },

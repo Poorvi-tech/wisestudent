@@ -17,13 +17,6 @@ const SAVING_HABIT_CHOICE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "save-part",
-        text: "Save part for future",
-        outcome:
-          "Correct. Occasional savings strengthen future security.",
-        isCorrect: true,
-      },
-      {
         id: "lend-risky",
         text: "Lend to risky friend",
         outcome:
@@ -36,6 +29,13 @@ const SAVING_HABIT_CHOICE_STAGES = [
         outcome:
           "Luxury spending does not build long-term security.",
         isCorrect: false,
+      },
+      {
+        id: "save-part",
+        text: "Save part for future",
+        outcome:
+          "Correct. Occasional savings strengthen future security.",
+        isCorrect: true,
       },
     ],
   },
@@ -78,13 +78,6 @@ const SAVING_HABIT_CHOICE_STAGES = [
     prompt: "What is a wise split for a small bonus?",
     options: [
       {
-        id: "save-some",
-        text: "Save some, spend some",
-        outcome:
-          "Correct. Balance present enjoyment with future security.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "Spend all immediately",
         outcome:
@@ -97,6 +90,13 @@ const SAVING_HABIT_CHOICE_STAGES = [
         outcome:
           "Risky loans can result in total loss.",
         isCorrect: false,
+      },
+      {
+        id: "save-some",
+        text: "Save some, spend some",
+        outcome:
+          "Correct. Balance present enjoyment with future security.",
+        isCorrect: true,
       },
       {
         id: "ignore",
@@ -112,18 +112,18 @@ const SAVING_HABIT_CHOICE_STAGES = [
     prompt: "Where can a saved bonus be most useful?",
     options: [
       {
-        id: "emergency-fund",
-        text: "Emergency or retirement fund",
-        outcome:
-          "Correct. These funds protect your future.",
-        isCorrect: true,
-      },
-      {
         id: "luxury",
         text: "Luxury shopping only",
         outcome:
           "Luxury spending does not improve security.",
         isCorrect: false,
+      },
+      {
+        id: "emergency-fund",
+        text: "Emergency or retirement fund",
+        outcome:
+          "Correct. These funds protect your future.",
+        isCorrect: true,
       },
       {
         id: "random-risk",
@@ -146,13 +146,6 @@ const SAVING_HABIT_CHOICE_STAGES = [
     prompt: "What is the main takeaway from saving habit choice?",
     options: [
       {
-        id: "save-part",
-        text: "Saving part of windfalls builds security",
-        outcome:
-          "Correct. Occasional savings strengthen future security.",
-        isCorrect: true,
-      },
-      {
         id: "spend-all",
         text: "Spend all windfalls",
         outcome:
@@ -172,6 +165,13 @@ const SAVING_HABIT_CHOICE_STAGES = [
         outcome:
           "Planning helps convert bonuses into security.",
         isCorrect: false,
+      },
+      {
+        id: "save-part",
+        text: "Saving part of windfalls builds security",
+        outcome:
+          "Correct. Occasional savings strengthen future security.",
+        isCorrect: true,
       },
     ],
   },

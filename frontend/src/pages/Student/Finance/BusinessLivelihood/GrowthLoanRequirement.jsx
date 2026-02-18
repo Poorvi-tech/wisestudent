@@ -10,16 +10,16 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
     prompt: "A trader wants to expand shop. What do banks usually check?",
     options: [
       {
-        id: "shop-colour",
-        text: "Shop colour",
-        outcome: "Banks focus on records, not decoration.",
-        isCorrect: false,
-      },
-      {
         id: "records-proof",
         text: "Financial records and income proof",
         outcome: "Correct. Documentation shows repayment capacity.",
         isCorrect: true,
+      },
+      {
+        id: "shop-colour",
+        text: "Shop colour",
+        outcome: "Banks focus on records, not decoration.",
+        isCorrect: false,
       },
       {
         id: "friend-recommendation",
@@ -32,7 +32,7 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
         text: "Family size",
         outcome: "Family size is not a key loan metric.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
     prompt: "Why do banks ask for income proof?",
     options: [
       {
-        id: "repayment-capacity",
-        text: "To assess repayment capacity",
-        outcome: "Correct. Proof shows cash flow stability.",
-        isCorrect: true,
-      },
-      {
         id: "delay-approval",
         text: "To delay approval",
         outcome: "Proof is for assessment, not delay.",
         isCorrect: false,
+      },
+      {
+        id: "repayment-capacity",
+        text: "To assess repayment capacity",
+        outcome: "Correct. Proof shows cash flow stability.",
+        isCorrect: true,
       },
       {
         id: "avoid-customers",
@@ -62,19 +62,13 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
         text: "To skip documentation",
         outcome: "Proof is part of documentation.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "Which record helps most for a growth loan?",
     options: [
-      {
-        id: "bank-statements",
-        text: "Bank statements and sales records",
-        outcome: "Correct. These show real performance.",
-        isCorrect: true,
-      },
       {
         id: "verbal-claims",
         text: "Verbal claims of profit",
@@ -88,23 +82,23 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "bank-statements",
+        text: "Bank statements and sales records",
+        outcome: "Correct. These show real performance.",
+        isCorrect: true,
+      },
+      {
         id: "shop-decor",
         text: "Shop decoration",
         outcome: "Decor does not prove cash flow.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a smart step before applying for a growth loan?",
     options: [
-      {
-        id: "record-sales",
-        text: "Record sales and expenses consistently",
-        outcome: "Correct. Consistent records build trust.",
-        isCorrect: true,
-      },
       {
         id: "avoid-bank",
         text: "Avoid banks and keep cash only",
@@ -123,18 +117,18 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
         outcome: "Informal loans lack protections and clear terms.",
         isCorrect: false,
       },
+      {
+        id: "record-sales",
+        text: "Record sales and expenses consistently",
+        outcome: "Correct. Consistent records build trust.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about growth loan requirements?",
     options: [
-      {
-        id: "documentation",
-        text: "Documentation shows repayment capacity",
-        outcome: "Correct. Records unlock growth finance.",
-        isCorrect: true,
-      },
       {
         id: "records-optional",
         text: "Records are optional",
@@ -148,11 +142,17 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "documentation",
+        text: "Documentation shows repayment capacity",
+        outcome: "Correct. Records unlock growth finance.",
+        isCorrect: true,
+      },
+      {
         id: "colour-matters",
         text: "Shop colour matters most",
         outcome: "Banks focus on financial proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

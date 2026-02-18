@@ -112,6 +112,13 @@ const MEDICAL_COST_REALITY_STAGES = [
     prompt: "Which is the best way to reduce the impact of medical uncertainty?",
     options: [
       {
+        id: "insurance-plus-savings",
+        text: "Use insurance and maintain emergency savings",
+        outcome:
+          "Correct. Together they provide stronger protection.",
+        isCorrect: true,
+      },
+      {
         id: "ignore-risk",
         text: "Ignore the risk and hope for the best",
         outcome:
@@ -124,13 +131,6 @@ const MEDICAL_COST_REALITY_STAGES = [
         outcome:
           "Savings help, but large bills can drain them quickly.",
         isCorrect: false,
-      },
-      {
-        id: "insurance-plus-savings",
-        text: "Use insurance and maintain emergency savings",
-        outcome:
-          "Correct. Together they provide stronger protection.",
-        isCorrect: true,
       },
       {
         id: "delay-coverage",
@@ -153,13 +153,6 @@ const MEDICAL_COST_REALITY_STAGES = [
         isCorrect: false,
       },
       {
-        id: "risk-reduction",
-        text: "It reduces the financial impact of large medical bills",
-        outcome:
-          "Correct. It protects against large, unexpected expenses.",
-        isCorrect: true,
-      },
-      {
         id: "free-healthcare",
         text: "It guarantees free healthcare forever",
         outcome:
@@ -172,6 +165,13 @@ const MEDICAL_COST_REALITY_STAGES = [
         outcome:
           "Insurance is for protection, not guaranteed profits.",
         isCorrect: false,
+      },
+      {
+        id: "risk-reduction",
+        text: "It reduces the financial impact of large medical bills",
+        outcome:
+          "Correct. It protects against large, unexpected expenses.",
+        isCorrect: true,
       },
     ],
   },

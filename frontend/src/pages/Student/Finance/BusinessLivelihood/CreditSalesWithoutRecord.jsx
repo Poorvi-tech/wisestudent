@@ -40,12 +40,6 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
     prompt: "Why is it important to record credit sales?",
     options: [
       {
-        id: "track-dues",
-        text: "To track who owes what and when",
-        outcome: "Correct. Clear records reduce disputes.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "To avoid customers",
         outcome: "Recording is about clarity, not avoidance.",
@@ -63,6 +57,12 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
         outcome: "Invoices and records work together.",
         isCorrect: false,
       },
+      {
+        id: "track-dues",
+        text: "To track who owes what and when",
+        outcome: "Correct. Clear records reduce disputes.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -92,19 +92,13 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
         text: "No risk at all",
         outcome: "There is risk without proper tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple way to track credit sales?",
     options: [
-      {
-        id: "credit-ledger",
-        text: "Maintain a credit ledger with names and amounts",
-        outcome: "Correct. A simple ledger keeps clarity.",
-        isCorrect: true,
-      },
       {
         id: "memory-only",
         text: "Remember everything in your head",
@@ -118,11 +112,17 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
         isCorrect: false,
       },
       {
+        id: "credit-ledger",
+        text: "Maintain a credit ledger with names and amounts",
+        outcome: "Correct. A simple ledger keeps clarity.",
+        isCorrect: true,
+      },
+      {
         id: "yearly-check",
         text: "Check dues once a year",
         outcome: "Yearly checks are too late for credit control.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
         text: "Credit has no risk",
         outcome: "Credit always carries risk without tracking.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

@@ -10,18 +10,18 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
     prompt: "A worker wants dignity in old age. Best path?",
     options: [
       {
-        id: "depend-others",
-        text: "Depend on others",
-        outcome:
-          "Full dependence is uncertain and can strain families.",
-        isCorrect: false,
-      },
-      {
         id: "build-savings",
         text: "Build gradual long-term savings",
         outcome:
           "Correct. Security supports independence.",
         isCorrect: true,
+      },
+      {
+        id: "depend-others",
+        text: "Depend on others",
+        outcome:
+          "Full dependence is uncertain and can strain families.",
+        isCorrect: false,
       },
       {
         id: "avoid-planning",
@@ -78,13 +78,6 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
     prompt: "What is the best habit to reach financial independence?",
     options: [
       {
-        id: "consistent-saving",
-        text: "Consistent saving over time",
-        outcome:
-          "Correct. Consistency builds long-term security.",
-        isCorrect: true,
-      },
-      {
         id: "random-saving",
         text: "Saving only when convenient",
         outcome:
@@ -97,6 +90,13 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
         outcome:
           "Reliance can be uncertain and stressful.",
         isCorrect: false,
+      },
+      {
+        id: "consistent-saving",
+        text: "Consistent saving over time",
+        outcome:
+          "Correct. Consistency builds long-term security.",
+        isCorrect: true,
       },
       {
         id: "ignore-goals",
@@ -146,13 +146,6 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
     prompt: "What is the key takeaway about financial independence?",
     options: [
       {
-        id: "save-gradually",
-        text: "Gradual long-term saving builds independence",
-        outcome:
-          "Correct. Security supports independence.",
-        isCorrect: true,
-      },
-      {
         id: "depend-others",
         text: "Depending on others is safest",
         outcome:
@@ -172,6 +165,13 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
         outcome:
           "Planning supports independence.",
         isCorrect: false,
+      },
+      {
+        id: "save-gradually",
+        text: "Gradual long-term saving builds independence",
+        outcome:
+          "Correct. Security supports independence.",
+        isCorrect: true,
       },
     ],
   },

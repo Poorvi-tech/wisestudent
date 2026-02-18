@@ -16,12 +16,6 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
-        id: "access-finance",
-        text: "Easier access to finance and contracts",
-        outcome: "Correct. Formalisation opens growth opportunities.",
-        isCorrect: true,
-      },
-      {
         id: "more-expenses",
         text: "More expenses only",
         outcome: "There may be some costs, but benefits are significant.",
@@ -33,18 +27,18 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         outcome: "Registration does not reduce customers.",
         isCorrect: false,
       },
+      {
+        id: "access-finance",
+        text: "Easier access to finance and contracts",
+        outcome: "Correct. Formalisation opens growth opportunities.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do banks prefer registered businesses?",
     options: [
-      {
-        id: "verified-status",
-        text: "They have verified status and records",
-        outcome: "Correct. Verified status reduces lender risk.",
-        isCorrect: true,
-      },
       {
         id: "avoid-customers",
         text: "They avoid customers",
@@ -58,11 +52,17 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         isCorrect: false,
       },
       {
+        id: "verified-status",
+        text: "They have verified status and records",
+        outcome: "Correct. Verified status reduces lender risk.",
+        isCorrect: true,
+      },
+      {
         id: "guarantee-profit",
         text: "They guarantee profit",
         outcome: "Profit depends on operations, not registration alone.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,7 +92,7 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         text: "No taxes",
         outcome: "Registration does not remove tax obligations.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -100,16 +100,16 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
     prompt: "What is a smart first step to formalize a business?",
     options: [
       {
-        id: "learn-requirements",
-        text: "Learn registration requirements and start basic records",
-        outcome: "Correct. Understanding requirements is a strong first step.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-docs",
         text: "Ignore documentation",
         outcome: "Documentation is essential for registration.",
         isCorrect: false,
+      },
+      {
+        id: "learn-requirements",
+        text: "Learn registration requirements and start basic records",
+        outcome: "Correct. Understanding requirements is a strong first step.",
+        isCorrect: true,
       },
       {
         id: "delay-forever",
@@ -122,7 +122,7 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         text: "Keep everything cash-only",
         outcome: "Cash-only makes proof harder.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -152,7 +152,7 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
         text: "Registration only adds costs",
         outcome: "Costs exist, but benefits outweigh them.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

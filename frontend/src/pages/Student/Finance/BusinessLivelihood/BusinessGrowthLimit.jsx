@@ -10,16 +10,16 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
     prompt: "A shop grows but keeps informal practices. What may slow expansion?",
     options: [
       {
-        id: "product-quality",
-        text: "Product quality",
-        outcome: "Quality matters, but informal records often limit growth.",
-        isCorrect: false,
-      },
-      {
         id: "lack-records",
         text: "Lack of records and proof",
         outcome: "Correct. Formal practices support scaling.",
         isCorrect: true,
+      },
+      {
+        id: "product-quality",
+        text: "Product quality",
+        outcome: "Quality matters, but informal records often limit growth.",
+        isCorrect: false,
       },
       {
         id: "customer-loyalty",
@@ -32,7 +32,7 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
         text: "Staff behaviour",
         outcome: "Staff matters, but missing records often block expansion.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
     prompt: "Why do records matter more as a business grows?",
     options: [
       {
-        id: "track-performance",
-        text: "They help track performance across more sales and stock",
-        outcome: "Correct. Growth needs stronger tracking.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-customers",
         text: "They help avoid customers",
         outcome: "Records are about control, not avoiding customers.",
         isCorrect: false,
+      },
+      {
+        id: "track-performance",
+        text: "They help track performance across more sales and stock",
+        outcome: "Correct. Growth needs stronger tracking.",
+        isCorrect: true,
       },
       {
         id: "replace-strategy",
@@ -62,19 +62,13 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
         text: "They remove costs",
         outcome: "Costs still exist; records help manage them.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What is a common limitation of informal practices?",
     options: [
-      {
-        id: "weak-proof",
-        text: "Weak proof for loans and partnerships",
-        outcome: "Correct. Lack of proof limits financing and trust.",
-        isCorrect: true,
-      },
       {
         id: "extra-profit",
         text: "Extra profit automatically",
@@ -93,18 +87,18 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
         outcome: "Competition is unrelated to record-keeping.",
         isCorrect: false,
       },
+      {
+        id: "weak-proof",
+        text: "Weak proof for loans and partnerships",
+        outcome: "Correct. Lack of proof limits financing and trust.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple first step toward formal practices?",
     options: [
-      {
-        id: "basic-records",
-        text: "Maintain basic sales and expense records daily",
-        outcome: "Correct. Simple records build a solid base.",
-        isCorrect: true,
-      },
       {
         id: "ignore-bills",
         text: "Ignore bills to save time",
@@ -118,23 +112,23 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
         isCorrect: false,
       },
       {
+        id: "basic-records",
+        text: "Maintain basic sales and expense records daily",
+        outcome: "Correct. Simple records build a solid base.",
+        isCorrect: true,
+      },
+      {
         id: "delay-forever",
         text: "Delay until expansion is complete",
         outcome: "Records should improve before expansion, not after.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business growth limits?",
     options: [
-      {
-        id: "formal-support",
-        text: "Formal practices support scaling",
-        outcome: "Correct. Records and proof unlock growth.",
-        isCorrect: true,
-      },
       {
         id: "informal-best",
         text: "Informal practices are enough",
@@ -153,6 +147,12 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
         outcome: "Small businesses benefit early from formal habits.",
         isCorrect: false,
       },
+      {
+        id: "formal-support",
+        text: "Formal practices support scaling",
+        outcome: "Correct. Records and proof unlock growth.",
+        isCorrect: true,
+      }
     ],
   },
 ];

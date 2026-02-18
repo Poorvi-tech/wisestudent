@@ -51,13 +51,6 @@ const WORK_FOREVER_MYTH_STAGES = [
         isCorrect: false,
       },
       {
-        id: "independence",
-        text: "It helps maintain independence later in life",
-        outcome:
-          "Correct. Planning helps you live on your own terms.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-budget",
         text: "It removes the need for budgeting",
         outcome:
@@ -71,6 +64,13 @@ const WORK_FOREVER_MYTH_STAGES = [
           "No investment can guarantee profits.",
         isCorrect: false,
       },
+      {
+        id: "independence",
+        text: "It helps maintain independence later in life",
+        outcome:
+          "Correct. Planning helps you live on your own terms.",
+        isCorrect: true,
+      },
     ],
   },
   {
@@ -78,18 +78,18 @@ const WORK_FOREVER_MYTH_STAGES = [
     prompt: "What can happen to income as people age?",
     options: [
       {
-        id: "always-increase",
-        text: "It always increases",
-        outcome:
-          "Income can plateau or decrease with reduced work.",
-        isCorrect: false,
-      },
-      {
         id: "may-reduce",
         text: "It may reduce as work capacity changes",
         outcome:
           "Correct. Reduced work can lower income.",
         isCorrect: true,
+      },
+      {
+        id: "always-increase",
+        text: "It always increases",
+        outcome:
+          "Income can plateau or decrease with reduced work.",
+        isCorrect: false,
       },
       {
         id: "never-change",
@@ -119,13 +119,6 @@ const WORK_FOREVER_MYTH_STAGES = [
         isCorrect: false,
       },
       {
-        id: "save-and-plan",
-        text: "Save regularly and plan early",
-        outcome:
-          "Correct. Early planning builds security.",
-        isCorrect: true,
-      },
-      {
         id: "ignore-planning",
         text: "Ignore planning until retirement",
         outcome:
@@ -138,6 +131,13 @@ const WORK_FOREVER_MYTH_STAGES = [
         outcome:
           "Spending everything leaves no cushion.",
         isCorrect: false,
+      },
+      {
+        id: "save-and-plan",
+        text: "Save regularly and plan early",
+        outcome:
+          "Correct. Early planning builds security.",
+        isCorrect: true,
       },
     ],
   },
@@ -153,18 +153,18 @@ const WORK_FOREVER_MYTH_STAGES = [
         isCorrect: false,
       },
       {
-        id: "plan-independence",
-        text: "Plan early to protect independence",
-        outcome:
-          "Correct. Retirement planning supports independence.",
-        isCorrect: true,
-      },
-      {
         id: "savings-useless",
         text: "Savings are useless",
         outcome:
           "Savings are essential for long-term stability.",
         isCorrect: false,
+      },
+      {
+        id: "plan-independence",
+        text: "Plan early to protect independence",
+        outcome:
+          "Correct. Retirement planning supports independence.",
+        isCorrect: true,
       },
       {
         id: "wait-crisis",

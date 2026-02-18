@@ -16,12 +16,6 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "reliability",
-        text: "Records show reliability and repayment ability",
-        outcome: "Correct. Data builds trust in business relationships.",
-        isCorrect: true,
-      },
-      {
         id: "decoration",
         text: "Decoration",
         outcome: "Records are for proof, not decoration.",
@@ -33,6 +27,12 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
         outcome: "Credit decisions are based on risk, not randomness.",
         isCorrect: false,
       },
+      {
+        id: "reliability",
+        text: "Records show reliability and repayment ability",
+        outcome: "Correct. Data builds trust in business relationships.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -40,16 +40,16 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
     prompt: "How do records help suppliers offer credit?",
     options: [
       {
-        id: "payment-history",
-        text: "They show payment history and cash flow",
-        outcome: "Correct. History reduces repayment risk.",
-        isCorrect: true,
-      },
-      {
         id: "avoid-suppliers",
         text: "They help avoid suppliers",
         outcome: "Records build trust, not avoidance.",
         isCorrect: false,
+      },
+      {
+        id: "payment-history",
+        text: "They show payment history and cash flow",
+        outcome: "Correct. History reduces repayment risk.",
+        isCorrect: true,
       },
       {
         id: "skip-contracts",
@@ -62,19 +62,13 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
         text: "They increase prices",
         outcome: "Prices depend on terms, not record-keeping alone.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "What risk grows without records?",
     options: [
-      {
-        id: "credit-disputes",
-        text: "Credit disputes and repayment confusion",
-        outcome: "Correct. Missing records create conflicts.",
-        isCorrect: true,
-      },
       {
         id: "more-profit",
         text: "More profit automatically",
@@ -88,11 +82,17 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "credit-disputes",
+        text: "Credit disputes and repayment confusion",
+        outcome: "Correct. Missing records create conflicts.",
+        isCorrect: true,
+      },
+      {
         id: "no-risk",
         text: "No risk at all",
         outcome: "There is real risk without records.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,12 +130,6 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
     prompt: "What is the key takeaway about supplier credit terms?",
     options: [
       {
-        id: "data-trust",
-        text: "Data builds trust in business relationships",
-        outcome: "Correct. Records improve credit access.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Records are optional",
         outcome: "Records are essential for credit trust.",
@@ -148,11 +142,17 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
         isCorrect: false,
       },
       {
+        id: "data-trust",
+        text: "Data builds trust in business relationships",
+        outcome: "Correct. Records improve credit access.",
+        isCorrect: true,
+      },
+      {
         id: "no-impact",
         text: "Records make no impact",
         outcome: "Records directly impact credit decisions.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

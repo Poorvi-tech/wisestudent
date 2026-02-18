@@ -1593,7 +1593,7 @@ const GameCategoryPage = () => {
         {
           duration: 4000,
           position: "bottom-center",
-          icon: "??",
+          icon: "🎉",
         }
       );
       return;
@@ -1603,7 +1603,7 @@ const GameCategoryPage = () => {
       toast.error(requirements || "This section is locked.", {
         duration: 4000,
         position: "bottom-center",
-        icon: "??",
+        icon: "🔒",
       });
       return;
     }
@@ -1638,7 +1638,7 @@ const GameCategoryPage = () => {
         toast.error("Complete the previous game first to unlock this game!", {
           duration: 4000,
           position: "bottom-center",
-          icon: "??",
+          icon: "⏰",
         });
         return;
       }
@@ -1734,7 +1734,7 @@ const GameCategoryPage = () => {
         {
           duration: 3000,
           position: "bottom-center",
-          icon: "??",
+          icon: "☺️",
         }
       );
     }, 1000);
@@ -1831,6 +1831,11 @@ const GameCategoryPage = () => {
 
         // Navigate to the game after a short delay
         if (game.path) {
+          const sequenceState = {
+            gameSequence: specialGameSequence,
+            currentGameId: game.id,
+          };
+
           // Find next game in the sequence (if applicable)
           let nextGamePath = null;
           let nextGameId = null;
@@ -1844,6 +1849,7 @@ const GameCategoryPage = () => {
           setTimeout(() => {
             navigate(game.path, { 
               state: { 
+                gameId: game.id,
                 coinsPerLevel: game.coins || null,
                 totalCoins: game.coins || 5,
                 totalXp: game.xp || 10,

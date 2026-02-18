@@ -62,19 +62,13 @@ const BUSINESS_STABILITY_DECISION_STAGES = [
         text: "They guarantee growth",
         outcome: "Records help but do not guarantee growth.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 3,
     prompt: "How do formal records help with financing?",
     options: [
-      {
-        id: "loan-proof",
-        text: "They provide income proof for lenders",
-        outcome: "Correct. Proof builds lender confidence.",
-        isCorrect: true,
-      },
       {
         id: "avoid-banks",
         text: "They help avoid banks",
@@ -93,18 +87,18 @@ const BUSINESS_STABILITY_DECISION_STAGES = [
         outcome: "Interest depends on risk and terms.",
         isCorrect: false,
       },
+      {
+        id: "loan-proof",
+        text: "They provide income proof for lenders",
+        outcome: "Correct. Proof builds lender confidence.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 4,
     prompt: "What is a simple first step to formalise records?",
     options: [
-      {
-        id: "daily-records",
-        text: "Maintain daily sales and expense logs",
-        outcome: "Correct. Consistent records create structure.",
-        isCorrect: true,
-      },
       {
         id: "ignore-expenses",
         text: "Ignore small expenses",
@@ -118,23 +112,23 @@ const BUSINESS_STABILITY_DECISION_STAGES = [
         isCorrect: false,
       },
       {
+        id: "daily-records",
+        text: "Maintain daily sales and expense logs",
+        outcome: "Correct. Consistent records create structure.",
+        isCorrect: true,
+      },
+      {
         id: "cash-only",
         text: "Use cash only and skip receipts",
         outcome: "Cash-only reduces proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 5,
     prompt: "What is the key takeaway about business stability decision?",
     options: [
-      {
-        id: "structure",
-        text: "Structure supports growth",
-        outcome: "Correct. Formal records enable stability and expansion.",
-        isCorrect: true,
-      },
       {
         id: "optional",
         text: "Formal records are optional",
@@ -153,6 +147,12 @@ const BUSINESS_STABILITY_DECISION_STAGES = [
         outcome: "Records improve decisions and protect profit.",
         isCorrect: false,
       },
+      {
+        id: "structure",
+        text: "Structure supports growth",
+        outcome: "Correct. Formal records enable stability and expansion.",
+        isCorrect: true,
+      }
     ],
   },
 ];

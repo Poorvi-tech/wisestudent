@@ -16,35 +16,29 @@ const DIGITAL_RECEIPTS_STAGES = [
         isCorrect: false,
       },
       {
-        id: "clear-proof",
-        text: "Clear proof for customer and seller",
-        outcome: "Correct. Digital proof improves transparency.",
-        isCorrect: true,
-      },
-      {
         id: "slower-business",
         text: "Slower business",
         outcome: "Receipts can be instant and efficient.",
         isCorrect: false,
       },
       {
+        id: "clear-proof",
+        text: "Clear proof for customer and seller",
+        outcome: "Correct. Digital proof improves transparency.",
+        isCorrect: true,
+      },
+      {
         id: "less-profit",
         text: "Less profit",
         outcome: "Proof does not reduce profit; it protects it.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why do customers value digital receipts?",
     options: [
-      {
-        id: "proof-claim",
-        text: "They provide proof for returns or warranty",
-        outcome: "Correct. Proof supports customer claims.",
-        isCorrect: true,
-      },
       {
         id: "avoid-payment",
         text: "They help avoid paying",
@@ -63,6 +57,12 @@ const DIGITAL_RECEIPTS_STAGES = [
         outcome: "Service still matters, receipts only support it.",
         isCorrect: false,
       },
+      {
+        id: "proof-claim",
+        text: "They provide proof for returns or warranty",
+        outcome: "Correct. Proof supports customer claims.",
+        isCorrect: true,
+      }
     ],
   },
   {
@@ -70,16 +70,16 @@ const DIGITAL_RECEIPTS_STAGES = [
     prompt: "How do digital receipts help a business?",
     options: [
       {
-        id: "record-keeping",
-        text: "They keep records organized and searchable",
-        outcome: "Correct. Digital records are easy to store and find.",
-        isCorrect: true,
-      },
-      {
         id: "hide-sales",
         text: "They hide sales",
         outcome: "Digital receipts make sales more visible.",
         isCorrect: false,
+      },
+      {
+        id: "record-keeping",
+        text: "They keep records organized and searchable",
+        outcome: "Correct. Digital records are easy to store and find.",
+        isCorrect: true,
       },
       {
         id: "avoid-taxes",
@@ -92,7 +92,7 @@ const DIGITAL_RECEIPTS_STAGES = [
         text: "They reduce customers",
         outcome: "Transparency often builds loyalty.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const DIGITAL_RECEIPTS_STAGES = [
     prompt: "What is the key takeaway about digital receipts?",
     options: [
       {
-        id: "transparency",
-        text: "Digital proof improves transparency",
-        outcome: "Correct. Records strengthen trust and clarity.",
-        isCorrect: true,
-      },
-      {
         id: "optional",
         text: "Receipts are optional",
         outcome: "Receipts are important for proof.",
         isCorrect: false,
+      },
+      {
+        id: "transparency",
+        text: "Digital proof improves transparency",
+        outcome: "Correct. Records strengthen trust and clarity.",
+        isCorrect: true,
       },
       {
         id: "slow-business",
@@ -152,7 +152,7 @@ const DIGITAL_RECEIPTS_STAGES = [
         text: "Only large shops need receipts",
         outcome: "Small shops benefit just as much.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];

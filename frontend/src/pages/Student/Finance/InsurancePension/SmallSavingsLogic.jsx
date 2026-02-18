@@ -17,18 +17,18 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
         isCorrect: false,
       },
       {
-        id: "consistent-builds",
-        text: "Consistent saving builds security",
-        outcome:
-          "Correct. Discipline matters more than size.",
-        isCorrect: true,
-      },
-      {
         id: "only-big",
         text: "Only big investments matter",
         outcome:
           "Large investments help, but consistent saving is powerful too.",
         isCorrect: false,
+      },
+      {
+        id: "consistent-builds",
+        text: "Consistent saving builds security",
+        outcome:
+          "Correct. Discipline matters more than size.",
+        isCorrect: true,
       },
       {
         id: "optional",
@@ -112,13 +112,6 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
     prompt: "Which habit makes small savings effective?",
     options: [
       {
-        id: "consistency",
-        text: "Saving consistently every month",
-        outcome:
-          "Correct. Consistency is the key.",
-        isCorrect: true,
-      },
-      {
         id: "random",
         text: "Saving only when you feel like it",
         outcome:
@@ -133,6 +126,13 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
         isCorrect: false,
       },
       {
+        id: "consistency",
+        text: "Saving consistently every month",
+        outcome:
+          "Correct. Consistency is the key.",
+        isCorrect: true,
+      },
+      {
         id: "ignore-goals",
         text: "Ignoring goals",
         outcome:
@@ -145,13 +145,6 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
     id: 5,
     prompt: "What is the main takeaway about small savings?",
     options: [
-      {
-        id: "discipline",
-        text: "Discipline matters more than size",
-        outcome:
-          "Correct. Consistency builds security over time.",
-        isCorrect: true,
-      },
       {
         id: "size-only",
         text: "Only size matters",
@@ -172,6 +165,13 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
         outcome:
           "Saving helps build financial resilience.",
         isCorrect: false,
+      },
+      {
+        id: "discipline",
+        text: "Discipline matters more than size",
+        outcome:
+          "Correct. Consistency builds security over time.",
+        isCorrect: true,
       },
     ],
   },

@@ -16,12 +16,6 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
         isCorrect: false,
       },
       {
-        id: "payment-proof",
-        text: "Written or digital payment proof",
-        outcome: "Correct. Proof prevents financial disputes.",
-        isCorrect: true,
-      },
-      {
         id: "memory",
         text: "Memory",
         outcome: "Memory fades and can be disputed.",
@@ -33,18 +27,18 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
         outcome: "Guessing never resolves disputes.",
         isCorrect: false,
       },
+      {
+        id: "payment-proof",
+        text: "Written or digital payment proof",
+        outcome: "Correct. Proof prevents financial disputes.",
+        isCorrect: true,
+      }
     ],
   },
   {
     id: 2,
     prompt: "Why is digital payment proof helpful?",
     options: [
-      {
-        id: "time-stamp",
-        text: "It shows date, time, and amount",
-        outcome: "Correct. A timestamped trail is reliable.",
-        isCorrect: true,
-      },
       {
         id: "avoid-supplier",
         text: "It avoids suppliers",
@@ -58,11 +52,17 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
         isCorrect: false,
       },
       {
+        id: "time-stamp",
+        text: "It shows date, time, and amount",
+        outcome: "Correct. A timestamped trail is reliable.",
+        isCorrect: true,
+      },
+      {
         id: "increase-cost",
         text: "It increases costs automatically",
         outcome: "Costs depend on terms, not on having proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -92,7 +92,7 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
         text: "Extra credit lines",
         outcome: "Credit lines usually require stronger proof.",
         isCorrect: false,
-      },
+      }
     ],
   },
   {
@@ -130,16 +130,16 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
     prompt: "What is the key takeaway about supplier payment proof?",
     options: [
       {
-        id: "proof-prevents",
-        text: "Proof prevents financial disputes",
-        outcome: "Correct. Documentation keeps supplier relationships strong.",
-        isCorrect: true,
-      },
-      {
         id: "records-optional",
         text: "Records are optional",
         outcome: "Records are essential for clarity.",
         isCorrect: false,
+      },
+      {
+        id: "proof-prevents",
+        text: "Proof prevents financial disputes",
+        outcome: "Correct. Documentation keeps supplier relationships strong.",
+        isCorrect: true,
       },
       {
         id: "memory-enough",
@@ -152,7 +152,7 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
         text: "Verbal promises are best",
         outcome: "Written proof is safer than verbal promises.",
         isCorrect: false,
-      },
+      }
     ],
   },
 ];
