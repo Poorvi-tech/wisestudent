@@ -180,7 +180,7 @@ const INSURANCE_DECISION_CHECK_STAGES = [
 
 const InsuranceDecisionCheck = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-12";
+  const gameId = "finance-insurance-pension-18";
   const gameData = getGameDataById(gameId);
   const totalStages = INSURANCE_DECISION_CHECK_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

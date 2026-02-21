@@ -179,7 +179,7 @@ const SMALL_SAVINGS_LOGIC_STAGES = [
 
 const SmallSavingsLogic = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-16";
+  const gameId = "finance-insurance-pension-25";
   const gameData = getGameDataById(gameId);
   const totalStages = SMALL_SAVINGS_LOGIC_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

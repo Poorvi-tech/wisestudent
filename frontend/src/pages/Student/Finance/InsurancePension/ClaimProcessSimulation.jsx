@@ -4,205 +4,184 @@ import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const INCOME_VS_LONGEVITY_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt:
-      "A person expects pension from employer but has no written plan. Safer action?",
+    prompt: "Which is the correct overall claim process order?",
     options: [
       {
-        id: "assume-employer",
-        text: "Assume employer will handle",
-        outcome:
-          "Assumptions can fail. Always confirm details in writing.",
-        isCorrect: false,
-      },
-      {
-        id: "confirm-backup",
-        text: "Confirm and create personal backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "correct-order",
+        text: "Upload documents → Verification → Claim approved",
+        outcome: "Correct. Submit documents, verification happens, then approval.",
         isCorrect: true,
       },
       {
-        id: "ignore",
-        text: "Ignore",
-        outcome:
-          "Ignoring plans increases risk later.",
+        id: "approve-first",
+        text: "Claim approved → Upload documents → Verification",
+        outcome: "Approval comes after verification, not before.",
         isCorrect: false,
       },
       {
-        id: "borrow-later",
-        text: "Borrow later",
-        outcome:
-          "Borrowing later can create stress and debt.",
+        id: "verify-before-upload",
+        text: "Verification → Upload documents → Claim approved",
+        outcome: "Verification needs documents first.",
+        isCorrect: false,
+      },
+      {
+        id: "random-order",
+        text: "Verification → Claim approved → Upload documents",
+        outcome: "Documents must be submitted before verification.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 2,
-    prompt: "Why is written confirmation of pension benefits important?",
+    prompt: "After an incident occurs, what should be your first action?",
     options: [
+      
       {
-        id: "clarity",
-        text: "It clarifies eligibility, amount, and timing",
-        outcome:
-          "Correct. Written details reduce confusion and surprises.",
+        id: "wait-approval",
+        text: "Wait for approval before uploading",
+        outcome: "Approval happens after documents and verification.",
+        isCorrect: false,
+      },
+      {
+        id: "submit-docs",
+        text: "Upload necessary documents and details",
+        outcome: "Correct. Start by submitting required documents.",
         isCorrect: true,
       },
       {
-        id: "no-need",
-        text: "It is not needed at all",
-        outcome:
-          "Without documentation, plans can be uncertain.",
+        id: "share-otp",
+        text: "Share OTP with caller",
+        outcome: "Never share OTP. It’s unrelated and unsafe.",
         isCorrect: false,
       },
       {
-        id: "guarantee-profit",
-        text: "It guarantees high profits",
-        outcome:
-          "Pensions are not about guaranteed profits.",
-        isCorrect: false,
-      },
-      {
-        id: "replace-savings",
-        text: "It replaces the need for savings",
-        outcome:
-          "Backup savings are still important.",
+        id: "pay-cash",
+        text: "Pay cash to speed the process",
+        outcome: "Payments don’t replace official steps.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 3,
-    prompt: "What is a good backup plan if pension details are unclear?",
+    prompt: "What does the verification step typically check?",
     options: [
+      
       {
-        id: "spend-now",
-        text: "Spend now and hope later",
-        outcome:
-          "Spending without planning increases future risk.",
+        id: "brochure-colour",
+        text: "Colour of the brochure",
+        outcome: "Marketing materials don’t decide claims.",
         isCorrect: false,
       },
       {
-        id: "depend-others",
-        text: "Depend fully on others",
-        outcome:
-          "Dependence is uncertain and risky.",
+        id: "agent-friendliness",
+        text: "Agent’s friendliness",
+        outcome: "Claims are decided per policy and facts.",
         isCorrect: false,
-      },
-      {
-        id: "ignore-benefits",
-        text: "Ignore benefits completely",
-        outcome:
-          "Benefits should be verified and included in planning.",
-        isCorrect: false,
-      },
-      {
-        id: "build-savings",
-        text: "Build personal savings alongside retirement benefits",
-        outcome:
-          "Correct. Savings reduce uncertainty and risk.",
+      },{
+        id: "check-terms",
+        text: "Whether documents and event match policy terms",
+        outcome: "Correct. Verification ensures terms and documents align.",
         isCorrect: true,
+      },
+      {
+        id: "bank-balance",
+        text: "Your current bank balance",
+        outcome: "Balance is not a claim criterion.",
+        isCorrect: false,
       },
     ],
   },
   {
     id: 4,
-    prompt: "Which action reduces longevity risk the most?",
+    prompt: "If documents are missing or incorrect, what should you do?",
     options: [
+      
       {
-        id: "assume",
-        text: "Assume benefits will cover everything",
-        outcome:
-          "Assumptions can leave gaps in retirement.",
+        id: "do-nothing",
+        text: "Wait and do nothing",
+        outcome: "Inaction delays or rejects the claim.",
         isCorrect: false,
       },
       {
-        id: "borrow",
-        text: "Plan to borrow later",
-        outcome:
-          "Borrowing later can create long-term stress.",
+        id: "close-claim",
+        text: "Close the claim immediately",
+        outcome: "Better to complete documents instead.",
         isCorrect: false,
       },
       {
-        id: "confirm-plan",
-        text: "Confirm employer benefits and save independently",
-        outcome:
-          "Correct. Combining both reduces uncertainty.",
+        id: "share-otp-again",
+        text: "Share OTP again to fix it",
+        outcome: "OTP sharing is unsafe and unrelated.",
+        isCorrect: false,
+      },
+      {
+        id: "provide-missing",
+        text: "Provide the missing or corrected documents",
+        outcome: "Correct. Respond and complete documentation.",
         isCorrect: true,
-      },
-      {
-        id: "no-plan",
-        text: "No plan is needed",
-        outcome:
-          "Planning reduces risks and uncertainty.",
-        isCorrect: false,
       },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway about income vs longevity?",
+    prompt: "When is the claim approved?",
     options: [
       {
-        id: "confirm-backup",
-        text: "Confirm benefits and build backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "after-verification",
+        text: "After verification confirms coverage and documents",
+        outcome: "Correct. Approval follows successful verification.",
         isCorrect: true,
       },
       {
-        id: "assume",
-        text: "Assume employer handles everything",
-        outcome:
-          "Assumptions can lead to gaps.",
+        id: "immediately",
+        text: "Immediately after purchase of policy",
+        outcome: "Approval is event-based, not automatic.",
         isCorrect: false,
       },
       {
-        id: "ignore",
-        text: "Ignore retirement planning",
-        outcome:
-          "Ignoring planning increases risk.",
+        id: "friend-recommendation",
+        text: "When a friend recommends approval",
+        outcome: "Recommendations don’t decide claims.",
         isCorrect: false,
       },
       {
-        id: "borrow",
-        text: "Borrow later to cover needs",
-        outcome:
-          "Borrowing later can add debt and stress.",
+        id: "premium-hike",
+        text: "When premium is increased",
+        outcome: "Premium change is unrelated to claim approval.",
         isCorrect: false,
       },
     ],
   },
 ];
 
-const IncomeVsLongevity = () => {
+const ClaimProcessSimulation = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-35";
+  const gameId = "finance-insurance-pension-15";
   const gameData = getGameDataById(gameId);
-  const totalStages = INCOME_VS_LONGEVITY_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
-  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = INCOME_VS_LONGEVITY_STAGES[currentStageIndex];
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
+  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const stage = STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => {
         setShowResult(true);
@@ -224,10 +203,10 @@ const IncomeVsLongevity = () => {
 
   return (
     <GameShell
-      title="Income vs Longevity"
+      title="Claim Process Simulation"
       subtitle={
         showResult
-          ? "Quiz complete! You understand how planning reduces uncertainty."
+          ? "Simulation complete! You understand the claim process flow."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -256,11 +235,9 @@ const IncomeVsLongevity = () => {
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
@@ -269,7 +246,6 @@ const IncomeVsLongevity = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -285,8 +261,7 @@ const IncomeVsLongevity = () => {
             </div>
           </div>
         )}
-
-        {selectedChoice && (
+        {selectedChoice && !showResult && (
           <>
             <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
               {selectedChoice.outcome}
@@ -308,4 +283,5 @@ const IncomeVsLongevity = () => {
   );
 };
 
-export default IncomeVsLongevity;
+export default ClaimProcessSimulation;
+

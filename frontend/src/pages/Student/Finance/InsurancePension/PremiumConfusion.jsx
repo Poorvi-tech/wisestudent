@@ -179,7 +179,7 @@ const PREMIUM_CONFUSION_STAGES = [
 
 const PremiumConfusion = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-6";
+  const gameId = "finance-insurance-pension-9";
   const gameData = getGameDataById(gameId);
   const totalStages = PREMIUM_CONFUSION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

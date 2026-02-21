@@ -179,7 +179,7 @@ const FINANCIAL_INDEPENDENCE_GOAL_STAGES = [
 
 const FinancialIndependenceGoal = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-24";
+  const gameId = "finance-insurance-pension-37";
   const gameData = getGameDataById(gameId);
   const totalStages = FINANCIAL_INDEPENDENCE_GOAL_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
@@ -188,9 +188,9 @@ const FinancialIndependenceGoal = () => {
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
-  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
+  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
   const stage = FINANCIAL_INDEPENDENCE_GOAL_STAGES[currentStageIndex];
 
   const handleChoice = (option) => {

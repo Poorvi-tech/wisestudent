@@ -1,212 +1,248 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const INCOME_VS_LONGEVITY_STAGES = [
+const PROTECTION_REFLEX_STAGES = [
   {
     id: 1,
     prompt:
-      "A person expects pension from employer but has no written plan. Safer action?",
+      "Sudden hospital bill appears for an emergency surgery. Your reflex?",
     options: [
+      
       {
-        id: "assume-employer",
-        text: "Assume employer will handle",
+        id: "no-planning",
+        text: "No Planning",
         outcome:
-          "Assumptions can fail. Always confirm details in writing.",
+          "Without planning, a big hospital bill can wipe out savings or force debt.",
         isCorrect: false,
       },
       {
-        id: "confirm-backup",
-        text: "Confirm and create personal backup savings",
+        id: "risk-covered",
+        text: "Risk Covered (Health cover)",
         outcome:
-          "Correct. Personal planning reduces uncertainty.",
+          "Correct. Insurance turns a large medical expense into a manageable claim.",
         isCorrect: true,
       },
       {
-        id: "ignore",
-        text: "Ignore",
+        id: "borrow-immediately",
+        text: "Borrow Immediately",
         outcome:
-          "Ignoring plans increases risk later.",
+          "Loans add burden and interest; cover is better for these shocks.",
         isCorrect: false,
       },
       {
-        id: "borrow-later",
-        text: "Borrow later",
-        outcome:
-          "Borrowing later can create stress and debt.",
+        id: "delay-decision",
+        text: "Delay Decision",
+        outcome: "Delays worsen outcomes and stress. Protection is proactive.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 2,
-    prompt: "Why is written confirmation of pension benefits important?",
+    prompt:
+      "Your two-wheeler meets an accident with third‑party damage. Your reflex?",
     options: [
+      
       {
-        id: "clarity",
-        text: "It clarifies eligibility, amount, and timing",
+        id: "no-planning",
+        text: "No Planning",
         outcome:
-          "Correct. Written details reduce confusion and surprises.",
+          "No cover means you may bear costly repairs and third‑party liabilities.",
+        isCorrect: false,
+      },
+      {
+        id: "borrow-immediately",
+        text: "Borrow Immediately",
+        outcome:
+          "Borrowing is not protection; liability cover exists for this scenario.",
+        isCorrect: false,
+      },
+      {
+        id: "risk-covered",
+        text: "Risk Covered (Motor/third‑party)",
+        outcome:
+          "Correct. Third‑party liability cover protects you from heavy penalties and payouts.",
         isCorrect: true,
       },
       {
-        id: "no-need",
-        text: "It is not needed at all",
-        outcome:
-          "Without documentation, plans can be uncertain.",
-        isCorrect: false,
-      },
-      {
-        id: "guarantee-profit",
-        text: "It guarantees high profits",
-        outcome:
-          "Pensions are not about guaranteed profits.",
-        isCorrect: false,
-      },
-      {
-        id: "replace-savings",
-        text: "It replaces the need for savings",
-        outcome:
-          "Backup savings are still important.",
+        id: "hope-it-passes",
+        text: "Hope It Passes",
+        outcome: "Hope is not a plan. Protection absorbs the shock.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 3,
-    prompt: "What is a good backup plan if pension details are unclear?",
+    prompt: "Home suffers a fire; repair costs are huge. Your reflex?",
     options: [
       {
-        id: "spend-now",
-        text: "Spend now and hope later",
+        id: "risk-covered",
+        text: "Risk Covered (Property cover)",
         outcome:
-          "Spending without planning increases future risk.",
-        isCorrect: false,
-      },
-      {
-        id: "depend-others",
-        text: "Depend fully on others",
-        outcome:
-          "Dependence is uncertain and risky.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-benefits",
-        text: "Ignore benefits completely",
-        outcome:
-          "Benefits should be verified and included in planning.",
-        isCorrect: false,
-      },
-      {
-        id: "build-savings",
-        text: "Build personal savings alongside retirement benefits",
-        outcome:
-          "Correct. Savings reduce uncertainty and risk.",
+          "Correct. Property insurance helps recover from fire and allied perils.",
         isCorrect: true,
+      },
+      {
+        id: "no-planning",
+        text: "No Planning",
+        outcome:
+          "No cover means the entire replacement cost falls on your pocket.",
+        isCorrect: false,
+      },
+      {
+        id: "borrow-immediately",
+        text: "Borrow Immediately",
+        outcome:
+          "Debt after disaster deepens losses; protection reduces the shock.",
+        isCorrect: false,
+      },
+      {
+        id: "delay-decision",
+        text: "Delay Decision",
+        outcome:
+          "Delaying claims or decisions risks further damage and denial windows.",
+        isCorrect: false,
       },
     ],
   },
   {
     id: 4,
-    prompt: "Which action reduces longevity risk the most?",
+    prompt:
+      "Primary earner diagnosed with a critical illness; income will pause. Reflex?",
     options: [
+      
       {
-        id: "assume",
-        text: "Assume benefits will cover everything",
+        id: "no-planning",
+        text: "No Planning",
         outcome:
-          "Assumptions can leave gaps in retirement.",
+          "Without protection, families face income loss plus treatment costs.",
         isCorrect: false,
       },
       {
-        id: "borrow",
-        text: "Plan to borrow later",
+        id: "borrow-immediately",
+        text: "Borrow Immediately",
         outcome:
-          "Borrowing later can create long-term stress.",
+          "Loans may help cash flow but add stress; protection provides resilience.",
         isCorrect: false,
       },
       {
-        id: "confirm-plan",
-        text: "Confirm employer benefits and save independently",
+        id: "hope-it-passes",
+        text: "Hope It Passes",
         outcome:
-          "Correct. Combining both reduces uncertainty.",
+          "Hope alone cannot pay bills; planned protection cushions the blow.",
+        isCorrect: false,
+      },
+      {
+        id: "risk-covered",
+        text: "Risk Covered (Critical illness/term)",
+        outcome:
+          "Correct. Payouts from protection ease income shock during treatment.",
         isCorrect: true,
-      },
-      {
-        id: "no-plan",
-        text: "No plan is needed",
-        outcome:
-          "Planning reduces risks and uncertainty.",
-        isCorrect: false,
       },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway about income vs longevity?",
+    prompt: "Crop failure or weather shock hits family income. Reflex?",
     options: [
       {
-        id: "confirm-backup",
-        text: "Confirm benefits and build backup savings",
+        id: "risk-covered",
+        text: "Risk Covered (Relevant agri/term cover)",
         outcome:
-          "Correct. Personal planning reduces uncertainty.",
+          "Correct. Suitable coverage transfers part of the risk away from income.",
         isCorrect: true,
       },
       {
-        id: "assume",
-        text: "Assume employer handles everything",
+        id: "no-planning",
+        text: "No Planning",
         outcome:
-          "Assumptions can lead to gaps.",
+          "Without planning, a single event can destabilize the entire budget.",
         isCorrect: false,
       },
       {
-        id: "ignore",
-        text: "Ignore retirement planning",
+        id: "borrow-immediately",
+        text: "Borrow Immediately",
         outcome:
-          "Ignoring planning increases risk.",
+          "Debt after loss can spiral; protection aims to reduce such shocks.",
         isCorrect: false,
       },
       {
-        id: "borrow",
-        text: "Borrow later to cover needs",
-        outcome:
-          "Borrowing later can add debt and stress.",
+        id: "delay-decision",
+        text: "Delay Decision",
+        outcome: "Reflex action beats delay; protection readies you beforehand.",
         isCorrect: false,
       },
     ],
   },
 ];
 
-const IncomeVsLongevity = () => {
+const ProtectionReflex = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-35";
+  const gameId = "finance-insurance-pension-2";
   const gameData = getGameDataById(gameId);
-  const totalStages = INCOME_VS_LONGEVITY_STAGES.length;
+  const totalStages = PROTECTION_REFLEX_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(10);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
-  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = INCOME_VS_LONGEVITY_STAGES[currentStageIndex];
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
+  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const stage = useMemo(() => PROTECTION_REFLEX_STAGES[currentStageIndex], [currentStageIndex]);
+
+  useEffect(() => {
+    setTimeLeft(10);
+    setSelectedChoice(null);
+  }, [currentStageIndex]);
+
+  useEffect(() => {
+    if (showResult) return;
+    if (selectedChoice) return;
+    let timer = null;
+    setTimeLeft((t) => t); // ensure state inits
+    timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          if (!selectedChoice) {
+            const timeoutChoice = {
+              id: "timeout",
+              text: "Time's up",
+              outcome:
+                "Time's up! Reflex missed. Correct reflex: Tap “Risk Covered.”",
+              isCorrect: false,
+            };
+            setSelectedChoice(timeoutChoice);
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStageIndex, selectedChoice, showResult]);
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => {
         setShowResult(true);
-      }, 800);
+      }, 600);
     }
   };
 
@@ -217,18 +253,17 @@ const IncomeVsLongevity = () => {
     } else {
       setCurrentStageIndex((prev) => prev + 1);
     }
-    setSelectedChoice(null);
   };
 
   const progressLabel = `${currentStageIndex + 1}/${totalStages}`;
 
   return (
     <GameShell
-      title="Income vs Longevity"
+      title="Protection Reflex"
       subtitle={
         showResult
-          ? "Quiz complete! You understand how planning reduces uncertainty."
-          : `Stage ${currentStageIndex + 1} of ${totalStages}`
+          ? "Reflex quiz complete! Protection beats no planning."
+          : `Stage ${currentStageIndex + 1} of ${totalStages} • ${timeLeft}s`
       }
       currentLevel={currentStageIndex + 1}
       totalLevels={totalStages}
@@ -252,6 +287,7 @@ const IncomeVsLongevity = () => {
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-2xl shadow-black/30">
               <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 <span>Stage {progressLabel}</span>
+                <span>Time: {timeLeft}s</span>
                 <span>
                   Score: {score}/{totalStages}
                 </span>
@@ -274,7 +310,7 @@ const IncomeVsLongevity = () => {
                     <button
                       key={option.id}
                       onClick={() => handleChoice(option)}
-                      disabled={Boolean(selectedChoice)}
+                      disabled={Boolean(selectedChoice) || timeLeft <= 0}
                       className={`relative rounded-2xl bg-gradient-to-r ${baseStyle} border-2 p-5 text-left text-white font-semibold transition-all transform hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 shadow-lg`}
                     >
                       {option.text}
@@ -308,4 +344,5 @@ const IncomeVsLongevity = () => {
   );
 };
 
-export default IncomeVsLongevity;
+export default ProtectionReflex;
+

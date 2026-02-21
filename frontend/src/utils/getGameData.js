@@ -31,6 +31,7 @@ import { getHealthFemaleKidsGames } from "../pages/Games/GameCategories/HealthFe
 import getHealthFemaleTeenGames from "../pages/Games/GameCategories/HealthFemale/teenGamesData";
 import { getSustainabilityKidsGames } from "../pages/Games/GameCategories/Sustainability/kidGamesData";
 import { getSustainabilityTeenGames } from "../pages/Games/GameCategories/Sustainability/teenGamesData";
+import { getInsurancePensionGames } from "../pages/Games/GameCategories/Finance/insurancePensionGamesData";
 
 /**
  * Get game data by gameId from the appropriate game category folder
@@ -60,6 +61,7 @@ export const getGameDataById = (gameId) => {
       "young-adult": getFinanceYoungAdultGames,
       adults: getFinanceAdultGames,
       "business-livelihood-finance": getBusinessLivelihoodFinanceGames,
+      "insurance-pension": getInsurancePensionGames,
     },
     brain: {
       kids: getBrainKidsGames,
@@ -159,4 +161,3 @@ export const getGameDataById = (gameId) => {
     return null;
   }
 };
-

@@ -23,6 +23,23 @@ const baseGames = [
     },
   },
   {
+    title: "Protection Reflex",
+    slug: "protection-reflex",
+    description: "Tap “Risk Covered” when large expense appears; avoid “No Planning.”",
+    difficulty: "Easy",
+    scenario: {
+      question: "A sudden large expense appears. Best reflex?",
+      options: [
+        "Risk Covered (appropriate insurance)",
+        "No Planning",
+        "Borrow immediately",
+        "Delay decision",
+      ],
+      correct: 1,
+      outcome: "Reflex to protection reduces shock; avoiding “No Planning” prevents crisis.",
+    },
+  },
+  {
     title: "Savings Alone",
     slug: "savings-alone",
     description:
@@ -42,6 +59,24 @@ const baseGames = [
     },
   },
   {
+    title: "Insurance Coverage Match",
+    slug: "insurance-coverage-match",
+    description:
+      "Match: “Premium → Protection”, “Claim → Compensation”, “Risk → Uncertainty”.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Match each insurance term to its correct meaning.",
+      options: [
+        "Premium → Protection",
+        "Claim → Compensation",
+        "Risk → Uncertainty",
+        "Policy → Contract",
+      ],
+      correct: 1,
+      outcome: "Understanding core terms builds strong protection decisions.",
+    },
+  },
+  {
     title: "Who Needs Insurance",
     slug: "who-needs-insurance",
     description: "Understand why protection planning should start early for anyone with risks or dependents.",
@@ -56,6 +91,23 @@ const baseGames = [
       ],
       correct: 3,
       outcome: "Protection planning should start early.",
+    },
+  },
+   {
+    title: "Journal: My Family Risks",
+    slug: "journal-my-family-risks",
+    description: "Write: “One risk my family may face is ___.”",
+    difficulty: "Easy",
+    scenario: {
+      question: "Reflect and write at least 10 characters about a family risk.",
+      options: [
+        "Health expenses",
+        "Job loss",
+        "Accident",
+        "Weather shock",
+      ],
+      correct: 1,
+      outcome: "Writing builds awareness of risks and the need for protection.",
     },
   },
   {
@@ -92,6 +144,7 @@ const baseGames = [
       outcome: "Life cover protects dependents from income loss.",
     },
   },
+ 
   {
     title: "Premium Confusion",
     slug: "premium-confusion",
@@ -110,6 +163,26 @@ const baseGames = [
     },
   },
   {
+    title: "Badge: Protection Beginner",
+    slug: "badge-protection-beginner",
+    description: "Complete 5 protection basics to earn the “Protection Beginner” badge.",
+    difficulty: "Easy",
+    isBadgeGame: true,
+          badgeName: "Badge: Protection Beginner",
+          badgeImage: "/badges/finance/InsurancePension/badge-protection-beginner.png",
+    scenario: {
+      question: "Test your protection basics and earn a starter badge.",
+      options: [
+        "Premium → Protection",
+        "Claim → Compensation",
+        "Read policy terms",
+        "Manage uncertainty",
+      ],
+      correct: 1,
+      outcome: "Basics mastered. Achievement: Protection Beginner.",
+    },
+  },
+  {
     title: "Policy Reading",
     slug: "policy-reading",
     description: "See why reading coverage and exclusions prevents claim problems.",
@@ -124,6 +197,24 @@ const baseGames = [
       ],
       correct: 2,
       outcome: "Understanding terms prevents claim problems.",
+    },
+  },
+  {
+    title: "Coverage Puzzle",
+    slug: "coverage-puzzle",
+    description:
+      "Match: “Hospitalization → Health Cover”, “Death → Life Cover”, “Fire → Property Cover”.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Match each event to the right coverage type.",
+      options: [
+        "Hospitalization → Health Cover",
+        "Death → Life Cover",
+        "Fire → Property Cover",
+        "Third-Party → Motor Cover",
+      ],
+      correct: 1,
+      outcome: "Linking events to coverage builds correct protection habits.",
     },
   },
   {
@@ -158,6 +249,23 @@ const baseGames = [
       ],
       correct: 2,
       outcome: "Fraud often hides behind unrealistic promises.",
+    },
+  },
+  {
+    title: "Claim Process Simulation",
+    slug: "claim-process-simulation",
+    description: "Upload documents → Verify → Claim Approved. Choose the correct order.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Choose the correct order for a typical claim.",
+      options: [
+        "Upload documents → Verification → Claim approved",
+        "Claim approved → Upload documents → Verification",
+        "Verification → Upload documents → Claim approved",
+        "Verification → Claim approved → Upload documents",
+      ],
+      correct: 1,
+      outcome: "Correct flow: submit documents, verification, then approval.",
     },
   },
   {
@@ -213,6 +321,43 @@ const baseGames = [
     },
   },
   {
+    title: "Reflex: Safe vs Risk",
+    slug: "reflex-safe-vs-risk",
+    description: "Tap “Verify Insurer”, avoid “Blind Trust”. Timed 10s reflex choices.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Quick reflex: safer tap in risky outreach?",
+      options: [
+        "Verify Insurer",
+        "Blind Trust",
+        "Share OTP",
+        "Click Unknown Link",
+      ],
+      correct: 1,
+      outcome: "Safer reflexes reduce fraud risk.",
+    },
+  },
+  {
+    title: "Badge: Insurance Aware",
+    slug: "badge-insurance-aware",
+    description: "Complete 5 safe insurance decisions to earn the “Insurance Aware” badge.",
+    difficulty: "Easy",
+    isBadgeGame: true,
+          badgeName: "Badge: Insurance Aware",
+          badgeImage: "/badges/finance/InsurancePension/badge-insurance-aware.png",
+    scenario: {
+      question: "Practice safe insurance decisions to unlock the badge.",
+      options: [
+        "Read policy terms",
+        "Verify insurer",
+        "Keep documents ready",
+        "Avoid OTP sharing",
+      ],
+      correct: 1,
+      outcome: "Safe decisions build long-term protection.",
+    },
+  },
+  {
     title: "Work Forever Myth",
     slug: "work-forever-myth",
     description: "Learn why retirement planning protects independence as work ability changes.",
@@ -247,6 +392,22 @@ const baseGames = [
     },
   },
   {
+    title: "Retirement Planning Debate",
+    slug: "retirement-planning-debate",
+    description: "Topic: “Should retirement planning start early?” Choose the stronger argument.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Debate focus: When is the right time to start?",
+      options: [
+        "Start early for time and compounding",
+        "Start only near retirement",
+        "No need to plan",
+      ],
+      correct: 1,
+      outcome: "Early planning wins debate: time and compounding matter.",
+    },
+  },
+  {
     title: "Early Saving Advantage",
     slug: "early-saving-advantage",
     description: "See how starting early strengthens long-term savings.",
@@ -263,11 +424,10 @@ const baseGames = [
       outcome: "Time strengthens savings.",
     },
   },
-  {
+ {
     title: "Small Savings Logic",
     slug: "small-savings-logic",
     description: "Learn how consistency turns small savings into real security.",
-    difficulty: "Easy",
     scenario: {
       question: "A worker says ₹500 monthly is useless. What's true?",
       options: [
@@ -297,6 +457,25 @@ const baseGames = [
       outcome: "Informal workers need extra planning.",
     },
   },
+   {
+    title: "Pension Fund Puzzle",
+    slug: "pension-fund-puzzle",
+    description:
+      "Match: “Monthly Saving → Long-term Growth”, “Delay → Less Corpus”, “Early Start → More Compounding”.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Match each pension action to its correct outcome.",
+      options: [
+        "Monthly Saving → Long-term Growth",
+        "Delay → Less Corpus",
+        "Early Start → More Compounding",
+        "Employer Contribution → Extra Boost",
+      ],
+      correct: 1,
+      outcome: "Monthly saving and early start grow pension; delays reduce corpus.",
+    },
+  },
+  
   {
     title: "Pension vs Emergency Fund",
     slug: "pension-vs-emergency-fund",
@@ -332,10 +511,30 @@ const baseGames = [
     },
   },
   {
+    title: "Badge: Future Planner",
+    slug: "badge-future-planner",
+    description: "Handle 5 retirement planning cases and earn the “Future Planner” badge.",
+    difficulty: "Easy",
+    isBadgeGame: true,
+          badgeName: "Badge: Future Planner",
+          badgeImage: "/badges/finance/InsurancePension/badge-future-planner.png",
+    scenario: {
+      question: "Test your retirement planning skills to unlock the badge.",
+      options: [
+        "Start early and separate goals",
+        "Ignore inflation and longevity",
+        "Use pension for emergencies",
+        "Rely entirely on luck",
+      ],
+      correct: 1,
+      outcome: "Future planning requires early disciplined saving and buffers.",
+    },
+  },
+  
+  {
     title: "Lifestyle vs Future",
     slug: "lifestyle-vs-future",
     description: "Learn why balancing present spending with future planning prevents dependence.",
-    difficulty: "Easy",
     scenario: {
       question: "A person spends entire salary each month. What's wiser?",
       options: [
@@ -366,6 +565,23 @@ const baseGames = [
     },
   },
   {
+    title: "Journal: My Retirement Vision",
+    slug: "journal-my-retirement-vision",
+    description: "Write: “At age 60, I want my life to look like ___.”",
+    difficulty: "Easy",
+    scenario: {
+      question: "Reflect in at least 10 characters on your retirement vision.",
+      options: [
+        "Lifestyle",
+        "Health",
+        "Home/Location",
+        "Monthly income",
+      ],
+      correct: 1,
+      outcome: "Writing clarifies goals and guides planning.",
+    },
+  },
+  {
     title: "Saving Habit Choice",
     slug: "saving-habit-choice",
     description: "Learn how saving part of windfalls strengthens long-term security.",
@@ -382,6 +598,7 @@ const baseGames = [
       outcome: "Occasional savings strengthen future security.",
     },
   },
+  
   {
     title: "Income vs Longevity",
     slug: "income-vs-longevity",
@@ -397,6 +614,23 @@ const baseGames = [
       ],
       correct: 2,
       outcome: "Personal planning reduces uncertainty.",
+    },
+  },
+   {
+    title: "Pension Growth Simulation",
+    slug: "pension-growth-simulation",
+    description: "Invest ₹1000 yearly at steady growth. See 20-year projection.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Which habit best grows a pension over 20 years?",
+      options: [
+        "Start early and stay consistent",
+        "Skip contributions often",
+        "Withdraw returns yearly",
+        "Switch funds constantly",
+      ],
+      correct: 1,
+      outcome: "Consistency and compounding build a larger retirement corpus.",
     },
   },
   {
@@ -433,6 +667,215 @@ const baseGames = [
       outcome: "Consistent planning creates stability over life.",
     },
   },
+  {
+    title: "Reflex: Secure Future",
+    slug: "reflex-secure-future",
+    description: "Tap “Save Consistently”, avoid “Spend Fully.” 10s timed reflex.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Quick reflex: Which habit secures your future?",
+      options: [
+        "Save Consistently",
+        "Spend Fully",
+        "Skip Pension",
+        "Borrow for lifestyle",
+      ],
+      correct: 1,
+      outcome: "Habit-first choices support a secure future.",
+    },
+  },
+  {
+    title: "Badge: Retirement Ready",
+    slug: "badge-retirement-ready",
+    description: "Complete 5 long-term planning tasks to earn the badge.",
+    difficulty: "Easy",
+    isBadgeGame: true,
+          badgeName: "Badge: Retirement Ready",
+          badgeImage: "/badges/finance/InsurancePension/badge-retirement-ready.png",
+    scenario: {
+      question: "Which action earns progress toward ‘Retirement Ready’?",
+      options: [
+        "Start early contributions",
+        "Skip savings often",
+        "Withdraw returns yearly",
+        "Invest by hype only",
+      ],
+      correct: 1,
+      outcome: "Early, consistent planning builds retirement readiness.",
+    },
+  },
+  {
+    title: "Risk Priority Puzzle",
+    slug: "risk-priority-puzzle",
+    description: "Match: “Health → Insurance”, “Old Age → Pension”, “Emergency → Savings”.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Match each risk category to the right priority.",
+      options: [
+        "Health → Insurance",
+        "Old Age → Pension",
+        "Emergency → Savings",
+        "Income Loss → Life Insurance",
+      ],
+      correct: 1,
+      outcome: "Prioritizing the right tool for each risk builds resilience.",
+    },
+  },
+  {
+    title: "Debate: Insurance vs Investment",
+    slug: "debate-insurance-vs-investment",
+    description: "Which should come first? Weigh protection and growth.",
+    difficulty: "Easy",
+    scenario: {
+      question: "In most cases, what should come first?",
+      options: [
+        "Adequate insurance, then investments",
+        "Invest first, insure later",
+        "Neither is necessary",
+      ],
+      correct: 1,
+      outcome: "Protection first prevents setbacks that derail investments.",
+    },
+  },
+  {
+    title: "Journal: Protection Checklist",
+    slug: "journal-protection-checklist",
+    description: "Write 3 steps to secure the future. Min 10 characters each.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Write one step you will take to protect your future.",
+      options: [
+        "Health cover",
+        "Term cover",
+        "Emergency fund",
+        "Avoid fraud",
+      ],
+      correct: 1,
+      outcome: "Writing concrete steps builds action and accountability.",
+    },
+  },
+  {
+    title: "Life Planning Simulation",
+    slug: "life-planning-simulation",
+    description: "Income ₹30,000: allocate Insurance, Savings, Expenses. Balanced choice wins.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Choose the allocation approach that balances protection and growth.",
+      options: [
+        "Adequate cover + steady savings + essentials",
+        "No insurance, high savings",
+        "All expenses, little saving",
+        "Only insurance, no savings",
+      ],
+      correct: 1,
+      outcome: "Balance protection and savings; avoid extremes.",
+    },
+  },
+   {
+    title: "Reflex: Long-Term Thinking",
+    slug: "reflex-long-term-thinking",
+    description: "Tap “Plan Ahead”, avoid “Ignore Future.” Timed 10s reflex choices.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Quick reflex: which tap aligns with long-term success?",
+      options: [
+        "Plan Ahead",
+        "Ignore Future",
+        "Spend All Now",
+        "Delay All Planning",
+      ],
+      correct: 1,
+      outcome: "Planning ahead consistently builds long-term security.",
+    },
+  },
+  {
+    title: "Multi-Risk Puzzle",
+    slug: "multi-risk-puzzle",
+    description: "Match: “Health → Health Insurance”, “Old Age → Pension”, “Accident → PA Cover”.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Match each risk type with the correct financial tool.",
+      options: [
+        "Health → Health Insurance",
+        "Old Age → Pension",
+        "Accident → Personal Accident Cover",
+        "Job Loss → Emergency Fund",
+      ],
+      correct: 1,
+      outcome: "Right tool for each risk strengthens overall security.",
+    },
+  },
+  {
+    title: "Journal: My Financial Promise",
+    slug: "journal-my-financial-promise",
+    description: "Write: “I will protect my future by ___.” Min 10 characters.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Write at least 10 characters describing your financial promise.",
+      options: [
+        "Build emergency fund",
+        "Keep adequate insurance",
+        "Save consistently",
+        "Avoid scams",
+      ],
+      correct: 1,
+      outcome: "Writing commitments increases follow-through and long-term discipline.",
+    },
+  },
+  {
+    title: "Debate: Dependence vs Independence",
+    slug: "debate-dependence-vs-independence",
+    description: "Is planning freedom? Choose stronger arguments for independence.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Which argument better supports independence?",
+      options: [
+        "Planning and self-reliance",
+        "Fully depend on others",
+        "Ignore future",
+      ],
+      correct: 1,
+      outcome: "Planning reduces dependence and increases freedom.",
+    },
+  },
+  {
+    title: "Protection Simulation Challenge",
+    slug: "protection-simulation-challenge",
+    description: "Handle illness, job loss, retirement. Balanced planning wins.",
+    difficulty: "Easy",
+    scenario: {
+      question: "Best overall plan across shocks?",
+      options: [
+        "Only insurance, no savings",
+        "Only savings, no insurance",
+        "Balanced: cover + emergency fund + pension",
+        "Spend all now",
+      ],
+      correct: 3,
+      outcome: "Balance protection and liquidity for resilience and independence.",
+    },
+  },
+  {
+    title: "Badge: Financial Security Master",
+    slug: "badge-financial-security-master",
+    description: "Complete insurance + pension mastery track. Earn the badge.",
+    difficulty: "Easy",
+    isBadgeGame: true,
+    badgeName: "Badge: Financial Security Master",
+    badgeImage: "/badges/finance/InsurancePension/badge-financial-security-master.png",
+    scenario: {
+      question: "Which set best represents financial security mastery?",
+      options: [
+        "Adequate cover + emergency fund + pension + fraud safety",
+        "Invest all; skip cover",
+        "Only insurance; no savings",
+        "Only savings; no insurance",
+      ],
+      correct: 1,
+      outcome: "Mastery blends protection, liquidity, long-term saving and safety.",
+    },
+  },
+  
 ];
 
 const icons = [Shield, CreditCard, Briefcase, Wallet, Banknote, ShieldCheck, Coins, FileText, HeartHandshake];
@@ -441,6 +884,10 @@ export const getInsurancePensionGames = (gameCompletionStatus) =>
   baseGames.map((template, index) => {
     const Icon = icons[index % icons.length];
     const gameId = insurancePensionGameIds[index];
+    const inFirstBand = index < 25;
+    const inSecondBand = index >= 25 && index < 50;
+    const coins = inSecondBand ? 10 : 5;
+    const xp = inSecondBand ? 20 : 10;
     return {
       id: gameId,
       title: template.title,
@@ -448,8 +895,11 @@ export const getInsurancePensionGames = (gameCompletionStatus) =>
       icon: <Icon className="w-6 h-6" />,
       difficulty: template.difficulty,
       duration: `${6 + (index % 5)} min`,
-      coins: 5,
-      xp: 10,
+      coins,
+      xp,
+      isBadgeGame: Boolean(template.isBadgeGame),
+      badgeName: template.badgeName || null,
+      badgeImage: template.badgeImage || null,
       completed: gameCompletionStatus[gameId] || false,
       isSpecial: true,
       path: `/student/finance/insurance-pension/${template.slug || `game-${index + 1}`}`,

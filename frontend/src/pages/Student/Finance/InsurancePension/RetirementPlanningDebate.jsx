@@ -4,205 +4,155 @@ import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const INCOME_VS_LONGEVITY_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt:
-      "A person expects pension from employer but has no written plan. Safer action?",
+    prompt: "Should retirement planning start early?",
     options: [
+      
       {
-        id: "assume-employer",
-        text: "Assume employer will handle",
-        outcome:
-          "Assumptions can fail. Always confirm details in writing.",
+        id: "start-late",
+        text: "No, start only near retirement",
+        outcome: "Late start reduces options and growth time.",
         isCorrect: false,
       },
       {
-        id: "confirm-backup",
-        text: "Confirm and create personal backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "start-early",
+        text: "Yes, start early to use time and compounding",
+        outcome: "Correct. Early planning benefits from compounding.",
         isCorrect: true,
       },
       {
-        id: "ignore",
-        text: "Ignore",
-        outcome:
-          "Ignoring plans increases risk later.",
-        isCorrect: false,
-      },
-      {
-        id: "borrow-later",
-        text: "Borrow later",
-        outcome:
-          "Borrowing later can create stress and debt.",
+        id: "no-need",
+        text: "No need to plan for retirement",
+        outcome: "Ignoring retirement risks future dependence.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 2,
-    prompt: "Why is written confirmation of pension benefits important?",
+    prompt: "What is a strong argument for starting early?",
     options: [
       {
-        id: "clarity",
-        text: "It clarifies eligibility, amount, and timing",
-        outcome:
-          "Correct. Written details reduce confusion and surprises.",
+        id: "small-consistent",
+        text: "Small consistent savings grow significantly over time",
+        outcome: "Correct. Consistency + time build larger corpus.",
         isCorrect: true,
       },
       {
-        id: "no-need",
-        text: "It is not needed at all",
-        outcome:
-          "Without documentation, plans can be uncertain.",
+        id: "spend-first",
+        text: "Spending fully now is always better",
+        outcome: "Over-spending harms long-term security.",
         isCorrect: false,
       },
       {
-        id: "guarantee-profit",
-        text: "It guarantees high profits",
-        outcome:
-          "Pensions are not about guaranteed profits.",
-        isCorrect: false,
-      },
-      {
-        id: "replace-savings",
-        text: "It replaces the need for savings",
-        outcome:
-          "Backup savings are still important.",
+        id: "depend-children",
+        text: "Depend entirely on children later",
+        outcome: "Dependence is risky and uncertain.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 3,
-    prompt: "What is a good backup plan if pension details are unclear?",
+    prompt: "How does early planning affect risk?",
     options: [
+     
       {
-        id: "spend-now",
-        text: "Spend now and hope later",
-        outcome:
-          "Spending without planning increases future risk.",
+        id: "increase-risk",
+        text: "It increases financial risk automatically",
+        outcome: "Planning reduces uncertainty; it doesn't add risk.",
         isCorrect: false,
       },
       {
-        id: "depend-others",
-        text: "Depend fully on others",
-        outcome:
-          "Dependence is uncertain and risky.",
+        id: "no-effect",
+        text: "No effect on risk at all",
+        outcome: "Time horizon directly affects risk handling.",
         isCorrect: false,
       },
-      {
-        id: "ignore-benefits",
-        text: "Ignore benefits completely",
-        outcome:
-          "Benefits should be verified and included in planning.",
-        isCorrect: false,
-      },
-      {
-        id: "build-savings",
-        text: "Build personal savings alongside retirement benefits",
-        outcome:
-          "Correct. Savings reduce uncertainty and risk.",
+       {
+        id: "manage-risk",
+        text: "More time to manage risk and adjust plans",
+        outcome: "Correct. Time allows gradual, safer adjustments.",
         isCorrect: true,
       },
     ],
   },
   {
     id: 4,
-    prompt: "Which action reduces longevity risk the most?",
+    prompt: "Pick the better debate point:",
     options: [
       {
-        id: "assume",
-        text: "Assume benefits will cover everything",
-        outcome:
-          "Assumptions can leave gaps in retirement.",
-        isCorrect: false,
-      },
-      {
-        id: "borrow",
-        text: "Plan to borrow later",
-        outcome:
-          "Borrowing later can create long-term stress.",
-        isCorrect: false,
-      },
-      {
-        id: "confirm-plan",
-        text: "Confirm employer benefits and save independently",
-        outcome:
-          "Correct. Combining both reduces uncertainty.",
+        id: "age-25",
+        text: "Start at 25: affordable amounts, long horizon",
+        outcome: "Correct. Affordability + time strengthen results.",
         isCorrect: true,
       },
       {
-        id: "no-plan",
-        text: "No plan is needed",
-        outcome:
-          "Planning reduces risks and uncertainty.",
+        id: "age-55",
+        text: "Start at 55: very short horizon",
+        outcome: "Late start forces larger contributions.",
+        isCorrect: false,
+      },
+      {
+        id: "no-start",
+        text: "Never start; rely on luck",
+        outcome: "Luck is not a plan.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway about income vs longevity?",
+    prompt: "What is a practical first step for early starters?",
     options: [
+      
       {
-        id: "confirm-backup",
-        text: "Confirm benefits and build backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "mix-funds",
+        text: "Mix retirement savings with daily expenses",
+        outcome: "Mixing funds risks spending retirement money.",
+        isCorrect: false,
+      },
+      {
+        id: "separate-goal",
+        text: "Define a separate retirement goal and save monthly",
+        outcome: "Correct. Clear goal + habit creates progress.",
         isCorrect: true,
       },
       {
-        id: "assume",
-        text: "Assume employer handles everything",
-        outcome:
-          "Assumptions can lead to gaps.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore",
-        text: "Ignore retirement planning",
-        outcome:
-          "Ignoring planning increases risk.",
-        isCorrect: false,
-      },
-      {
-        id: "borrow",
-        text: "Borrow later to cover needs",
-        outcome:
-          "Borrowing later can add debt and stress.",
+        id: "ignore-inflation",
+        text: "Ignore inflation and longevity",
+        outcome: "Ignoring these reduces adequacy of savings.",
         isCorrect: false,
       },
     ],
   },
 ];
 
-const IncomeVsLongevity = () => {
+const RetirementPlanningDebate = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-35";
+  const gameId = "finance-insurance-pension-23";
   const gameData = getGameDataById(gameId);
-  const totalStages = INCOME_VS_LONGEVITY_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
-  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = INCOME_VS_LONGEVITY_STAGES[currentStageIndex];
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
+  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const stage = STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => {
         setShowResult(true);
@@ -224,10 +174,10 @@ const IncomeVsLongevity = () => {
 
   return (
     <GameShell
-      title="Income vs Longevity"
+      title="Retirement Planning Debate"
       subtitle={
         showResult
-          ? "Quiz complete! You understand how planning reduces uncertainty."
+          ? "Debate complete! Early planning wins with time advantage."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -256,12 +206,10 @@ const IncomeVsLongevity = () => {
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
                   const baseStyle = isSelected
@@ -269,7 +217,6 @@ const IncomeVsLongevity = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -285,8 +232,7 @@ const IncomeVsLongevity = () => {
             </div>
           </div>
         )}
-
-        {selectedChoice && (
+        {selectedChoice && !showResult && (
           <>
             <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
               {selectedChoice.outcome}
@@ -308,4 +254,5 @@ const IncomeVsLongevity = () => {
   );
 };
 
-export default IncomeVsLongevity;
+export default RetirementPlanningDebate;
+
