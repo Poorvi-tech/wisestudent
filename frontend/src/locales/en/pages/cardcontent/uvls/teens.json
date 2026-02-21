@@ -1,0 +1,405 @@
+﻿{
+    "cards":  {
+                  "uvls-teen-1":  {
+                                      "description":  "Respond supportively to a peer sharing a personal problem",
+                                      "title":  "Listen Deep"
+                                  },
+                  "uvls-teen-2":  {
+                                      "description":  "Distinguish empathy vs sympathy in scenarios",
+                                      "title":  "Empathy Quiz"
+                                  },
+                  "uvls-teen-3":  {
+                                      "description":  "Map responses to how they help others",
+                                      "title":  "Perspective Puzzle"
+                                  },
+                  "uvls-teen-4":  {
+                                      "description":  "Experience choices as a marginalized student",
+                                      "title":  "Walk in Shoes Simulation"
+                                  },
+                  "uvls-teen-5":  {
+                                      "description":  "Argue for school empathy curriculum",
+                                      "title":  "Empathy Debate"
+                                  },
+                  "uvls-teen-6":  {
+                                      "description":  "Write reflecting on understanding someone different",
+                                      "title":  "Reflective Journal"
+                                  },
+                  "uvls-teen-7":  {
+                                      "description":  "Practice a peer-support conversation",
+                                      "title":  "Peer Support Roleplay"
+                                  },
+                  "uvls-teen-8":  {
+                                      "description":  "Choose best empathetic responses in a multi-part case",
+                                      "title":  "Case-Response Puzzle"
+                                  },
+                  "uvls-teen-9":  {
+                                      "description":  "Rapidly detect subtle distress cues",
+                                      "title":  "Spot Distress Reflex"
+                                  },
+                  "uvls-teen-10":  {
+                                       "description":  "Complete 5 teen empathy tasks",
+                                       "title":  "Empathy Champion Badge"
+                                   },
+                  "uvls-teen-11":  {
+                                       "description":  "Choose respectful greeting for different cultural contexts",
+                                       "title":  "Cultural Greeting"
+                                   },
+                  "uvls-teen-12":  {
+                                       "description":  "Identify inclusive school actions/policies",
+                                       "title":  "Inclusion Quiz"
+                                   },
+                  "uvls-teen-13":  {
+                                       "description":  "Match accommodations to student needs",
+                                       "title":  "Accessibility Puzzle"
+                                   },
+                  "uvls-teen-14":  {
+                                       "description":  "Design an activity that allows participation for all",
+                                       "title":  "Inclusive Class Simulation"
+                                   },
+                  "uvls-teen-15":  {
+                                       "description":  "Debate whether respect equals agreement",
+                                       "title":  "Respect Debate"
+                                   },
+                  "uvls-teen-16":  {
+                                       "description":  "Describe when you challenged exclusion \u0026 outcome",
+                                       "title":  "Inclusion Journal"
+                                   },
+                  "uvls-teen-17":  {
+                                       "description":  "Practice calling out bias respectfully",
+                                       "title":  "Correcting Bias Roleplay"
+                                   },
+                  "uvls-teen-18":  {
+                                       "description":  "Identify correct pronunciation \u0026 respond respectfully",
+                                       "title":  "Name Respect Reflex"
+                                   },
+                  "uvls-teen-19":  {
+                                       "description":  "Recommend inclusive policy actions for a school case",
+                                       "title":  "Policy Case Puzzle"
+                                   },
+                  "uvls-teen-20":  {
+                                       "description":  "Complete 5 inclusion leadership tasks",
+                                       "title":  "Respect Leader Badge"
+                                   },
+                  "uvls-teen-21":  {
+                                       "description":  "Model supportive responses when peers state career ambitions.",
+                                       "title":  "Encourage Ambition"
+                                   },
+                  "uvls-teen-22":  {
+                                       "description":  "Learn about gender equality laws and key policies.",
+                                       "title":  "Rights \u0026 Law Quiz"
+                                   },
+                  "uvls-teen-23":  {
+                                       "description":  "Tap when biased remarks appear in short clips.",
+                                       "title":  "Bias Spot Reflex"
+                                   },
+                  "uvls-teen-24":  {
+                                       "description":  "Identify biased practices and match effective remedies.",
+                                       "title":  "Workplace Puzzle"
+                                   },
+                  "uvls-teen-25":  {
+                                       "description":  "Draft a school program to increase girl participation.",
+                                       "title":  "Program Design Simulation"
+                                   },
+                  "uvls-teen-26":  {
+                                       "description":  "Debate policy vs culture in gender equality.",
+                                       "title":  "Equality Debate"
+                                   },
+                  "uvls-teen-27":  {
+                                       "description":  "Plan a concrete ally action to support gender equality.",
+                                       "title":  "Ally Journal"
+                                   },
+                  "uvls-teen-28":  {
+                                       "description":  "Practice safely confronting discriminatory comments.",
+                                       "title":  "Intervention Roleplay"
+                                   },
+                  "uvls-teen-29":  {
+                                       "description":  "Match legal steps to protect rights effectively.",
+                                       "title":  "Rights Application Puzzle"
+                                   },
+                  "uvls-teen-30":  {
+                                       "description":  "Lead 5 equality initiatives to earn badge.",
+                                       "title":  "Gender Justice Leader Badge"
+                                   },
+                  "uvls-teen-31":  {
+                                       "description":  "Choose safe responses to online harassment.",
+                                       "title":  "Online Harass Scenario"
+                                   },
+                  "uvls-teen-32":  {
+                                       "description":  "Learn how to report bullying safely and correctly.",
+                                       "title":  "Reporting Quiz"
+                                   },
+                  "uvls-teen-33":  {
+                                       "description":  "Match support roles (teacher, parent) to actions.",
+                                       "title":  "Support Network Puzzle"
+                                   },
+                  "uvls-teen-34":  {
+                                       "description":  "Choose calm actions in a bully scenario simulation.",
+                                       "title":  "Intervention Simulation"
+                                   },
+                  "uvls-teen-35":  {
+                                       "description":  "Argue best approach for dealing with bullies.",
+                                       "title":  "Rehab vs Punish Debate"
+                                   },
+                  "uvls-teen-36":  {
+                                       "description":  "Create a step-by-step support plan for a bullied student.",
+                                       "title":  "Long-term Journal"
+                                   },
+                  "uvls-teen-37":  {
+                                       "description":  "Simulate a support conversation with a counselor.",
+                                       "title":  "Counselor Roleplay"
+                                   },
+                  "uvls-teen-38":  {
+                                       "description":  "Tap to report trolling or abusive online posts.",
+                                       "title":  "Cyber Safety Reflex"
+                                   },
+                  "uvls-teen-39":  {
+                                       "description":  "Design a school-wide anti-bullying program.",
+                                       "title":  "Systemic Case Puzzle"
+                                   },
+                  "uvls-teen-40":  {
+                                       "description":  "Complete 5 sustained anti-bullying actions to earn this badge.",
+                                       "title":  "Anti-Bullying Champion Badge"
+                                   },
+                  "uvls-teen-41":  {
+                                       "description":  "Identify and label emotions accurately using emotion wheel.",
+                                       "title":  "Emotional Check-in"
+                                   },
+                  "uvls-teen-42":  {
+                                       "description":  "Recognize common personal and academic stress triggers.",
+                                       "title":  "Trigger Quiz"
+                                   },
+                  "uvls-teen-43":  {
+                                       "description":  "Practice guided breathing to regulate emotions.",
+                                       "title":  "Advanced Breathing Simulation"
+                                   },
+                  "uvls-teen-44":  {
+                                       "description":  "Match problem types to best coping strategies.",
+                                       "title":  "Coping Strategy Puzzle"
+                                   },
+                  "uvls-teen-45":  {
+                                       "description":  "Choose calm words to defuse heated arguments.",
+                                       "title":  "De-escalation Roleplay"
+                                   },
+                  "uvls-teen-46":  {
+                                       "description":  "Track moods and reflect on patterns over a week.",
+                                       "title":  "Emotion Pattern Journal"
+                                   },
+                  "uvls-teen-47":  {
+                                       "description":  "Plan a small group support session for a stressed peer.",
+                                       "title":  "Peer Support Simulation"
+                                   },
+                  "uvls-teen-48":  {
+                                       "description":  "Tap when tension cues appear to practice self-awareness.",
+                                       "title":  "Self-check Reflex"
+                                   },
+                  "uvls-teen-49":  {
+                                       "description":  "Assemble your personalized emotion regulation toolbox.",
+                                       "title":  "Build Toolbox Puzzle"
+                                   },
+                  "uvls-teen-50":  {
+                                       "description":  "Demonstrate 5 emotion regulation strategies to earn badge.",
+                                       "title":  "Emotional Responder Badge"
+                                   },
+                  "uvls-teen-51":  {
+                                       "description":  "Evaluate a short claim using quick evidence checks.",
+                                       "title":  "Evidence Check"
+                                   },
+                  "uvls-teen-52":  {
+                                       "description":  "Spot false headlines and explain why.",
+                                       "title":  "Fake News Quiz"
+                                   },
+                  "uvls-teen-53":  {
+                                       "description":  "Compare pros/cons and pick best compromise.",
+                                       "title":  "Trade-offs Puzzle"
+                                   },
+                  "uvls-teen-54":  {
+                                       "description":  "Run simulated outcomes of different choices.",
+                                       "title":  "Scenario Simulation"
+                                   },
+                  "uvls-teen-55":  {
+                                       "description":  "Negotiate honest vs convenient shortcut \u0026 justify choice.",
+                                       "title":  "Ethical Roleplay"
+                                   },
+                  "uvls-teen-56":  {
+                                       "description":  "Rapidly detect biased statements.",
+                                       "title":  "Bias Detection Reflex"
+                                   },
+                  "uvls-teen-57":  {
+                                       "description":  "Record evidence used in a recent personal decision.",
+                                       "title":  "Evidence Journal"
+                                   },
+                  "uvls-teen-58":  {
+                                       "description":  "Prepare and defend a stance in 60 seconds.",
+                                       "title":  "Timed Debate"
+                                   },
+                  "uvls-teen-59":  {
+                                       "description":  "Suggest practical improvements to a school policy.",
+                                       "title":  "Policy Puzzle"
+                                   },
+                  "uvls-teen-60":  {
+                                       "description":  "Complete 5 evidence-based decision tasks to earn badge.",
+                                       "title":  "Decision Master Badge"
+                                   },
+                  "uvls-teen-61":  {
+                                       "description":  "Choose tone \u0026 phrasing for an honest talk with friend.",
+                                       "title":  "Tough Conversation"
+                                   },
+                  "uvls-teen-62":  {
+                                       "description":  "Match body language cues with intent.",
+                                       "title":  "Nonverbal Quiz"
+                                   },
+                  "uvls-teen-63":  {
+                                       "description":  "Spot when a speaker needs clarification and prompt.",
+                                       "title":  "Clarify Reflex"
+                                   },
+                  "uvls-teen-64":  {
+                                       "description":  "Practice answers to common interview questions.",
+                                       "title":  "Interview Simulation"
+                                   },
+                  "uvls-teen-65":  {
+                                       "description":  "Give constructive feedback in a roleplay.",
+                                       "title":  "Feedback Roleplay"
+                                   },
+                  "uvls-teen-66":  {
+                                       "description":  "Build a short persuasive sequence.",
+                                       "title":  "Persuasion Puzzle"
+                                   },
+                  "uvls-teen-67":  {
+                                       "description":  "Set a communication improvement goal and action plan.",
+                                       "title":  "Communication Journal"
+                                   },
+                  "uvls-teen-68":  {
+                                       "description":  "Draft a 60-second opening \u0026 get feedback.",
+                                       "title":  "Public Speaking Prep"
+                                   },
+                  "uvls-teen-69":  {
+                                       "description":  "Argue which is more important for leadership.",
+                                       "title":  "Listening vs Speaking Debate"
+                                   },
+                  "uvls-teen-70":  {
+                                       "description":  "Completion of 5 advanced communication tasks.",
+                                       "title":  "Communication Pro Badge"
+                                   },
+                  "uvls-teen-71":  {
+                                       "description":  "Resolve a conflict where one party has more authority.",
+                                       "title":  "Power Dynamics Scenario"
+                                   },
+                  "uvls-teen-72":  {
+                                       "description":  "Identify tactics like anchoring, trade-offs.",
+                                       "title":  "Negotiation Tactics Quiz"
+                                   },
+                  "uvls-teen-73":  {
+                                       "description":  "Facilitate a council dispute to consensus.",
+                                       "title":  "Mediation Simulation"
+                                   },
+                  "uvls-teen-74":  {
+                                       "description":  "Identify the Best Alternative to Negotiated Agreement.",
+                                       "title":  "BATNA Puzzle"
+                                   },
+                  "uvls-teen-75":  {
+                                       "description":  "Negotiate resources with limited supply fairly.",
+                                       "title":  "Tough Bargain Roleplay"
+                                   },
+                  "uvls-teen-76":  {
+                                       "description":  "Debate when compromise becomes unethical.",
+                                       "title":  "Ethics in Negotiation Debate"
+                                   },
+                  "uvls-teen-77":  {
+                                       "description":  "Reflect on a negotiation you led and lessons learned.",
+                                       "title":  "Negotiation Journal"
+                                   },
+                  "uvls-teen-78":  {
+                                       "description":  "Rapidly spot situations where walking away is justified.",
+                                       "title":  "Walk-away Reflex"
+                                   },
+                  "uvls-teen-79":  {
+                                       "description":  "Resolve intern-team conflict with fair role assignments.",
+                                       "title":  "Workplace Conflict Sim"
+                                   },
+                  "uvls-teen-80":  {
+                                       "description":  "Demonstrate multi-step resolutions in 5 cases.",
+                                       "title":  "Conflict Solver Badge"
+                                   },
+                  "uvls-teen-81":  {
+                                       "description":  "Plan an awareness campaign for a local issue.",
+                                       "title":  "Campaign Story"
+                                   },
+                  "uvls-teen-82":  {
+                                       "description":  "Match local projects to relevant UN SDGs.",
+                                       "title":  "SDG Quiz"
+                                   },
+                  "uvls-teen-83":  {
+                                       "description":  "Run a volunteer event schedule (logistics).",
+                                       "title":  "Volunteer Simulation"
+                                   },
+                  "uvls-teen-84":  {
+                                       "description":  "Allocate limited budget to competing school needs.",
+                                       "title":  "Public Budget Puzzle"
+                                   },
+                  "uvls-teen-85":  {
+                                       "description":  "Argue before local council for safer crossing.",
+                                       "title":  "Advocacy Roleplay"
+                                   },
+                  "uvls-teen-86":  {
+                                       "description":  "Record measurable outcome of a community action.",
+                                       "title":  "Impact Journal"
+                                   },
+                  "uvls-teen-87":  {
+                                       "description":  "Design a low-cost service project for school.",
+                                       "title":  "Service Design Puzzle"
+                                   },
+                  "uvls-teen-88":  {
+                                       "description":  "Form coalition of stakeholders for larger change.",
+                                       "title":  "Coalition Simulation"
+                                   },
+                  "uvls-teen-89":  {
+                                       "description":  "Quickly flag urgent community needs in short prompts.",
+                                       "title":  "Civic Reflex"
+                                   },
+                  "uvls-teen-90":  {
+                                       "description":  "Lead a small community initiative to completion.",
+                                       "title":  "Citizen Leader Badge"
+                                   },
+                  "uvls-teen-91":  {
+                                       "description":  "Discuss priorities between short-term wins \u0026 long-term planning.",
+                                       "title":  "Short vs Long Goals Debate"
+                                   },
+                  "uvls-teen-92":  {
+                                       "description":  "Match emergencies to correct immediate actions.",
+                                       "title":  "Emergency Steps Quiz"
+                                   },
+                  "uvls-teen-93":  {
+                                       "description":  "Write a 1-year learning goal and milestones.",
+                                       "title":  "One-year Plan Journal"
+                                   },
+                  "uvls-teen-94":  {
+                                       "description":  "Prioritise night-before-exam tasks to maximize study + sleep.",
+                                       "title":  "Crisis Simulation"
+                                   },
+                  "uvls-teen-95":  {
+                                       "description":  "Request an extension politely with reasons \u0026 plan.",
+                                       "title":  "Request Extension Roleplay"
+                                   },
+                  "uvls-teen-96":  {
+                                       "description":  "Rapidly refuse suspicious offers.",
+                                       "title":  "Safety Offer Reflex"
+                                   },
+                  "uvls-teen-97":  {
+                                       "description":  "Link small daily habits into a chain to produce big outcomes.",
+                                       "title":  "Habit Chain Puzzle"
+                                   },
+                  "uvls-teen-98":  {
+                                       "description":  "Describe one habit to change, plan steps \u0026 obstacles.",
+                                       "title":  "Habit Change Journal"
+                                   },
+                  "uvls-teen-99":  {
+                                       "description":  "Plan a safe solo trip checklist.",
+                                       "title":  "Solo Trip Simulation"
+                                   },
+                  "uvls-teen-100":  {
+                                        "description":  "Demonstrate 5 advanced life-skill challenges \u0026 receive capstone badge.",
+                                        "title":  "Life Skills Champion Badge"
+                                    }
+              }
+}
+

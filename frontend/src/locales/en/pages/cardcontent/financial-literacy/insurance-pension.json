@@ -1,0 +1,204 @@
+{
+  "cards": {
+    "finance-insurance-pension-1": {
+      "title": "Sudden Hospital Bill",
+      "description": "A worker is hospitalised and treatment costs Rs 1.5 lakh. What is insurance meant to do?"
+    },
+    "finance-insurance-pension-2": {
+      "title": "Protection Reflex",
+      "description": "Tap \"Risk Covered\" when large expense appears; avoid \"No Planning.\""
+    },
+    "finance-insurance-pension-3": {
+      "title": "Savings Alone",
+      "description": "A family has Rs 20,000 savings but faces Rs 1 lakh medical cost. What helps most?"
+    },
+    "finance-insurance-pension-4": {
+      "title": "Insurance Coverage Match",
+      "description": "Match: \"Premium -> Protection\", \"Claim -> Compensation\", \"Risk -> Uncertainty\"."
+    },
+    "finance-insurance-pension-5": {
+      "title": "Who Needs Insurance",
+      "description": "Understand why protection planning should start early for anyone with risks or dependents."
+    },
+    "finance-insurance-pension-6": {
+      "title": "Journal: My Family Risks",
+      "description": "Write: \"One risk my family may face is ___.\""
+    },
+    "finance-insurance-pension-7": {
+      "title": "Medical Cost Reality",
+      "description": "See how unexpected medical needs can create sudden costs and why coverage matters."
+    },
+    "finance-insurance-pension-8": {
+      "title": "Life Cover Purpose",
+      "description": "Learn why life cover protects dependents from sudden income loss."
+    },
+    "finance-insurance-pension-9": {
+      "title": "Premium Confusion",
+      "description": "Understand why paying a premium is about protection, not guaranteed returns."
+    },
+    "finance-insurance-pension-10": {
+      "title": "Badge: Protection Beginner",
+      "description": "Complete 5 protection basics to earn the \"Protection Beginner\" badge."
+    },
+    "finance-insurance-pension-11": {
+      "title": "Policy Reading",
+      "description": "See why reading coverage and exclusions prevents claim problems."
+    },
+    "finance-insurance-pension-12": {
+      "title": "Coverage Puzzle",
+      "description": "Match: \"Hospitalization -> Health Cover\", \"Death -> Life Cover\", \"Fire -> Property Cover\"."
+    },
+    "finance-insurance-pension-13": {
+      "title": "Claim Preparation",
+      "description": "Learn why keeping documents ready speeds up insurance claims."
+    },
+    "finance-insurance-pension-14": {
+      "title": "Fake Insurance Offer",
+      "description": "Learn how to spot unrealistic promises and verify insurer authenticity."
+    },
+    "finance-insurance-pension-15": {
+      "title": "Claim Process Simulation",
+      "description": "Upload documents -> Verify -> Claim Approved. Choose the correct order."
+    },
+    "finance-insurance-pension-16": {
+      "title": "When Insurance Matters",
+      "description": "Understand how responsibility and dependents increase the need for protection."
+    },
+    "finance-insurance-pension-17": {
+      "title": "Business Risk",
+      "description": "Learn how insurance can reduce income shocks from business losses."
+    },
+    "finance-insurance-pension-18": {
+      "title": "Insurance Decision Check",
+      "description": "Focus on coverage and claim rules instead of sales pitch or brochures."
+    },
+    "finance-insurance-pension-19": {
+      "title": "Reflex: Safe vs Risk",
+      "description": "Tap \"Verify Insurer\", avoid \"Blind Trust\". Timed 10s reflex choices."
+    },
+    "finance-insurance-pension-20": {
+      "title": "Badge: Insurance Aware",
+      "description": "Complete 5 safe insurance decisions to earn the \"Insurance Aware\" badge."
+    },
+    "finance-insurance-pension-21": {
+      "title": "Work Forever Myth",
+      "description": "Learn why retirement planning protects independence as work ability changes."
+    },
+    "finance-insurance-pension-22": {
+      "title": "Dependence Risk",
+      "description": "Understand why personal financial security reduces future burden."
+    },
+    "finance-insurance-pension-23": {
+      "title": "Retirement Planning Debate",
+      "description": "Topic: \"Should retirement planning start early?\" Choose the stronger argument."
+    },
+    "finance-insurance-pension-24": {
+      "title": "Early Saving Advantage",
+      "description": "See how starting early strengthens long-term savings."
+    },
+    "finance-insurance-pension-25": {
+      "title": "Small Savings Logic",
+      "description": "Learn how consistency turns small savings into real security."
+    },
+    "finance-insurance-pension-26": {
+      "title": "Informal Worker Reality",
+      "description": "Understand why informal workers need extra retirement planning."
+    },
+    "finance-insurance-pension-27": {
+      "title": "Pension Fund Puzzle",
+      "description": "Match: \"Monthly Saving -> Long-term Growth\", \"Delay -> Less Corpus\", \"Early Start -> More Compounding\"."
+    },
+    "finance-insurance-pension-28": {
+      "title": "Pension vs Emergency Fund",
+      "description": "Learn why retirement and emergency savings should be kept separate."
+    },
+    "finance-insurance-pension-29": {
+      "title": "Government Pension Awareness",
+      "description": "Learn eligibility and process to access available pension support."
+    },
+    "finance-insurance-pension-30": {
+      "title": "Badge: Future Planner",
+      "description": "Handle 5 retirement planning cases and earn the \"Future Planner\" badge."
+    },
+    "finance-insurance-pension-31": {
+      "title": "Lifestyle vs Future",
+      "description": "Learn why balancing present spending with future planning prevents dependence."
+    },
+    "finance-insurance-pension-32": {
+      "title": "Retirement Reality",
+      "description": "See how long-term planning supports dignity in old age."
+    },
+    "finance-insurance-pension-33": {
+      "title": "Journal: My Retirement Vision",
+      "description": "Write: \"At age 60, I want my life to look like ___.\""
+    },
+    "finance-insurance-pension-34": {
+      "title": "Saving Habit Choice",
+      "description": "Learn how saving part of windfalls strengthens long-term security."
+    },
+    "finance-insurance-pension-35": {
+      "title": "Income vs Longevity",
+      "description": "Learn why confirming benefits and building backup savings reduces uncertainty."
+    },
+    "finance-insurance-pension-36": {
+      "title": "Pension Growth Simulation",
+      "description": "Invest Rs 1000 yearly at steady growth. See 20-year projection."
+    },
+    "finance-insurance-pension-37": {
+      "title": "Financial Independence Goal",
+      "description": "Learn how gradual long-term savings support independence in old age."
+    },
+    "finance-insurance-pension-38": {
+      "title": "Long-Term Security Checkpoint",
+      "description": "Learn why balancing present needs with future security builds stability."
+    },
+    "finance-insurance-pension-39": {
+      "title": "Reflex: Secure Future",
+      "description": "Tap \"Save Consistently\", avoid \"Spend Fully.\" 10s timed reflex."
+    },
+    "finance-insurance-pension-40": {
+      "title": "Badge: Retirement Ready",
+      "description": "Complete 5 long-term planning tasks to earn the badge."
+    },
+    "finance-insurance-pension-41": {
+      "title": "Risk Priority Puzzle",
+      "description": "Match: \"Health -> Insurance\", \"Old Age -> Pension\", \"Emergency -> Savings\"."
+    },
+    "finance-insurance-pension-42": {
+      "title": "Debate: Insurance vs Investment",
+      "description": "Which should come first? Weigh protection and growth."
+    },
+    "finance-insurance-pension-43": {
+      "title": "Journal: Protection Checklist",
+      "description": "Write 3 steps to secure the future. Min 10 characters each."
+    },
+    "finance-insurance-pension-44": {
+      "title": "Life Planning Simulation",
+      "description": "Income Rs 30,000: allocate Insurance, Savings, Expenses. Balanced choice wins."
+    },
+    "finance-insurance-pension-45": {
+      "title": "Reflex: Long-Term Thinking",
+      "description": "Tap \"Plan Ahead\", avoid \"Ignore Future.\" Timed 10s reflex choices."
+    },
+    "finance-insurance-pension-46": {
+      "title": "Multi-Risk Puzzle",
+      "description": "Match: \"Health -> Health Insurance\", \"Old Age -> Pension\", \"Accident -> PA Cover\"."
+    },
+    "finance-insurance-pension-47": {
+      "title": "Journal: My Financial Promise",
+      "description": "Write: \"I will protect my future by ___.\" Min 10 characters."
+    },
+    "finance-insurance-pension-48": {
+      "title": "Debate: Dependence vs Independence",
+      "description": "Is planning freedom? Choose stronger arguments for independence."
+    },
+    "finance-insurance-pension-49": {
+      "title": "Protection Simulation Challenge",
+      "description": "Handle illness, job loss, retirement. Balanced planning wins."
+    },
+    "finance-insurance-pension-50": {
+      "title": "Badge: Financial Security Master",
+      "description": "Complete insurance + pension mastery track. Earn the badge."
+    }
+  }
+}

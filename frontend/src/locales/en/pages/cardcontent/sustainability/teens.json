@@ -1,0 +1,404 @@
+{
+  "cards": {
+    "sustainability-teens-1": {
+      "title": "Climate Action Story",
+      "description": "You learn about climate change. How do you take action"
+    },
+    "sustainability-teens-2": {
+      "title": "Quiz on Carbon Footprint",
+      "description": "What is a carbon footprint (a) Shoe size, (b) Environmental impact, (c) Weather"
+    },
+    "sustainability-teens-3": {
+      "title": "Reflex Eco Choice",
+      "description": "Tap quickly for \"Sustainable\" actions, avoid \"Wasteful\" actions"
+    },
+    "sustainability-teens-4": {
+      "title": "Puzzle: Sustainable Solutions",
+      "description": "Match environmental problems with sustainable solutions"
+    },
+    "sustainability-teens-5": {
+      "title": "Renewable Energy Story",
+      "description": "Your school considers solar panels. What's your role"
+    },
+    "sustainability-teens-6": {
+      "title": "Debate: Fossil Fuels vs Renewables",
+      "description": "Participate in a debate on energy sources"
+    },
+    "sustainability-teens-7": {
+      "title": "Journal of Green Living",
+      "description": "Reflect on your daily environmental impact"
+    },
+    "sustainability-teens-8": {
+      "title": "Simulation: Eco-Friendly City",
+      "description": "Design a sustainable city with green solutions"
+    },
+    "sustainability-teens-9": {
+      "title": "Reflex Green Habits",
+      "description": "Quickly identify sustainable daily habits"
+    },
+    "sustainability-teens-10": {
+      "title": "Badge: Climate Activist",
+      "description": "Earn your Climate Activist badge"
+    },
+    "sustainability-teens-11": {
+      "title": "Waste Reduction Story",
+      "description": "Your school wants to reduce waste. How do you help"
+    },
+    "sustainability-teens-12": {
+      "title": "Quiz on Circular Economy",
+      "description": "Test your knowledge on waste reduction and recycling"
+    },
+    "sustainability-teens-13": {
+      "title": "Reflex Zero Waste",
+      "description": "Quickly identify zero-waste alternatives"
+    },
+    "sustainability-teens-14": {
+      "title": "Puzzle: Waste Hierarchy",
+      "description": "Arrange waste management strategies in order of priority"
+    },
+    "sustainability-teens-15": {
+      "title": "Plastic Pollution Story",
+      "description": "You see plastic pollution in your community. What's your response"
+    },
+    "sustainability-teens-16": {
+      "title": "Debate: Single-Use vs Reusable",
+      "description": "Debate the impact of single-use plastics"
+    },
+    "sustainability-teens-17": {
+      "title": "Journal of Waste Audit",
+      "description": "Track and reflect on your waste generation"
+    },
+    "sustainability-teens-18": {
+      "title": "Simulation: Recycling Program",
+      "description": "Design and implement a school recycling program"
+    },
+    "sustainability-teens-19": {
+      "title": "Reflex Compost Master",
+      "description": "Quickly identify compostable vs non-compostable items"
+    },
+    "sustainability-teens-20": {
+      "title": "Badge: Zero Waste Champion",
+      "description": "Earn your Zero Waste Champion badge"
+    },
+    "sustainability-teens-21": {
+      "title": "Biodiversity Conservation Story",
+      "description": "Your community plans to build on a forest. What's your stance"
+    },
+    "sustainability-teens-22": {
+      "title": "Quiz on Sustainable Agriculture",
+      "description": "Test your knowledge on eco-friendly farming practices"
+    },
+    "sustainability-teens-23": {
+      "title": "Reflex Ocean Protector",
+      "description": "Quickly identify actions that protect marine life"
+    },
+    "sustainability-teens-24": {
+      "title": "Simulation: Green Community Project",
+      "description": "Plan and execute a community sustainability initiative"
+    },
+    "sustainability-teens-25": {
+      "title": "Badge: Sustainability Leader",
+      "description": "Master all sustainability challenges to become a leader"
+    },
+    "sustainability-teens-26": {
+      "title": "Fast Fashion Story",
+      "description": "Your friend buys new clothes weekly. What's your advice"
+    },
+    "sustainability-teens-27": {
+      "title": "Quiz on Circular Economy",
+      "description": "Test your knowledge on reducing, reusing, and recycling"
+    },
+    "sustainability-teens-28": {
+      "title": "Reflex Conscious Consumer",
+      "description": "Quickly identify sustainable shopping choices"
+    },
+    "sustainability-teens-29": {
+      "title": "Puzzle: Product Lifecycle",
+      "description": "Match products with their most sustainable disposal method"
+    },
+    "sustainability-teens-30": {
+      "title": "Minimalism Story",
+      "description": "You want to declutter. How do you do it sustainably"
+    },
+    "sustainability-teens-31": {
+      "title": "Debate: Quality vs Quantity",
+      "description": "Debate the impact of buying less but better quality"
+    },
+    "sustainability-teens-32": {
+      "title": "Journal of Consumption",
+      "description": "Reflect on your consumption habits and their impact"
+    },
+    "sustainability-teens-33": {
+      "title": "Simulation: Sustainable Shopping",
+      "description": "Plan a sustainable shopping trip with minimal waste"
+    },
+    "sustainability-teens-34": {
+      "title": "Reflex Ethical Buyer",
+      "description": "Quickly identify ethical and sustainable brands"
+    },
+    "sustainability-teens-35": {
+      "title": "Badge: Conscious Consumer",
+      "description": "Earn your Conscious Consumer badge"
+    },
+    "sustainability-teens-36": {
+      "title": "Solar Panel Story",
+      "description": "Your family considers solar panels. What's your research"
+    },
+    "sustainability-teens-37": {
+      "title": "Quiz on Energy Transition",
+      "description": "Test your knowledge on renewable energy technologies"
+    },
+    "sustainability-teens-38": {
+      "title": "Reflex Energy Innovator",
+      "description": "Quickly identify innovative energy solutions"
+    },
+    "sustainability-teens-39": {
+      "title": "Puzzle: Energy Systems",
+      "description": "Match energy sources with their environmental impacts"
+    },
+    "sustainability-teens-40": {
+      "title": "Wind Farm Story",
+      "description": "A wind farm is proposed nearby. What's your stance"
+    },
+    "sustainability-teens-41": {
+      "title": "Debate: Nuclear vs Renewables",
+      "description": "Debate different energy solutions for the future"
+    },
+    "sustainability-teens-42": {
+      "title": "Journal of Energy Use",
+      "description": "Track and analyze your personal energy consumption"
+    },
+    "sustainability-teens-43": {
+      "title": "Simulation: Energy Audit",
+      "description": "Conduct an energy audit for your home or school"
+    },
+    "sustainability-teens-44": {
+      "title": "Reflex Energy Tech",
+      "description": "Quickly identify emerging green technologies"
+    },
+    "sustainability-teens-45": {
+      "title": "Badge: Energy Innovator",
+      "description": "Earn your Energy Innovator badge"
+    },
+    "sustainability-teens-46": {
+      "title": "Water Crisis Story",
+      "description": "Your area faces water shortages. How do you respond"
+    },
+    "sustainability-teens-47": {
+      "title": "Quiz on Water Systems",
+      "description": "Test your knowledge on water conservation and management"
+    },
+    "sustainability-teens-48": {
+      "title": "Reflex Water Manager",
+      "description": "Quickly identify effective water conservation strategies"
+    },
+    "sustainability-teens-49": {
+      "title": "Puzzle: Water Cycle",
+      "description": "Match water sources with sustainable usage practices"
+    },
+    "sustainability-teens-50": {
+      "title": "Rainwater Story",
+      "description": "You want to collect rainwater. How do you start"
+    },
+    "sustainability-teens-51": {
+      "title": "Debate: Water Rights",
+      "description": "Debate access to clean water as a human right"
+    },
+    "sustainability-teens-52": {
+      "title": "Journal of Water Footprint",
+      "description": "Calculate and reflect on your water footprint"
+    },
+    "sustainability-teens-53": {
+      "title": "Simulation: Water Conservation Plan",
+      "description": "Design a water conservation program for your community"
+    },
+    "sustainability-teens-54": {
+      "title": "Reflex Water Solutions",
+      "description": "Quickly identify innovative water-saving technologies"
+    },
+    "sustainability-teens-55": {
+      "title": "Badge: Water Steward",
+      "description": "Earn your Water Steward badge"
+    },
+    "sustainability-teens-56": {
+      "title": "Forest Conservation Story",
+      "description": "Local forest is threatened by development. What's your action"
+    },
+    "sustainability-teens-57": {
+      "title": "Quiz on Biodiversity",
+      "description": "Test your knowledge on ecosystems and species protection"
+    },
+    "sustainability-teens-58": {
+      "title": "Reflex Ecosystem Defender",
+      "description": "Quickly identify actions that protect biodiversity"
+    },
+    "sustainability-teens-59": {
+      "title": "Puzzle: Ecosystem Balance",
+      "description": "Match species with their role in maintaining ecosystem health"
+    },
+    "sustainability-teens-60": {
+      "title": "Marine Life Story",
+      "description": "You learn about ocean pollution. How do you take action"
+    },
+    "sustainability-teens-61": {
+      "title": "Debate: Conservation vs Development",
+      "description": "Debate balancing economic development with conservation"
+    },
+    "sustainability-teens-62": {
+      "title": "Journal of Nature Connection",
+      "description": "Reflect on your relationship with nature and wildlife"
+    },
+    "sustainability-teens-63": {
+      "title": "Simulation: Wildlife Conservation Project",
+      "description": "Design a conservation initiative for endangered species"
+    },
+    "sustainability-teens-64": {
+      "title": "Reflex Habitat Protector",
+      "description": "Quickly identify threats to biodiversity and solutions"
+    },
+    "sustainability-teens-65": {
+      "title": "Badge: Biodiversity Champion",
+      "description": "Earn your Biodiversity Champion badge"
+    },
+    "sustainability-teens-66": {
+      "title": "Climate March Story",
+      "description": "A climate protest is organized. Do you participate"
+    },
+    "sustainability-teens-67": {
+      "title": "Quiz on Climate Science",
+      "description": "Test your understanding of climate change causes and effects"
+    },
+    "sustainability-teens-68": {
+      "title": "Reflex Climate Advocate",
+      "description": "Quickly identify effective climate action strategies"
+    },
+    "sustainability-teens-69": {
+      "title": "Puzzle: Climate Policies",
+      "description": "Match policy solutions with climate challenges"
+    },
+    "sustainability-teens-70": {
+      "title": "School Policy Story",
+      "description": "Your school wants climate policies. What do you propose"
+    },
+    "sustainability-teens-71": {
+      "title": "Debate: Individual vs Systemic Change",
+      "description": "Debate the role of individual vs government action"
+    },
+    "sustainability-teens-72": {
+      "title": "Journal of Climate Action",
+      "description": "Document your journey as a climate activist"
+    },
+    "sustainability-teens-73": {
+      "title": "Simulation: Climate Policy Proposal",
+      "description": "Draft a climate action plan for your school or city"
+    },
+    "sustainability-teens-74": {
+      "title": "Reflex Policy Solutions",
+      "description": "Quickly identify effective climate policies"
+    },
+    "sustainability-teens-75": {
+      "title": "Badge: Climate Advocate",
+      "description": "Earn your Climate Advocate badge"
+    },
+    "sustainability-teens-76": {
+      "title": "Local Farm Story",
+      "description": "You discover a local organic farm. How do you support it"
+    },
+    "sustainability-teens-77": {
+      "title": "Quiz on Sustainable Agriculture",
+      "description": "Test your knowledge on eco-friendly farming practices"
+    },
+    "sustainability-teens-78": {
+      "title": "Reflex Food System Thinker",
+      "description": "Quickly identify sustainable food choices"
+    },
+    "sustainability-teens-79": {
+      "title": "Puzzle: Food Chain Impact",
+      "description": "Match food choices with their environmental footprint"
+    },
+    "sustainability-teens-80": {
+      "title": "Urban Garden Story",
+      "description": "You want to start a community garden. How do you begin"
+    },
+    "sustainability-teens-81": {
+      "title": "Debate: Organic vs Conventional",
+      "description": "Debate different farming approaches and their impacts"
+    },
+    "sustainability-teens-82": {
+      "title": "Journal of Food Ethics",
+      "description": "Reflect on the ethics of your food choices"
+    },
+    "sustainability-teens-83": {
+      "title": "Simulation: Farm-to-Table Project",
+      "description": "Design a local food system initiative"
+    },
+    "sustainability-teens-84": {
+      "title": "Reflex Sustainable Food",
+      "description": "Quickly identify sustainable and ethical food sources"
+    },
+    "sustainability-teens-85": {
+      "title": "Badge: Food System Champion",
+      "description": "Earn your Food System Champion badge"
+    },
+    "sustainability-teens-86": {
+      "title": "Eco-Innovation Story",
+      "description": "You have an idea for green technology. How do you develop it"
+    },
+    "sustainability-teens-87": {
+      "title": "Quiz on Green Tech",
+      "description": "Test your knowledge on sustainable technology solutions"
+    },
+    "sustainability-teens-88": {
+      "title": "Reflex Tech Innovator",
+      "description": "Quickly identify green technology opportunities"
+    },
+    "sustainability-teens-89": {
+      "title": "Puzzle: Technology Impact",
+      "description": "Match technologies with their sustainability potential"
+    },
+    "sustainability-teens-90": {
+      "title": "Startup Story",
+      "description": "You want to start an eco-business. What's your plan"
+    },
+    "sustainability-teens-91": {
+      "title": "Debate: Tech Solution vs Behavior Change",
+      "description": "Debate technology vs lifestyle changes for sustainability"
+    },
+    "sustainability-teens-92": {
+      "title": "Journal of Innovation",
+      "description": "Document your ideas for sustainable innovations"
+    },
+    "sustainability-teens-93": {
+      "title": "Simulation: Green Startup Plan",
+      "description": "Develop a business plan for a sustainable venture"
+    },
+    "sustainability-teens-94": {
+      "title": "Reflex Innovation Solutions",
+      "description": "Quickly identify green technology solutions to problems"
+    },
+    "sustainability-teens-95": {
+      "title": "Badge: Green Innovator",
+      "description": "Earn your Green Innovator badge"
+    },
+    "sustainability-teens-96": {
+      "title": "Leadership Story",
+      "description": "You're asked to lead a sustainability initiative. How do you inspire others"
+    },
+    "sustainability-teens-97": {
+      "title": "Quiz on Sustainability Leadership",
+      "description": "Test your knowledge on leading change for sustainability"
+    },
+    "sustainability-teens-98": {
+      "title": "Reflex Change Leader",
+      "description": "Quickly identify effective leadership strategies for sustainability"
+    },
+    "sustainability-teens-99": {
+      "title": "Simulation: Community Sustainability Plan",
+      "description": "Design a comprehensive sustainability plan for your community"
+    },
+    "sustainability-teens-100": {
+      "title": "Badge: Master Sustainability Leader",
+      "description": "Master all sustainability challenges to become a leader"
+    }
+  }
+}

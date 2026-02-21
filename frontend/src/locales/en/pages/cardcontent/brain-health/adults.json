@@ -1,0 +1,404 @@
+{
+  "cards": {
+    "brain-adults-1": {
+      "title": "Always On Mode",
+      "description": "An adult professional remains mentally engaged with work even after office hours."
+    },
+    "brain-adults-2": {
+      "title": "Responsibility Pile-Up",
+      "description": "An adult manages work, family duties, and personal commitments simultaneously."
+    },
+    "brain-adults-3": {
+      "title": "Silent Burn",
+      "description": "An adult feels tired and irritable but continues daily routines."
+    },
+    "brain-adults-4": {
+      "title": "Deadline Collision",
+      "description": "Multiple work and personal deadlines fall on the same week."
+    },
+    "brain-adults-5": {
+      "title": "Carrying It Home",
+      "description": "Work stress affects mood at home."
+    },
+    "brain-adults-6": {
+      "title": "Productivity Guilt",
+      "description": "An adult feels guilty when resting or slowing down."
+    },
+    "brain-adults-7": {
+      "title": "Never Enough Time",
+      "description": "An adult feels there is never enough time to complete everything."
+    },
+    "brain-adults-8": {
+      "title": "Holding It Together",
+      "description": "An adult feels pressure to appear strong for others."
+    },
+    "brain-adults-9": {
+      "title": "Constant Catch-Up",
+      "description": "An adult feels behind despite continuous effort."
+    },
+    "brain-adults-10": {
+      "title": "Mental Reset Point",
+      "description": "After prolonged pressure, energy feels low."
+    },
+    "brain-adults-11": {
+      "title": "Waiting for the Outcome",
+      "description": "An adult is waiting for an important work or personal outcome."
+    },
+    "brain-adults-12": {
+      "title": "Fear of Making the Wrong Choice",
+      "description": "An adult faces a decision with long-term impact."
+    },
+    "brain-adults-13": {
+      "title": "What If Loop",
+      "description": "An adult repeatedly imagines worst-case future scenarios."
+    },
+    "brain-adults-14": {
+      "title": "Fear of Falling Behind",
+      "description": "Peers appear to progress faster in life or career."
+    },
+    "brain-adults-15": {
+      "title": "Fear of Starting Again",
+      "description": "An adult hesitates to restart after a setback."
+    },
+    "brain-adults-16": {
+      "title": "Fear of Judgement",
+      "description": "An adult worries about being judged for choices or lifestyle."
+    },
+    "brain-adults-17": {
+      "title": "Unclear Future",
+      "description": "An adult feels unsure about long-term direction."
+    },
+    "brain-adults-18": {
+      "title": "After the Mistake",
+      "description": "An error occurs at work or in a personal responsibility."
+    },
+    "brain-adults-19": {
+      "title": "Pressure to Be Stable",
+      "description": "An adult feels expected to always be financially and emotionally stable."
+    },
+    "brain-adults-20": {
+      "title": "Facing the Outcome",
+      "description": "An adult receives an outcome different from expectations."
+    },
+    "brain-adults-21": {
+      "title": "Sudden Irritation",
+      "description": "An adult feels irritated during a normal conversation."
+    },
+    "brain-adults-22": {
+      "title": "Mixed Feelings",
+      "description": "An adult feels excitement and anxiety about the same situation."
+    },
+    "brain-adults-23": {
+      "title": "Emotional Build-Up",
+      "description": "Stressful days pass without emotional release."
+    },
+    "brain-adults-24": {
+      "title": "Feeling Disconnected",
+      "description": "An adult feels emotionally distant from daily life."
+    },
+    "brain-adults-25": {
+      "title": "Anger Without Warning",
+      "description": "A small event triggers unexpected anger."
+    },
+    "brain-adults-26": {
+      "title": "Mood Shifts",
+      "description": "An adult notices mood changes across the day."
+    },
+    "brain-adults-27": {
+      "title": "Emotional Spillover",
+      "description": "Stress from one role affects another area of life."
+    },
+    "brain-adults-28": {
+      "title": "Repeating Triggers",
+      "description": "Certain situations repeatedly trigger emotions."
+    },
+    "brain-adults-29": {
+      "title": "Expressing Feelings",
+      "description": "An adult struggles to express emotions clearly."
+    },
+    "brain-adults-30": {
+      "title": "Emotional Reset",
+      "description": "Emotions feel heavy after a long day."
+    },
+    "brain-adults-31": {
+      "title": "Feeling Behind in Life",
+      "description": "An adult compares life progress with peers and feels inadequate."
+    },
+    "brain-adults-32": {
+      "title": "Role Overload",
+      "description": "An adult manages multiple identities such as professional, parent, partner, or caregiver."
+    },
+    "brain-adults-33": {
+      "title": "Seeking Validation",
+      "description": "An adult's confidence depends on praise or recognition."
+    },
+    "brain-adults-34": {
+      "title": "Labeling Yourself",
+      "description": "An adult labels themselves based on one failure."
+    },
+    "brain-adults-35": {
+      "title": "Comparing Life Timelines",
+      "description": "Friends reach marriage, career, or financial milestones at different times."
+    },
+    "brain-adults-36": {
+      "title": "Confidence Drop",
+      "description": "An adult experiences a setback after consistent effort."
+    },
+    "brain-adults-37": {
+      "title": "Identity Drift",
+      "description": "An adult feels unsure about who they are becoming."
+    },
+    "brain-adults-38": {
+      "title": "External Success Pressure",
+      "description": "Success is measured against societal standards."
+    },
+    "brain-adults-39": {
+      "title": "Self-Image Erosion",
+      "description": "Repeated self-criticism affects confidence over time."
+    },
+    "brain-adults-40": {
+      "title": "Identity Reset",
+      "description": "Life changes prompt reassessment of identity."
+    },
+    "brain-adults-41": {
+      "title": "Pressure to Keep Peace",
+      "description": "An adult avoids expressing disagreement to maintain harmony in relationships."
+    },
+    "brain-adults-42": {
+      "title": "Difficulty Saying No",
+      "description": "Requests from family or colleagues feel constant."
+    },
+    "brain-adults-43": {
+      "title": "Emotional Distance",
+      "description": "An adult feels distant in a close relationship."
+    },
+    "brain-adults-44": {
+      "title": "People-Pleasing Pattern",
+      "description": "An adult prioritises others' needs over personal limits."
+    },
+    "brain-adults-45": {
+      "title": "Social Energy Drain",
+      "description": "Social interactions feel exhausting over time."
+    },
+    "brain-adults-46": {
+      "title": "Unclear Boundaries",
+      "description": "Boundaries in work or family are not clearly defined."
+    },
+    "brain-adults-47": {
+      "title": "Peer Pressure as an Adult",
+      "description": "Peers influence lifestyle or financial choices."
+    },
+    "brain-adults-48": {
+      "title": "Emotional Dependence",
+      "description": "Mood depends heavily on others' reactions."
+    },
+    "brain-adults-49": {
+      "title": "Relationship Expectations",
+      "description": "Expectations in a relationship feel heavy."
+    },
+    "brain-adults-50": {
+      "title": "Choosing Distance",
+      "description": "A relationship feels emotionally draining."
+    },
+    "brain-adults-51": {
+      "title": "Endless Checking",
+      "description": "An adult frequently checks messages and notifications throughout the day."
+    },
+    "brain-adults-52": {
+      "title": "Notification Overload",
+      "description": "Multiple alerts interrupt work and personal time."
+    },
+    "brain-adults-53": {
+      "title": "Comparison Scroll",
+      "description": "An adult compares life with online content."
+    },
+    "brain-adults-54": {
+      "title": "Digital Multitasking",
+      "description": "Multiple apps and tasks are used simultaneously."
+    },
+    "brain-adults-55": {
+      "title": "Late-Night Screens",
+      "description": "Screen use continues late into the night."
+    },
+    "brain-adults-56": {
+      "title": "Mental Noise",
+      "description": "Constant information intake creates mental clutter."
+    },
+    "brain-adults-57": {
+      "title": "Fear of Missing Out",
+      "description": "Seeing others' activities online creates anxiety."
+    },
+    "brain-adults-58": {
+      "title": "Online Arguments",
+      "description": "An online discussion becomes emotionally charged."
+    },
+    "brain-adults-59": {
+      "title": "Always Available",
+      "description": "Being reachable at all times feels exhausting."
+    },
+    "brain-adults-60": {
+      "title": "Digital Reset",
+      "description": "Prolonged digital use causes mental fatigue."
+    },
+    "brain-adults-61": {
+      "title": "Loss of Motivation",
+      "description": "An adult feels unmotivated despite responsibilities."
+    },
+    "brain-adults-62": {
+      "title": "Discipline vs Mood",
+      "description": "Daily mood shifts affect productivity."
+    },
+    "brain-adults-63": {
+      "title": "Early Burnout Signs",
+      "description": "Fatigue appears even after rest."
+    },
+    "brain-adults-64": {
+      "title": "Procrastination Loop",
+      "description": "Tasks are repeatedly postponed."
+    },
+    "brain-adults-65": {
+      "title": "Overworking Pattern",
+      "description": "An adult works excessively without rest."
+    },
+    "brain-adults-66": {
+      "title": "Loss of Interest",
+      "description": "Interest in activities declines suddenly."
+    },
+    "brain-adults-67": {
+      "title": "Routine Fatigue",
+      "description": "Maintaining routines feels exhausting."
+    },
+    "brain-adults-68": {
+      "title": "Productivity Guilt",
+      "description": "Feeling guilty for not being productive."
+    },
+    "brain-adults-69": {
+      "title": "Energy Mismatch",
+      "description": "Energy levels vary during the day."
+    },
+    "brain-adults-70": {
+      "title": "Burnout Reset",
+      "description": "Burnout signs become noticeable."
+    },
+    "brain-adults-71": {
+      "title": "Constant Money Worry",
+      "description": "An adult frequently worries about expenses and financial stability."
+    },
+    "brain-adults-72": {
+      "title": "Emotional Spending",
+      "description": "An adult spends money to cope with stress or low mood."
+    },
+    "brain-adults-73": {
+      "title": "Comparing Finances",
+      "description": "An adult compares financial progress with peers."
+    },
+    "brain-adults-74": {
+      "title": "Fear of Running Out",
+      "description": "Savings feel insufficient for future needs."
+    },
+    "brain-adults-75": {
+      "title": "Income Uncertainty",
+      "description": "Income is irregular or unpredictable."
+    },
+    "brain-adults-76": {
+      "title": "Spending to Belong",
+      "description": "Social situations encourage spending beyond comfort."
+    },
+    "brain-adults-77": {
+      "title": "Debt Anxiety",
+      "description": "Debt feels emotionally overwhelming."
+    },
+    "brain-adults-78": {
+      "title": "Saving vs Living",
+      "description": "Balancing saving money and enjoying life feels difficult."
+    },
+    "brain-adults-79": {
+      "title": "Financial Regret",
+      "description": "A past financial decision causes regret."
+    },
+    "brain-adults-80": {
+      "title": "Financial Reset",
+      "description": "Financial stress builds over time."
+    },
+    "brain-adults-81": {
+      "title": "Decision Under Stress",
+      "description": "An adult must make an important decision while feeling emotionally stressed."
+    },
+    "brain-adults-82": {
+      "title": "Emotional Reaction",
+      "description": "An emotional response arises during a disagreement."
+    },
+    "brain-adults-83": {
+      "title": "Impulsive Choice",
+      "description": "Strong emotions push toward quick action."
+    },
+    "brain-adults-84": {
+      "title": "Past Experience Bias",
+      "description": "Past experiences influence a current decision."
+    },
+    "brain-adults-85": {
+      "title": "Pressure-Driven Choice",
+      "description": "External pressure pushes for quick decisions."
+    },
+    "brain-adults-86": {
+      "title": "Overthinking Loop",
+      "description": "A decision is delayed due to overthinking."
+    },
+    "brain-adults-87": {
+      "title": "Emotion vs Logic",
+      "description": "Strong emotions conflict with logical thinking."
+    },
+    "brain-adults-88": {
+      "title": "Avoidance Decision",
+      "description": "Avoiding decisions feels safer."
+    },
+    "brain-adults-89": {
+      "title": "Emotional Regret",
+      "description": "A past decision creates emotional regret."
+    },
+    "brain-adults-90": {
+      "title": "Decision Fatigue",
+      "description": "Too many decisions create mental exhaustion."
+    },
+    "brain-adults-91": {
+      "title": "Handling Setbacks",
+      "description": "An adult faces an unexpected setback after planning carefully."
+    },
+    "brain-adults-92": {
+      "title": "Emotional Recovery",
+      "description": "Emotional exhaustion follows prolonged stress."
+    },
+    "brain-adults-93": {
+      "title": "Learning from Failure",
+      "description": "Failure occurs despite sincere effort."
+    },
+    "brain-adults-94": {
+      "title": "Coping with Change",
+      "description": "Unexpected changes disrupt established routines."
+    },
+    "brain-adults-95": {
+      "title": "Emotional Strength",
+      "description": "Repeated challenges test emotional endurance."
+    },
+    "brain-adults-96": {
+      "title": "Recovery After Loss",
+      "description": "Loss of an opportunity affects confidence."
+    },
+    "brain-adults-97": {
+      "title": "Emotional Endurance",
+      "description": "Long-term pressure tests patience and stamina."
+    },
+    "brain-adults-98": {
+      "title": "Inner Stability",
+      "description": "External situations feel unpredictable."
+    },
+    "brain-adults-99": {
+      "title": "Long-Term Perspective",
+      "description": "Short-term setbacks feel overwhelming."
+    },
+    "brain-adults-100": {
+      "title": "Resilience Reset",
+      "description": "After prolonged challenges, energy feels low."
+    }
+  }
+}

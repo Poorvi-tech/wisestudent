@@ -1,0 +1,404 @@
+{
+  "cards": {
+    "finance-adults-1": {
+      "title": "Income vs Expense Reality",
+      "description": "₹18,000 income versus ₹20,000 expenses—what does this gap teach you?"
+    },
+    "finance-adults-2": {
+      "title": "What Is Financial Literacy?",
+      "description": "Financial literacy means making smart choices when earning, saving, spending, or borrowing."
+    },
+    "finance-adults-3": {
+      "title": "Needs vs Wants - Daily Choices",
+      "description": "Distinguish between needs and wants to protect your monthly budget."
+    },
+    "finance-adults-4": {
+      "title": "Fixed vs Variable Expenses",
+      "description": "Learn to distinguish between fixed and variable expenses to plan your budget safely."
+    },
+    "finance-adults-5": {
+      "title": "Salary Day Decision",
+      "description": "Learn to plan your salary allocation to reduce the need for borrowing later."
+    },
+    "finance-adults-6": {
+      "title": "Spending Adjustment Test",
+      "description": "Learn to adjust spending before resorting to borrowing when facing small financial gaps."
+    },
+    "finance-adults-7": {
+      "title": "Tracking Money Habits",
+      "description": "Learn to track your daily spending to reveal hidden money leaks."
+    },
+    "finance-adults-8": {
+      "title": "Savings vs Borrowing",
+      "description": "Learn to use savings instead of borrowing for emergencies to reduce dependence on credit."
+    },
+    "finance-adults-9": {
+      "title": "Monthly Budget Balance",
+      "description": "Learn to balance expenses within fixed income to prevent debt cycles."
+    },
+    "finance-adults-10": {
+      "title": "Financial Discipline Checkpoint",
+      "description": "Complete 7 correct financial decisions to demonstrate basic money discipline."
+    },
+    "finance-adults-11": {
+      "title": "Why a Bank Account Matters",
+      "description": "Learn about the importance of bank accounts for securing your income and accessing formal financial services."
+    },
+    "finance-adults-12": {
+      "title": "KYC Basics",
+      "description": "Learn about Know Your Customer (KYC) procedures and why banks require identity verification."
+    },
+    "finance-adults-13": {
+      "title": "Formal vs Informal Finance",
+      "description": "Learn about the differences between formal and informal financial services and why formal finance is safer."
+    },
+    "finance-adults-14": {
+      "title": "Digital Payments Safety",
+      "description": "Learn about safe practices when using digital payment methods like UPI and protecting your financial information."
+    },
+    "finance-adults-15": {
+      "title": "Multiple Accounts Confusion",
+      "description": "Learn about the importance of simplifying your banking by managing fewer accounts effectively."
+    },
+    "finance-adults-16": {
+      "title": "Digital Wallet vs Bank Account",
+      "description": "Learn about the differences between digital wallets and bank accounts for various financial needs."
+    },
+    "finance-adults-17": {
+      "title": "Safe Use of Banking Apps",
+      "description": "Learn about the safe practices for using banking apps and protecting your financial information."
+    },
+    "finance-adults-18": {
+      "title": "Cash vs Digital Records",
+      "description": "Learn about the benefits of digital transactions and how records help with budgeting and credit eligibility."
+    },
+    "finance-adults-19": {
+      "title": "Trusting the System",
+      "description": "Learn about the safety and regulation of banking systems and why regulated institutions are safer than informal storage."
+    },
+    "finance-adults-20": {
+      "title": "Banking Readiness Checkpoint",
+      "description": "Complete 7 correct banking and digital finance decisions to demonstrate readiness for credit and loans."
+    },
+    "finance-adults-21": {
+      "title": "What Is Credit?",
+      "description": "Learn the fundamental concept of credit and understand when credit is helpful versus harmful."
+    },
+    "finance-adults-22": {
+      "title": "When Credit Is Useful",
+      "description": "Learn when borrowing is reasonable and how to evaluate credit decisions that support financial stability."
+    },
+    "finance-adults-23": {
+      "title": "Types of Loans",
+      "description": "Learn to distinguish between formal and informal lending options and understand regulated pricing benefits."
+    },
+    "finance-adults-24": {
+      "title": "Personal vs Business Loan",
+      "description": "Learn to distinguish between personal and business loans and understand proper financing selection for business needs."
+    },
+    "finance-adults-25": {
+      "title": "Credit Eligibility Basics",
+      "description": "Learn the fundamental factors that improve loan eligibility and how financial discipline opens access to formal credit."
+    },
+    "finance-adults-26": {
+      "title": "Loan Rejection Reality",
+      "description": "Why do banks reject applications? Understand loan rejection reasons and turn setbacks into financial growth opportunities."
+    },
+    "finance-adults-27": {
+      "title": "Loan Amount Decision",
+      "description": "You qualify for ₹1,00,000 but only need ₹40,000. Learn to borrow only what you can repay comfortably."
+    },
+    "finance-adults-28": {
+      "title": "Credit Is Not Income",
+      "description": "Credit should be treated as temporary support to be repaid, not extra income. Learn to avoid debt traps."
+    },
+    "finance-adults-29": {
+      "title": "Multiple Loans Risk",
+      "description": "Taking many loans at once leads to higher repayment stress. Learn to avoid loan stacking and default risk."
+    },
+    "finance-adults-30": {
+      "title": "Credit for Emergencies",
+      "description": "Is credit the first solution for emergencies? Learn why emergency funds reduce harmful borrowing."
+    },
+    "finance-adults-31": {
+      "title": "Trusting Loan Offers",
+      "description": "A lender promises 'guaranteed approval.' Learn why these offers often hide risks and require verification."
+    },
+    "finance-adults-32": {
+      "title": "Credit Understanding Checkpoint",
+      "description": "Make 8 correct credit-related decisions. You now understand how credit works and when it should be used."
+    },
+    "finance-adults-33": {
+      "title": "What Is Interest?",
+      "description": "Interest is the cost of borrowing money. Learn what you pay for using someone else's money."
+    },
+    "finance-adults-34": {
+      "title": "Higher Loan, Higher Cost",
+      "description": "If you borrow more money, total interest usually increases. Learn how bigger loans mean higher repayment burden."
+    },
+    "finance-adults-35": {
+      "title": "EMI Meaning",
+      "description": "EMI stands for Equated Monthly Instalment. Learn how EMIs divide loan repayment into monthly amounts."
+    },
+    "finance-adults-36": {
+      "title": "EMI vs Income",
+      "description": "Which EMI is safer? Learn why EMIs that fit comfortably within income reduce stress and increase financial flexibility."
+    },
+    "finance-adults-37": {
+      "title": "Short Tenure vs Long Tenure",
+      "description": "Longer loan tenure usually means higher total interest. Learn why smaller EMIs over long periods cost more overall."
+    },
+    "finance-adults-38": {
+      "title": "Missed EMI Consequence",
+      "description": "What happens if you miss EMIs? Learn why penalties and credit damage affect future borrowing ability."
+    },
+    "finance-adults-39": {
+      "title": "Prepayment Awareness",
+      "description": "Paying extra towards loan early can reduce interest burden. Learn why early repayment saves money when allowed."
+    },
+    "finance-adults-40": {
+      "title": "Fixed vs Variable Interest",
+      "description": "Which loan has predictable EMIs? Learn why fixed interest loans help with budgeting and financial planning."
+    },
+    "finance-adults-41": {
+      "title": "Hidden Charges",
+      "description": "Loan cost includes processing fees and charges beyond EMIs. Learn why you should always check the full cost, not just EMI."
+    },
+    "finance-adults-42": {
+      "title": "EMI Discipline",
+      "description": "Best habit for EMI safety is paying on or before due date every month. Learn why timely payment protects credit history."
+    },
+    "finance-adults-43": {
+      "title": "Loan Restructuring Awareness",
+      "description": "If income drops suddenly, talk to lender early for options. Learn why early communication prevents defaults."
+    },
+    "finance-adults-44": {
+      "title": "Repayment Readiness Checkpoint",
+      "description": "Make 5 correct decisions related to interest and repayment. Learn how loan costs and repayments work comprehensively."
+    },
+    "finance-adults-45": {
+      "title": "Borrowing as Last Option",
+      "description": "You face a temporary cash gap. Learn why borrowing should be the last step, not the first."
+    },
+    "finance-adults-46": {
+      "title": "Over-Borrowing Risk",
+      "description": "Taking a loan larger than needed usually leads to higher repayment stress. Learn why bigger loans increase risk without extra benefit."
+    },
+    "finance-adults-47": {
+      "title": "Loan Stacking Danger",
+      "description": "Taking multiple loans at the same time causes confusing repayments and defaults. Learn why loan stacking is a common debt trap."
+    },
+    "finance-adults-48": {
+      "title": "Borrowing for Wants",
+      "description": "Is it wise to borrow for luxury spending? Learn why borrowing for wants leads to long-term stress and unnecessary debt."
+    },
+    "finance-adults-49": {
+      "title": "Income Stability Check",
+      "description": "When is borrowing safer? Learn why stable and predictable income supports disciplined repayment and makes borrowing much safer."
+    },
+    "finance-adults-50": {
+      "title": "Peer Pressure Loans",
+      "description": "Friends encourage you to take a loan. Learn why borrowing decisions must be personal and realistic, not influenced by peer pressure."
+    },
+    "finance-adults-51": {
+      "title": "Emergency vs Lifestyle Loans",
+      "description": "Scenario: Which borrowing is more justified? (A) Emergency medical need or (B) Lifestyle upgrade. Outcome: Emergencies justify credit more than comfort."
+    },
+    "finance-adults-52": {
+      "title": "Repayment Capacity Test",
+      "description": "Scenario: Which EMI is risky? (A) EMI below 20–30% of income or (B) EMI above 50% of income. Outcome: High EMIs reduce financial safety."
+    },
+    "finance-adults-53": {
+      "title": "Borrowing Frequency",
+      "description": "Scenario: Frequent borrowing usually signals: (A) Smart money use or (B) Poor financial planning. Outcome: Frequent loans indicate deeper issues."
+    },
+    "finance-adults-54": {
+      "title": "Loan Purpose Clarity",
+      "description": "Scenario: Why should loan purpose be clear? (A) For lender only or (B) To ensure money is used wisely. Outcome: Clear purpose improves repayment success."
+    },
+    "finance-adults-55": {
+      "title": "Ignoring Warning Signs",
+      "description": "Scenario: Which is a warning sign? (A) Difficulty paying EMIs or (B) Comfortable repayment (reverse logic). Outcome: Early warning signs must be addressed quickly."
+    },
+    "finance-adults-56": {
+      "title": "Emotional Borrowing",
+      "description": "Scenario: Borrowing during emotional stress often leads to: (A) Good decisions or (B) Regret later. Outcome: Calm decisions protect financial health."
+    },
+    "finance-adults-57": {
+      "title": "Saying No to Credit",
+      "description": "Scenario: Is it okay to reject a loan offer? (A) No or (B) Yes, if it's unnecessary or risky. Outcome: Saying no is a financial strength."
+    },
+    "finance-adults-58": {
+      "title": "Responsible Borrowing Checkpoint",
+      "description": "Task: Avoid risky borrowing in 9 scenarios. Outcome Message: You can now recognise and avoid harmful borrowing patterns."
+    },
+    "finance-adults-59": {
+      "title": "Instant Loan Temptation",
+      "description": "Scenario: An app offers 'Instant loan in 5 minutes.' What should you do first? (A) Accept immediately or (B) Check legitimacy and terms. Outcome: Speed often hides risk in digital lending."
+    },
+    "finance-adults-60": {
+      "title": "App Permission Check",
+      "description": "Scenario: A loan app asks access to contacts and photos. Is this safe? (A) Yes or (B) No, it's a red flag. Outcome: Excess permissions enable harassment and misuse."
+    },
+    "finance-adults-61": {
+      "title": "Official vs Fake Apps",
+      "description": "Scenario: How do you identify a safer app? (A) Random download link or (B) Official app store + verified developer. Outcome: Verified sources reduce fraud risk."
+    },
+    "finance-adults-62": {
+      "title": "Guaranteed Approval Claim",
+      "description": "Scenario: An app promises 'Guaranteed approval, no checks.' What does this mean? (A) Helpful service or (B) High-risk lending trap. Outcome: No-check loans often lead to abuse."
+    },
+    "finance-adults-63": {
+      "title": "Data Privacy Awareness",
+      "description": "Scenario: Why is data privacy important in loan apps? (A) It's not important or (B) Personal data can be misused. Outcome: Data misuse causes long-term harm."
+    },
+    "finance-adults-64": {
+      "title": "Harassment Warning",
+      "description": "Scenario: What should you do if a lender threatens or harasses you? (A) Stay silent or (B) Seek help and report. Outcome: Harassment is illegal and must be addressed."
+    },
+    "finance-adults-65": {
+      "title": "Reading Terms Carefully",
+      "description": "Scenario: Before accepting a digital loan, what must you read? (A) Only the loan amount or (B) Interest, fees, and repayment terms. Outcome: Hidden terms cause repayment shock."
+    },
+    "finance-adults-66": {
+      "title": "Loan App Reviews",
+      "description": "Scenario: Why should you check reviews? (A) For entertainment or (B) To identify user complaints and risks. Outcome: Past user experiences reveal hidden problems."
+    },
+    "finance-adults-67": {
+      "title": "Multiple App Loans",
+      "description": "Scenario: Taking loans from many apps leads to: (A) Flexibility or (B) Severe repayment stress. Outcome: App-based loan stacking is dangerous."
+    },
+    "finance-adults-68": {
+      "title": "Contact Sharing Risk",
+      "description": "Scenario: Why is sharing contacts risky? (A) It helps repayment or (B) It enables harassment of friends/family. Outcome: Protecting contacts protects dignity."
+    },
+    "finance-adults-69": {
+      "title": "Safe Exit Decision",
+      "description": "Scenario: You realise a loan app is unsafe. What should you do? (A) Continue using it or (B) Stop, repay safely, and uninstall. Outcome: Early exit reduces damage."
+    },
+    "finance-adults-70": {
+      "title": "Digital Safety Checkpoint",
+      "description": "Task: Identify and avoid unsafe digital lending practices in 8 scenarios. Outcome Message: You can now safely navigate digital loan offers."
+    },
+    "finance-adults-71": {
+      "title": "Personal vs Business Money",
+      "description": "Scenario: You run a small shop. Which is safer? (A) Using one account for everything or (B) Separating personal and business money. Outcome: Separation improves clarity and control."
+    },
+    "finance-adults-72": {
+      "title": "Cash Flow vs Profit",
+      "description": "Scenario: Your business shows profit, but no cash is available. Why? (A) Profit equals cash or (B) Cash flow timing matters. Outcome: Cash flow problems cause business stress even with profit."
+    },
+    "finance-adults-73": {
+      "title": "Inventory Purchase Decision",
+      "description": "Scenario: You want to buy extra stock. What should you check first? (A) Supplier pressure or (B) Expected sales and cash availability. Outcome: Inventory should match demand, not hope."
+    },
+    "finance-adults-74": {
+      "title": "Credit for Business Growth",
+      "description": "Scenario: When is business borrowing safer? (A) To cover losses or (B) To support planned growth with cash flow. Outcome: Credit should support growth, not hide problems."
+    },
+    "finance-adults-75": {
+      "title": "Daily Expense Tracking",
+      "description": "Scenario: What habit improves business control? (A) Memory-based tracking or (B) Daily expense recording. Outcome: Records reveal leaks and trends."
+    },
+    "finance-adults-76": {
+      "title": "Seasonal Income Planning",
+      "description": "Scenario: Your income is seasonal. What helps? (A) Spending freely in peak months or (B) Saving for low-income periods. Outcome: Season planning prevents emergency borrowing."
+    },
+    "finance-adults-77": {
+      "title": "Supplier Credit Trap",
+      "description": "Scenario: Supplier offers unlimited credit. What's the risk? (A) None or (B) Hidden pressure and repayment stress. Outcome: Supplier credit can quietly become debt."
+    },
+    "finance-adults-78": {
+      "title": "Mixing Business Loans",
+      "description": "Scenario: Using a personal loan for business causes: (A) No issue or (B) Confusion and repayment problems. Outcome: Loan purpose mismatch increases risk."
+    },
+    "finance-adults-79": {
+      "title": "Emergency Business Expenses",
+      "description": "Scenario: A machine breaks down. What's safer first? (A) Immediate high-interest loan or (B) Savings or planned repair fund. Outcome: Preparedness reduces costly borrowing."
+    },
+    "finance-adults-80": {
+      "title": "Pricing Discipline",
+      "description": "Scenario: Selling below cost leads to: (A) Growth or (B) Long-term losses. Outcome: Correct pricing sustains business health."
+    },
+    "finance-adults-81": {
+      "title": "Credit Sales Risk",
+      "description": "Scenario: Giving goods on credit without records causes: (A) Customer loyalty or (B) Cash flow problems. Outcome: Unrecorded credit sales damage liquidity."
+    },
+    "finance-adults-82": {
+      "title": "Business Finance Checkpoint",
+      "description": "Task: Make 8 safe financial decisions for a small business. Outcome Message: You can now manage business money with discipline and foresight."
+    },
+    "finance-adults-83": {
+      "title": "What Is a Financial Shock?",
+      "description": "Scenario: Which is a financial shock? (A) Planned monthly rent or (B) Sudden medical expense. Outcome: Financial shocks are unexpected and disruptive."
+    },
+    "finance-adults-84": {
+      "title": "First Response to Emergency",
+      "description": "Scenario: You face an unexpected expense. What should you check first? (A) Loan apps or (B) Savings or emergency fund. Outcome: Savings reduce panic borrowing."
+    },
+    "finance-adults-85": {
+      "title": "Emergency Fund Purpose",
+      "description": "Scenario: Emergency funds are meant for: (A) Daily spending or (B) Unexpected critical needs. Outcome: Using emergency funds wisely protects stability."
+    },
+    "finance-adults-86": {
+      "title": "How Much Emergency Fund?",
+      "description": "Scenario: A safe emergency fund usually covers: (A) 1–2 days of expenses or (B) 3–6 months of basic expenses. Outcome: Adequate reserves reduce long-term stress."
+    },
+    "finance-adults-87": {
+      "title": "Health Emergency Planning",
+      "description": "Scenario: Which reduces medical borrowing risk? (A) Ignoring health planning or (B) Basic insurance or savings. Outcome: Health planning prevents high-interest debt."
+    },
+    "finance-adults-88": {
+      "title": "Income Loss Scenario",
+      "description": "Scenario: You lose income temporarily. What helps most? (A) Immediate borrowing or (B) Reduced expenses + emergency fund. Outcome: Expense control buys time without debt."
+    },
+    "finance-adults-89": {
+      "title": "Multiple Emergencies",
+      "description": "Scenario: Facing repeated emergencies usually means: (A) Bad luck only or (B) Lack of preparedness. Outcome: Preparedness reduces repeated shocks."
+    },
+    "finance-adults-90": {
+      "title": "Avoiding Panic Decisions",
+      "description": "Scenario: Panic borrowing often leads to: (A) Quick relief or (B) Long-term debt stress. Outcome: Calm decisions protect future stability."
+    },
+    "finance-adults-91": {
+      "title": "Emergency Credit Use",
+      "description": "Scenario: When is using credit acceptable? (A) When no other option exists and repayment is planned or (B) As first response. Outcome: Planned credit is safer than panic credit."
+    },
+    "finance-adults-92": {
+      "title": "Emergency Preparedness Checkpoint",
+      "description": "Task: Handle 7 emergency scenarios safely. Outcome: You are now prepared to face financial shocks without panic borrowing."
+    },
+    "finance-adults-93": {
+      "title": "Short-Term vs Long-Term Thinking",
+      "description": "Scenario: Which choice supports long-term stability? (A) Solving only today's problem or (B) Planning for future needs. Outcome: Long-term thinking reduces repeated financial stress."
+    },
+    "finance-adults-94": {
+      "title": "Credit History Awareness",
+      "description": "Scenario: Why does repayment history matter? (A) It doesn't matter or (B) It affects future credit access. Outcome: Good repayment behaviour builds trust with lenders."
+    },
+    "finance-adults-95": {
+      "title": "Formal Finance Trust",
+      "description": "Scenario: Why should people use formal financial systems? (A) They are unregulated or (B) They offer protection and accountability. Outcome: Formal systems reduce exploitation."
+    },
+    "finance-adults-96": {
+      "title": "Gradual Financial Inclusion",
+      "description": "Scenario: What is a safer path to financial inclusion? (A) Taking large loans immediately or (B) Gradual use of banking and small credit. Outcome: Gradual inclusion reduces mistakes."
+    },
+    "finance-adults-97": {
+      "title": "Behaviour Over Income",
+      "description": "Scenario: What matters more for financial health? (A) Income alone or (B) Financial behaviour and discipline. Outcome: Good habits protect income at all levels."
+    },
+    "finance-adults-98": {
+      "title": "Learning from Past Mistakes",
+      "description": "Scenario: You made a poor financial decision earlier. What helps now? (A) Ignoring it or (B) Learning and adjusting behaviour. Outcome: Reflection prevents repeating mistakes."
+    },
+    "finance-adults-99": {
+      "title": "Financial Confidence",
+      "description": "Scenario: Financial confidence comes from: (A) Taking risks blindly or (B) Understanding choices and consequences. Outcome: Knowledge builds confidence, not risk."
+    },
+    "finance-adults-100": {
+      "title": "Financial Inclusion Mastery Checkpoint",
+      "description": "Task: Demonstrate safe financial behaviour across multiple scenarios. Outcome: You are ready to participate confidently and responsibly in the formal financial system."
+    }
+  }
+}

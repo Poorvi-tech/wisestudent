@@ -1,0 +1,404 @@
+﻿{
+    "cards":  {
+                  "dcos-teen-1":  {
+                                      "description":  "Never share your password with anyone",
+                                      "title":  "Password Sharing Story"
+                                  },
+                  "dcos-teen-2":  {
+                                      "description":  "Should profiles be public or private?",
+                                      "title":  "Privacy Settings Quiz"
+                                  },
+                  "dcos-teen-3":  {
+                                      "description":  "Detect and block OTP scams",
+                                      "title":  "OTP Fraud Reflex"
+                                  },
+                  "dcos-teen-4":  {
+                                      "description":  "Choose safe profile picture - cartoon vs photo",
+                                      "title":  "Profile Picture Simulation"
+                                  },
+                  "dcos-teen-5":  {
+                                      "description":  "What info is okay to share online?",
+                                      "title":  "Social Media Journal"
+                                  },
+                  "dcos-teen-6":  {
+                                      "description":  "App permissions - what is safe to allow?",
+                                      "title":  "Data Consent Quiz"
+                                  },
+                  "dcos-teen-7":  {
+                                      "description":  "Stranger claims to know your friend",
+                                      "title":  "Fake Friend Story"
+                                  },
+                  "dcos-teen-8":  {
+                                      "description":  "Detect and report scam ads",
+                                      "title":  "Safety Reflex"
+                                  },
+                  "dcos-teen-9":  {
+                                      "description":  "Is it safe to meet online friends in real life?",
+                                      "title":  "Debate: Online Friends"
+                                  },
+                  "dcos-teen-10":  {
+                                       "description":  "Complete 5 teen safety acts",
+                                       "title":  "Online Safety Badge"
+                                   },
+                  "dcos-teen-11":  {
+                                       "description":  "Block and report hurtful comments",
+                                       "title":  "Cyberbully Reflex"
+                                   },
+                  "dcos-teen-12":  {
+                                       "description":  "Friends want you to join trolling",
+                                       "title":  "Peer Pressure Story"
+                                   },
+                  "dcos-teen-13":  {
+                                       "description":  "Rumor spreads across 3 chats - stop it",
+                                       "title":  "Gossip Chain Simulation"
+                                   },
+                  "dcos-teen-14":  {
+                                       "description":  "Is trolling funny? Build your argument",
+                                       "title":  "Debate: Trolling"
+                                   },
+                  "dcos-teen-15":  {
+                                       "description":  "Defend friend mocked for their accent",
+                                       "title":  "Diversity Quiz"
+                                   },
+                  "dcos-teen-16":  {
+                                       "description":  "Classmate cyberbullied - encourage \u0026 report",
+                                       "title":  "Encourage Roleplay"
+                                   },
+                  "dcos-teen-17":  {
+                                       "description":  "How would I feel if trolled?",
+                                       "title":  "Empathy Journal"
+                                   },
+                  "dcos-teen-18":  {
+                                       "description":  "Stand up when troll messages flash",
+                                       "title":  "Anti-Bully Reflex"
+                                   },
+                  "dcos-teen-19":  {
+                                       "description":  "Group trolling victim - defend them",
+                                       "title":  "Upstander Simulation"
+                                   },
+                  "dcos-teen-20":  {
+                                       "description":  "Complete 5 anti-bullying acts",
+                                       "title":  "Courage Badge"
+                                   },
+                  "dcos-teen-21":  {
+                                       "description":  "Teen spends 6 hrs gaming. Correct solution = Limit time.",
+                                       "title":  "Screen Log Story"
+                                   },
+                  "dcos-teen-22":  {
+                                       "description":  "Using mobile at midnight affects sleep. Healthy? '->-> No.",
+                                       "title":  "Sleep Health Quiz"
+                                   },
+                  "dcos-teen-23":  {
+                                       "description":  "App sends ''˜Like''' notifications. Tap ''˜Ignore.'''",
+                                       "title":  "Dopamine Reflex"
+                                   },
+                  "dcos-teen-24":  {
+                                       "description":  "Choose weekend plan: (a) Screen binge (b) Park (c) Book. Correct = Park/Book.",
+                                       "title":  "Digital Detox Simulation"
+                                   },
+                  "dcos-teen-25":  {
+                                       "description":  "Write: ''œHow many hrs I spent offline today.''",
+                                       "title":  "Balance Journal"
+                                   },
+                  "dcos-teen-26":  {
+                                       "description":  "Match \u0027Study App = Productive, Endless Scroll = Waste.\u0027",
+                                       "title":  "Productivity Puzzle"
+                                   },
+                  "dcos-teen-27":  {
+                                       "description":  "Topic: Are parents right to set screen limits? Correct = Yes.",
+                                       "title":  "Family Rule Debate"
+                                   },
+                  "dcos-teen-28":  {
+                                       "description":  "Tap \u0027Phone Off\u0027 at 10 pm.",
+                                       "title":  "Sleep Hygiene Reflex"
+                                   },
+                  "dcos-teen-29":  {
+                                       "description":  "Teen balances sports + studies + tech. Outcome = Success.",
+                                       "title":  "Success Story Simulation"
+                                   },
+                  "dcos-teen-30":  {
+                                       "description":  "Complete 5 wellbeing acts to earn badge \u0027Digital Wellbeing Hero.\u0027",
+                                       "title":  "Wellbeing Badge"
+                                   },
+                  "dcos-teen-31":  {
+                                       "description":  "Viral message says \u0027Celebrity died.\u0027 Correct = Verify before sharing.",
+                                       "title":  "Viral Post Story"
+                                   },
+                  "dcos-teen-32":  {
+                                       "description":  "Watch video. Real or Deepfake? '->-> Deepfake.",
+                                       "title":  "Deepfake Video Quiz"
+                                   },
+                  "dcos-teen-33":  {
+                                       "description":  "\u0027Forward to 10 people or bad luck!\u0027 Tap \u0027Ignore.\u0027",
+                                       "title":  "Forward Reflex"
+                                   },
+                  "dcos-teen-34":  {
+                                       "description":  "3 websites shown. Pick the trusted one (official).",
+                                       "title":  "Fact-Check Simulation"
+                                   },
+                  "dcos-teen-35":  {
+                                       "description":  "Match \u0027Meme = Joke, News = Fact.\u0027",
+                                       "title":  "Meme Truth Puzzle"
+                                   },
+                  "dcos-teen-36":  {
+                                       "description":  "Topic: \u0027Should we trust all forwards?\u0027 Correct = No.",
+                                       "title":  "WhatsApp Debate"
+                                   },
+                  "dcos-teen-37":  {
+                                       "description":  "Post says \u0027Pay '‚¹5000 for job.\u0027 Correct = Scam.",
+                                       "title":  "Fake Job Scam Story"
+                                   },
+                  "dcos-teen-38":  {
+                                       "description":  "Write: \u0027One fake news I spotted recently was ___.\u0027",
+                                       "title":  "Truth Journal"
+                                   },
+                  "dcos-teen-39":  {
+                                       "description":  "Tap \u0027Verify\u0027 when suspicious headline flashes.",
+                                       "title":  "News Reflex"
+                                   },
+                  "dcos-teen-40":  {
+                                       "description":  "Complete 5 fact-checking acts to earn badge \u0027Fact-Check Hero.\u0027",
+                                       "title":  "Fact-Check Badge"
+                                   },
+                  "dcos-teen-41":  {
+                                       "description":  "Story: \u0027Pay '‚¹5000 for job.\u0027 Correct = Scam.",
+                                       "title":  "Fake Job Ad Story"
+                                   },
+                  "dcos-teen-42":  {
+                                       "description":  "Story: Email says \u0027Click link to win lottery.\u0027 Safe? '->-> No.",
+                                       "title":  "Phishing Email Quiz"
+                                   },
+                  "dcos-teen-43":  {
+                                       "description":  "Story: Message says \u0027Share OTP to continue.\u0027 Tap Ignore.",
+                                       "title":  "OTP Scam Reflex"
+                                   },
+                  "dcos-teen-44":  {
+                                       "description":  "Story: Choose safe website: \u0027Official Amazon\u0027 vs \u0027FreeShop123.\u0027 Correct = Amazon.",
+                                       "title":  "Shopping Simulation"
+                                   },
+                  "dcos-teen-45":  {
+                                       "description":  "Story: \u0027Quick loan app\u0027 asks personal info. Correct = Unsafe.",
+                                       "title":  "Loan Trap Story"
+                                   },
+                  "dcos-teen-46":  {
+                                       "description":  "Topic: Are all online offers safe? '->-> No.",
+                                       "title":  "Scam Debate"
+                                   },
+                  "dcos-teen-47":  {
+                                       "description":  "Story: Match \u0027OTP = Private, Bank App = Safe, Fake Link = Scam.\u0027",
+                                       "title":  "Banking Safety Puzzle"
+                                   },
+                  "dcos-teen-48":  {
+                                       "description":  "Task: Write: \u0027A scam I saw online was ___.\u0027",
+                                       "title":  "Fraud Journal"
+                                   },
+                  "dcos-teen-49":  {
+                                       "description":  "Story: Pop-up \u0027You won lottery!\u0027 Tap Ignore.",
+                                       "title":  "Reflex Ad Trap"
+                                   },
+                  "dcos-teen-50":  {
+                                       "description":  "Task: Complete 5 fraud-prevent actions.",
+                                       "title":  "Fraud Fighter Badge"
+                                   },
+                  "dcos-teen-51":  {
+                                       "description":  "Story: Friend posts your picture without asking. Correct = Ask to remove.",
+                                       "title":  "Consent Story"
+                                   },
+                  "dcos-teen-52":  {
+                                       "description":  "Story: Which is private info? (Phone number / Hobby / Favorite color). Correct = Phone number.",
+                                       "title":  "Data Quiz"
+                                   },
+                  "dcos-teen-53":  {
+                                       "description":  "Story: App asks for contacts \u0026 camera. Tap Ignore.",
+                                       "title":  "Fake App Reflex"
+                                   },
+                  "dcos-teen-54":  {
+                                       "description":  "Story: Choose: Share homework online vs keep it private. Correct = Keep private.",
+                                       "title":  "Sharing Rights Simulation"
+                                   },
+                  "dcos-teen-55":  {
+                                       "description":  "Story: Match \u0027GDPR = Europe, IT Act = India, COPPA = Kids.\u0027",
+                                       "title":  "Privacy Laws Puzzle"
+                                   },
+                  "dcos-teen-56":  {
+                                       "description":  "Topic: Should schools teach privacy rights? Correct = Yes.",
+                                       "title":  "Debate Stage"
+                                   },
+                  "dcos-teen-57":  {
+                                       "description":  "Story: Old photo posted again. Impact = Stays forever.",
+                                       "title":  "Digital Footprint Story"
+                                   },
+                  "dcos-teen-58":  {
+                                       "description":  "Task: Write: \u0027One time I protected my privacy was ___.\u0027",
+                                       "title":  "Journal of Privacy"
+                                   },
+                  "dcos-teen-59":  {
+                                       "description":  "Story: Can you copy others\u0027 video and post as yours? '->-> No.",
+                                       "title":  "Content Ownership Quiz"
+                                   },
+                  "dcos-teen-60":  {
+                                       "description":  "Task: Complete 5 privacy rights acts.",
+                                       "title":  "Rights Defender Badge"
+                                   },
+                  "dcos-teen-61":  {
+                                       "description":  "Story: Recruiter sees teen\u0027s rude post. Impact = Job lost.",
+                                       "title":  "Future Job Story"
+                                   },
+                  "dcos-teen-62":  {
+                                       "description":  "Story: Old offensive post resurfaces. Safe or Risky? '->-> Risky.",
+                                       "title":  "Cancel Culture Quiz"
+                                   },
+                  "dcos-teen-63":  {
+                                       "description":  "Story: Tap on posts about achievements, avoid insults.",
+                                       "title":  "Reflex Positive Identity"
+                                   },
+                  "dcos-teen-64":  {
+                                       "description":  "Story: College checks social media. Which profile is better? '->-> Clean and respectful.",
+                                       "title":  "College Application Simulation"
+                                   },
+                  "dcos-teen-65":  {
+                                       "description":  "Topic: Does online identity matter for success? '->-> Yes.",
+                                       "title":  "Debate Stage 2"
+                                   },
+                  "dcos-teen-66":  {
+                                       "description":  "Story: Match \u0027Positive Post = Good Reputation, Rumors = Bad Reputation.\u0027",
+                                       "title":  "Digital Reputation Puzzle"
+                                   },
+                  "dcos-teen-67":  {
+                                       "description":  "Task: Write: \u0027One way I want others to see me online is ___.\u0027",
+                                       "title":  "Journal: My Identity"
+                                   },
+                  "dcos-teen-68":  {
+                                       "description":  "Story: Teen posts encouraging message. Result = Respect.",
+                                       "title":  "Story of Positivity"
+                                   },
+                  "dcos-teen-69":  {
+                                       "description":  "Story: Tap \u0027Reject\u0027 on negative post in a mock recruiter screen.",
+                                       "title":  "Reflex Recruiter"
+                                   },
+                  "dcos-teen-70":  {
+                                       "description":  "Task: Complete 5 identity-protect acts to earn badge \u0027Positive Identity.\u0027",
+                                       "title":  "Identity Badge"
+                                   },
+                  "dcos-teen-71":  {
+                                       "description":  "AI shows only male doctors. Is this biased? '->-> Yes.",
+                                       "title":  "Bias Story"
+                                   },
+                  "dcos-teen-72":  {
+                                       "description":  "AI video shows politician saying false words. Real or Fake? '->-> Fake.",
+                                       "title":  "Deepfake Quiz"
+                                   },
+                  "dcos-teen-73":  {
+                                       "description":  "Tap for \u0027AI helps farmers,\u0027 avoid \u0027AI spreads fake news.\u0027",
+                                       "title":  "Reflex Fair AI"
+                                   },
+                  "dcos-teen-74":  {
+                                       "description":  "AI app suggests cheat answers. Correct choice = Reject.",
+                                       "title":  "Simulation: AI in Exams"
+                                   },
+                  "dcos-teen-75":  {
+                                       "description":  "Will AI take jobs or create new ones? '->-> Both, fairness needed.",
+                                       "title":  "AI in Jobs Debate"
+                                   },
+                  "dcos-teen-76":  {
+                                       "description":  "Match: \u0027AI = Translate,\u0027 \u0027AI = Fake Video,\u0027 \u0027AI = Medical Help.\u0027",
+                                       "title":  "Puzzle: AI Uses"
+                                   },
+                  "dcos-teen-77":  {
+                                       "description":  "Write: \u0027One ethical rule I follow when using AI is ___.\u0027",
+                                       "title":  "Journal: My AI Rule"
+                                   },
+                  "dcos-teen-78":  {
+                                       "description":  "Copying AI art as your own. Is this right? '->-> No.",
+                                       "title":  "Copyright Story"
+                                   },
+                  "dcos-teen-79":  {
+                                       "description":  "Tap when AI is used for learning, avoid when used for harm.",
+                                       "title":  "Reflex AI Responsibility"
+                                   },
+                  "dcos-teen-80":  {
+                                       "description":  "Complete 5 ethical AI actions to earn badge \u0027AI Ethics Teen.\u0027",
+                                       "title":  "AI Leader Badge"
+                                   },
+                  "dcos-teen-81":  {
+                                       "description":  "Someone posts \u0027Go back to your country.\u0027 Correct = Report.",
+                                       "title":  "Hate Comment Story"
+                                   },
+                  "dcos-teen-82":  {
+                                       "description":  "Is calling names freedom of speech? '->-> No.",
+                                       "title":  "Freedom vs Abuse Quiz"
+                                   },
+                  "dcos-teen-83":  {
+                                       "description":  "Tap when positive reply shows, skip when hate reply shows.",
+                                       "title":  "Reflex Support"
+                                   },
+                  "dcos-teen-84":  {
+                                       "description":  "Group mocks classmate\u0027s religion. Correct = Defend or Exit.",
+                                       "title":  "Simulation: Group Chat"
+                                   },
+                  "dcos-teen-85":  {
+                                       "description":  "Should hate speech be allowed online? Correct = No.",
+                                       "title":  "Debate Stage 3"
+                                   },
+                  "dcos-teen-86":  {
+                                       "description":  "Match: \u0027Respect '->-> Inclusion,\u0027 \u0027Hate '->-> Hurt.\u0027",
+                                       "title":  "Puzzle: Respect vs Hate"
+                                   },
+                  "dcos-teen-87":  {
+                                       "description":  "Write: \u0027One way I showed respect online this week was ___.\u0027",
+                                       "title":  "Journal: My Online Respect"
+                                   },
+                  "dcos-teen-88":  {
+                                       "description":  "Peer posts rude comment. Correct = Reply calm or ignore.",
+                                       "title":  "Roleplay: Calm Reply"
+                                   },
+                  "dcos-teen-89":  {
+                                       "description":  "Tap \u0027Flag\u0027 when hate comment appears.",
+                                       "title":  "Reflex Flag"
+                                   },
+                  "dcos-teen-90":  {
+                                       "description":  "Complete 5 respect-promoting acts to earn badge \u0027Respect Champion.\u0027",
+                                       "title":  "Respect Champion Badge"
+                                   },
+                  "dcos-teen-91":  {
+                                       "description":  "Teen sells handmade crafts online safely. Correct = Smart.",
+                                       "title":  "Entrepreneur Story"
+                                   },
+                  "dcos-teen-92":  {
+                                       "description":  "Tap for \u0027Project Tool,\u0027 skip for \u0027Endless Scroll.\u0027",
+                                       "title":  "Reflex Productivity"
+                                   },
+                  "dcos-teen-93":  {
+                                       "description":  "Is tech only for entertainment or also for growth? Correct = Growth too.",
+                                       "title":  "Debate Stage 4"
+                                   },
+                  "dcos-teen-94":  {
+                                       "description":  "Choose to enroll in \u0027Coding Course\u0027 vs \u0027Random Video Binge.\u0027 Correct = Coding.",
+                                       "title":  "Online Course Simulation"
+                                   },
+                  "dcos-teen-95":  {
+                                       "description":  "Match: \u0027Engineer = Coding,\u0027 \u0027Artist = Digital Design.\u0027",
+                                       "title":  "Career Puzzle"
+                                   },
+                  "dcos-teen-96":  {
+                                       "description":  "Write: \u0027One way I will use tech in my career is ___.\u0027",
+                                       "title":  "Journal of Future Use"
+                                   },
+                  "dcos-teen-97":  {
+                                       "description":  "Teen uses Instagram to promote school project. Correct = Smart Use.",
+                                       "title":  "Social Media Story"
+                                   },
+                  "dcos-teen-98":  {
+                                       "description":  "Tap for \u0027Skill Video,\u0027 skip for \u0027Hate Video.\u0027",
+                                       "title":  "Reflex Smart Screen"
+                                   },
+                  "dcos-teen-99":  {
+                                       "description":  "Student shares blog helping peers with studies. Outcome = Positive impact.",
+                                       "title":  "Role Model Task"
+                                   },
+                  "dcos-teen-100":  {
+                                        "description":  "Complete 5 productive tech acts to earn badge \u0027Productivity Hero.\u0027",
+                                        "title":  "Productivity Hero Badge"
+                                    }
+              }
+}
