@@ -4,208 +4,78 @@ import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const RETIREMENT_REALITY_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt: "A retired person has no savings. What could have helped earlier?",
+    prompt: "Which should come first for most families?",
     options: [
-      {
-        id: "long-term-planning",
-        text: "Long-term financial planning",
-        outcome:
-          "Correct. Preparation supports dignity in old age.",
-        isCorrect: true,
-      },
-      {
-        id: "luck",
-        text: "Luck",
-        outcome:
-          "Relying on luck is not a financial plan.",
-        isCorrect: false,
-      },
-      {
-        id: "more-spending",
-        text: "More spending",
-        outcome:
-          "Higher spending without saving reduces future security.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-future",
-        text: "Ignoring future",
-        outcome:
-          "Ignoring the future increases risk later.",
-        isCorrect: false,
-      },
+      { id: "invest-first", text: "Invest first, insurance later", outcome: "Risky. Big shocks can derail investments.", isCorrect: false },
+      { id: "none", text: "Neither is needed", outcome: "Ignoring both increases vulnerability.", isCorrect: false },
+      { id: "insurance-first", text: "Adequate insurance, then investments", outcome: "Correct. Protection prevents forced sell-offs.", isCorrect: true },
     ],
   },
   {
     id: 2,
-    prompt: "Why is retirement planning important?",
+    prompt: "With dependents and tight budget, best priority?",
     options: [
-      {
-        id: "income-forever",
-        text: "Income continues forever",
-        outcome:
-          "Income can stop or reduce after retirement.",
-        isCorrect: false,
-      },
-      {
-        id: "dignity",
-        text: "It helps maintain dignity and independence",
-        outcome:
-          "Correct. Planning reduces reliance on others.",
-        isCorrect: true,
-      },
-      {
-        id: "no-expenses",
-        text: "There are no expenses in old age",
-        outcome:
-          "Healthcare and living costs often rise with age.",
-        isCorrect: false,
-      },
-      {
-        id: "optional",
-        text: "Planning is optional",
-        outcome:
-          "Planning improves outcomes and security.",
-        isCorrect: false,
-      },
+      { id: "only-sip", text: "Only SIPs for high returns", outcome: "Uncovered risks can wipe out gains.", isCorrect: false },
+      { id: "term-then-sip", text: "Basic term/health cover, then small SIPs", outcome: "Correct. Cover big risks, then grow steadily.", isCorrect: true },
+      { id: "no-plan", text: "No plan for now", outcome: "Inaction leaves the family exposed.", isCorrect: false },
     ],
   },
   {
     id: 3,
-    prompt: "What is a realistic way to prepare for retirement?",
+    prompt: "What is the key argument for insurance-before-investment?",
     options: [
-      {
-        id: "save-early",
-        text: "Start saving early and consistently",
-        outcome:
-          "Correct. Early saving builds long-term security.",
-        isCorrect: true,
-      },
-      {
-        id: "spend-now",
-        text: "Spend everything now",
-        outcome:
-          "Spending all income leaves no cushion later.",
-        isCorrect: false,
-      },
-      {
-        id: "depend-others",
-        text: "Depend fully on others",
-        outcome:
-          "Full dependence is uncertain.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-plan",
-        text: "Ignore planning until retirement",
-        outcome:
-          "Late planning can create gaps.",
-        isCorrect: false,
-      },
+      { id: "stability", text: "Stability against income/health shocks", outcome: "Correct. Stability enables consistent investing.", isCorrect: true },
+      { id: "guaranteed-returns", text: "Insurance guarantees highest returns", outcome: "Insurance provides protection, not high returns.", isCorrect: false },
+      { id: "tax-only", text: "Only useful for tax", outcome: "Tax is secondary to risk protection.", isCorrect: false },
     ],
   },
   {
     id: 4,
-    prompt: "What often happens without retirement savings?",
+    prompt: "When might investing before full cover be acceptable?",
     options: [
-      {
-        id: "stable-income",
-        text: "Stable income without worry",
-        outcome:
-          "Without savings, income can become uncertain.",
-        isCorrect: false,
-      },
-      {
-        id: "automatic-support",
-        text: "Automatic support always appears",
-        outcome:
-          "Support is not guaranteed without planning.",
-        isCorrect: false,
-      },
-      {
-        id: "no-impact",
-        text: "No impact",
-        outcome:
-          "Lack of savings has serious impact.",
-        isCorrect: false,
-      },
-      {
-        id: "financial-stress",
-        text: "Financial stress and dependence",
-        outcome:
-          "Correct. Savings reduce stress in later life.",
-        isCorrect: true,
-      },
+      { id: "always-invest", text: "Always invest first", outcome: "One-size-fits-all is unsafe.", isCorrect: false },
+      { id: "no-dependents-ef", text: "No dependents, emergency fund, low risk", outcome: "Correct. Context matters.", isCorrect: true },
+      { id: "never-invest", text: "Never invest until fully insured", outcome: "Balance is needed once major risks covered.", isCorrect: false },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway about retirement reality?",
+    prompt: "Best combined approach for long-term security?",
     options: [
-      {
-        id: "ignore",
-        text: "Ignore the future",
-        outcome:
-          "Ignoring the future increases risk.",
-        isCorrect: false,
-      },
-      {
-        id: "spend",
-        text: "Spend more to feel secure",
-        outcome:
-          "Spending without saving reduces security.",
-        isCorrect: false,
-      },
-      {
-        id: "prepare",
-        text: "Prepare early to support dignity in old age",
-        outcome:
-          "Correct. Preparation supports dignity in old age.",
-        isCorrect: true,
-      },
-      {
-        id: "luck",
-        text: "Rely on luck",
-        outcome:
-          "Luck is not a plan.",
-        isCorrect: false,
-      },
+      { id: "cover-only", text: "Only insurance, never invest", outcome: "Protection without growth may miss goals.", isCorrect: false },
+      { id: "invest-only", text: "Only investing, no cover", outcome: "Uncovered risks can undo progress.", isCorrect: false },
+      { id: "cover+invest", text: "Adequate cover + disciplined investing", outcome: "Correct. Protection plus growth builds wealth safely.", isCorrect: true },
     ],
   },
 ];
 
-const RetirementReality = () => {
+const DebateInsuranceVsInvestment = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-32";
-  const gameData = getGameDataById(gameId);
-  const totalStages = RETIREMENT_REALITY_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
+  const gameId = "finance-insurance-pension-42";
+  const gameData = getGameDataById(gameId);
   const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
   const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
   const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = RETIREMENT_REALITY_STAGES[currentStageIndex];
+  const stage = STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
-      setScore((prev) => prev + 1);
+      setScore((s) => s + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
-      setTimeout(() => {
-        setShowResult(true);
-      }, 800);
+      setTimeout(() => setShowResult(true), 800);
     }
   };
 
@@ -214,7 +84,7 @@ const RetirementReality = () => {
     if (currentStageIndex === totalStages - 1) {
       setShowResult(true);
     } else {
-      setCurrentStageIndex((prev) => prev + 1);
+      setCurrentStageIndex((i) => i + 1);
     }
     setSelectedChoice(null);
   };
@@ -223,10 +93,10 @@ const RetirementReality = () => {
 
   return (
     <GameShell
-      title="Retirement Reality"
+      title="Debate: Insurance vs Investment"
       subtitle={
         showResult
-          ? "Quiz complete! You understand why early preparation matters."
+          ? "Debate complete! Balance protection and growth wisely."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -255,12 +125,10 @@ const RetirementReality = () => {
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
                   const baseStyle = isSelected
@@ -268,7 +136,6 @@ const RetirementReality = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -284,7 +151,6 @@ const RetirementReality = () => {
             </div>
           </div>
         )}
-
         {selectedChoice && (
           <>
             <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
@@ -307,4 +173,4 @@ const RetirementReality = () => {
   );
 };
 
-export default RetirementReality;
+export default DebateInsuranceVsInvestment;

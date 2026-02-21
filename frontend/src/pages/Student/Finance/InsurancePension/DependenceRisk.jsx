@@ -179,7 +179,7 @@ const DEPENDENCE_RISK_STAGES = [
 
 const DependenceRisk = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-14";
+  const gameId = "finance-insurance-pension-22";
   const gameData = getGameDataById(gameId);
   const totalStages = DEPENDENCE_RISK_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

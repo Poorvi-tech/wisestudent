@@ -179,7 +179,7 @@ const PENSION_VS_EMERGENCY_FUND_STAGES = [
 
 const PensionVsEmergencyFund = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-18";
+  const gameId = "finance-insurance-pension-28";
   const gameData = getGameDataById(gameId);
   const totalStages = PENSION_VS_EMERGENCY_FUND_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
@@ -188,9 +188,9 @@ const PensionVsEmergencyFund = () => {
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
-  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
+  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
   const stage = PENSION_VS_EMERGENCY_FUND_STAGES[currentStageIndex];
 
   const handleChoice = (option) => {

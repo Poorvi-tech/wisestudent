@@ -179,7 +179,7 @@ const FAKE_INSURANCE_OFFER_STAGES = [
 
 const FakeInsuranceOffer = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-9";
+  const gameId = "finance-insurance-pension-14";
   const gameData = getGameDataById(gameId);
   const totalStages = FAKE_INSURANCE_OFFER_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

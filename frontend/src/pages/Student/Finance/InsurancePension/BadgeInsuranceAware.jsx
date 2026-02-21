@@ -4,205 +4,186 @@ import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const INCOME_VS_LONGEVITY_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt:
-      "A person expects pension from employer but has no written plan. Safer action?",
+    prompt: "Before buying, what is the safest first step?",
     options: [
+      
       {
-        id: "assume-employer",
-        text: "Assume employer will handle",
-        outcome:
-          "Assumptions can fail. Always confirm details in writing.",
+        id: "trust-sales",
+        text: "Trust only the sales pitch",
+        outcome: "Sales talk is not the contract.",
         isCorrect: false,
       },
       {
-        id: "confirm-backup",
-        text: "Confirm and create personal backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "read-terms",
+        text: "Read coverage, exclusions, and claim rules",
+        outcome: "Correct. Decisions should be based on written terms.",
         isCorrect: true,
       },
       {
-        id: "ignore",
-        text: "Ignore",
-        outcome:
-          "Ignoring plans increases risk later.",
+        id: "ignore-docs",
+        text: "Ignore documents and sign fast",
+        outcome: "Skipping documents risks claim problems.",
         isCorrect: false,
       },
       {
-        id: "borrow-later",
-        text: "Borrow later",
-        outcome:
-          "Borrowing later can create stress and debt.",
+        id: "choose-colour",
+        text: "Choose brochure with best colour",
+        outcome: "Colour does not affect protection.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 2,
-    prompt: "Why is written confirmation of pension benefits important?",
+    prompt: "A plan offers unrealistic returns as insurance. Safe action?",
     options: [
       {
-        id: "clarity",
-        text: "It clarifies eligibility, amount, and timing",
-        outcome:
-          "Correct. Written details reduce confusion and surprises.",
+        id: "verify-regulator",
+        text: "Verify insurer on official regulator/insurer portal",
+        outcome: "Correct. Independently verify authenticity.",
         isCorrect: true,
       },
       {
-        id: "no-need",
-        text: "It is not needed at all",
-        outcome:
-          "Without documentation, plans can be uncertain.",
+        id: "pay-now",
+        text: "Pay immediately to lock the offer",
+        outcome: "Rushing increases fraud risk.",
         isCorrect: false,
       },
       {
-        id: "guarantee-profit",
-        text: "It guarantees high profits",
-        outcome:
-          "Pensions are not about guaranteed profits.",
+        id: "share-otp",
+        text: "Share OTP for ‘verification’",
+        outcome: "Never share OTP.",
         isCorrect: false,
       },
       {
-        id: "replace-savings",
-        text: "It replaces the need for savings",
-        outcome:
-          "Backup savings are still important.",
+        id: "trust-forward",
+        text: "Trust forwarded PDF screenshots",
+        outcome: "Documents can be faked; verify officially.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 3,
-    prompt: "What is a good backup plan if pension details are unclear?",
+    prompt: "Choosing life cover amount: better approach?",
     options: [
+      
       {
-        id: "spend-now",
-        text: "Spend now and hope later",
-        outcome:
-          "Spending without planning increases future risk.",
+        id: "tax-only",
+        text: "Pick minimum for tax only",
+        outcome: "Tax should not be the only reason.",
         isCorrect: false,
       },
       {
-        id: "depend-others",
-        text: "Depend fully on others",
-        outcome:
-          "Dependence is uncertain and risky.",
+        id: "random-guess",
+        text: "Random amount without assessment",
+        outcome: "Coverage must match needs.",
         isCorrect: false,
       },
       {
-        id: "ignore-benefits",
-        text: "Ignore benefits completely",
-        outcome:
-          "Benefits should be verified and included in planning.",
+        id: "friend-number",
+        text: "Use a friend's number without context",
+        outcome: "Personal needs differ; assess properly.",
         isCorrect: false,
       },
       {
-        id: "build-savings",
-        text: "Build personal savings alongside retirement benefits",
-        outcome:
-          "Correct. Savings reduce uncertainty and risk.",
+        id: "income-replacement",
+        text: "Estimate income replacement for dependents",
+        outcome: "Correct. Sum assured should protect dependents.",
         isCorrect: true,
       },
     ],
   },
   {
     id: 4,
-    prompt: "Which action reduces longevity risk the most?",
+    prompt: "During a claim, what is a safe, effective step?",
     options: [
+      
       {
-        id: "assume",
-        text: "Assume benefits will cover everything",
-        outcome:
-          "Assumptions can leave gaps in retirement.",
+        id: "pay-bribe",
+        text: "Pay someone unofficially to speed up",
+        outcome: "Unsafe and unnecessary.",
         isCorrect: false,
       },
       {
-        id: "borrow",
-        text: "Plan to borrow later",
-        outcome:
-          "Borrowing later can create long-term stress.",
+        id: "do-nothing",
+        text: "Do nothing after initiating",
+        outcome: "Follow-ups may be required.",
         isCorrect: false,
       },
       {
-        id: "confirm-plan",
-        text: "Confirm employer benefits and save independently",
-        outcome:
-          "Correct. Combining both reduces uncertainty.",
+        id: "keep-docs",
+        text: "Keep documents ready and submit promptly",
+        outcome: "Correct. Documentation speeds claims.",
         isCorrect: true,
       },
       {
-        id: "no-plan",
-        text: "No plan is needed",
-        outcome:
-          "Planning reduces risks and uncertainty.",
+        id: "whatsapp-only",
+        text: "Use only personal WhatsApp for all steps",
+        outcome: "Use official channels for records.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway about income vs longevity?",
+    prompt: "Which habit supports safe insurance decisions?",
     options: [
+      
       {
-        id: "confirm-backup",
-        text: "Confirm benefits and build backup savings",
-        outcome:
-          "Correct. Personal planning reduces uncertainty.",
+        id: "share-credentials",
+        text: "Share credentials with anyone who asks",
+        outcome: "Never share credentials or OTPs.",
+        isCorrect: false,
+      },
+      {
+        id: "organize",
+        text: "Organize policy numbers and helplines for quick access",
+        outcome: "Correct. Preparedness helps in emergencies.",
         isCorrect: true,
       },
       {
-        id: "assume",
-        text: "Assume employer handles everything",
-        outcome:
-          "Assumptions can lead to gaps.",
+        id: "ignore-renewal",
+        text: "Ignore renewal reminders",
+        outcome: "Lapses risk loss of protection.",
         isCorrect: false,
       },
       {
-        id: "ignore",
-        text: "Ignore retirement planning",
-        outcome:
-          "Ignoring planning increases risk.",
-        isCorrect: false,
-      },
-      {
-        id: "borrow",
-        text: "Borrow later to cover needs",
-        outcome:
-          "Borrowing later can add debt and stress.",
+        id: "guess-coverage",
+        text: "Assume every event is covered",
+        outcome: "Coverage is specific to policy terms.",
         isCorrect: false,
       },
     ],
   },
 ];
 
-const IncomeVsLongevity = () => {
+const BadgeInsuranceAware = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-35";
+  const gameId = "finance-insurance-pension-20";
   const gameData = getGameDataById(gameId);
-  const totalStages = INCOME_VS_LONGEVITY_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
-  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = INCOME_VS_LONGEVITY_STAGES[currentStageIndex];
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
+  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const stage = STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => {
         setShowResult(true);
@@ -224,10 +205,10 @@ const IncomeVsLongevity = () => {
 
   return (
     <GameShell
-      title="Income vs Longevity"
+      title="Badge: Insurance Aware"
       subtitle={
         showResult
-          ? "Quiz complete! You understand how planning reduces uncertainty."
+          ? "Achievement unlocked! You earned the Insurance Aware badge."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -256,11 +237,9 @@ const IncomeVsLongevity = () => {
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
@@ -269,7 +248,6 @@ const IncomeVsLongevity = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -285,8 +263,7 @@ const IncomeVsLongevity = () => {
             </div>
           </div>
         )}
-
-        {selectedChoice && (
+        {selectedChoice && !showResult && (
           <>
             <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
               {selectedChoice.outcome}
@@ -303,9 +280,18 @@ const IncomeVsLongevity = () => {
             )}
           </>
         )}
+        {showResult && (
+          <div className="rounded-2xl bg-white/10 border border-white/20 p-6 text-white text-center">
+            <div className="text-3xl font-extrabold mb-2">🏅 Insurance Aware</div>
+            <div className="text-white/80">
+              You completed 5 safe insurance decisions and earned a badge!
+            </div>
+          </div>
+        )}
       </div>
     </GameShell>
   );
 };
 
-export default IncomeVsLongevity;
+export default BadgeInsuranceAware;
+

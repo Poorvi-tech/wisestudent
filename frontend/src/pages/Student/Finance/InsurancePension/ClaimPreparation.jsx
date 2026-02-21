@@ -180,7 +180,7 @@ const CLAIM_PREPARATION_STAGES = [
 
 const ClaimPreparation = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-8";
+  const gameId = "finance-insurance-pension-13";
   const gameData = getGameDataById(gameId);
   const totalStages = CLAIM_PREPARATION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

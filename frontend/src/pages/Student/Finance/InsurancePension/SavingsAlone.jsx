@@ -180,7 +180,7 @@ const SAVINGS_ALONE_STAGES = [
 
 const SavingsAlone = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-2";
+  const gameId = "finance-insurance-pension-3";
   const gameData = getGameDataById(gameId);
   const totalStages = SAVINGS_ALONE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

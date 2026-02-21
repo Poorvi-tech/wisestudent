@@ -1,232 +1,234 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const EARLY_SAVING_ADVANTAGE_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt: "Two people start saving at 25 and 40. Who benefits more long-term?",
+    prompt: "A caller promises \"double money insurance\". Best reflex?",
     options: [
+      
       {
-        id: "both-equal",
-        text: "Both equal",
-        outcome:
-          "Starting earlier gives more time to grow savings.",
+        id: "blind-trust",
+        text: "Blind trust and pay quickly",
+        outcome: "Unsafe. Avoid rushing and verify first.",
         isCorrect: false,
       },
       {
-        id: "early-saver",
-        text: "Early saver",
-        outcome:
-          "Correct. Time strengthens savings.",
+        id: "share-otp",
+        text: "Share OTP when asked",
+        outcome: "Never share OTP.",
+        isCorrect: false,
+      },
+      {
+        id: "send-docs-to-whatsapp",
+        text: "Send documents on personal WhatsApp",
+        outcome: "Use official channels only.",
+        isCorrect: false,
+      },
+      {
+        id: "verify-insurer",
+        text: "Verify insurer authenticity via official regulator/insurer site",
+        outcome: "Correct. Always verify independently.",
         isCorrect: true,
-      },
-      {
-        id: "late-saver",
-        text: "Late saver",
-        outcome:
-          "Starting late usually means less time for growth.",
-        isCorrect: false,
-      },
-      {
-        id: "depends-luck",
-        text: "Depends on luck",
-        outcome:
-          "Time and consistency matter more than luck.",
-        isCorrect: false,
       },
     ],
   },
   {
     id: 2,
-    prompt: "Why does starting early help savings grow?",
+    prompt: "You receive a link that looks suspicious. What do you tap?",
     options: [
       {
-        id: "more-time",
-        text: "More time for growth and compounding",
-        outcome:
-          "Correct. Time increases the effect of compounding.",
+        id: "official-site",
+        text: "Open official website manually to check policy/insurer",
+        outcome: "Correct. Use official portals typed by you.",
         isCorrect: true,
       },
       {
-        id: "no-need-budget",
-        text: "No need to budget if you start early",
-        outcome:
-          "Budgeting is still important at any age.",
+        id: "click-link",
+        text: "Click the link immediately",
+        outcome: "Risky. Could be phishing.",
         isCorrect: false,
       },
       {
-        id: "guarantee-profit",
-        text: "It guarantees profit every year",
-        outcome:
-          "No investment guarantees profit every year.",
+        id: "install-app",
+        text: "Install unknown app from the link",
+        outcome: "Unsafe. Avoid unknown apps.",
         isCorrect: false,
       },
       {
-        id: "skip-savings",
-        text: "You can skip saving later",
-        outcome:
-          "Consistent saving is still important.",
+        id: "send-id",
+        text: "Send ID details first",
+        outcome: "Do not share personal data without verification.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 3,
-    prompt: "What is the biggest advantage of saving at 25 instead of 40?",
+    prompt: "Agent asks for OTP to \"verify claim\". Best action?",
     options: [
+      
       {
-        id: "shorter-time",
-        text: "Shorter time to grow",
-        outcome:
-          "Starting early gives more, not less, time.",
+        id: "share-otp-fast",
+        text: "Share OTP quickly to finish",
+        outcome: "Unsafe and unnecessary.",
         isCorrect: false,
       },
       {
-        id: "longer-horizon",
-        text: "Longer time horizon for growth",
-        outcome:
-          "Correct. More years means more growth potential.",
+        id: "refuse-otp",
+        text: "Do not share OTP; contact official helpline",
+        outcome: "Correct. OTP should never be shared.",
         isCorrect: true,
       },
       {
-        id: "no-risk",
-        text: "No risk at all",
-        outcome:
-          "All investing carries some risk.",
+        id: "give-bank-details",
+        text: "Share bank details immediately",
+        outcome: "Do not share sensitive details unverified.",
         isCorrect: false,
       },
       {
-        id: "free-money",
-        text: "Free money from the bank",
-        outcome:
-          "Savings grow from contributions and returns.",
+        id: "pay-cash",
+        text: "Pay small cash to speed",
+        outcome: "Payments do not verify claims.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 4,
-    prompt: "If you start saving late, what usually needs to happen?",
+    prompt: "To confirm policy status, what is a safe practice?",
     options: [
+      
       {
-        id: "save-less",
-        text: "Save less each month",
-        outcome:
-          "Saving less makes it harder to reach goals.",
+        id: "trust-forwarded-pdf",
+        text: "Trust any forwarded PDF",
+        outcome: "Documents can be faked.",
         isCorrect: false,
       },
       {
-        id: "no-change",
-        text: "No change needed",
-        outcome:
-          "Late starts often require adjustments.",
+        id: "friend-advice",
+        text: "Rely on a friend’s advice only",
+        outcome: "Cross-check officially.",
         isCorrect: false,
       },
       {
-        id: "save-more",
-        text: "Save more each month to catch up",
-        outcome:
-          "Correct. Less time often means higher monthly savings.",
+        id: "check-policy",
+        text: "Check policy number on official insurer portal",
+        outcome: "Correct. Verify using official portals.",
         isCorrect: true,
       },
       {
-        id: "skip-plan",
-        text: "Skip retirement planning",
-        outcome:
-          "Planning remains important regardless of age.",
+        id: "social-media",
+        text: "Use social media DMs for confirmation",
+        outcome: "Use official verified channels.",
         isCorrect: false,
       },
     ],
   },
   {
     id: 5,
-    prompt: "What is the main takeaway about early saving?",
+    prompt: "Which tap shows a safe reflex?",
     options: [
+      
       {
-        id: "luck-matters",
-        text: "Luck matters most",
-        outcome:
-          "Consistency matters more than luck.",
+        id: "blind-trust-again",
+        text: "Blind Trust",
+        outcome: "Unsafe. Always verify.",
         isCorrect: false,
       },
       {
-        id: "late-better",
-        text: "Starting late is better",
-        outcome:
-          "Starting late generally reduces growth time.",
+        id: "share-otp-again",
+        text: "Share OTP",
+        outcome: "Never share OTP.",
         isCorrect: false,
       },
       {
-        id: "no-plan",
-        text: "No planning is needed",
-        outcome:
-          "Planning improves outcomes.",
+        id: "click-unknown",
+        text: "Click Unknown Link",
+        outcome: "Avoid unknown links.",
         isCorrect: false,
       },
       {
-        id: "time-helps",
-        text: "Time helps savings grow",
-        outcome:
-          "Correct. Starting early gives savings more time to build.",
+        id: "verify",
+        text: "Verify Insurer",
+        outcome: "Correct. Verification protects you.",
         isCorrect: true,
       },
     ],
   },
 ];
 
-const EarlySavingAdvantage = () => {
+const ReflexSafeVsRisk = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-24";
+  const gameId = "finance-insurance-pension-19";
   const gameData = getGameDataById(gameId);
-  const totalStages = EARLY_SAVING_ADVANTAGE_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(10);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
   const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
   const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
-  const stage = EARLY_SAVING_ADVANTAGE_STAGES[currentStageIndex];
+  const stage = STAGES[currentStageIndex];
+
+  useEffect(() => {
+    setTimeLeft(10);
+    if (selectedChoice || showResult) return;
+    const timer = setInterval(() => {
+      setTimeLeft((t) => t - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [currentStageIndex, selectedChoice, showResult]);
+
+  useEffect(() => {
+    if (timeLeft <= 0 && !selectedChoice && !showResult) {
+      const timeoutChoice = { id: "time-up", text: "Time up", outcome: "Time up.", isCorrect: false };
+      setSelectedChoice(timeoutChoice);
+      setTimeout(() => {
+        if (currentStageIndex === totalStages - 1) {
+          setShowResult(true);
+        } else {
+          setCurrentStageIndex((prev) => prev + 1);
+          setSelectedChoice(null);
+        }
+      }, 800);
+    }
+  }, [timeLeft, selectedChoice, showResult, currentStageIndex, totalStages]);
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => {
         setShowResult(true);
       }, 800);
-    }
-  };
-
-  const handleNextStage = () => {
-    if (!selectedChoice) return;
-    if (currentStageIndex === totalStages - 1) {
-      setShowResult(true);
     } else {
-      setCurrentStageIndex((prev) => prev + 1);
+      setTimeout(() => {
+        setCurrentStageIndex((prev) => prev + 1);
+        setSelectedChoice(null);
+      }, 800);
     }
-    setSelectedChoice(null);
   };
 
   const progressLabel = `${currentStageIndex + 1}/${totalStages}`;
 
   return (
     <GameShell
-      title="Early Saving Advantage"
+      title="Reflex: Safe vs Risk"
       subtitle={
         showResult
-          ? "Quiz complete! You understand why starting early helps."
+          ? "Reflex challenge complete! Safer taps lead to protection."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -238,7 +240,7 @@ const EarlySavingAdvantage = () => {
       score={score}
       showConfetti={showResult && score === totalStages}
       flashPoints={flashPoints}
-      showAnswerConfetti={showAnswerConfetti}
+      showAnswerConfetti={false}
       gameId={gameId}
       gameType="finance"
       nextGamePath={location.state?.nextGamePath}
@@ -251,15 +253,14 @@ const EarlySavingAdvantage = () => {
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-2xl shadow-black/30">
               <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 <span>Stage {progressLabel}</span>
+                <span>Time: {timeLeft}s</span>
                 <span>
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
@@ -268,7 +269,6 @@ const EarlySavingAdvantage = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -284,27 +284,10 @@ const EarlySavingAdvantage = () => {
             </div>
           </div>
         )}
-
-        {selectedChoice && (
-          <>
-            <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
-              {selectedChoice.outcome}
-            </div>
-            {currentStageIndex < totalStages - 1 && (
-              <div className="flex justify-end">
-                <button
-                  onClick={handleNextStage}
-                  className="px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 to-pink-500 text-white font-semibold shadow-lg hover:opacity-90"
-                >
-                  Next Stage
-                </button>
-              </div>
-            )}
-          </>
-        )}
       </div>
     </GameShell>
   );
 };
 
-export default EarlySavingAdvantage;
+export default ReflexSafeVsRisk;
+

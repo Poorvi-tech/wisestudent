@@ -179,7 +179,7 @@ const BUSINESS_RISK_STAGES = [
 
 const BusinessRisk = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-11";
+  const gameId = "finance-insurance-pension-17";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_RISK_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
