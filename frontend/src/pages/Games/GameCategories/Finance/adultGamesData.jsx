@@ -2118,7 +2118,7 @@ export const getFinanceAdultGames = (gameCompletionStatus) => {
       },
     },
     {
-      id: " finance-adults-59",
+      id: "finance-adults-59",
       title: "Instant Loan Temptation",
       description:
         "Scenario: An app offers 'Instant loan in 5 minutes.' What should you do first? (A) Accept immediately or (B) Check legitimacy and terms. Outcome: Speed often hides risk in digital lending.",

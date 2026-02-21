@@ -1,0 +1,404 @@
+{
+  "cards": {
+    "ai-kids-1": {
+      "title": "Spot the Pattern",
+      "description": "Find what comes next in the pattern"
+    },
+    "ai-kids-2": {
+      "title": "Cat or Dog Game",
+      "description": "Sort images into cat or dog"
+    },
+    "ai-kids-3": {
+      "title": "Sorting Colors",
+      "description": "Drag objects to correct color boxes"
+    },
+    "ai-kids-4": {
+      "title": "True or False AI Quiz",
+      "description": "AI means Artificial Intelligence"
+    },
+    "ai-kids-5": {
+      "title": "Emoji Classifier",
+      "description": "Sort emojis into happy or sad buckets"
+    },
+    "ai-kids-6": {
+      "title": "Self-Driving Car Game",
+      "description": "Help AI car respond to traffic lights"
+    },
+    "ai-kids-7": {
+      "title": "Pattern Finder Puzzle",
+      "description": "Find missing numbers in sequences"
+    },
+    "ai-kids-8": {
+      "title": "Robot Helper Story",
+      "description": "Learn to appreciate AI helpers"
+    },
+    "ai-kids-9": {
+      "title": "Spam vs Not Spam",
+      "description": "Filter emails like AI does"
+    },
+    "ai-kids-10": {
+      "title": "Siri/Alexa Quiz",
+      "description": "Learn about AI assistants"
+    },
+    "ai-kids-11": {
+      "title": "AI in Games",
+      "description": "Who controls video game enemies"
+    },
+    "ai-kids-12": {
+      "title": "Match AI Tools",
+      "description": "Identify which tools use AI"
+    },
+    "ai-kids-13": {
+      "title": "Pattern Music Game",
+      "description": "Repeat rhythm patterns"
+    },
+    "ai-kids-14": {
+      "title": "Robot Vision Game",
+      "description": "Help robot see apple vs banana"
+    },
+    "ai-kids-15": {
+      "title": "Smart Home Story",
+      "description": "How AI controls smart homes"
+    },
+    "ai-kids-16": {
+      "title": "Train the Robot",
+      "description": "Teach robot what food is"
+    },
+    "ai-kids-17": {
+      "title": "Prediction Puzzle",
+      "description": "Predict what comes next"
+    },
+    "ai-kids-18": {
+      "title": "Friendly AI Quiz",
+      "description": "Should AI help people"
+    },
+    "ai-kids-19": {
+      "title": "Robot Emotion Story",
+      "description": "Show empathy with AI"
+    },
+    "ai-kids-20": {
+      "title": "Recommendation Game",
+      "description": "How AI recommends content"
+    },
+    "ai-kids-21": {
+      "title": "AI or Not Quiz",
+      "description": "Identify if something is AI or not"
+    },
+    "ai-kids-22": {
+      "title": "Robot Helper Reflex",
+      "description": "Click help when the robot asks"
+    },
+    "ai-kids-23": {
+      "title": "Match AI Uses",
+      "description": "Match AI tasks with real-life uses"
+    },
+    "ai-kids-24": {
+      "title": "Sorting Animals",
+      "description": "Sort animals so the robot learns"
+    },
+    "ai-kids-25": {
+      "title": "AI Basics Badge",
+      "description": "Unlock the AI Beginner badge"
+    },
+    "ai-kids-26": {
+      "title": "Traffic Light AI",
+      "description": "Click stop when the red light appears"
+    },
+    "ai-kids-27": {
+      "title": "AI in Maps Story",
+      "description": "Choose who helps find the shortest road"
+    },
+    "ai-kids-28": {
+      "title": "Voice Assistant Quiz",
+      "description": "Answer questions about Siri/Alexa"
+    },
+    "ai-kids-29": {
+      "title": "YouTube Recommendation Game",
+      "description": "See how AI suggests videos"
+    },
+    "ai-kids-30": {
+      "title": "Smart Fridge Story",
+      "description": "Find who reminds about the milk"
+    },
+    "ai-kids-31": {
+      "title": "Chatbot Friend",
+      "description": "Chat with an AI that replies to you"
+    },
+    "ai-kids-32": {
+      "title": "Face Unlock Game",
+      "description": "Unlock the phone with the correct face"
+    },
+    "ai-kids-33": {
+      "title": "AI or Human Quiz",
+      "description": "Decide if AI or humans created the task"
+    },
+    "ai-kids-34": {
+      "title": "Smart Speaker Story",
+      "description": "Find who plays music when asked"
+    },
+    "ai-kids-35": {
+      "title": "AI Doctor Simulation",
+      "description": "Help the robot detect the disease"
+    },
+    "ai-kids-36": {
+      "title": "Robot Vacuum Game",
+      "description": "Help the robot avoid obstacles"
+    },
+    "ai-kids-37": {
+      "title": "AI Translator Quiz",
+      "description": "Test knowledge about AI translation"
+    },
+    "ai-kids-38": {
+      "title": "Weather Prediction Story",
+      "description": "Find who predicts tomorrow's weather"
+    },
+    "ai-kids-39": {
+      "title": "Smartwatch Game",
+      "description": "Respond when the watch gives a health alert"
+    },
+    "ai-kids-40": {
+      "title": "Online Shopping AI",
+      "description": "See how AI suggests similar items"
+    },
+    "ai-kids-41": {
+      "title": "Airport Scanner Story",
+      "description": "See how AI scans luggage for safety"
+    },
+    "ai-kids-42": {
+      "title": "Smart Farming Quiz",
+      "description": "Learn how AI helps farmers"
+    },
+    "ai-kids-43": {
+      "title": "AI Artist Game",
+      "description": "Ask AI to draw what you type"
+    },
+    "ai-kids-44": {
+      "title": "Music AI Story",
+      "description": "Find who chooses songs in the playlist"
+    },
+    "ai-kids-45": {
+      "title": "AI in Banking Quiz",
+      "description": "Check how AI detects fraud"
+    },
+    "ai-kids-46": {
+      "title": "Smart City Traffic Game",
+      "description": "Follow AI-based traffic signals"
+    },
+    "ai-kids-47": {
+      "title": "AI News Story",
+      "description": "See who recommends your news"
+    },
+    "ai-kids-48": {
+      "title": "AI Doctor Quiz",
+      "description": "Learn how AI detects diseases"
+    },
+    "ai-kids-49": {
+      "title": "Smart Home Lights Game",
+      "description": "See how lights turn on automatically"
+    },
+    "ai-kids-50": {
+      "title": "AI Daily Life Badge",
+      "description": "Unlock badge by completing 10 AI games"
+    },
+    "ai-kids-51": {
+      "title": "Teach the Robot Colors",
+      "description": "Drag items into color boxes to teach the robot"
+    },
+    "ai-kids-52": {
+      "title": "Robot Mistake Story",
+      "description": "See how AI can make mistakes and learn"
+    },
+    "ai-kids-53": {
+      "title": "Data Cleaning Puzzle",
+      "description": "Sort good vs bad images to train the robot"
+    },
+    "ai-kids-54": {
+      "title": "Training AI Reflex",
+      "description": "Click the correct answer as the robot asks"
+    },
+    "ai-kids-55": {
+      "title": "Overfitting Story",
+      "description": "Learn why AI can make mistakes from limited data"
+    },
+    "ai-kids-56": {
+      "title": "Data Labeling Game",
+      "description": "Label items for the robot to understand"
+    },
+    "ai-kids-57": {
+      "title": "AI Gets Smarter",
+      "description": "Improve the robot brain bar by correct actions"
+    },
+    "ai-kids-58": {
+      "title": "Wrong Prediction Quiz",
+      "description": "Decide if the robot's prediction is correct"
+    },
+    "ai-kids-59": {
+      "title": "Garbage In, Garbage Out Story",
+      "description": "Learn why bad data leads to bad AI"
+    },
+    "ai-kids-60": {
+      "title": "AI Training Badge",
+      "description": "Unlock badge after completing 5 training games"
+    },
+    "ai-kids-61": {
+      "title": "Teach Numbers Game",
+      "description": "Label numbers 1, 2, 3 to teach counting to the robot"
+    },
+    "ai-kids-62": {
+      "title": "Robot Confusion Story",
+      "description": "Help the robot distinguish lion & tiger"
+    },
+    "ai-kids-63": {
+      "title": "Missing Data Puzzle",
+      "description": "Add missing info so robot can find the answer"
+    },
+    "ai-kids-64": {
+      "title": "Train AI with Sounds",
+      "description": "Click the right animal sound to train the robot"
+    },
+    "ai-kids-65": {
+      "title": "Robot Exam Story",
+      "description": "Robot fails test due to limited study; learn importance of more data"
+    },
+    "ai-kids-66": {
+      "title": "Correct the Robot Reflex",
+      "description": "Click 'Try again' when robot guesses wrong"
+    },
+    "ai-kids-67": {
+      "title": "Bias in Data Story",
+      "description": "Learn why diverse data is important for AI"
+    },
+    "ai-kids-68": {
+      "title": "Robot Learning Bar",
+      "description": "Each correct answer fills the robot's knowledge bar"
+    },
+    "ai-kids-69": {
+      "title": "AI Mistake Quiz",
+      "description": "Decide if AI can always be right"
+    },
+    "ai-kids-70": {
+      "title": "Train Robot Shapes",
+      "description": "Teach the robot to recognize circles vs triangles"
+    },
+    "ai-kids-71": {
+      "title": "Feedback Matters Story",
+      "description": "Robot improves only after feedback from the kid"
+    },
+    "ai-kids-72": {
+      "title": "Wrong Labels Puzzle",
+      "description": "Fix incorrect labels so the robot learns properly"
+    },
+    "ai-kids-73": {
+      "title": "Robot Practice Game",
+      "description": "Train the robot daily to improve its accuracy"
+    },
+    "ai-kids-74": {
+      "title": "Data Collector Simulation",
+      "description": "Collect images, text, and sounds into a dataset"
+    },
+    "ai-kids-75": {
+      "title": "Training Hero Badge",
+      "description": "Complete 10 training games to unlock badge 'Robot Teacher'"
+    },
+    "ai-kids-76": {
+      "title": "Good AI vs Bad AI Quiz",
+      "description": "Decide which AI actions are ethical"
+    },
+    "ai-kids-77": {
+      "title": "Robot Honesty Story",
+      "description": "Robot must choose to cheat or refuse; learn honesty"
+    },
+    "ai-kids-78": {
+      "title": "Privacy Puzzle",
+      "description": "Match safe vs unsafe actions to teach cyber-safety"
+    },
+    "ai-kids-79": {
+      "title": "AI Bias Story",
+      "description": "Fix biased decisions to teach fairness in AI"
+    },
+    "ai-kids-80": {
+      "title": "Safe AI Quiz",
+      "description": "Decide what information to share with AI"
+    },
+    "ai-kids-81": {
+      "title": "Robot Helper or Villain",
+      "description": "Choose the right action: help or steal"
+    },
+    "ai-kids-82": {
+      "title": "AI & Jobs Story",
+      "description": "Decide how AI and humans should collaborate"
+    },
+    "ai-kids-83": {
+      "title": "Fake News Detector",
+      "description": "Decide if news is real or fake"
+    },
+    "ai-kids-84": {
+      "title": "Cyberbully Story",
+      "description": "Report mean comments to stay safe online"
+    },
+    "ai-kids-85": {
+      "title": "AI Rights Puzzle",
+      "description": "Match rules humans make and AI follows"
+    },
+    "ai-kids-86": {
+      "title": "Robot Friend Story",
+      "description": "Understand AI is a helper, not a human friend"
+    },
+    "ai-kids-87": {
+      "title": "Future of AI Quiz",
+      "description": "Predict what AI might do in the future"
+    },
+    "ai-kids-88": {
+      "title": "AI in Space Story",
+      "description": "See how AI helps astronauts safely"
+    },
+    "ai-kids-89": {
+      "title": "Good Data vs Bad Data Game",
+      "description": "Sort clear and blurry photos to teach ethical datasets"
+    },
+    "ai-kids-90": {
+      "title": "AI Superpower Puzzle",
+      "description": "Arrange letters to learn AI needs rules"
+    },
+    "ai-kids-91": {
+      "title": "Robot Spy Story",
+      "description": "Stop the robot from secretly recording voices"
+    },
+    "ai-kids-92": {
+      "title": "AI & Environment Quiz",
+      "description": "Decide if AI can save electricity at home"
+    },
+    "ai-kids-93": {
+      "title": "Fair AI Story",
+      "description": "Fix the robot to give prizes equally to all kids"
+    },
+    "ai-kids-94": {
+      "title": "Ethics Decision Game",
+      "description": "Click 'Help' when robot flashes actions"
+    },
+    "ai-kids-95": {
+      "title": "AI in Medicine Story",
+      "description": "See AI help doctors detect disease early"
+    },
+    "ai-kids-96": {
+      "title": "Dangerous Robot Story",
+      "description": "Switch off robot to ensure safety"
+    },
+    "ai-kids-97": {
+      "title": "AI Ethics Quiz",
+      "description": "Decide if AI should follow rules"
+    },
+    "ai-kids-98": {
+      "title": "Good AI Badge",
+      "description": "Complete 10 safe AI activities to earn a badge"
+    },
+    "ai-kids-99": {
+      "title": "Future Imagination Journal",
+      "description": "Write one way AI will help humans in 2050"
+    },
+    "ai-kids-100": {
+      "title": "AI Explorer Hero Badge",
+      "description": "Finish all 25 ethics & future games to earn hero badge"
+    }
+  }
+}

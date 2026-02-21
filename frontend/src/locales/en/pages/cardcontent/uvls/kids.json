@@ -1,0 +1,405 @@
+﻿{
+    "cards":  {
+                  "uvls-kids-1":  {
+                                      "description":  "Practice simple sharing in play",
+                                      "title":  "Share Your Toy"
+                                  },
+                  "uvls-kids-2":  {
+                                      "description":  "Recognize caregiving actions",
+                                      "title":  "Feelings Quiz"
+                                  },
+                  "uvls-kids-3":  {
+                                      "description":  "Rapidly identify kind vs mean actions",
+                                      "title":  "Kind Reflex"
+                                  },
+                  "uvls-kids-4":  {
+                                      "description":  "Link facial expressions to feelings",
+                                      "title":  "Match Faces"
+                                  },
+                  "uvls-kids-5":  {
+                                      "description":  "Notice peers who need help",
+                                      "title":  "Spot Help"
+                                  },
+                  "uvls-kids-6":  {
+                                      "description":  "Express compassion visually",
+                                      "title":  "Kind Poster"
+                                  },
+                  "uvls-kids-7":  {
+                                      "description":  "Put helping into words (very short)",
+                                      "title":  "Mini Journal"
+                                  },
+                  "uvls-kids-8":  {
+                                      "description":  "Choose kind phrases to comfort a sad peer",
+                                      "title":  "Comfort Roleplay"
+                                  },
+                  "uvls-kids-9":  {
+                                      "description":  "Reinforce sharing cue recognition",
+                                      "title":  "Share Reflex"
+                                  },
+                  "uvls-kids-10":  {
+                                       "description":  "Encourage consistent small acts of empathy",
+                                       "title":  "Little Empath Badge"
+                                   },
+                  "uvls-kids-11":  {
+                                       "description":  "Model welcoming behaviour",
+                                       "title":  "Greet the New Kid"
+                                   },
+                  "uvls-kids-12":  {
+                                       "description":  "Identify polite language",
+                                       "title":  "Polite Words Quiz"
+                                   },
+                  "uvls-kids-13":  {
+                                       "description":  "Spot respectful actions quickly",
+                                       "title":  "Respect Tap"
+                                   },
+                  "uvls-kids-14":  {
+                                       "description":  "Link inclusive acts to positive outcomes",
+                                       "title":  "Inclusion Match"
+                                   },
+                  "uvls-kids-15":  {
+                                       "description":  "Practice inviting someone to join",
+                                       "title":  "Invite to Play"
+                                   },
+                  "uvls-kids-16":  {
+                                       "description":  "Visualize \"everyone belongs\"",
+                                       "title":  "Inclusion Poster"
+                                   },
+                  "uvls-kids-17":  {
+                                       "description":  "Reflect on an inclusion act (one line)",
+                                       "title":  "Inclusion Journal"
+                                   },
+                  "uvls-kids-18":  {
+                                       "description":  "Choose inviting phrases to include shy students",
+                                       "title":  "Invite Roleplay"
+                                   },
+                  "uvls-kids-19":  {
+                                       "description":  "Recognize respect signals (eye contact, listening)",
+                                       "title":  "Respect Signals"
+                                   },
+                  "uvls-kids-20":  {
+                                       "description":  "Reinforce repeated inclusive actions",
+                                       "title":  "Inclusive Kid Badge"
+                                   },
+                  "uvls-kids-21":  {
+                                       "description":  "Show chores are for everyone by assigning tasks fairly.",
+                                       "title":  "Share Chores"
+                                   },
+                  "uvls-kids-22":  {
+                                       "description":  "Understand equal access to education through simple MCQs.",
+                                       "title":  "Equality Quiz"
+                                   },
+                  "uvls-kids-23":  {
+                                       "description":  "Recognise and correct stereotyping in short statements.",
+                                       "title":  "Spot Stereotype"
+                                   },
+                  "uvls-kids-24":  {
+                                       "description":  "Match kids' situations to basic rights like learn, play, and safety.",
+                                       "title":  "Rights Match"
+                                   },
+                  "uvls-kids-25":  {
+                                       "description":  "Encourage peers' ambitions without gender limits.",
+                                       "title":  "Encourage Dream"
+                                   },
+                  "uvls-kids-26":  {
+                                       "description":  "Create a poster showing equal opportunity for everyone.",
+                                       "title":  "Equality Poster"
+                                   },
+                  "uvls-kids-27":  {
+                                       "description":  "Name a role model who broke stereotypes and inspired others.",
+                                       "title":  "Role Model Journal"
+                                   },
+                  "uvls-kids-28":  {
+                                       "description":  "Respond positively when someone feels discouraged in a roleplay.",
+                                       "title":  "Support Roleplay"
+                                   },
+                  "uvls-kids-29":  {
+                                       "description":  "Tap to reject stereotypes and reinforce fairness.",
+                                       "title":  "Challenge Stereotypes"
+                                   },
+                  "uvls-kids-30":  {
+                                       "description":  "Complete 5 equality-support actions to earn your Equality Ally badge.",
+                                       "title":  "Equality Ally Badge"
+                                   },
+                  "uvls-kids-31":  {
+                                       "description":  "Choose safe ways to intervene when someone is being teased.",
+                                       "title":  "Stop the Tease"
+                                   },
+                  "uvls-kids-32":  {
+                                       "description":  "Identify the difference between bullying, joking, and accidents.",
+                                       "title":  "Bullying Quiz"
+                                   },
+                  "uvls-kids-33":  {
+                                       "description":  "Tap quickly when you see a bullying icon to report it safely.",
+                                       "title":  "Report Reflex"
+                                   },
+                  "uvls-kids-34":  {
+                                       "description":  "Match examples of physical, verbal, and cyber bullying.",
+                                       "title":  "Types Match"
+                                   },
+                  "uvls-kids-35":  {
+                                       "description":  "Choose kind and supportive actions for a bullied friend.",
+                                       "title":  "Support Friend"
+                                   },
+                  "uvls-kids-36":  {
+                                       "description":  "Create and share your own anti-bullying poster.",
+                                       "title":  "Anti-Bullying Poster"
+                                   },
+                  "uvls-kids-37":  {
+                                       "description":  "Reflect on a time you stood up for someone being bullied.",
+                                       "title":  "Witness Journal"
+                                   },
+                  "uvls-kids-38":  {
+                                       "description":  "Practice safe bystander actions through roleplay choices.",
+                                       "title":  "Bystander Roleplay"
+                                   },
+                  "uvls-kids-39":  {
+                                       "description":  "Identify harmful online posts and report them safely.",
+                                       "title":  "Cyber Spot"
+                                   },
+                  "uvls-kids-40":  {
+                                       "description":  "Earn a badge for consistent anti-bullying actions.",
+                                       "title":  "Peer Protector Badge"
+                                   },
+                  "uvls-kids-41":  {
+                                       "description":  "Pick the correct emotion word from a short story scene.",
+                                       "title":  "Name That Feeling"
+                                   },
+                  "uvls-kids-42":  {
+                                       "description":  "Practice simple breathing techniques using rhythm and animation.",
+                                       "title":  "Breathe with Me"
+                                   },
+                  "uvls-kids-43":  {
+                                       "description":  "Match everyday behaviors with moods like happy, sad, or calm.",
+                                       "title":  "Mood Match"
+                                   },
+                  "uvls-kids-44":  {
+                                       "description":  "Write a one-line entry about your mood and its reason.",
+                                       "title":  "Mood Journal"
+                                   },
+                  "uvls-kids-45":  {
+                                       "description":  "Choose calm responses in moments of frustration.",
+                                       "title":  "Calm Choice"
+                                   },
+                  "uvls-kids-46":  {
+                                       "description":  "Build your own calming tools poster with stickers and icons.",
+                                       "title":  "Toolbox Poster"
+                                   },
+                  "uvls-kids-47":  {
+                                       "description":  "Practice politely asking a teacher or adult for help.",
+                                       "title":  "Ask for Help Roleplay"
+                                   },
+                  "uvls-kids-48":  {
+                                       "description":  "Tap quickly when calm behavior appears on screen.",
+                                       "title":  "Calm Reflex"
+                                   },
+                  "uvls-kids-49":  {
+                                       "description":  "Match triggers to calming strategies and learn what works best.",
+                                       "title":  "Trigger Map Puzzle"
+                                   },
+                  "uvls-kids-50":  {
+                                       "description":  "Earn your Self-Aware Badge by using emotion tools regularly.",
+                                       "title":  "Self-Aware Badge"
+                                   },
+                  "uvls-kids-51":  {
+                                       "description":  "Choose based on hunger vs desire; basic trade-offs.",
+                                       "title":  "Snack Choice"
+                                   },
+                  "uvls-kids-52":  {
+                                       "description":  "Relate actions to consequences simply.",
+                                       "title":  "Cause \u0026 Effect Quiz"
+                                   },
+                  "uvls-kids-53":  {
+                                       "description":  "Quick identification of true facts vs silly claims.",
+                                       "title":  "True/False Reflex"
+                                   },
+                  "uvls-kids-54":  {
+                                       "description":  "Solve simple pattern or sequence puzzles.",
+                                       "title":  "Logic Puzzle"
+                                   },
+                  "uvls-kids-55":  {
+                                       "description":  "Make a safe choice when offered a risky shortcut.",
+                                       "title":  "Risky Offer"
+                                   },
+                  "uvls-kids-56":  {
+                                       "description":  "Learn simple steps to decide: stop → think → choose.",
+                                       "title":  "Decision Poster"
+                                   },
+                  "uvls-kids-57":  {
+                                       "description":  "Reflect on why you chose X today.",
+                                       "title":  "Decision Journal"
+                                   },
+                  "uvls-kids-58":  {
+                                       "description":  "Pick the honest option in a kid-appropriate situation.",
+                                       "title":  "Ethics Roleplay"
+                                   },
+                  "uvls-kids-59":  {
+                                       "description":  "Identify clearly wrong reasoning with child-friendly examples.",
+                                       "title":  "Spot Fallacy"
+                                   },
+                  "uvls-kids-60":  {
+                                       "description":  "Reward consistent use of simple decision steps.",
+                                       "title":  "Critical Thinker Badge"
+                                   },
+                  "uvls-kids-61":  {
+                                       "description":  "Practice polite greetings and eye contact.",
+                                       "title":  "Say Hello"
+                                   },
+                  "uvls-kids-62":  {
+                                       "description":  "Identify active listening behaviours.",
+                                       "title":  "Active Listening Quiz"
+                                   },
+                  "uvls-kids-63":  {
+                                       "description":  "Train the habit to stop and listen when signaled.",
+                                       "title":  "Stop \u0026 Listen Reflex"
+                                   },
+                  "uvls-kids-64":  {
+                                       "description":  "Match tone (happy/angry/soft) to intent.",
+                                       "title":  "Tone Match"
+                                   },
+                  "uvls-kids-65":  {
+                                       "description":  "Practice asking for help clearly.",
+                                       "title":  "Ask Clearly Story"
+                                   },
+                  "uvls-kids-66":  {
+                                       "description":  "Show simple steps to speak clearly.",
+                                       "title":  "Communication Poster"
+                                   },
+                  "uvls-kids-67":  {
+                                       "description":  "Reflect on a time you received feedback and what you learned.",
+                                       "title":  "Feedback Journal"
+                                   },
+                  "uvls-kids-68":  {
+                                       "description":  "Choose kind words for a gentle correction.",
+                                       "title":  "Difficult Talk Roleplay"
+                                   },
+                  "uvls-kids-69":  {
+                                       "description":  "Identify validating statements quickly.",
+                                       "title":  "Empathic Tap"
+                                   },
+                  "uvls-kids-70":  {
+                                       "description":  "Reward successful practice of listening \u0026 speaking tasks.",
+                                       "title":  "Good Communicator Badge"
+                                   },
+                  "uvls-kids-71":  {
+                                       "description":  "Mediate toy dispute using share/turn rules.",
+                                       "title":  "Toy Dispute"
+                                   },
+                  "uvls-kids-72":  {
+                                       "description":  "Identify win-win conflict solutions.",
+                                       "title":  "Win-Win Quiz"
+                                   },
+                  "uvls-kids-73":  {
+                                       "description":  "Choose calming tactics quickly in conflict prompts.",
+                                       "title":  "Calm Reflex"
+                                   },
+                  "uvls-kids-74":  {
+                                       "description":  "Arrange mediation steps in correct order.",
+                                       "title":  "Resolve Steps Puzzle"
+                                   },
+                  "uvls-kids-75":  {
+                                       "description":  "Negotiate fair sharing of limited resources.",
+                                       "title":  "Split Fairly Roleplay"
+                                   },
+                  "uvls-kids-76":  {
+                                       "description":  "Create poster showing mediation steps.",
+                                       "title":  "Mediation Poster"
+                                   },
+                  "uvls-kids-77":  {
+                                       "description":  "Write about a conflict and how it was resolved.",
+                                       "title":  "Resolution Journal"
+                                   },
+                  "uvls-kids-78":  {
+                                       "description":  "Allocate chores/time fairly in a family setting.",
+                                       "title":  "Family Simulation"
+                                   },
+                  "uvls-kids-79":  {
+                                       "description":  "Recognize when someone expresses a need and respond.",
+                                       "title":  "Identify Needs Reflex"
+                                   },
+                  "uvls-kids-80":  {
+                                       "description":  "Reward consistent fair mediation actions.",
+                                       "title":  "Mediator Badge"
+                                   },
+                  "uvls-kids-81":  {
+                                       "description":  "Encourage participation in community clean-up.",
+                                       "title":  "Clean-up Story"
+                                   },
+                  "uvls-kids-82":  {
+                                       "description":  "Identify simple civic duties.",
+                                       "title":  "Citizen Duties Quiz"
+                                   },
+                  "uvls-kids-83":  {
+                                       "description":  "Tap to volunteer for visible needs quickly.",
+                                       "title":  "Volunteer Reflex"
+                                   },
+                  "uvls-kids-84":  {
+                                       "description":  "Match community helper to correct job.",
+                                       "title":  "Community Roles Puzzle"
+                                   },
+                  "uvls-kids-85":  {
+                                       "description":  "Plan simple fundraiser steps.",
+                                       "title":  "Fundraiser Story"
+                                   },
+                  "uvls-kids-86":  {
+                                       "description":  "Create a \u0027Be a Good Citizen\u0027 poster.",
+                                       "title":  "Civic Poster"
+                                   },
+                  "uvls-kids-87":  {
+                                       "description":  "Record one small community service done.",
+                                       "title":  "Contribution Journal"
+                                   },
+                  "uvls-kids-88":  {
+                                       "description":  "Practice polite help for an elderly neighbor.",
+                                       "title":  "Help Elder Roleplay"
+                                   },
+                  "uvls-kids-89":  {
+                                       "description":  "Identify and flag community needs quickly.",
+                                       "title":  "Report Need Reflex"
+                                   },
+                  "uvls-kids-90":  {
+                                       "description":  "Reward hands-on community contributions.",
+                                       "title":  "Community Helper Badge"
+                                   },
+                  "uvls-kids-91":  {
+                                       "description":  "Build a simple morning routine to be on time.",
+                                       "title":  "Morning Routine"
+                                   },
+                  "uvls-kids-92":  {
+                                       "description":  "Choose which tasks should come before play.",
+                                       "title":  "Priority Quiz"
+                                   },
+                  "uvls-kids-93":  {
+                                       "description":  "Tap to check off completed daily routine items.",
+                                       "title":  "Task Done Reflex"
+                                   },
+                  "uvls-kids-94":  {
+                                       "description":  "Order daily tasks into an effective plan.",
+                                       "title":  "Plan Your Day Puzzle"
+                                   },
+                  "uvls-kids-95":  {
+                                       "description":  "Break a big goal into smaller steps.",
+                                       "title":  "Goal Steps"
+                                   },
+                  "uvls-kids-96":  {
+                                       "description":  "Learn simple SMART goal planning for kids.",
+                                       "title":  "SMART Poster"
+                                   },
+                  "uvls-kids-97":  {
+                                       "description":  "Make a 3-point weekly plan (study, play, rest).",
+                                       "title":  "Weekly Plan Journal"
+                                   },
+                  "uvls-kids-98":  {
+                                       "description":  "Allocate time sensibly between study, fun, and rest.",
+                                       "title":  "Time Budget Simulation"
+                                   },
+                  "uvls-kids-99":  {
+                                       "description":  "Choose safe options quickly in everyday scenes.",
+                                       "title":  "Safety Reflex"
+                                   },
+                  "uvls-kids-100":  {
+                                        "description":  "Reward mastery of basic daily life skills.",
+                                        "title":  "Life Skills Starter Badge"
+                                    }
+              }
+}
+

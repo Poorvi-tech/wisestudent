@@ -46,13 +46,16 @@ import getHealthFemaleTeenGames, { healthFemaleGameIdsTeen } from "./GameCategor
 import { getSustainabilityKidsGames, sustainabilityGameIdsKids } from "./GameCategories/Sustainability/kidGamesData";
 import { getSustainabilityTeenGames, sustainabilityGameIdsTeen } from "./GameCategories/Sustainability/teenGamesData";
 import UpgradePrompt from "../../components/UpgradePrompt";
+import LanguageSelector from "../../components/LanguageSelector";
 import api from "../../utils/api";
 import { calculateUserAge, isModuleAccessible } from "../../utils/ageUtils";
 import { getCategoryPrefix, isPreviouslyUnlocked } from "../../utils/moduleAccessUtils";
+import { useTranslation } from "react-i18next";
 
 const GameCategoryPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("pages");
   const { user } = useAuth();
   const { canAccessPillar, canAccessGame: canAccessGameBySubscription, getGamesPerPillar } = useSubscription();
   const { wallet, refreshWallet, setWallet } = useWallet();
@@ -93,6 +96,34 @@ const GameCategoryPage = () => {
   // Check if user can access a specific game based on age
   const unrestrictedModules = new Set(["insurance-pension", "business-livelihood", "business-livelihood-finance"]);
   const normalizedAgeGroup = unrestrictedModules.has(ageGroup) ? "adults" : ageGroup;
+  const pageKeyPrefix = useMemo(
+    () => `games.${category}.${ageGroup}`,
+    [category, ageGroup]
+  );
+  const tp = useCallback(
+    (key, defaultValue, options = {}) =>
+      t(`${pageKeyPrefix}.${key}`, { defaultValue, ...options }),
+    [t, pageKeyPrefix]
+  );
+
+  const translateDifficulty = useCallback(
+    (difficulty) => {
+      const key = difficulty?.toLowerCase?.() || "";
+      if (!key) return difficulty;
+      return tp(`difficulty.${key}`, difficulty);
+    },
+    [tp]
+  );
+
+  const translateDuration = useCallback(
+    (duration) => {
+      if (!duration) return duration;
+      const match = duration.match(/(\d+)\s*min/i);
+      if (!match) return duration;
+      return tp("duration.minutes", "{{count}} min", { count: match[1] });
+    },
+    [tp]
+  );
 
   const canAccessGame = (gameAgeGroup, userAge) => {
     if (unrestrictedModules.has(gameAgeGroup)) {
@@ -1541,9 +1572,11 @@ const GameCategoryPage = () => {
 
   // Check pillar access based on subscription
   const categoryTitle = getCategoryTitle(category);
+  const categoryTitleDisplay = tp("header.categoryTitle", categoryTitle);
   const pillarAccess = canAccessPillar(categoryTitle);
   const isPillarLocked = !pillarAccess.allowed;
   const gamesPerPillar = getGamesPerPillar();
+  const ageGroupTitleDisplay = tp("header.ageGroupTitle", getAgeGroupTitle(ageGroup));
 
   const modulePreviouslyUnlocked = isPreviouslyUnlocked(moduleProgressMap);
 
@@ -1555,24 +1588,42 @@ const GameCategoryPage = () => {
   // Check if unlock requirements are met
   const unlockRequirements = () => {
     if (isPillarLocked) {
-      return pillarAccess.message || "Upgrade to premium to access this pillar.";
+      return (
+        pillarAccess.message ||
+        tp("locked.pillarLocked", "Upgrade to premium to access this pillar.")
+      );
     }
 
     if (userAge === null) {
-      return "We couldn't verify your age. Update your profile with your date of birth to unlock this section.";
+      return tp(
+        "locked.ageVerify",
+        "We couldn't verify your age. Update your profile with your date of birth to unlock this section."
+      );
     }
 
     if (!canAccessModule) {
       if (normalizedAgeGroup === "kids" && userAge >= 18) {
-        return `Available for learners under 18. You are ${userAge} years old.`;
+        return tp(
+          "locked.under18",
+          "Available for learners under 18. You are {{age}} years old.",
+          { age: userAge }
+        );
       }
 
       if (normalizedAgeGroup === "adults" && userAge < 18) {
-        return `Available at age 18. You are ${userAge} years old.`;
+        return tp(
+          "locked.at18",
+          "Available at age 18. You are {{age}} years old.",
+          { age: userAge }
+        );
       }
 
       if (normalizedAgeGroup === "teens" && userAge >= 18) {
-        return `Available for learners under 18. You are ${userAge} years old.`;
+        return tp(
+          "locked.under18",
+          "Available for learners under 18. You are {{age}} years old.",
+          { age: userAge }
+        );
       }
     }
 
@@ -1589,7 +1640,12 @@ const GameCategoryPage = () => {
     const subscriptionAccess = canAccessGameBySubscription(categoryTitle, gamesCompleted, game.index);
     if (!subscriptionAccess.allowed) {
       toast.error(
-        subscriptionAccess.reason || `Upgrade to premium to access more than ${gamesPerPillar} games per pillar.`,
+        subscriptionAccess.reason ||
+          tp(
+            "toasts.upgradeMoreGames",
+            "Upgrade to premium to access more than {{count}} games per pillar.",
+            { count: gamesPerPillar }
+          ),
         {
           duration: 4000,
           position: "bottom-center",
@@ -1600,7 +1656,7 @@ const GameCategoryPage = () => {
     }
 
     if (isLocked) {
-      toast.error(requirements || "This section is locked.", {
+      toast.error(requirements || tp("locked.sectionLocked", "This section is locked."), {
         duration: 4000,
         position: "bottom-center",
         icon: "🔒",
@@ -1635,11 +1691,17 @@ const GameCategoryPage = () => {
       ageGroup === "business-livelihood-finance")
     ) {
       if (!isGameUnlocked(game.index)) {
-        toast.error("Complete the previous game first to unlock this game!", {
-          duration: 4000,
-          position: "bottom-center",
-          icon: "⏰",
-        });
+        toast.error(
+          tp(
+            "toasts.completePreviousFirst",
+            "Complete the previous game first to unlock this game!"
+          ),
+          {
+            duration: 4000,
+            position: "bottom-center",
+            icon: "⏰",
+          }
+        );
         return;
       }
 
@@ -1675,7 +1737,10 @@ const GameCategoryPage = () => {
         } else {
           // Game is completed but replay not unlocked
         toast.error(
-            "You've already collected all HealCoins for this game. Unlock replay to play again!",
+          tp(
+            "toasts.alreadyCollected",
+            "You've already collected all HealCoins for this game. Unlock replay to play again!"
+          ),
           {
             duration: 4000,
             position: "bottom-center",
@@ -1720,17 +1785,24 @@ const GameCategoryPage = () => {
     }
 
     // In a real app, this would navigate to the actual game
-    toast.success(`Starting ${game.title}...`, {
-      duration: 2000,
-      position: "bottom-center",
-      icon: "??",
-    });
+    toast.success(
+      tp("toasts.startingGame", "Starting {{title}}...", { title: game.title }),
+      {
+        duration: 2000,
+        position: "bottom-center",
+        icon: "??",
+      }
+    );
 
     // Simulate game completion for demo
     setTimeout(() => {
       setCompletedGames((prev) => new Set([...prev, game.id]));
       toast.success(
-        `Completed ${game.title}! +${game.coins} coins, +${game.xp} XP`,
+        tp(
+          "toasts.completedGame",
+          "Completed {{title}}! +{{coins}} coins, +{{xp}} XP",
+          { title: game.title, coins: game.coins, xp: game.xp }
+        ),
         {
           duration: 3000,
           position: "bottom-center",
@@ -1753,11 +1825,15 @@ const GameCategoryPage = () => {
     const subscriptionAccess = canAccessGameBySubscription(categoryTitle, gamesCompleted, game.index);
     if (!subscriptionAccess.allowed) {
       toast.error(
-        subscriptionAccess.reason || "This game is not available in your current plan. Upgrade to premium to access more games.",
+        subscriptionAccess.reason ||
+          tp(
+            "toasts.notAvailablePlan",
+            "This game is not available in your current plan. Upgrade to premium to access more games."
+          ),
         {
-          duration: 5000,
+          duration: 4000,
           position: "bottom-center",
-          icon: "??",
+          icon: "🎯",
         }
       );
       return;
@@ -1766,11 +1842,15 @@ const GameCategoryPage = () => {
     // Check wallet balance
     if (!wallet || wallet.balance < replayCost) {
       toast.error(
-        `Insufficient balance! You need ${replayCost} HealCoins to unlock replay.`,
+        tp(
+          "toasts.insufficientBalance",
+          "Insufficient balance! You need {{cost}} HealCoins to unlock replay.",
+          { cost: replayCost }
+        ),
         {
           duration: 4000,
           position: "bottom-center",
-          icon: "??",
+          icon: "💸",
         }
       );
       return;
@@ -1823,11 +1903,15 @@ const GameCategoryPage = () => {
         // Reload game completion status to update UI
         loadGameCompletionStatus();
 
-        toast.success(response.data.message || 'Replay unlocked! Opening game...', {
-          duration: 2000,
-          position: "bottom-center",
-          icon: "??",
-        });
+        toast.success(
+          response.data.message ||
+            tp("toasts.replayUnlocked", "Replay unlocked! Opening game..."),
+          {
+            duration: 3000,
+            position: "bottom-center",
+            icon: "🎮",
+          }
+        );
 
         // Navigate to the game after a short delay
         if (game.path) {
@@ -1867,11 +1951,14 @@ const GameCategoryPage = () => {
         }
       } else {
         console.warn('?? Response did not indicate replay was unlocked:', response.data);
-        toast.error('Failed to unlock replay. Please try again.', {
-          duration: 4000,
-          position: "bottom-center",
-          icon: "?",
-        });
+        toast.error(
+          tp("toasts.replayFailed", "Failed to unlock replay. Please try again."),
+          {
+            duration: 4000,
+            position: "bottom-center",
+            icon: "?",
+          }
+        );
       }
     } catch (error) {
       console.error('Failed to unlock replay:', error);
@@ -1882,7 +1969,10 @@ const GameCategoryPage = () => {
         status: error.response?.status
       });
       
-      const errorMessage = error.response?.data?.error || error.message || 'Failed to unlock replay. Please try again.';
+      const errorMessage =
+        error.response?.data?.error ||
+        error.message ||
+        tp("toasts.replayFailed", "Failed to unlock replay. Please try again.");
       toast.error(errorMessage, {
         duration: 5000,
         position: "bottom-center",
@@ -2025,7 +2115,9 @@ const GameCategoryPage = () => {
                       <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full flex items-center justify-center">
                         <RefreshCw className="w-6 h-6 text-white" />
                       </div>
-                      <h2 className="text-2xl font-bold text-gray-900">Unlock Replay</h2>
+                      <h2 className="text-2xl font-bold text-gray-900">
+                        {tp("replay.title", "Unlock Replay")}
+                      </h2>
                     </div>
                     <button
                       onClick={handleCancelReplayUnlock}
@@ -2038,17 +2130,28 @@ const GameCategoryPage = () => {
                   {/* Content */}
                   <div className="mb-6">
                     <p className="text-gray-700 mb-4">
-                      Unlock replay for <span className="font-semibold text-gray-900">"{selectedGameForReplay.title}"</span>?
+                      {tp("replay.confirm", "Unlock replay for \"{{title}}\"?", {
+                        title: selectedGameForReplay.title,
+                      })}
                     </p>
                     
                     <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-4 mb-4 border border-yellow-200">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-gray-700 font-medium">Cost:</span>
-                        <span className="text-2xl font-bold text-amber-600">{getReplayCost(selectedGameForReplay)} HealCoins</span>
+                        <span className="text-gray-700 font-medium">
+                          {tp("replay.costLabel", "Cost:")}
+                        </span>
+                        <span className="text-2xl font-bold text-amber-600">
+                          {getReplayCost(selectedGameForReplay)}{" "}
+                          {tp("replay.healCoinsLabel", "HealCoins")}
+                        </span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-700 font-medium">Your Balance:</span>
-                        <span className="text-lg font-semibold text-gray-900">{wallet?.balance || 0} HealCoins</span>
+                        <span className="text-gray-700 font-medium">
+                          {tp("replay.balanceLabel", "Your Balance:")}
+                        </span>
+                        <span className="text-lg font-semibold text-gray-900">
+                          {wallet?.balance || 0} {tp("replay.healCoinsLabel", "HealCoins")}
+                        </span>
                       </div>
                     </div>
 
@@ -2056,7 +2159,13 @@ const GameCategoryPage = () => {
                       <div className="flex items-start gap-2">
                         <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                         <p className="text-sm text-blue-800">
-                          <span className="font-semibold">Note:</span> You won't earn coins when replaying this game. The game will be locked again after you complete the replay.
+                          <span className="font-semibold">
+                            {tp("replay.noteLabel", "Note:")}
+                          </span>{" "}
+                          {tp(
+                            "replay.note",
+                            "You won't earn coins when replaying this game. The game will be locked again after you complete the replay."
+                          )}
                         </p>
                       </div>
                     </div>
@@ -2069,7 +2178,7 @@ const GameCategoryPage = () => {
                       disabled={processingReplay}
                       className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Cancel
+                      {tp("replay.cancel", "Cancel")}
                     </button>
                     <button
                       onClick={handleUnlockReplay}
@@ -2079,12 +2188,12 @@ const GameCategoryPage = () => {
                       {processingReplay ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Processing...</span>
+                          <span>{tp("replay.processing", "Processing...")}</span>
                         </>
                       ) : (
                         <>
                           <RefreshCw className="w-4 h-4" />
-                          <span>Unlock Replay</span>
+                          <span>{tp("replay.unlock", "Unlock Replay")}</span>
                         </>
                       )}
                     </button>
@@ -2106,7 +2215,7 @@ const GameCategoryPage = () => {
             className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 mb-6 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Back</span>
+            <span>{tp("header.back", "Back")}</span>
           </button>
 
           <div className="flex items-center justify-between gap-4 mb-6">
@@ -2116,26 +2225,34 @@ const GameCategoryPage = () => {
               </div>
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                  {getCategoryTitle(category)}
+                  {categoryTitleDisplay}
                 </h1>
                 <p className="text-lg text-gray-600">
-                  {getAgeGroupTitle(ageGroup)} - {games.length || categoryStats.totalGames || 0} Games
+                  {tp("header.subtitle", "{{ageGroupTitle}} - {{count}} Games", {
+                    ageGroupTitle: ageGroupTitleDisplay,
+                    count: games.length || categoryStats.totalGames || 0,
+                  })}
                 </p>
               </div>
             </div>
-            {/* HealCoins Button */}
-            {(user?.role === "student" || user?.role === "school_student") && (
-              <motion.button
-                className="flex items-center gap-1.5 px-3 sm:px-4 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 border-2 border-yellow-500 cursor-pointer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => navigate("/student/wallet")}
-              >
+            <div className="flex items-center gap-3">
+              {/* HealCoins Button */}
+              {(user?.role === "student" || user?.role === "school_student") && (
+                <motion.button
+                  className="flex items-center gap-1.5 px-3 sm:px-4 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 border-2 border-yellow-500 cursor-pointer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => navigate("/student/wallet")}
+                >
                 <Wallet className="w-4 h-4" />
                 <span className="font-black">{wallet?.balance || 0}</span>
-                <span className="hidden sm:inline text-xs">Coins</span>
+                <span className="hidden sm:inline text-xs">
+                  {tp("header.coinsLabel", "Coins")}
+                </span>
               </motion.button>
             )}
+              <LanguageSelector />
+            </div>
           </div>
 
           {isLocked && (
@@ -2146,7 +2263,7 @@ const GameCategoryPage = () => {
             >
               <div className="flex items-center gap-3 mb-2">
                 <Lock className="w-6 h-6" />
-                <h3 className="text-xl font-bold">Locked</h3>
+                <h3 className="text-xl font-bold">{tp("locked.title", "Locked")}</h3>
               </div>
               <p className="text-lg">{requirements}</p>
               {isPillarLocked && (
@@ -2154,7 +2271,7 @@ const GameCategoryPage = () => {
                   onClick={() => setShowUpgradeModal(true)}
                   className="mt-4 bg-white text-red-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors"
                 >
-                  Upgrade to Premium
+                  {tp("locked.upgradeCta", "Upgrade to Premium")}
                 </button>
               )}
             </motion.div>
@@ -2171,7 +2288,9 @@ const GameCategoryPage = () => {
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <div className="flex items-center gap-3 mb-2">
               <Gamepad2 className="w-5 h-5 text-indigo-500" />
-              <span className="text-gray-600 font-medium">Total Games</span>
+              <span className="text-gray-600 font-medium">
+                {tp("stats.totalGames", "Total Games")}
+              </span>
             </div>
             <p className="text-2xl font-bold text-gray-900">{categoryStats.totalGames}</p>
           </div>
@@ -2179,7 +2298,9 @@ const GameCategoryPage = () => {
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <div className="flex items-center gap-3 mb-2">
               <Trophy className="w-5 h-5 text-yellow-500" />
-              <span className="text-gray-600 font-medium">Completed</span>
+              <span className="text-gray-600 font-medium">
+                {tp("stats.completed", "Completed")}
+              </span>
             </div>
             <p className="text-2xl font-bold text-gray-900">
               {(category === 'financial-literacy' ||
@@ -2209,7 +2330,9 @@ const GameCategoryPage = () => {
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <div className="flex items-center gap-3 mb-2">
               <Coins className="w-5 h-5 text-green-500" />
-              <span className="text-gray-600 font-medium">Coins Earned</span>
+              <span className="text-gray-600 font-medium">
+                {tp("stats.coinsEarned", "Coins Earned")}
+              </span>
             </div>
             <p className="text-2xl font-bold text-gray-900">
               {categoryStats.coinsEarned}
@@ -2219,7 +2342,9 @@ const GameCategoryPage = () => {
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <div className="flex items-center gap-3 mb-2">
               <Zap className="w-5 h-5 text-purple-500" />
-              <span className="text-gray-600 font-medium">XP Gained</span>
+              <span className="text-gray-600 font-medium">
+                {tp("stats.xpGained", "XP Gained")}
+              </span>
             </div>
             <p className="text-2xl font-bold text-gray-900">
               {categoryStats.xpGained}
@@ -2232,7 +2357,7 @@ const GameCategoryPage = () => {
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
               <Loader2 className="w-12 h-12 text-blue-500 animate-spin mx-auto mb-4" />
-              <p className="text-gray-600">Loading games...</p>
+              <p className="text-gray-600">{tp("loading.games", "Loading games...")}</p>
             </div>
           </div>
         ) : (
@@ -2443,14 +2568,14 @@ const GameCategoryPage = () => {
                           : "text-gray-900"
                   }`}
                 >
-                  {game.title}
+                  {tp(`cards.${game.id}.title`, game.title)}
                   {isCurrentlyOpen && (
                     <motion.span
                       animate={{ opacity: [0.5, 1, 0.5] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                       className="ml-2 text-sm font-normal"
                     >
-                      ? Active
+                      {tp("header.active", "Active")}
                     </motion.span>
                   )}
                 </h3>
@@ -2466,7 +2591,7 @@ const GameCategoryPage = () => {
                           : "text-gray-600"
                   }`}
                 >
-                  {game.description}
+                  {tp(`cards.${game.id}.description`, game.description)}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4 relative z-10">
@@ -2482,7 +2607,7 @@ const GameCategoryPage = () => {
                     }`}
                   >
                     <Target className="w-3 h-3" />
-                    {game.difficulty}
+                    {translateDifficulty(game.difficulty)}
                   </div>
                   <div
                     className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${
@@ -2494,7 +2619,7 @@ const GameCategoryPage = () => {
                     }`}
                   >
                     <Timer className="w-3 h-3" />
-                    {game.duration}
+                    {translateDuration(game.duration)}
                   </div>
                 </div>
 
@@ -2581,11 +2706,17 @@ const GameCategoryPage = () => {
                       style={{ pointerEvents: 'auto' }}
                     >
                       <RefreshCw className="w-4 h-4" />
-                      <span>Unlock Replay ({replayCost} HealCoins)</span>
+                      <span>
+                        {tp(
+                          "replay.unlockWithCost",
+                          "Unlock Replay ({{cost}} HealCoins)",
+                          { cost: replayCost }
+                        )}
+                      </span>
                     </button>
                     {wallet && wallet.balance < replayCost && (
                       <p className="text-xs text-red-500 mt-1 text-center">
-                        Insufficient balance
+                        {tp("replay.insufficientBalance", "Insufficient balance")}
                       </p>
                     )}
                   </div>
@@ -2594,7 +2725,10 @@ const GameCategoryPage = () => {
                 {isFullyCompleted && isSubscriptionLocked && (
                   <div className="mt-4 pt-4 border-t border-gray-200">
                     <p className="text-xs text-amber-600 text-center font-medium">
-                      ?? Replay not available. Upgrade to premium to access this game.
+                      {tp(
+                        "replay.notAvailable",
+                        "Replay not available. Upgrade to premium to access this game."
+                      )}
                     </p>
                   </div>
                 )}
@@ -2604,7 +2738,12 @@ const GameCategoryPage = () => {
                   <div className="mt-2 pt-2 border-t border-green-200">
                     <div className="flex items-center justify-center gap-2 text-xs text-green-600 font-semibold">
                       <RefreshCw className="w-3 h-3" />
-                      <span>Replay Unlocked (No coins on replay)</span>
+                      <span>
+                        {tp(
+                          "replay.unlockedBadge",
+                          "Replay Unlocked (No coins on replay)"
+                        )}
+                      </span>
                     </div>
                   </div>
                 )}
@@ -2613,10 +2752,21 @@ const GameCategoryPage = () => {
                 {isLocked && !canReplay && (
                   <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 text-white text-xs py-2 px-3 text-center rounded-b-2xl transform translate-y-full transition-transform duration-200 group-hover:translate-y-0">
                     {isSubscriptionLocked
-                      ? subscriptionAccess.reason || `Upgrade to premium to access more than ${gamesPerPillar} games per pillar.`
+                      ? subscriptionAccess.reason ||
+                        tp(
+                          "toasts.upgradeMoreGames",
+                          "Upgrade to premium to access more than {{count}} games per pillar.",
+                          { count: gamesPerPillar }
+                        )
                       : isFullyCompleted
-                        ? "Game completed! Unlock replay to play again."
-                        : "Complete the previous game to unlock"}
+                        ? tp(
+                            "tooltips.gameCompleted",
+                            "Game completed! Unlock replay to play again."
+                          )
+                        : tp(
+                            "tooltips.completePrevious",
+                            "Complete the previous game to unlock"
+                          )}
                   </div>
                 )}
               </motion.div>

@@ -1,0 +1,404 @@
+{
+  "cards": {
+    "brain-young-adult-1": {
+      "title": "Too Many Commitments",
+      "description": "A college student faces exams, a part-time job, and family pressure-prioritize to protect focus."
+    },
+    "brain-young-adult-2": {
+      "title": "Saying Yes Again",
+      "description": "A young adult learns to say no without guilt so the mental load stays manageable."
+    },
+    "brain-young-adult-3": {
+      "title": "Pressure Signals",
+      "description": "A student recognizes physical and emotional stress signs during a busy academic period."
+    },
+    "brain-young-adult-4": {
+      "title": "Deadline Collision",
+      "description": "Two important deadlines suddenly fall on the same day - learn to adapt and prioritize."
+    },
+    "brain-young-adult-5": {
+      "title": "Comparison Pressure",
+      "description": "A young adult sees peers appearing successful and calm online, learning to handle comparison pressure."
+    },
+    "brain-young-adult-6": {
+      "title": "No Break Day",
+      "description": "A young adult works continuously without taking breaks to stay productive, learning to manage energy effectively."
+    },
+    "brain-young-adult-7": {
+      "title": "Family Expectations",
+      "description": "Family expectations increase pressure during exams or job search, learning to communicate emotional boundaries."
+    },
+    "brain-young-adult-8": {
+      "title": "Last-Minute Panic",
+      "description": "Tasks pile up due to repeated delays, learning to break them down into smaller steps."
+    },
+    "brain-young-adult-9": {
+      "title": "Control vs Concern",
+      "description": "A young adult worries about many things beyond control, learning to focus on what can be managed."
+    },
+    "brain-young-adult-10": {
+      "title": "Reset Point",
+      "description": "Stress peaks after weeks of pressure, learning when and how to reset effectively."
+    },
+    "brain-young-adult-11": {
+      "title": "The Unknown Result",
+      "description": "A student has completed an important exam but results are pending, learning to handle uncertainty effectively."
+    },
+    "brain-young-adult-12": {
+      "title": "Fear Before the Interview",
+      "description": "A young adult prepares for an important interview, learning to manage fear and find balance in preparation."
+    },
+    "brain-young-adult-13": {
+      "title": "What If Thoughts",
+      "description": "A student repeatedly thinks about negative future possibilities, learning to manage anxious thoughts effectively."
+    },
+    "brain-young-adult-14": {
+      "title": "Fear of Disappointing Others",
+      "description": "Family or mentors expect strong performance, learning to manage the fear of letting others down."
+    },
+    "brain-young-adult-15": {
+      "title": "Fear of Starting",
+      "description": "A task feels overwhelming before starting, learning to overcome the fear of failure that prevents action."
+    },
+    "brain-young-adult-16": {
+      "title": "Fear of Being Judged",
+      "description": "A young adult worries about others' opinions, learning to manage the fear of negative judgement."
+    },
+    "brain-young-adult-17": {
+      "title": "Unclear Future Path",
+      "description": "A student feels unsure about career direction, learning to manage the fear of choosing the wrong path."
+    },
+    "brain-young-adult-18": {
+      "title": "After a Mistake",
+      "description": "A mistake occurs in an important task, learning to manage the fear of consequences and choose a healthy response."
+    },
+    "brain-young-adult-19": {
+      "title": "Fear of Falling Behind",
+      "description": "Peers seem to progress faster, learning to manage the fear of lagging behind and choose a healthy response."
+    },
+    "brain-young-adult-20": {
+      "title": "Facing the Outcome",
+      "description": "An outcome does not match expectations, learning to manage disappointment and fear of future failure."
+    },
+    "brain-young-adult-21": {
+      "title": "Sudden Irritation",
+      "description": "A young adult feels irritated during a normal conversation without knowing why, learning to manage sudden emotional reactions."
+    },
+    "brain-young-adult-22": {
+      "title": "Mixed Emotions",
+      "description": "A young adult feels happy and anxious at the same time about an opportunity, learning to manage conflicting emotions."
+    },
+    "brain-young-adult-23": {
+      "title": "Emotional Build-Up",
+      "description": "Emotions build up after several stressful days, learning to manage emotional accumulation."
+    },
+    "brain-young-adult-24": {
+      "title": "Feeling Numb",
+      "description": "A young adult feels emotionally disconnected after prolonged stress, learning to manage emotional disconnection."
+    },
+    "brain-young-adult-25": {
+      "title": "Anger Trigger",
+      "description": "A small event triggers unexpected anger, learning to manage anger responses effectively."
+    },
+    "brain-young-adult-26": {
+      "title": "Mood Swings",
+      "description": "Mood shifts occur throughout the day, learning to manage unpredictable emotional changes."
+    },
+    "brain-young-adult-27": {
+      "title": "Emotional Spillover",
+      "description": "Stress from one area affects another, learning to manage emotional spillover effects."
+    },
+    "brain-young-adult-28": {
+      "title": "Emotional Triggers",
+      "description": "Certain situations repeatedly trigger emotions, learning to recognize and manage emotional triggers."
+    },
+    "brain-young-adult-29": {
+      "title": "Emotional Expression",
+      "description": "A young adult struggles to express feelings clearly, learning to communicate emotions effectively."
+    },
+    "brain-young-adult-30": {
+      "title": "Emotional Reset",
+      "description": "Emotions feel overwhelming after a long day, learning to reset and manage emotional fatigue."
+    },
+    "brain-young-adult-31": {
+      "title": "Feeling Not Good Enough",
+      "description": "A young adult compares personal progress with peers and feels inadequate, learning to manage self-worth challenges."
+    },
+    "brain-young-adult-32": {
+      "title": "Social Media Identity",
+      "description": "A young adult curates an online image different from real life, learning to manage social media identity pressures."
+    },
+    "brain-young-adult-33": {
+      "title": "Seeking Approval",
+      "description": "Decisions are influenced by others' opinions, learning to balance external approval with personal values."
+    },
+    "brain-young-adult-34": {
+      "title": "Labeling Yourself",
+      "description": "A young adult labels themselves based on one failure, learning to separate actions from identity."
+    },
+    "brain-young-adult-35": {
+      "title": "Comparing Life Timelines",
+      "description": "Peers reach milestones at different times, learning to accept personal life timelines."
+    },
+    "brain-young-adult-36": {
+      "title": "Confidence Drop",
+      "description": "A setback reduces confidence suddenly, learning to recover from unexpected failures."
+    },
+    "brain-young-adult-37": {
+      "title": "Identity Confusion",
+      "description": "A young adult feels unsure about who they are becoming, learning to navigate identity formation."
+    },
+    "brain-young-adult-38": {
+      "title": "External Validation Loop",
+      "description": "Self-worth depends on likes, praise, or recognition, learning to build internal validation."
+    },
+    "brain-young-adult-39": {
+      "title": "Comparing Success",
+      "description": "Success is measured against peers' achievements, learning to define personal success criteria."
+    },
+    "brain-young-adult-40": {
+      "title": "Self-Image Reset",
+      "description": "Negative self-image builds over time, learning to challenge self-critical thoughts."
+    },
+    "brain-young-adult-41": {
+      "title": "Pressure to Fit In",
+      "description": "A young adult feels pressure to behave like peers to feel accepted, learning to balance social belonging with authenticity."
+    },
+    "brain-young-adult-42": {
+      "title": "Difficulty Saying No",
+      "description": "Friends frequently request time and favors, learning to set healthy boundaries."
+    },
+    "brain-young-adult-43": {
+      "title": "Relationship Conflict",
+      "description": "A disagreement arises with a close friend, learning to navigate relationship conflicts constructively."
+    },
+    "brain-young-adult-44": {
+      "title": "People-Pleasing Pattern",
+      "description": "A young adult often prioritises others' needs over their own, learning to balance personal boundaries."
+    },
+    "brain-young-adult-45": {
+      "title": "Social Energy Drain",
+      "description": "Social interactions feel exhausting, learning to manage social energy sustainably."
+    },
+    "brain-young-adult-46": {
+      "title": "Unclear Boundaries",
+      "description": "Boundaries with friends or colleagues are unclear, learning to establish clear personal boundaries."
+    },
+    "brain-young-adult-47": {
+      "title": "Peer Influence",
+      "description": "Peers influence decisions that feel uncomfortable, learning to make value-based choices."
+    },
+    "brain-young-adult-48": {
+      "title": "Emotional Dependence",
+      "description": "Mood depends heavily on others' reactions, learning to build emotional independence."
+    },
+    "brain-young-adult-49": {
+      "title": "Relationship Expectations",
+      "description": "Expectations in a relationship feel heavy, learning to manage relationship expectations healthily."
+    },
+    "brain-young-adult-50": {
+      "title": "Choosing Distance",
+      "description": "A relationship feels emotionally draining, learning to create healthy boundaries."
+    },
+    "brain-young-adult-51": {
+      "title": "Endless Scrolling",
+      "description": "A young adult scrolls social media late into the night, learning to manage digital habits effectively."
+    },
+    "brain-young-adult-52": {
+      "title": "Notification Overload",
+      "description": "Constant notifications interrupt focus, learning to manage digital interruptions effectively."
+    },
+    "brain-young-adult-53": {
+      "title": "Online Comparison Loop",
+      "description": "A young adult compares life with online content, learning to manage comparison feelings effectively."
+    },
+    "brain-young-adult-54": {
+      "title": "Digital Multitasking",
+      "description": "Multiple apps are used simultaneously, learning to manage digital focus effectively."
+    },
+    "brain-young-adult-55": {
+      "title": "Late-Night Screen Use",
+      "description": "Screen usage continues late at night, learning to manage evening digital habits effectively."
+    },
+    "brain-young-adult-56": {
+      "title": "Mental Noise",
+      "description": "Constant digital input creates mental clutter, learning to manage mental clarity effectively."
+    },
+    "brain-young-adult-57": {
+      "title": "Fear of Missing Out",
+      "description": "Seeing others' activities online creates anxiety, learning to manage FOMO effectively."
+    },
+    "brain-young-adult-58": {
+      "title": "Online Arguments",
+      "description": "An online discussion becomes heated, learning to manage digital interactions effectively."
+    },
+    "brain-young-adult-59": {
+      "title": "Constant Availability",
+      "description": "Being reachable at all times feels exhausting, learning to manage availability effectively."
+    },
+    "brain-young-adult-60": {
+      "title": "Digital Reset",
+      "description": "Digital overload builds over time, learning to manage digital balance effectively."
+    },
+    "brain-young-adult-61": {
+      "title": "Lost Motivation",
+      "description": "A young adult feels unmotivated despite having important goals, learning to manage motivation effectively."
+    },
+    "brain-young-adult-62": {
+      "title": "Discipline vs Mood",
+      "description": "Mood fluctuates daily, affecting productivity, learning to manage discipline versus mood effectively."
+    },
+    "brain-young-adult-63": {
+      "title": "Early Burnout Signs",
+      "description": "Fatigue appears even after rest, learning to recognize and respond to early burnout signs."
+    },
+    "brain-young-adult-64": {
+      "title": "Procrastination Loop",
+      "description": "Tasks are repeatedly postponed, learning to break the procrastination cycle effectively."
+    },
+    "brain-young-adult-65": {
+      "title": "Overworking Pattern",
+      "description": "A young adult works excessively without rest, learning to manage work-rest balance effectively."
+    },
+    "brain-young-adult-66": {
+      "title": "Loss of Interest",
+      "description": "Interest in activities suddenly drops, learning to manage interest and engagement effectively."
+    },
+    "brain-young-adult-67": {
+      "title": "Discipline Fatigue",
+      "description": "Maintaining routines feels exhausting, learning to manage discipline sustainability effectively."
+    },
+    "brain-young-adult-68": {
+      "title": "Productivity Guilt",
+      "description": "Feeling guilty for not being productive, learning to manage self-compassion effectively."
+    },
+    "brain-young-adult-69": {
+      "title": "Energy Mismatch",
+      "description": "Energy levels vary throughout the day, learning to align tasks with energy patterns effectively."
+    },
+    "brain-young-adult-70": {
+      "title": "Burnout Reset",
+      "description": "Burnout signs become noticeable, learning to manage burnout recovery effectively."
+    },
+    "brain-young-adult-71": {
+      "title": "Money Worry",
+      "description": "A young adult worries constantly about expenses and limited income, learning to manage financial stress effectively."
+    },
+    "brain-young-adult-72": {
+      "title": "Emotional Spending",
+      "description": "A young adult shops to feel better emotionally, learning to manage emotional spending effectively."
+    },
+    "brain-young-adult-73": {
+      "title": "Comparing Finances",
+      "description": "Peers appear financially better off, learning to manage financial comparison stress effectively."
+    },
+    "brain-young-adult-74": {
+      "title": "Fear of Running Out",
+      "description": "Savings feel insufficient, learning to manage financial security concerns effectively."
+    },
+    "brain-young-adult-75": {
+      "title": "Income Uncertainty",
+      "description": "Income is irregular or uncertain, learning to manage unpredictable cash flow effectively."
+    },
+    "brain-young-adult-76": {
+      "title": "Spending Pressure",
+      "description": "Social situations encourage spending beyond comfort, learning to manage FOMO-related spending pressure."
+    },
+    "brain-young-adult-77": {
+      "title": "Debt Anxiety",
+      "description": "Debt feels overwhelming, learning to manage repayment fears and financial stress effectively."
+    },
+    "brain-young-adult-78": {
+      "title": "Saving vs Living",
+      "description": "Balancing saving money and enjoying life feels difficult, learning to find harmony between financial security and present enjoyment."
+    },
+    "brain-young-adult-79": {
+      "title": "Financial Mistake",
+      "description": "A poor financial decision causes regret, learning to handle self-blame and transform mistakes into growth opportunities."
+    },
+    "brain-young-adult-80": {
+      "title": "Financial Reset",
+      "description": "Money stress accumulates over time, learning to recognize overload signals and reset financial perspective effectively."
+    },
+    "brain-young-adult-81": {
+      "title": "Decision Under Stress",
+      "description": "A young adult must make an important decision while feeling emotionally stressed, learning to manage emotional interference in decision-making."
+    },
+    "brain-young-adult-82": {
+      "title": "Emotional Reaction Choice",
+      "description": "An emotional reaction arises during a disagreement, learning to manage responses when feeling misunderstood."
+    },
+    "brain-young-adult-83": {
+      "title": "Impulsive Choice",
+      "description": "Strong emotions push toward quick action, learning to manage urgency and develop better impulse control."
+    },
+    "brain-young-adult-84": {
+      "title": "Emotional Bias",
+      "description": "Past experiences influence current decisions, learning to recognize emotional biases and make balanced choices."
+    },
+    "brain-young-adult-85": {
+      "title": "Pressure-Driven Choice",
+      "description": "External pressure pushes for quick decisions, learning to recognize influence and maintain personal boundaries."
+    },
+    "brain-young-adult-86": {
+      "title": "Overthinking Loop",
+      "description": "A decision is delayed due to overthinking, learning to break the cycle and make timely choices."
+    },
+    "brain-young-adult-87": {
+      "title": "Emotion vs Logic",
+      "description": "Emotion conflicts with logical thinking, learning to balance feelings and rational analysis for better decisions."
+    },
+    "brain-young-adult-88": {
+      "title": "Avoidance Decision",
+      "description": "Avoiding decisions feels easier, learning to face responsibility and build decision-making confidence."
+    },
+    "brain-young-adult-89": {
+      "title": "Emotional Regret",
+      "description": "A decision leads to regret, learning to handle self-blame constructively and transform mistakes into growth opportunities."
+    },
+    "brain-young-adult-90": {
+      "title": "Decision Reset",
+      "description": "Multiple decisions create fatigue, learning to recognize mental exhaustion and reset decision-making capacity."
+    },
+    "brain-young-adult-91": {
+      "title": "Handling Setbacks",
+      "description": "A planned outcome fails unexpectedly, learning to build resilience and adapt effectively to disappointment."
+    },
+    "brain-young-adult-92": {
+      "title": "Emotional Recovery",
+      "description": "Emotional exhaustion follows stress, learning to recognize low energy signals and recover effectively."
+    },
+    "brain-young-adult-93": {
+      "title": "Learning from Failure",
+      "description": "Failure occurs despite effort, learning to transform self-doubt into growth opportunities and develop resilience."
+    },
+    "brain-young-adult-94": {
+      "title": "Coping with Change",
+      "description": "Unexpected changes disrupt plans, learning to manage loss of control and develop healthy coping strategies."
+    },
+    "brain-young-adult-95": {
+      "title": "Emotional Strength",
+      "description": "Repeated challenges test endurance, learning to build mental resilience and emotional coping strategies."
+    },
+    "brain-young-adult-96": {
+      "title": "Recovery After Loss",
+      "description": "Loss of an opportunity affects confidence, learning to process disappointment and rebuild resilience."
+    },
+    "brain-young-adult-97": {
+      "title": "Emotional Endurance",
+      "description": "Long-term pressure tests patience, learning to maintain balance and build sustainable emotional stamina."
+    },
+    "brain-young-adult-98": {
+      "title": "Inner Stability",
+      "description": "External situations feel unstable, learning to cultivate internal calm and reduce dependence on external validation."
+    },
+    "brain-young-adult-99": {
+      "title": "Long-Term Perspective",
+      "description": "Short-term setbacks feel overwhelming, learning to shift perspective and reduce stress through long-term thinking."
+    },
+    "brain-young-adult-100": {
+      "title": "Resilience Reset",
+      "description": "After many challenges, energy feels low, learning to recognise accumulated fatigue and rebuild resilience effectively."
+    }
+  }
+}

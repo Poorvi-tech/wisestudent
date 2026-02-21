@@ -1,0 +1,404 @@
+﻿{
+    "cards": {
+        "finance-kids-1": {
+            "description": "You get ₹10. Do you save ₹5 or spend all?",
+            "title": "Money Bank Story"
+        },
+        "finance-kids-2": {
+            "description": "Best saver? (a) Spends all, (b) Saves part, (c) Wastes money",
+            "title": "Quiz on Saving"
+        },
+        "finance-kids-3": {
+            "description": "Tap quickly for \"Save\" words, avoid \"Waste\" words",
+            "title": "Reflex Savings"
+        },
+        "finance-kids-4": {
+            "description": "Match \"Piggy Bank → Save, Ice Cream → Spend\"",
+            "title": "Puzzle: Save or Spend"
+        },
+        "finance-kids-5": {
+            "description": "You get birthday gift money. Do you save some?",
+            "title": "Birthday Money Story"
+        },
+        "finance-kids-6": {
+            "description": "Create/select poster: \"Save First, Spend Later\"",
+            "title": "Poster: Saving Habit"
+        },
+        "finance-kids-7": {
+            "description": "Write: \"One thing I saved money for is ___\"",
+            "title": "Journal of Saving"
+        },
+        "finance-kids-8": {
+            "description": "You see candy. Do you buy or save for toy later?",
+            "title": "Shop Story"
+        },
+        "finance-kids-9": {
+            "description": "Tap for \"Deposit,\" for \"Throw Away\"",
+            "title": "Reflex Money Choice"
+        },
+        "finance-kids-10": {
+            "description": "Save in 5 scenarios to earn your badge",
+            "title": "Badge: Saver Kid"
+        },
+        "finance-kids-11": {
+            "description": "You have ₹10. Spend on ice cream now or save for toy?",
+            "title": "Ice Cream Story"
+        },
+        "finance-kids-12": {
+            "description": "Best spending habit? (a) Buy without thinking, (b) Compare and choose, (c) Borrow for fun",
+            "title": "Quiz on Spending"
+        },
+        "finance-kids-13": {
+            "description": "Tap for \"Plan Purchase,\" for \"Impulse Buy\"",
+            "title": "Reflex Spending"
+        },
+        "finance-kids-14": {
+            "description": "Match \"Notebook → Need, Extra Candy → Waste\"",
+            "title": "Puzzle: Smart vs Waste"
+        },
+        "finance-kids-15": {
+            "description": "You see two pens: one costly, one affordable. Which to buy wisely?",
+            "title": "Shop Story 2"
+        },
+        "finance-kids-16": {
+            "description": "Create/select poster: \"Think Before You Spend\"",
+            "title": "Poster: Smart Shopping"
+        },
+        "finance-kids-17": {
+            "description": "Write: \"One smart thing I bought was ___\"",
+            "title": "Journal of Smart Buy"
+        },
+        "finance-kids-18": {
+            "description": "Offer says \"Buy 1, Get 1 Free.\" Do you need it?",
+            "title": "Candy Offer Story"
+        },
+        "finance-kids-19": {
+            "description": "Tap for \"Books,\" for \"Unneeded Toys\"",
+            "title": "Reflex Needs First"
+        },
+        "finance-kids-20": {
+            "description": "Make 5 wise spending decisions",
+            "title": "Badge: Smart Spender Kid"
+        },
+        "finance-kids-21": {
+            "description": "You have ₹20. Spend all on candy or plan for 2 days?",
+            "title": "Candy Story"
+        },
+        "finance-kids-22": {
+            "description": "Test your money planning skills — What is a budget?",
+            "title": "Quiz on Budgeting"
+        },
+        "finance-kids-23": {
+            "description": "Tap quickly for \"Plan Before Spending,\" not \"Spend Instantly.\"",
+            "title": "Reflex Budget"
+        },
+        "finance-kids-24": {
+            "description": "Match correctly: Food → Need, Toys → Want.",
+            "title": "Puzzle: Budget Items"
+        },
+        "finance-kids-25": {
+            "description": "You get ₹100 — Spend all on toys or split for needs and wants?",
+            "title": "Birthday Money Story"
+        },
+        "finance-kids-26": {
+            "description": "Create or select a poster that promotes budgeting: \"Budget Saves Money\".",
+            "title": "Poster: Plan First"
+        },
+        "finance-kids-27": {
+            "description": "Write: \"One time I planned money use was ___.\"",
+            "title": "Journal of Budgeting"
+        },
+        "finance-kids-28": {
+            "description": "You get ₹50 for the fair. Spend all on toys or plan for food also? → Plan wisely.",
+            "title": "School Fair Story"
+        },
+        "finance-kids-29": {
+            "description": "Tap quickly: choose Plan to save money or avoid overspending.",
+            "title": "Reflex Money Plan"
+        },
+        "finance-kids-30": {
+            "description": "Create 3 small budgets to earn the Budget Kid quiz badge.",
+            "title": "Badge: Budget Kid"
+        },
+        "finance-kids-31": {
+            "description": "You have ₹20. Do you buy ice cream or book for class? → Book.",
+            "title": "Ice Cream vs School Book Story"
+        },
+        "finance-kids-32": {
+            "description": "Which is a need? (a) Food, (b) Fancy toy, (c) Chocolates). Correct = Food.",
+            "title": "Quiz on Needs"
+        },
+        "finance-kids-33": {
+            "description": "Tap for Shoes for school, for 10th toy car.",
+            "title": "Reflex Need vs Want"
+        },
+        "finance-kids-34": {
+            "description": "Match Water → Need, Candy → Want.",
+            "title": "Puzzle of Needs/Wants"
+        },
+        "finance-kids-35": {
+            "description": "You want chips, but need lunch. Correct choice? → Lunch.",
+            "title": "Snack Story"
+        },
+        "finance-kids-36": {
+            "description": "Create/select poster: \"Put Needs Before Wants.\"",
+            "title": "Poster: Needs First"
+        },
+        "finance-kids-37": {
+            "description": "Write: \"One need I always spend on is ___.\"",
+            "title": "Journal of Needs"
+        },
+        "finance-kids-38": {
+            "description": "You get gift money. Should you spend on toy or save for shoes? → Shoes.",
+            "title": "Gift Money Story"
+        },
+        "finance-kids-39": {
+            "description": "Tap for Food, for Extra Ice Cream.",
+            "title": "Reflex Smart Pick"
+        },
+        "finance-kids-40": {
+            "description": "Choose needs correctly 5 times to earn the Needs First Kid quiz badge.",
+            "title": "Badge: Needs First Kid"
+        },
+        "finance-kids-41": {
+            "description": "Parents take you to bank. Do you watch and learn or play outside? → Watch and learn.",
+            "title": "Bank Visit Story"
+        },
+        "finance-kids-42": {
+            "description": "What is a bank? (a) Toy shop, (b) Place to keep money safe, (c) Ice cream shop). Correct = Place to keep money safe.",
+            "title": "Quiz on Banks"
+        },
+        "finance-kids-43": {
+            "description": "Tap for Deposit, for Steal.",
+            "title": "Reflex Bank Basics"
+        },
+        "finance-kids-44": {
+            "description": "Match Deposit → Safe, Loan → Borrow, ATM → Withdraw.",
+            "title": "Puzzle: Bank Uses"
+        },
+        "finance-kids-45": {
+            "description": "You get gift money. Do you keep at home or put in bank? → Bank.",
+            "title": "Savings Story"
+        },
+        "finance-kids-46": {
+            "description": "Create/select poster: Bank = Safe Money.",
+            "title": "Poster: Banks Help"
+        },
+        "finance-kids-47": {
+            "description": "Write: If I go to bank, I want to ___.",
+            "title": "Journal of First Bank Visit"
+        },
+        "finance-kids-48": {
+            "description": "Parent shows ATM card. Do you learn or ignore? → Learn.",
+            "title": "ATM Story"
+        },
+        "finance-kids-49": {
+            "description": "Tap when ₹ symbol flashes.",
+            "title": "Reflex Banking Symbols"
+        },
+        "finance-kids-50": {
+            "description": "Learn 5 bank basics to earn the Bank Explorer quiz badge.",
+            "title": "Badge: Bank Explorer"
+        },
+        "finance-kids-51": {
+            "description": "You borrow a pencil from a friend. Do you return it? → Yes.",
+            "title": "Pencil Story"
+        },
+        "finance-kids-52": {
+            "description": "What\u0027s borrowing? (a) Taking without asking, (b) Using and returning, (c) Stealing). Correct = Using and returning.",
+            "title": "Quiz on Borrowing"
+        },
+        "finance-kids-53": {
+            "description": "Tap for Return Borrowed, for Keep Forever.",
+            "title": "Reflex Borrow/Steal"
+        },
+        "finance-kids-54": {
+            "description": "Match Book Borrowed → Return, Toy Borrowed → Share.",
+            "title": "Puzzle: Borrow Match"
+        },
+        "finance-kids-55": {
+            "description": "You borrow friend\u0027s lunch. Do you return/share next day? → Yes.",
+            "title": "Lunch Box Story"
+        },
+        "finance-kids-56": {
+            "description": "Create/select poster: \"Always Return Borrowed.\"",
+            "title": "Poster: Return What You Borrow"
+        },
+        "finance-kids-57": {
+            "description": "Write: \"One thing I borrowed and returned was ___.\"",
+            "title": "Journal of Borrowing"
+        },
+        "finance-kids-58": {
+            "description": "Friend lends toy. Do you keep safe or break it?",
+            "title": "Toy Story"
+        },
+        "finance-kids-59": {
+            "description": "Tap quickly: Ask Permission or Grab.",
+            "title": "Reflex Borrow Right"
+        },
+        "finance-kids-60": {
+            "description": "Return borrowed items 5 times to earn the badge.",
+            "title": "Badge: Good Borrower"
+        },
+        "finance-kids-61": {
+            "description": "You plant a seed; it grows into a tree. Money can grow the same way ?” Save or Waste? → Save.",
+            "title": "Tree Story"
+        },
+        "finance-kids-62": {
+            "description": "What grows money? (a) Savings + Interest (b) Spending all (c) Wasting). Correct = Savings + Interest.",
+            "title": "Quiz on Growth"
+        },
+        "finance-kids-63": {
+            "description": "Tap quickly: Save \u0026 Grow for right choice, avoid Spend All.",
+            "title": "Reflex Investment Basics"
+        },
+        "finance-kids-64": {
+            "description": "Match Seed → Tree, Savings → Growth.",
+            "title": "Puzzle of Growth"
+        },
+        "finance-kids-65": {
+            "description": "Compare piggy bank vs bank savings: which keeps money safe and helps it grow? → Bank account.",
+            "title": "Bank vs Piggy Bank"
+        },
+        "finance-kids-66": {
+            "description": "Create or select a poster showing Invest = Grow.",
+            "title": "Poster: Grow Your Money"
+        },
+        "finance-kids-67": {
+            "description": "Write: If I invest ₹100, I want it to grow into ___.",
+            "title": "Journal of Growth"
+        },
+        "finance-kids-68": {
+            "description": "Buy toy today or save to buy bicycle later? → Save.",
+            "title": "Toy vs Saving Story"
+        },
+        "finance-kids-69": {
+            "description": "Tap for Interest Earned, not Money Lost.",
+            "title": "Reflex Growth Check"
+        },
+        "finance-kids-70": {
+            "description": "Choose growth over spending 5 times to earn the Money Gardener quiz badge.",
+            "title": "Badge: Money Gardener"
+        },
+        "finance-kids-71": {
+            "description": "You set up a lemonade stand. Earn ₹50. Smart or waste? → Smart.",
+            "title": "Lemonade Story"
+        },
+        "finance-kids-72": {
+            "description": "How do you earn? (a) By working, (b) By wasting, (c) By sleeping). Correct = By working.",
+            "title": "Quiz on Earning"
+        },
+        "finance-kids-73": {
+            "description": "Tap for Work → Earn, for Waste → Nothing.",
+            "title": "Reflex Work vs Play"
+        },
+        "finance-kids-74": {
+            "description": "Match Farmer → Crops, Teacher → Knowledge, Shopkeeper → Goods.",
+            "title": "Puzzle of Jobs"
+        },
+        "finance-kids-75": {
+            "description": "You help in family shop. Is this earning experience? → Yes.",
+            "title": "Helping Parents Story"
+        },
+        "finance-kids-76": {
+            "description": "Create/select poster: Hard Work = Money.",
+            "title": "Poster: Work to Earn"
+        },
+        "finance-kids-77": {
+            "description": "Write: One way I can earn money is ___.",
+            "title": "Journal of Earning"
+        },
+        "finance-kids-78": {
+            "description": "You care for neighbor\u0027s pet. Earn small money. Is it work? → Yes.",
+            "title": "Pet Sitting Story"
+        },
+        "finance-kids-79": {
+            "description": "Tap for Bake \u0026 Sell, for Buy \u0026 Waste.",
+            "title": "Reflex Small Business"
+        },
+        "finance-kids-80": {
+            "description": "Show 5 ways of earning to earn this badge.",
+            "title": "Badge: Young Earner"
+        },
+        "finance-kids-81": {
+            "description": "Shopkeeper charges ₹20 instead of ₹10. Do you check bill? → Yes.",
+            "title": "Candy Shop Story"
+        },
+        "finance-kids-82": {
+            "description": "Who is honest? (a) Gives correct change, (b) Cheats customer, (c) Lies). Correct = Gives correct change.",
+            "title": "Quiz on Honesty"
+        },
+        "finance-kids-83": {
+            "description": "Tap for Check Bill, for Ignore.",
+            "title": "Reflex Scam Alert"
+        },
+        "finance-kids-84": {
+            "description": "Match Fair Shop → Trust, Cheat Shop → Loss.",
+            "title": "Puzzle: Honest vs Fraud"
+        },
+        "finance-kids-85": {
+            "description": "Stranger offers free toy for address. Correct action? → Refuse.",
+            "title": "Stranger Story"
+        },
+        "finance-kids-86": {
+            "description": "Create/select poster: Stop Scams.",
+            "title": "Poster: Be Alert"
+        },
+        "finance-kids-87": {
+            "description": "Write: One way I can avoid being cheated is ___.",
+            "title": "Journal of Safety"
+        },
+        "finance-kids-88": {
+            "description": "Seller says Hurry or lose toy! Do you check price first? → Yes.",
+            "title": "Toy Shop Story"
+        },
+        "finance-kids-89": {
+            "description": "Tap for Ask Price, for Trust Blindly.",
+            "title": "Reflex Check First"
+        },
+        "finance-kids-90": {
+            "description": "Identify 5 scam tricks to earn the badge.",
+            "title": "Badge: Scam Spotter Kid"
+        },
+        "finance-kids-91": {
+            "description": "You find ₹5 on floor in class. Do you keep or give teacher? → Give teacher.",
+            "title": "Lost Coin Story"
+        },
+        "finance-kids-92": {
+            "description": "Which is honest? (a) Stealing, (b) Returning money, (c) Hiding). Correct = Returning money.",
+            "title": "Quiz on Money Honesty"
+        },
+        "finance-kids-93": {
+            "description": "Tap for Truth, for Cheat.",
+            "title": "Reflex Ethics"
+        },
+        "finance-kids-94": {
+            "description": "Match \"Return Money → Good, Keep Secretly → Wrong.\"",
+            "title": "Puzzle of Honesty"
+        },
+        "finance-kids-95": {
+            "description": "Friend drops ₹10. Do you return? → Yes.",
+            "title": "Friend\u0027s Money Story"
+        },
+        "finance-kids-96": {
+            "description": "Create or select a poster saying \"Be Fair with Money.\"",
+            "title": "Poster: Honesty Pays"
+        },
+        "finance-kids-97": {
+            "description": "Write: \"One time I used money honestly was ___.\"",
+            "title": "Journal of Ethics"
+        },
+        "finance-kids-98": {
+            "description": "Shopkeeper gives extra change. Do you return? → Yes.",
+            "title": "Shop Story"
+        },
+        "finance-kids-99": {
+            "description": "Tap for \"Be Fair,\" for \"Be Greedy.\"",
+            "title": "Reflex Money Truth"
+        },
+        "finance-kids-100": {
+            "description": "Handle 5 honest money cases to earn the \"Honest Kid\" quiz badge.",
+            "title": "Badge: Honest Kid"
+        }
+    }
+}
