@@ -179,7 +179,7 @@ const LIFESTYLE_VS_FUTURE_STAGES = [
 
 const LifestyleVsFuture = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-20";
+  const gameId = "finance-insurance-pension-31";
   const gameData = getGameDataById(gameId);
   const totalStages = LIFESTYLE_VS_FUTURE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
@@ -188,9 +188,9 @@ const LifestyleVsFuture = () => {
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
-  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
+  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
   const stage = LIFESTYLE_VS_FUTURE_STAGES[currentStageIndex];
 
   const handleChoice = (option) => {

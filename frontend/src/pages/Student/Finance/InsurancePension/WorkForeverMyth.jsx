@@ -179,7 +179,7 @@ const WORK_FOREVER_MYTH_STAGES = [
 
 const WorkForeverMyth = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-13";
+  const gameId = "finance-insurance-pension-21";
   const gameData = getGameDataById(gameId);
   const totalStages = WORK_FOREVER_MYTH_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

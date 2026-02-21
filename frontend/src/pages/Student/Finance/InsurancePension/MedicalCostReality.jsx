@@ -179,7 +179,7 @@ const MEDICAL_COST_REALITY_STAGES = [
 
 const MedicalCostReality = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-4";
+  const gameId = "finance-insurance-pension-7";
   const gameData = getGameDataById(gameId);
   const totalStages = MEDICAL_COST_REALITY_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

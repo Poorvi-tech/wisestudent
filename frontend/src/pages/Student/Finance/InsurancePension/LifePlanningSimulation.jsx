@@ -4,208 +4,83 @@ import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const LONG_TERM_SECURITY_CHECKPOINT_STAGES = [
+const STAGES = [
   {
     id: 1,
-    prompt: "Multiple scenarios appear. Best guiding rule?",
+    prompt: "₹30,000 income: which monthly allocation is most balanced?",
     options: [
-      {
-        id: "today-only",
-        text: "Focus only on today",
-        outcome:
-          "Ignoring the future can create long-term instability.",
-        isCorrect: false,
-      },
-      {
-        id: "balance",
-        text: "Balance present needs and future security",
-        outcome:
-          "Correct. Consistent planning creates stability over life.",
-        isCorrect: true,
-      },
-      {
-        id: "depend-luck",
-        text: "Depend on luck",
-        outcome:
-          "Luck is not a reliable financial strategy.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-planning",
-        text: "Ignore planning",
-        outcome:
-          "Planning protects you through changing situations.",
-        isCorrect: false,
-      },
+      { id: "low-save", text: "Insurance ₹500, Savings ₹1,000, Expenses ₹28,500", outcome: "Too little cover and savings.", isCorrect: false },
+      { id: "no-ins", text: "Insurance ₹0, Savings ₹8,000, Expenses ₹22,000", outcome: "No cover risks derail plans.", isCorrect: false },
+      { id: "oversave", text: "Insurance ₹4,000, Savings ₹10,000, Expenses ₹16,000", outcome: "Might starve essentials; may be hard to sustain.", isCorrect: false },
+      { id: "balanced-1", text: "Insurance ₹2,500, Savings ₹5,000, Expenses ₹22,500", outcome: "Balanced start with protection and savings.", isCorrect: true },
     ],
   },
   {
     id: 2,
-    prompt: "Why is balancing present and future important?",
+    prompt: "After a raise, how to improve allocation?",
     options: [
-      {
-        id: "spend-all",
-        text: "It means spending everything now",
-        outcome:
-          "Spending everything removes future security.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-future",
-        text: "It means ignoring the future",
-        outcome:
-          "Balance includes planning for the future.",
-        isCorrect: false,
-      },
-      {
-        id: "future-security",
-        text: "It protects both current needs and future goals",
-        outcome:
-          "Correct. Balance keeps life stable over time.",
-        isCorrect: true,
-      },
-      {
-        id: "guarantee-profit",
-        text: "It guarantees profit",
-        outcome:
-          "No plan can guarantee profit.",
-        isCorrect: false,
-      },
+      { id: "increase-expenses", text: "Increase expenses only", outcome: "Lifestyle creep reduces progress.", isCorrect: false },
+      { id: "increase-both", text: "Increase insurance adequacy and savings", outcome: "Correct. Improve cover and growth together.", isCorrect: true },
+      { id: "only-ins", text: "Only increase insurance, no savings", outcome: "Balance both for long-term goals.", isCorrect: false },
+      { id: "only-save", text: "Only increase savings, ignore cover", outcome: "Undercoverage risks setbacks.", isCorrect: false },
     ],
   },
   {
     id: 3,
-    prompt: "What does consistent planning help you handle?",
+    prompt: "Unexpected medical cost appears. Best response?",
     options: [
-      {
-        id: "unexpected",
-        text: "Unexpected events and long-term goals",
-        outcome:
-          "Correct. Planning prepares you for change.",
-        isCorrect: true,
-      },
-      {
-        id: "no-change",
-        text: "Nothing, because life never changes",
-        outcome:
-          "Life changes often, so planning is valuable.",
-        isCorrect: false,
-      },
-      {
-        id: "instant-wealth",
-        text: "Instant wealth",
-        outcome:
-          "Planning is about steady progress, not instant wealth.",
-        isCorrect: false,
-      },
-      {
-        id: "no-risks",
-        text: "Removing all risks",
-        outcome:
-          "Planning reduces financial risk, but doesn't remove all risk.",
-        isCorrect: false,
-      },
+      { id: "stop-sip", text: "Stop all investments permanently", outcome: "Overreaction and harms goals.", isCorrect: false },
+      { id: "high-interest", text: "Take high-interest loan first", outcome: "Costly; last resort if no cover.", isCorrect: false },
+      { id: "use-ins-ef", text: "Rely on health cover + emergency fund", outcome: "Correct. Avoids high-cost borrowing.", isCorrect: true },
+      { id: "sell-assets", text: "Sell long-term assets immediately", outcome: "Derails compounding; better to plan protection.", isCorrect: false },
     ],
   },
   {
     id: 4,
-    prompt: "Which habit best supports long-term security?",
+    prompt: "To build stability, which is most sensible?",
     options: [
-      {
-        id: "spend-all",
-        text: "Spend everything now",
-        outcome:
-          "Spending everything removes future stability.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore-plans",
-        text: "Ignore plans",
-        outcome:
-          "Ignoring plans increases future risk.",
-        isCorrect: false,
-      },
-      {
-        id: "depend-others",
-        text: "Depend on others",
-        outcome:
-          "Dependence is uncertain and risky.",
-        isCorrect: false,
-      },
-      {
-        id: "steady-saving",
-        text: "Steady saving and review of goals",
-        outcome:
-          "Correct. Regular review keeps plans on track.",
-        isCorrect: true,
-      },
+      { id: "prioritize-essential", text: "Prioritize essential cover + steady savings", outcome: "Correct. Balance risk protection and growth.", isCorrect: true },
+      { id: "all-expense", text: "Spend almost all income", outcome: "Leaves no buffer for shocks.", isCorrect: false },
+      { id: "only-cover", text: "Only buy insurance, no savings", outcome: "Protection without growth misses goals.", isCorrect: false },
+      { id: "only-invest", text: "Only invest, no cover", outcome: "Uncovered risks can wipe progress.", isCorrect: false },
     ],
   },
   {
     id: 5,
-    prompt: "What is the key takeaway from this checkpoint?",
+    prompt: "Review after 1 year. Best action?",
     options: [
-      {
-        id: "balance",
-        text: "Balance present needs with future security",
-        outcome:
-          "Correct. Consistent planning creates stability over life.",
-        isCorrect: true,
-      },
-      {
-        id: "luck",
-        text: "Depend on luck",
-        outcome:
-          "Luck is unreliable for financial stability.",
-        isCorrect: false,
-      },
-      {
-        id: "today-only",
-        text: "Focus only on today",
-        outcome:
-          "Ignoring the future increases risk.",
-        isCorrect: false,
-      },
-      {
-        id: "no-plan",
-        text: "Ignore planning",
-        outcome:
-          "Planning creates long-term stability.",
-        isCorrect: false,
-      },
+      { id: "no-review", text: "Never review allocations", outcome: "Misses changing needs.", isCorrect: false },
+      { id: "cut-savings", text: "Cut savings to raise lifestyle", outcome: "Slows long-term progress.", isCorrect: false },
+      { id: "drop-cover", text: "Drop insurance to boost returns", outcome: "Increases vulnerability.", isCorrect: false },
+      { id: "rebalance", text: "Reassess needs and rebalance allocations", outcome: "Correct. Adjust with income and goals.", isCorrect: true },
     ],
   },
 ];
 
-const LongTermSecurityCheckpoint = () => {
+const LifePlanningSimulation = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-38";
-  const gameData = getGameDataById(gameId);
-  const totalStages = LONG_TERM_SECURITY_CHECKPOINT_STAGES.length;
+  const totalStages = STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
+  const gameId = "finance-insurance-pension-44";
+  const gameData = getGameDataById(gameId);
   const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
   const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
   const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
-  const stage = LONG_TERM_SECURITY_CHECKPOINT_STAGES[currentStageIndex];
+  const stage = STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
     if (selectedChoice || !stage) return;
     setSelectedChoice(option);
-
     if (option.isCorrect) {
-      setScore((prev) => prev + 1);
+      setScore((s) => s + 1);
       showCorrectAnswerFeedback(1, true);
     }
-
     if (currentStageIndex === totalStages - 1) {
-      setTimeout(() => {
-        setShowResult(true);
-      }, 800);
+      setTimeout(() => setShowResult(true), 800);
     }
   };
 
@@ -214,7 +89,7 @@ const LongTermSecurityCheckpoint = () => {
     if (currentStageIndex === totalStages - 1) {
       setShowResult(true);
     } else {
-      setCurrentStageIndex((prev) => prev + 1);
+      setCurrentStageIndex((i) => i + 1);
     }
     setSelectedChoice(null);
   };
@@ -223,10 +98,10 @@ const LongTermSecurityCheckpoint = () => {
 
   return (
     <GameShell
-      title="Long-Term Security Checkpoint"
+      title="Life Planning Simulation"
       subtitle={
         showResult
-          ? "Quiz complete! You understand why balance builds stability."
+          ? "Simulation complete! Balance protection, savings, and expenses."
           : `Stage ${currentStageIndex + 1} of ${totalStages}`
       }
       currentLevel={currentStageIndex + 1}
@@ -255,11 +130,9 @@ const LongTermSecurityCheckpoint = () => {
                   Score: {score}/{totalStages}
                 </span>
               </div>
-
               <p className="text-white text-lg md:text-xl font-bold leading-snug mt-4">
                 {stage.prompt}
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
@@ -268,7 +141,6 @@ const LongTermSecurityCheckpoint = () => {
                       ? "from-emerald-500 to-lime-500 border-emerald-400/80"
                       : "from-rose-500 to-orange-500 border-rose-400/80"
                     : "from-blue-500 to-cyan-500 border-transparent";
-
                   return (
                     <button
                       key={option.id}
@@ -284,7 +156,6 @@ const LongTermSecurityCheckpoint = () => {
             </div>
           </div>
         )}
-
         {selectedChoice && (
           <>
             <div className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm text-white/80">
@@ -307,4 +178,4 @@ const LongTermSecurityCheckpoint = () => {
   );
 };
 
-export default LongTermSecurityCheckpoint;
+export default LifePlanningSimulation;

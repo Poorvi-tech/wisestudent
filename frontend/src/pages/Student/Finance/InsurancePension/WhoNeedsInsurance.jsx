@@ -180,7 +180,7 @@ const WHO_NEEDS_INSURANCE_STAGES = [
 
 const WhoNeedsInsurance = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-3";
+  const gameId = "finance-insurance-pension-5";
   const gameData = getGameDataById(gameId);
   const totalStages = WHO_NEEDS_INSURANCE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

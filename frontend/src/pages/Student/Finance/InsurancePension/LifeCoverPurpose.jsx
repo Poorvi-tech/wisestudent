@@ -179,7 +179,7 @@ const LIFE_COVER_PURPOSE_STAGES = [
 
 const LifeCoverPurpose = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-5";
+  const gameId = "finance-insurance-pension-8";
   const gameData = getGameDataById(gameId);
   const totalStages = LIFE_COVER_PURPOSE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

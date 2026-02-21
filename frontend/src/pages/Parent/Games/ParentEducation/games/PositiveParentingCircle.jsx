@@ -23,6 +23,7 @@ const PositiveParentingCircle = () => {
   const [takeaway, setTakeaway] = useState("");
   const [circleSessions, setCircleSessions] = useState([]);
   const [showGameOver, setShowGameOver] = useState(false);
+  const [usedPromptIds, setUsedPromptIds] = useState([]);
 
   // Discussion prompts for parent peer groups
   const discussionPrompts = [
@@ -119,27 +120,18 @@ const PositiveParentingCircle = () => {
   };
 
   const handleSelectPrompt = (promptId) => {
-    // Limit to 5 prompts
-    if (selectedPrompts.length >= 5) {
-      alert('You can only select up to 5 prompts');
+    if (usedPromptIds.includes(promptId)) return;
+    if (selectedPrompts.includes(promptId)) {
+      setSelectedPrompts(selectedPrompts.filter((id) => id !== promptId));
       return;
     }
-    
-    // Add the prompt to the selected array if not already selected
-    if (!selectedPrompts.includes(promptId)) {
-      setSelectedPrompts([...selectedPrompts, promptId]);
-    }
-    
-    // Move to step 3 only if we've reached the limit of 5 prompts
-    if (selectedPrompts.length + 1 >= 5) {
-      setStep(3);
-    }
+    if (selectedPrompts.length >= 5) return;
+    setSelectedPrompts([...selectedPrompts, promptId]);
   };
 
   const handleLogTakeaway = () => {
     if (!takeaway.trim() || selectedPrompts.length === 0) return;
 
-    // Create a session for each selected prompt
     const newSessions = selectedPrompts.map(promptId => {
       const prompt = discussionPrompts.find(p => p.id === promptId);
       return {
@@ -154,12 +146,13 @@ const PositiveParentingCircle = () => {
 
     setCircleSessions(prev => [...prev, ...newSessions]);
     setTakeaway("");
-    setSelectedPrompts([]); // Reset the selected prompts
+    setSelectedPrompts([]);
+    setUsedPromptIds((prev) => Array.from(new Set([...prev, ...selectedPrompts])));
     setStep(2);
   };
 
   const handleComplete = () => {
-    if (circleSessions.length > 0 || selectedPrompts.length > 0) {
+    if (circleSessions.length > 0) {
       setShowGameOver(true);
     }
   };
@@ -442,7 +435,8 @@ const PositiveParentingCircle = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {discussionPrompts.map((prompt) => {
                   const isSelected = selectedPrompts.includes(prompt.id);
-                  const isDisabled = selectedPrompts.length >= 5 && !isSelected;
+                  const isUsed = usedPromptIds.includes(prompt.id);
+                  const isDisabled = (selectedPrompts.length >= 5 && !isSelected) || isUsed;
                   
                   return (
                     <motion.button
@@ -454,7 +448,7 @@ const PositiveParentingCircle = () => {
                       className={`bg-gradient-to-br ${prompt.bgColor} rounded-xl p-6 border-2 ${isSelected ? 'border-green-500 ring-2 ring-green-300' : `${prompt.borderColor} ${!isDisabled ? 'hover:border-4' : 'opacity-50 cursor-not-allowed'}`} transition-all text-left shadow-lg`}
                     >
                       <div className="flex items-start gap-3 mb-3">
-                        <span className="text-3xl">{prompt.emoji}{isSelected && ' ✓'}</span>
+                        <span className="text-3xl">{prompt.emoji}{isSelected && ' ✓'}{isUsed && ' •'}</span>
                         <div className="flex-1">
                           <p className="text-xs font-semibold text-gray-600 mb-2">{prompt.category}</p>
                           <h3 className={`text-lg font-bold ${isSelected ? 'text-green-700' : 'text-gray-800'}`}>{prompt.question}</h3>
@@ -466,6 +460,20 @@ const PositiveParentingCircle = () => {
                 })}
               </div>
             </div>
+
+            {selectedPrompts.length > 0 && (
+              <div className="mb-6">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setStep(3)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Proceed to Log Takeaway
+                </motion.button>
+              </div>
+            )}
 
             {/* Sessions Log */}
             {circleSessions.length > 0 && (
@@ -487,7 +495,7 @@ const PositiveParentingCircle = () => {
             )}
 
             {/* Complete Button */}
-            {(circleSessions.length > 0 || selectedPrompts.length > 0) && (
+            {circleSessions.length > 0 && (
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -495,7 +503,7 @@ const PositiveParentingCircle = () => {
                 className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
               >
                 <CheckCircle className="w-5 h-5" />
-                View All Sessions
+                Finish and View Sessions
               </motion.button>
             )}
 
@@ -519,7 +527,7 @@ const PositiveParentingCircle = () => {
   return (
     <ParentGameShell
       title={gameData?.title || "Positive Parenting Circle"}
-      subtitle={`Log Your Key Takeaway (${selectedPrompts.length}/5 prompts selected)`}
+      subtitle={`Log Your Key Takeaway`}
       showGameOver={false}
       score={circleSessions.length}
       gameId={gameId}
@@ -617,4 +625,3 @@ const PositiveParentingCircle = () => {
 };
 
 export default PositiveParentingCircle;
-

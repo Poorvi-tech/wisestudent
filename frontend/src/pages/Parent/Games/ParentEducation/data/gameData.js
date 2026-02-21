@@ -1434,7 +1434,7 @@ export const parentEducationGameData = [
     totalLevels: 0,
     isBadgeGame: true,
     badgeName: "Badge: Self-Care Champion",
-      badgeImage: "/badges/parent/c",
+      badgeImage: "/badges/parent/self-care-champion.png",
     path: '/parent/games/parent-education/parent-education-100'
   },
   // More games will be added here later

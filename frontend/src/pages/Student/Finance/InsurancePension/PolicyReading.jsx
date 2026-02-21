@@ -179,7 +179,7 @@ const POLICY_READING_STAGES = [
 
 const PolicyReading = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-7";
+  const gameId = "finance-insurance-pension-11";
   const gameData = getGameDataById(gameId);
   const totalStages = POLICY_READING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

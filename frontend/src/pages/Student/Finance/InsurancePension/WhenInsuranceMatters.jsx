@@ -179,7 +179,7 @@ const WHEN_INSURANCE_MATTERS_STAGES = [
 
 const WhenInsuranceMatters = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-10";
+  const gameId = "finance-insurance-pension-16";
   const gameData = getGameDataById(gameId);
   const totalStages = WHEN_INSURANCE_MATTERS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

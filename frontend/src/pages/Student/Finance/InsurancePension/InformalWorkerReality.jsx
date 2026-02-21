@@ -179,7 +179,7 @@ const INFORMAL_WORKER_REALITY_STAGES = [
 
 const InformalWorkerReality = () => {
   const location = useLocation();
-  const gameId = "finance-insurance-pension-17";
+  const gameId = "finance-insurance-pension-26";
   const gameData = getGameDataById(gameId);
   const totalStages = INFORMAL_WORKER_REALITY_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
@@ -188,9 +188,9 @@ const InformalWorkerReality = () => {
   const [score, setScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 5;
-  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
-  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 10;
+  const totalCoins = gameData?.coins ?? location.state?.totalCoins ?? 10;
+  const coinsPerLevel = Math.max(2, Math.floor(totalCoins / totalStages));
+  const totalXp = gameData?.xp ?? location.state?.totalXp ?? 20;
   const stage = INFORMAL_WORKER_REALITY_STAGES[currentStageIndex];
 
   const handleChoice = (option) => {
