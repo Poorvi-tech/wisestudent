@@ -38,169 +38,10 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
-  useEffect(() => {
-    if (isOpen) {
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
-      
-      // Reset state when modal opens
-      setStep('init');
-      setPaymentError(null);
-      setLoading(false);
-      
-      // Check auth first
-      const token = localStorage.getItem("finmen_token");
-      if (!token) {
-        setStep('register');
-        return;
-      }
-      
-      // For free plan, activate immediately
-      if (planType === 'free' && amount === 0) {
-        activateFreePlan();
-        return;
-      }
-      
-      // For paid plans, initialize payment
-      if (planType && amount > 0) {
-        initializePayment();
-      }
-    } else {
-      // Restore body scroll when modal closes
-      document.body.style.overflow = 'auto';
-      
-      // Reset everything when modal closes
-      setStep('init');
-      setPaymentError(null);
-      setSubscriptionId(null);
-    }
-    
-    // Cleanup function
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen, planType, amount, activateFreePlan, initializePayment]);
 
-  useEffect(() => {
-    // Listen for real-time payment updates
-    if (socket?.socket) {
-      const handleSubscriptionActivated = (data) => {
-        if (data.subscription && subscriptionId === data.subscription._id) {
-          setStep('success');
-          toast.success('Subscription activated successfully!');
-        }
-      };
 
-      socket.socket.on('subscription:activated', handleSubscriptionActivated);
 
-      return () => {
-        socket.socket.off('subscription:activated', handleSubscriptionActivated);
-      };
-    }
-  }, [socket, subscriptionId]);
 
-  const activateFreePlan = useCallback(async () => {
-    try {
-      setLoading(true);
-      setPaymentError(null);
-
-      const response = await api.post('/api/subscription/create-payment', {
-        planType: 'free',
-      });
-
-      if (response.data.success) {
-        setStep('success');
-        toast.success('Free plan activated successfully!');
-        
-        // Emit real-time update
-        if (socket?.socket) {
-          socket.socket.emit('subscription:activated', {
-            subscription: response.data.subscription,
-          });
-        }
-        
-        // Close modal after delay
-        setTimeout(() => {
-          onClose();
-          window.location.reload();
-        }, 2000);
-      } else {
-        throw new Error(response.data.message || 'Failed to activate free plan');
-      }
-    } catch (error) {
-      console.error('Free plan activation error:', error);
-      if (error.response?.status === 401) {
-        setStep('register');
-        setPaymentError('Please register to activate the free plan');
-      } else {
-        setPaymentError(error.response?.data?.message || error.message || 'Failed to activate free plan');
-        setStep('error');
-      }
-      toast.error(error.response?.data?.message || 'Failed to activate free plan');
-    } finally {
-      setLoading(false);
-    }
-  }, [socket, onClose]);
-
-  const initializePayment = useCallback(async () => {
-    try {
-      setLoading(true);
-      setPaymentError(null);
-
-      // Create payment intent
-      // Determine context based on user role and plan type
-      const context = (user?.role === 'parent' || planType === 'student_parent_premium_pro') ? 'parent' : 'student';
-      
-      const response = await api.post('/api/subscription/create-payment', {
-        planType,
-        context,
-        mode: 'purchase',
-      });
-
-      if (response.data.success) {
-        // For free plan, handle success
-        if (planType === 'free') {
-          setStep('success');
-          toast.success('Free plan activated successfully! 🎉');
-          
-          // Emit real-time update
-          if (socket?.socket) {
-            socket.socket.emit('subscription:activated', {
-              subscription: response.data.subscription,
-            });
-          }
-          
-          setTimeout(() => {
-            onClose();
-            window.location.reload();
-          }, 2000);
-          return;
-        }
-
-        // For paid plans, initialize Razorpay
-        const orderId = response.data.orderId;
-        const keyId = response.data.keyId;
-        setSubscriptionId(response.data.subscriptionId);
-
-        // Initialize Razorpay payment
-        await initializeRazorpayPayment(orderId, keyId, amount);
-      } else {
-        throw new Error(response.data.message || 'Failed to initialize payment');
-      }
-    } catch (error) {
-      console.error('Payment initialization error:', error);
-      if (error.response?.status === 401) {
-        setStep('register');
-        setPaymentError('Please register to continue');
-      } else {
-        setPaymentError(error.response?.data?.message || error.message || 'Failed to initialize payment');
-        setStep('error');
-      }
-      toast.error(error.response?.data?.message || 'Failed to initialize payment');
-    } finally {
-      setLoading(false);
-    }
-  }, [user, planType, amount, socket, onClose, initializeRazorpayPayment]);
 
   const initializeRazorpayPayment = useCallback(async (orderId, keyId, amount) => {
     try {
@@ -291,6 +132,170 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount }) => {
       setLoading(false);
     }
   }, [planName, subscriptionId, socket, onClose, user]);
+
+  const initializePayment = useCallback(async () => {
+    try {
+      setLoading(true);
+      setPaymentError(null);
+
+      // Create payment intent
+      // Determine context based on user role and plan type
+      const context = (user?.role === 'parent' || planType === 'student_parent_premium_pro') ? 'parent' : 'student';
+      
+      const response = await api.post('/api/subscription/create-payment', {
+        planType,
+        context,
+        mode: 'purchase',
+      });
+
+      if (response.data.success) {
+        // For free plan, handle success
+        if (planType === 'free') {
+          setStep('success');
+          toast.success('Free plan activated successfully! 🎉');
+          
+          // Emit real-time update
+          if (socket?.socket) {
+            socket.socket.emit('subscription:activated', {
+              subscription: response.data.subscription,
+            });
+          }
+          
+          setTimeout(() => {
+            onClose();
+            window.location.reload();
+          }, 2000);
+          return;
+        }
+
+        // For paid plans, initialize Razorpay
+        const orderId = response.data.orderId;
+        const keyId = response.data.keyId;
+        setSubscriptionId(response.data.subscriptionId);
+
+        // Initialize Razorpay payment
+        await initializeRazorpayPayment(orderId, keyId, amount);
+      } else {
+        throw new Error(response.data.message || 'Failed to initialize payment');
+      }
+    } catch (error) {
+      console.error('Payment initialization error:', error);
+      if (error.response?.status === 401) {
+        setStep('register');
+        setPaymentError('Please register to continue');
+      } else {
+        setPaymentError(error.response?.data?.message || error.message || 'Failed to initialize payment');
+        setStep('error');
+      }
+      toast.error(error.response?.data?.message || 'Failed to initialize payment');
+    } finally {
+      setLoading(false);
+    }
+  }, [user, planType, amount, socket, onClose, initializeRazorpayPayment]);
+
+  const activateFreePlan = useCallback(async () => {
+    try {
+      setLoading(true);
+      setPaymentError(null);
+
+      const response = await api.post('/api/subscription/create-payment', {
+        planType: 'free',
+      });
+
+      if (response.data.success) {
+        setStep('success');
+        toast.success('Free plan activated successfully!');
+        
+        // Emit real-time update
+        if (socket?.socket) {
+          socket.socket.emit('subscription:activated', {
+            subscription: response.data.subscription,
+          });
+        }
+        
+        // Close modal after delay
+        setTimeout(() => {
+          onClose();
+          window.location.reload();
+        }, 2000);
+      } else {
+        throw new Error(response.data.message || 'Failed to activate free plan');
+      }
+    } catch (error) {
+      console.error('Free plan activation error:', error);
+      if (error.response?.status === 401) {
+        setStep('register');
+        setPaymentError('Please register to activate the free plan');
+      } else {
+        setPaymentError(error.response?.data?.message || error.message || 'Failed to activate free plan');
+        setStep('error');
+      }
+      toast.error(error.response?.data?.message || 'Failed to activate free plan');
+    } finally {
+      setLoading(false);
+    }
+  }, [socket, onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+      
+      // Reset state when modal opens
+      setStep('init');
+      setPaymentError(null);
+      setLoading(false);
+      
+      // Check auth first
+      const token = localStorage.getItem("finmen_token");
+      if (!token) {
+        setStep('register');
+        return;
+      }
+      
+      // For free plan, activate immediately
+      if (planType === 'free' && amount === 0) {
+        activateFreePlan();
+        return;
+      }
+      
+      // For paid plans, initialize payment
+      if (planType && amount > 0) {
+        initializePayment();
+      }
+    } else {
+      // Restore body scroll when modal closes
+      document.body.style.overflow = 'auto';
+      
+      // Reset everything when modal closes
+      setStep('init');
+      setPaymentError(null);
+      setSubscriptionId(null);
+    }
+    
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen, planType, amount, activateFreePlan, initializePayment]);
+
+  useEffect(() => {
+    // Listen for real-time payment updates
+    if (socket?.socket) {
+      const handleSubscriptionActivated = (data) => {
+        if (data.subscription && subscriptionId === data.subscription._id) {
+          setStep('success');
+          toast.success('Subscription activated successfully!');
+        }
+      };
+
+      socket.socket.on('subscription:activated', handleSubscriptionActivated);
+
+      return () => {
+        socket.socket.off('subscription:activated', handleSubscriptionActivated);
+      };
+    }
+  }, [socket, subscriptionId]);
 
   const modalContent = isOpen ? (
     <AnimatePresence>
@@ -541,4 +546,3 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount }) => {
 };
 
 export default CheckoutModal;
-
