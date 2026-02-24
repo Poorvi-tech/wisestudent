@@ -180,7 +180,7 @@ const WHY_RECORDS_MATTER_STAGES = [
 
 const WhyRecordsMatter = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-2";
+  const gameId = "finance-business-livelihood-finance-3";
   const gameData = getGameDataById(gameId);
   const totalStages = WHY_RECORDS_MATTER_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

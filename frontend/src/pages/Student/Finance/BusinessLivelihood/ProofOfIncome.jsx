@@ -159,7 +159,7 @@ const PROOF_OF_INCOME_STAGES = [
 
 const ProofOfIncome = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-5";
+  const gameId = "finance-business-livelihood-finance-11";
   const gameData = getGameDataById(gameId);
   const totalStages = PROOF_OF_INCOME_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

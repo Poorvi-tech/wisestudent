@@ -159,7 +159,7 @@ const BUSINESS_FUTURE_THINKING_STAGES = [
 
 const BusinessFutureThinking = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-49";
+  const gameId = "finance-business-livelihood-finance-98";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_FUTURE_THINKING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -159,7 +159,7 @@ const SUPPLIER_CREDIT_TERMS_STAGES = [
 
 const SupplierCreditTerms = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-47";
+  const gameId = "finance-business-livelihood-finance-95";
   const gameData = getGameDataById(gameId);
   const totalStages = SUPPLIER_CREDIT_TERMS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

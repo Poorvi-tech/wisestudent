@@ -160,7 +160,7 @@ const BUSINESS_READINESS_CHECKPOINT_STAGES = [
 
 const BusinessReadinessCheckpoint = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-50";
+  const gameId = "finance-business-livelihood-finance-99";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_READINESS_CHECKPOINT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

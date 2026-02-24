@@ -159,7 +159,7 @@ const GROWTH_LOAN_REQUIREMENT_STAGES = [
 
 const GrowthLoanRequirement = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-33";
+  const gameId = "finance-business-livelihood-finance-67";
   const gameData = getGameDataById(gameId);
   const totalStages = GROWTH_LOAN_REQUIREMENT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -159,7 +159,7 @@ const DIGITAL_TRAIL_ADVANTAGE_STAGES = [
 
 const DigitalTrailAdvantage = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-24";
+  const gameId = "finance-business-livelihood-finance-49";
   const gameData = getGameDataById(gameId);
   const totalStages = DIGITAL_TRAIL_ADVANTAGE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

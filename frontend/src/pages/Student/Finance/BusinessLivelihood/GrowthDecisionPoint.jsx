@@ -160,7 +160,7 @@ const GROWTH_DECISION_POINT_STAGES = [
 
 const GrowthDecisionPoint = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-46";
+  const gameId = "finance-business-livelihood-finance-93";
   const gameData = getGameDataById(gameId);
   const totalStages = GROWTH_DECISION_POINT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

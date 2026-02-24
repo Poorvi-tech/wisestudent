@@ -159,7 +159,7 @@ const SEPARATE_BANK_ACCOUNTS_STAGES = [
 
 const SeparateBankAccounts = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-18";
+  const gameId = "finance-business-livelihood-finance-37";
   const gameData = getGameDataById(gameId);
   const totalStages = SEPARATE_BANK_ACCOUNTS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

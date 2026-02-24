@@ -160,7 +160,7 @@ const CASH_FLOW_SURPRISE_STAGES = [
 
 const CashFlowSurprise = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-32";
+  const gameId = "finance-business-livelihood-finance-65";
   const gameData = getGameDataById(gameId);
   const totalStages = CASH_FLOW_SURPRISE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

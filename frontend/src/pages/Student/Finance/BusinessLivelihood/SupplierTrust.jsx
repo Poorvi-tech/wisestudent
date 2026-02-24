@@ -159,7 +159,7 @@ const SUPPLIER_TRUST_STAGES = [
 
 const SupplierTrust = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-31";
+  const gameId = "finance-business-livelihood-finance-63";
   const gameData = getGameDataById(gameId);
   const totalStages = SUPPLIER_TRUST_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

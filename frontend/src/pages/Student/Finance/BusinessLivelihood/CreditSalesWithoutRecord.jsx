@@ -159,7 +159,7 @@ const CREDIT_SALES_WITHOUT_RECORD_STAGES = [
 
 const CreditSalesWithoutRecord = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-16";
+  const gameId = "finance-business-livelihood-finance-33";
   const gameData = getGameDataById(gameId);
   const totalStages = CREDIT_SALES_WITHOUT_RECORD_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -159,7 +159,7 @@ const CASH_ONLY_BUSINESS_STAGES = [
 
 const CashOnlyBusiness = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-3";
+  const gameId = "finance-business-livelihood-finance-5";
   const gameData = getGameDataById(gameId);
   const totalStages = CASH_ONLY_BUSINESS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

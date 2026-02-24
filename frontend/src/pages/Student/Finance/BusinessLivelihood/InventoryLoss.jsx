@@ -159,7 +159,7 @@ const INVENTORY_LOSS_STAGES = [
 
 const InventoryLoss = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-42";
+  const gameId = "finance-business-livelihood-finance-85";
   const gameData = getGameDataById(gameId);
   const totalStages = INVENTORY_LOSS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

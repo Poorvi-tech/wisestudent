@@ -159,7 +159,7 @@ const INVOICE_IMPORTANCE_STAGES = [
 
 const InvoiceImportance = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-15";
+  const gameId = "finance-business-livelihood-finance-31";
   const gameData = getGameDataById(gameId);
   const totalStages = INVOICE_IMPORTANCE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

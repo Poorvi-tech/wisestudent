@@ -159,7 +159,7 @@ const INFORMAL_BORROWING_STAGES = [
 
 const InformalBorrowing = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-8";
+  const gameId = "finance-business-livelihood-finance-17";
   const gameData = getGameDataById(gameId);
   const totalStages = INFORMAL_BORROWING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

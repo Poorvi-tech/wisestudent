@@ -159,7 +159,7 @@ const CUSTOMER_CREDIT_TRACKING_STAGES = [
 
 const CustomerCreditTracking = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-44";
+  const gameId = "finance-business-livelihood-finance-89";
   const gameData = getGameDataById(gameId);
   const totalStages = CUSTOMER_CREDIT_TRACKING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -5,200 +5,400 @@
       "description": "A shop owner uses the same cash for home expenses and business stock. Learn why this can hide true performance."
     },
     "finance-business-livelihood-finance-2": {
+      "title": "Reflex: Cash Separator",
+      "description": "A quick reflex game! Tap the correct 'Shop Stock' coins before time runs out to separate business and home expenses."
+    },
+    "finance-business-livelihood-finance-3": {
       "title": "Why Records Matter",
       "description": "A small trader keeps everything in memory instead of writing records. Learn why this creates confusion and disputes."
     },
-    "finance-business-livelihood-finance-3": {
+    "finance-business-livelihood-finance-4": {
+      "title": "Puzzle: Record Matcher",
+      "description": "Match 'Bill' with 'Proof', and 'Memory' with 'Confusion'. Learn the value of good financial habits."
+    },
+    "finance-business-livelihood-finance-5": {
       "title": "Cash Only Business",
       "description": "A seller accepts only cash. Learn how digital records build credibility and proof."
     },
-    "finance-business-livelihood-finance-4": {
+    "finance-business-livelihood-finance-6": {
+      "title": "Journal: My Digital Choice",
+      "description": "Which digital payment app would you use for your shop and why? Reflect on formalizing your business."
+    },
+    "finance-business-livelihood-finance-7": {
       "title": "Invoice Refusal",
       "description": "A customer asks for a bill but the shopkeeper refuses. Learn how invoices build trust and legal proof."
     },
-    "finance-business-livelihood-finance-5": {
+    "finance-business-livelihood-finance-8": {
+      "title": "Simulation: The First Customer",
+      "description": "A simulation where you manage typical counter situations. Should you give a bill or take cash without records? Choose wisely."
+    },
+    "finance-business-livelihood-finance-9": {
+      "title": "Reflex: Speed Biller",
+      "description": "Tap on the 'Generate Invoice' button before the timer runs out! A fun game testing your invoicing reflexes."
+    },
+    "finance-business-livelihood-finance-10": {
+      "title": "Badge: Foundation Master",
+      "description": "A quiz proving your mastery of basic business finance principles like records, bank accounts, and separating funds."
+    },
+    "finance-business-livelihood-finance-11": {
       "title": "Proof of Income",
       "description": "A trader wants a bank loan but has no records. Learn why income proof and transaction trails matter."
     },
-    "finance-business-livelihood-finance-6": {
+    "finance-business-livelihood-finance-12": {
+      "title": "Debate: Cash vs Digital",
+      "description": "Is cash better for small vendors than UPI? Debate the risks and the importance of a digital trail."
+    },
+    "finance-business-livelihood-finance-13": {
       "title": "Daily Expense Tracking",
       "description": "A vendor never notes daily spending. Learn how tracking prevents silent losses."
     },
-    "finance-business-livelihood-finance-7": {
+    "finance-business-livelihood-finance-14": {
+      "title": "Puzzle: Expense Sort",
+      "description": "Sort transactions into the correct ledger categories like 'Fixed Expenses' or 'Sales Income'."
+    },
+    "finance-business-livelihood-finance-15": {
       "title": "Digital Payment Advantage",
       "description": "A customer pays via UPI. Learn how digital payments build transaction history."
     },
-    "finance-business-livelihood-finance-8": {
+    "finance-business-livelihood-finance-16": {
+      "title": "Simulation: Daily Ledger",
+      "description": "You earned ₹2000 and spent ₹1200. Calculate the daily balance correctly to close your ledger!"
+    },
+    "finance-business-livelihood-finance-17": {
       "title": "Informal Borrowing",
       "description": "A shop owner borrows from a local lender without a record. Learn why written proof prevents disputes."
     },
-    "finance-business-livelihood-finance-9": {
-      "title": "Stock Without Tracking",
-      "description": "A business buys stock but doesn't track sales vs inventory. Learn how inventory tracking prevents hidden losses."
+    "finance-business-livelihood-finance-18": {
+      "title": "Reflex: Grab the Receipt",
+      "description": "Catch the falling 'Receipts' and avoid 'Oral Promises'. Quick decisions build strong financial proofs."
     },
-    "finance-business-livelihood-finance-10": {
+    "finance-business-livelihood-finance-19": {
+      "title": "Stock Without Tracking",
+      "description": "A business buys stock but doesn’t track sales vs inventory. Learn how inventory tracking prevents hidden losses."
+    },
+    "finance-business-livelihood-finance-20": {
+      "title": "Badge: Record Keeper",
+      "description": "A quiz assessing your ability to manage invoices, receipts, and maintain clear business cash records."
+    },
+    "finance-business-livelihood-finance-21": {
       "title": "Personal Withdrawal",
       "description": "An owner takes cash randomly from the business drawer. Learn why separation keeps finances clear."
     },
-    "finance-business-livelihood-finance-11": {
+    "finance-business-livelihood-finance-22": {
+      "title": "Journal: My Business Rule",
+      "description": "Write one rule you will follow to keep business money separate."
+    },
+    "finance-business-livelihood-finance-23": {
       "title": "Supplier Payment Proof",
       "description": "A supplier claims payment not received. Learn how proof resolves disputes."
     },
-    "finance-business-livelihood-finance-12": {
+    "finance-business-livelihood-finance-24": {
+      "title": "Reflex: Fraud Filter",
+      "description": "Tap on 'Original Bill' and ignore 'Fake Quote'. Test your reflex at spotting genuine proofs!"
+    },
+    "finance-business-livelihood-finance-25": {
       "title": "Bank Account Use",
       "description": "A business keeps all money in cash, without a bank account. Learn why a bank trail improves credibility."
     },
-    "finance-business-livelihood-finance-13": {
+    "finance-business-livelihood-finance-26": {
+      "title": "Puzzle: Banking Benefits",
+      "description": "Match 'Bank Account' -> 'Interest/Loans', 'Cash Box' -> 'Risk/No Trail'."
+    },
+    "finance-business-livelihood-finance-27": {
       "title": "GST Confusion",
       "description": "A trader hears about GST but ignores it completely. Learn why basic awareness prevents compliance trouble."
     },
-    "finance-business-livelihood-finance-14": {
+    "finance-business-livelihood-finance-28": {
+      "title": "Debate: Formal vs Informal",
+      "description": "Should a small tea-stall register its business?"
+    },
+    "finance-business-livelihood-finance-29": {
       "title": "Business Growth Limit",
       "description": "A shop grows but keeps informal practices. Learn why records and proof support scaling."
     },
-    "finance-business-livelihood-finance-15": {
+    "finance-business-livelihood-finance-30": {
+      "title": "Badge: Growth Mindset",
+      "description": "A quiz proving your vision to scale a business formally through financial clarity and modern tools."
+    },
+    "finance-business-livelihood-finance-31": {
       "title": "Invoice Importance",
       "description": "A customer wants an invoice for a warranty claim. Learn how invoices protect both buyer and seller."
     },
-    "finance-business-livelihood-finance-16": {
-      "title": "Credit Sales Without Record",
-      "description": "A shop sells on credit but doesn't write it down. Learn why credit tracking prevents loss."
+    "finance-business-livelihood-finance-32": {
+      "title": "Simulation: Warranty Check",
+      "description": "Customer brings a broken item. Check the 'Digital Invoice' to see if it's within warranty."
     },
-    "finance-business-livelihood-finance-17": {
+    "finance-business-livelihood-finance-33": {
+      "title": "Credit Sales Without Record",
+      "description": "A shop sells on credit but doesn’t write it down. Learn why credit tracking prevents loss."
+    },
+    "finance-business-livelihood-finance-34": {
+      "title": "Reflex: Credit Collector",
+      "description": "Tap 'Reminder Sent' when an invoice passes 30 days. Test your reflexes on staying cash-positive!"
+    },
+    "finance-business-livelihood-finance-35": {
       "title": "Business Reputation",
       "description": "A shop gives bills, keeps records, and accepts digital payments. Learn how professional habits build trust."
     },
-    "finance-business-livelihood-finance-18": {
+    "finance-business-livelihood-finance-36": {
+      "title": "Journal: The Trust Factor",
+      "description": "How does giving a bill make you feel as a customer?"
+    },
+    "finance-business-livelihood-finance-37": {
       "title": "Separate Bank Accounts",
       "description": "An owner opens a separate business account. Learn why separation improves income tracking."
     },
-    "finance-business-livelihood-finance-19": {
+    "finance-business-livelihood-finance-38": {
+      "title": "Puzzle: Money Maze",
+      "description": "Guide the 'Business Profit' to the 'Bank' and 'Personal Expense' to 'Savings'."
+    },
+    "finance-business-livelihood-finance-39": {
       "title": "Supplier Invoice Check",
       "description": "A trader pays supplier without checking bill details. Learn why invoice checks prevent mistakes."
     },
-    "finance-business-livelihood-finance-20": {
+    "finance-business-livelihood-finance-40": {
+      "title": "Badge: Professional Trader",
+      "description": "A quiz assessing your ability to act professionally with suppliers, handle invoices, and maintain formal business relationships."
+    },
+    "finance-business-livelihood-finance-41": {
       "title": "Informal Worker Payment",
       "description": "An owner pays staff in cash with no record. Learn why payment proof prevents disputes."
     },
-    "finance-business-livelihood-finance-21": {
+    "finance-business-livelihood-finance-42": {
+      "title": "Simulation: Salary Day",
+      "description": "Create a simple salary slip for an employee for the month of January."
+    },
+    "finance-business-livelihood-finance-43": {
       "title": "Digital Receipts",
       "description": "A shop sends a digital receipt after payment. Learn how proof improves transparency."
     },
-    "finance-business-livelihood-finance-22": {
+    "finance-business-livelihood-finance-44": {
+      "title": "Reflex: Receipt Dispatch",
+      "description": "Drag the receipt to the customer's phone icon before they walk out! Fast invoicing builds trust."
+    },
+    "finance-business-livelihood-finance-45": {
       "title": "Business Loan Preparation",
       "description": "A trader wants to apply for a formal loan. Learn why transaction history builds lender confidence."
     },
-    "finance-business-livelihood-finance-23": {
+    "finance-business-livelihood-finance-46": {
+      "title": "Debate: Loan vs Savings",
+      "description": "Is it better to wait and save or take a loan to expand faster?"
+    },
+    "finance-business-livelihood-finance-47": {
       "title": "Record Discipline",
       "description": "An owner writes income daily but not expenses. Learn why complete records show the full picture."
     },
-    "finance-business-livelihood-finance-24": {
+    "finance-business-livelihood-finance-48": {
+      "title": "Puzzle: The Missing Piece",
+      "description": "Find the 'Missing Expense' in the ledger to balance the books."
+    },
+    "finance-business-livelihood-finance-49": {
       "title": "Digital Trail Advantage",
       "description": "A vendor accepts only digital payments. Learn how transaction history supports growth and loans."
     },
-    "finance-business-livelihood-finance-25": {
+    "finance-business-livelihood-finance-50": {
+      "title": "Badge: Finance Ready",
+      "description": "Test your ultimate readiness for formal growth, verifying your grasp on ledgers, bank trails, and professional discipline."
+    },
+    "finance-business-livelihood-finance-51": {
       "title": "Business Health Checkpoint",
       "description": "A business keeps records, separates money, and issues bills. Learn why good practices enable stability and growth."
     },
-    "finance-business-livelihood-finance-26": {
-      "title": "Growing Beyond Informal Stage",
-      "description": "A shop's sales increase but the owner keeps no proper records. Learn why proof is needed for growth."
+    "finance-business-livelihood-finance-52": {
+      "title": "Reflex: Health Monitor",
+      "description": "Tap 'Green' for profit-making habits and 'Red' for loss-making routines. Diagnose the business health quickly!"
     },
-    "finance-business-livelihood-finance-27": {
+    "finance-business-livelihood-finance-53": {
+      "title": "Growing Beyond Informal Stage",
+      "description": "A shop’s sales increase but the owner keeps no proper records. Learn why proof is needed for growth."
+    },
+    "finance-business-livelihood-finance-54": {
+      "title": "Journal: Scaling Up",
+      "description": "If your business doubles tomorrow, what is the first thing you'll automate?"
+    },
+    "finance-business-livelihood-finance-55": {
       "title": "GST Fear",
       "description": "A trader avoids learning GST because it sounds complicated. Learn why basic awareness prevents trouble."
     },
-    "finance-business-livelihood-finance-28": {
-      "title": "Bill vs No Bill Sale",
-      "description": "Two shops sell the same product; one gives a bill and one doesn't. Learn how transparency builds trust."
+    "finance-business-livelihood-finance-56": {
+      "title": "Simulation: Tax Calculator",
+      "description": "Apply 5% tax on a product worth ₹1000. What is the total?"
     },
-    "finance-business-livelihood-finance-29": {
+    "finance-business-livelihood-finance-57": {
+      "title": "Bill vs No Bill Sale",
+      "description": "Two shops sell the same product; one gives a bill and one doesn’t. Learn how transparency builds trust."
+    },
+    "finance-business-livelihood-finance-58": {
+      "title": "Debate: Customer Loyalty",
+      "description": "Does a bill matter if the price is the lowest in town?"
+    },
+    "finance-business-livelihood-finance-59": {
       "title": "Record During Inspection",
       "description": "An officer asks for transaction records. Learn why written or digital records reduce stress."
     },
-    "finance-business-livelihood-finance-30": {
+    "finance-business-livelihood-finance-60": {
+      "title": "Badge: Compliance Officer",
+      "description": "A rigorous check of your understanding of formal business laws, tax adherence, and legal transparency."
+    },
+    "finance-business-livelihood-finance-61": {
       "title": "Formal Registration Advantage",
       "description": "A business registers officially. Learn how formalisation opens growth opportunities."
     },
-    "finance-business-livelihood-finance-31": {
-      "title": "Supplier Trust",
-      "description": "A supplier prefers businesses that keep records. Learn why reliability and tracking build partnerships."
+    "finance-business-livelihood-finance-62": {
+      "title": "Puzzle: Registration Steps",
+      "description": "Arrange the steps: [Name Choice] -> [Registration] -> [Bank Account] -> [Open Shop]."
     },
-    "finance-business-livelihood-finance-32": {
+    "finance-business-livelihood-finance-63": {
+      "title": "Supplier Trust",
+      "description": "A supplier checks a shop’s stability before offering bulk stock. Learn why records build supplier trust."
+    },
+    "finance-business-livelihood-finance-64": {
+      "title": "Reflex: Partner Picker",
+      "description": "Tap on the 'Verified Supplier' tag as it scrolls by. Formal partnerships safeguard your enterprise."
+    },
+    "finance-business-livelihood-finance-65": {
       "title": "Cash Flow Surprise",
       "description": "A business has good sales but no cash for rent. Learn why cash flow tracking matters."
     },
-    "finance-business-livelihood-finance-33": {
+    "finance-business-livelihood-finance-66": {
+      "title": "Journal: My Rainy Day Fund",
+      "description": "How much money should a business keep aside for emergencies?"
+    },
+    "finance-business-livelihood-finance-67": {
       "title": "Growth Loan Requirement",
       "description": "A trader wants to expand a shop. Learn why banks check financial records and income proof."
     },
-    "finance-business-livelihood-finance-34": {
+    "finance-business-livelihood-finance-68": {
+      "title": "Simulation: The Loan Pitch",
+      "description": "Choose the 3 documents to show a bank manager for a loan. (Ledger, Bill Book, Tax Proof)."
+    },
+    "finance-business-livelihood-finance-69": {
       "title": "Employee Payment Records",
       "description": "An owner starts recording staff payments. Learn how records improve trust and legal safety."
     },
-    "finance-business-livelihood-finance-35": {
+    "finance-business-livelihood-finance-70": {
+      "title": "Badge: People Manager",
+      "description": "A quiz measuring your capability to legally, fairly, and formally manage employee payroll and disputes."
+    },
+    "finance-business-livelihood-finance-71": {
       "title": "Business vs Personal Loan Use",
       "description": "An owner uses a business loan for a family wedding. Learn why loans should match their purpose."
     },
-    "finance-business-livelihood-finance-36": {
+    "finance-business-livelihood-finance-72": {
+      "title": "Debate: Re-investing Profit",
+      "description": "Should profit be spent on personal luxury or put back into business?"
+    },
+    "finance-business-livelihood-finance-73": {
       "title": "Customer Return Issue",
       "description": "A customer returns a product but no bill exists. Learn why bills protect both sides in disputes."
     },
-    "finance-business-livelihood-finance-37": {
-      "title": "Business Reputation Growth",
-      "description": "A shop keeps clear accounts and invoices. Learn how credibility compounds over time."
+    "finance-business-livelihood-finance-74": {
+      "title": "Reflex: Quick Verify",
+      "description": "Check if the serial number on the item matches the digital record in 5 seconds. Accuracy counts!"
     },
-    "finance-business-livelihood-finance-38": {
+    "finance-business-livelihood-finance-75": {
+      "title": "Business Reputation Growth",
+      "description": "A formal business gets big clients easily. Learn how professional records grow a business."
+    },
+    "finance-business-livelihood-finance-76": {
+      "title": "Puzzle: Brand Builder",
+      "description": "Connect 'Fair Price' + 'Bill' + 'Good Quality' to 'Star Rating'."
+    },
+    "finance-business-livelihood-finance-77": {
       "title": "Informal Expansion Limit",
       "description": "A vendor wants to supply to a big company. Learn why formal records and invoices are required."
     },
-    "finance-business-livelihood-finance-39": {
+    "finance-business-livelihood-finance-78": {
+      "title": "Simulation: Big Contract",
+      "description": "A company wants to buy 100 units. They need a GST invoice. Can you provide it?"
+    },
+    "finance-business-livelihood-finance-79": {
       "title": "Seasonal Income Planning",
       "description": "A business earns high only during festival season. Learn why planning reserves stabilizes slow months."
     },
-    "finance-business-livelihood-finance-40": {
+    "finance-business-livelihood-finance-80": {
+      "title": "Badge: Strategic Planner",
+      "description": "A quiz assessing your ability to interpret financial data, predict risks, and plan for sustainable business growth."
+    },
+    "finance-business-livelihood-finance-81": {
       "title": "Digital Accounting App",
       "description": "A trader starts using a simple digital ledger app. Learn how digital tools improve accuracy and tracking."
     },
-    "finance-business-livelihood-finance-41": {
+    "finance-business-livelihood-finance-82": {
+      "title": "Simulation: Digital Entry",
+      "description": "Enter 'Spent ₹50 for Chai' and 'Earned ₹500 for Samosa' in the app."
+    },
+    "finance-business-livelihood-finance-83": {
       "title": "Tax Fear vs Awareness",
       "description": "An owner fears tax rules without understanding them. Learn how basic awareness reduces risk."
     },
-    "finance-business-livelihood-finance-42": {
+    "finance-business-livelihood-finance-84": {
+      "title": "Journal: My Honest Business",
+      "description": "Why is paying tax good for the country's roads and schools?"
+    },
+    "finance-business-livelihood-finance-85": {
       "title": "Inventory Loss",
       "description": "Stock is missing but no inventory list exists. Learn why tracking prevents hidden losses."
     },
-    "finance-business-livelihood-finance-43": {
+    "finance-business-livelihood-finance-86": {
+      "title": "Reflex: Stock Guard",
+      "description": "Tap on 'Theft' or 'Damage' icons to prevent inventory loss. Fast decisions save money!"
+    },
+    "finance-business-livelihood-finance-87": {
       "title": "Business Stability Decision",
       "description": "An owner considers formalising records. Learn how structure supports scaling and financing."
     },
-    "finance-business-livelihood-finance-44": {
+    "finance-business-livelihood-finance-88": {
+      "title": "Debate: Small vs Big",
+      "description": "Is it better to stay small and informal or grow big and formal?"
+    },
+    "finance-business-livelihood-finance-89": {
       "title": "Customer Credit Tracking",
       "description": "A shop starts noting who owes money. Learn how credit tracking protects cash flow."
     },
-    "finance-business-livelihood-finance-45": {
+    "finance-business-livelihood-finance-90": {
+      "title": "Badge: Livelihood Leader",
+      "description": "The ultimate test proving you can lead a legally sound, formally tracked, and highly profitable enterprise."
+    },
+    "finance-business-livelihood-finance-91": {
       "title": "Proof for Insurance Claim",
       "description": "A business loses goods but has invoices. Learn how documents support financial recovery."
     },
-    "finance-business-livelihood-finance-46": {
+    "finance-business-livelihood-finance-92": {
+      "title": "Puzzle: Recovery Match",
+      "description": "Match 'Fire/Theft' -> 'Insurance Claim', 'Invoice' -> 'Proof of Loss'."
+    },
+    "finance-business-livelihood-finance-93": {
       "title": "Growth Decision Point",
       "description": "A trader chooses between keeping informal or becoming structured. Learn why formal habits enable scale."
     },
-    "finance-business-livelihood-finance-47": {
+    "finance-business-livelihood-finance-94": {
+      "title": "Journal: My 5-Year Plan",
+      "description": "Where do you see your business after 5 years of disciplined record-keeping?"
+    },
+    "finance-business-livelihood-finance-95": {
       "title": "Supplier Credit Terms",
       "description": "A supplier offers credit only to businesses with records. Learn why data builds trust."
     },
-    "finance-business-livelihood-finance-48": {
+    "finance-business-livelihood-finance-96": {
+      "title": "Simulation: Credit Negotiation",
+      "description": "Show your Bank Statement to the supplier to get 30 days of extra time to pay."
+    },
+    "finance-business-livelihood-finance-97": {
       "title": "Financial Discipline Check",
       "description": "An owner reviews monthly income, expenses, stock, and loans. Learn how reviews build control and stability."
     },
-    "finance-business-livelihood-finance-49": {
+    "finance-business-livelihood-finance-98": {
       "title": "Business Future Thinking",
       "description": "A trader wants the business to survive long-term. Learn why records, proof, and discipline support growth."
     },
-    "finance-business-livelihood-finance-50": {
+    "finance-business-livelihood-finance-99": {
       "title": "Business Readiness Checkpoint",
       "description": "Multiple scenarios appear about records, payments, loans, and growth. Learn why discipline and documentation ensure stability."
+    },
+    "finance-business-livelihood-finance-100": {
+      "title": "Badge: Business Mogul",
+      "description": "The pinnacle of enterprise management. Prove your mastery over corporate strategy, valuation, and empire building."
     }
   }
 }

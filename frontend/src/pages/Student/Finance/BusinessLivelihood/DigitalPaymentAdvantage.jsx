@@ -159,7 +159,7 @@ const DIGITAL_PAYMENT_ADVANTAGE_STAGES = [
 
 const DigitalPaymentAdvantage = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-7";
+  const gameId = "finance-business-livelihood-finance-15";
   const gameData = getGameDataById(gameId);
   const totalStages = DIGITAL_PAYMENT_ADVANTAGE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

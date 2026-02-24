@@ -159,7 +159,7 @@ const FORMAL_REGISTRATION_ADVANTAGE_STAGES = [
 
 const FormalRegistrationAdvantage = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-30";
+  const gameId = "finance-business-livelihood-finance-61";
   const gameData = getGameDataById(gameId);
   const totalStages = FORMAL_REGISTRATION_ADVANTAGE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

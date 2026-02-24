@@ -59,7 +59,7 @@ const STAGES = [
 
 const BadgeFuturePlanner = () => {
   const location = useLocation();
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
+  const { flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const totalStages = STAGES.length;
   const gameId = "finance-insurance-pension-30";
@@ -78,7 +78,6 @@ const BadgeFuturePlanner = () => {
     setSelectedChoice(option);
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
-      showCorrectAnswerFeedback(2, true);
     }
     if (currentStageIndex === totalStages - 1) {
       setTimeout(() => setShowResult(true), 800);

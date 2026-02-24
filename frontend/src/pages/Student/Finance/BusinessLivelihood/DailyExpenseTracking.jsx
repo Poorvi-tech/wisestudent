@@ -159,7 +159,7 @@ const DAILY_EXPENSE_TRACKING_STAGES = [
 
 const DailyExpenseTracking = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-6";
+  const gameId = "finance-business-livelihood-finance-13";
   const gameData = getGameDataById(gameId);
   const totalStages = DAILY_EXPENSE_TRACKING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -159,7 +159,7 @@ const BUSINESS_VS_PERSONAL_LOAN_USE_STAGES = [
 
 const BusinessVsPersonalLoanUse = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-35";
+  const gameId = "finance-business-livelihood-finance-71";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_VS_PERSONAL_LOAN_USE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

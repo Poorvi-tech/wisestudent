@@ -159,7 +159,7 @@ const DIGITAL_ACCOUNTING_APP_STAGES = [
 
 const DigitalAccountingApp = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-40";
+  const gameId = "finance-business-livelihood-finance-81";
   const gameData = getGameDataById(gameId);
   const totalStages = DIGITAL_ACCOUNTING_APP_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -159,7 +159,7 @@ const RECORD_DISCIPLINE_STAGES = [
 
 const RecordDiscipline = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-23";
+  const gameId = "finance-business-livelihood-finance-47";
   const gameData = getGameDataById(gameId);
   const totalStages = RECORD_DISCIPLINE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

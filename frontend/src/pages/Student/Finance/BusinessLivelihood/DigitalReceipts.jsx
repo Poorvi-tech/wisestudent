@@ -159,7 +159,7 @@ const DIGITAL_RECEIPTS_STAGES = [
 
 const DigitalReceipts = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-21";
+  const gameId = "finance-business-livelihood-finance-43";
   const gameData = getGameDataById(gameId);
   const totalStages = DIGITAL_RECEIPTS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

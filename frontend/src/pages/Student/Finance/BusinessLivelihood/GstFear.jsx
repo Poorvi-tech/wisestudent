@@ -160,7 +160,7 @@ const GST_FEAR_STAGES = [
 
 const GstFear = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-27";
+  const gameId = "finance-business-livelihood-finance-55";
   const gameData = getGameDataById(gameId);
   const totalStages = GST_FEAR_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

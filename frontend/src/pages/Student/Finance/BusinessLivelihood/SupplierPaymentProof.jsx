@@ -159,7 +159,7 @@ const SUPPLIER_PAYMENT_PROOF_STAGES = [
 
 const SupplierPaymentProof = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-11";
+  const gameId = "finance-business-livelihood-finance-23";
   const gameData = getGameDataById(gameId);
   const totalStages = SUPPLIER_PAYMENT_PROOF_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -160,7 +160,7 @@ const GROWING_BEYOND_INFORMAL_STAGE_STAGES = [
 
 const GrowingBeyondInformalStage = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-26";
+  const gameId = "finance-business-livelihood-finance-53";
   const gameData = getGameDataById(gameId);
   const totalStages = GROWING_BEYOND_INFORMAL_STAGE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
