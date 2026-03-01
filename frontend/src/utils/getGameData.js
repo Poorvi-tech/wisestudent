@@ -23,6 +23,7 @@ import { getAiKidsGames } from "../pages/Games/GameCategories/AiForAll/kidGamesD
 import { getAiTeenGames } from "../pages/Games/GameCategories/AiForAll/teenGamesData";
 import { getEheKidsGames } from "../pages/Games/GameCategories/EHE/kidGamesData";
 import { getEheTeenGames } from "../pages/Games/GameCategories/EHE/teenGamesData";
+import { getEheYoungAdultGames } from "../pages/Games/GameCategories/EHE/youngAdultGamesData";
 import { getCrgcKidsGames } from "../pages/Games/GameCategories/CRGC/kidGamesData";
 import { getCrgcTeensGames } from "../pages/Games/GameCategories/CRGC/teenGamesData";
 import { getHealthMaleKidsGames } from "../pages/Games/GameCategories/HealthMale/kidGamesData";
@@ -92,6 +93,7 @@ export const getGameDataById = (gameId) => {
     ehe: {
       kids: getEheKidsGames,
       teens: getEheTeenGames,
+      "young-adult": getEheYoungAdultGames,
     },
     'civic-responsibility': {
       kids: getCrgcKidsGames,

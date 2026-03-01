@@ -138,11 +138,15 @@ const UniversalGameRenderer = () => {
 
     // Get the game component function
     let GameComponent = catData.getGame(age, gameId);
+    console.log(`🎮 getGame result for ${age}/${gameId}:`, GameComponent);
+    console.log(`🎮 catData.games[${age}]:`, catData.games?.[age]);
+    
     const normalizedGameKey = gameId?.toLowerCase();
     if (!GameComponent) {
       GameComponent =
         catData.games?.[age]?.[normalizedGameKey] ||
         catData.games?.[age]?.[gameId];
+      console.log(`🎮 Fallback lookup found:`, GameComponent);
     }
     
     // Special handling for duplicate paths: if gameId is in location.state, 

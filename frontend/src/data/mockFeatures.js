@@ -470,8 +470,7 @@ export const mockFeatures = [
     path: "/games/ehe/young-adult",
     color: "bg-fuchsia-500",
     category: "rewards",
-    xpReward: 2500,
-    comingSoon: true
+    xpReward: 2500
   },
   {
     id: 38,
@@ -481,8 +480,7 @@ export const mockFeatures = [
     path: "/games/ehe/adults",
     color: "bg-purple-500",
     category: "rewards",
-    xpReward: 2500,
-    comingSoon: true
+    xpReward: 2500
   },
   // Civic Responsibility & Global Citizenship Game Cards
   {
