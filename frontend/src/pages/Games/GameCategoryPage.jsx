@@ -37,6 +37,8 @@ import { aiGamesKidsIds, getAiKidsGames } from "./GameCategories/AiForAll/kidGam
 import { aiGamesTeenIds, getAiTeenGames } from "./GameCategories/AiForAll/teenGamesData";
 import { eheGameIdsKids, getEheKidsGames } from "./GameCategories/EHE/kidGamesData";
 import { eheGameIdsTeen, getEheTeenGames } from "./GameCategories/EHE/teenGamesData";
+import { eheGameIdsYoungAdult, getEheYoungAdultGames } from "./GameCategories/EHE/youngAdultGamesData";
+import { eheGameIdsAdults, getEheAdultGames } from "./GameCategories/EHE/adultGamesData";
 import { crgcGameIdsKids, getCrgcKidsGames } from "./GameCategories/CRGC/kidGamesData";
 import { crgcGameIdsTeens, getCrgcTeensGames } from "./GameCategories/CRGC/teenGamesData";
 import { getHealthMaleKidsGames, healthMaleGameIdsKids } from "./GameCategories/HealthMale/kidGamesData";
@@ -814,6 +816,14 @@ const GameCategoryPage = () => {
       
       // Add our real EHE Teen games
       games.push(...realEHETeenGames);
+  } else if (category === 'ehe' && ageGroup === 'young-adult') {
+      // Add our real EHE Young Adult games
+      const realEHEYoungAdultGames = getEheYoungAdultGames(gameCompletionStatus);
+      games.push(...realEHEYoungAdultGames);
+  } else if (category === 'ehe' && (ageGroup === 'adults' || ageGroup === 'adult')) {
+      // Add our real EHE Adult games
+      const realEHEAdultGames = getEheAdultGames(gameCompletionStatus);
+      games.push(...realEHEAdultGames);
   } else if (category === 'civic-responsibility' && ageGroup === 'kids') {
       // Add our 20 real CRGC Kids games
       const realCRGCKidsGames = getCrgcKidsGames(gameCompletionStatus);
@@ -826,6 +836,10 @@ const GameCategoryPage = () => {
 
       // Add our real CRGC Teen games
       games.push(...realCRGCTeenGames);
+  } else if (category === 'civic-responsibility' && ageGroup === 'young-adult') {
+      // Show only real games if any, otherwise empty
+  } else if (category === 'civic-responsibility' && (ageGroup === 'adults' || ageGroup === 'adult')) {
+      // Show only real games if any, otherwise empty
   } else if (category === 'health-male' && ageGroup === 'kids') {
       // Add our 40 real HealthMale Kids games
       const realHealthMaleKidsGames = getHealthMaleKidsGames(gameCompletionStatus);
@@ -1007,6 +1021,7 @@ const GameCategoryPage = () => {
   };
 
   const [games, setGames] = useState([]);
+
   const specialGameSequence = useMemo(() => {
     if (!games?.length) return [];
     return games
@@ -1014,134 +1029,7 @@ const GameCategoryPage = () => {
       .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
       .map((g) => ({ id: g.id, path: g.path }));
   }, [games]);
-  const realGameSequence = useMemo(() => {
-    if (category === "financial-literacy") {
-      if (ageGroup === "kids") return getFinanceKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getFinanceTeenGames(gameCompletionStatus);
-      if (ageGroup === "young-adult")
-        return getFinanceYoungAdultGames(gameCompletionStatus);
-      if (ageGroup === "adults") return getFinanceAdultGames(gameCompletionStatus);
-      if (ageGroup === "insurance-pension")
-        return getInsurancePensionGames(gameCompletionStatus);
-      if (ageGroup === "business-livelihood-finance")
-        return getBusinessLivelihoodFinanceGames(gameCompletionStatus);
-    }
 
-    if (category === "brain-health") {
-      if (ageGroup === "kids") return getBrainKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getBrainTeenGames(gameCompletionStatus);
-      if (ageGroup === "young-adult")
-        return getBrainYoungAdultGames(gameCompletionStatus);
-      if (ageGroup === "adults") return getBrainAdultGames(gameCompletionStatus);
-    }
-
-    if (category === "uvls") {
-      if (ageGroup === "kids") return getUvlsKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getUvlsTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "digital-citizenship") {
-      if (ageGroup === "kids") return getDcosKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getDcosTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "moral-values") {
-      if (ageGroup === "kids") return getMoralKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getMoralTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "ai-for-all") {
-      if (ageGroup === "kids") return getAiKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getAiTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "ehe") {
-      if (ageGroup === "kids") return getEheKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getEheTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "civic-responsibility") {
-      if (ageGroup === "kids") return getCrgcKidsGames(gameCompletionStatus);
-      if (ageGroup === "teens" || ageGroup === "teen")
-        return getCrgcTeensGames(gameCompletionStatus);
-    }
-
-    if (category === "health-male") {
-      if (ageGroup === "kids") return getHealthMaleKidsGames(gameCompletionStatus);
-      if (ageGroup === "teen" || ageGroup === "teens")
-        return getHealthMaleTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "health-female") {
-      if (ageGroup === "kids") return getHealthFemaleKidsGames(gameCompletionStatus);
-      if (ageGroup === "teen" || ageGroup === "teens")
-        return getHealthFemaleTeenGames(gameCompletionStatus);
-    }
-
-    if (category === "sustainability") {
-      if (ageGroup === "kids") return getSustainabilityKidsGames(gameCompletionStatus);
-      if (ageGroup === "teen" || ageGroup === "teens")
-        return getSustainabilityTeenGames(gameCompletionStatus);
-    }
-
-    return [];
-  }, [
-    category,
-    ageGroup,
-    gameCompletionStatus,
-    getFinanceKidsGames,
-    getFinanceTeenGames,
-    getFinanceYoungAdultGames,
-    getFinanceAdultGames,
-    getBusinessLivelihoodFinanceGames,
-    getBrainKidsGames,
-    getBrainTeenGames,
-    getBrainYoungAdultGames,
-    getBrainAdultGames,
-    getUvlsKidsGames,
-    getUvlsTeenGames,
-    getDcosKidsGames,
-    getDcosTeenGames,
-    getMoralKidsGames,
-    getMoralTeenGames,
-    getAiKidsGames,
-    getAiTeenGames,
-    getEheKidsGames,
-    getEheTeenGames,
-    getCrgcKidsGames,
-    getCrgcTeensGames,
-    getHealthMaleKidsGames,
-    getHealthMaleTeenGames,
-    getHealthFemaleKidsGames,
-    getHealthFemaleTeenGames,
-    getSustainabilityKidsGames,
-    getSustainabilityTeenGames,
-  ]);
-
-  const findNextSpecialGame = useCallback(
-    (currentIndex) => {
-      if (realGameSequence?.length) {
-        const currentPosition = realGameSequence.findIndex(
-          (g) => g.index === currentIndex
-        );
-        if (
-          currentPosition >= 0 &&
-          currentPosition < realGameSequence.length - 1
-        ) {
-          return realGameSequence[currentPosition + 1];
-        }
-      }
-      return games.find((g) => g.index > currentIndex && g.isSpecial && g.path);
-    },
-    [games, realGameSequence]
-  );
   const [categoryStats, setCategoryStats] = useState({
     totalGames: 0,
     completedGames: 0,
@@ -1307,6 +1195,12 @@ const GameCategoryPage = () => {
         return gameIds[index];
     } else if (category === 'ehe' && (ageGroup === 'teens' || ageGroup === 'teen')) {
         const gameIds = eheGameIdsTeen;
+        return gameIds[index];
+    } else if (category === 'ehe' && ageGroup === 'young-adult') {
+        const gameIds = eheGameIdsYoungAdult;
+        return gameIds[index];
+    } else if (category === 'ehe' && (ageGroup === 'adults' || ageGroup === 'adult')) {
+        const gameIds = eheGameIdsAdults;
         return gameIds[index];
     } else if (category === 'civic-responsibility' && ageGroup === 'kids') {
         const gameIds = crgcGameIdsKids;
