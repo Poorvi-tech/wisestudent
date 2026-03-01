@@ -160,7 +160,7 @@ const BUSINESS_HEALTH_CHECKPOINT_STAGES = [
 
 const BusinessHealthCheckpoint = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-25";
+  const gameId = "finance-business-livelihood-finance-51";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_HEALTH_CHECKPOINT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

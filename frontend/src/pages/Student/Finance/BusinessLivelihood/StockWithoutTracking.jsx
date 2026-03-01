@@ -159,7 +159,7 @@ const STOCK_WITHOUT_TRACKING_STAGES = [
 
 const StockWithoutTracking = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-9";
+  const gameId = "finance-business-livelihood-finance-19";
   const gameData = getGameDataById(gameId);
   const totalStages = STOCK_WITHOUT_TRACKING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

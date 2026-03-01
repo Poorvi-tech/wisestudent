@@ -159,7 +159,7 @@ const BUSINESS_LOAN_PREPARATION_STAGES = [
 
 const BusinessLoanPreparation = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-22";
+  const gameId = "finance-business-livelihood-finance-45";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_LOAN_PREPARATION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

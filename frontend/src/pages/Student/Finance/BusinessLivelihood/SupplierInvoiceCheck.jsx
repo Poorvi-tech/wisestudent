@@ -159,7 +159,7 @@ const SUPPLIER_INVOICE_CHECK_STAGES = [
 
 const SupplierInvoiceCheck = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-19";
+  const gameId = "finance-business-livelihood-finance-39";
   const gameData = getGameDataById(gameId);
   const totalStages = SUPPLIER_INVOICE_CHECK_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

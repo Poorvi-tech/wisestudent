@@ -159,7 +159,7 @@ const BUSINESS_REPUTATION_GROWTH_STAGES = [
 
 const BusinessReputationGrowth = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-37";
+  const gameId = "finance-business-livelihood-finance-75";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_REPUTATION_GROWTH_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

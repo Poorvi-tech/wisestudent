@@ -159,7 +159,7 @@ const SEASONAL_INCOME_PLANNING_STAGES = [
 
 const SeasonalIncomePlanning = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-39";
+  const gameId = "finance-business-livelihood-finance-79";
   const gameData = getGameDataById(gameId);
   const totalStages = SEASONAL_INCOME_PLANNING_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

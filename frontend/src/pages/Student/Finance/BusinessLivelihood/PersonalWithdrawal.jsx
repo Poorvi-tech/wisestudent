@@ -159,7 +159,7 @@ const PERSONAL_WITHDRAWAL_STAGES = [
 
 const PersonalWithdrawal = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-10";
+  const gameId = "finance-business-livelihood-finance-21";
   const gameData = getGameDataById(gameId);
   const totalStages = PERSONAL_WITHDRAWAL_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

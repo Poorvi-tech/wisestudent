@@ -159,7 +159,7 @@ const BUSINESS_GROWTH_LIMIT_STAGES = [
 
 const BusinessGrowthLimit = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-14";
+  const gameId = "finance-business-livelihood-finance-29";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_GROWTH_LIMIT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

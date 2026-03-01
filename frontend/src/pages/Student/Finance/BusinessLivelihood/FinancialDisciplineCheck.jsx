@@ -160,7 +160,7 @@ const FINANCIAL_DISCIPLINE_CHECK_STAGES = [
 
 const FinancialDisciplineCheck = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-48";
+  const gameId = "finance-business-livelihood-finance-97";
   const gameData = getGameDataById(gameId);
   const totalStages = FINANCIAL_DISCIPLINE_CHECK_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

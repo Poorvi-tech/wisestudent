@@ -10,32 +10,28 @@ const PROTECTION_REFLEX_STAGES = [
     prompt:
       "Sudden hospital bill appears for an emergency surgery. Your reflex?",
     options: [
-      
       {
-        id: "no-planning",
-        text: "No Planning",
-        outcome:
-          "Without planning, a big hospital bill can wipe out savings or force debt.",
+        id: "pay-savings",
+        text: "Pay entirely from personal savings",
+        outcome: "Incorrect: Depletes your emergency fund significantly.",
         isCorrect: false,
       },
       {
-        id: "risk-covered",
-        text: "Risk Covered (Health cover)",
-        outcome:
-          "Correct. Insurance turns a large medical expense into a manageable claim.",
+        id: "health-insurance",
+        text: "Use comprehensive health insurance",
+        outcome: "Correct. Insurance turns a large medical expense into a manageable claim.",
         isCorrect: true,
       },
       {
-        id: "borrow-immediately",
-        text: "Borrow Immediately",
-        outcome:
-          "Loans add burden and interest; cover is better for these shocks.",
+        id: "personal-loan",
+        text: "Take out a high-interest loan",
+        outcome: "Incorrect: Adds financial burden with high interest rates.",
         isCorrect: false,
       },
       {
-        id: "delay-decision",
-        text: "Delay Decision",
-        outcome: "Delays worsen outcomes and stress. Protection is proactive.",
+        id: "ignore-bill",
+        text: "Ignore the bill",
+        outcome: "Incorrect: Leads to legal trouble and ruined credit.",
         isCorrect: false,
       },
     ],
@@ -45,32 +41,28 @@ const PROTECTION_REFLEX_STAGES = [
     prompt:
       "Your two-wheeler meets an accident with third‑party damage. Your reflex?",
     options: [
-      
       {
-        id: "no-planning",
-        text: "No Planning",
-        outcome:
-          "No cover means you may bear costly repairs and third‑party liabilities.",
+        id: "flee-scene",
+        text: "Flee to avoid payment",
+        outcome: "Incorrect: Illegal and can lead to severe penalties.",
         isCorrect: false,
       },
       {
-        id: "borrow-immediately",
-        text: "Borrow Immediately",
-        outcome:
-          "Borrowing is not protection; liability cover exists for this scenario.",
+        id: "pay-outofpocket",
+        text: "Pay for damages out of pocket",
+        outcome: "Incorrect: Can be extremely expensive and drain finances.",
         isCorrect: false,
       },
       {
-        id: "risk-covered",
-        text: "Risk Covered (Motor/third‑party)",
-        outcome:
-          "Correct. Third‑party liability cover protects you from heavy penalties and payouts.",
+        id: "motor-insurance",
+        text: "Claim through third-party liability cover",
+        outcome: "Correct. Legally required and covers damages to the other party.",
         isCorrect: true,
       },
       {
-        id: "hope-it-passes",
-        text: "Hope It Passes",
-        outcome: "Hope is not a plan. Protection absorbs the shock.",
+        id: "ask-friends",
+        text: "Ask friends to pitch in",
+        outcome: "Incorrect: Unreliable and strains personal relationships.",
         isCorrect: false,
       },
     ],
@@ -80,31 +72,27 @@ const PROTECTION_REFLEX_STAGES = [
     prompt: "Home suffers a fire; repair costs are huge. Your reflex?",
     options: [
       {
-        id: "risk-covered",
-        text: "Risk Covered (Property cover)",
-        outcome:
-          "Correct. Property insurance helps recover from fire and allied perils.",
+        id: "property-insurance",
+        text: "Claim through property insurance",
+        outcome: "Correct. Property insurance helps recover rebuild costs after perils like fire.",
         isCorrect: true,
       },
       {
-        id: "no-planning",
-        text: "No Planning",
-        outcome:
-          "No cover means the entire replacement cost falls on your pocket.",
+        id: "buy-new",
+        text: "Start over and buy a new house",
+        outcome: "Incorrect: Not feasible for most and creates massive debt.",
         isCorrect: false,
       },
       {
-        id: "borrow-immediately",
-        text: "Borrow Immediately",
-        outcome:
-          "Debt after disaster deepens losses; protection reduces the shock.",
+        id: "disaster-relief",
+        text: "Rely on disaster relief funds",
+        outcome: "Incorrect: Relief funds are often inadequate and slow to arrive.",
         isCorrect: false,
       },
       {
-        id: "delay-decision",
-        text: "Delay Decision",
-        outcome:
-          "Delaying claims or decisions risks further damage and denial windows.",
+        id: "abandon-property",
+        text: "Abandon property and rent",
+        outcome: "Incorrect: You lose your major asset and still face financial loss.",
         isCorrect: false,
       },
     ],
@@ -114,33 +102,28 @@ const PROTECTION_REFLEX_STAGES = [
     prompt:
       "Primary earner diagnosed with a critical illness; income will pause. Reflex?",
     options: [
-      
       {
-        id: "no-planning",
-        text: "No Planning",
-        outcome:
-          "Without protection, families face income loss plus treatment costs.",
+        id: "depend-family",
+        text: "Depend solely on extended family",
+        outcome: "Incorrect: Places unfair financial strain on relatives.",
         isCorrect: false,
       },
       {
-        id: "borrow-immediately",
-        text: "Borrow Immediately",
-        outcome:
-          "Loans may help cash flow but add stress; protection provides resilience.",
+        id: "max-credit",
+        text: "Max out credit cards",
+        outcome: "Incorrect: Creates a debt spiral with high interest.",
         isCorrect: false,
       },
       {
-        id: "hope-it-passes",
-        text: "Hope It Passes",
-        outcome:
-          "Hope alone cannot pay bills; planned protection cushions the blow.",
+        id: "sell-home",
+        text: "Sell the family home immediately",
+        outcome: "Incorrect: Drastic measure that disrupts family stability.",
         isCorrect: false,
       },
       {
-        id: "risk-covered",
-        text: "Risk Covered (Critical illness/term)",
-        outcome:
-          "Correct. Payouts from protection ease income shock during treatment.",
+        id: "critical-illness-cover",
+        text: "Claim payout from critical illness cover",
+        outcome: "Correct. Payouts from protection ease income shock during treatment.",
         isCorrect: true,
       },
     ],
@@ -150,30 +133,27 @@ const PROTECTION_REFLEX_STAGES = [
     prompt: "Crop failure or weather shock hits family income. Reflex?",
     options: [
       {
-        id: "risk-covered",
-        text: "Risk Covered (Relevant agri/term cover)",
-        outcome:
-          "Correct. Suitable coverage transfers part of the risk away from income.",
+        id: "crop-insurance",
+        text: "Claim through agricultural/crop cover",
+        outcome: "Correct. Suitable coverage transfers part of the risk away from income.",
         isCorrect: true,
       },
       {
-        id: "no-planning",
-        text: "No Planning",
-        outcome:
-          "Without planning, a single event can destabilize the entire budget.",
+        id: "moneylenders",
+        text: "Borrow from local moneylenders",
+        outcome: "Incorrect: High interest rates trap families in debt cycles.",
         isCorrect: false,
       },
       {
-        id: "borrow-immediately",
-        text: "Borrow Immediately",
-        outcome:
-          "Debt after loss can spiral; protection aims to reduce such shocks.",
+        id: "sell-equipment",
+        text: "Sell farming equipment",
+        outcome: "Incorrect: Harms future earning potential and livelihood.",
         isCorrect: false,
       },
       {
-        id: "delay-decision",
-        text: "Delay Decision",
-        outcome: "Reflex action beats delay; protection readies you beforehand.",
+        id: "migrate-city",
+        text: "Migrate immediately for casual labor",
+        outcome: "Incorrect: Disruptive and doesn't address the agricultural loss.",
         isCorrect: false,
       },
     ],

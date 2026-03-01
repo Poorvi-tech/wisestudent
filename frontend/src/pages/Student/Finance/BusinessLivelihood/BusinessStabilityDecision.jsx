@@ -159,7 +159,7 @@ const BUSINESS_STABILITY_DECISION_STAGES = [
 
 const BusinessStabilityDecision = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-43";
+  const gameId = "finance-business-livelihood-finance-87";
   const gameData = getGameDataById(gameId);
   const totalStages = BUSINESS_STABILITY_DECISION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

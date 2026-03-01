@@ -159,7 +159,7 @@ const RECORD_DURING_INSPECTION_STAGES = [
 
 const RecordDuringInspection = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-29";
+  const gameId = "finance-business-livelihood-finance-59";
   const gameData = getGameDataById(gameId);
   const totalStages = RECORD_DURING_INSPECTION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

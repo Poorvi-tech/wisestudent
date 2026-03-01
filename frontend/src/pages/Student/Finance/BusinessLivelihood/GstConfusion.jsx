@@ -159,7 +159,7 @@ const GST_CONFUSION_STAGES = [
 
 const GstConfusion = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-13";
+  const gameId = "finance-business-livelihood-finance-27";
   const gameData = getGameDataById(gameId);
   const totalStages = GST_CONFUSION_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

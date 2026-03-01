@@ -159,7 +159,7 @@ const PROOF_FOR_INSURANCE_CLAIM_STAGES = [
 
 const ProofForInsuranceClaim = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-45";
+  const gameId = "finance-business-livelihood-finance-91";
   const gameData = getGameDataById(gameId);
   const totalStages = PROOF_FOR_INSURANCE_CLAIM_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

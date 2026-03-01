@@ -159,7 +159,7 @@ const INVOICE_REFUSAL_STAGES = [
 
 const InvoiceRefusal = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-4";
+  const gameId = "finance-business-livelihood-finance-7";
   const gameData = getGameDataById(gameId);
   const totalStages = INVOICE_REFUSAL_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

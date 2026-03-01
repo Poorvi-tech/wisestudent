@@ -159,7 +159,7 @@ const INFORMAL_EXPANSION_LIMIT_STAGES = [
 
 const InformalExpansionLimit = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-38";
+  const gameId = "finance-business-livelihood-finance-77";
   const gameData = getGameDataById(gameId);
   const totalStages = INFORMAL_EXPANSION_LIMIT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

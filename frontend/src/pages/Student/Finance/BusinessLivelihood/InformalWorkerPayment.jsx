@@ -159,7 +159,7 @@ const INFORMAL_WORKER_PAYMENT_STAGES = [
 
 const InformalWorkerPayment = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-20";
+  const gameId = "finance-business-livelihood-finance-41";
   const gameData = getGameDataById(gameId);
   const totalStages = INFORMAL_WORKER_PAYMENT_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

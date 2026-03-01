@@ -159,7 +159,7 @@ const TAX_FEAR_VS_AWARENESS_STAGES = [
 
 const TaxFearVsAwareness = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-41";
+  const gameId = "finance-business-livelihood-finance-83";
   const gameData = getGameDataById(gameId);
   const totalStages = TAX_FEAR_VS_AWARENESS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

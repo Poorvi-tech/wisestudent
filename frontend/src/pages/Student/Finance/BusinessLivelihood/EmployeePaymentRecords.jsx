@@ -159,7 +159,7 @@ const EMPLOYEE_PAYMENT_RECORDS_STAGES = [
 
 const EmployeePaymentRecords = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-34";
+  const gameId = "finance-business-livelihood-finance-69";
   const gameData = getGameDataById(gameId);
   const totalStages = EMPLOYEE_PAYMENT_RECORDS_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

@@ -160,7 +160,7 @@ const BILL_VS_NO_BILL_SALE_STAGES = [
 
 const BillVsNoBillSale = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-28";
+  const gameId = "finance-business-livelihood-finance-57";
   const gameData = getGameDataById(gameId);
   const totalStages = BILL_VS_NO_BILL_SALE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);

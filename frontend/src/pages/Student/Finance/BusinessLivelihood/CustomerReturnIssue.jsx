@@ -159,7 +159,7 @@ const CUSTOMER_RETURN_ISSUE_STAGES = [
 
 const CustomerReturnIssue = () => {
   const location = useLocation();
-  const gameId = "finance-business-livelihood-finance-36";
+  const gameId = "finance-business-livelihood-finance-73";
   const gameData = getGameDataById(gameId);
   const totalStages = CUSTOMER_RETURN_ISSUE_STAGES.length;
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
