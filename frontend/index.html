@@ -48,21 +48,25 @@
         location.hostname === "127.0.0.1" ||
         location.hostname === "::1";
 
-      if (isLocalDevHost && "serviceWorker" in navigator) {
-        try {
-          const regs = await navigator.serviceWorker.getRegistrations();
-          await Promise.all(regs.map((r) => r.unregister()));
-        } catch {}
-      }
+      const bootstrap = async () => {
+        if (isLocalDevHost && "serviceWorker" in navigator) {
+          try {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(regs.map((r) => r.unregister()));
+          } catch {}
+        }
 
-      if (isLocalDevHost && "caches" in window) {
-        try {
-          const keys = await caches.keys();
-          await Promise.all(keys.map((key) => caches.delete(key)));
-        } catch {}
-      }
+        if (isLocalDevHost && "caches" in window) {
+          try {
+            const keys = await caches.keys();
+            await Promise.all(keys.map((key) => caches.delete(key)));
+          } catch {}
+        }
 
-      await import("/src/main.jsx");
+        await import("/src/main.jsx");
+      };
+
+      bootstrap();
     </script>
     <!-- Prevent Stripe from initializing if cached - We use Razorpay only -->
     <script>
